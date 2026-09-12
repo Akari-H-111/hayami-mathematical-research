@@ -1,0 +1,5 @@
+v0.61 Equation-Operator Reconstruction verifier: PASS
+effective algebra dim = 10
+shift-only algebra dim = 4
+relations: S^4=0, [W,S]=S
+basis-change and contractible-resolution checks: PASS

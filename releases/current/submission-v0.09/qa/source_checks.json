@@ -1,0 +1,56 @@
+[
+  {
+    "paper": "I",
+    "stem": "paper_I_fixed_cubic_v0_09",
+    "pages": 63,
+    "figures": 14,
+    "original_source_sha256": "ea64a0ee246f2820ac232f3580e7083d38e7f767ece174637555462f6ef2c829",
+    "original_pdf_sha256": "c06a69ee3f2385b0d6f0c61132d974f17f3f0156fe2388c973a7f8f9f2db388a",
+    "submission_source_sha256": "ea64a0ee246f2820ac232f3580e7083d38e7f767ece174637555462f6ef2c829",
+    "source_zip_sha256": "1c9c567d6ccc2758885fc9b71aacfe0d31042e08abe2a979e28cc8e4e64fb051",
+    "body_before_bibliography_byte_identical": true,
+    "bibliography_replacements": []
+  },
+  {
+    "paper": "II",
+    "stem": "paper_II_marked_naturality_v0_09",
+    "pages": 14,
+    "figures": 7,
+    "original_source_sha256": "62d8ad255ec34ef1687eedac102bf909fd7e2e1ccd1b0884ac457304e41c50a6",
+    "original_pdf_sha256": "5fb904215611e2e381ce3d13a8d61863ee7124142adbdec37b4ad5cccfff19ac",
+    "submission_source_sha256": "1a7fe8cc6545ff6bf968818b54131481dcec4111af628800fdca1c1a24074e2d",
+    "source_zip_sha256": "db5b3eb885725fed0f3afa444946062f2920197606f66d9b57618c29b4928524",
+    "body_before_bibliography_byte_identical": true,
+    "bibliography_replacements": [
+      [
+        "Paper I, manuscript closeout v0.08",
+        "Paper I, illustrated edition v0.09"
+      ],
+      [
+        "Paper III, manuscript closeout v0.08",
+        "Paper III, illustrated edition v0.09"
+      ]
+    ]
+  },
+  {
+    "paper": "III",
+    "stem": "paper_III_spectral_floor_v0_09",
+    "pages": 22,
+    "figures": 10,
+    "original_source_sha256": "5c9421591dc5262afe7af658913726edcb36b8ecae86eb375a63772bade2ba70",
+    "original_pdf_sha256": "9fdc102e7d1c3f655209dc833f825830567123086cb756e3e4fb1d36d093cdac",
+    "submission_source_sha256": "08f578fb79e7b79064133dc50528075530ae1e1dc8e09c730d3b6364d271d8d2",
+    "source_zip_sha256": "333331dee2ec725909dd870ffe7ba831ff488e9141f24f844bd689185c5e669d",
+    "body_before_bibliography_byte_identical": true,
+    "bibliography_replacements": [
+      [
+        "Paper I, manuscript closeout v0.08",
+        "Paper I, illustrated edition v0.09"
+      ],
+      [
+        "Paper II, manuscript closeout v0.08",
+        "Paper II, illustrated edition v0.09"
+      ]
+    ]
+  }
+]

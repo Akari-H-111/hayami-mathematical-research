@@ -1,0 +1,36 @@
+\input{style.tex}
+\begin{document}
+\begin{tikzpicture}
+\framewidth
+\node[neutral,text width=13.6cm] (bare)
+ {\textbf{The same unmarked filtered complex}\\[5pt]
+ $P_0=H_0=\Q^4,\qquad P_i=0\ (i\ne0)$\\[3pt]
+ Descending flag: $\Q^4\supset\langle e_2,e_3,e_4\rangle\supset\langle e_3,e_4\rangle\supset\langle e_4\rangle\supset0$};
+\node[box,text width=13.6cm,below=7mm of bare] (ops)
+ {\textbf{Two filtration-preserving operators}\\[5pt]
+ $Se_i=e_{i+1}\ (i<4),\quad Se_4=0,\quad W=\operatorname{diag}(0,1,2,3)$\\[4pt]
+ $S^4=0,\qquad [W,S]=S$};
+\draw[edge] (bare)--(ops);
+\node[box,text width=6.4cm,below=8mm of ops.south,xshift=-3.65cm] (one)
+ {\textbf{Choose the marking $\{S\}$}\\[5pt]
+ $\Q[S]=\operatorname{span}(I,S,S^2,S^3)$\\[4pt]
+ $\dim\Q[S]=4$};
+\node[goldbox,text width=6.4cm] (two) at (one-|3.65,0)
+ {\textbf{Choose the marking $\{S,W\}$}\\[5pt]
+ The lower-triangular matrix algebra\\[4pt]
+ $\dim\Q\langle S,W\rangle=10$};
+\draw[edge] (ops.south)--++(0,-3mm)-|(one.north);
+\draw[edge] (ops.south)--++(0,-3mm)-|(two.north);
+\node[note,text width=13.6cm,below=4mm of $(one.south)!0.5!(two.south)$] (units)
+ {Distinct weights recover the diagonal units; $E_{ii}S^{i-j}E_{jj}=E_{ij}$ for $i\ge j$.};
+\node[neutral,text width=13.6cm,below=5mm of units] (scope)
+ {\textbf{Scope boundary}\\[4pt]
+ The bare filtered object does not determine which marking was intended.\\
+ Supplied marked chain maps do determine their effective algebra on $H_0$.\\[5pt]
+ This does not exclude intrinsically distinguished scalar maps such as $I$,\\
+ or additional geometric data that select further operators.};
+\node[note,text width=13.6cm,below=4mm of scope]
+ {Change of basis gives conjugate represented algebras. A contractible summand\\
+ has no effect when the descended marked actions are identified.};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,22 @@
+{
+  "checked_at": "2026-09-12",
+  "file": "final_pdf/The_Stokes_Caustic_of_the_Orthogonal_Circle_Ruled_Surface_v5.pdf",
+  "sha256": "4e48c805c1550dbaee9171a56264bf4ff5275ef5ff5b64f9cd116803283c11c0",
+  "bytes": 316335,
+  "pdf_version": "1.7",
+  "pages": 10,
+  "page_size_points": [612, 792],
+  "qpdf_check": "pass",
+  "render_check": {
+    "renderer": "pdftoppm",
+    "pages_rendered": 10,
+    "contact_sheet_reviewed": true,
+    "full_pages_reviewed": [1, 5, 7, 10],
+    "clipping": 0,
+    "overlap": 0,
+    "unreadable_text": 0,
+    "figure_or_caption_defects": 0,
+    "result": "pass"
+  },
+  "note": "The PDF is the supplied authoritative final v5 artifact. It was inspected, not regenerated or modified by this release workflow."
+}

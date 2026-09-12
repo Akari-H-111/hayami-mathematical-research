@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "Please cite the specific paper or companion used, and cite this repository when relying on its verification infrastructure."
+title: "Hayami Mathematical Research"
+version: "0.1.0"
+date-released: 2026-09-12
+type: software
+authors:
+  - family-names: "Hayami"
+    given-names: "Akari"
+    alias: "Jian-Yu Huang"
+repository-code: "https://github.com/Akari-H-111/hayami-mathematical-research"
+license:
+  - Apache-2.0
+  - CC-BY-4.0

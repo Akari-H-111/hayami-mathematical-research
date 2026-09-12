@@ -1,0 +1,40 @@
+\input{style.tex}
+\begin{document}
+\begin{tikzpicture}
+\framewidth
+\node[neutral,text width=13.6cm] (static)
+ {\textbf{Static extraction from finite landing data}\\[4pt]
+ $M\xrightarrow{\Lambda}R_\Lambda\xrightarrow{D}F\xrightarrow{q}F/N,\qquad \Gamma=qD\Lambda$\\[4pt]
+ $K_\Lambda=R_\Lambda\cap D^{-1}(N)=\Lambda(\ker\Gamma)\simeq\ker\Gamma/\ker\Lambda$};
+\node[box,text width=6.4cm,below=7mm of static.south,xshift=-3.65cm] (descent)
+ {\textbf{Global landing descent}\\[4pt]
+ $T\ker\Lambda\subseteq\ker\Lambda$\\[3pt]
+ $\Longleftrightarrow$ a unique $A_\Lambda$ satisfies\\[3pt]
+ $A_\Lambda\Lambda=\Lambda T$};
+\node[box,text width=6.4cm] (closure) at (descent-|3.65,0)
+ {\textbf{Additional normalized closure}\\[4pt]
+ $T\ker\Gamma\subseteq\ker\Gamma$\\[3pt]
+ Under global descent, this is equivalent\\
+ to invariance of $K_\Lambda$.};
+\draw[edge] (static.south)--++(0,-3mm)-|(descent.north);
+\draw[edge] (static.south)--++(0,-3mm)-|(closure.north);
+\node[box,text width=13.6cm,below=7mm of $(descent.south)!0.5!(closure.south)$] (stable)
+ {\textbf{Stable source kernel, always defined for $m=\dim M>0$}\\[4pt]
+ $\mathcal O=\begin{bmatrix}\Gamma\\\Gamma T\\\vdots\\\Gamma T^{m-1}\end{bmatrix},\qquad
+ W=M_\infty=\ker\mathcal O$\\[4pt]
+ $W$ is the largest $T$-invariant subspace of $\ker\Gamma$.};
+\node[goldbox,text width=13.6cm,below=7mm of stable] (out)
+ {\textbf{Three distinct dynamical outcomes}\\[5pt]
+ \begin{tabular}{@{}ll@{}}
+ Global descent & $K_\infty=\Lambda W\simeq W/\ker\Lambda$\\[5pt]
+ Local descent: $TJ\subseteq J$ & $\Lambda W\simeq W/J,\quad J=W\cap\ker\Lambda$\\[5pt]
+ No local descent & $W/J_{\rm fut}$ retains all future landing outputs
+ \end{tabular}\\[6pt]
+ $J_{\rm fut}=\displaystyle\bigcap_{j=0}^{m-1}\ker(\Lambda T^j)\subseteq W$\\[4pt]
+ $W/J_{\rm fut}\simeq\im\bigl[w\mapsto(\Lambda w,\Lambda Tw,\ldots,\Lambda T^{m-1}w)\bigr]$};
+\draw[edge] (stable)--(out);
+\node[note,text width=13.6cm,below=4mm of out]
+ {The future-output quotient may be larger than $\Lambda W$.\\
+ It does not define static landing dynamics when local descent fails.};
+\end{tikzpicture}
+\end{document}

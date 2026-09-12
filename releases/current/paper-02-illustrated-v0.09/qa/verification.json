@@ -1,0 +1,326 @@
+{
+  "file": "paper_II_marked_naturality_v0_09.pdf",
+  "sha256": "5fb904215611e2e381ce3d13a8d61863ee7124142adbdec37b4ad5cccfff19ac",
+  "pages": 14,
+  "bibliography_entries": 6,
+  "citation_key_uses": 7,
+  "metadata": {
+    "/Creator": "LaTeX with hyperref",
+    "/Title": "Resonance-Marked Naturality and Homotopy-Tilt Non-Invariance",
+    "/Subject": "Paper II: normalized tilts and marked boundary responses",
+    "/Author": "Akari Hayami (Jian-Yu Huang)",
+    "/Producer": "xdvipdfmx (0.1)",
+    "/CreationDate": "D:20260908055251-00'00'"
+  },
+  "qpdf_exit_status": 0,
+  "qpdf_output": "checking ./paper_II_marked_naturality_v0_09.pdf\nPDF Version: 1.5\nFile is not encrypted\nFile is not linearized\nNo syntax or stream encoding errors found; the file may still contain\nerrors that qpdf cannot detect\n",
+  "checks": {
+    "missing_citation_keys": [],
+    "uncited_bibliography_keys": [],
+    "undefined_label_references": [],
+    "duplicate_labels": [],
+    "log_issues": [],
+    "blank_pages": [],
+    "pages_with_outside_text": []
+  },
+  "page_geometry": [
+    {
+      "page": 1,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 2273,
+      "text_bounds_x0_x1_top_bottom": [
+        82.41,
+        531.02,
+        115.85,
+        722.7
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 2,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 2085,
+      "text_bounds_x0_x1_top_bottom": [
+        82.52,
+        531.01,
+        62.43,
+        699.1
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 3,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 2096,
+      "text_bounds_x0_x1_top_bottom": [
+        81.08,
+        531.32,
+        62.43,
+        700.98
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 4,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1530,
+      "text_bounds_x0_x1_top_bottom": [
+        81.08,
+        531.02,
+        62.43,
+        690.42
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 5,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 2033,
+      "text_bounds_x0_x1_top_bottom": [
+        81.08,
+        531.32,
+        62.43,
+        666.23
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 6,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1671,
+      "text_bounds_x0_x1_top_bottom": [
+        81.52,
+        531.02,
+        62.43,
+        704.0
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 7,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1301,
+      "text_bounds_x0_x1_top_bottom": [
+        81.93,
+        529.21,
+        62.43,
+        691.72
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 8,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1549,
+      "text_bounds_x0_x1_top_bottom": [
+        81.08,
+        530.71,
+        62.43,
+        677.16
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 9,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1860,
+      "text_bounds_x0_x1_top_bottom": [
+        81.08,
+        531.02,
+        62.43,
+        701.21
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 10,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1375,
+      "text_bounds_x0_x1_top_bottom": [
+        81.94,
+        530.72,
+        62.43,
+        685.95
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 11,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1670,
+      "text_bounds_x0_x1_top_bottom": [
+        82.41,
+        529.5,
+        62.43,
+        707.9
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 12,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1541,
+      "text_bounds_x0_x1_top_bottom": [
+        81.94,
+        531.32,
+        62.43,
+        702.53
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 13,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1721,
+      "text_bounds_x0_x1_top_bottom": [
+        82.8,
+        531.32,
+        62.43,
+        412.51
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 14,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1253,
+      "text_bounds_x0_x1_top_bottom": [
+        82.8,
+        528.14,
+        62.43,
+        287.28
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    }
+  ],
+  "embedded_image_count": 0,
+  "structural_and_text_qa_passed": true,
+  "body_preserved_except_author_and_marked_editorial_additions": true,
+  "author": "Akari Hayami (Jian-Yu Huang)",
+  "figure_pages": {
+    "1": 2,
+    "2": 4,
+    "3": 6,
+    "4": 7,
+    "5": 10,
+    "6": 11,
+    "7": 12
+  },
+  "figure_checks": [
+    {
+      "file": "fig01_roadmap.pdf",
+      "sha256": "377d721e5814a74ad3ecfef31a2db7f31618272f2834c192b8de7dd315f6ecc8",
+      "width_pt": 403.03,
+      "height_pt": 201.83,
+      "main_label_pt_at_manuscript_width": 9.97,
+      "vector": true
+    },
+    {
+      "file": "fig02_fixed_envelope.pdf",
+      "sha256": "6aedb67e8420f57c75b9caecc1aa22f62caddecdd07eca85436d511d40798e37",
+      "width_pt": 399.28,
+      "height_pt": 212.04,
+      "main_label_pt_at_manuscript_width": 10.06,
+      "vector": true
+    },
+    {
+      "file": "fig03_tilt_orbit.pdf",
+      "sha256": "0c2867d16eacea9ee8ce16aafc2f1db0a20d1acb4df8a7e19518342fb1bb3b54",
+      "width_pt": 407.28,
+      "height_pt": 264.42,
+      "main_label_pt_at_manuscript_width": 9.86,
+      "vector": true
+    },
+    {
+      "file": "fig04_surviving_rail.pdf",
+      "sha256": "1c6d19b2cfbca2a11041e1c2f309ecaf31da05605d03c68aa71f3c9b4acc2bae",
+      "width_pt": 407.28,
+      "height_pt": 200.95,
+      "main_label_pt_at_manuscript_width": 9.86,
+      "vector": true
+    },
+    {
+      "file": "fig05_response_descent.pdf",
+      "sha256": "8f10ac8fc593b7acfd32f6d5567dcc27e0439622a16c148b161e2d4cfcc33150",
+      "width_pt": 407.28,
+      "height_pt": 303.91,
+      "main_label_pt_at_manuscript_width": 9.86,
+      "vector": true
+    },
+    {
+      "file": "fig06_naturality.pdf",
+      "sha256": "bd6cd20124072be0d18231dfb679a15efcca937227352aa05be9097aae145190",
+      "width_pt": 407.28,
+      "height_pt": 240.41,
+      "main_label_pt_at_manuscript_width": 9.86,
+      "vector": true
+    },
+    {
+      "file": "fig07_cancellation.pdf",
+      "sha256": "fd56842bf094014fabf7b645335d3baa94b794b8ce8e4d19c0e4e1efd5c347b4",
+      "width_pt": 407.28,
+      "height_pt": 324.37,
+      "main_label_pt_at_manuscript_width": 9.86,
+      "vector": true
+    }
+  ],
+  "evidence_records_valid": true,
+  "known_figure_build_notice": "Standalone reports shell escape disabled; no figure requires shell escape.",
+  "visual_record_validated": true
+}

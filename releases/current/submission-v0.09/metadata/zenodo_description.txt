@@ -1,0 +1,11 @@
+Title: The Inverse Leibniz Problem, Papers I-III: illustrated v0.09 manuscripts and reproducibility materials
+Creator: Akari Hayami (Jian-Yu Huang)
+Version: v0.09, submission preparation 2026-09-08
+
+This collection contains three illustrated manuscripts on inverse Leibniz reconstruction, resonance-marked naturality, and spectral floors from marked deformation presentations. It includes the submission-candidate PDFs (63, 14 and 22 pages), minimal LaTeX source packages with 31 vector figures, preserved illustrated-edition source archives, and the broader v0.08 computational companion referenced in the manuscripts.
+
+The submission preparation changes four companion bibliography edition labels in Papers II and III to v0.09. Mathematical bodies and figure assets are unchanged. Original source archives retain their original PDFs; the top-level pdf directory contains the current submission candidates. Exact file hashes and editorial diffs distinguish the versions.
+
+The evidence supports the finite models and constructions identified in each manuscript. It does not recover unavailable historical matrix entries or establish unmarked invariance. General theorem arguments remain manuscript proofs. This collection includes earlier verification records; the current preparation checks compilation, packaging, preservation, and PDF layout rather than rerunning the full high-arity computations.
+
+Local metadata draft only. DOI, publication date, license and related article identifiers must be completed from actual platform records before publication. No DOI or platform submission is claimed.

@@ -1,0 +1,19 @@
+COMMAND: ['/Users/akari_hayami_64/TAGD_Master_Paper/.agent-venv/bin/python', '-B', 'research/feedback_matrices_v0_06/continue_u16.py']
+v0.47 cubic support multigrading verifier: PASS
+alpha support: x -> -E13, y -> +E13
+mixed-block alpha kernel = span{E12,E13,E22,E23}
+hook box dim = 45; rank ad_alpha|hook = 24
+U16 dim = 35; rank ad_alpha|U16 = 23
+span(stored h-values) = U16 exactly
+low-rail span rank = 19 inside 46 hook coordinates
+naive word-degree triangularity fails: 2 -> 3 on Q_alphaE
+recurrent loop gives A(E)=-2E
+Traceback (most recent call last):
+  File "/Users/akari_hayami_64/Documents/inverse_leibniz_problem_progress_v0_41_source/research/feedback_matrices_v0_06/continue_u16.py", line 53, in <module>
+    sector(R.bracket(f, g))
+    ~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/akari_hayami_64/Documents/inverse_leibniz_problem_progress_v0_41_source/research/feedback_matrices_v0_06/continue_u16.py", line 47, in sector
+    assert J*c == v, "harmonic output outside the complete two-dimensional sector"
+           ^^^^^^^^
+AssertionError: harmonic output outside the complete two-dimensional sector
+EXIT STATUS: 1

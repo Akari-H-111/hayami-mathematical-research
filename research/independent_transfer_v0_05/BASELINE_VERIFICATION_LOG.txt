@@ -1,0 +1,204 @@
+COMMAND: ['/Users/akari_hayami_64/TAGD_Master_Paper/.agent-venv/bin/python', 'output/pdf/three_papers_v0_04/verify_all.py']
+
+RUN verification/part_I/verify_fixed_case_v0_41.py
+=== verify_y17_frozen_prediction_v0_32.py ===
+v0.32 Y17 frozen prediction: PASS
+railwise prediction == independent arity-22 actual for rails 2,3,4,5
+stored prediction SHA256 = 3740df39c4b54f3723826e4c1a1688e6ec41b951cd6d2a828cafc34dc2120e38
+ARCHIVE METADATA ONLY: arity-22 feedback shape/rank = [34, 560] 34
+ARCHIVE METADATA ONLY: arity-22 history rank Q = 174
+Full feedback/history matrices are not present in this JSON; their ranks are not recomputed here.
+=== verify_residual_modules_all_orders_v0_34.py ===
+v0.33 compact certificate: PASS
+Y18 frozen prediction == independent arity23 actual
+prediction SHA256 = e9193f458cc84f575fd367543a358bef296432d7747d7558a624b8a21b7e7dcc
+x5(18) nonzero cochain coordinates = 29
+g3 homogeneous A-orbit rank = 6
+m_A(lambda) = (lambda+2) q(lambda)
+A-eliminated residual ranks r3,r4,r5 = 1,2,8
+p3=(lambda+2)^2 q
+p4=(lambda+2)^3 q
+p5=(lambda+2)^4 q^2
+v0.34 residual-module theorem: PASS
+R3 ≅ C[S]/(S+2)
+R4 ≅ C[S]/(S+2)^2
+mu_R5 = p4 = (S+2)^3 q(S)
+y4 nonzero witness ((0,1),(0,0)) = -3200
+r5 first-8 determinant = -1974127506397904857128197160960
+p5=(S+2)^4 q(S)^2 annihilates x5
+=== verify_residual_landing_map_v0_36.py ===
+v0.33 compact certificate: PASS
+Y18 frozen prediction == independent arity23 actual
+prediction SHA256 = e9193f458cc84f575fd367543a358bef296432d7747d7558a624b8a21b7e7dcc
+x5(18) nonzero cochain coordinates = 29
+g3 homogeneous A-orbit rank = 6
+m_A(lambda) = (lambda+2) q(lambda)
+A-eliminated residual ranks r3,r4,r5 = 1,2,8
+p3=(lambda+2)^2 q
+p4=(lambda+2)^3 q
+p5=(lambda+2)^4 q^2
+v0.34 residual-module theorem: PASS
+R3 ≅ C[S]/(S+2)
+R4 ≅ C[S]/(S+2)^2
+mu_R5 = p4 = (S+2)^3 q(S)
+y4 nonzero witness ((0,1),(0,0)) = -3200
+r5 first-8 determinant = -1974127506397904857128197160960
+p5=(S+2)^4 q(S)^2 annihilates x5
+v0.36 residual landing map: PASS
+Lambda4(actual) is nonzero and lies in ker(A+2I)
+Lambda5(actual) is A-cyclic, Krylov rank 6
+Lambda5 Krylov minor det = 68852103320239427215687680
+=== verify_complete_landing_operators_v0_37.py ===
+v0.37 complete landing operators: PASS
+D4 ~= C[S]/(S+2)^2, dim 2
+Lambda4 rank 1 and (A+2I)Lambda4=0 identically
+ker Lambda4 = (S+2)D4
+D5 ~= C[S]/p4, dim 8
+Lambda5 rank 6, hence surjective onto H5
+ker Lambda5 = m_A D5, dim 2
+Delta_A o Lambda5 = Res(m_A,r_d), a nonzero degree-6 polynomial
+certificate Delta_A(Lambda5(1))=1
+=== verify_spectral_landing_stratification_v0_38.py ===
+v0.38 spectral landing stratification: PASS
+q irreducible over Q and m_A squarefree
+q(-2)=-672
+Res(m_A,r)=r(-2)*Res(q,r)
+q-norm form: degree 5, 126 terms, irreducible over Q
+complex splitting-field strata counts by lost modes: [1, 6, 15, 20, 15, 6, 1]
+stratum dimensions: [8, 7, 6, 5, 4, 3, 2]
+landing multiplier degrees: [6, 5, 4, 3, 2, 1, 0]
+rational-data multipliers: m_A, q, E, 1
+=== verify_two_axis_stratification_v0_39.py ===
+v0.39 two-axis stratification: PASS
+splitting-field strata = 128
+codimension counts = [1, 6, 16, 26, 30, 26, 16, 6, 1]
+rational strata = 8
+resonant jet rank = 3
+q-divisibility rank = 5
+same (gF,gH), different gX counterexample: E^3 vs E^4
+canonical full annihilators: (S + 2)*(S**5 - 4*S**4 + 12*S**3 - 32*S**2 + 80*S - 192)**2 vs (S**5 - 4*S**4 + 12*S**3 - 32*S**2 + 80*S - 192)**2
+=== verify_three_level_extension_stratification_v0_40.py ===
+v0.40 three-level extension stratification: PASS
+gH | gF | gX and both lower layers are truncations of gX
+fine nonzero splitting-field strata = 708
+plus zero stratum -> 709
+actual codim counts = [1, 6, 21, 51, 96, 146, 186, 201, 1]
+rational strata = 8 nonzero + 1 zero = 9
+scheme multiplicities (E,q): H=(1,1), F=(3,1), X=(4,2)
+resonant jet rank through J3 = 4
+q-divisibility rank = 5
+fixed-case v0.41 verifier suite: PASS
+
+RUN verification/part_II/verify_cubic_support_multigrading_v0_47.py
+v0.47 cubic support multigrading verifier: PASS
+alpha support: x -> -E13, y -> +E13
+mixed-block alpha kernel = span{E12,E13,E22,E23}
+hook box dim = 45; rank ad_alpha|hook = 24
+U16 dim = 35; rank ad_alpha|U16 = 23
+span(stored h-values) = U16 exactly
+low-rail span rank = 19 inside 46 hook coordinates
+naive word-degree triangularity fails: 2 -> 3 on Q_alphaE
+recurrent loop gives A(E)=-2E
+
+RUN verification/part_II/verify_extension_independent_forced_core_v0_49.py
+v0.49 extension-independent forced core verifier: PASS
+maximal forced submodule dim C = 19
+char(A|C) = S**12*(S + 2)**2*(S**5 - 4*S**4 + 12*S**3 - 32*S**2 + 80*S - 192)
+minpoly(A|C) = S*(S + 2)*(S**5 - 4*S**4 + 12*S**3 - 32*S**2 + 80*S - 192)
+forced zero-mode dim = 12
+forced recurrent core dim = 7
+char recurrent core = (S + 2)**2*(S**5 - 4*S**4 + 12*S**3 - 32*S**2 + 80*S - 192)
+old cyclic core dim = 6 , plus E gives recurrent dim 7
+free completion blocks: 304 cross + 256 quotient = 560
+
+RUN verification/part_II/verify_homotopy_tilt_quotient_v0_54.py
+v0.54 Homotopy-Tilt Quotient verifier: PASS
+dim recurrent core = 7
+dim closed source intersection = 1
+dim normalized internal tilt module = 42
+tilt orbit = {B : B(E)=-2E}
+original char = (S + 2)**2*(S**5 - 4*S**4 + 12*S**3 - 32*S**2 + 80*S - 192)
+tilt example 1 char = S**6*(S + 2)
+tilt example 2 char = (S - 3)**6*(S + 2)
+universal spectral divisor after quotient = S+2
+
+RUN verification/part_II/verify_intrinsic_partial_contraction_forced_core_v0_50.py
+v0.50 intrinsic forced-core verifier: PASS
+im(h0)=U16 intrinsically, dim 35
+intrinsic forced module dim 19
+stable recurrent image dim 7
+
+RUN verification/part_II/verify_partial_contraction_comparison_v0_51.py
+v0.51 Partial-Contraction Comparison verifier: PASS
+nontrivial example: C_pt dim 3 -> C_forced dim 1
+rigid-germ change of basis transports C_forced naturally
+irrelevant rigidity outside D(U_part) does not affect the core
+same ambient complex alone is insufficient
+
+RUN verification/part_III/verify_equation_operator_reconstruction_v0_61.py
+v0.61 Equation-Operator Reconstruction verifier: PASS
+effective algebra dim = 10
+shift-only algebra dim = 4
+relations: S^4=0, [W,S]=S
+basis-change and contractible-resolution checks: PASS
+
+RUN verification/part_III/verify_forced_sector_extraction_v0_58.py
+v0.58 Forced-Sector Extraction verifier: PASS
+dim forced sector = 3
+forced char polynomial = (S - 3)*(S + 2)**2
+cyclic forced polynomial = (S + 2)**2
+
+RUN verification/part_III/verify_general_spectral_floor_tilt_quotient_v0_57.py
+v0.57 general spectral-floor verifier: PASS
+chi_forced = (S - 3)*(S + 2)**2
+mu_forced = (S - 3)*(S + 2)**2
+tilt dimension = 18
+
+RUN verification/part_III/verify_normalized_source_generation_v0_59.py
+v0.59 Normalized-Source Generation verifier: PASS
+closure ranks = [2, 4, 5, 5]
+dim N_eq = 5
+forced char = (S - 5)*(S - 3)**2*(S + 2)**2
+forced min = (S - 5)*(S - 3)**2*(S + 2)**2
+
+RUN verification/part_III/verify_syzygy_to_constraint_propagator_v0_60.py
+v0.60 Syzygy-to-Constraint Propagator verifier: PASS
+syzygy rank = 4
+quotient dim = 4
+propagator char = lam**4
+reachability rank = 4
+
+RUN verify_historical_foundations_v0_04.py
+PASS I early: four-point weak rank 28, exact four-point ideal, four strict Jacobian ranks 32
+PASS I early: dual-number ideal, H1=1, d2 rank 5, H2=3, effective obstruction rank 1 and relation rank 3
+PASS I early: square-zero weak rank 14; ideal (uv,v^2); C1=18, H1=2, H2=48, effective obstruction rank 2
+PASS: two-representative floors, empty/full sectors, noncyclic Jordan example
+PASS: naturality with the primitive differential inverse
+PASS: DGLA identities, response domain C*alpha, Artin MC cancellation
+PASS: stable-core formula and missing-descent counterexample
+PASS: ambient isomorphism alone does not ensure generated-source equality
+PASS: actual cubic response direction, D_alpha E=2dE, [xi,xi]=-2dE
+PASS I: reconstructed weak rank 45, strict tangent rank 7; exact cubic ideal and rational all-orders section
+PASS I: finite free rank-three family; cubic fibers for q!=0, square-zero two-generator fiber for q=0
+PASS II: constrained C1 dimension 90, differential rank 88, Z1=span(alpha,xi), maximal response domain
+PASS II: combined source cycle intersection has dimension 2 (not its boundary dimension 1)
+PASS II: reconstructed v0.48 claims: ranks 35/23/100/116; intersections 7/1; 16*35=560 extensions
+PASS II: v0.53 E-rail and first three g3 source identities, boundary/nonclosed tilts, d^2K=0
+PASS III: single end-to-end marked model, including noninvariant normalization
+PASS III: same-orbit stable floors, two rational witnesses, noncyclic Jordan depths, conjugacy and multiple outputs
+PASS III: local versus global descent and future-output quotient boundary example
+PASS III: generated-seed coverage can hold without surjectivity onto the target seed image
+PASS III: empty stable core gives characteristic and minimal floors equal to one
+PASS: v0.03 proof-recovery suite; prior v0.02 regression checks included.
+PASS I quartic: sparse Lambda=8/Gamma=-16; ambiguity rank 3; reduced coefficient/augmented ranks 10/11 (not 20/21)
+PASS I transfer arity 4: regenerated source, joint d2 rank 2, exact minor 1/4
+PASS I transfer arity 5: regenerated source, joint d2 rank 5, exact minor 1/18
+PASS I transfer arity 6: regenerated source, joint d2 rank 9, exact minor -1/486
+PASS I transfer arity 7: regenerated source, joint d2 rank 14, exact minor 11/34992
+PASS I structural: mixed reservoir rho*d=id (81 directions), raw block-actuator intersection identity
+COVERAGE LIMIT: no reconstruction of full harmonic feedback/history matrices at arities 8--22.
+
+PASS: 12 top-level runs; Part I runner covers seven verifiers.
+Scope: portable late suites, early examples, cubic transfer through arity 7, and Paper II/III recovery models.
+NOT COVERED: full historical harmonic feedback/history matrices at arities 8--22; this is not a formal proof audit.
+EXIT STATUS: 0

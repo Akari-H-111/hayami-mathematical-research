@@ -1,0 +1,5 @@
+v0.51 Partial-Contraction Comparison verifier: PASS
+nontrivial example: C_pt dim 3 -> C_forced dim 1
+rigid-germ change of basis transports C_forced naturally
+irrelevant rigidity outside D(U_part) does not affect the core
+same ambient complex alone is insufficient

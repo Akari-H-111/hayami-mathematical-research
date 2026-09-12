@@ -1,0 +1,52 @@
+{
+  "archive": "three_papers_v0_08_bundle.zip",
+  "sha256": "d9ca858911ae79508680f750e1ffd5102965a4dfede5919c3f5439ff4c48b198",
+  "bytes": 32758726,
+  "file_count": 142,
+  "payload_hash_count": 141,
+  "zip_crc_and_payload_hashes_passed": true,
+  "preserved_evidence_files": 112,
+  "previous_release_preserved": {
+    "archive": "three_papers_v0_07_bundle.zip",
+    "sha256": "2b8036151c034068de64b3a0ea5494a25b79887e058897f719852a4b6d462b84",
+    "verified_manifest_entries": 140
+  },
+  "prepackaging_body_correction_log": "REPLAY_BODY.txt",
+  "prepackaging_full_replay_logs": [
+    "REPLAY_LEGACY.txt",
+    "REPLAY_V05.txt",
+    "REPLAY_V06.txt",
+    "REPLAY_COUNTERCHECK.txt"
+  ],
+  "post_extraction_checks": [
+    "all hashes and ZIP CRC",
+    "v0.08 symbolic and source checks",
+    "coupled quartic certificate and temporal/landing checks",
+    "12 legacy top-level suites",
+    "v0.05 compatibility countercheck",
+    "PDF structural and hash-bound visual-record checks"
+  ],
+  "post_extraction_full_v05_v06_replay_repeated": false,
+  "papers": [
+    {
+      "file": "paper_III_spectral_floor_v0_08.pdf",
+      "sha256": "33c5f7f2cada7d5fde30d9256160fb8f9f56c9dcd8c8d94e0c6eaeaad5ef62bd",
+      "pages": 11,
+      "bibliography_entries": 7
+    },
+    {
+      "file": "paper_II_marked_naturality_v0_08.pdf",
+      "sha256": "2fd0c12c034eae7e36dab1900395fbf91e7722d5d310cc3f95435af0a85f4850",
+      "pages": 9,
+      "bibliography_entries": 6
+    },
+    {
+      "file": "paper_I_fixed_cubic_v0_08.pdf",
+      "sha256": "e1f678106fc04ef8b43db992ad75c8f602887075d5fdf04ea672cf8c3d2d45f6",
+      "pages": 54,
+      "bibliography_entries": 13
+    }
+  ],
+  "research_images_generated": false,
+  "preprint_uploaded": false
+}

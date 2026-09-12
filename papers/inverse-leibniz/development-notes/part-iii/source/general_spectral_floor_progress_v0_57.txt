@@ -1,0 +1,44 @@
+v0.57 General Triangular Spectral Theory I
+
+Setup:
+  R finite recurrent state space
+  D:R->F
+  N normalized source subspace
+  K=ker(R->F->F/N)=D^{-1}(N)
+
+Assume:
+  A(K) subset K
+
+Tilt group:
+  Hom(im(qD),R)
+
+Exact variation:
+  {tau qD}={T in End(R): T|K=0}
+
+Exact orbit:
+  O_tilt(A)={B in End(R): B|K=A|K}
+
+Choose R=K direct-sum X:
+  A_tau=[[A_K,B_tau],[0,D_tau]]
+with both free blocks arbitrary.
+
+Forced characteristic divisor:
+  gcd_tau chi(A_tau)=chi(A_K)
+
+Forced minimal divisor:
+  gcd_tau mu(A_tau)=mu(A_K), for K nonzero
+  =1 for K=0
+
+If
+  chi(A_K)=prod(S-lambda)^c_lambda
+  mu(A_K)=prod(S-lambda)^j_lambda
+then c_lambda and j_lambda are the exact surviving algebraic and
+Jordan-depth floors across the full normalized tilt orbit.
+
+Cubic specialization:
+  K=C E
+  A_K=-2
+  forced divisor=S+2.
+
+Next:
+Forced-Sector Extraction Theorem from forcing/landing data.

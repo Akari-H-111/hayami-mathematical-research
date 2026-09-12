@@ -1,0 +1,26 @@
+--- preparation
++++ doi_release
+@@ -3602,7 +3602,7 @@
+ families and the old-trajectory incompatibility countercheck.
+ The companion is \path{three_papers_v0_08_bundle.zip}.
+ Its \path{EVIDENCE_MAP.md} identifies each claim's exact file and replay
+-entry point. No public archive identifier has yet been assigned.
++entry point. Accompanying collection: \href{https://doi.org/10.5281/zenodo.22663942}{doi:10.5281/zenodo.22663942}.
+ Use Python with assertions enabled and SymPy 1.14.0.
+ No unpublished helper outside the package is needed for these commands.
+ 
+@@ -4197,12 +4197,12 @@
+ \bibitem{PaperII}
+ Akari Hayami (Jian-Yu Huang),
+ \emph{Resonance-Marked Naturality and Homotopy-Tilt Non-Invariance in the Inverse-Leibniz Cubic Case},
+-Paper II, illustrated edition v0.09, 2026. Unpublished companion manuscript.
++Paper II, illustrated edition v0.09, 2026. Companion manuscript in the accompanying collection.
+ 
+ \bibitem{PaperIII}
+ Akari Hayami (Jian-Yu Huang),
+ \emph{General Spectral Floors from Marked Deformation Presentations},
+-Paper III, illustrated edition v0.09, 2026. Unpublished companion manuscript.
++Paper III, illustrated edition v0.09, 2026. Companion manuscript in the accompanying collection.
+ \end{thebibliography}
+ 
+ \end{document}

@@ -1,0 +1,72 @@
+v0.60 Syzygy-to-Constraint Propagator Theorem
+
+KEY CORRECTION:
+Bare vector-space syzygies do NOT determine propagators.
+Need an equation-operator algebra A_eq acting on the relation
+presentation before contraction.
+
+SETUP:
+  A_eq canonical source-operation algebra from deformation presentation
+  P1 --d1--> P0 --eps--> F_rel -> 0
+  exact in category of left A_eq-modules
+
+SYZYGY DESCENT:
+  im d1 is automatically A_eq-stable.
+  M_rel=P0/im d1=H0(P_*) inherits canonical A_eq action:
+    rho_rel(a)[p]=[ap].
+
+PROPAGATORS:
+Transport through H0 ~= F_rel:
+  C(a)=epsbar rho_rel(a) epsbar^{-1}.
+For computational generators u_i:
+  C_i=C(u_i).
+
+CANONICAL CONSTRAINT ALGEBRA:
+  C_syz=im(C:A_eq->End(F_rel))
+       ~= A_eq/Ann(M_rel).
+
+INVARIANCE:
+- generator choice changes displayed tuple, not C_syz
+- source basis changes matrices by similarity
+- syzygy basis change does nothing
+- A_eq-linear comparison of resolutions intertwines H0 actions
+- different A_eq-linear free resolutions of same relation module give
+  same action on H0
+
+REFINEMENT OF v0.59:
+No need to extend C_i to all ambient F.
+The canonical action lives on F_rel; ambient extensions are noncanonical
+and irrelevant.
+
+v0.59 REWRITTEN:
+  N_eq=C_syz . im R0
+      = epsbar(A_eq . epsbar^{-1}(im R0)).
+
+EXACT EXAMPLE:
+  A_eq=k[t]/(t^4)
+  P0=A e1 direct-sum A e2
+  syzygy te1-e2
+  full syzygy submodule rank4
+  quotient dim4
+  induced propagator is nilpotent J4(0)
+  char=lambda^4, nilpotency index4
+  one seed reaches full quotient
+  basis-change and syzygy-generator invariance verified
+
+NO-GO:
+Same bare 4D quotient can carry J4(0) or diag(1,2,3,4); vector-space
+syzygy data alone cannot choose.
+
+PIPELINE:
+marked deformation presentation over A_eq
+ -> A_eq-linear syzygy complex
+ -> C_syz action on F_rel
+ -> N_eq
+ -> Gamma_eq
+ -> K,A|K
+ -> forced spectral floor.
+
+NEXT:
+Equation-Operator Reconstruction Theorem:
+derive A_eq itself from canonical filtration/arity-preserving chain
+endomorphisms of the deformation presentation/resolution.

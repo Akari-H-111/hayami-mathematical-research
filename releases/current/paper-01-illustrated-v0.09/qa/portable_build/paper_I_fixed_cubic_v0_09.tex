@@ -1,0 +1,4208 @@
+\documentclass[11pt]{amsart}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\setlength{\emergencystretch}{2em}
+\raggedbottom
+\usepackage[margin=1.15in]{geometry}
+\usepackage{amsmath,amssymb,mathtools,amscd}
+\usepackage{mathrsfs}
+\usepackage{amsthm}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+% BEGIN ILLUSTRATION PREAMBLE
+\usepackage{graphicx}
+\setcounter{topnumber}{2}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.65}
+% END ILLUSTRATION PREAMBLE
+
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=green!45!black,urlcolor=blue!55!black]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{problem}[theorem]{Problem}
+
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Span}{\operatorname{span}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\coker}{\operatorname{coker}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Obs}{\operatorname{Obs}}
+\newcommand{\Wfib}{\mathfrak W}
+\newcommand{\Rfib}{\mathfrak R}
+\newcommand{\cO}{\mathcal O}
+\newcommand{\cD}{\mathscr D}
+\newcommand{\cQ}{\mathscr Q}
+\newcommand{\cP}{\mathscr P}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Spf}{\operatorname{Spf}}
+\newcommand{\MC}{\operatorname{MC}}
+\newcommand{\gpres}{\mathfrak p}
+\newcommand{\ghoch}{\mathfrak g}
+\newcommand{\Rel}{\mathscr C}
+
+\title[The Inverse Leibniz Problem]{The Inverse Leibniz Problem:\\Reconstruction Fibers, Rigidity, Obstructions, and Deformation DGLAs}
+\author{Akari H.}
+\date{Paper I, illustrated edition v0.09 --- September 2026}
+\hypersetup{pdftitle={The Inverse Leibniz Problem},pdfauthor={Akari H.},
+pdfsubject={Paper I: fixed cubic reconstruction and spectral extension},pdfkeywords={inverse Leibniz, deformation, cubic obstruction, fixed contraction}}
+\setcounter{tocdepth}{1}
+
+\begin{document}
+
+\begin{abstract}
+We reconstruct left and right algebra actions from a fixed bilinear map
+$B:A\times A\to V$ required to satisfy two Leibniz identities.
+The weak reconstruction fiber is affine; strict reconstruction adds the
+quadratic equations for a unital bimodule. Finite examples distinguish
+global uniqueness, infinitesimal rigidity, and nonreduced tangent directions.
+
+For $A=\C[\epsilon]/(\epsilon^4)$ and $V=\C^3$, the completed local ring is
+$\C[[u,v]]/(v^3)$. Every normalized contraction of the presentation DGLA
+has a nonzero quartic operation, whereas a single contraction of the
+constrained Hochschild DGLA retains the cubic obstruction and has
+vanishing degree-one operations at arities $4$ through $23$.
+A second fixed contraction has a nonzero arity-$23$ coefficient.
+
+For the preserved low-rail homotopy data, an autonomous triangular subsystem
+has an all-orders scalar recurrence. We determine its residual modules,
+complete landing operators, and the nested gcd stratifications of forcing,
+spectral support, and a specified polynomial lift.
+Exact cochain and matrix certificates accompany the proofs; two frozen
+out-of-sample checks provide separate finite evidence.
+The spectral results are relative to the fixed contraction, not invariants
+of an unmarked deformation problem.
+\end{abstract}
+
+\maketitle
+\clearpage
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+
+Classical deformation theory typically starts with an algebraic structure and studies its infinitesimal and formal variations.  In the present problem, the direction is partly reversed.  We are given a bilinear map
+\[
+B:A\times A\longrightarrow V
+\]
+and ask whether the left and right $A$-actions on $V$ can be recovered from the requirement that $B$ satisfy Leibniz rules in both variables.
+
+The key typing observation is elementary but decisive: a formula such as
+\[
+B(ab,c)=a\,B(b,c)+B(a,c)\,b
+\]
+is meaningless unless the products between $A$ and $V$ have already been defined.  Thus ``$B$ is a biderivation'' is a property of a triple $(B,L,R)$, not of $B$ alone.  The inverse Leibniz problem asks how much of $(L,R)$ is observable from $B$.
+
+The results are organized into five groups.
+\begin{enumerate}[label=(\roman*)]
+\item Reconstruction and rigidity: the weak affine fiber, the strict scheme, and examples
+distinguishing global ambiguity from infinitesimal rigidity (Sections~3--8).
+\item Formal obstruction theory: presentation and constrained Hochschild DGLAs,
+effective relation spaces, and the cubic germ $\C[[u,v]]/(v^3)$
+(Sections~\ref{sec:dgla}--\ref{sec:cubic-example}).
+\item Homotopy transfer: a complete single-contraction certificate through arity
+$23$, exact feedback matrices, and a contrasting frozen completion
+(Section~\ref{sec:finite-feedback}).
+\item All-orders low-rail dynamics: residual modules with ranks $(1,2,8)$ and the
+annihilators $p_3=E^2q$, $p_4=E^3q$, $p_5=E^4q^2$
+(Section~\ref{sec:spectral-extension}).
+\item Finite spectral selection: landing operators and the nested invariants
+$\gcd(m_A,r_d)$, $\gcd(p_4,r_d)$, and $\gcd(p_5,r_d)$
+(Sections~\ref{sec:landing}--\ref{sec:stratification}).
+\end{enumerate}
+
+The richer fixed-contraction spectrum studied here is compared under normalized homotopy
+tilts in Paper~II~\cite{PaperII}; its surviving spectral floor is generalized, under explicit
+finite marked hypotheses, in Paper~III~\cite{PaperIII}. Those comparisons do not make
+the quintic factor $q$ an unmarked invariant. The present paper supplies the fixed
+calculation on which that distinction is based.
+
+The framework is adjacent to, but directionally different from, universal differential calculi and double-derivation formalisms, where a target bimodule structure is normally fixed in advance.  It also follows the standard deformation-theoretic pattern in which tangent vectors are cocycle-like data and higher-order extension is controlled by obstruction classes \cite{Gerstenhaber1964,Schlessinger1968}.  Section~\ref{sec:literature-position} gives a bounded comparison with the neighboring deformation, module, differential, and representation-space frameworks; it is a scope statement rather than a claim of exhaustive novelty.
+
+
+% BEGIN ILLUSTRATION 1
+The overall reading map is shown in Figure~\ref{fig:paperI-01}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_01_results_roadmap.pdf}}
+\caption{The five result groups of Paper~I. The rows give a reading order, not additional implication claims. The transfer endpoint uses one compatible contraction; the spectral calculation retains the chosen low-rail homotopy.}
+\label{fig:paperI-01}
+\end{figure}
+% END ILLUSTRATION 1
+
+\subsection{Position relative to adjacent frameworks}\label{sec:literature-position}
+The inverse Leibniz problem should be distinguished from several established deformation theories.  The common ground is the use of formal equations, tangent spaces, and higher obstruction classes.  The decisive difference is the direction of reconstruction: here $A$, $V$, and the bilinear observation $B$ are fixed, while the left and right actions are the unknowns.  The reconstruction fiber is therefore a framed action fiber, not the deformation functor of the multiplication on $A$.
+
+\begin{table}[ht]
+\centering
+\small
+\caption{Bounded literature positioning for the fixed-data inverse problem.}
+\label{tab:framework-comparison}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.21\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}>{\raggedright\arraybackslash}p{0.43\textwidth}@{}}
+\toprule
+Framework & Object studied or varied & Relation to the present problem \\
+\midrule
+Algebra deformations \cite{Gerstenhaber1964} & The multiplication of an algebra & The multiplication of $A$ is fixed here; the unknowns are two actions on $V$. \\
+Artin and DGLA deformation theory \cite{Schlessinger1968,Manetti2005} & A formal functor with tangent and obstruction spaces & The same language organizes our local equations, but the functor is a reconstruction fiber with $B$ held fixed. \\
+Algebra morphisms and diagrams \cite{GerstenhaberSchack1983,GerstenhaberSchack1985} & Structure maps and their compatibility diagrams & The representation $A^e\to\End(V)$ varies subject to the fixed-$B$ compatibility equations. \\
+Module deformations \cite{Laudal2002} & Modules or module families over a fixed algebra & We keep $A$ and $B$ fixed and reconstruct the module actions themselves from the observed biderivation. \\
+Universal noncommutative differentials \cite{CuntzQuillen1995} & Universal extensions and differential forms attached to an algebra & Those constructions explain the differential-calculus neighborhood; our exact computations concern a finite-dimensional, fixed-$B$ fiber. \\
+Double brackets and representation spaces \cite{VanDenBergh2008,BerestKhachatryanRamadoss2013} & A double operation or a representation scheme of a fixed algebra & The strict fiber is a fixed-$B$ constrained locus in $\operatorname{Rep}_V(A^e)$; no double-Poisson structure or derived enhancement is constructed here. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Concretely, $\mu(a\otimes b^{\mathrm{op}})=L(a)R(b)$ identifies strict
+action pairs with representations of $A^e$ on the fixed vector space $V$.
+The Leibniz identities cut out the fixed-$B$ locus in that representation
+scheme. Section~\ref{subsec:constrained-hochschild} gives the corresponding
+identification of framed Artin deformations. The reconstruction problem is
+therefore a constrained representation-deformation problem.
+
+Accordingly, the contribution claimed in this version is narrow and verifiable: a fixed cubic inverse-Leibniz example, its exact formal germ, the intrinsic higher-transfer and low-rail certificates, and the resulting finite spectral stratifications.  The standard deformation and homotopy-transfer machinery is used in the sense of
+\cite{GerstenhaberSchack1988,Manetti2005,LodayVallette2012}. The contribution assessed here is
+the fixed reconstruction calculation and its spectral selection, rather than a new general
+deformation formalism.
+
+\subsection*{Status and limitations}
+All finite certificates use exact arithmetic. The two complete intrinsic
+contractions share the saved low-rail assignments but differ at arity $23$;
+neither gives a universal finite stopping bound or an all-orders pure-cubic
+model. The all-orders theorem concerns only the fixed autonomous low rails.
+Unsupported historical detector normalizations are excluded from the proof
+chain; their provenance is recorded once in Appendix~\ref{sec:exact-verification}.
+The scope fixes $A,V,B$ and the displayed homotopy data, without claiming
+literature-wide novelty.
+
+\paragraph{Notation.}
+In the deformation sections, $A$ is the underlying algebra, $E=\End(V)$,
+and $S=A^e$. In the spectral sections, $A=-h\operatorname{ad}_\alpha$
+is an operator, $S$ is the temporal shift or its polynomial variable,
+and $E=S+2$. The cochain $\mathsf e$ and the polynomial $E$ are distinct.
+Paper~II supplies its own explicit cochain dictionary.
+
+\section{Typed reconstruction data}
+
+Throughout, $A$ is a unital associative algebra over $\C$ and $V$ is a complex vector space.  Fix a bilinear map
+\[
+B:A\times A\longrightarrow V.
+\]
+A candidate left-right action pair consists of linear maps
+\[
+L:A\longrightarrow\End(V),
+\qquad
+R:A\longrightarrow\End(V).
+\]
+We use the notation
+\[
+a\triangleright v=L(a)v,
+\qquad
+v\triangleleft a=R(a)v.
+\]
+No multiplicativity is assumed at first.
+
+\begin{definition}[Weak reconstruction fiber]
+The weak reconstruction fiber $\Wfib(B)$ is the set of pairs $(L,R)$ satisfying
+\begin{align}
+B(ab,c)&=L(a)B(b,c)+R(b)B(a,c), \label{eq:weak-left}\\
+B(a,bc)&=R(c)B(a,b)+L(b)B(a,c) \label{eq:weak-right}
+\end{align}
+for all $a,b,c\in A$.
+\end{definition}
+
+\begin{definition}[Strict reconstruction fiber]
+The strict reconstruction fiber $\Rfib(B)$ is the subset of $\Wfib(B)$ consisting of pairs satisfying
+\begin{align}
+L(1)&=R(1)=I_V, \label{eq:unit}\\
+L(ab)&=L(a)L(b), \label{eq:left-rep}\\
+R(ab)&=R(b)R(a), \label{eq:right-rep}\\
+[L(a),R(b)]&=0 \label{eq:commuting-actions}
+\end{align}
+for all $a,b\in A$.
+\end{definition}
+
+Thus a point of $\Rfib(B)$ makes $V$ into a unital $A$-bimodule for which $B$ is a biderivation relative to the convention in \eqref{eq:weak-left}--\eqref{eq:weak-right}.
+
+\subsection{Framed reconstruction and the fixed-$B$ gauge boundary}\label{sec:gauge-boundary}
+The fiber above is framed: $V$ and the actual map $B:A\times A\to V$ are held fixed.  The only basis changes that preserve this same inverse problem are the pointwise stabilizers
+\[
+G_B=\{g\in\operatorname{GL}(V):gB(a,b)=B(a,b)\text{ for all }a,b\in A\}.
+\]
+
+\begin{proposition}[Fixed-$B$ gauge action]\label{prop:fixed-B-gauge}
+The group $G_B$ acts on $\Rfib(B)$ by
+\[
+g\cdot(L,R)=\bigl(gL(\mathord{-})g^{-1},\,gR(\mathord{-})g^{-1}\bigr).
+\]
+Its Lie algebra is
+\[
+\mathfrak g_B=\{Z\in\operatorname{End}(V):ZB(a,b)=0\text{ for all }a,b\in A\}.
+\]
+In particular, if $V=\Span B(A,A)$, then $G_B=\{I_V\}$ and $\mathfrak g_B=0$.
+\end{proposition}
+
+\begin{proof}
+For $g\in G_B$, conjugating each action equation by $g$ preserves the unit, representation, and commuting-action equations.  In the weak equations, use $g^{-1}B(a,b)=B(a,b)$ and then apply $g$ to both sides; the fixedness of $B$ gives the original right-hand side.  Differentiating the pointwise condition $gB(a,b)=B(a,b)$ at the identity gives the displayed Lie algebra.  If $B(A,A)$ spans $V$, an element of $G_B$ fixes a spanning set pointwise and is therefore the identity; the infinitesimal assertion is identical.
+\end{proof}
+
+Thus the four strict points in Section~\ref{sec:finite-example}, and the later spanning examples, are genuinely distinct points of the fixed-$B$ fiber rather than points identified by a nontrivial fixed-$B$ conjugation.  The broader quotient problem begins only when $B(A,A)$ fails to span $V$ or when $A$ and $B$ are allowed to deform.
+
+\section{The Leibniz observability operator}
+
+Suppose $(L,R)$ and $(L',R')$ lie in $\Wfib(B)$, and set
+\[
+X=L'-L,
+\qquad
+Y=R'-R.
+\]
+Subtracting the two weak Leibniz systems gives
+\begin{align}
+X(a)B(b,c)+Y(b)B(a,c)&=0, \label{eq:obs1}\\
+Y(c)B(a,b)+X(b)B(a,c)&=0. \label{eq:obs2}
+\end{align}
+
+\begin{definition}[Leibniz observability operator]
+Define
+\[
+\cO_B:\Hom(A,\End V)^2\longrightarrow \Hom(A^{\otimes3},V)^2
+\]
+by
+\[
+\cO_B(X,Y)(a,b,c)=
+\begin{pmatrix}
+X(a)B(b,c)+Y(b)B(a,c)\\
+Y(c)B(a,b)+X(b)B(a,c)
+\end{pmatrix}.
+\]
+\end{definition}
+
+\begin{proposition}[Affine structure of the weak fiber]\label{prop:weak-affine}
+If $\Wfib(B)$ is nonempty and $(L_0,R_0)\in\Wfib(B)$, then
+\[
+\Wfib(B)=(L_0,R_0)+\ker\cO_B.
+\]
+In particular, weak reconstruction is unique if and only if $\ker\cO_B=0$.
+\end{proposition}
+
+\begin{proof}
+Write $(L,R)=(L_0+X,R_0+Y)$.  Equations \eqref{eq:weak-left}--\eqref{eq:weak-right} are affine-linear in $(L,R)$, and their homogeneous part is exactly \eqref{eq:obs1}--\eqref{eq:obs2}.
+\end{proof}
+
+
+% BEGIN ILLUSTRATION 2
+The corresponding structures are illustrated in Figure~\ref{fig:paperI-02}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_02_reconstruction_fibers.pdf}}
+\caption{Weak and strict reconstruction for fixed $B$. The nonempty weak fiber is affine, while strictness imposes the unital bimodule equations. The fixed-$B$ stabilizer is trivial when $B(A,A)$ spans $V$; strict tangent observability is described by $\ker\cD_p$. Nested regions are schematic, not dimension estimates.}
+\label{fig:paperI-02}
+\end{figure}
+% END ILLUSTRATION 2
+
+\section{Finite-dimensional matrix realization}
+
+Assume $\dim A=m$ and $\dim V=d$.  Choose bases $e_1,\dots,e_m$ of $A$ and $v_1,\dots,v_d$ of $V$.  Write
+\[
+e_i e_j=\sum_{\ell=1}^m C_{ij}^{\ell}e_\ell,
+\qquad
+B(e_i,e_j)=\sum_{\beta=1}^d B_{ij}^{\beta}v_\beta.
+\]
+Let $L_i=L(e_i)$ and $R_i=R(e_i)$.  The weak equations become
+\begin{align}
+\sum_{\beta}(L_i)_{\alpha\beta}B_{jk}^{\beta}
++\sum_{\beta}(R_j)_{\alpha\beta}B_{ik}^{\beta}
+&=\sum_{\ell}C_{ij}^{\ell}B_{\ell k}^{\alpha}, \label{eq:matrix-left}\\
+\sum_{\beta}(R_k)_{\alpha\beta}B_{ij}^{\beta}
++\sum_{\beta}(L_j)_{\alpha\beta}B_{ik}^{\beta}
+&=\sum_{\ell}C_{jk}^{\ell}B_{i\ell}^{\alpha}. \label{eq:matrix-right}
+\end{align}
+After ordering all matrix entries, these equations give
+\[
+M_Bu=r_B,
+\qquad
+M_B\in M_{2m^3d\,\times\,2md^2}(\C).
+\]
+Consequently,
+\[
+\Wfib(B)\neq\varnothing
+\iff
+\rank M_B=\rank[M_B\mid r_B],
+\]
+and, if consistent,
+\[
+\dim\Wfib(B)=2md^2-\rank M_B.
+\]
+
+The strict equations add the quadratic constraints
+\begin{align*}
+L_iL_j&=\sum_{\ell}C_{ij}^{\ell}L_\ell,\\
+R_jR_i&=\sum_{\ell}C_{ij}^{\ell}R_\ell,\\
+L_iR_j&=R_jL_i,
+\end{align*}
+together with the unit equations.  Hence in finite dimension the strict reconstruction space is naturally an affine scheme cut out by a linear system and quadratic bimodule equations.
+
+\section{A finite-dimensional non-identifiability theorem}\label{sec:finite-example}
+
+We now show that the spanning condition $V=\Span B(A,A)$ does not force strict uniqueness.
+
+Let
+\[
+q(x)=(x-1)(x-2)(x-3)(x-4)
+\]
+and
+\[
+A=\C[x]/(q(x)).
+\]
+Let $V=\C^2$, $v_0=(1,1)^T$, and define
+\[
+L_x=\begin{pmatrix}1&0\\0&2\end{pmatrix},
+\qquad
+R_x=\begin{pmatrix}3&0\\0&4\end{pmatrix}.
+\]
+For a polynomial class $p\in A$, set
+\[
+\Delta_{L,R}(p)=\bigl(p(L_x)-p(R_x)\bigr)(L_x-R_x)^{-1}
+\]
+and define
+\[
+B(p,q)=\Delta_{L,R}(p)\Delta_{L,R}(q)v_0.
+\]
+Since all matrices involved are diagonal, the divided-difference identity
+\[
+\Delta_{L,R}(pq)=p(L_x)\Delta_{L,R}(q)+\Delta_{L,R}(p)q(R_x)
+\]
+implies both weak Leibniz identities.
+
+Moreover,
+\[
+B(x,x)=\begin{pmatrix}1\\1\end{pmatrix},
+\qquad
+B(x^2,x)=\begin{pmatrix}4\\6\end{pmatrix},
+\]
+which are linearly independent.  Thus
+\[
+V=\Span B(A,A).
+\]
+
+The scalar divided difference is symmetric in its two evaluation points.  Consequently, independently swapping the two points in either coordinate of $V$ leaves $B$ unchanged.  This produces the four strict reconstructions
+\[
+\begin{array}{c|c}
+L_x&R_x\\ \hline
+\operatorname{diag}(1,2)&\operatorname{diag}(3,4)\\
+\operatorname{diag}(3,2)&\operatorname{diag}(1,4)\\
+\operatorname{diag}(1,4)&\operatorname{diag}(3,2)\\
+\operatorname{diag}(3,4)&\operatorname{diag}(1,2).
+\end{array}
+\]
+
+\begin{theorem}[Global non-identifiability]\label{thm:four-points}
+There exist finite-dimensional $A,V$, and $B:A\times A\to V$ such that
+\[
+V=\Span B(A,A)
+\]
+but $|\Rfib(B)|=4$.  Hence the spanning condition alone does not imply unique reconstruction.
+\end{theorem}
+
+\begin{proof}
+The construction above gives at least four strict reconstructions.  Exact elimination in the basis $1,x,x^2,x^3$ gives a weak system with $32$ unknowns and rank $28$.  Parameterizing the weak solution by the entries of $R(x^3)$, the strict equations have Groebner basis
+\[
+(R(x^3)_{11}-1)(R(x^3)_{11}-27),\quad
+R(x^3)_{12},\quad R(x^3)_{21},\quad
+(R(x^3)_{22}-8)(R(x^3)_{22}-64).
+\]
+Thus there are exactly four strict points, corresponding to the table above.
+\end{proof}
+
+\section{Strict tangent observability and rigidity}
+
+Fix $p=(L,R)\in\Rfib(B)$.  Define
+\begin{align*}
+d_LX(a,b)&=X(a)L(b)+L(a)X(b)-X(ab),\\
+d_RY(a,b)&=Y(b)R(a)+R(b)Y(a)-Y(ab),\\
+\chi_{L,R}(X,Y)(a,b)&=[X(a),R(b)]+[L(a),Y(b)].
+\end{align*}
+
+\begin{definition}[Strict tangent observability operator]
+Define
+\[
+\cD_p(X,Y)=
+\begin{pmatrix}
+\cO_B(X,Y)\\
+X(1)\\
+Y(1)\\
+d_LX\\
+d_RY\\
+\chi_{L,R}(X,Y)
+\end{pmatrix}.
+\]
+\end{definition}
+
+\begin{theorem}[Strict tangent-space formula]\label{thm:tangent-formula}
+The Zariski tangent space of the strict reconstruction scheme at $p$ is
+\[
+T_p\mathbf R_B=\ker\cD_p.
+\]
+\end{theorem}
+
+\begin{proof}
+Substitute $L_\varepsilon=L+\varepsilon X$ and $R_\varepsilon=R+\varepsilon Y$ into the weak Leibniz and bimodule equations over $\C[\varepsilon]/(\varepsilon^2)$.  The coefficient of $\varepsilon$ is exactly $\cD_p(X,Y)$.
+\end{proof}
+
+\begin{definition}[Three notions of rigidity]
+A strict reconstruction $p$ is:
+\begin{enumerate}[label=(\roman*)]
+\item \emph{infinitesimally rigid} if $T_p\mathbf R_B=0$;
+\item \emph{locally rigid} if $p$ is isolated in the reduced reconstruction variety;
+\item \emph{globally unique} if $\Rfib(B)=\{p\}$.
+\end{enumerate}
+\end{definition}
+
+\begin{proposition}[Infinitesimal rigidity implies local rigidity]\label{prop:inf-local}
+In the finite-dimensional setting, if $T_p\mathbf R_B=0$, then $p$ is a reduced isolated point.
+\end{proposition}
+
+\begin{proof}
+The local coordinate ring is Noetherian.  Vanishing tangent space gives $\mathfrak m_p/\mathfrak m_p^2=0$.  Nakayama's lemma yields $\mathfrak m_p=0$, so the local ring is $\C$.
+\end{proof}
+
+For the four points in Theorem~\ref{thm:four-points}, exact Jacobian computation gives full rank $32$ at every point.  Therefore each point is infinitesimally and locally rigid, while the reconstruction is not globally unique.  This separates local rigidity from global identifiability.
+
+
+% BEGIN ILLUSTRATION 3
+The corresponding structures are illustrated in Figure~\ref{fig:paperI-03}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_03_four_rigid_points.pdf}}
+\caption{The four strict reconstructions of Theorem~\ref{thm:four-points}. Independent swaps of evaluation points preserve $B$. Each point is reduced and infinitesimally rigid, but the fixed-$B$ fiber is not globally unique. The arrows are swaps of the displayed constructions, not gauge identifications.}
+\label{fig:paperI-03}
+\end{figure}
+% END ILLUSTRATION 3
+
+\section{Second-order obstruction theory}
+
+Let $p=(L,R)\in\Rfib(B)$ and let
+\[
+\xi=(X,Y)\in T_p\mathbf R_B.
+\]
+We ask whether $\xi$ extends to a strict reconstruction over $\C[t]/(t^3)$:
+\[
+L_t=L+tX+t^2X_2,
+\qquad
+R_t=R+tY+t^2Y_2.
+\]
+The weak Leibniz equations are linear in $(L,R)$, so their second-order source term is zero.  The quadratic bimodule equations produce
+\begin{align}
+d_LX_2(a,b)&=-X(a)X(b), \label{eq:second-left}\\
+d_RY_2(a,b)&=-Y(b)Y(a), \label{eq:second-right}\\
+\chi_{L,R}(X_2,Y_2)(a,b)&=-[X(a),Y(b)]. \label{eq:second-comm}
+\end{align}
+Together with $\cO_B(X_2,Y_2)=0$ and $X_2(1)=Y_2(1)=0$, these equations can be written as
+\[
+\cD_p(X_2,Y_2)=-\cQ_p(X,Y),
+\]
+where
+\[
+\cQ_p(X,Y)=
+\begin{pmatrix}
+0\\0\\0\\
+((a,b)\mapsto X(a)X(b))\\
+((a,b)\mapsto Y(b)Y(a))\\
+((a,b)\mapsto [X(a),Y(b)])
+\end{pmatrix}.
+\]
+
+\begin{definition}[Second-order obstruction space and map]
+Set
+\[
+\Obs_p(B)=\coker\cD_p
+\]
+and define
+\[
+\operatorname{ob}_{2,p}:T_p\mathbf R_B\longrightarrow\Obs_p(B),
+\qquad
+\operatorname{ob}_{2,p}(X,Y)=[\cQ_p(X,Y)].
+\]
+\end{definition}
+
+\begin{theorem}[Primary obstruction criterion]\label{thm:obstruction}
+A strict tangent vector $\xi\in T_p\mathbf R_B$ extends to order two if and only if
+\[
+\operatorname{ob}_{2,p}(\xi)=0.
+\]
+\end{theorem}
+
+\begin{proof}
+An order-two extension exists precisely when the affine equation
+\[
+\cD_p(X_2,Y_2)=-\cQ_p(\xi)
+\]
+has a solution.  This is equivalent to $\cQ_p(\xi)$ lying in $\operatorname{im}\cD_p$.
+\end{proof}
+
+The map $\operatorname{ob}_{2,p}$ is homogeneous quadratic rather than linear.  Its polarization is a symmetric bilinear expression whose three nonzero components are
+\begin{align*}
+X(a)X'(b)+X'(a)X(b),\\
+Y(b)Y'(a)+Y'(b)Y(a),\\
+[X(a),Y'(b)]+[X'(a),Y(b)].
+\end{align*}
+Section~\ref{sec:dgla} shows that this polarization is already the degree-one bracket of a two-step nilpotent differential graded Lie algebra; no higher $L_\infty$ operations are required for the present framed problem.
+
+\section{A nonreduced false tangent}\label{sec:false-tangent}
+
+Let
+\[
+A=\C[\epsilon]/(\epsilon^2),
+\qquad
+V=\C,
+\]
+and define $B:A\times A\to\C$ by
+\[
+B(\epsilon,\epsilon)=1
+\]
+and $B=0$ on the other basis pairs.  Then $V=\Span B(A,A)$.
+
+A unital one-dimensional action pair is determined by
+\[
+L(\epsilon)=\ell,
+\qquad
+R(\epsilon)=r.
+\]
+The weak Leibniz equations give
+\[
+\ell+r=0,
+\]
+while the representation equations give
+\[
+\ell^2=0,
+\qquad
+r^2=0.
+\]
+Hence
+\[
+\mathbf R_B
+=\Spec\frac{\C[\ell,r]}{(\ell+r,\ell^2,r^2)}
+\cong
+\Spec\frac{\C[\ell]}{(\ell^2)}.
+\]
+The scheme has one geometric point $p=(0,0)$ but a one-dimensional tangent space
+\[
+T_p\mathbf R_B=\C(1,-1).
+\]
+
+\begin{theorem}[A first-order direction obstructed at second order]\label{thm:false-tangent}
+Every nonzero vector in $T_p\mathbf R_B$ is obstructed at second order.
+\end{theorem}
+
+\begin{proof}
+For a tangent vector $(x,-x)$, attempt
+\[
+\ell_t=tx+t^2u,
+\qquad
+r_t=-tx+t^2v.
+\]
+The weak equation requires $u+v=0$.  However,
+\[
+\ell_t^2=t^2x^2\pmod{t^3},
+\qquad
+r_t^2=t^2x^2\pmod{t^3}.
+\]
+Over $\C$, these vanish only when $x=0$.
+\end{proof}
+
+Thus a nonzero Zariski tangent vector need not arise from any genuine local family.  It may record only the nilpotent thickness of a nonreduced reconstruction scheme.
+
+
+% BEGIN ILLUSTRATION 4
+The corresponding structures are illustrated in Figure~\ref{fig:paperI-04}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_04_dual_number_tangent.pdf}}
+\caption{The dual-number false tangent of Theorem~\ref{thm:false-tangent}. The halo denotes nilpotent structure at one geometric point; the dashed line denotes the Zariski tangent direction, not a family of geometric points. Every nonzero first-order direction is obstructed at second order.}
+\label{fig:paperI-04}
+\end{figure}
+% END ILLUSTRATION 4
+
+\section{Higher-order recursion}
+
+Suppose
+\[
+L_t=L+\sum_{n\ge1}t^nX_n,
+\qquad
+R_t=R+\sum_{n\ge1}t^nY_n.
+\]
+At order $n\ge2$, the extension equation has the form
+\[
+\cD_p(X_n,Y_n)=-\cQ_n,
+\]
+where the nonzero source terms are
+\begin{align*}
+\cQ_n^L(a,b)&=\sum_{i=1}^{n-1}X_i(a)X_{n-i}(b),\\
+\cQ_n^R(a,b)&=\sum_{i=1}^{n-1}Y_i(b)Y_{n-i}(a),\\
+\cQ_n^C(a,b)&=\sum_{i=1}^{n-1}[X_i(a),Y_{n-i}(b)].
+\end{align*}
+The class $[\cQ_n]\in\coker\cD_p$ is the order-$n$ obstruction relative to the previously chosen lifts.  Section~\ref{sec:dgla} packages the entire recursion into a Maurer--Cartan equation; the Artin-ring viewpoint remains the natural language for functorial lifting problems in the sense of \cite{Schlessinger1968}.
+
+
+\section{Deformation DGLAs}\label{sec:dgla}
+
+The preceding tangent and obstruction formulas are not merely analogous to deformation theory.  They arise from explicit differential graded Lie algebras.  We first record a finite presentation model that reproduces the complete polynomial system, and then a more intrinsic Hochschild model for framed deformations.
+
+\subsection{A two-step presentation DGLA}
+
+Fix $p=(L,R)\in\Rfib(B)$ and write $E=\End(V)$.  Let
+\[
+\gpres_{B,p}^{1}=\Hom(A,E)^2
+\]
+and let the relation space be
+\[
+\Rel_B=
+\Hom(A^{\otimes3},V)^2
+\oplus E^2
+\oplus\Hom(A^{\otimes2},E)^3.
+\]
+Set
+\[
+\gpres_{B,p}^{2}=\Rel_B,
+\qquad
+\gpres_{B,p}^{n}=0\quad(n\neq1,2).
+\]
+The differential is
+\[
+d_p\big|_{\gpres^1}=\cD_p,
+\qquad
+d_p\big|_{\gpres^2}=0.
+\]
+
+For $\xi=(X,Y)$ and $\eta=(X',Y')$ in degree one, define $[\xi,\eta]_p\in\gpres^2$ to have zero Leibniz and unit components and the following three relation components:
+\begin{align}
+[\xi,\eta]^L_p(a,b)
+&=X(a)X'(b)+X'(a)X(b),\\
+[\xi,\eta]^R_p(a,b)
+&=Y(b)Y'(a)+Y'(b)Y(a),\\
+[\xi,\eta]^C_p(a,b)
+&=[X(a),Y'(b)]+[X'(a),Y(b)].
+\end{align}
+Every bracket involving a degree-two element is defined to be zero.
+
+\begin{proposition}[Presentation DGLA]\label{prop:presentation-dgla}
+The graded vector space
+\[
+\gpres_{B,p}=\gpres_{B,p}^{1}\oplus\gpres_{B,p}^{2}
+\]
+with differential $d_p$ and bracket $[-,-]_p$ is a two-step nilpotent differential graded Lie algebra.
+\end{proposition}
+
+\begin{proof}
+Since $d_p$ vanishes on degree two, $d_p^2=0$.  The bracket of two degree-one elements is symmetric, as required by graded skew-symmetry in odd degree.  Every nested bracket vanishes because degree two is central, so the graded Jacobi identity holds.  The derivation identity for $d_p$ is also immediate: both sides vanish after a bracket lands in degree two.
+\end{proof}
+
+\begin{theorem}[Exact Maurer--Cartan description]\label{thm:presentation-mc}
+For $\xi=(X,Y)\in\gpres_{B,p}^{1}$,
+\[
+(L+X,R+Y)\in\Rfib(B)
+\]
+if and only if
+\[
+d_p\xi+\frac12[\xi,\xi]_p=0.
+\]
+Consequently,
+\[
+H^1(\gpres_{B,p})=T_p\mathbf R_B,
+\qquad
+H^2(\gpres_{B,p})=\coker\cD_p=\Obs_p(B),
+\]
+and
+\[
+\operatorname{ob}_{2,p}(\xi)
+=
+\left[\frac12[\xi,\xi]_p\right].
+\]
+\end{theorem}
+
+\begin{proof}
+The weak Leibniz and unit equations are affine-linear and contribute only $d_p\xi$.  Expanding the left representation, right antirepresentation, and commuting-action equations at $(L,R)$ gives respectively
+\[
+(a,b)\longmapsto d_LX(a,b)+X(a)X(b),
+\]
+\[
+(a,b)\longmapsto d_RY(a,b)+Y(b)Y(a),
+\]
+and
+\[
+(a,b)\longmapsto\chi_{L,R}(X,Y)(a,b)+[X(a),Y(b)],
+\]
+which are exactly the corresponding components of $d_p\xi+\tfrac12[\xi,\xi]_p$.  The cohomology identities follow because $\gpres^0=\gpres^3=0$.
+\end{proof}
+
+\begin{remark}[Presentation dependence]
+The space $H^2(\gpres_{B,p})$ is a correct recipient for obstruction classes, but it need not be minimal.  The chosen list of defining equations can contain linear dependencies and higher syzygies, which enlarge the cokernel without producing additional geometric obstructions.  This motivates the intrinsic model below.
+\end{remark}
+
+\subsection{A constrained Hochschild DGLA}\label{subsec:constrained-hochschild}
+
+Let
+\[
+S=A^e=A\otimes A^{\mathrm{op}}.
+\]
+The bimodule structure $(L,R)$ is equivalent to the algebra homomorphism
+\[
+\mu:S\longrightarrow E,
+\qquad
+\mu(a\otimes b^{\mathrm{op}})=L(a)R(b).
+\]
+Regard $E$ as an $S$-bimodule through $\mu$, and let
+\[
+C^n(S,E_\mu)=\Hom(\overline{S}^{\otimes n},E),
+\qquad
+\overline S=S/\C1,
+\]
+be the normalized Hochschild cochains.  Their differential is
+\begin{align*}
+(d_\mu f)(s_1,\ldots,s_{n+1})
+={}&\mu(s_1)f(s_2,\ldots,s_{n+1})\\
+&+\sum_{i=1}^{n}(-1)^if(s_1,\ldots,s_is_{i+1},\ldots,s_{n+1})\\
+&+(-1)^{n+1}f(s_1,\ldots,s_n)\mu(s_{n+1}).
+\end{align*}
+The cup product is
+\[
+(f\smile g)(s_1,\ldots,s_{m+n})
+=f(s_1,\ldots,s_m)g(s_{m+1},\ldots,s_{m+n}),
+\]
+and its graded commutator makes the Hochschild differential graded algebra into a DGLA.
+
+For $f\in C^1(S,E_\mu)$, put
+\[
+X_f(a)=f(a\otimes1),
+\qquad
+Y_f(b)=f(1\otimes b^{\mathrm{op}}),
+\]
+and define the linear $B$-compatibility operator
+\[
+\lambda_B:C^1(S,E_\mu)\longrightarrow\Hom(A^{\otimes3},V)^2
+\]
+by
+\begin{align*}
+\lambda_B(f)_1(a,b,c)
+&=X_f(a)B(b,c)+Y_f(b)B(a,c),\\
+\lambda_B(f)_2(a,b,c)
+&=Y_f(c)B(a,b)+X_f(b)B(a,c).
+\end{align*}
+Define
+\[
+\ghoch_{B,p}^{1}=\ker\lambda_B,
+\qquad
+\ghoch_{B,p}^{n}=C^n(S,E_\mu)\quad(n\ge2),
+\qquad
+\ghoch_{B,p}^{n}=0\quad(n\le0).
+\]
+
+\begin{proposition}[Constrained Hochschild DGLA]\label{prop:hoch-dgla}
+The graded subspace $\ghoch_{B,p}$ is a DGLA.  For every local Artin $\C$-algebra $(R_{\mathrm{Art}},\mathfrak m)$, its Maurer--Cartan elements in $\ghoch_{B,p}\otimes\mathfrak m$ are in bijection with framed strict reconstruction deformations of $(L,R)$ over $R_{\mathrm{Art}}$ that keep $A$, $V$, and $B$ fixed.
+\end{proposition}
+
+\begin{proof}
+The only additional condition occurs in degree one.  Its differential and the bracket of two degree-one elements land in the unrestricted degree-two space, so $\ghoch_{B,p}$ is closed under both operations.  For $\alpha\in C^1(S,E_\mu)\otimes\mathfrak m$, the map $\mu+\alpha$ is an algebra homomorphism precisely when
+\[
+d_\mu\alpha+\alpha\smile\alpha
+=d_\mu\alpha+\frac12[\alpha,\alpha]=0.
+\]
+Because the Leibniz equations are linear in the actions, preservation of $B$ is exactly the condition $\lambda_B(\alpha)=0$.
+\end{proof}
+
+\begin{theorem}[Intrinsic tangent and primary obstruction]\label{thm:intrinsic-obstruction}
+There is a natural isomorphism
+\[
+H^1(\ghoch_{B,p})\cong T_p\mathbf R_B.
+\]
+If $\xi=(X,Y)$ corresponds to the cocycle $f_\xi$, then its intrinsic primary obstruction is
+\[
+\operatorname{Ob}^{\mathrm{Hoch}}_{2,p}(\xi)
+=[f_\xi\smile f_\xi]
+\in H^2(\ghoch_{B,p}),
+\]
+and $\xi$ extends to second order if and only if this class vanishes.
+\end{theorem}
+
+\begin{proof}
+If $d_\mu f=0$, then
+\[
+f(a\otimes b^{\mathrm{op}})
+=X_f(a)R(b)+L(a)Y_f(b),
+\]
+so a normalized Hochschild cocycle is determined by its two restrictions.  The cocycle equation on the two factor subalgebras and on mixed products yields precisely the linearized left representation, right antirepresentation, and commuting-action equations; $\lambda_B(f)=0$ gives the two linearized Leibniz equations.  Conversely, a strict tangent pair defines a cocycle by the displayed formula.  Since degree zero has been removed in the framed problem, cocycles are not quotiented by infinitesimal conjugations.
+
+For a first-order cocycle $f_\xi$, the coefficient of $t^2$ in the Maurer--Cartan equation is
+\[
+d_\mu f_2=-f_\xi\smile f_\xi.
+\]
+The required correction must lie in $\ghoch^1_{B,p}$, so solvability is equivalent to vanishing of the stated class in $H^2(\ghoch_{B,p})$.
+\end{proof}
+
+\subsection{A relation-level DGLA morphism}
+
+For $f\in\ghoch_{B,p}^{1}$, define
+\[
+\Theta(f)=(X_f,Y_f)\in\gpres_{B,p}^{1}.
+\]
+For a Hochschild two-cochain $\phi$, define
+\[
+\Pi(\phi)=
+\begin{pmatrix}
+(a,b)\mapsto\phi(a\otimes1,b\otimes1)\\
+(a,b)\mapsto\phi(1\otimes b^{\mathrm{op}},1\otimes a^{\mathrm{op}})\\
+(a,b)\mapsto\phi(a\otimes1,1\otimes b^{\mathrm{op}})-\phi(1\otimes b^{\mathrm{op}},a\otimes1)
+\end{pmatrix}.
+\]
+Let
+\[
+\iota_{\mathrm{rel}}:
+\Hom(A^{\otimes2},E)^3\longrightarrow\Rel_B
+\]
+insert zero weak-Leibniz and unit components.  Define graded maps
+\[
+\Psi^1=\Theta,
+\qquad
+\Psi^2=\iota_{\mathrm{rel}}\circ\Pi,
+\qquad
+\Psi^n=0\quad(n\ge3).
+\]
+
+\begin{proposition}[Relation DGLA morphism]\label{prop:relation-dgla-morphism}
+The maps $\Psi^n$ define a morphism of DGLAs
+\[
+\Psi:\ghoch_{B,p}\longrightarrow\gpres_{B,p}.
+\]
+\end{proposition}
+
+\begin{proof}
+For $f\in\ghoch^1_{B,p}$, normalizedness gives $X_f(1)=Y_f(1)=0$, while $\lambda_B(f)=0$ gives the two linearized weak-Leibniz components.  On the two factor subalgebras and on mixed products, direct expansion gives
+\begin{align*}
+\Pi(d_\mu f)_L(a,b)&=d_LX_f(a,b),\\
+\Pi(d_\mu f)_R(a,b)&=d_RY_f(a,b),\\
+\Pi(d_\mu f)_C(a,b)&=\chi_{L,R}(X_f,Y_f)(a,b).
+\end{align*}
+Hence
+\[
+\Psi^2(d_\mu f)=d_p\Psi^1(f).
+\]
+The target differential vanishes on degree two and $\Psi$ vanishes in degrees at least three, so this proves compatibility with the differential in all degrees.
+
+For $f,g\in\ghoch^1_{B,p}$, the degree-one Hochschild bracket is
+\[
+[f,g]=f\smile g+g\smile f.
+\]
+Applying $\Pi$ gives
+\begin{align*}
+\Pi([f,g])_L(a,b)
+&=X_f(a)X_g(b)+X_g(a)X_f(b),\\
+\Pi([f,g])_R(a,b)
+&=Y_f(b)Y_g(a)+Y_g(b)Y_f(a),\\
+\Pi([f,g])_C(a,b)
+&=[X_f(a),Y_g(b)]+[X_g(a),Y_f(b)],
+\end{align*}
+which is precisely $[\Theta(f),\Theta(g)]_p$.  Every bracket involving degree two maps to zero on both sides.  Thus $\Psi$ is a DGLA morphism.
+\end{proof}
+
+\begin{corollary}[Cohomological obstruction projection]\label{cor:cohomological-projection}
+The DGLA morphism $\Psi$ induces natural maps
+\[
+H^1(\Psi):H^1(\ghoch_{B,p})\longrightarrow H^1(\gpres_{B,p}),
+\qquad
+\overline\Pi:=H^2(\Psi):H^2(\ghoch_{B,p})\longrightarrow\coker\cD_p.
+\]
+Under the tangent-space identifications, $H^1(\Psi)$ is the identity on $T_p\mathbf R_B$.  Moreover, for every $\xi\in T_p\mathbf R_B$,
+\[
+\boxed{
+\overline\Pi\bigl(\operatorname{Ob}^{\mathrm{Hoch}}_{2,p}(\xi)\bigr)
+=
+\operatorname{ob}_{2,p}(\xi).
+}
+\]
+Equivalently, the diagram
+\[
+\begin{CD}
+T_p\mathbf R_B @>{\operatorname{Ob}^{\mathrm{Hoch}}_{2,p}}>> H^2(\ghoch_{B,p})\\
+@V{\mathrm{id}}VV @VV{\overline\Pi}V\\
+T_p\mathbf R_B @>{\operatorname{ob}_{2,p}}>> \coker\cD_p
+\end{CD}
+\]
+commutes.
+\end{corollary}
+
+\begin{proof}
+The first assertion follows from Theorems~\ref{thm:presentation-mc} and \ref{thm:intrinsic-obstruction} together with the degree-one definition of $\Psi$.  If $f_\xi$ represents $\xi=(X,Y)$, then
+\[
+\Pi(f_\xi\smile f_\xi)
+=
+\begin{pmatrix}
+(a,b)\mapsto X(a)X(b)\\
+(a,b)\mapsto Y(b)Y(a)\\
+(a,b)\mapsto [X(a),Y(b)]
+\end{pmatrix},
+\]
+which is exactly the nonzero relation part of $\cQ_p(\xi)$.  Passing to cohomology gives the claimed identity.
+\end{proof}
+
+
+% BEGIN ILLUSTRATION 7
+The corresponding structures are illustrated in Figure~\ref{fig:paperI-07}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_07_dgla_comparison.pdf}}
+\caption{The relation DGLA morphism and its induced commuting obstruction square (Proposition~\ref{prop:relation-dgla-morphism} and Corollary~\ref{cor:cohomological-projection}). The map on tangent spaces is the identity; the degree-two map projects intrinsic obstruction classes to presentation relations. No quasi-isomorphism is asserted.}
+\label{fig:paperI-07}
+\end{figure}
+% END ILLUSTRATION 7
+
+\subsection{Exact cohomology and the minimal Kuranishi sector for the dual-number example}
+
+For the example of Section~\ref{sec:false-tangent}, write
+\[
+x=\epsilon\otimes1,
+\qquad
+y=1\otimes\epsilon^{\mathrm{op}},
+\qquad
+w=xy.
+\]
+Then $\overline S$ has basis $x,y,w$, with the only nonzero products in $\overline S$ given by
+\[
+xy=yx=w.
+\]
+Let $\delta_{uv}$ denote the normalized two-cochain that takes value $1$ on $(u,v)$ and vanishes on the other basis pairs.
+
+The $B$-compatibility condition on a normalized one-cochain is
+\[
+f(x)+f(y)=0.
+\]
+Thus $\ghoch^1_{B,p}$ has basis
+\[
+\tau=(-1,1,0),
+\qquad
+\nu=(0,0,1),
+\]
+where the triples record the values on $(x,y,w)$.  The Hochschild differential satisfies
+\[
+d_\mu\tau=0,
+\qquad
+d_\mu\nu=\beta:=-(\delta_{xy}+\delta_{yx}).
+\]
+Consequently,
+\[
+H^1(\ghoch_{B,p})=\C[\tau].
+\]
+
+Exact calculation gives
+\[
+Z^2(\ghoch_{B,p})
+=
+\Span\{\eta,\eta_1,\eta_2,\beta\},
+\]
+where
+\begin{align*}
+\eta&=\tau\smile\tau
+=\delta_{xx}-\delta_{xy}-\delta_{yx}+\delta_{yy},\\
+\eta_1&=\delta_{xx}-\delta_{yy},\\
+\eta_2&=\delta_{xy}-\delta_{yx}.
+\end{align*}
+Since $B^2=\C\beta$, one obtains
+\[
+H^2(\ghoch_{B,p})
+=
+\C[\eta]\oplus\C[\eta_1]\oplus\C[\eta_2].
+\]
+In particular,
+\[
+\dim\ghoch^1_{B,p}=2,
+\qquad
+\dim Z^1=1,
+\qquad
+\dim Z^2=4,
+\qquad
+\dim H^2=3.
+\]
+
+\begin{proposition}[The intrinsic relation map is injective in degree two]\label{prop:dual-h2-injective}
+For the dual-number example, the map
+\[
+\overline\Pi:H^2(\ghoch_{B,p})\longrightarrow\coker\cD_p
+\]
+is injective.
+\end{proposition}
+
+\begin{proof}
+Restrict to the three left, right, and mixed relation coordinates evaluated at $(\epsilon,\epsilon)$.  The three cohomology generators have images
+\[
+\overline\Pi[\eta]=(1,1,0),
+\qquad
+\overline\Pi[\eta_1]=(1,-1,0),
+\qquad
+\overline\Pi[\eta_2]=(0,0,2).
+\]
+At the origin $L(\epsilon)=R(\epsilon)=0$, and $\epsilon^2=0$, so the linearized left and right representation equations vanish identically in these two $(\epsilon,\epsilon)$ coordinates.  The mixed coordinate also vanishes on $\operatorname{im}\cD_p$ because $E=\End(\C)=\C$ is commutative.  The three displayed vectors therefore remain linearly independent in the cokernel.
+\end{proof}
+
+\subsection{Contraction and transfer conventions}\label{subsec:transfer-convention}
+A contraction of a cochain complex onto its cohomology means chain maps
+$i,\pi$ and a degree $-1$ map $h$ with
+\[
+\pi i=I,\qquad dh+hd=I-i\pi,\qquad h^2=hi=\pi h=0.
+\]
+All strict-transfer statements use these standard normalized linear
+splittings. For a degree-one cohomology parameter $x$, write
+\[
+F_1=ix,\qquad
+R_n=\frac12\sum_{\substack{a+b=n\\a,b\ge1}}[F_a,F_b],
+\qquad F_n=-hR_n,\qquad \kappa_n=\pi R_n\quad(n\ge2).
+\]
+This is the degree-one rooted-tree transfer recursion
+\cite[Chapter~10]{LodayVallette2012}; the usual Taylor coefficients differ
+by factorial normalization. In particular, $\pi$ acts on all degree-two
+cochains, not only on cocycles. A formal change of Kuranishi coordinates
+or relation generators is not itself a change of these linear splitting data.
+
+\begin{theorem}[Minimal Kuranishi equation for the false tangent]\label{thm:dual-minimal-kuranishi}
+There is a homotopy transfer of $\ghoch_{B,p}$ to its cohomology for which the operations on the $H^1$-generated Maurer--Cartan sector satisfy
+\[
+\ell_2([\tau],[\tau])=2[\eta],
+\qquad
+\ell_n([\tau],\ldots,[\tau])=0
+\quad(n\ge3).
+\]
+Hence the minimal Kuranishi map is
+\[
+\kappa(t[\tau])=t^2[\eta].
+\]
+For every local Artin algebra $(R_{\mathrm{Art}},\mathfrak m)$, the framed deformation functor of the dual-number reconstruction point is therefore
+\[
+\MC(R_{\mathrm{Art}})
+\cong
+\{t\in\mathfrak m\mid t^2=0\},
+\]
+and its prorepresenting hull is
+\[
+\boxed{
+\C[[t]]/(t^2).
+}
+\]
+This agrees with the completed local ring of
+\[
+\mathbf R_B\cong\Spec\C[\ell]/(\ell^2)
+\]
+at its unique geometric point.
+\end{theorem}
+
+\begin{proof}
+We use the rooted-tree form of homotopy transfer
+\cite[Chapter~10]{LodayVallette2012}. Choose representatives of $H^2$ to be
+$\eta,\eta_1,\eta_2$, and choose a degree $-1$ homotopy with
+\[
+h(\beta)=\nu,
+\qquad
+h(\eta)=h(\eta_1)=h(\eta_2)=0.
+\]
+Since all spaces are vector spaces over $\C$, this low-degree splitting extends degreewise to a contraction of the full cochain complex onto its cohomology.  The transferred binary bracket is the projection of the original DGLA bracket, so
+\[
+\ell_2([\tau],[\tau])
+=\pi[\tau,\tau]
+=2[\tau\smile\tau]
+=2[\eta].
+\]
+Moreover,
+\[
+h[\tau,\tau]=2h(\eta)=0.
+\]
+Every rooted binary tree contributing to $\ell_n([\tau],\ldots,[\tau])$ for $n\ge3$ contains a lowest internal edge carrying the factor $h[\tau,\tau]$; hence every such tree vanishes.  The minimal Maurer--Cartan equation is therefore
+\[
+\frac12\ell_2(t[\tau],t[\tau])=t^2[\eta]=0.
+\]
+Since $[\eta]\neq0$, this is equivalent to $t^2=0$.  The final identification follows from the explicit strict reconstruction equation of Section~\ref{sec:false-tangent}.
+\end{proof}
+
+\begin{remark}[Cohomological receptacle versus effective obstruction image]
+The equality $\dim H^2=3$ does not mean that the one-dimensional local germ requires three equations.  Proposition~\ref{prop:dual-h2-injective} shows that all three classes are genuine independent relation-level classes, not projection artifacts.  Nevertheless, the Kuranishi map from the one-dimensional tangent space has image
+\[
+\operatorname{im}\kappa=\C[\eta].
+\]
+Thus one must distinguish the full obstruction receptacle $H^2$ from the effective obstruction directions actually reached by the Maurer--Cartan equation near a specified point.
+\end{remark}
+
+\begin{remark}[When higher $L_\infty$ operations become necessary]
+For the dual-number point, Theorem~\ref{thm:dual-minimal-kuranishi} shows that all higher operations vanish on the $H^1$-generated Maurer--Cartan sector.  In larger reconstruction problems, nonzero higher brackets may appear after homotopy transfer, taking a homotopy fiber or gauge quotient, or allowing the multiplication of $A$ and the map $B$ to deform simultaneously.
+\end{remark}
+
+
+\section{Effective obstruction spaces and minimal equations}\label{sec:effective-obstruction}
+
+The preceding examples show that $H^2$ is generally too large to count the equations of the local reconstruction germ.  This section isolates the intrinsic finite-dimensional quotient that does count them.
+
+Assume that $T=H^1(\ghoch_{B,p})$ and $O=H^2(\ghoch_{B,p})$ are finite-dimensional, and choose a transferred minimal $L_\infty$ structure on cohomology.  Its Maurer--Cartan equation on degree one is the formal Kuranishi map
+\[
+\kappa(\xi)
+=
+\sum_{n\ge2}\frac1{n!}\ell_n(\xi,\ldots,\xi)
+\in O\widehat\otimes \widehat{\operatorname{Sym}}(T^\vee).
+\]
+Put
+\[
+P_T=\widehat{\operatorname{Sym}}(T^\vee),
+\qquad
+\mathfrak n=P_T^{\ge1},
+\]
+and let
+\[
+\kappa^\sharp:O^\vee\longrightarrow\mathfrak n^2,
+\qquad
+\lambda\longmapsto \lambda\circ\kappa.
+\]
+The \emph{Kuranishi ideal} is
+\[
+I_\kappa=P_T\,\kappa^\sharp(O^\vee).
+\]
+The framed formal reconstruction germ is represented by
+\[
+R_p=P_T/I_\kappa.
+\]
+Because the transferred structure is minimal, $I_\kappa\subseteq\mathfrak n^2$, so this is a minimal formal embedding: the cotangent space of $R_p$ is $T^\vee$.
+
+\begin{definition}[Effective relation and obstruction spaces]\label{def:effective-obstruction}
+The effective relation space and effective obstruction space at $p$ are
+\[
+\mathscr R^{\mathrm{eff}}_p
+:=
+I_\kappa/\mathfrak n I_\kappa,
+\qquad
+\Obs^{\mathrm{eff}}_p
+:=
+\bigl(\mathscr R^{\mathrm{eff}}_p\bigr)^\vee.
+\]
+\end{definition}
+
+\begin{proposition}[Minimal-equation theorem]\label{prop:minimal-equations}
+The number
+\[
+\dim_\C\Obs^{\mathrm{eff}}_p
+=
+\dim_\C I_\kappa/\mathfrak n I_\kappa
+\]
+is the minimum number of formal equations required to generate the defining ideal of the framed reconstruction germ inside a smooth formal space of minimal embedding dimension $\dim T$.
+\end{proposition}
+
+\begin{proof}
+A family $f_1,\ldots,f_r\in I_\kappa$ generates $I_\kappa$ if and only if its residue classes span $I_\kappa/\mathfrak n I_\kappa$.  This is the complete-local form of Nakayama's lemma.  Thus every basis of $I_\kappa/\mathfrak n I_\kappa$ lifts to a minimal generating family, and no smaller family can generate the ideal.
+\end{proof}
+
+\begin{theorem}[Independence of the minimal Kuranishi presentation]\label{thm:effective-intrinsic}
+Let $R$ be a complete Noetherian local $\C$-algebra with residue field $\C$.  Suppose
+\[
+P=\C[[x_1,\ldots,x_e]]\twoheadrightarrow R,
+\qquad
+P'=\C[[y_1,\ldots,y_e]]\twoheadrightarrow R
+\]
+are two minimal presentations, with kernels $I\subseteq\mathfrak n^2$ and $I'\subseteq(\mathfrak n')^2$.  Then a formal change of coordinates identifies the presentations and induces an isomorphism
+\[
+I/\mathfrak n I
+\cong
+I'/\mathfrak n'I'.
+\]
+Consequently, the isomorphism class of $\mathscr R^{\mathrm{eff}}_p$, the isomorphism class of $\Obs^{\mathrm{eff}}_p$, and their common dimension are independent of the chosen contraction and minimal Kuranishi presentation.
+\end{theorem}
+
+\begin{proof}
+Both sets of variables map to minimal generating systems of the maximal ideal of $R$, hence their images give bases of $\mathfrak m_R/\mathfrak m_R^2$.  Lift the images of the $x_i$ to formal series in the $y_j$.  This defines a continuous homomorphism
+\[
+\varphi:P\longrightarrow P'
+\]
+commuting with the maps to $R$.  Its linear part is the change-of-basis matrix between two bases of $\mathfrak m_R/\mathfrak m_R^2$, hence is invertible.  The formal inverse function theorem makes $\varphi$ an isomorphism.  Since the two maps to $R$ commute with $\varphi$, one has $\varphi(I)=I'$, and therefore
+\[
+I/\mathfrak n I\xrightarrow{\sim}I'/\mathfrak n'I'.
+\]
+Applying this to two minimal Kuranishi presentations proves the final assertion.
+\end{proof}
+
+\begin{remark}
+The preceding proof uses only minimal formal power-series presentations
+and the formal inverse function theorem. No completed or continuous
+cotangent-complex identification is needed for the statements below.
+\end{remark}
+
+\begin{proposition}[Embedding into the cohomological obstruction receptacle]\label{prop:effective-into-h2}
+The component map of the Kuranishi equation induces a natural surjection
+\[
+q_\kappa:O^\vee\twoheadrightarrow\mathscr R^{\mathrm{eff}}_p,
+\qquad
+\lambda\longmapsto[\lambda\circ\kappa].
+\]
+Hence, when $O$ is finite-dimensional, duality gives an injection
+\[
+j_\kappa:\Obs^{\mathrm{eff}}_p\hookrightarrow O=H^2(\ghoch_{B,p}).
+\]
+The abstract effective obstruction space is intrinsic by Theorem~\ref{thm:effective-intrinsic}; its displayed embedding into a fixed coordinate realization of $H^2$ is determined only up to the linear isomorphism induced by a change of minimal model.
+\end{proposition}
+
+\begin{proof}
+The ideal $I_\kappa$ is generated by the image of $\kappa^\sharp$, so the residue classes of those components span $I_\kappa/\mathfrak nI_\kappa$.  This proves surjectivity.  Dualizing a surjection of finite-dimensional vector spaces gives the injection $j_\kappa$.
+\end{proof}
+
+Combining Proposition~\ref{prop:effective-into-h2} with Corollary~\ref{cor:cohomological-projection} gives the three-stage comparison
+\[
+\boxed{
+\Obs^{\mathrm{eff}}_p
+\xhookrightarrow{\ j_\kappa\ }
+H^2(\ghoch_{B,p})
+\xrightarrow{\ \overline\Pi\ }
+\coker\cD_p.
+}
+\]
+We call
+\[
+\Obs^{\mathrm{rel,eff}}_p
+:=
+\operatorname{im}(\overline\Pi\circ j_\kappa)
+\]
+the effective relation-level obstruction space.  The map
+\[
+\overline\Pi_{\mathrm{eff}}
+:=
+\overline\Pi\circ j_\kappa
+\]
+need not be injective in general; its kernel and the complement of its image in $\coker\cD_p$ measure different failures and should not both be called presentation syzygies.
+
+\begin{corollary}[Effective obstruction for the dual-number germ]\label{cor:dual-effective}
+For the dual-number example,
+\[
+I_\kappa=(t^2),
+\qquad
+\mathscr R^{\mathrm{eff}}_p
+=(t^2)/(t^3),
+\qquad
+\dim\Obs^{\mathrm{eff}}_p=1.
+\]
+Under the basis of Section~\ref{sec:dgla}, the injection $j_\kappa$ has image
+\[
+\operatorname{im}j_\kappa=\C[\eta]\subset H^2(\ghoch_{B,p}).
+\]
+Moreover, $\overline\Pi_{\mathrm{eff}}$ is injective.
+\end{corollary}
+
+\begin{proof}
+The first three assertions follow immediately from $I_\kappa=(t^2)$.  Since
+\[
+\kappa(t[\tau])=t^2[\eta],
+\]
+the dual component map kills $\eta_1^\vee$ and $\eta_2^\vee$ and maps $\eta^\vee$ to the generator of $(t^2)/(t^3)$.  Thus the dual injection lands on $\C[\eta]$.  Proposition~\ref{prop:dual-h2-injective} then implies injectivity after applying $\overline\Pi$.
+\end{proof}
+
+
+% BEGIN ILLUSTRATION 8
+The corresponding structures are illustrated in Figure~\ref{fig:paperI-08}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_08_effective_obstruction_chain.pdf}}
+\caption{The effective obstruction comparison chain. The dimension of $(I_\kappa/\mathfrak nI_\kappa)^\vee$ counts minimal formal equations. Its displayed injection into $H^2$ depends on the minimal-model realization, and its composite with $\overline\Pi$ need not be injective. Unused relation directions and the kernel of the composite are different phenomena.}
+\label{fig:paperI-08}
+\end{figure}
+% END ILLUSTRATION 8
+
+\subsection{A two-parameter mixed-obstruction example}\label{sec:two-parameter-example}
+
+Let
+\[
+A=\C1\oplus\C a\oplus\C b,
+\qquad
+(a,b)^2=0,
+\]
+and let $V=\C^2$ with basis $e_1,e_2$.  Define
+\[
+B(b,a)=e_1,
+\qquad
+B(b,b)=e_2,
+\]
+and let all other values on basis pairs vanish.  Then $V=\Span B(A,A)$.  Let $p$ be the augmentation bimodule structure
+\[
+L(x)=R(x)=\varepsilon(x)I_V.
+\]
+Because $B$ vanishes whenever one input is scalar and the radical of $A$ has square zero, $B$ is a biderivation relative to $p$.
+
+\begin{proposition}[Exact strict reconstruction scheme]\label{prop:two-parameter-scheme}
+Every unit-preserving weak reconstruction has
+\[
+L(a)=R(a)=0,
+\qquad
+L(b)=N(u,v),
+\qquad
+R(b)=-N(u,v),
+\]
+where
+\[
+N(u,v)=
+\begin{pmatrix}
+0&-u\\
+0&-v
+\end{pmatrix}.
+\]
+It is strict precisely when
+\[
+uv=0,
+\qquad
+v^2=0.
+\]
+Consequently,
+\[
+\boxed{
+\mathbf R_B
+\cong
+\Spec\frac{\C[u,v]}{(uv,v^2)}.
+}
+\]
+\end{proposition}
+
+\begin{proof}
+Evaluating the two weak Leibniz identities on the eight triples from $\{a,b\}^3$ gives a linear system in the sixteen matrix entries of
+\[
+L(a),L(b),R(a),R(b).
+\]
+Exact row reduction has rank fourteen and yields precisely the displayed two-parameter solution.  Since the radical of $A$ has square zero, all left and right representation equations reduce to $N(u,v)^2=0$; the mixed equations are automatic because $R(b)=-L(b)$.  Finally,
+\[
+N(u,v)^2
+=
+\begin{pmatrix}
+0&uv\\
+0&v^2
+\end{pmatrix},
+\]
+which gives the stated ideal.
+\end{proof}
+
+\begin{remark}[A smooth branch with an embedded false direction]
+The reduced reconstruction scheme is the affine line $v=0$.  The $u$-direction integrates to an actual family of strict reconstructions, while the $v$-direction exists in the Zariski tangent space only at the origin and is nilpotently embedded there.  The mixed equation $uv=0$ records the failure to combine the genuine $u$-deformation with the false $v$-direction.
+\end{remark}
+
+For the intrinsic complex, put
+\[
+x=b\otimes1,
+\qquad
+y=1\otimes b^{\mathrm{op}},
+\]
+and define matrices
+\[
+P=
+\begin{pmatrix}0&-1\\0&0\end{pmatrix},
+\qquad
+Q=
+\begin{pmatrix}0&0\\0&-1\end{pmatrix}.
+\]
+Define normalized one-cochains $\alpha,\beta$ by
+\[
+\alpha(x)=P,
+\quad
+\alpha(y)=-P,
+\qquad
+\beta(x)=Q,
+\quad
+\beta(y)=-Q,
+\]
+and let them vanish on the other normalized basis elements of $A^e$.
+
+\begin{theorem}[Two-parameter minimal Kuranishi equation]\label{thm:two-parameter-kuranishi}
+For the square-zero example,
+\[
+\dim\ghoch^1_{B,p}=18,
+\qquad
+\dim H^1(\ghoch_{B,p})=2,
+\]
+\[
+\dim Z^2(\ghoch_{B,p})=64,
+\qquad
+\dim H^2(\ghoch_{B,p})=48.
+\]
+The classes $[\alpha],[\beta]$ form a basis of $H^1$.  Put
+\[
+\eta_{uv}=\alpha\smile\beta+\beta\smile\alpha,
+\qquad
+\eta_{vv}=\beta\smile\beta.
+\]
+Then $[\eta_{uv}]$ and $[\eta_{vv}]$ are nonzero and linearly independent in $H^2$.  There is a homotopy transfer for which
+\begin{align*}
+\ell_2([\alpha],[\alpha])&=0,\\
+\ell_2([\alpha],[\beta])&=[\eta_{uv}],\\
+\ell_2([\beta],[\beta])&=2[\eta_{vv}],
+\end{align*}
+and every $\ell_n$ with $n\ge3$ vanishes on the $H^1$-generated Maurer--Cartan sector.  Hence
+\[
+\boxed{
+\kappa(u[\alpha]+v[\beta])
+=
+uv[\eta_{uv}]+v^2[\eta_{vv}].
+}
+\]
+The Kuranishi ideal is $(uv,v^2)$, in agreement with Proposition~\ref{prop:two-parameter-scheme}.
+\end{theorem}
+
+\begin{proof}
+The normalized augmentation ideal of $S=A^e$ has dimension eight.  Exact rational linear algebra gives
+\[
+\rank\lambda_B=14,
+\qquad
+\rank(d_1|_{\ghoch^1_{B,p}})=16,
+\qquad
+\rank d_2=192,
+\]
+which yields the four displayed dimensions.  Direct substitution shows that $\alpha$ and $\beta$ are $B$-compatible cocycles and span $Z^1=H^1$.
+
+One has
+\[
+\alpha\smile\alpha=0.
+\]
+The two cochains $\eta_{uv}$ and $\eta_{vv}$ are closed, each increases the boundary rank by one, and together increase it by two; hence their classes are nonzero and independent.  Choose them as cohomology representatives and choose the contracting homotopy to vanish on both.  Every higher transfer tree on $[\alpha],[\beta]$ then has a lowest internal edge carrying
+\[
+h[\alpha,\alpha],
+\quad
+h[\alpha,\beta],
+\quad\text{or}\quad
+h[\beta,\beta],
+\]
+all of which vanish.  Thus only the binary bracket contributes, and
+\[
+\frac12\ell_2(u[\alpha]+v[\beta],u[\alpha]+v[\beta])
+=
+uv[\eta_{uv}]+v^2[\eta_{vv}].
+\]
+The agreement with the exact reconstruction scheme completes the proof.
+\end{proof}
+
+\begin{corollary}[Forty-eight-dimensional receptacle, two effective equations]\label{cor:two-parameter-effective}
+For the square-zero example,
+\[
+\dim H^2(\ghoch_{B,p})=48,
+\qquad
+\dim\Obs^{\mathrm{eff}}_p=2,
+\]
+and
+\[
+\operatorname{im}j_\kappa
+=
+\Span\{[\eta_{uv}],[\eta_{vv}]\}.
+\]
+The effective relation map $\overline\Pi_{\mathrm{eff}}$ is injective.
+\end{corollary}
+
+\begin{proof}
+Since $I_\kappa=(uv,v^2)$ and $\mathfrak n=(u,v)$, the classes of $uv$ and $v^2$ form a basis of
+\[
+I_\kappa/\mathfrak nI_\kappa.
+\]
+The Kuranishi component map identifies the dual effective space with the span of the two stated cohomology classes.  Under the relation projection, their left representation components at $(b,b)$ are respectively
+\[
+PQ+QP=
+\begin{pmatrix}0&1\\0&0\end{pmatrix},
+\qquad
+Q^2=
+\begin{pmatrix}0&0\\0&1\end{pmatrix}.
+\]
+The linearized left relation at $(b,b)$ vanishes identically because $b^2=0$ and $L(b)=0$ at the base point.  These two matrix coordinates therefore remain independent in $\coker\cD_p$.
+\end{proof}
+
+
+\section{A first genuinely cubic Kuranishi obstruction}\label{sec:cubic-example}
+
+The preceding nonreduced examples are quadratically controlled.  We now give an explicit inverse-Leibniz reconstruction in which the complete quadratic Kuranishi map on the strict tangent space vanishes, but the cubic term does not.
+
+Let
+\[
+A=\C[\epsilon]/(\epsilon^4),
+\qquad
+V=\C^3,
+\]
+and let $v_1,v_2,v_3$ be the standard basis of $V$.  Put
+\[
+N=
+\begin{pmatrix}
+0&1&0\\
+0&0&1\\
+0&0&0
+\end{pmatrix}.
+\]
+Define a strict base reconstruction $p=(L,R)$ by
+\[
+L(\epsilon)=N,
+\qquad
+R(\epsilon)=N+N^2,
+\]
+with the values on higher powers determined multiplicatively.  Thus
+\[
+L(\epsilon^2)=R(\epsilon^2)=N^2,
+\qquad
+L(\epsilon^3)=R(\epsilon^3)=0.
+\]
+The two actions commute because they are polynomials in $N$.
+
+Define $B:A\times A\to V$ by declaring all values with a unit input to vanish and taking the following as its only nonzero values on radical basis pairs:
+\begin{align*}
+B(\epsilon,\epsilon)&=3v_1+v_2+v_3,\\
+B(\epsilon,\epsilon^2)=B(\epsilon^2,\epsilon)&=3v_1+2v_2,\\
+B(\epsilon,\epsilon^3)=B(\epsilon^3,\epsilon)&=3v_1,\\
+B(\epsilon^2,\epsilon^2)&=4v_1.
+\end{align*}
+Direct substitution verifies both Leibniz identities relative to $p$.  Moreover,
+\[
+V=\Span B(A,A).
+\]
+
+Let $\mathcal K_B$ denote the vector space of unit-preserving weak perturbations at $p$, and let
+\[
+\cD_p\big|_{\mathcal K_B}:\mathcal K_B\longrightarrow\Rel_B
+\]
+be the strict tangent operator restricted to that weak space.
+
+\begin{proposition}[Exact weak and strict tangent dimensions]\label{prop:cubic-tangent}
+For the preceding reconstruction,
+\[
+\dim\mathcal K_B=9,
+\qquad
+\rank\bigl(\cD_p|_{\mathcal K_B}\bigr)=7,
+\qquad
+\dim T_p\mathbf R_B=2.
+\]
+A basis of the strict tangent space is given by $\alpha=(X_\alpha,Y_\alpha)$ and $\xi=(X_\xi,Y_\xi)$, where
+\begin{align*}
+X_\alpha(\epsilon)&=-N^2,
+&Y_\alpha(\epsilon)&=N^2,
+\end{align*}
+and all their values on $\epsilon^2,\epsilon^3$ vanish, while
+\begin{align*}
+X_\xi(\epsilon)&=-N,
+&X_\xi(\epsilon^2)&=-2N^2,
+&X_\xi(\epsilon^3)&=0,\\
+Y_\xi(\epsilon)&=N,
+&Y_\xi(\epsilon^2)&=2N^2,
+&Y_\xi(\epsilon^3)&=0.
+\end{align*}
+\end{proposition}
+
+\begin{proof}
+The two linearized Leibniz blocks form an exact rational matrix with fifty-four columns.  Its rank is forty-five, giving the nine-dimensional weak perturbation space.  Restricting the strict relation differential to this kernel gives a matrix of rank seven.  The two displayed perturbations lie in both kernels and are linearly independent, hence form a tangent basis.
+\end{proof}
+
+Write
+\[
+\cP_p(\rho,\sigma)
+:=
+\cQ_p(\rho+\sigma)-\cQ_p(\rho)-\cQ_p(\sigma)
+\]
+for the symmetric polarization of the quadratic relation map.  Define a weak second-order correction $\eta=(U,W)$ by
+\begin{align*}
+U(\epsilon)&=I,
+&U(\epsilon^2)&=2N+N^2,
+&U(\epsilon^3)&=3N^2,\\
+W(\epsilon)&=-I,
+&W(\epsilon^2)&=-2N-N^2,
+&W(\epsilon^3)&=-3N^2.
+\end{align*}
+Then exact substitution gives
+\begin{equation}\label{eq:cubic-second-lift}
+\cQ_p(\alpha)=0,
+\qquad
+\cP_p(\alpha,\xi)=0,
+\qquad
+\cD_p\eta=-\cQ_p(\xi).
+\end{equation}
+Thus every quadratic Kuranishi product on $T_p\mathbf R_B$ vanishes in the obstruction cokernel.
+
+At third order define
+\[
+\zeta:=\cP_p(\xi,\eta)\in\Rel_B.
+\]
+For a relation vector $\Theta$, let $\Theta^L(a,b)$ and $\Theta^R(a,b)$ denote its left and right representation components.  Consider the linear functional
+\begin{equation}\label{eq:cubic-certificate}
+\Lambda(\Theta)
+=
+4\,\Theta^L(\epsilon,\epsilon)_{12}
+-2\,\Theta^L(\epsilon,\epsilon)_{23}
+-2\,\Theta^L(\epsilon,\epsilon^2)_{13}
+-2\,\Theta^R(\epsilon,\epsilon)_{23}.
+\end{equation}
+
+\begin{theorem}[Nonzero cubic Kuranishi term]\label{thm:cubic-kuranishi}
+For the reconstruction above,
+\[
+\Lambda\circ\cD_p|_{\mathcal K_B}=0,
+\qquad
+\Lambda(\zeta)=8.
+\]
+Consequently,
+\[
+[\zeta]\ne0
+\quad\text{in}\quad
+\coker\bigl(\cD_p|_{\mathcal K_B}\bigr).
+\]
+For a transferred minimal model of the presentation DGLA, the homogeneous Kuranishi terms on
+\[
+H^1=\C[\alpha]\oplus\C[\xi]
+\]
+may therefore be normalized as
+\[
+\boxed{
+\kappa_2=0,
+\qquad
+\kappa_3(u[\alpha]+v[\xi])=v^3[\zeta].
+}
+\]
+In particular,
+\[
+\kappa_2([\xi],[\xi])=0,
+\qquad
+\kappa_3([\xi],[\xi],[\xi])\ne0.
+\]
+\end{theorem}
+
+\begin{proof}
+Equation~\eqref{eq:cubic-second-lift} proves that the binary bracket of every pair of tangent classes is zero in cohomology.  For the cubic term, direct matrix substitution into the relation differential gives the two identities involving $\Lambda$; hence $\zeta$ cannot be a strict tangent boundary.
+
+It remains to check the mixed cubic coefficient.  Define $\theta=(S,T)$ by
+\begin{align*}
+S(\epsilon)&=-2I+N,
+&S(\epsilon^2)&=-4N,
+&S(\epsilon^3)&=-6N^2,\\
+T(\epsilon)&=2I-N,
+&T(\epsilon^2)&=4N,
+&T(\epsilon^3)&=6N^2.
+\end{align*}
+Then $\theta\in\mathcal K_B$ and
+\[
+\cD_p\theta=-\cP_p(\alpha,\eta).
+\]
+For the tangent vector $u\alpha+v\xi$, the second-order correction may therefore be chosen as $v^2\eta$, and its cubic source is
+\[
+uv^2\cP_p(\alpha,\eta)+v^3\cP_p(\xi,\eta).
+\]
+The first summand is a boundary and the second represents $v^3[\zeta]$.  This is precisely the homogeneous cubic part of the minimal Kuranishi map.
+
+Finally, the nonzero class does not depend on the chosen second-order lift.  Any other lift differs from $\eta$ by $s\alpha+t\xi$, and
+\[
+\cP_p(\xi,\alpha)=0,
+\qquad
+\cP_p(\xi,\xi)=2\cQ_p(\xi)\in\operatorname{im}\cD_p.
+\]
+Thus the resulting cubic class is unchanged.
+\end{proof}
+
+\begin{corollary}[Second-order extension with third-order failure]\label{cor:cubic-failure}
+The tangent direction $\xi$ extends to a strict reconstruction over
+\[
+\C[t]/(t^3)
+\]
+by
+\[
+p_t=p+t\xi+t^2\eta,
+\]
+but it admits no extension to $\C[t]/(t^4)$.
+\end{corollary}
+
+\begin{proof}
+The order-two equation is \eqref{eq:cubic-second-lift}.  Any order-three correction would require $\zeta$ to lie in the image of $\cD_p|_{\mathcal K_B}$, contradicting Theorem~\ref{thm:cubic-kuranishi}.
+\end{proof}
+
+
+\subsection{Complete formal germ and the higher Kuranishi tail}\label{subsec:cubic-complete-germ}
+
+The cubic obstruction can in fact be completed exactly.  Choose the exact nine weak-fiber coordinates
+\[
+w_0,\ldots,w_8
+\]
+coming from a nullspace basis of the weak observability matrix, normalized so that
+\[
+\begin{aligned}
+\alpha&=(1,0,0,0,0,0,0,0,0),\\
+\xi&=(0,1,0,2,0,0,0,0,0).
+\end{aligned}
+\]
+in these coordinates.  Let $u,v$ be tangent coordinates.  Let
+$a,b,c,d,e,f,g$ denote transverse coordinates, with
+\[
+\begin{aligned}
+w_0&=u, & w_1&=v+a, & w_2&=b, & w_3&=2v,\\
+w_4&=c, & w_5&=d, & w_6&=e, & w_7&=f, & w_8&=g.
+\end{aligned}
+\]
+Thus the linear $u$- and $v$-axes are precisely the tangent classes $[\alpha]$ and $[\xi]$.
+
+\begin{theorem}[Exact local equations of the cubic example]\label{thm:cubic-complete-germ}
+After restricting the full strict reconstruction equations to the weak fiber and applying the preceding linear coordinate change, an exact lexicographic Groebner basis is
+\[
+\boxed{
+\begin{gathered}
+a+\frac e6,
+\qquad
+b-\frac e3,
+\qquad
+c-\frac{2e}{3},
+\qquad
+d,
+f,
+g,\\
+e^2,
+\qquad
+ev,
+\qquad
+(1+2u)e+3v^2,
+\qquad
+v^3.
+\end{gathered}}
+\]
+Consequently the local and completed local rings at the base reconstruction satisfy
+\[
+\cO_{\mathbf R_B,p}
+\cong
+\left(\frac{\C[u,v]}{(v^3)}\right)_{(u,v)},
+\qquad
+\boxed{
+\widehat{\cO}_{\mathbf R_B,p}
+\cong
+\frac{\C[[u,v]]}{(v^3)}.
+}
+\]
+In particular,
+\[
+I_\kappa=(v^3),
+\qquad
+\dim\Obs^{\mathrm{eff}}_p=1.
+\]
+\end{theorem}
+
+\begin{proof}
+The exact weak equations have a nine-dimensional nullspace.  Substitute its basis parameterization into every left, right, and mixed strict relation.  Exact rational Groebner reduction gives the displayed basis; this is verified independently by the accompanying script.
+
+At the origin
+\[
+q:=1+2u
+\]
+is a unit.  The relation $qe+3v^2=0$ therefore eliminates the transverse variable:
+\[
+e=-\frac{3v^2}{q}.
+\]
+Then $ev=0$ becomes $v^3=0$, while $e^2=0$ becomes a unit multiple of $v^4=0$ and is redundant modulo $v^3$.  The remaining transverse variables are eliminated linearly.  Hence the localized ring is the localization of $\C[u,v]/(v^3)$ at the origin, and completion gives the stated formal ring.  The final assertion follows from the minimal-equation theorem, since $(v^3)/(u,v)(v^3)$ is one-dimensional.
+\end{proof}
+
+
+
+% BEGIN ILLUSTRATION 5
+The corresponding structures are illustrated in Figure~\ref{fig:paperI-05}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_05_mixed_vs_cubic.pdf}}
+\caption{The mixed scheme $\Spec\C[u,v]/(uv,v^2)$ and the cubic formal germ $\C[[u,v]]/(v^3)$ have different transverse nilpotent structures. The first has an embedded false direction only at the origin; the second has uniform cubic thickness. Shading is schematic and does not represent additional branches.}
+\label{fig:paperI-05}
+\end{figure}
+% END ILLUSTRATION 5
+
+\begin{proposition}[Finite flat structure of the same fixed weak fiber]\label{prop:cubic-flat-family}
+The affine strict weak-fiber scheme in Theorem~\ref{thm:cubic-complete-germ}
+is finite flat of degree three over the \(u\)-line. More precisely, writing
+\(q=1+2u\), its coordinate algebra is
+\[
+\mathcal A=\C[u,e,v]/(e^2,ev,qe+3v^2),
+\]
+and is free over \(\C[u]\) with basis \(1,v,e\).
+On \(q\ne0\) it is
+\[
+\mathcal A[q^{-1}]\simeq\C[u,q^{-1},v]/(v^3).
+\]
+At \(u=-\tfrac12\), its fiber is instead
+\[
+\C[e,v]/(e,v)^2.
+\]
+Thus every fiber has length three; the special fiber has embedding dimension two,
+whereas the other fibers have embedding dimension one.
+\end{proposition}
+\begin{proof}
+Eliminate \(a,b,c,d,f,g\) using the displayed exact ideal. The relation \(v^3=0\)
+is redundant because \(3v^3=v(qe+3v^2)-qev\).
+Every monomial reduces to a \(\C[u]\)-linear combination of \(1,v,e\).
+To prove their independence, on a free module with that ordered basis let multiplication
+by \(v,e\) be represented by
+\[
+M_v=\begin{pmatrix}0&0&0\\1&0&0\\0&-q/3&0\end{pmatrix},
+\qquad
+M_e=\begin{pmatrix}0&0&0\\0&0&0\\1&0&0\end{pmatrix}.
+\]
+They commute and satisfy \(M_e^2=M_eM_v=0\) and \(3M_v^2+qM_e=0\).
+Applying a purported relation \(a+bv+ce=0\) to the first basis vector gives
+\((a,b,c)=0\). This proves freeness, and hence finite flatness.
+When \(q\) is invertible, eliminate \(e=-3v^2/q\). When \(q=0\), the relations
+become \(e^2=ev=v^2=0\). These explicit algebras give the lengths and embedding dimensions.
+\end{proof}
+
+\begin{remark}
+This is a refinement of the already computed fixed-\(B\) reconstruction scheme,
+not a deformation of the algebra \(A\) or of \(B\). The original base point
+\(u=0\) lies in the open cubic region; the special fiber does not alter its
+completed local ring \(\C[[u,v]]/(v^3)\).
+\end{remark}
+
+
+% BEGIN ILLUSTRATION 6
+The corresponding structures are illustrated in Figure~\ref{fig:paperI-06}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_06_finite_flat_family.pdf}}
+\caption{The finite flat family of Proposition~\ref{prop:cubic-flat-family}. Write $q_u=1+2u$, distinct from the later quintic $q(S)$. Every fiber has length three. At $u=-1/2$ its embedding dimension rises from one to two. The arrows depict multiplication on bases, not distinct geometric points.}
+\label{fig:paperI-06}
+\end{figure}
+% END ILLUSTRATION 6
+
+The theorem already proves that no new independent quartic or higher equation survives.  One can go further and calculate an explicit all-orders Kuranishi representative tied to the cubic certificate \eqref{eq:cubic-certificate}.
+
+\begin{proposition}[Certificate-normalized higher Kuranishi terms]\label{prop:cubic-higher-tail}
+Put $q=1+2u$.  Solve the seven transverse equations by
+\[
+e=-\frac{3v^2}{q},
+\qquad
+a=-\frac e6,
+\qquad b=\frac e3,
+\qquad c=\frac{2e}{3},
+\qquad d=f=g=0.
+\]
+Evaluating the full strict residual on this exact formal section and applying $\Lambda/8$ gives the scalar Kuranishi representative
+\[
+\boxed{
+ k_\Lambda(u,v)
+ =
+ v^3\frac{v+4q}{4q^2}.
+}
+\]
+Its homogeneous pieces begin
+\begin{align*}
+k_3&=v^3,\\
+k_4&=-2uv^3+\frac14v^4,\\
+k_5&=4u^2v^3-uv^4,\\
+k_6&=-8u^3v^3+3u^2v^4.
+\end{align*}
+More generally, for $r\ge1$, the part of total degree $3+r$ is
+\[
+\boxed{
+ k_{3+r}
+ =
+ (-2)^r u^r v^3
+ +\frac{r(-2)^{r-1}}{4}u^{r-1}v^4.
+}
+\]
+Every one of these terms is a multiple of the cubic generator.  Since
+\[
+\frac{4q^2}{v+4q}
+\]
+is a unit with value $1$ at the origin,
+\[
+\frac{4q^2}{v+4q}\,k_\Lambda(u,v)=v^3.
+\]
+Thus an equivalent minimal Kuranishi presentation is exactly
+\[
+\boxed{
+\widetilde\kappa(u[\alpha]+v[\xi])=v^3[\zeta],
+\qquad
+\widetilde\kappa_n=0\quad(n\ge4).
+}
+\]
+\end{proposition}
+
+\begin{proof}
+The exact formal section is obtained by solving the Groebner basis of Theorem~\ref{thm:cubic-complete-germ}.  Direct substitution into all strict relations shows that every residual component is divisible by $v^3$ in $\C[[u,v]]$, and at least one quotient is a unit.  Applying the sparse functional $\Lambda$ gives
+\[
+\frac18\Lambda(\text{residual})
+=
+\frac{v^3(v+4q)}{4q^2}.
+\]
+Expanding
+\[
+\frac1q=\sum_{n\ge0}(-2u)^n,
+\qquad
+\frac1{q^2}=\sum_{n\ge0}(n+1)(-2u)^n
+\]
+gives the displayed homogeneous terms and the general formula.  The final unit rescaling does not change the generated Kuranishi ideal and removes the whole higher tail at once.
+\end{proof}
+
+\begin{remark}[Intrinsic content versus presentation tail]
+The nonzero cubic class is intrinsic, but the individual quartic and higher coefficients displayed above are not new obstruction classes.  They depend on the chosen formal section and relation generator.  Their simultaneous removal by a unit is exactly the distinction between the intrinsic minimal relation ideal $(v^3)$ and a nonminimal all-orders representative of that same ideal.
+\end{remark}
+
+\begin{remark}[Geometric shape of the germ]
+The reduced local scheme is the smooth $u$-axis.  Unlike the square-zero example of Section~\ref{sec:two-parameter-example}, where the false direction is pinned to the origin by the mixed equation $uv=0$, the present germ is a uniform cubic thickening of the whole smooth branch:
+\[
+\Spf\C[[u,v]]/(v^3)
+\cong
+\Spf\C[[u]]\,\widehat\times\,\Spec\C[v]/(v^3).
+\]
+The direction $[\xi]$ is therefore a nilpotent normal direction of order three along the branch, not an isolated embedded tangent direction.
+\end{remark}
+
+\begin{remark}[Formal normal form versus strict transfer]
+The preceding proposition concerns equivalence of minimal Kuranishi presentations.  Such an equivalence may multiply the obstruction generator by a formal unit depending on the tangent variables.  A change of contraction of a fixed DGLA is more restrictive.  The next result shows that, in the present cubic example, the formal pure-cubic normal form cannot be obtained by a strict homotopy transfer from any contraction.
+\end{remark}
+
+\subsection{A quartic no-go theorem for strict transferred normal forms}\label{subsec:strict-transfer-no-go}
+
+Retain the tangent basis $\alpha,\xi$ and the weak perturbation space $\mathcal K_B$.  Define the linear map
+\[
+\mu_\alpha:\mathcal K_B\longrightarrow
+\coker\bigl(\cD_p|_{\mathcal K_B}\bigr),
+\qquad
+k\longmapsto [\cP_p(\alpha,k)].
+\]
+If a third-order correction is restricted to $\mathcal K_B$, its variation
+changes the quartic $uv^3$ source by $\operatorname{im}\mu_\alpha$.
+This restricted class is useful for comparison, but the universal contraction
+statement below requires a separate joint certificate.
+
+Choose $\eta$ and $\theta$ as above, so that
+\[
+\cD_p\eta=-\cQ_p(\xi),
+\qquad
+\cD_p\theta=-\cP_p(\alpha,\eta).
+\]
+Define the \emph{weak-fiber quartic class}
+\[
+\boxed{
+\nu_4(\alpha,\xi)
+:=
+[\cP_p(\xi,\theta)]
+\quad\text{in}\quad
+\frac{
+\coker(\cD_p|_{\mathcal K_B})
+}{\operatorname{im}\mu_\alpha}.
+}
+\]
+
+\begin{lemma}[Choice independence of $\nu_4$]\label{lem:quartic-choice-independence}
+The class $\nu_4(\alpha,\xi)$ is independent of the choices of the second-order lift $\eta$ and the mixed third-order lift $\theta$ satisfying the displayed equations.
+\end{lemma}
+
+\begin{proof}
+Any other second-order lift is
+\[
+\eta'=\eta+s\alpha+t\xi.
+\]
+Because
+\[
+\cQ_p(\alpha)=0,
+\qquad
+\cP_p(\alpha,\xi)=0,
+\]
+one has $\cP_p(\alpha,\eta')=\cP_p(\alpha,\eta)$ exactly.  Hence any corresponding $\theta'$ differs from $\theta$ by a tangent vector $a\alpha+b\xi$.  Therefore
+\[
+\cP_p(\xi,\theta')-\cP_p(\xi,\theta)
+=
+ a\cP_p(\xi,\alpha)+b\cP_p(\xi,\xi)
+=
+2b\cQ_p(\xi),
+\]
+which lies in $\operatorname{im}\cD_p$ by the defining equation for $\eta$.  Thus the class is unchanged even before quotienting by $\operatorname{im}\mu_\alpha$.
+\end{proof}
+
+For a relation vector $\Theta$, define a second sparse functional
+\begin{align}\label{eq:quartic-certificate}
+\Gamma(\Theta)
+={}&
+\Theta^L(\epsilon,\epsilon)_{12}
+-\Theta^L(\epsilon,\epsilon)_{22}
++\Theta^L(\epsilon,\epsilon)_{23}
+-2\Theta^L(\epsilon^2,\epsilon)_{13}\notag\\
+&-\Theta^R(\epsilon,\epsilon)_{12}
+-\Theta^R(\epsilon,\epsilon)_{23}.
+\end{align}
+
+For a pair of relation vectors define the joint functional
+\begin{align}\label{eq:joint-quartic-certificate}
+\mathcal J(U,V)={}&-U^L(\epsilon,\epsilon)_{11}
+-U^L(\epsilon,\epsilon)_{23}-U^R(\epsilon,\epsilon)_{23}\notag\\
+&+V^L(\epsilon,\epsilon)_{11}
++V^L(\epsilon,\epsilon)_{21}+V^R(\epsilon,\epsilon)_{11}.
+\end{align}
+Unlike the preceding weak-fiber certificate, this functional couples two
+quartic coefficients and allows an unrestricted third-order correction.
+
+\begin{theorem}[Strict transferred pure-cubic normal form is impossible]\label{thm:strict-transfer-no-go}
+The weak-fiber class $\nu_4(\alpha,\xi)$ is nonzero. Moreover, for every
+contraction of the full presentation DGLA onto cohomology, in the standard
+normalized convention of Section~\ref{subsec:transfer-convention},
+\[
+\boxed{\ell_4\big|_{\operatorname{Sym}^4H^1}\ne0.}
+\]
+Hence no such contraction gives a strictly transferred pure-cubic
+degree-one Maurer--Cartan sector. This statement concerns the whole quartic
+operation, not the nonvanishing of one fixed monomial coefficient.
+\end{theorem}
+
+\begin{proof}
+Write $D=\cD_p$, $P=\cP_p$, $Q=\cQ_p$, and $z=P(\xi,\eta)$.
+Direct substitution into the fixed matrices gives
+\[
+D\eta=-Q(\xi),\qquad P(\alpha,\eta)=2D\eta,\qquad
+P(\alpha,\xi)=Q(\alpha)=0.
+\]
+The earlier functional satisfies $\Gamma D|_{\mathcal K_B}=0$,
+$\Gamma P(\alpha,\mathcal K_B)=0$ and $\Gamma P(\xi,\theta)=-16$,
+proving the first assertion.
+
+For the unrestricted assertion, the six coordinates in
+\eqref{eq:joint-quartic-certificate} give the identities
+\begin{align}
+\mathcal J(Dw,0)&=\mathcal J(0,Dw)=0
+&& (w\in\mathcal K_B),\notag\\
+\mathcal J(P(\alpha,K),P(\xi,K))&=0
+&& (K\in\gpres^1_{B,p}),\label{eq:joint-identities}\\
+\mathcal J(0,z)&=0,\qquad
+\mathcal J(-2z,Q(\eta))=-6.\notag
+\end{align}
+These are finite linear identities: the weak equations supply a
+nine-dimensional basis for $w$, while the second line holds for all entries
+of $X_K(\epsilon),Y_K(\epsilon)$ without weak constraints. Entries at other
+powers and at the unit do not enter that line. The companion verifier
+checks the identities over $\Q$ and also verifies the tangent-parameter
+identity below symbolically.
+
+Let $(i,\pi,h)$ be any normalized contraction. In degree one its cohomology
+identifies with $\ker D=\C\alpha\oplus\C\xi$, since $\gpres^0=0$.
+The transfer recursion therefore starts with
+\[
+F_1=u\alpha+v\xi,\qquad
+F_2=v^2E_h,\qquad E_h=\eta+s\alpha+t\xi.
+\]
+Because $E_h$ lies in $\operatorname{im}h$, normalization gives
+$hDE_h=E_h$. Since $P(\alpha,E_h)=2DE_h$, the next term has the form
+\[
+F_3=-2uv^2E_h+v^3K,\qquad K=-hP(\xi,E_h).
+\]
+No condition $K\in\mathcal K_B$ is imposed. The $uv^3$ and $v^4$
+coefficients of the quartic source are respectively
+\[
+U=P(\alpha,K)-2P(\xi,E_h),\qquad
+V=P(\xi,K)+Q(E_h).
+\]
+Here $P(\xi,E_h)=z+2tQ(\xi)$ and
+\[
+Q(E_h)=Q(\eta)+2sD\eta+tz+t^2Q(\xi).
+\]
+Since $Q(\xi)=-D\eta$, equations~\eqref{eq:joint-identities} yield
+\[
+\boxed{\mathcal J(U,V)=-6}
+\]
+for every $s,t,K$.
+
+Both $U$ and $V$ have zero unit and weak-Leibniz components. If either is
+a full presentation boundary $Dw$, those components force
+$w(1)=0$ and $w\in\mathcal K_B$. Thus if both were boundaries the first
+line of \eqref{eq:joint-identities} would give $\mathcal J(U,V)=0$,
+a contradiction. Degree two is central and has zero outgoing
+differential in the presentation DGLA, so $\pi U,\pi V$ cannot both
+vanish. The quartic transferred operation is therefore nonzero.
+\end{proof}
+
+\begin{remark}[Why two coefficients are necessary]
+The restriction to the weak fiber cannot be silently imposed on $K$.
+For example, set
+\[
+X_K(\epsilon)=4(E_{21}+E_{32}),\qquad
+X_K(\epsilon^2)=8(E_{11}+E_{33}),\qquad X_K(\epsilon^3)=0,
+\]
+with $Y_K=-X_K$ and zero unit values. Then $K\notin\mathcal K_B$ but
+$P(\alpha,K)=2P(\xi,\eta)$. With $E_h=\eta$, this cancels $U$.
+These choices are compatible with a contraction: $\eta,K$ are independent
+modulo $\ker D$, and the nonzero cubic class may be represented by
+$z+DK$, so that $h(z)=-K$ and $h(z+DK)=0$.
+The joint certificate still gives $\mathcal J(0,V)=-6$.
+\end{remark}
+
+\begin{proposition}[Restricted weak-fiber rank check]\label{prop:quartic-rank-check}
+The image of $\mu_\alpha$ has dimension three.  Moreover,
+\[
+\rank\bigl(\cD_p,\mu_\alpha,\cP_p(\xi,\theta)\bigr)
+=
+\rank\bigl(\cD_p,\mu_\alpha\bigr)+1.
+\]
+More explicitly, form the $243\times18$ coefficient matrix from the nine
+columns of $\cD_p$ and the nine columns of
+$k\mapsto\cP_p(\alpha,k)$, both evaluated on the same weak-fiber basis.
+Its rank is $10$; adjoining $\cP_p(\xi,\theta)$ gives rank $11$.
+\end{proposition}
+
+\begin{proof}
+These are exact rational rank computations in the nine-dimensional weak fiber.  The sparse functional $\Gamma$ is an independent certificate for the rank jump: it annihilates the first two summands and is nonzero on the last vector.
+\end{proof}
+
+\begin{remark}[Why the formal normal form still exists]
+There is no contradiction with Proposition~\ref{prop:cubic-higher-tail}.  The formal rescaling
+\[
+\frac{4(1+2u)^2}{v+4(1+2u)}
+\]
+acts on the \emph{relation generator} by a tangent-dependent unit.  Such a nonlinear change is permitted when passing between equivalent minimal Kuranishi presentations, but it is not generated by changing only the linear contraction data of the fixed presentation DGLA.  The joint certificate $\mathcal J$ proves this gap for arbitrary normalized
+contractions; $\nu_4$ separately records the restricted weak-fiber calculation.
+\end{remark}
+
+\begin{remark}[What remains open after the presentation calculation]
+The strict transferred normal-form question is settled negatively for the \emph{presentation} DGLA of this cubic example.  It does not yet follow that the same quartic class is intrinsic to the full constrained Hochschild DGLA, because the latter has a nontrivial differential out of degree two.  The next subsection resolves this distinction explicitly.
+\end{remark}
+
+\subsection{The presentation quartic class does not lift intrinsically}\label{subsec:intrinsic-quartic}
+
+Write
+\[
+\mathsf a,\mathsf x\in\ghoch^1_{B,p}
+\]
+for the normalized Hochschild one-cocycles corresponding to the tangent vectors
+$\alpha,\xi$.  Thus, for $a,b\in A$,
+\[
+\mathsf a(a\otimes b^{\mathrm{op}})
+=
+X_\alpha(a)R(b)+L(a)Y_\alpha(b),
+\]
+and similarly for $\mathsf x$.
+Let $\eta=(U,W)$ be the second-order action correction of
+\eqref{eq:cubic-second-lift}, and define the normalized Hochschild one-cochain
+\[
+\mathsf e(a\otimes b^{\mathrm{op}})
+=
+U(a)R(b)+L(a)W(b)+X_\xi(a)Y_\xi(b).
+\]
+It is the coefficient of $v^2$ in the enveloping-algebra representation
+associated with the second-order action deformation.
+
+Exact cochain calculation gives the stronger identities
+\begin{equation}\label{eq:intrinsic-low-identities}
+\mathsf a\smile\mathsf a=0,
+\qquad
+[\mathsf a,\mathsf x]=0,
+\qquad
+ d_\mu\mathsf e=-\mathsf x\smile\mathsf x,
+\qquad
+[\mathsf a,\mathsf e]=-2\,\mathsf x\smile\mathsf x.
+\end{equation}
+In particular, the vanishing of the $u^2$ and $uv$ quadratic sources occurs already at the intrinsic cochain level; a contraction cannot insert arbitrary tangent-valued corrections into those zero sources.
+
+Put
+\[
+\mathsf s=[\mathsf x,\mathsf e]\in C^2(S,E_\mu).
+\]
+Then $d_\mu\mathsf s=0$.  We next choose a specific constrained one-cochain $\mathsf k$.
+Let $E_{ij}$ denote the standard matrix unit in $M_3(\C)$.  On the two factor axes set
+\begin{align*}
+X_{\mathsf k}(\epsilon)&=-\tfrac12E_{32},
+&X_{\mathsf k}(\epsilon^2)&=-E_{33},
+&X_{\mathsf k}(\epsilon^3)&=0,\\
+Y_{\mathsf k}(\epsilon)&=\tfrac12E_{32},
+&Y_{\mathsf k}(\epsilon^2)&=E_{33},
+&Y_{\mathsf k}(\epsilon^3)&=0,
+\end{align*}
+and set
+\[
+\mathsf k(\epsilon^i\otimes(\epsilon^j)^{\mathrm{op}})=0
+\qquad(i,j\ge1).
+\]
+The factor-axis pair is a weak $B$-compatible perturbation, hence
+$\mathsf k\in\ghoch^1_{B,p}$.
+Define
+\[
+\widehat\zeta:=\mathsf s+d_\mu\mathsf k.
+\]
+Then $\widehat\zeta$ is closed and represents the same cubic Hochschild class as
+$\mathsf s$.  Moreover,
+\begin{equation}\label{eq:intrinsic-zeta-projection}
+\Lambda\bigl(\Psi^2(\widehat\zeta)\bigr)=8,
+\end{equation}
+so $[\widehat\zeta]\ne0$ in $H^2(\ghoch_{B,p})$.
+
+\begin{definition}[Acyclic-intersection criterion]\label{def:acyclic-intersection}
+Let $(C^\bullet,d)$ be a cochain complex and $W\subset C^n$ a finite-dimensional subspace of source cochains that one wants a contraction projection to annihilate.  We say that $W$ is \emph{acyclicly placeable} if
+\[
+W\cap Z^n\subseteq B^n.
+\]
+Equivalently, the image of $W\cap Z^n$ in $H^n(C)$ is zero.
+\end{definition}
+
+\begin{lemma}[Placement in a contraction complement]\label{lem:acyclic-placement}
+If $W\subset C^n$ is acyclicly placeable, then one can choose a standard vector-space contraction of $C^\bullet$ onto its cohomology for which the degree-$n$ projection vanishes on $W$.
+\end{lemma}
+
+\begin{proof}
+Choose splittings
+\[
+Z^n=B^n\oplus H^n_{\mathrm{rep}}.
+\]
+Because $W\cap Z^n\subseteq B^n$, the image of $W$ in $C^n/Z^n$ has the same dimension as the image of $W/(W\cap B^n)$.  Hence a complement $C^n_{\mathrm{ac}}$ of $Z^n$ may be chosen to contain a complement of $W\cap B^n$ in $W$.  Then
+\[
+C^n=B^n\oplus H^n_{\mathrm{rep}}\oplus C^n_{\mathrm{ac}}
+\]
+has projection onto $H^n_{\mathrm{rep}}$ equal to zero on $W$.  Extending such splittings degreewise gives the usual contraction.
+\end{proof}
+
+\begin{theorem}[Intrinsic quartic vanishing contraction]\label{thm:intrinsic-ell4-vanish}
+For the cubic reconstruction of Section~\ref{sec:cubic-example}, there exists a contraction of the intrinsic constrained Hochschild DGLA onto cohomology such that
+\[
+\boxed{
+\ell_4\big|_{\operatorname{Sym}^4H^1}=0.
+}
+\]
+The same contraction retains the nonzero cubic obstruction, which may be normalized as
+\[
+\ell_3(u[\mathsf a]+v[\mathsf x],\ldots)
+\sim v^3[\widehat\zeta].
+\]
+Consequently the nonzero presentation class $\nu_4(\alpha,\xi)$ of
+Theorem~\ref{thm:strict-transfer-no-go} does not give a quartic obstruction that is
+independent of the contraction in the intrinsic constrained Hochschild DGLA.
+\end{theorem}
+
+\begin{proof}
+First note that the two boundaries
+\[
+\mathsf x\smile\mathsf x,
+\qquad
+d_\mu\mathsf k
+\]
+are linearly independent.  Hence the degree-one splitting may be chosen so that both $\mathsf e$ and $\mathsf k$ lie in its acyclic complement, with
+\[
+h(\mathsf x\smile\mathsf x)=-\mathsf e.
+\]
+Choose the cubic cohomology representative to be
+\[
+i[\widehat\zeta]=\widehat\zeta=\mathsf s+d_\mu\mathsf k.
+\]
+Then the standard contraction identity gives
+\[
+h(\mathsf s)=-\mathsf k.
+\]
+Using \eqref{eq:intrinsic-low-identities}, the transferred Maurer--Cartan section through cubic order can therefore be taken as
+\[
+F_1=u\mathsf a+v\mathsf x,
+\qquad
+F_2=v^2\mathsf e,
+\qquad
+F_3=-2uv^2\mathsf e+v^3\mathsf k.
+\]
+Its cubic residual is exactly $v^3\widehat\zeta$.
+
+The quartic source has no $u^4$ or $u^3v$ term.  Its remaining coefficients are
+\begin{align*}
+Y_{22}&=[\mathsf a,-2\mathsf e]
+      =4\,\mathsf x\smile\mathsf x,\\
+Y_{13}&=[\mathsf a,\mathsf k]-2[\mathsf x,\mathsf e],\\
+Y_{04}&=[\mathsf x,\mathsf k]+\mathsf e\smile\mathsf e.
+\end{align*}
+The first is a boundary.  The other two are not closed.  More strongly, their degree-three differentials are linearly independent.  Evaluating them on
+\[
+(1\otimes\epsilon^{\mathrm{op}})^{\otimes3}
+\]
+and taking the $(1,2)$ and $(1,3)$ matrix entries gives the exact $2\times2$ minor
+\[
+\begin{pmatrix}
+0&-\tfrac12\\[2pt]
+\tfrac12&\tfrac12
+\end{pmatrix},
+\qquad
+\det=\frac14\ne0.
+\]
+Therefore
+\[
+\Span\{Y_{22},Y_{13},Y_{04}\}\cap Z^2
+\subseteq B^2.
+\]
+By Lemma~\ref{lem:acyclic-placement}, the degree-two contraction projection can be chosen to annihilate all three quartic source coefficients.  This gives
+$\ell_4|_{\operatorname{Sym}^4H^1}=0$.
+
+Finally, the cubic class remains nonzero by \eqref{eq:intrinsic-zeta-projection}.  Thus the vanishing of the intrinsic quartic transfer is not obtained by killing the cubic obstruction.
+\end{proof}
+
+\begin{proposition}[Why the presentation class survives]\label{prop:intrinsic-presentation-gap}
+For the contraction above, the quartic Hochschild cochains satisfy
+\[
+\Gamma\bigl(\Psi^2(Y_{13})\bigr)=-16,
+\qquad
+\Gamma\bigl(\Psi^2(Y_{04})\bigr)=-\frac72.
+\]
+Thus the two intrinsic quartic sources can lie in an acyclic Hochschild complement even though their presentation images are detected by the sparse presentation certificate.
+\end{proposition}
+
+\begin{proof}
+Both identities are exact substitutions.  There is no contradiction with Theorem~\ref{thm:intrinsic-ell4-vanish}: the intrinsic sources $Y_{13},Y_{04}$ are not Hochschild cocycles, whereas the presentation DGLA has no degree-three term.  Since
+\[
+\Psi^3=0,
+\]
+the degree-three differentials that make these directions acyclic are forgotten by the finite relation model.  Their images therefore become legitimate degree-two presentation classes even though the source cochains may be placed entirely in the intrinsic acyclic complement.
+\end{proof}
+
+\begin{corollary}[Failure of a strict intrinsic lift of $\nu_4$]\label{cor:no-intrinsic-nu4-lift}
+The presentation class $\nu_4(\alpha,\xi)$ has no lift whose nonvanishing is a contraction-independent obstruction to
+\[
+\ell_4|_{\operatorname{Sym}^4H^1}=0
+\]
+in the constrained Hochschild DGLA.  In particular, the presentation quartic no-go is a truncation-sensitive normal-form phenomenon rather than an intrinsic arity-four obstruction of the full Hochschild deformation complex.
+\end{corollary}
+
+\begin{remark}[The correct intrinsic arity-four viewpoint]
+For the full Hochschild complex the relevant chain-level datum is not an arbitrary quotient of $C^2$ by presentation relations.  It is the harmonic intersection
+\[
+\frac{W_4\cap Z^2}{W_4\cap B^2},
+\]
+where $W_4$ is the span of the quartic source cochains produced by the chosen lower-order transfer.  Vanishing of this quotient is precisely what allows $W_4$ to be placed in the acyclic complement.  In the contraction constructed above this quotient is zero.
+\end{remark}
+
+
+\subsection{One contraction through arity seven}
+The extension to arities five, six and seven uses the same test:
+the differential must be injective on the joint space of new nonclosed
+sources and previously fixed complement vectors. Together with independence
+of the degree-one lifts, Lemma~\ref{lem:acyclic-placement} then places all
+these vectors in one contraction. Testing the new arity in isolation would
+not establish compatibility with earlier choices.
+
+\begin{table}[ht]
+\centering
+\caption{Successive joint-source certificates for one intrinsic contraction.}
+\label{tab:joint-low-order}
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+New arity & Degree-one lifts & Joint differential rank & Nonzero minor\\
+\midrule
+$5$ & $4$ & $5$ & $1/18$\\
+$6$ & $7$ & $9$ & $-1/486$\\
+$7$ & $11$ & $14$ & $11/34992$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The complete cochains, source expansions and minors are retained in
+Appendix~\ref{app:low-order-sources}, where
+Theorems~\ref{thm:intrinsic-ell5-vanish}--\ref{thm:intrinsic-ell7-vanish}
+prove the successive extensions. Thus one contraction preserves the cubic
+class and kills arities $4$ through $7$. The next section continues this
+same finite-data construction. Later low-rail formulas use the cochains
+$\mathsf p,\mathsf q,\mathsf r,\mathsf w,\mathsf t$ defined in that appendix.
+
+
+\section{Finite feedback beyond arity seven}\label{sec:finite-feedback}
+
+The intrinsic transfer calculation of the preceding section can be reorganized as a finite-feedback problem.  The point of this reorganization is not merely computational.  It separates three structures that behave differently at higher order: the harmonic obstruction sector, the finite controller box in degree one, and the actuator directions by which the controller moves future Maurer--Cartan sources out of the closed sector.
+
+Throughout this section we remain in the cubic example of Section~\ref{sec:cubic-example}.  Write
+\[
+S=A^e\cong \C[x,y]/(x^4,y^4),
+\qquad
+E=\End(V)\cong M_3(\C),
+\]
+and denote by $\alpha,\xi\in H^1$ the tangent generators used above.  The low-order homotopy cochains $\mathsf e,\mathsf k,\mathsf p,\ldots$ are those fixed by the intrinsic contraction.
+
+
+% BEGIN ILLUSTRATION 9
+The two completion endpoints are compared in Figure~\ref{fig:paperI-09}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_09_arity_branching.pdf}}
+\caption{Arity comparison for two completions of the saved partial homotopy. The frozen completion has a held-out nonzero arity-$23$ coefficient (Proposition~\ref{prop:frozen-23}); a different compatible completion controls arity~$23$ to zero (Theorem~\ref{thm:compatible-23}). Both have the same cubic formal germ. Neither result asserts vanishing at arity~$24$ or above.}
+\label{fig:paperI-09}
+\end{figure}
+% END ILLUSTRATION 9
+
+\subsection{A split pure-mixed reservoir}
+
+Let
+\[
+M_{\mathrm{mix}}
+=
+\bigoplus_{1\le i,j\le3}E\,\delta_{ij}
+\subset \ghoch^1_{B,p}
+\]
+be the normalized one-cochains that vanish on both factor axes and are supported on mixed monomials $x^iy^j$.  For such a cochain $f$, the Hochschild differential satisfies
+\[
+(d f)(x^i,y^j)=-f(x^iy^j).
+\]
+Consequently the restriction map
+\[
+\rho:\ghoch^2_{B,p}\longrightarrow M_{\mathrm{mix}},
+\qquad
+(\rho\Phi)(x^iy^j)=-\Phi(x^i,y^j),
+\]
+satisfies
+\begin{equation}\label{eq:split-mixed}
+\boxed{\rho\,d|_{M_{\mathrm{mix}}}=\mathrm{id}.}
+\end{equation}
+Thus the mixed degree-one directions form an explicit split contractible reservoir.  This proves compatibility of individual mixed lifts, but it does not by itself imply that all recursively generated degree-two sources lie in one acyclic complement.  The additional condition required at arity $n$ is
+\[
+W_{\le n}^{\mathrm{nc}}\cap Z^2=0,
+\]
+where $W_{\le n}^{\mathrm{nc}}$ denotes the span of the nonclosed source history through that arity.
+
+\subsection{Independent reconstruction through arity twenty-two}\label{subsec:independent-transfer}
+
+The surviving v0.33 file contains a partial homotopy on a source space
+$K_{\mathrm{old}}$ of dimension $100$. Its name emphasizes low rails, but the
+stored cochains contain more information: the complete degree-one recursion
+through arity $17$ can be regenerated from this partial map and the boundary
+splitting. No missing historical harmonic detector is needed for this statement.
+We work over $\Q$ and extend scalars to $\C$ afterwards.
+
+Let $B^2=d\ghoch^1_{B,p}$. Choose a complement $C^1_{\mathrm{ac}}$ to
+$\Span\{\mathsf a,\mathsf x\}$ by taking, in order, the existing $35$ controller
+vectors, the remaining weak-axis basis vectors, and the mixed matrix units,
+retaining a vector exactly when its differential increases rank. This gives
+$\dim C^1_{\mathrm{ac}}=\dim B^2=88$ and fixes $(d|_{C^1_{\mathrm{ac}}})^{-1}$.
+For every archived pair $(q,h_{\mathrm{old}}q)$ form the corrected source
+\[
+w_q=q-dh_{\mathrm{old}}q.
+\]
+The span $W_{\mathrm{old}}$ of these corrected sources has
+\[
+\dim W_{\mathrm{old}}=\rank(d|_{W_{\mathrm{old}}})=99.
+\]
+Thus it can be contained in a degree-two complement to the cycles.
+
+\begin{theorem}[Reconstructed single-contraction vanishing through arity $22$]
+\label{thm:independent-22}
+There is a contraction of the constrained Hochschild complex retaining every
+archived homotopy assignment and the representative
+$\widehat\zeta=[\mathsf x,\mathsf e]+d\mathsf k$ for which
+\[
+\kappa_2=0,\qquad \kappa_3(u,v)=v^3[\widehat\zeta],\qquad
+\kappa_n=0\quad(4\le n\le22).
+\]
+Equivalently, up to the usual factorial normalization, all operations
+$\ell_n|_{\operatorname{Sym}^n H^1}$ vanish in this range except the nonzero
+cubic operation. A common corrected source history $W_{22}$ satisfies
+\[
+\dim W_{22}=\rank(d|_{W_{22}})=174,
+\qquad
+\dim\bigl(B^2+\Q\widehat\zeta+W_{22}\bigr)=263.
+\]
+This is an independently chosen completion, not an identification with the
+historical fixed-detector controller.
+\end{theorem}
+
+\begin{proof}
+For $F_1=u\mathsf a+v\mathsf x$ and the previously displayed $F_2,\ldots,F_6$,
+regenerate every coefficient of
+\[
+R_n=\frac12\sum_{i=1}^{n-1}[F_i,F_{n-i}].
+\]
+The certificate specifies every subsequent coefficient $f_{n,a,b}$ of $F_n$.
+For each coefficient $q_{n,a,b}$ of $R_n$, it verifies
+\[
+q_{n,a,b}+d f_{n,a,b}\in W_{22},
+\]
+except at $(n,a,b)=(3,0,3)$, where the left side is $\widehat\zeta$.
+The exact rank calculations give $d|_{W_{22}}$ injective and
+$\widehat\zeta\notin B^2$. Hence
+$B^2\oplus\Q\widehat\zeta\oplus W_{22}$ is a direct sum.
+Extend $W_{22}$ to a complement of $Z^2$, extend $\widehat\zeta$ to
+representatives of $H^2$, and define $h_2$ to be the inverse of $d$ on $B^2$
+and zero on the other two summands. The same construction in the adjacent
+degrees extends these data to a standard contraction. Its projection $p_2$
+annihilates $B^2$ and $W_{22}$, so
+$-h_2 R_n=F_n$ and $p_2 R_n=\kappa_n$ give precisely the asserted values.
+This is the rooted-tree transfer recursion
+\cite[Chapter~10]{LodayVallette2012}; no truncation of $d:C^2\to C^3$ is made.
+
+The reconstruction uses corrected sources throughout. When $dq$ is independent
+of the accumulated differential history, a new specified lift $f$ is chosen
+and $q+df$ is adjoined. When $dq$ is dependent, the resulting closed residual is
+reduced modulo the \emph{full} $88$-dimensional boundary space. All such residuals
+vanish in the stated range. The table records cumulative ranks with the saved
+history already included; they are not the ranks of the shorter prefix alone.
+\begin{center}
+\begin{tabular}{@{}lrrrrrr@{}}
+\toprule
+arity & $7$--$17$ & $18$ & $19$ & $20$ & $21$ & $22$\\
+\midrule
+cumulative differential rank & $99$ & $112$ & $126$ & $141$ & $157$ & $174$\\
+new independent directions & $0$ & $13$ & $14$ & $15$ & $16$ & $17$\\
+\bottomrule
+\end{tabular}
+\end{center}
+The second verifier recomputes $d_2$ using matrix-unit multiplication, verifies
+these ranks over $\Q$ by a separate elimination implementation, and replays
+every polynomial source under one fixed pair $(h_2,p_2)$.
+\end{proof}
+
+\begin{proposition}[The full degree-two cohomology]\label{prop:full-cubic-H2}
+For the constrained cubic complex,
+\[
+\dim C^2=2025,\qquad \rank d_2=1895,\qquad
+\dim Z^2=130,\qquad \dim H^2=42.
+\]
+\end{proposition}
+\begin{proof}
+There are $15$ normalized algebra inputs and $9$ matrix entries, so the matrix
+of $d_2$ has size $30375\times2025$. The matrix-unit Hochschild formula gives
+$29430$ nonzero entries. Exact rational elimination supplies a $130$-vector
+kernel basis, checked by multiplication by $d_2$, and rank $1895$.
+Subtracting the independently verified boundary dimension $88$ gives $42$.
+The verifier constructs this full matrix from the algebra action, not from
+the source-history ranks.
+\end{proof}
+
+The two historical harmonic detector coordinates concern a restricted
+quadratic source space, not the full $42$-dimensional $H^2$. Nor should this
+dimension be confused with the one-dimensional effective relation space of
+the cubic formal germ.
+
+\paragraph{A fully specified degree-two projection.}
+Let $f_1,\ldots,f_{88}$ be the chosen boundary lifts, let
+$z_1=\widehat\zeta,z_2,\ldots,z_{42}$ be the selected full cohomology
+representatives, and let $w_1,\ldots,w_{174}$ be the corrected history basis.
+In normalized matrix-unit coordinates form
+\[
+M=[\,df_1\ \cdots\ df_{88}\mid z_1\ \cdots\ z_{42}
+       \mid w_1\ \cdots\ w_{174}\,]\in\Q^{2025\times304}.
+\]
+Select the lexicographic pivot rows $I$ of $M$ and write $T=(M_I)^{-1}$.
+For any $q\in C^2$, put $x=Tq_I$. The full maps are
+\[
+h_2(q)=\sum_{j=1}^{88}x_j f_j,\qquad
+p_2(q)=\sum_{j=1}^{42}x_{88+j}[z_j].
+\]
+The coordinate vectors $e_k$, $k\notin I$, together with the $174$ history
+vectors form $W^2$ of dimension $1895$. This is a direct complement to $Z^2$:
+restricting a proposed dependence to rows $I$ and multiplying by $T$ kills
+every coefficient in $M$, and then every remaining coordinate coefficient.
+The file \texttt{complete\_splitting.json} supplies all basis vectors, $I$, $T$,
+and all $2025$ columns of $h_2,p_2$. The identities $h_2(df_j)=f_j$,
+$p_2(df_j)=0$, $h_2(z_j)=0$, $p_2(z_j)=[z_j]$, and
+$h_2(W^2)=p_2(W^2)=0$ are checked on the full bases.
+
+\begin{proposition}[Held-out nonvanishing for the frozen completion]
+\label{prop:frozen-23}
+For this fully specified completion, $\kappa_{23}\ne0$. In the ordered
+cohomology basis just specified,
+\[
+\boxed{[z_9]\text{-coordinate of }[uv^{22}]\kappa_{23}=\frac49.}
+\]
+There are $18$ nonzero harmonic monomial coefficients, with $v$-degrees
+$6,\ldots,23$. The four coefficients with $v$-degrees $2,3,4,5$ still have
+zero projection, and $F_{23}^{(18,5)}$ agrees with the archived low-rail value.
+\end{proposition}
+\begin{proof}
+The complete projection file was hashed and fixed before regenerating
+\[
+R_{23}=\frac12\sum_{i=1}^{22}[F_i,F_{23-i}].
+\]
+Applying the stored $p_2$
+to every coefficient gives the stated values; the script verifies the same
+file hash afterwards and makes no further homotopy or projection choices.
+The full source coefficients and rational projection coordinates are in
+\texttt{heldout\_arity23.json}. The nonzero coordinate $4/9$ is an exact witness.
+\end{proof}
+
+Thus arity $22$ is the last consecutive vanishing arity after the cubic term
+for this particular completed contraction. This is not a contraction-independent
+arity-$23$ obstruction, and does not alter the formal germ $\C[[u,v]]/(v^3)$.
+
+\begin{remark}[What has and has not been reconstructed]\label{rem:new-not-historical}
+The new certificate preserves the archived partial map and the available
+four low rails; new completion data may use a larger controller than $U_{16}$
+and a different projection away from the old source space. Matching the ranks
+$126,141,157,174$ therefore does not recover the historical matrix entries,
+distinguished sensitivities, pivot determinants, or quotient-history flags.
+Those finer fixed-detector statements are excluded from this version's proof
+chain. There is no claim here that all $\ell_n$ with $n\ge24$ vanish,
+nor that the fixed quintic spectral factor is contraction-independent.
+\end{remark}
+
+\subsection{Compatible stationary feedback through arity twenty-three}
+\label{subsec:feedback-23}
+
+We now choose a different completion, denoted $(h_+,p_+)$, and keep the preceding
+completion as $(h_0,p_0)$. All comparisons use the same $42$ cohomology
+representatives. The construction below is new; matching historical matrix
+sizes does not identify its detectors, pivot minors, or control coefficients
+with the unavailable originals.
+
+Let $U=U_{16}\subset C^1_{\mathrm{ac}}$ be the $35$-dimensional controller with
+ordered basis $U_1,\ldots,U_{35}$ specified in the companion's
+\texttt{blocks.json}. These are actual normalized matrix-unit cochains, not
+formal control labels. Define the quadratic source space
+\[
+\mathcal T=\Span\{[f,g]:f,g\in\Span(\mathsf a,\mathsf x,U)\}.
+\]
+The $37$ generators give $703$ unordered bracket pairs. Exact computation gives
+\[
+\begin{gathered}
+\dim\mathcal T=267,\quad \rank(d_2|_{\mathcal T})=264,\quad
+\dim(\mathcal T\cap B^2)=1,\\
+\dim(\mathcal T\cap Z^2)=3,\quad
+\dim p_0(\mathcal T)=3,\quad
+\dim C_{\mathrm{quad}}=2,
+\qquad C_{\mathrm{quad}}:=p_0(\mathcal T\cap Z^2).
+\end{gathered}
+\]
+In particular the third projected direction comes from nonclosed sources;
+the full cohomology has not become two-dimensional.
+
+\begin{lemma}[Changing the projection off the cycles]\label{lem:projection-extension}
+Choose a retraction $r:p_0(\mathcal T)\to C_{\mathrm{quad}}$.
+There exists $L:C^3\to H^2$ such that
+\[
+p_+=p_0+Ld_2,\qquad
+p_+|_{Z^2}=p_0|_{Z^2},\qquad p_+(\mathcal T)=C_{\mathrm{quad}}.
+\]
+If $p_0(q)=0$ for $q\in\mathcal T$, then also $p_+(q)=0$.
+\end{lemma}
+\begin{proof}
+On $\mathcal T$ put $\delta=(r-I)p_0$. It vanishes on
+$\mathcal T\cap\ker d_2$, since $r$ is the identity on $C_{\mathrm{quad}}$.
+Thus $L(d_2q)=\delta(q)$ is well-defined on $d_2(\mathcal T)$.
+Extend this linear map to $C^3$. The displayed identities follow directly.
+Surjectivity onto $C_{\mathrm{quad}}$ follows already from the closed sources.
+\end{proof}
+
+The certificate chooses the first independent extra image in an exact echelon
+basis and sends it to zero under $r$. It verifies that this retraction preserves
+the two-dimensional combined response of $[\mathsf a,U]$ and $[\mathsf x,U]$.
+The resulting $p_+$ is serialized on all $2025$ columns before any new control
+solution is computed. Its values on all $100$ saved sources are separately
+checked to be zero. No historical sensitivity is used to tune this choice.
+
+Let $\rho:\mathcal T\to\Q^2$ be the coordinates of $p_+$ in the specified basis
+of $C_{\mathrm{quad}}$. Put
+\[
+A_j=\rho[\mathsf a,U_j],\qquad B_j=\rho[\mathsf x,U_j].
+\]
+For target arity $n$, a control in the preceding section coefficient is
+$c_{b,j}u^{n-1-b}v^bU_j$, where $6\le b\le n-1$.
+Its contribution to $R_n$ is its bracket with
+$F_1=u\mathsf a+v\mathsf x$. Consequently the entire feedback matrix is
+\begin{equation}\label{eq:new-feedback}
+(M_n)_{(d,k),(b,j)}
+=\delta_{d,b}(A_j)_k+\delta_{d,b+1}(B_j)_k,
+\quad
+\begin{array}{l}
+6\le d\le n,\quad k=1,2,\\
+6\le b\le n-1,\quad 1\le j\le35.
+\end{array}
+\end{equation}
+The scalar sector coordinates and basis indices in the JSON files are
+zero-based; the formula above uses one-based indices.
+
+
+% BEGIN ILLUSTRATION 10
+The corresponding structures are illustrated in Figure~\ref{fig:paperI-10}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_10_finite_feedback.pdf}}
+\caption{The staged finite-feedback construction. A $35$-dimensional controller changes high-$v$ section coefficients and hence future quadratic sources. The response sector $C_{\mathrm{quad}}$ has dimension two, while full $H^2$ has dimension $42$. The split mixed reservoir (here denoted by $\rho_{\mathrm{mix}}$) supplies lifts; the separate source-history condition makes them compatible with one contraction.}
+\label{fig:paperI-10}
+\end{figure}
+% END ILLUSTRATION 10
+
+\begin{theorem}[One compatible contraction through arity $23$]
+\label{thm:compatible-23}
+For the fixed cubic complex there is one contraction $(h_+,p_+)$ retaining
+the original $100$ partial-homotopy assignments and the full cohomology
+representatives, such that
+\[
+\boxed{\kappa_2=0,\qquad
+\kappa_3=v^3[\widehat\zeta],\qquad
+\kappa_n=0\quad(4\le n\le23).}
+\]
+Its $F_2,\ldots,F_{22}$ lie in $U$. The five feedback systems below have the
+stated exact coefficient and augmented ranks.
+\begin{center}
+\begin{tabular}{@{}crrr@{}}
+\toprule
+target arity & rows & columns & rank / augmented rank\\
+\midrule
+19&28&455&28 / 28\\
+20&30&490&30 / 30\\
+21&32&525&32 / 32\\
+22&34&560&34 / 34\\
+23&36&595&36 / 36\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here arity $23$ is controlled, not a held-out prediction.
+No assertion about arity $24$ or all-order pure-cubic transfer is made.
+\end{theorem}
+\begin{proof}
+Keep $F_1,\ldots,F_{17}$ from the saved partial map. At each step $18\le m\le22$,
+reduce every coefficient of $R_m$ modulo the already specified homotopy domain.
+The saved reductions show that the channels with $v$-degrees $6,\ldots,m$
+are independent modulo that domain; their homotopy values can therefore be
+chosen freely in $U$. Dependent channels are assigned their uniquely forced
+values. First set the free values to zero and compute the complete next source
+$R_{m+1}^{\mathrm{base}}$ from all preceding coefficients.
+
+Solve
+\[
+M_{m+1}c=-\rho(R_{m+1}^{\mathrm{base}}).
+\]
+Each file \texttt{feedback\_}$n$\texttt{.json} contains every matrix entry,
+the actual source before control, the right-hand side with this minus sign,
+and a rational solution. A square pivot minor $P_n$ is accompanied by its
+inverse; exact multiplication checks $P_nP_n^{-1}=I$ and recomputes its
+determinant. This proves full row rank. Exact substitution $M_nc=\mathrm{rhs}$
+proves compatibility with the actual source, rather than only a rank claim.
+All source coefficients belong to $\mathcal T$, so the two sector equations
+are the full harmonic equations, by Lemma~\ref{lem:projection-extension}.
+The coefficients of $v$-degrees below six are fixed by the preserved low rails
+and have zero projection; they too are replayed, not omitted.
+
+Prescribe $h_+(q)=-f$ for every source/section pair $q,f$, while retaining
+$h_{\mathrm{old}}$ on the saved domain and the inverse on the full boundary
+space. Exact reduction verifies all linear dependencies of these assignments.
+The cumulative differential ranks, with the old history included, are
+\[
+99,\ 112,\ 126,\ 141,\ 157,\ 174
+\]
+through arities $17,18,19,20,21,22$ respectively.
+On this entire domain the difference from $h_0$ vanishes on closed
+combinations, and hence factors through $d_2$. Extending that factor linearly
+gives $h_+=h_0+L_hd_2$ on all of $C^2$, with image in the fixed
+$88$-dimensional $C^1_{\mathrm{ac}}$.
+The full-column certificate checks
+\[
+h_+d_1|_{C^1_{\mathrm{ac}}}=I,\quad p_+d_1=0,\quad
+h_+i_2=0,\quad p_+i_2=I.
+\]
+Since $Z^2=B^2\oplus i_2H^2$, the map
+$Q=I-d_1h_+-i_2p_+$ has image
+\[
+W^2=\ker h_+\cap\ker p_+,
+\]
+is the identity there, and kills $Z^2$. Thus
+$C^2=B^2\oplus i_2H^2\oplus W^2$ and $\dim W^2=1895$.
+These splittings extend in adjacent degrees to a standard contraction.
+
+Finally, the independent consumer recomputes every $R_n$ from matrix-unit
+cup products and checks $F_n=-h_+R_n$, $\kappa_n=p_+R_n$ through $23$.
+This includes the globally determined $F_{23}$, for which no $U$-membership
+assertion is needed. Hence all values come from one contraction, not from
+unrelated arity-by-arity projections.
+\end{proof}
+
+\begin{remark}[Why the trajectory had to be rebuilt]\label{rem:feedback-compatibility}
+Keeping $p_0$ and the earlier unrestricted trajectory while resetting its
+$F_{21}$ high-$v$ channels yields a $U$-restricted arity-$22$ system of
+coefficient rank $34$ but augmented rank $35$ in the full harmonic space.
+The corresponding $88$-direction system has ranks $67/67$.
+Thus the successful new $34$-row system cannot be attached retroactively to
+that old trajectory. The separate countercheck reproduces this incompatibility.
+\end{remark}
+
+\begin{corollary}[The finite endpoint depends on the completion]
+The fixed cubic data and the saved partial-homotopy assignments do not determine
+whether $\kappa_{23}$ vanishes.
+\end{corollary}
+\begin{proof}
+Proposition~\ref{prop:frozen-23} gives a nonzero value for $(h_0,p_0)$;
+Theorem~\ref{thm:compatible-23} gives zero for $(h_+,p_+)$, with the same
+saved assignments. Both have the same cubic formal germ.
+\end{proof}
+
+\section{Autonomous low-rail transfer state}\label{sec:low-rail}
+
+The finite feedback construction and the all-orders low-rail theorem have
+different scopes. The former controls the full harmonic source through
+arity $23$. The latter fixes the finite low-rail homotopy data and studies
+the resulting autonomous triangular subsystem for all temporal indices.
+
+\begin{proposition}[Low-rail independence]\label{prop:controller-terminality}
+For a fixed homotopy, perturbations supported at $v$-degree at least six do
+not change the recursively generated coefficients of $v$-degrees $2,3,4,5$.
+\end{proposition}
+\begin{proof}
+The bracket adds polynomial degrees and the linear homotopy acts only on
+cochain coefficients. The ideal $(v^6)$ is therefore preserved by every
+bracket contribution containing such a perturbation and by the homotopy.
+Induction on arity proves equality of the recursions modulo $(v^6)$.
+\end{proof}
+This is an independence statement for the four low rails. It does not claim
+that indirect propagation through the $v^6$ rail is zero. In particular no
+unrecovered historical distinguished-detector sequence is needed below.
+
+\subsection{Autonomous low rails}
+
+The actual memory lies below $v$-degree six.  Define
+\begin{equation}\label{eq:low-rails}
+\boxed{x_b(k)=F_{k+b}^{(k,b)},\qquad b=2,3,4,5.}
+\end{equation}
+These cochain-valued sequences satisfy exact triangular quadratic recursions.  With $h$ denoting the fixed intrinsic homotopy,
+\begin{equation}\label{eq:x2-rec}
+x_2(k)=-h[\alpha,x_2(k-1)],
+\qquad
+x_2(k)=(-2)^k\mathsf e.
+\end{equation}
+Next,
+\begin{equation}\label{eq:x3-rec}
+x_3(k)=-h\bigl([\alpha,x_3(k-1)]+[\xi,x_2(k)]\bigr).
+\end{equation}
+The $v^4$ rail obeys
+\begin{equation}\label{eq:x4-rec}
+\begin{aligned}
+x_4(k)=-h\Bigg(&[\alpha,x_4(k-1)]+[\xi,x_3(k)]\\
+&+\frac12\sum_{a+b=k}[x_2(a),x_2(b)]\Bigg),
+\end{aligned}
+\end{equation}
+and the $v^5$ rail obeys
+\begin{equation}\label{eq:x5-rec}
+\begin{aligned}
+x_5(k)=-h\Bigg(&[\alpha,x_5(k-1)]+[\xi,x_4(k)]\\
+&+\frac12\sum_{a+b=k}
+\bigl([x_2(a),x_3(b)]+[x_3(b),x_2(a)]\bigr)\Bigg).
+\end{aligned}
+\end{equation}
+In these recurrences $k\ge1$, and every convolution index is nonnegative.
+The initial coefficients are
+\[
+x_2(0)=\mathsf e,\quad x_3(0)=\mathsf k,\quad
+x_4(0)=-\mathsf q,\quad x_5(0)=-\mathsf t,
+\]
+as fixed by the section coefficients above. The polynomial $q(S)$ below is
+not the cochain $\mathsf q$. Available transitions and the two later frozen
+checks are replayed from these initial data.
+
+The cochain-mode ranks on the exact trajectory are
+\begin{equation}\label{eq:rail-ranks}
+\boxed{
+\dim W_2=1,
+\qquad
+\dim W_3=7,
+\qquad
+\dim W_4=7,
+\qquad
+\dim W_5=13,
+}
+\end{equation}
+where $W_b=\Span\{x_b(k)\}$ over the computed range.
+
+\subsection{Frozen transfer law and two out-of-sample tests}
+
+Define
+\[
+q(\lambda)=
+\lambda^5-4\lambda^4+12\lambda^3-32\lambda^2+80\lambda-192.
+\]
+On the initial exact trajectory the four low rails admit the annihilators
+\[
+p_2(\lambda)=\lambda+2,
+\qquad
+p_3(\lambda)=(\lambda+2)^2q(\lambda),
+\]
+\[
+p_4(\lambda)=(\lambda+2)^3q(\lambda),
+\qquad
+p_5(\lambda)=(\lambda+2)^4q(\lambda)^2.
+\]
+For
+\[
+Y_k=(x_2(k),x_3(k),x_4(k),x_5(k)),
+\]
+the first constant scalar recurrence on the fitting window has order fourteen:
+\begin{equation}\label{eq:Y14-rec}
+\boxed{
+\begin{aligned}
+Y_{k+14}={}&-589824Y_k-688128Y_{k+1}-200704Y_{k+2}\\
+&+1536Y_{k+7}+896Y_{k+8}.
+\end{aligned}}
+\end{equation}
+Its characteristic polynomial is
+\begin{equation}\label{eq:low-poly}
+\boxed{
+p(\lambda)=(\lambda+2)^4q(\lambda)^2.
+}
+\end{equation}
+Equivalently,
+\[
+p(\lambda)=
+\lambda^{14}-896\lambda^8-1536\lambda^7
++200704\lambda^2+688128\lambda+589824.
+\]
+
+Let $M_{\mathrm{low}}$ be the $14\times14$ companion matrix of~\eqref{eq:Y14-rec}.  The matrix was frozen before computing further arities.  It predicted $Y_{17}$ and $Y_{18}$ exactly.  The first prediction was then checked by an independent arity-twenty-two quadratic recursion, and the second by an independent arity-twenty-three low-rail recursion.  In both cases every cochain coordinate agreed.  Thus the finite realization passed two genuine out-of-sample tests without refitting.
+
+
+% BEGIN ILLUSTRATION 11
+The corresponding structures are illustrated in Figure~\ref{fig:paperI-11}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_11_autonomous_low_rails.pdf}}
+\caption{The four autonomous low rails. Adjacent arrows encode the $[\xi,-]$ forcing; the Cauchy terms $C_{22}$ and $C_{23}$ enter after applying $-h$. Each rail also has the homogeneous update $A=-h\operatorname{ad}_\alpha$. The companion acts on $14$ temporal slots for each cochain coordinate. The frozen predictions of $Y_{17}$ and $Y_{18}$ agree with independent recursions without refitting. Independence modulo $(v^6)$ does not assert future-$v^6$ terminality.}
+\label{fig:paperI-11}
+\end{figure}
+% END ILLUSTRATION 11
+
+\section{Triangular spectral extension and residual modules}\label{sec:spectral-extension}
+
+We now prove that the factorization~\eqref{eq:low-poly} is an all-orders consequence of the fixed cubic contraction, rather than a finite-window coincidence.
+
+Let $S$ denote the forward temporal shift,
+\[
+(Sx)(k)=x(k+1),
+\]
+and set
+\[
+E=S+2.
+\]
+Define the homogeneous operator
+\[
+A=-h\,\operatorname{ad}_\alpha.
+\]
+The $v^3$ recursion implies that
+\[
+g_3:=Ex_3
+\]
+is homogeneous:
+\[
+Sg_3=Ag_3.
+\]
+The exact cyclic space generated by $g_3(0)$ has dimension six.  In the basis
+\[
+g_3(0),Ag_3(0),\ldots,A^5g_3(0),
+\]
+the operator is
+\begin{equation}\label{eq:Astar}
+A_*=\begin{pmatrix}
+0&0&0&0&0&384\\
+1&0&0&0&0&32\\
+0&1&0&0&0&-16\\
+0&0&1&0&0&8\\
+0&0&0&1&0&-4\\
+0&0&0&0&1&2
+\end{pmatrix}.
+\end{equation}
+Its characteristic and minimal polynomial are both
+\begin{equation}\label{eq:mA}
+\boxed{m_A(\lambda)=(\lambda+2)q(\lambda).}
+\end{equation}
+
+\begin{lemma}[Resonant Cauchy forcing]\label{lem:cauchy-resonance}
+Let $a(k)=\lambda_0^ka_0$, let $B$ be a fixed bilinear map, and define
+\[
+C_b(k)=\sum_{i+j=k}B(a(i),b(j)).
+\]
+If $E=S-\lambda_0$, then
+\[
+(EC_b)(k)=B(a_0,b(k+1)).
+\]
+Consequently, $P(S)b=0$ implies $EP(S)C_b=0$.
+\end{lemma}
+
+\begin{proof}
+Expand $C_b(k+1)$ and separate the term with $i=0$.  For $i\ge1$, use $a(i)=\lambda_0a(i-1)$ to identify the remaining sum with $\lambda_0C_b(k)$.  The final assertion follows because temporal polynomials commute with the fixed bilinear operation after one input is frozen to the geometric mode.
+\end{proof}
+
+Define the residual sequences
+\[
+r_b=m_A(S)x_b,
+\qquad b=3,4,5,
+\]
+and their cyclic temporal modules
+\[
+\mathcal R_b=\C[S]r_b.
+\]
+
+\begin{theorem}[Residual Module Theorem]\label{thm:residual-modules}
+For the fixed cubic contraction,
+\[
+\boxed{
+\mathcal R_3\simeq \C[S]/(S+2),
+\qquad
+\mathcal R_4\simeq \C[S]/(S+2)^2,
+}
+\]
+and
+\[
+\boxed{
+\mu_{\mathcal R_5}(\lambda)=(\lambda+2)^3q(\lambda).
+}
+\]
+Consequently
+\[
+\boxed{
+p_5(\lambda)=(\lambda+2)^4q(\lambda)^2
+}
+\]
+annihilates the $v^5$ rail for all temporal indices for which the autonomous triangular subsystem is defined.
+\end{theorem}
+
+\begin{proof}
+Since $g_3=Ex_3$ is a cyclic homogeneous $A$-orbit with minimal polynomial $m_A=Eq$, one has
+\[
+r_3=q(S)g_3,
+\qquad
+Er_3=m_A(S)g_3=0.
+\]
+If $r_3=0$, the degree-five polynomial $q$ would annihilate the six-dimensional cyclic orbit $g_3$, contradicting~\eqref{eq:mA}.  Hence $\mathcal R_3\simeq\C[S]/E$.
+
+Put $p_3=Em_A=E^2q$ and $y_4=p_3(S)x_4=Er_4$.  The term $[\xi,x_3]$ is killed by $p_3$, while Lemma~\ref{lem:cauchy-resonance} gives $E^2C_{22}=0$ for the $x_2*x_2$ convolution.  Thus $y_4$ is homogeneous.  Exact evaluation gives a nonzero eigenvector with
+\[
+Ay_4(0)=-2y_4(0),
+\]
+so $Ey_4=0$ but $y_4\neq0$.  Therefore $E^2r_4=0$ and $Er_4\neq0$, proving the second isomorphism.
+
+Now put $p_4=Ep_3=E^3q$ and $y_5=p_4(S)x_5$.  The term $[\xi,x_4]$ is killed by $p_4$, and the resonant Cauchy lemma gives $p_4C_{23}=0$.  Hence $y_5$ is homogeneous.  Its first six orbit vectors are cyclic and carry exactly the same matrix~\eqref{eq:Astar}, so $\mu_{y_5}=m_A$.  It follows that $m_Ap_4$ annihilates $x_5$ and hence $p_4$ annihilates $r_5=m_Ax_5$.  Finally the eight cochains $r_5(0),\ldots,r_5(7)$ are linearly independent; an exact $8\times8$ rational minor has determinant
+\[
+-1974127506397904857128197160960\neq0.
+\]
+Since $\deg p_4=8$, no smaller polynomial annihilates $r_5$.  Thus $\mu_{\mathcal R_5}=p_4$.
+\end{proof}
+
+\begin{proposition}[Exact cyclic temporal modules]\label{prop:temporal-minimal}
+Put $R=\C[S]$ and $\mathcal X_b=Rx_b$. Then
+\[
+\mathcal X_4\simeq R/(p_4),\qquad \mathcal X_5\simeq R/(p_5).
+\]
+\end{proposition}
+\begin{proof}
+The residual-module theorem gives the upper annihilators $p_4$ and $p_5$.
+For the converse, the first eight shifts of $x_4$, evaluated jointly at
+temporal indices $0,1$, are linearly independent. The corresponding fourteen
+shifts of $x_5$ are also independent. These are exact ranks $8$ and $14$
+of the two-window block matrices
+\[
+\begin{pmatrix}
+x_b(0)&x_b(1)&\cdots&x_b(d-1)\\
+x_b(1)&x_b(2)&\cdots&x_b(d)
+\end{pmatrix},
+\qquad (b,d)=(4,8),(5,14),
+\]
+after expanding cochains in matrix-unit coordinates. Both matrices are
+reconstructed by the companion; see Appendix~\ref{sec:exact-verification}.
+Any temporal relation of degree less than $d$ would give a dependence of
+these columns. Thus the upper annihilators are minimal. Apply the first
+isomorphism theorem to $R\to Rx_b$.
+\end{proof}
+
+\begin{theorem}[Triangular Spectral Extension Lemma]\label{thm:triangular-spectral-extension}
+Let $V$ be finite-dimensional, let $A\in\End(V)$, and let a temporal sequence satisfy
+\[
+Sx=Ax+f.
+\]
+Suppose $P$ is monic and $P(S)f=0$.  Set
+\[
+y=P(S)x
+\]
+and let
+\[
+d_y(\lambda)=\mu\bigl(A|_{\C[A]y(0)}\bigr).
+\]
+Then
+\[
+\mu_x\mid P\,d_y.
+\]
+If no polynomial of degree $<\deg P+\deg d_y$ annihilates $x$, then
+\[
+\boxed{\mu_x=P\,d_y.}
+\]
+In particular, if $y(0)$ is a nonzero $\lambda_0$-eigenvector, the new multiplier is $\lambda-\lambda_0$; if $y(0)$ is cyclic for the full homogeneous $A$-module, the new multiplier is $m_A$.
+\end{theorem}
+
+\begin{proof}
+Since $P(S)$ commutes with the constant operator $A$,
+\[
+(S-A)y=P(S)(S-A)x=P(S)f=0.
+\]
+Thus $y(k)=A^ky(0)$, so $d_y(S)y=0$ and therefore $P(S)d_y(S)x=0$.  The equality statement follows from the stated lower-degree exclusion.
+\end{proof}
+
+The cubic transitions are therefore
+\[
+\boxed{
+p_3=E\,m_A,
+\qquad
+p_4=E\,p_3,
+\qquad
+p_5=m_A\,p_4.
+}
+\]
+They are, respectively, a full spectral extension, a simple resonant extension, and another full spectral extension.
+
+
+% BEGIN ILLUSTRATION 12
+The corresponding structures are illustrated in Figure~\ref{fig:paperI-12}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_12_spectral_extension_tower.pdf}}
+\caption{The triangular spectral extension and residual-module tower. With $E=S+2$ and $m_A=Eq$, the successive multipliers are $E,E,m_A$. The residual modules have dimensions $1,2,8$. The annihilators are exact all-orders conclusions for the fixed autonomous subsystem, not contraction-independent invariants.}
+\label{fig:paperI-12}
+\end{figure}
+% END ILLUSTRATION 12
+
+\section{Residual landing operators and spectral selection}\label{sec:landing}
+
+The preceding lemma can be made predictive using only finite boundary data.
+
+\begin{proposition}[Finite-jet landing formula]\label{prop:finite-jet-landing}
+Let
+\[
+x_{k+1}=Ax_k+f_k,
+\qquad
+P(z)=\sum_{r=0}^dp_rz^r,
+\qquad
+P(S)f=0.
+\]
+Then the homogeneous landing vector
+\[
+y_0=P(S)x(0)
+\]
+depends only on $x_0,f_0,\ldots,f_{d-1}$ and is
+\[
+\boxed{
+y_0=P(A)x_0+\sum_{t=0}^{d-1}K_{P,t}(A)f_t,
+}
+\]
+where
+\[
+K_{P,t}(z)=\sum_{r=t+1}^dp_rz^{r-1-t}.
+\]
+\end{proposition}
+
+\begin{proof}
+Unroll the recurrence to
+\[
+x_r=A^rx_0+\sum_{t=0}^{r-1}A^{r-1-t}f_t
+\]
+and substitute into $P(S)x(0)=\sum_rp_rx_r$.
+\end{proof}
+
+The displayed formula computes a landing from an initial state and forcing
+jet. To specify the complete family independently of homogeneous ambiguity,
+use the fixed cyclic temporal modules of Proposition~\ref{prop:temporal-minimal}:
+\[
+\mathcal H_4=E^2\mathcal X_4,\quad
+\mathcal H_5=p_4\mathcal X_5,\qquad
+\mathscr D_b=\mathcal X_b/\mathcal H_b\quad(b=4,5).
+\]
+Both $\mathcal H_b$ are cyclic $R$-modules with annihilator $m_A$.
+Identify their shift action with the homogeneous companion operator $A_*$
+using the generators $h_0=E^2x_4$ and $y_5=p_4x_5$ respectively.
+This is a specified cyclic-module identification, not an identification
+of arbitrary cochain jets. Define
+\[
+\Lambda_4([u])=p_3(S)u,\qquad \Lambda_5([u])=p_4(S)u.
+\]
+Their values lie in $\mathcal H_4,\mathcal H_5$. Changing a lift in
+$\mathcal H_4$ contributes $p_3E^2=Ep_4$, while changing one in
+$\mathcal H_5$ contributes $p_4^2=E^2p_5$. Both vanish in the respective
+$\mathcal X_b$, proving well-definedness.
+
+\begin{theorem}[Complete landing operators for $x_4$ and $x_5$]\label{thm:complete-landing}
+For the fixed cubic contraction, let $R=\C[S]$ and $E=S+2$.
+
+For $x_4$,
+\[
+\mathscr D_4\simeq R/E^2R,
+\qquad
+\dim\mathscr D_4=2.
+\]
+In the domain basis $[x_4],[Sx_4]$, abbreviated $[1],[S]$, and target
+basis $h_0,Sh_0,\ldots,S^5h_0$, with shift matrix \eqref{eq:Astar},
+the complete landing operator is
+\[
+[\Lambda_4]=
+\begin{pmatrix}
+-192&384\\
+80&-160\\
+-32&64\\
+12&-24\\
+-4&8\\
+1&-2
+\end{pmatrix}.
+\]
+It satisfies
+\[
+\boxed{\rank\Lambda_4=1,
+\qquad
+(A+2I)\Lambda_4=0.}
+\]
+Hence every nonzero admissible $x_4$ landing is structurally an $E$-extension.
+
+For $x_5$,
+\[
+\mathscr D_5\simeq R/p_4R,
+\qquad
+\dim\mathscr D_5=8,
+\]
+and, in the domain basis $[x_5],[Sx_5],\ldots,[S^7x_5]$,
+abbreviated $[1],[S],\ldots,[S^7]$, and target basis
+$y_5,Sy_5,\ldots,S^5y_5$,
+\[
+[\Lambda_5]=
+\begin{pmatrix}
+1&0&0&0&0&0&384&768\\
+0&1&0&0&0&0&32&448\\
+0&0&1&0&0&0&-16&0\\
+0&0&0&1&0&0&8&0\\
+0&0&0&0&1&0&-4&0\\
+0&0&0&0&0&1&2&0
+\end{pmatrix}.
+\]
+Thus
+\[
+\boxed{\rank\Lambda_5=6,}
+\]
+so $\Lambda_5$ is surjective onto the full homogeneous module.  Moreover
+\[
+\ker\Lambda_5=m_A\mathscr D_5
+\]
+is two-dimensional.
+\end{theorem}
+\begin{proof}
+The domain identifications follow from
+$\mathcal X_4=R/(E^2m_A)$ and $\mathcal X_5=R/(p_4m_A)$.
+For $\Lambda_4$ the columns are $q(A_*)e_1$ and
+$A_*q(A_*)e_1=-2q(A_*)e_1$, giving the nonzero rank-one eigenimage.
+For $\Lambda_5$ they are $e_1,A_*e_1,\ldots,A_*^7e_1$;
+the first six form the identity matrix. Its kernel consists exactly of
+classes divisible by $m_A$, of dimension $\deg p_4-\deg m_A=2$.
+\end{proof}
+
+For $d=(d_0,\ldots,d_7)$ write
+\[
+r_d(S)=\sum_{j=0}^7d_jS^j.
+\]
+Then
+\[
+\Lambda_5(d)=r_d(A)y_5.
+\]
+The Krylov determinant satisfies
+\begin{equation}\label{eq:landing-resultant}
+\boxed{
+\Delta_A(\Lambda_5(d))
+=\det r_d(A)
+=\operatorname{Res}(m_A,r_d).
+}
+\end{equation}
+Since the datum $r_d=1$ gives determinant one, this polynomial is nonzero; full $m_A$-extension is therefore Zariski-generic.
+
+
+% BEGIN ILLUSTRATION 13
+The corresponding structures are illustrated in Figure~\ref{fig:paperI-13}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_13_landing_operators.pdf}}
+\caption{Complete landing operators and spectral selection. The rank-one map $\Lambda_4$ lands in the resonant eigenline; $\Lambda_5$ is onto the six-dimensional homogeneous module and has a two-dimensional kernel. The finite-jet formula assumes $P(S)f=0$. In the fixed cyclic module, the surviving homogeneous annihilator is $m_A/\gcd(m_A,r_d)$.}
+\label{fig:paperI-13}
+\end{figure}
+% END ILLUSTRATION 13
+
+\section{Spectral and extension stratifications}\label{sec:stratification}
+
+The complete landing geometry is controlled by elementary gcd data in the PID $\C[S]$.
+
+\begin{lemma}[GCD landing formula]\label{lem:gcd-landing}
+Let $\mathcal H=\C[S]/(m)$ with cyclic generator $y=[1]$.  For $v=r(A)y$,
+\[
+\boxed{
+\operatorname{Ann}_{\C[S]}(v)=\left(\frac{m}{\gcd(m,r)}\right).
+}
+\]
+\end{lemma}
+
+\begin{proof}
+Write $m=gm_1$ and $r=gr_1$ with $g=\gcd(m,r)$ and $\gcd(m_1,r_1)=1$.  Then $fv=0$ iff $m\mid fr$, equivalently $m_1\mid fr_1$, and hence $m_1\mid f$.
+\end{proof}
+
+For the cubic homogeneous polynomial $m_A=Eq$, exact symbolic calculation gives
+\[
+q(-2)=-672\neq0,
+\qquad
+\gcd(q,q')=1,
+\qquad
+\gcd(m_A,m_A')=1,
+\]
+and $q$ is irreducible over $\Q$.  Over a splitting field write
+\[
+q(S)=\prod_{i=1}^5Q_i(S),
+\qquad
+Q_i(S)=S-\beta_i.
+\]
+Thus $m_A$ has six distinct spectral roots.
+
+\begin{theorem}[Spectral landing stratification]\label{thm:spectral-stratification}
+For $d\in\mathscr D_5$,
+\[
+\boxed{
+\mu_H(d)=\frac{m_A}{\gcd(m_A,r_d)}.
+}
+\]
+Over a splitting field, let
+\[
+Z(d)=\{\lambda\in\{-2,\beta_1,\ldots,\beta_5\}:r_d(\lambda)=0\}.
+\]
+Then the locally closed strata
+\[
+\mathscr S_Z=\{d:Z(d)=Z\}
+\]
+are all nonempty, there are $2^6=64$ of them, and on $\mathscr S_Z$
+\[
+\boxed{
+\mu_H=\prod_{\lambda\notin Z}(S-\lambda).
+}
+\]
+Moreover
+\[
+\dim\mathscr S_Z=8-|Z|
+\]
+and
+\[
+\overline{\mathscr S_Z}
+=\bigsqcup_{Z'\supseteq Z}\mathscr S_{Z'}.
+\]
+\end{theorem}
+
+Equation~\eqref{eq:landing-resultant} factors over $\Q$ as
+\[
+\operatorname{Res}(m_A,r_d)
+=r_d(-2)\operatorname{Res}(q,r_d).
+\]
+Hence the rational exceptional divisor has a resonant linear component and an irreducible quintic norm component.  Rational data can therefore have only the four homogeneous multipliers
+\[
+m_A,
+\qquad q,
+\qquad E,
+\qquad1.
+\]
+
+The forcing quotient retains higher resonant depth.  Set
+\[
+g_H=\gcd(m_A,r_d),
+\qquad
+g_F=\gcd(p_4,r_d).
+\]
+
+\begin{theorem}[Two-axis forcing/spectral stratification]\label{thm:two-axis}
+Since $m_A\mid p_4$,
+\[
+\boxed{g_H=\gcd(m_A,g_F).}
+\]
+Over a splitting field define
+\[
+\nu(d)=\min\{3,\operatorname{ord}_{E}r_d\}
+\]
+and
+\[
+Z(d)=\{i:r_d(\beta_i)=0\}.
+\]
+Then the common refinement is indexed by
+\[
+(\nu,Z)\in\{0,1,2,3\}\times2^{\{1,\ldots,5\}},
+\]
+with
+\[
+\boxed{
+g_F=E^\nu\prod_{i\in Z}Q_i,
+\qquad
+g_H=E^{\min(1,\nu)}\prod_{i\in Z}Q_i.
+}
+\]
+There are $128$ nonempty strata, with
+\[
+\dim\mathscr S_{\nu,Z}=8-\nu-|Z|,
+\]
+and closure order
+\[
+(\nu,Z)\preceq(\nu',Z')
+\iff
+\nu\le\nu',\quad Z\subseteq Z'.
+\]
+The codimension generating polynomial is
+\[
+(1+t+t^2+t^3)(1+t)^5.
+\]
+\end{theorem}
+
+The two exceptional resultants have the same reduced support but different resonant multiplicity:
+\[
+\operatorname{Res}(m_A,r_d)=r_d(-2)\operatorname{Res}(q,r_d),
+\]
+\[
+\operatorname{Res}(p_4,r_d)=r_d(-2)^3\operatorname{Res}(q,r_d).
+\]
+Thus forcing memory is a resonant jet refinement of reduced spectral support.
+
+Finally introduce the canonical higher-lift invariant
+\[
+g_X(d)=\gcd(p_5,r_d),
+\qquad
+p_5=E^4q^2.
+\]
+Here $r_d$ is the unique representative of degree $<8$ in
+$\mathscr D_5\simeq R/(p_4)$. The chosen polynomial section is
+\[
+X_{\mathrm{can}}(d):=r_d(S)x_5\in\mathcal X_5.
+\]
+It is a $\C$-linear section, not an $R$-linear splitting of the extension.
+While $g_H$ and $g_F$ do not depend on the polynomial representative,
+$g_X$ describes this specified lift. In a cyclic module of annihilator
+$p_5$, the annihilator of $r_dx_5$ is $p_5/\gcd(p_5,r_d)$,
+which explains the full-lift formula below.
+
+\begin{theorem}[Three-level extension stratification]\label{thm:three-level}
+For every canonical datum,
+\[
+\boxed{
+g_H\mid g_F\mid g_X,
+\qquad
+g_H=\gcd(m_A,g_X),
+\qquad
+g_F=\gcd(p_4,g_X).
+}
+\]
+Over a splitting field define
+\[
+a(d)=\min\{4,\operatorname{ord}_{E}r_d\}\in\{0,1,2,3,4\},
+\]
+and
+\[
+b_i(d)=\min\{2,\operatorname{ord}_{Q_i}r_d\}\in\{0,1,2\}.
+\]
+For a nonzero datum the exact contact label $(a,b_1,\ldots,b_5)$ is realizable if and only if
+\[
+\boxed{a+\sum_{i=1}^5b_i\le7.}
+\]
+On this stratum,
+\[
+\boxed{
+g_X=E^a\prod_iQ_i^{b_i},
+}
+\]
+while $g_F$ and $g_H$ are obtained by truncating exponents to $(3,1)$ and $(1,1)$ respectively.  The stratum has
+\[
+\boxed{
+\dim=8-a-\sum_ib_i.
+}
+\]
+There are $708$ nonzero fine strata and one zero stratum.  The canonical full-lift annihilator is
+\[
+\boxed{
+\mu_X^{\mathrm{can}}=\frac{p_5}{g_X}
+=E^{4-a}\prod_iQ_i^{2-b_i}.
+}
+\]
+\end{theorem}
+
+\begin{proof}
+The divisibility chain follows from $m_A\mid p_4\mid p_5$.  Over the splitting field, gcds are determined by truncated contact orders at the six pairwise distinct spectral points.  A nonzero degree-$<8$ polynomial divisible by $E^a\prod_iQ_i^{b_i}$ exists exactly when the total contact weight is at most seven; sufficiency is realized by that product itself.  Hermite interpolation gives independence of the corresponding jet conditions and hence the dimension formula.  Summing feasible labels gives
+\[
+1+6+21+51+96+146+186+201=708.
+\]
+The zero datum forms the unique final stratum.
+\end{proof}
+
+Scheme-theoretically, the three levels have multiplicity profiles
+\[
+\operatorname{Res}(m_A,r_d):\quad (E,Q_i)=(1,1),
+\]
+\[
+\operatorname{Res}(p_4,r_d):\quad (E,Q_i)=(3,1),
+\]
+\[
+\operatorname{Res}(p_5,r_d):\quad (E,Q_i)=(4,2).
+\]
+The third level therefore adds precisely the fourth resonant jet and second-order contact with each quintic spectral hyperplane.
+
+Over $\Q$, irreducibility of $q$ and the degree bound $\deg r_d<8$ imply that the nonzero possibilities for $g_X$ are exactly
+\[
+1,
+E,
+E^2,
+E^3,
+E^4,
+q,
+Eq,
+E^2q.
+\]
+Thus the rational canonical three-level stratification consists of eight nonzero strata plus the zero datum.
+
+\begin{remark}[Scope]\label{rem:strat-scope}
+Theorem~\ref{thm:three-level} classifies the canonical polynomial lift in the fixed cubic $x_5$ module.  It is not a claim that every inverse-Leibniz contraction has the same multiplicity pattern.  The general problem is to determine the analogue of the exponent truncation rules from the spectral multiplicity vectors of the homogeneous operator and the triangular forcing maps.
+\end{remark}
+
+
+% BEGIN ILLUSTRATION 14
+The corresponding structures are illustrated in Figure~\ref{fig:paperI-14}.
+\begin{figure}[tbp]
+\centering
+\makebox[\textwidth][c]{\includegraphics[width=7.0in]{figures/fig_14_three_level_stratification.pdf}}
+\caption{Three levels of spectral contact. The left diagram is an eight-vertex slice of the two-axis closure order, with all other quintic roots excluded from $Z$; arrows point toward additional vanishing. The full splitting-field counts are $64$, $128$, and $708$ nonzero fine strata plus the zero datum. The third level uses the specified degree-$<8$ polynomial lift, not an $\C[S]$-linear splitting.}
+\label{fig:paperI-14}
+\end{figure}
+% END ILLUSTRATION 14
+
+\section{Conclusion and fixed-case scope}\label{sec:fixed-case-conclusion}
+For the fixed cubic data studied here, the reconstruction calculation and its
+chosen-contraction spectral analysis give the following results:
+\begin{enumerate}[label=(\roman*)]
+\item the weak affine reconstruction fiber, strict bimodule equations, tangent observability, and explicit global non-identifiability;
+\item the formal germ $\C[[u,v]]/(v^3)$, the dual-number and cubic obstruction
+calculations, one complete contraction with post-cubic vanishing through arity
+$23$, and a second complete contraction with a nonzero frozen arity-$23$ operation;
+\item the full degree-two splitting with $\dim H^2=42$, and the autonomous
+low-rail results with frozen OOS certificates at $Y_{17}$ and $Y_{18}$;
+\item the exact residual-module, landing-operator, and three-level spectral stratifications, giving $708$ nonzero splitting-field strata plus the zero datum and nine rational strata in total.
+\end{enumerate}
+The new feedback theorem includes all entries, right-hand sides, solutions, and
+pivot inverses. Historical detector sensitivities and quotient actuator flags
+remain unrecovered and are excluded from the proof chain. In the
+spanning examples the pointwise fixed-$B$ stabilizer is trivial, so the four-point
+ambiguity is genuine. The unified companion supplies the new matrix certificates, the earlier frozen
+comparison, and the separate low-rail and companion-paper verification chain.
+
+Paper~III~\cite{PaperIII} gives a finite normalized-tilt spectral-floor theorem for marked
+data. A classification of arbitrary triangular forcing and its exponent-truncation rules
+remains distinct from that result and from the fixed calculation here; see
+Section~\ref{sec:open-problems}.
+
+\section{Open problems and next steps}\label{sec:open-problems}
+
+\begin{problem}[Relative presentation versus intrinsic normal forms]
+Theorem~\ref{thm:strict-transfer-no-go} gives a nonzero presentation quartic class, while Theorem~\ref{thm:intrinsic-ell4-vanish} shows that it disappears after restoring the full Hochschild differential.  Construct a relative theory, preferably in terms of the mapping cone or homotopy fiber of
+\[
+\Psi:\ghoch_{B,p}\to\gpres_{B,p},
+\]
+that measures exactly which presentation normal-form obstructions are truncation artifacts and which survive intrinsically.
+\end{problem}
+
+\begin{problem}[General triangular spectral-extension theory]
+The fixed cubic contraction now admits an all-orders low-rail theorem and complete landing stratifications.  Abstract these results to triangular systems whose homogeneous operator has spectral multiplicity data
+\[
+m_A(S)=\prod_\lambda(S-\lambda)^{e_\lambda}
+\]
+and whose forcing branches are built from linear maps and Cauchy convolutions of lower rails.  Determine general conditions under which forcing annihilators, residual landing modules, and higher-lift contact are obtained by deterministic exponent-truncation rules analogous to Theorems~\ref{thm:triangular-spectral-extension} and~\ref{thm:three-level}.
+\end{problem}
+
+\begin{problem}[Beyond finite feedback]
+Determine whether one contraction can retain the cubic operation and make every
+higher degree-one operation vanish, or whether a later finite obstruction
+persists for every admissible completion. The two arity-$23$ outcomes above
+do not settle this question. No future actuator flag is assumed.
+\end{problem}
+
+These three questions are separate from the fixed results proved here.
+Broader gauge quotients, graded reconstruction and geometric applications
+require additional input and are not part of the present closeout.
+
+\clearpage
+\appendix
+
+\section{Exact computational verification}\label{sec:exact-verification}
+
+The portable v0.08 companion has three evidence directories:
+\texttt{legacy} (the preserved v0.04 finite suites),
+\texttt{transfer\_v05} (the frozen full-completion comparison), and
+\texttt{feedback\_v06} (the compatible feedback contraction).
+The root command \texttt{python -B verify\_all.py} runs all three evidence
+families and the old-trajectory incompatibility countercheck.
+The companion is \path{three_papers_v0_08_bundle.zip}.
+Its \path{EVIDENCE_MAP.md} identifies each claim's exact file and replay
+entry point. No public archive identifier has yet been assigned.
+Use Python with assertions enabled and SymPy 1.14.0.
+No unpublished helper outside the package is needed for these commands.
+
+\paragraph{Foundations and the formal germ.}
+The legacy foundation and recovery scripts reconstruct the weak-action
+matrices from the specified algebra products and fixed $B$, substitute the
+strict equations, and compute exact Groebner bases. They check the four-point,
+dual-number, square-zero and cubic examples, including the cubic formal germ,
+the rational higher-tail certificate and the finite-flat multiplication
+matrices. They also reconstruct the presentation quartic obstruction and
+the intrinsic sources through arity seven, checking the displayed degree-three
+minors. The relation morphism and general obstruction arguments are proved
+in the body; finite examples are checks, not substitutes for those proofs.
+
+\paragraph{The unrestricted presentation certificate.}
+The root \path{verify_body_corrections.py} reconstructs the weak
+nine-dimensional subspace and all $54$ unit-preserving axis coordinates.
+It verifies every identity for the six-coordinate functional $\mathcal J$,
+including arbitrary symbolic tangent parameters. Its relaxed coupled
+quartic matrix has ranks $57/58$ before and after adjoining the forcing
+column. A separate exact example cancels the single $uv^3$ source,
+preventing reuse of the former overstrong single-coefficient assertion.
+The script also checks the two-window temporal ranks needed for the
+landing quotient definitions.
+
+\paragraph{Two full contractions, kept distinct.}
+The \texttt{transfer\_v05} consumer rebuilds the full $d_2$ kernel and the
+projection from the saved exact inverse, verifies all sources through arity
+$22$, then evaluates the next source without changing the projection.
+Its regenerated complete-splitting and held-out files must match the supplied
+files byte for byte.
+
+The \texttt{feedback\_v06} consumer uses a separate flattened cup-product
+implementation. It recomputes the full $30375$-by-$2025$ differential,
+checks $Z^2=B^2\oplus i_2H^2$, the full columns of $h_+,p_+$, all $100$ saved
+assignments, every quadratic pair and every source through arity $23$.
+For each of the five matrices it checks the block formula, CSV/JSON equality,
+source-derived right-hand side, rational solution, pivot inverse and determinant.
+All arithmetic is exact over $\Q$.
+The metadata-only ranks in the older v0.32 file are not used as a substitute
+for these new matrix checks.
+
+\paragraph{Coordinates and file linkage.}
+Normalized algebra inputs are the $15$ lexicographically ordered pairs
+in $\{0,1,2,3\}^2\setminus\{(0,0)\}$.
+If $\operatorname{sid}(s)$ is the zero-based input index and $0\le r,c<3$,
+the ambient one-cochain coordinate is
+$9\operatorname{sid}(s)+3r+c$.
+The two-cochain coordinate is
+$9(15\operatorname{sid}(s)+\operatorname{sid}(t))+3r+c$.
+Sparse rational vectors use triples $[\text{index},\text{numerator},\text{denominator}]$.
+Polynomial coefficients use $[a,b]$ for $u^av^b$.
+The $135$ ambient one-cochain coordinates contain the $90$-dimensional constrained
+space and its $88$-dimensional acyclic complement.
+The two new harmonic sector coordinates embed into the full $42$-dimensional
+cohomology via the matrix in \texttt{blocks.json}.
+The files \texttt{projection.json}, \texttt{homotopy.json}, and
+\texttt{transfer.json} specify the complete maps and recursion.
+The nonzero $4/9$ comparison witness belongs only to
+\texttt{transfer\_v05/heldout\_arity23.json}.
+
+\paragraph{Low rails and spectral selection.}
+The seven legacy fixed-case verifiers check the v0.32/v0.33 frozen low-rail
+predictions, the cyclic matrix $A_*$, the residual modules of ranks $(1,2,8)$,
+the exact landing matrices, gcd truncations and the $64$, $128$ and $709$
+finite stratum counts. The all-orders assertions follow from the operator,
+forcing and finite-rank arguments in Sections~\ref{sec:spectral-extension}--%
+\ref{sec:stratification}; two out-of-sample identities are separate finite evidence.
+The polynomial and module claims are relative to the stated fixed low-rail
+data, not to every contraction or arbitrary triangular forcing system.
+
+\paragraph{Verification boundary.}
+The original historical detector pair, distinguished sensitivity, specific pivot
+minors and evolving quotient-history flags have not been recovered.
+Their old statements remain in the preserved research archive, not in this
+manuscript's theorem chain. Computational replay is an exact rational certificate
+check, not a proof-assistant formalization of the complete papers.
+The bibliography gives a bounded primary-literature positioning, not an exhaustive
+priority search. No result depends on a prospective research illustration.
+
+\section{Low-order source coefficients and joint certificates}\label{app:low-order-sources}
+This appendix supplies the explicit data summarized in
+Table~\ref{tab:joint-low-order}. The constructions retain every earlier
+splitting assignment and use the joint-source placement criterion.
+
+\subsection{The intrinsic contraction extends through arity five}\label{subsec:intrinsic-quintic}
+
+The arity-four theorem leaves genuine freedom in the values of the contracting homotopy on the two nonclosed quartic source cochains.  To continue one \emph{single} contraction, this freedom must be chosen compatibly with both the already selected quartic acyclic directions and the new quintic sources.  We now give an explicit compatible choice.
+
+Let $E_{ij}$ again denote the standard matrix units.  Define constrained one-cochains $\mathsf p,\mathsf q\in\ghoch^1_{B,p}$, with zero mixed values, by
+\begin{align*}
+X_{\mathsf p}(\epsilon)
+&=-\tfrac13E_{21}+\tfrac16E_{22},
+&Y_{\mathsf p}(\epsilon)
+&=\tfrac13E_{21}-\tfrac16E_{22},\\
+X_{\mathsf p}(\epsilon^2)
+&=-\tfrac23E_{22},
+&Y_{\mathsf p}(\epsilon^2)
+&=\tfrac23E_{22},\\
+X_{\mathsf p}(\epsilon^3)
+&=-E_{23},
+&Y_{\mathsf p}(\epsilon^3)
+&=E_{23},
+\end{align*}
+and
+\begin{align*}
+X_{\mathsf q}(\epsilon)
+&=-\tfrac12E_{22},
+&Y_{\mathsf q}(\epsilon)
+&=\tfrac12E_{22},\\
+X_{\mathsf q}(\epsilon^2)
+&=-E_{23},
+&Y_{\mathsf q}(\epsilon^2)
+&=E_{23},\\
+X_{\mathsf q}(\epsilon^3)
+&=0,
+&Y_{\mathsf q}(\epsilon^3)
+&=0.
+\end{align*}
+Exact calculation gives
+\begin{equation}\label{eq:arity5-degree1-rank}
+\rank\Span\{d\mathsf e,d\mathsf k,d\mathsf p,d\mathsf q\}=4,
+\end{equation}
+so the degree-one acyclic complement may be chosen to contain all four cochains simultaneously.
+
+Set
+\begin{equation}\label{eq:arity5-quartic-complement}
+C_{13}=Y_{13}-d\mathsf p,
+\qquad
+C_{04}=Y_{04}-d\mathsf q.
+\end{equation}
+Then the quartic source decomposition is compatible with
+\[
+h(Y_{13})=\mathsf p,
+\qquad
+h(Y_{04})=\mathsf q,
+\]
+while $C_{13}$ and $C_{04}$ are placed in the degree-two acyclic complement.  Since $Y_{22}=4\,\mathsf x\smile\mathsf x$ and $h(\mathsf x\smile\mathsf x)=-\mathsf e$, the arity-four Taylor coefficient of the transferred section can be chosen as
+\begin{equation}\label{eq:intrinsic-F4}
+F_4
+=
+4u^2v^2\mathsf e
+-uv^3\mathsf p
+-v^4\mathsf q.
+\end{equation}
+
+The quintic Maurer--Cartan source
+\[
+R_5=[F_1,F_4]+[F_2,F_3]
+\]
+has only the four monomial coefficients
+\begin{align}
+Z_{32}&=-8\,\mathsf x\smile\mathsf x,\label{eq:arity5-Z32}\\
+Z_{23}&=4\mathsf s-[\mathsf a,\mathsf p],\label{eq:arity5-Z23}\\
+Z_{14}&=-[\mathsf a,\mathsf q]-[\mathsf x,\mathsf p]-4\mathsf e\smile\mathsf e,\label{eq:arity5-Z14}\\
+Z_{05}&=-[\mathsf x,\mathsf q]+[\mathsf e,\mathsf k].\label{eq:arity5-Z05}
+\end{align}
+Here $Z_{32}$ is a boundary because
+\[
+Z_{32}=d(8\mathsf e).
+\]
+The remaining question is whether the nonclosed quartic complement directions and the three non-boundary-type quintic sources can be put into the \emph{same} acyclic complement.
+
+\begin{theorem}[Intrinsic quintic vanishing extension]\label{thm:intrinsic-ell5-vanish}
+For the cubic reconstruction of Section~\ref{sec:cubic-example}, the intrinsic contraction of Theorem~\ref{thm:intrinsic-ell4-vanish} can be chosen and extended so that
+\[
+\boxed{
+\ell_4\big|_{\operatorname{Sym}^4H^1}=0,
+\qquad
+\ell_5\big|_{\operatorname{Sym}^5H^1}=0.
+}
+\]
+The cubic obstruction $[\widehat\zeta]$ remains nonzero.
+\end{theorem}
+
+\begin{proof}
+Let
+\[
+W_{4,5}^{\mathrm{nc}}
+=
+\Span\{C_{13},C_{04},Z_{23},Z_{14},Z_{05}\}
+\subset C^2(S,E_\mu).
+\]
+We show that the Hochschild differential is injective on this five-dimensional space.
+
+Write
+\[
+x=\epsilon\otimes1,
+\qquad
+y=1\otimes\epsilon^{\mathrm{op}},
+\qquad
+m=\epsilon\otimes\epsilon^{\mathrm{op}}.
+\]
+For a normalized three-cochain $\Phi$, evaluate successively the coordinates
+\[
+\Phi(y,y,y)_{12},\quad
+\Phi(y,y,y)_{13},\quad
+\Phi(y,y,y)_{23},\quad
+\Phi(y,y,m)_{13},\quad
+\Phi(y,x,y)_{13}.
+\]
+On the ordered columns
+\[
+dC_{13},\ dC_{04},\ dZ_{23},\ dZ_{14},\ dZ_{05},
+\]
+these five functionals give the exact matrix
+\begin{equation}\label{eq:arity5-minor}
+\begin{pmatrix}
+0&-\tfrac12&0&-\tfrac23&-\tfrac12\\
+\tfrac12&\tfrac12&-\tfrac13&\tfrac13&-1\\
+0&1&0&\tfrac13&0\\
+0&0&0&\tfrac13&0\\
+\tfrac12&-\tfrac12&\tfrac13&-\tfrac13&0
+\end{pmatrix},
+\qquad
+\det=\frac1{18}\ne0.
+\end{equation}
+Hence
+\[
+\rank\Span\{dC_{13},dC_{04},dZ_{23},dZ_{14},dZ_{05}\}=5,
+\]
+and therefore
+\[
+W_{4,5}^{\mathrm{nc}}\cap Z^2=0.
+\]
+The degree-two acyclic complement can consequently be chosen to contain the whole space $W_{4,5}^{\mathrm{nc}}$ at once.  Together with the boundary $Z_{32}$, every quintic source coefficient has zero cohomology projection.  The same splitting already kills all quartic coefficients by construction, so the resulting single contraction satisfies
+\[
+\ell_4|_{\operatorname{Sym}^4H^1}
+=
+\ell_5|_{\operatorname{Sym}^5H^1}
+=0.
+\]
+Nothing in this extension changes the cubic representative $\widehat\zeta$, whose nonvanishing was established by \eqref{eq:intrinsic-zeta-projection}.
+\end{proof}
+
+\begin{remark}[No arity-five obstruction for this intrinsic splitting]
+The arity-five calculation is stronger than checking the quintic sources in isolation.  The determinant \eqref{eq:arity5-minor} tests the \emph{joint} span of the previously fixed quartic acyclic directions and the new quintic directions.  Thus the argument really constructs one compatible contraction through arity five; it does not silently replace the contraction between orders.
+\end{remark}
+
+
+\subsection{The intrinsic contraction extends through arity six}\label{subsec:intrinsic-sextic}
+
+We now continue the \emph{same} contraction one order further.  The arity-five theorem fixed the degree-two complement directions but left freedom in the values of the homotopy on the three non-boundary-type quintic sources.  We choose explicit constrained one-cochains
+\[
+\mathsf r,\mathsf w,\mathsf t\in\ghoch^1_{B,p}
+\]
+with the following values.  The cochain $\mathsf r$ has only factor-axis values
+\begin{align*}
+X_{\mathsf r}(\epsilon)
+&=-\tfrac13E_{31}+\tfrac16E_{32},
+&Y_{\mathsf r}(\epsilon)
+&=\tfrac13E_{31}-\tfrac16E_{32},\\
+X_{\mathsf r}(\epsilon^2)
+&=-\tfrac23E_{32},
+&Y_{\mathsf r}(\epsilon^2)
+&=\tfrac23E_{32},\\
+X_{\mathsf r}(\epsilon^3)
+&=-E_{33},
+&Y_{\mathsf r}(\epsilon^3)
+&=E_{33}.
+\end{align*}
+The cochains $\mathsf w$ and $\mathsf t$ have zero factor-axis values and are supported only at
+\[
+m=\epsilon\otimes\epsilon^{\mathrm{op}},
+\]
+where
+\[
+\mathsf w(m)=E_{11},
+\qquad
+\mathsf t(m)=E_{12}.
+\]
+Exact calculation gives
+\begin{equation}\label{eq:arity6-degree1-rank}
+\rank\Span\{d\mathsf e,d\mathsf k,d\mathsf p,d\mathsf q,d\mathsf r,d\mathsf w,d\mathsf t\}=7.
+\end{equation}
+Thus all seven cochains may be included simultaneously in one degree-one acyclic complement.
+
+Set
+\begin{equation}\label{eq:arity6-quintic-complement}
+D_{23}=Z_{23}-d\mathsf r,
+\qquad
+D_{14}=Z_{14}-d\mathsf w,
+\qquad
+D_{05}=Z_{05}-d\mathsf t.
+\end{equation}
+This corresponds to choosing
+\[
+h(Z_{23})=\mathsf r,
+\qquad
+h(Z_{14})=\mathsf w,
+\qquad
+h(Z_{05})=\mathsf t.
+\]
+Since $Z_{32}=d(8\mathsf e)$, the arity-five Taylor coefficient can then be chosen as
+\begin{equation}\label{eq:intrinsic-F5}
+F_5
+=
+-8u^3v^2\mathsf e
+-u^2v^3\mathsf r
+-uv^4\mathsf w
+-v^5\mathsf t.
+\end{equation}
+
+The sextic Maurer--Cartan source is
+\[
+R_6=[F_1,F_5]+[F_2,F_4]+\frac12[F_3,F_3].
+\]
+It has five monomial coefficients:
+\begin{align}
+U_{42}&=-8[\mathsf a,\mathsf e],\label{eq:arity6-U42}\\
+U_{33}&=-[\mathsf a,\mathsf r]-8\mathsf s,\label{eq:arity6-U33}\\
+U_{24}&=-[\mathsf a,\mathsf w]-[\mathsf x,\mathsf r]+12\,\mathsf e\smile\mathsf e,\label{eq:arity6-U24}\\
+U_{15}&=-[\mathsf a,\mathsf t]-[\mathsf x,\mathsf w]-[\mathsf e,\mathsf p]-2[\mathsf e,\mathsf k],\label{eq:arity6-U15}\\
+U_{06}&=-[\mathsf x,\mathsf t]-[\mathsf e,\mathsf q]+\mathsf k\smile\mathsf k.\label{eq:arity6-U06}
+\end{align}
+Here $\mathsf s=[\mathsf x,\mathsf e]$ is the nonzero cubic source fixed in the intrinsic construction above.  The coefficient $U_{42}$ is a boundary.  Indeed,
+\[
+[\mathsf a,\mathsf e]=-2\,\mathsf x\smile\mathsf x,
+\qquad
+d\mathsf e=-\mathsf x\smile\mathsf x,
+\]
+so
+\begin{equation}\label{eq:arity6-U42-boundary}
+U_{42}=d(-16\mathsf e).
+\end{equation}
+
+\begin{theorem}[Intrinsic sextic vanishing extension]\label{thm:intrinsic-ell6-vanish}
+For the cubic reconstruction of Section~\ref{sec:cubic-example}, one intrinsic contraction can be chosen so that
+\[
+\boxed{
+\ell_4\big|_{\operatorname{Sym}^4H^1}
+=
+\ell_5\big|_{\operatorname{Sym}^5H^1}
+=
+\ell_6\big|_{\operatorname{Sym}^6H^1}
+=0.
+}
+\]
+The cubic obstruction $[\widehat\zeta]$ remains nonzero.
+\end{theorem}
+
+\begin{proof}
+Let
+\[
+W_{4,5,6}^{\mathrm{nc}}
+=
+\Span\{C_{13},C_{04},D_{23},D_{14},D_{05},U_{33},U_{24},U_{15},U_{06}\}.
+\]
+We prove that the Hochschild differential is injective on this nine-dimensional space.  As before set
+\[
+x=\epsilon\otimes1,
+\qquad
+y=1\otimes\epsilon^{\mathrm{op}},
+\qquad
+m=\epsilon\otimes\epsilon^{\mathrm{op}}.
+\]
+Evaluate degree-three cochains successively at the nine coordinates
+\[
+(yyy)_{11},\ (yyy)_{12},\ (yyy)_{13},\ (yyy)_{23},\ (yyy)_{32},\
+(yym)_{13},\ (yym)_{23},\ (y\,y^2\,y)_{13},\ (yxy)_{13}.
+\]
+On the ordered columns
+\[
+dC_{13},dC_{04},dD_{23},dD_{14},dD_{05},dU_{33},dU_{24},dU_{15},dU_{06},
+\]
+these functionals give the exact matrix
+\begin{equation}\label{eq:arity6-minor}
+\begin{pmatrix}
+0&0&0&0&0&0&\tfrac13&0&0\\
+0&-\tfrac12&0&-\tfrac23&-\tfrac12&-\tfrac13&-\tfrac12&1&0\\
+\tfrac12&\tfrac12&-\tfrac13&\tfrac13&-1&-\tfrac16&\tfrac16&0&0\\
+0&1&0&\tfrac13&0&-\tfrac13&\tfrac13&-\tfrac13&0\\
+0&0&0&0&0&0&0&0&-\tfrac12\\
+0&0&0&\tfrac13&0&\tfrac13&0&0&0\\
+0&0&0&0&0&0&\tfrac13&-\tfrac13&0\\
+0&0&0&-1&-1&-\tfrac13&-\tfrac23&2&1\\
+\tfrac12&-\tfrac12&\tfrac13&-\tfrac13&0&\tfrac16&\tfrac56&0&1
+\end{pmatrix},
+\qquad
+\det=-\frac1{486}\ne0.
+\end{equation}
+Hence
+\[
+\rank\Span\{dC_{13},dC_{04},dD_{23},dD_{14},dD_{05},dU_{33},dU_{24},dU_{15},dU_{06}\}=9,
+\]
+and therefore
+\[
+W_{4,5,6}^{\mathrm{nc}}\cap Z^2=0.
+\]
+The degree-two acyclic complement can consequently be chosen to contain all nine directions simultaneously.  Together with the boundary coefficient $U_{42}$, every sextic source coefficient has zero cohomology projection.  The same degree-one and degree-two splittings already realize the quartic and quintic vanishings, so this single contraction satisfies the claimed identities through arity six.  None of these choices alters the previously fixed nonzero cubic class $[\widehat\zeta]$.
+\end{proof}
+
+\begin{remark}[No intrinsic obstruction through arity six]\label{rem:no-obstruction-through-six}
+The arity-six test again uses the joint source space rather than the sextic coefficients in isolation.  Thus Theorem~\ref{thm:intrinsic-ell6-vanish} constructs one compatible contraction through arity six.  It does \emph{not} prove that all higher transferred operations vanish.  Arity seven is the next point at which a new closed non-boundary combination may appear inside the growing joint acyclic source space.
+\end{remark}
+
+
+\subsection{The intrinsic contraction extends through arity seven}\label{subsec:intrinsic-arity7}
+
+We keep every splitting choice from the arity-six construction and choose homotopy lifts for the four nonclosed sextic coefficients.  Let
+\[
+m=\epsilon\otimes\epsilon^{\mathrm{op}}.
+\]
+Define four constrained one-cochains $\mathsf A,\mathsf B,\mathsf C,\mathsf D$ with zero factor-axis values, supported only at $m$, by
+\[
+\mathsf A(m)=E_{21},\qquad
+\mathsf B(m)=E_{22},\qquad
+\mathsf C(m)=E_{23},\qquad
+\mathsf D(m)=E_{31}.
+\]
+Exact calculation gives
+\begin{equation}\label{eq:arity7-degree1-rank}
+\rank\Span\{d\mathsf e,d\mathsf k,d\mathsf p,d\mathsf q,d\mathsf r,d\mathsf w,d\mathsf t,
+ d\mathsf A,d\mathsf B,d\mathsf C,d\mathsf D\}=11.
+\end{equation}
+Thus all eleven degree-one homotopy directions can be included simultaneously in one acyclic splitting.
+
+Set
+\begin{equation}\label{eq:arity7-sextic-complement}
+G_{33}=U_{33}-d\mathsf A,\qquad
+G_{24}=U_{24}-d\mathsf B,\qquad
+G_{15}=U_{15}-d\mathsf C,\qquad
+G_{06}=U_{06}-d\mathsf D.
+\end{equation}
+Accordingly the arity-six Taylor coefficient can be chosen as
+\begin{equation}\label{eq:intrinsic-F6}
+F_6
+=
+16u^4v^2\mathsf e
+-u^3v^3\mathsf A
+-u^2v^4\mathsf B
+-uv^5\mathsf C
+-v^6\mathsf D.
+\end{equation}
+
+The arity-seven Maurer--Cartan source is
+\[
+R_7=[F_1,F_6]+[F_2,F_5]+[F_3,F_4].
+\]
+Its six monomial coefficients are
+\begin{align}
+V_{52}&=16[\mathsf a,\mathsf e],\label{eq:arity7-V52}\\
+V_{43}&=-[\mathsf a,\mathsf A]+16[\mathsf x,\mathsf e],\label{eq:arity7-V43}\\
+V_{34}&=-[\mathsf a,\mathsf B]-[\mathsf x,\mathsf A]-16[\mathsf e,\mathsf e],\label{eq:arity7-V34}\\
+V_{25}&=-[\mathsf a,\mathsf C]-[\mathsf x,\mathsf B]-[\mathsf e,\mathsf r]
++2[\mathsf e,\mathsf p]+4[\mathsf k,\mathsf e],\label{eq:arity7-V25}\\
+V_{16}&=-[\mathsf a,\mathsf D]-[\mathsf x,\mathsf C]-[\mathsf e,\mathsf w]
++2[\mathsf e,\mathsf q]-[\mathsf k,\mathsf p],\label{eq:arity7-V16}\\
+V_{07}&=-[\mathsf x,\mathsf D]-[\mathsf e,\mathsf t]-[\mathsf k,\mathsf q].\label{eq:arity7-V07}
+\end{align}
+The leading coefficient is again a boundary.  Since $[\mathsf a,\mathsf e]=-2\mathsf x\smile\mathsf x$ and $d\mathsf e=-\mathsf x\smile\mathsf x$,
+\begin{equation}\label{eq:arity7-V52-boundary}
+V_{52}=d(32\mathsf e).
+\end{equation}
+
+\begin{theorem}[Intrinsic arity-seven vanishing extension]\label{thm:intrinsic-ell7-vanish}
+For the cubic reconstruction of Section~\ref{sec:cubic-example}, one intrinsic contraction can be chosen so that
+\[
+\boxed{
+\ell_4\big|_{\operatorname{Sym}^4H^1}
+=
+\ell_5\big|_{\operatorname{Sym}^5H^1}
+=
+\ell_6\big|_{\operatorname{Sym}^6H^1}
+=
+\ell_7\big|_{\operatorname{Sym}^7H^1}
+=0.
+}
+\]
+The cubic obstruction $[\widehat\zeta]$ remains nonzero.
+\end{theorem}
+
+\begin{proof}
+Use the actual sextic complement vectors from \eqref{eq:arity7-sextic-complement} and define
+\[
+W_{4,5,6,7}^{\mathrm{nc}}
+=
+\Span\{C_{13},C_{04},D_{23},D_{14},D_{05},G_{33},G_{24},G_{15},G_{06},
+V_{43},V_{34},V_{25},V_{16},V_{07}\}.
+\]
+Because $d^2=0$, the differentials of $G_{33},G_{24},G_{15},G_{06}$ are the same as those of $U_{33},U_{24},U_{15},U_{06}$ used in the arity-six certificate.  It therefore suffices to prove that the five new degree-seven directions increase the joint differential rank from nine to fourteen.
+
+As before write
+\[
+x=\epsilon\otimes1,\qquad y=1\otimes\epsilon^{\mathrm{op}},\qquad m=\epsilon\otimes\epsilon^{\mathrm{op}}.
+\]
+On the ordered columns
+\[
+dC_{13},dC_{04},dD_{23},dD_{14},dD_{05},dG_{33},dG_{24},dG_{15},dG_{06},
+dV_{43},dV_{34},dV_{25},dV_{16},dV_{07},
+\]
+consider the fourteen coordinate evaluations
+\[
+\begin{gathered}
+(yyy)_{11},(yyy)_{12},(yyy)_{13},(yyy)_{21},(yyy)_{22},(yyy)_{23},(yyy)_{32},\\
+(yyx)_{11},(yyx)_{12},(yym)_{13},(yym)_{23},(y\,y^2\,y)_{13},(yxy)_{13},(yxy)_{23}.
+\end{gathered}
+\]
+The resulting exact $14\times14$ minor, denoted $M_7$, satisfies
+\begin{equation}\label{eq:arity7-minor}
+\det M_7=\frac{11}{34992}\ne0.
+\end{equation}
+Hence
+\[
+\rank d\big|_{W_{4,5,6,7}^{\mathrm{nc}}}=14,
+\qquad
+W_{4,5,6,7}^{\mathrm{nc}}\cap Z^2=0.
+\]
+Thus the degree-two acyclic complement can be enlarged to contain all fourteen directions simultaneously.  Together with the boundary coefficient $V_{52}$, every arity-seven source coefficient has zero cohomology projection.  Equation~\eqref{eq:arity7-degree1-rank} guarantees that the required eleven degree-one homotopy directions coexist in the same splitting.  Therefore the same intrinsic contraction realizes the quartic, quintic, sextic, and arity-seven vanishings while preserving the previously fixed nonzero cubic class.
+\end{proof}
+
+\begin{remark}[No intrinsic obstruction through arity seven]\label{rem:no-obstruction-through-seven}
+The rank-fourteen certificate is a simultaneous history test: it includes every
+nonclosed direction already committed at arities four, five, and six. Thus one
+contraction realizes the arity-seven vanishing. This argument alone leaves
+arity eight unchecked; Theorem~\ref{thm:independent-22} extends the verified
+range without asserting an all-orders pure-cubic transfer.
+\end{remark}
+
+\clearpage
+\begin{thebibliography}{99}
+\raggedright
+
+\bibitem{Gerstenhaber1964}
+M.~Gerstenhaber,
+\emph{On the deformation of rings and algebras},
+Ann. of Math. (2) \textbf{79} (1964), 59--103.
+\href{https://doi.org/10.2307/1970484}{doi:10.2307/1970484}.
+
+\bibitem{Schlessinger1968}
+M.~Schlessinger,
+\emph{Functors of Artin rings},
+Trans. Amer. Math. Soc. \textbf{130} (1968), 208--222.
+\href{https://doi.org/10.1090/S0002-9947-1968-0217093-3}{doi:10.1090/S0002-9947-1968-0217093-3}.
+
+\bibitem{CuntzQuillen1995}
+J.~Cuntz and D.~Quillen,
+\emph{Algebra extensions and nonsingularity},
+J. Amer. Math. Soc. \textbf{8} (1995), 251--289.
+\href{https://doi.org/10.1090/S0894-0347-1995-1303029-0}{doi:10.1090/S0894-0347-1995-1303029-0}.
+
+\bibitem{VanDenBergh2008}
+M.~Van den Bergh,
+\emph{Double Poisson algebras},
+Trans. Amer. Math. Soc. \textbf{360} (2008), 5711--5769.
+\href{https://doi.org/10.1090/S0002-9947-08-04518-2}{doi:10.1090/S0002-9947-08-04518-2}.
+
+\bibitem{GerstenhaberSchack1983}
+M.~Gerstenhaber and S.~D.~Schack,
+\emph{On the deformation of algebra morphisms and diagrams},
+Trans. Amer. Math. Soc. \textbf{279} (1983), 1--50.
+\href{https://doi.org/10.1090/S0002-9947-1983-0704600-5}{doi:10.1090/S0002-9947-1983-0704600-5}.
+
+\bibitem{GerstenhaberSchack1985}
+M.~Gerstenhaber and S.~D.~Schack,
+\emph{On the cohomology of an algebra morphism},
+J. Algebra \textbf{95} (1985), 245--262.
+\href{https://doi.org/10.1016/0021-8693(85)90104-8}{doi:10.1016/0021-8693(85)90104-8}.
+
+\bibitem{GerstenhaberSchack1988}
+M.~Gerstenhaber and S.~D.~Schack,
+\emph{Algebraic cohomology and deformation theory},
+in \emph{Deformation Theory of Algebras and Structures and Applications},
+NATO ASI Ser. C \textbf{247}, Kluwer, Dordrecht, 1988, 11--264.
+\href{https://doi.org/10.1007/978-94-009-3057-5_2}{doi:10.1007/978-94-009-3057-5\_2}.
+
+\bibitem{Laudal2002}
+O.~A.~Laudal,
+\emph{Noncommutative deformations of modules},
+Homology Homotopy Appl. \textbf{4} (2002), no.~2, 357--396.
+\href{https://doi.org/10.4310/HHA.2002.v4.n2.a17}{doi:10.4310/HHA.2002.v4.n2.a17}.
+
+\bibitem{BerestKhachatryanRamadoss2013}
+Y.~Berest, G.~Khachatryan, and A.~Ramadoss,
+\emph{Derived representation schemes and cyclic homology},
+Adv. Math. \textbf{245} (2013), 625--689.
+\href{https://doi.org/10.1016/j.aim.2013.06.020}{doi:10.1016/j.aim.2013.06.020}.
+
+
+\bibitem{Manetti2005}
+M.~Manetti,
+\emph{Deformation theory via differential graded Lie algebras},
+expository notes (written 1999), arXiv:math/0507284, 2005.
+\url{https://arxiv.org/abs/math/0507284}.
+
+\bibitem{LodayVallette2012}
+J.-L.~Loday and B.~Vallette,
+\emph{Algebraic Operads}, Grundlehren Math. Wiss. \textbf{346},
+Springer, Heidelberg, 2012, Chapter~10.
+\href{https://doi.org/10.1007/978-3-642-30362-3}{doi:10.1007/978-3-642-30362-3}.
+
+\bibitem{PaperII}
+Akari H.,
+\emph{Resonance-Marked Naturality and Homotopy-Tilt Non-Invariance in the Inverse-Leibniz Cubic Case},
+Paper II, illustrated edition v0.09, 2026. Unpublished companion manuscript.
+
+\bibitem{PaperIII}
+Akari H.,
+\emph{General Spectral Floors from Marked Deformation Presentations},
+Paper III, illustrated edition v0.09, 2026. Unpublished companion manuscript.
+\end{thebibliography}
+
+\end{document}

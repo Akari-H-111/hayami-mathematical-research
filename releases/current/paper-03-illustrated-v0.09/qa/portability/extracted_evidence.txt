@@ -1,0 +1,13 @@
+RUN evidence/verification/part_III/verify_equation_operator_reconstruction_v0_61.py
+PASS verify_equation_operator_reconstruction_v0_61.py
+RUN evidence/verification/part_III/verify_forced_sector_extraction_v0_58.py
+PASS verify_forced_sector_extraction_v0_58.py
+RUN evidence/verification/part_III/verify_general_spectral_floor_tilt_quotient_v0_57.py
+PASS verify_general_spectral_floor_tilt_quotient_v0_57.py
+RUN evidence/verification/part_III/verify_normalized_source_generation_v0_59.py
+PASS verify_normalized_source_generation_v0_59.py
+RUN evidence/verification/part_III/verify_syzygy_to_constraint_propagator_v0_60.py
+PASS verify_syzygy_to_constraint_propagator_v0_60.py
+RUN evidence/verify_proof_recovery_v0_03.py
+PASS verify_proof_recovery_v0_03.py
+PASS: six finite-evidence entry points.

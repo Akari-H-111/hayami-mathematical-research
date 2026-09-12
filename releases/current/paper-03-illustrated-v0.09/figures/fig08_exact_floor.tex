@@ -1,0 +1,35 @@
+\input{style.tex}
+\begin{document}
+\begin{tikzpicture}
+\framewidth
+\node[box,text width=13.6cm] (data)
+ {\textbf{Exact rational data and the unchanged full orbit}\\[5pt]
+ $A=\begin{pmatrix}0&0&0\\0&2&0\\1&0&3\end{pmatrix},\quad
+ H=\begin{pmatrix}0&0&1\end{pmatrix},\quad A_\tau=A+\tau H$\\[5pt]
+ Only the third column varies.};
+\node[box,text width=13.6cm,below=7mm of data] (core)
+ {\textbf{Noninvariant kernel and its invariant core}\\[5pt]
+ $U=\langle e_2\rangle\subset K=\langle e_1,e_2\rangle\subset R=\Q^3$\\[4pt]
+ $Ae_1=e_3\notin K,\qquad U=\displaystyle\bigcap_{j=0}^2\ker(HA^j),\qquad A|_U=2I_U$};
+\draw[edge] (data)--(core);
+\node[box,text width=6.4cm,below=7mm of core.south,xshift=-3.65cm] (one)
+ {\textbf{First cyclic witness}\\[5pt]
+ $\tau_0=(0,0,-3)^{\mathsf T}$\\[5pt]
+ $\chi_{A+\tau_0H}=(S-2)S^2$\\[5pt]
+ $\mu_{A+\tau_0H}=(S-2)S^2$};
+\node[box,text width=6.4cm] (two) at (one-|3.65,0)
+ {\textbf{Second cyclic witness}\\[5pt]
+ $\tau_1=(-1,0,-3)^{\mathsf T}$\\[5pt]
+ $\chi_{A+\tau_1H}=(S-2)(S^2+1)$\\[5pt]
+ $\mu_{A+\tau_1H}=(S-2)(S^2+1)$};
+\draw[edge] (core.south)--++(0,-3mm)-|(one.north);
+\draw[edge] (core.south)--++(0,-3mm)-|(two.north);
+\node[goldbox,text width=13.6cm,below=7mm of $(one.south)!0.5!(two.south)$] (floor)
+ {\textbf{Exact stable-core floor}\\[5pt]
+ $\displaystyle\gcd_\tau\chi_{A_\tau}=S-2=\chi_{A|_U},\qquad
+ \displaystyle\gcd_\tau\mu_{A_\tau}=S-2=\mu_{A|_U}$\\[4pt]
+ The two witnesses realize both gcds inside the original tilt family.};
+\draw[edge] (one.south)--++(0,-3mm)-|(floor.north);
+\draw[edge] (two.south)--++(0,-3mm)-|(floor.north);
+\end{tikzpicture}
+\end{document}

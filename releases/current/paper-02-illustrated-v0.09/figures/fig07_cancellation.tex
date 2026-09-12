@@ -1,0 +1,37 @@
+\input{style.tex}
+\begin{document}
+\begin{tikzpicture}
+\node[note,text width=13.5cm] at (0,1)
+ {An independent four-generator counterexample; this is not the cubic model.};
+\node[box,text width=5.7cm,minimum height=29mm] (g) at (-3.85,-1)
+ {\textbf{DGLA $\mathfrak g$}\\[4pt]
+ Degree one: $\alpha,\xi,E$; degree two: $\beta$\\[3pt]
+ $d\alpha=d\xi=0,\quad dE=\beta$\\[3pt]
+ $[\xi,\xi]=2\beta,\quad[\alpha,E]=2\beta$};
+\node[greenbox,text width=5.7cm,minimum height=29mm] (h) at (3.85,-1)
+ {\textbf{Abelian DGLA $\mathfrak h$}\\[4pt]
+ Degree one: $\alpha,\xi$\\[3pt]
+ Zero differential and zero brackets\\[3pt]
+ $p(E)=p(\beta)=0$};
+\draw[edge] (g)--node[above]{$p$}(h);
+\node[goldbox,text width=13.5cm] (kernel) at (0,-3.5)
+ {$p$ fixes $\alpha,\xi$ and has acyclic kernel
+ $\C E\xrightarrow{\ d\ }\C\beta$.\\[4pt]
+ Hence $p$ is a strict DGLA quasi-isomorphism.};
+\node[box,text width=5.7cm,minimum height=24mm] (mcg) at (-3.85,-5.65)
+ {$\gamma=u\alpha+v\xi+wE$\\[4pt]
+ $w+v^2+2uw=0$\\[4pt]
+ $w=-v^2/(1+2u)$};
+\node[greenbox,text width=5.7cm,minimum height=24mm] (mch) at (3.85,-5.65)
+ {$\operatorname{MC}(\mathfrak h):\ u\alpha+v\xi$\\[4pt]
+ Same smooth formal germ\\in two parameters\\[4pt]
+ $\C[[u,v]]$};
+\draw[edge] (mcg)--(mch);
+\node[note,text width=13.5cm] at (0,-7.55)
+ {Over local Artin algebras, $1+2u$ is a unit; there are no degree-zero gauge directions.};
+\node[redbox,text width=13.5cm] at (0,-8.9)
+ {In $\mathfrak g$: $\Lr=\C\beta$, $\Tr=\C\alpha$, $\rr(\alpha)=2$.\\[4pt]
+ In $\mathfrak h$: $\mathcal L'_{\mathrm{res}}=0$.\\[4pt]
+ The Maurer--Cartan functor is preserved, but the marked pair is erased.};
+\end{tikzpicture}
+\end{document}

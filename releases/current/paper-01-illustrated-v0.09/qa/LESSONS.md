@@ -1,0 +1,5 @@
+- 2026-09-07 — System pdfLaTeX lacks enumitem; the manuscript bundle specifies Tectonic. Use the existing documented toolchain.
+- 2026-09-07 — placeins is not in the system TeX tree; use standard floats and inspect final placements.
+- 2026-09-07 — A log path repeated the working directory and failed; write the QA log relative to the explicitly selected directory.
+- 2026-09-07 — Prepare the portable-build directory before selecting it as a command working directory.
+- 2026-09-07 — Path(".").parent remains lexical "."; resolve it before deriving the parent output directory for the source ZIP.

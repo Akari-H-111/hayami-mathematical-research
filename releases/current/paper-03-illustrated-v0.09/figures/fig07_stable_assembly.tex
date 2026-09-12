@@ -1,0 +1,28 @@
+\input{style.tex}
+\begin{document}
+\begin{tikzpicture}
+\framewidth
+\node[box,text width=13.6cm] (alg)
+ {\textbf{1. Operator closure on $H_0$, with $h=\dim H_0$}\\[5pt]
+ $V_0=\kk I,\qquad V_{j+1}=V_j+\displaystyle\sum_{G\in\Gmark}\bar G V_j$\\[5pt]
+ $V_{j+1}=V_j\ \Longrightarrow\ V_j=\Aeff$\\[4pt]
+ At most $h^2$ strict increases; at most $h^2-1$ when $h>0$.};
+\node[box,text width=13.6cm,below=7mm of alg] (src)
+ {\textbf{2. Source closure and normalization output}\\[5pt]
+ $N_0=\im R_0,\qquad N_{j+1}=N_j+\displaystyle\sum_{G\in\Gmark}\bar G N_j$\\[5pt]
+ $\Neq=\Aeff\im R_0,\qquad q_{\rm eq}:F\to F/\iota(\Neq),\qquad \Geq=q_{\rm eq}D\Lambda$};
+\draw[edge] (alg)--(src);
+\node[goldbox,text width=13.6cm,below=7mm of src] (stable)
+ {\textbf{3. Stable assembly under landing descent}\\[5pt]
+ $T\ker\Lambda\subseteq\ker\Lambda,\qquad
+ W=\displaystyle\bigcap_{j=0}^{m-1}\ker(\Geq T^j),\quad m=\dim M>0$\\[5pt]
+ $\ker\Lambda\subseteq W,\qquad \widetilde T:W/\ker\Lambda\to W/\ker\Lambda$\\[5pt]
+ $\chi_{\rm forced}=\chi_{\widetilde T},\qquad\mu_{\rm forced}=\mu_{\widetilde T}$\\[4pt]
+ If $T\ker\Geq\subseteq\ker\Geq$, then $W=\ker\Geq$.};
+\draw[edge] (src)--(stable);
+\node[note,text width=13.6cm,below=4mm of stable]
+ {No filtration is needed for termination. If the whole effective algebra\\
+ preserves a length-$L$ filtration, its shift ideal $J$ satisfies $J^L=0$.\\
+ Both output polynomials are $1$ when $M=0$.};
+\end{tikzpicture}
+\end{document}

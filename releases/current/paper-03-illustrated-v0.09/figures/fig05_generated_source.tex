@@ -1,0 +1,29 @@
+\input{style.tex}
+\begin{document}
+\begin{tikzpicture}
+\framewidth
+\node[box,text width=13.6cm] (closure)
+ {\textbf{Finite invariant-source closure}\\[5pt]
+ $N^{(0)}=\im R_0,\qquad N^{(r+1)}=N^{(r)}+\displaystyle\sum_i C_iN^{(r)}$\\[5pt]
+ $N^{(0)}\subseteq N^{(1)}\subseteq\cdots\subseteq\Neq=\kk\langle C_1,\ldots,C_s\rangle\im R_0$\\[4pt]
+ The sequence stabilizes in finite dimension.};
+\node[goldbox,text width=13.6cm,below=7mm of closure] (min)
+ {\textbf{Minimality}\\[3pt]
+ $\Neq$ is the unique smallest subspace containing the seed image\\
+ and invariant under every $C_i$.};
+\draw[edge] (closure)--(min);
+\node[box,text width=13.6cm,below=7mm of min] (fun)
+ {\textbf{Intertwining data imply functoriality}\\[4pt]
+ $\Phi_FR_0=R'_0\Phi_W,\qquad \Phi_FC_i=C'_i\Phi_F$\\[4pt]
+ $\Longrightarrow\quad\Phi_F(\Neq)\subseteq N'_{\rm eq}$};
+\node[goldbox,text width=13.6cm,below=7mm of fun] (coverage)
+ {\textbf{Generated coverage when $\Phi_F$ is invertible}\\[5pt]
+ $\Phi_F(\Neq)=N'_{\rm eq}\quad\Longleftrightarrow\quad\im R'_0\subseteq\Phi_F(\Neq)$\\[4pt]
+ Mapping onto the target seed image is sufficient, but not necessary.};
+\draw[edge] (fun)--(coverage);
+\node[neutral,text width=13.6cm,below=7mm of coverage]
+ {\textbf{Insertion into the landing problem}\\[4pt]
+ For $\Neq\subseteq H_0(P_\bullet)$, use $N=\iota(\Neq)\subseteq F$,\\[3pt]
+ $q_{\rm eq}:F\to F/N,\qquad\Geq=q_{\rm eq}D\Lambda$.};
+\end{tikzpicture}
+\end{document}

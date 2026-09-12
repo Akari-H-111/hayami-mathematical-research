@@ -1,0 +1,1 @@
+2026-09-09 — DOI substitution initially assumed a space where Paper II has a newline; exact matched-text reversal now verifies the permitted edits. The dependent validation correctly failed while its source record was absent.

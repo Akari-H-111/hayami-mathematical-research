@@ -1,0 +1,16 @@
+We assemble a finite algebraic construction of characteristic and minimal polynomial
+divisors preserved by a full normalized-tilt orbit. Chain operators supplied by a marked
+relation presentation generate an effective algebra on zeroth homology. Relation seeds
+then generate its smallest invariant source subspace. Together with compatible finite
+state, landing, and source maps, these data determine a static normalized sector and its largest invariant core.
+Without assuming invariance of the static sector, the common characteristic and minimal
+polynomial divisors of the same full tilt orbit are exactly those of that core.
+A finite spectral-avoidance argument proves both equalities.
+Global landing descent can be weakened to local descent for the stable image;
+when even local descent fails, a future-output quotient still retains well-defined dynamics.
+We give explicit closure tests, an observability-kernel formula for the stable core,
+and a finite closure algorithm. Exact rational models check the separate stages.
+The input bookkeeping is essential: the chain-operator marking and the state,
+landing, and source maps are supplied data, not consequences of a bare filtration.
+The contribution is their connection to the normalized-tilt quotient; the homological
+descent, invariant-subspace closure, and observability constructions are standard.

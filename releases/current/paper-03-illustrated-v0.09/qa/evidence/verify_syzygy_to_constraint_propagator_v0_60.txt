@@ -1,0 +1,5 @@
+v0.60 Syzygy-to-Constraint Propagator verifier: PASS
+syzygy rank = 4
+quotient dim = 4
+propagator char = lam**4
+reachability rank = 4

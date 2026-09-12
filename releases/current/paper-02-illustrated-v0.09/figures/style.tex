@@ -1,0 +1,23 @@
+\documentclass[10pt,border=5pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,mathrsfs,tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\definecolor{ink}{HTML}{192536}
+\definecolor{blue}{HTML}{2E70AE}
+\definecolor{gold}{HTML}{A66A15}
+\definecolor{green}{HTML}{28764D}
+\definecolor{red}{HTML}{B43D3D}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathcal R}
+\newcommand{\Lr}{\mathcal L_{\mathrm{res}}}
+\newcommand{\Prs}{\mathcal P_{\mathrm{res}}}
+\newcommand{\Tr}{T_{\mathrm{resp}}}
+\newcommand{\rr}{\rho_{\mathrm{res}}}
+\tikzset{every node/.style={font=\small,text=ink,align=center},
+ box/.style={draw=blue,fill=blue!4,rounded corners=3pt,line width=.7pt,inner sep=7pt},
+ goldbox/.style={box,draw=gold,fill=gold!5},
+ greenbox/.style={box,draw=green,fill=green!5},
+ redbox/.style={box,draw=red,fill=red!4},
+ edge/.style={-{Stealth[length=4pt]},draw=ink,line width=.7pt},
+ heading/.style={font=\small\bfseries},
+ note/.style={font=\small,text=ink!85}}

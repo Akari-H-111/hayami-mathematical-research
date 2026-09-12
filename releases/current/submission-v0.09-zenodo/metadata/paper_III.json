@@ -1,0 +1,14 @@
+{
+  "title": "General Spectral Floors from Marked Deformation Presentations",
+  "authors": "Akari Hayami (Jian-Yu Huang)",
+  "abstract": "We assemble a finite algebraic construction of characteristic and minimal polynomial\ndivisors preserved by a full normalized-tilt orbit. Chain operators supplied by a marked\nrelation presentation generate an effective algebra on zeroth homology. Relation seeds\nthen generate its smallest invariant source subspace. Together with compatible finite\nstate, landing, and source maps, these data determine a static normalized sector and its largest invariant core.\nWithout assuming invariance of the static sector, the common characteristic and minimal\npolynomial divisors of the same full tilt orbit are exactly those of that core.\nA finite spectral-avoidance argument proves both equalities.\nGlobal landing descent can be weakened to local descent for the stable image;\nwhen even local descent fails, a future-output quotient still retains well-defined dynamics.\nWe give explicit closure tests, an observability-kernel formula for the stable core,\nand a finite closure algorithm. Exact rational models check the separate stages.\nThe input bookkeeping is essential: the chain-operator marking and the state,\nlanding, and source maps are supplied data, not consequences of a bare filtration.\nThe contribution is their connection to the normalized-tilt quotient; the homological\ndescent, invariant-subspace closure, and observability constructions are standard.",
+  "comments": "Paper III; illustrated edition v0.09; 22 pages, 10 figures.",
+  "primary_category_proposal": "math.RA",
+  "category_status": "proposal, not selected on platform",
+  "license": null,
+  "doi": null,
+  "arxiv_id": null,
+  "journal_reference": null,
+  "status": "local preparation; not uploaded or submitted",
+  "related_materials_doi": "10.5281/zenodo.22663942"
+}

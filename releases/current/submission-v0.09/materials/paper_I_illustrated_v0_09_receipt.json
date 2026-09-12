@@ -1,0 +1,18 @@
+{
+  "edition": "Paper I illustrated v0.09",
+  "pages": 63,
+  "vector_figures": 14,
+  "checks": [
+    "63 page layouts inspected",
+    "14 figure pages inspected at 120 dpi",
+    "exact original mathematical body preservation",
+    "14 caption numbers and PDF destinations match",
+    "no overfull, unresolved reference or missing glyph warnings",
+    "qpdf PASS",
+    "author revision compiled and verified; title, running header and references page inspected",
+    "updated source ZIP integrity and TeX byte equality PASS"
+  ],
+  "source_zip_sha256": "25fb81e11f88431cdbc632d3defaf18aee7743466b59c50ef9d8a7b484a11042",
+  "pdf_sha256": "c06a69ee3f2385b0d6f0c61132d974f17f3f0156fe2388c973a7f8f9f2db388a",
+  "author": "Akari Hayami (Jian-Yu Huang)"
+}

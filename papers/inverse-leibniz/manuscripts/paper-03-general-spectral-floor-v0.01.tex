@@ -1,0 +1,541 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{mathrsfs}
+\usepackage{bm}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{hyperref}
+
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\kk}{\Bbbk}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\kerp}{\operatorname{ker}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\rankp}{\operatorname{rank}}
+\newcommand{\id}{\operatorname{id}}
+\newcommand{\Spec}{\operatorname{Spec}}
+\newcommand{\Aeff}{\mathscr A_{\mathrm{eq}}^{\mathrm{eff}}}
+\newcommand{\Aeq}{\mathscr A_{\mathrm{eq}}}
+\newcommand{\Neq}{N_{\mathrm{eq}}}
+\newcommand{\Geq}{\Gamma_{\mathrm{eq}}}
+\newcommand{\Gcan}{\mathfrak G_{\mathrm{can}}}
+\newcommand{\Csyz}{\mathscr C_{\mathrm{syz}}}
+\newcommand{\forced}{\mathrm{forced}}
+
+\title{General Spectral Floors from Marked Deformation Presentations\\
+\large Equation-Operator Reconstruction, Syzygy Propagation, and Normalized-Tilt Invariants}
+\author{Research closeout draft, Paper III}
+\date{September 5, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give a finite algebraic pipeline for extracting spectral information that survives a prescribed
+class of normalized tilts. The input is a marked deformation presentation consisting of a finite
+filtered relation resolution, a canonical family of chain operators, and a relation-seed map. The
+canonical operators first generate an effective equation-operator algebra on zeroth homology. This
+algebra generates the smallest invariant normalized source, which is combined with source and
+landing maps to form a forced sector. A general orbit theorem then identifies the characteristic
+and minimal polynomial divisors common to all normalized tilts with the corresponding polynomials
+on the forced sector. We also give the syzygy-to-propagator bridge, finite closure bounds, and exact
+finite models. The result is deliberately scoped: the operators are canonical relative to the
+marked presentation, and the spectral floor is a forced divisor rather than a full unmarked
+spectrum. Filtration alone cannot manufacture the distinguished operator family.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction and scope}
+
+The purpose of this paper is to close a finite spectral-floor program for inverse-Leibniz type
+deformation data. The central question is not to recover every eigenvalue of one chosen operator,
+but to determine which polynomial factors cannot be removed when the operator is allowed to vary
+through a controlled normalized-tilt orbit.
+
+The paper collects five successive reductions. Version v0.57 isolates the normalized-tilt floor.
+Version v0.58 reconstructs the forced sector from landing and normalization data. Version v0.59
+generates the normalized source from relation seeds rather than taking it as an external input.
+Version v0.60 explains how source-side propagators descend from an equation-operator action on a
+syzygy presentation. Version v0.61 removes the separately declared equation algebra and reconstructs
+the effective algebra from canonical chain operators.
+
+The resulting pipeline is
+\begin{equation}
+\boxed{
+(P_\bullet,\Gcan,R_0)
+\longmapsto \Aeff
+\longmapsto \Neq
+\longmapsto \Geq
+\longmapsto (K,A|_K)
+\longmapsto (\chi_{\forced},\mu_{\forced})
+}.
+\label{eq:pipeline}
+\end{equation}
+Here \(P_\bullet\) is a finite filtered relation resolution, \(\Gcan\) is a specified family of
+canonical chain operators, and \(R_0\) is a specified relation-seed map. The adjective ``canonical''
+is relative to this marked presentation. It does not mean that a bare filtration or a bare chain
+complex determines the operators.
+
+Our conclusions are algebraic and finite. Exact matrix computations illustrate the statements, but
+do not replace the hypotheses of the theorems or establish an infinite-dimensional realization.
+Likewise, the forced divisor is not the full spectrum of an arbitrary representative. The paper
+stops at the marked deformation category and does not claim an ordinary unmarked
+quasi-isomorphism invariant.
+
+\section{Normalized tilts and spectral floors}
+
+Let \(\kk\) be an infinite field, let \(R\) and \(F\) be finite-dimensional \(\kk\)-vector spaces, and let
+\[
+D:R\longrightarrow F, \qquad N\subseteq F, \qquad q:F\longrightarrow F/N
+\]
+be linear data. Define the normalized kernel
+\begin{equation}
+K:=D^{-1}(N),
+\qquad A\in\End(R).
+\label{eq:K}
+\end{equation}
+The allowed normalized tilts are parametrized by \(\tau\in\Hom(\im(qD),R)\), with
+\begin{equation}
+A_\tau:=A+\tau qD.
+\label{eq:tilt}
+\end{equation}
+The perturbation is invisible on \(K\), so every representative has the same restriction to
+\(K\).
+
+\begin{lemma}[Exact variation space]
+The set of all perturbations obtained from normalized tilts is
+\begin{equation}
+\{\tau qD:\tau\in\Hom(\im(qD),R)\}
+=\{T\in\End(R):T|_K=0\}.
+\label{eq:variation}
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Every \(\tau qD\) vanishes on \(K\). Conversely, if \(T|_K=0\), define \(\tau(qD r):=Tr\).
+If \(qDr=qDr'\), then \(r-r'\in K\), and hence \(T(r-r')=0\). Thus \(\tau\) is well-defined
+and \(T=\tau qD\).
+\end{proof}
+
+\begin{theorem}[Normalized-tilt spectral floor]
+Assume \(A(K)\subseteq K\). If \(K\ne 0\), then for every normalized tilt \(A_\tau\), the characteristic polynomial of
+\(A|_K\) divides \(\chi_{A_\tau}\), and the minimal polynomial of \(A|_K\) divides
+\(\mu_{A_\tau}\). Moreover,
+\begin{align}
+\gcd_{\tau}\chi_{A_\tau}&=\chi_{A|_K},
+\\
+\gcd_{\tau}\mu_{A_\tau}&=\mu_{A|_K},
+\end{align}
+where the gcd is taken monically over all allowed tilts.
+If \(K=0\), the characteristic floor is the unit polynomial and the minimal floor is also the
+unit polynomial by convention.
+\label{thm:floor}
+\end{theorem}
+
+\begin{proof}
+Choose a complement \(X\) with \(R=K\oplus X\). Since every perturbation vanishes on \(K\),
+the matrix of \(A_\tau\) has block form
+\[
+\begin{pmatrix}
+A|_K & *\\
+0 & B_\tau
+\end{pmatrix}.
+\]
+Consequently \(\chi_{A_\tau}=\chi_{A|_K}\chi_{B_\tau}\), and the restriction polynomial
+\(\chi_{A|_K}\) divides every characteristic polynomial. The same block form gives
+\(\mu_{A|_K}\mid\mu_{A_\tau}\).
+
+By the exact variation lemma, every endomorphism of \(X\) can be chosen as the lower-right block
+of a perturbation, and the off-diagonal block can be chosen arbitrarily as well. In particular,
+choose a tilt with zero off-diagonal block and with \(B_\tau=cI_X\), where \(c\) is outside the
+finite set of eigenvalues of \(A|_K\). Then the complementary characteristic factor is coprime
+to \(\chi_{A|_K}\), so no nonconstant factor beyond \(\chi_{A|_K}\) survives the gcd. For minimal
+polynomials, choose a scalar complementary block with eigenvalue avoiding the roots of
+\(\mu_{A|_K}\). The lower bound is already supplied by restriction, and the two bounds coincide.
+\end{proof}
+
+\begin{corollary}[Jordan-depth interpretation]
+If
+\[
+\chi_{A|_K}(S)=\prod_\lambda(S-\lambda)^{c_\lambda},
+\qquad
+\mu_{A|_K}(S)=\prod_\lambda(S-\lambda)^{j_\lambda},
+\]
+then \(c_\lambda\) and \(j_\lambda\) are respectively the algebraic-multiplicity and
+Jordan-depth floors that survive every normalized tilt.
+\end{corollary}
+
+\begin{remark}
+The proof uses the full normalized variation space in \eqref{eq:variation}. If an application
+restricts the tilt parameters further, the gcd can be larger. The theorem therefore identifies the
+floor for the stated orbit, not for every conceivable deformation.
+\end{remark}
+
+\section{Forced-sector extraction from finite landing data}
+
+We now remove \(K\) as an external input. Let \(M\) be a finite-dimensional state space, let
+\(T\in\End(M)\), and let \(\Lambda:M\to R\) be a landing map. Retain \(D:R\to F\), a normalized
+subspace \(N\subseteq F\), and \(q:F\to F/N\). Define
+\begin{equation}
+\Gamma:=qD\Lambda:M\longrightarrow F/N.
+\label{eq:Gamma}
+\end{equation}
+
+\begin{proposition}[Static forced sector]
+The part of the normalized kernel visible through the landing map is
+\[
+K\cap\im\Lambda=\Lambda(\ker\Gamma),
+\]
+and there is a natural vector-space isomorphism
+\begin{equation}
+K\cap\im\Lambda\simeq\ker\Gamma/\ker\Lambda.
+\label{eq:quotient}
+\end{equation}
+In particular,
+\begin{equation}
+\dim(K\cap\im\Lambda)=\rankp\Lambda-\rankp\Gamma.
+\label{eq:dimension}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+By definition, \(\Lambda m\in K\) exactly when \(qD\Lambda m=\Gamma m=0\). Thus the image is
+\(\Lambda(\ker\Gamma)\). The first isomorphism theorem gives the quotient description, and
+\(\dim\ker\Gamma-\dim\ker\Lambda=\rankp\Lambda-\rankp\Gamma\).
+\end{proof}
+
+\begin{proposition}[Closure tests]
+The landing quotient \(M/\ker\Lambda\) is stable under the induced recurrent action precisely when
+\(\ker\Lambda\) is \(T\)-invariant. Equivalently,
+\[
+\rankp\begin{bmatrix}\Lambda\\\Lambda T\end{bmatrix}=\rankp\Lambda.
+\]
+The normalized quotient \(\ker\Gamma/\ker\Lambda\) is stable precisely when \(\ker\Gamma\) is
+\(T\)-invariant, equivalently
+\[
+\rankp\begin{bmatrix}\Gamma\\\Gamma T\end{bmatrix}=\rankp\Gamma.
+\]
+When both conditions hold, and the landing map intertwines the recurrent action with the operator on
+the landed space, the action induced by \(T\) on \(\ker\Gamma/\ker\Lambda\) is conjugate to the
+action on \(K\cap\im\Lambda\).
+\end{proposition}
+
+\begin{proof}
+The stacked-rank criterion is the standard finite-dimensional test for
+\(\ker L\subseteq\ker(LT)\). Thus each displayed condition is exactly the condition that the
+corresponding quotient action is well-defined. Under the stated intertwining condition, the induced
+action is transported through the quotient isomorphism \eqref{eq:quotient}.
+\end{proof}
+
+If closure fails, define the stable normalized core
+\begin{equation}
+M_\infty:=\bigcap_{n\geq 0}\ker(\Gamma T^n).
+\label{eq:stablecore}
+\end{equation}
+Finite dimensionality makes this intersection stationary after finitely many steps. The same
+argument gives \(K_\infty\simeq M_\infty/\ker\Lambda\) whenever \(\ker\Lambda\subseteq M_\infty\), with
+\[
+\dim K_\infty=\rankp\Lambda-\rankp\mathcal O_N,
+\qquad
+\mathcal O_N:=\begin{bmatrix}\Gamma\\\Gamma T\\\Gamma T^2\\\vdots\end{bmatrix}.
+\]
+This is the stable version used when the landing data are not closed at one step.
+
+\begin{corollary}[Cyclic PID form]
+Suppose \(M=R/(c)\) is cyclic over a PID and
+\[
+\ker\Lambda=d_\Lambda R/(c),
+\qquad
+\ker\Gamma=d_\Gamma R/(c).
+\]
+Then \(d_\Gamma\mid d_\Lambda\),
+\[
+K\cap\im\Lambda\simeq R/(d_\Lambda/d_\Gamma),
+\]
+and \(d_\Lambda/d_\Gamma\) is the cyclic forced polynomial.
+\end{corollary}
+
+\section{Generating the normalized source}
+
+The normalized source should not be postulated when it can be generated from relation data. Let
+\(W_{\rm rel}\) be a finite relation-seed space, let
+\[
+R_0:W_{\rm rel}\longrightarrow F
+\]
+be the seed map, and let \(C_1,\ldots,C_s\in\End(F)\) be source-side constraint propagators.
+Starting from \(N^{(0)}=\im R_0\), define
+\begin{equation}
+N^{(r+1)}=N^{(r)}+\sum_{i=1}^s C_iN^{(r)},
+\qquad
+\Neq:=\bigcup_{r\geq 0}N^{(r)}.
+\label{eq:closure}
+\end{equation}
+Because \(F\) is finite-dimensional, the increasing sequence stabilizes.
+
+\begin{proposition}[Minimal invariant source]
+The stable space in \eqref{eq:closure} is
+\begin{equation}
+\Neq=\kk\langle C_1,\ldots,C_s\rangle\im R_0,
+\label{eq:Neq}
+\end{equation}
+and it is the unique smallest subspace of \(F\) that contains \(\im R_0\) and is invariant under
+every \(C_i\).
+\end{proposition}
+
+\begin{proof}
+Induction gives \(N^{(r)}\) equal to the span of all words in the \(C_i\) of length at most
+\(r\) applied to \(\im R_0\). The stable union is therefore the right-hand side of
+\eqref{eq:Neq}. Any invariant subspace containing the seed contains every such word, proving
+minimality.
+\end{proof}
+
+\begin{proposition}[Functoriality]
+Suppose \(\Phi_F:F\to F'\) and \(\Phi_W:W_{\rm rel}\to W'_{\rm rel}\) satisfy
+\[
+\Phi_FR_0=R_0'\Phi_W,
+\qquad
+\Phi_FC_i=C_i'\Phi_F.
+\]
+Then \(\Phi_F(\Neq)\subseteq N_{\rm eq}'\). If \(\Phi_F\) is an isomorphism intertwining all
+data, it carries \(\Neq\) isomorphically to \(N_{\rm eq}'\).
+\end{proposition}
+
+The forced-sector construction is now applied with \(N=\Neq\), giving
+\[
+\Geq=q_{\rm eq}D\Lambda,
+\qquad
+K\simeq\ker\Geq/\ker\Lambda,
+\]
+subject to the closure or stable-core hypotheses of Section 3. In this form no independently
+chosen normalized source remains in the pipeline.
+
+\section{Syzygies and the constraint propagator}
+
+The source propagators themselves must come from an equation action. Let \(\Aeq\) temporarily denote
+an algebra acting on a finite relation module \(F_{\rm rel}\). Let
+\[
+P_1\xrightarrow{d_1}P_0\xrightarrow{\varepsilon}F_{\rm rel}\longrightarrow 0
+\]
+be an exact presentation in left \(\Aeq\)-modules. Equivalently,
+\(F_{\rm rel}=H_0(P_\bullet)\) for the two-term complex.
+
+\begin{proposition}[Syzygy descent]
+If \(a\in\Aeq\) acts on the resolution by chain maps, then it descends to an endomorphism
+\(\bar\rho(a)\in\End(F_{\rm rel})\). Via \(\varepsilon\), the induced source constraint
+propagator is
+\begin{equation}
+C(a)=\bar\varepsilon\,\bar\rho(a)\,\bar\varepsilon^{-1}
+\quad\text{on the identified relation image},
+\label{eq:Csyzygy}
+\end{equation}
+and the effective constraint algebra is
+\begin{equation}
+\Csyz=\im\bigl(C:\Aeq\to\End(F_{\rm rel})\bigr)
+\simeq\Aeq/\operatorname{Ann}(F_{\rm rel}).
+\label{eq:Csyz}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The chain-map condition preserves \(\im d_1\), so the action on \(P_0\) descends to
+\(P_0/\im d_1=H_0(P_\bullet)\). Transport along the presentation isomorphism gives
+\eqref{eq:Csyzygy}. The kernel of the resulting representation is exactly the annihilator of the
+relation module, which proves \eqref{eq:Csyz}.
+\end{proof}
+
+Changing generators or replacing the presentation by an isomorphic resolution changes matrices but
+not the induced representation on \(H_0\). An ambient extension of \(C(a)\) outside the relation
+image is noncanonical and has no role in \(\Neq\). This is the precise syzygy-to-propagator bridge
+needed by the source-closure step.
+
+\section{Reconstructing the effective equation algebra}
+
+The temporary algebra \(\Aeq\) in Section 5 is now removed from the external input. Let
+\(P_\bullet\) be a finite filtered relation resolution and let
+\[
+\Gcan=\{G_1,\ldots,G_t\}
+\]
+be the specified canonical chain-operator family. Assume each operator is a chain map:
+\[
+dG_j=G_jd.
+\]
+Write \(H_0=H_0(P_\bullet)\). Each \(G_j\) descends to \(\bar G_j\in\End(H_0)\).
+
+\begin{definition}[Effective equation-operator algebra]
+The effective algebra of the marked presentation is
+\begin{equation}
+\Aeff:=\kk\langle\bar G:G\in\Gcan\rangle
+\subseteq\End(H_0).
+\label{eq:Aeff}
+\end{equation}
+Equivalently, if \(\kk\langle X_G:G\in\Gcan\rangle\) is the free unital algebra, evaluation gives
+\begin{equation}
+\im(\operatorname{ev}_P)
+\simeq
+\kk\langle X_G:G\in\Gcan\rangle/\ker(\operatorname{ev}_P).
+\label{eq:freeeval}
+\end{equation}
+\end{definition}
+
+\begin{proposition}[Minimality and naturality]
+The algebra \(\Aeff\) is the smallest unital subalgebra of \(\End(H_0)\) containing every descended
+canonical operator. If two marked presentations are related by a filtered chain comparison \(\Phi\)
+and homotopies \(H_G\) satisfying
+\[
+\Phi G-G'\Phi=dH_G+H_Gd,
+\]
+then \(\Phi\) induces a map on \(H_0\) that intertwines the two effective algebras. In particular,
+the effective algebras are conjugate when the induced map is an isomorphism.
+\end{proposition}
+
+\begin{proof}
+The first claim is the definition of the generated unital algebra. The homotopy equation becomes
+\(\bar\Phi\bar G=\bar G'\bar\Phi\) after passing to homology, since boundaries vanish. Thus
+\(\bar\Phi\) carries every word in the first operator family to the corresponding word in the
+second family, and the same holds for linear combinations and products.
+\end{proof}
+
+Raw actions on contractible summands may differ between resolutions. They do not affect \(H_0\),
+and hence they do not affect \(\Aeff\). The collapse of the preceding section is therefore
+\[
+\Csyz=\Aeff,
+\qquad
+\Neq=\Aeff\,\im R_0,
+\]
+with the representation understood on the relevant relation module.
+
+\begin{remark}[Sharp no-go]
+The data of a filtration and a bare chain complex do not manufacture a distinguished family
+\(\Gcan\). The effective-algebra theorem is consequently a theorem about marked deformation
+presentations. Removing the marks is a different problem and is not part of this paper.
+\end{remark}
+
+\section{Finite closure and filtered triangularity}
+
+All closures in this paper are finite-dimensional. If \(H_0\) has dimension \(h\), the algebra
+generated by a finite operator family lies in \(\End(H_0)\), of dimension \(h^2\). A naive closure
+algorithm that adjoins products and retains their span can therefore have at most \(h^2\) strict
+rank increases. The same finite argument gives termination for source closure in \(F\).
+
+For a finite descending filtration such that positive-filtration operators strictly raise the
+filtration degree, those operators form a nilpotent ideal after passing to the associated finite
+filtered representation.
+This triangularity explains why the effective algebra can be computed by finite rank tests. It does
+not turn a finite computation into an infinite-dimensional spectral theorem.
+
+The complete finite procedure is:
+\begin{enumerate}[leftmargin=2em]
+\item compute \(H_0(P_\bullet)\) and descend every \(G\in\Gcan\);
+\item close the descended family under products to obtain \(\Aeff\);
+\item close \(\im R_0\) under \(\Aeff\) to obtain \(\Neq\);
+\item form \(\Geq=q_{\rm eq}D\Lambda\) and test the two kernel-invariance conditions;
+\item compute the induced operator on \(K\simeq\ker\Geq/\ker\Lambda\);
+\item report its characteristic and minimal polynomials as the forced spectral floors.
+\end{enumerate}
+
+\section{Exact finite models and verification}
+
+\subsection{Equation-operator reconstruction model}
+
+Take \(H_0=\kk^4\), let \(S=J_4(0)\) be the nilpotent shift, and let
+\[
+W=\operatorname{diag}(0,1,2,3).
+\]
+Then
+\[
+S^4=0,
+\qquad
+[W,S]=S.
+\]
+The algebra generated by \(S\) and \(W\) is the lower-triangular matrix algebra in this basis,
+with dimension \(10\). The shift-only algebra \(\kk[S]\) has dimension \(4\). A change of basis
+preserves these dimensions and relations after conjugation. Adding a contractible summand changes
+raw chain matrices but leaves the induced \(H_0\) action unchanged. These checks verify precisely
+the claims that matter for v0.61; they do not assert that arbitrary chain complexes carry such
+operators canonically.
+
+\subsection{Earlier stages of the pipeline}
+
+The exact finite checks recorded in the Part III folder give the following values:
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Version & finite output & role \\
+\midrule
+v0.57 & \(\chi_{\forced}=\mu_{\forced}=(S+2)^2(S-3)\), tilt dimension \(18\) & floor theorem \\
+v0.58 & forced-sector dimension \(3\); cyclic floor \((S+2)^2\) & quotient extraction \\
+v0.59 & ranks \(2,4,5,5\); \(\dim\Neq=5\) & source closure \\
+v0.60 & syzygy rank \(4\); quotient dimension \(4\); \(\lambda^4\) & propagator bridge \\
+v0.61 & \(\dim\Aeff=10\), shift-only dimension \(4\) & operator reconstruction \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The five verifier scripts are finite symbolic or exact matrix checks. Their PASS outputs are evidence
+for the listed models and identities. They are not substitutes for the hypotheses in
+Theorems~\ref{thm:floor} and the propositions above.
+
+\section{No-go boundary and final scope}
+
+The program has a sharp boundary. A bare filtered chain complex determines its homology and its
+filtration data, but it does not select a distinguished endomorphism family. Two systems with the
+same underlying finite quotient can therefore carry different operator actions, for example a
+nilpotent Jordan block or a diagonal operator. Syzygies alone cannot choose between them.
+
+The correct input is consequently the marked tuple
+\[
+(P_\bullet,\Gcan,R_0),
+\]
+where the marks are part of the deformation presentation. Within this category, the operator
+algebra, normalized source, forced sector, and forced spectral floor are defined and functorial under
+the stated comparisons. Outside it, this paper makes no claim of an ordinary unmarked
+quasi-isomorphism invariant.
+
+In particular, the following are deliberately future directions rather than conclusions here:
+\begin{itemize}[leftmargin=2em]
+\item a Natural-Operator Characterization Theorem inside a specified marked category;
+\item an unmarked formal-moduli reconstruction;
+\item arbitrary infinite-dimensional or full-spectrum extensions;
+\item a new paper based only on renamed or overlapping constructions without a new independent
+question and a new main theorem.
+\end{itemize}
+
+\section{Conclusion}
+
+Versions v0.57--v0.61 form a complete finite general spectral-floor pipeline. Each stage removes one
+external declaration: first the complementary spectrum, then the forced sector, then the normalized
+source, then the source propagators, and finally the equation-operator algebra. The remaining data
+are exactly the marked deformation presentation and the relation seeds. The resulting theorem is
+therefore complete at the level claimed: it identifies the spectral floor forced by normalized tilts
+for finite marked presentations, with exact finite verification and an explicit no-go boundary.
+
+The paper stops here. Any continuation must introduce a genuinely new question and prove a theorem
+that is not already contained in this pipeline or ruled out by the unmarked no-go boundary.
+
+\begin{thebibliography}{9}
+\bibitem{paperII}
+Research closeout, \emph{Homotopy, Tilt, and Naturality in the Inverse-Leibniz Cubic Case},
+Paper II, v0.01, 2026.
+
+\bibitem{partIII}
+Part III verification archive, versions v0.57--v0.61, finite exact models and verifier scripts,
+2026.
+\end{thebibliography}
+
+\end{document}

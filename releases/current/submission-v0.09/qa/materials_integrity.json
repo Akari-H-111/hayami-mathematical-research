@@ -1,0 +1,26 @@
+[
+  {
+    "archive": "paper_III_illustrated_v0_09_source.zip",
+    "sha256": "d201a6c5cd929a38c63660890c32ab2bade12f938bee0f0bcf00dcccd674dfbd",
+    "crc": "PASS",
+    "payload_hashes_verified": 114
+  },
+  {
+    "archive": "paper_II_illustrated_v0_09_source.zip",
+    "sha256": "1ea2e291cb46921289c03366a6861392253b4dcd9e516fb4210df5fdbe174ac8",
+    "crc": "PASS",
+    "payload_hashes_verified": 88
+  },
+  {
+    "archive": "paper_I_illustrated_v0_09_source.zip",
+    "sha256": "25fb81e11f88431cdbc632d3defaf18aee7743466b59c50ef9d8a7b484a11042",
+    "crc": "PASS",
+    "payload_hashes_verified": 22
+  },
+  {
+    "archive": "three_papers_v0_08_bundle.zip",
+    "sha256": "d9ca858911ae79508680f750e1ffd5102965a4dfede5919c3f5439ff4c48b198",
+    "crc": "PASS",
+    "payload_hashes_verified": 178
+  }
+]

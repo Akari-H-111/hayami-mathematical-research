@@ -1,0 +1,68 @@
+v0.41 theorem-package manuscript update
+
+BASE MANUSCRIPT
+- Started from inverse_leibniz_problem_progress_v0_31.tex.
+- Updated date/version to v0.41.
+- Final compiled manuscript: 53 pages.
+
+STATIONARY UPDATE
+- Extended fixed-U16 stationary reuse summary through arity 22.
+- Added exact arity-22 data:
+  rank M22 = augmented rank = 34,
+  B22 = -35192832,
+  c22 = 17184/539,
+  minimal pivot determinant = -72343355392,
+  rank_Q dW_{<=22}=174,
+  leading boundary = -524288 Q_alphae = d(-1048576 e).
+
+FORMAL THEOREM PACKAGE ADDED
+1. Residual Module Theorem
+   R3 ~= C[S]/(S+2)
+   R4 ~= C[S]/(S+2)^2
+   mu_R5=(S+2)^3 q
+   => p5=(S+2)^4 q^2 all-orders for the fixed low-rail subsystem.
+
+2. Triangular Spectral Extension Lemma
+   If P(S) kills the forcing, y=P(S)x is homogeneous.
+   The next multiplier is the minimal polynomial of A on C[A]y(0), subject to the exact minimality condition.
+
+3. Finite-Jet Landing Formula
+   Landing vector P(S)x(0) depends only on finite boundary data.
+
+4. Complete Landing Operator Theorem
+   Lambda4: rank 1 and (A+2I)Lambda4=0.
+   Lambda5: rank 6, surjective, ker=m_A D5.
+   Delta_A(Lambda5(d))=Res(m_A,r_d).
+
+5. Spectral Landing Stratification
+   64 complex strata from lost homogeneous modes.
+
+6. Two-Axis Forcing/Spectral Stratification
+   128 strata indexed by resonant depth nu in {0,1,2,3} and a subset of five q-roots.
+
+7. Three-Level Extension Stratification
+   gH=gcd(m_A,r_d), gF=gcd(p4,r_d), gX=gcd(p5,r_d).
+   Fine splitting-field labels (a,b1,...,b5), with
+      a in {0,...,4}, bi in {0,1,2},
+      a+sum bi <= 7 for nonzero canonical representatives.
+   708 nonzero fine strata + one zero stratum.
+   Rational canonical classification: 8 nonzero strata + zero.
+
+STATUS UPDATE
+- The old finite-window caveat for the order-14 transfer law has been removed.
+- The frozen transfer law passed genuine OOS tests at Y17 and Y18.
+- The same characteristic polynomial is then proved from the homogeneous operator and triangular forcing, not inferred from the extra data.
+- The theorem package is scoped to the fixed cubic example and fixed contraction.
+
+LATEX/PDF QA
+- 53 pages, letter size.
+- 41 PDF outline items.
+- Final LaTeX pass has no undefined references, citation warnings, or overfull boxes.
+- Final PDF rendered successfully on all 53 pages and visually inspected around the new theorem package.
+
+NEXT RESEARCH DIRECTION
+- Do not add another ad hoc gcd layer.
+- Abstract the theorem chain to general triangular systems with homogeneous spectral multiplicity vector
+    m_A(S)=prod_lambda (S-lambda)^{e_lambda}
+  and forcing polynomials with their own multiplicity vectors.
+- Determine when residual landing, forcing-memory, and higher-lift contact are governed by universal exponent-truncation rules.

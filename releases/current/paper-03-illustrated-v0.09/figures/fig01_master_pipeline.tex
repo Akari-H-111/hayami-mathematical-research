@@ -1,0 +1,32 @@
+\input{style.tex}
+\begin{document}
+\begin{tikzpicture}
+\framewidth
+\node[neutral,text width=13.6cm] (input) {\textbf{Finite marked input and supplied observation data}\\[4pt]
+ $\mathcal D=(P_\bullet,\Gmark,R_0;\iota,F,M,T,\Lambda,D)$\\[3pt]
+ $\iota:H_0(P_\bullet)\hookrightarrow F,\quad \Lambda:M\to R,\quad D:R\to F,\quad T\in\End(M)$};
+\node[box,text width=6.4cm,below=8mm of input.south,xshift=-3.65cm] (alg)
+ {\textbf{Descend the marked chain maps}\\[4pt]
+ $dG=Gd\ \Longrightarrow\ \bar G\in\End(H_0)$\\[4pt]
+ $\Aeff=\kk\langle\bar G:G\in\Gmark\rangle$};
+\node[box,text width=6.4cm] (source) at (alg-|3.65,0)
+ {\textbf{Generate the normalized source}\\[4pt]
+ $\Neq=\Aeff\im R_0\subseteq H_0$\\[4pt]
+ $q_{\rm eq}:F\to F/\iota(\Neq)$};
+\draw[edge] (input.south)--++(0,-3mm)-|(alg.north);
+\draw[edge] (alg.east)--(source.west);
+\node[box,text width=13.6cm,below=8mm of $(alg.south)!0.5!(source.south)$] (landing)
+ {\textbf{Normalize the output and compute the stable kernel}\\[4pt]
+ $\Geq=q_{\rm eq}D\Lambda,\qquad W=\displaystyle\bigcap_{j=0}^{m-1}\ker(\Geq T^j),\quad m=\dim M>0$};
+\draw[edge] (source.south)--++(0,-3mm)-|(landing.north);
+\node[goldbox,text width=13.6cm,below=7mm of landing] (floor)
+ {\textbf{Landing descent: $T\ker\Lambda\subseteq\ker\Lambda$}\\[4pt]
+ $K_\infty=\Lambda W\simeq W/\ker\Lambda$ carries the induced $T$-action.\\[4pt]
+ Its characteristic and minimal polynomials are the two forced divisors\\
+ of the \emph{original full} normalized tilt orbit on $R_\Lambda=\im\Lambda$.};
+\draw[edge] (landing)--(floor);
+\node[note,text width=13.6cm,below=4mm of floor]
+ {The marking and the maps $\iota,D,\Lambda,T$ are supplied data.\\
+ A bare complex does not reconstruct them. For $M=0$, both divisors are $1$.};
+\end{tikzpicture}
+\end{document}

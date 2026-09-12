@@ -1,0 +1,14 @@
+{
+  "title": "The Inverse Leibniz Problem: Reconstruction Fibers, Rigidity, Obstructions, and Deformation DGLAs",
+  "authors": "Akari Hayami (Jian-Yu Huang)",
+  "abstract": "We reconstruct left and right algebra actions from a fixed bilinear map\n$B:A\\times A\\to V$ required to satisfy two Leibniz identities.\nThe weak reconstruction fiber is affine; strict reconstruction adds the\nquadratic equations for a unital bimodule. Finite examples distinguish\nglobal uniqueness, infinitesimal rigidity, and nonreduced tangent directions.\n\nFor $A=\\mathbb{C}[\\epsilon]/(\\epsilon^4)$ and $V=\\mathbb{C}^3$, the completed local ring is\n$\\mathbb{C}[[u,v]]/(v^3)$. Every normalized contraction of the presentation DGLA\nhas a nonzero quartic operation, whereas a single contraction of the\nconstrained Hochschild DGLA retains the cubic obstruction and has\nvanishing degree-one operations at arities $4$ through $23$.\nA second fixed contraction has a nonzero arity-$23$ coefficient.\n\nFor the preserved low-rail homotopy data, an autonomous triangular subsystem\nhas an all-orders scalar recurrence. We determine its residual modules,\ncomplete landing operators, and the nested gcd stratifications of forcing,\nspectral support, and a specified polynomial lift.\nExact cochain and matrix certificates accompany the proofs; two frozen\nout-of-sample checks provide separate finite evidence.\nThe spectral results are relative to the fixed contraction, not invariants\nof an unmarked deformation problem.",
+  "comments": "Paper I; illustrated edition v0.09; 63 pages, 14 figures.",
+  "primary_category_proposal": "math.RA",
+  "category_status": "proposal, not selected on platform",
+  "license": null,
+  "doi": null,
+  "arxiv_id": null,
+  "journal_reference": null,
+  "status": "local preparation; not uploaded or submitted",
+  "related_materials_doi": "10.5281/zenodo.22663942"
+}

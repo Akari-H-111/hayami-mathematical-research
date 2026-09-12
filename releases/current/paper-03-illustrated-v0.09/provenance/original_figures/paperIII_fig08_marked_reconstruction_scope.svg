@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="1124.928pt" height="673.2pt" viewBox="0 0 1124.928 673.2" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-09-08T07:06:59.042633</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 673.2 
+L 1124.928 673.2 
+L 1124.928 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 51.62112 353.07 
+L 662.41152 353.07 
+Q 684.62208 353.07 684.62208 339.894 
+L 684.62208 96.138 
+Q 684.62208 82.962 662.41152 82.962 
+L 51.62112 82.962 
+Q 29.41056 82.962 29.41056 96.138 
+L 29.41056 339.894 
+Q 29.41056 353.07 51.62112 353.07 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #eef6ff; stroke: #2563eb; stroke-width: 1.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 80.494848 234.486 
+L 311.484672 234.486 
+Q 329.25312 234.486 329.25312 223.9452 
+L 329.25312 146.2068 
+Q 329.25312 135.666 311.484672 135.666 
+L 80.494848 135.666 
+Q 62.7264 135.666 62.7264 146.2068 
+L 62.7264 223.9452 
+Q 62.7264 234.486 80.494848 234.486 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #ffffff; stroke: #2563eb; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 380.337408 234.486 
+L 611.327232 234.486 
+Q 629.09568 234.486 629.09568 223.9452 
+L 629.09568 146.2068 
+Q 629.09568 135.666 611.327232 135.666 
+L 380.337408 135.666 
+Q 362.56896 135.666 362.56896 146.2068 
+L 362.56896 223.9452 
+Q 362.56896 234.486 380.337408 234.486 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #fff7e6; stroke: #d97706; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 80.494848 323.424 
+L 311.484672 323.424 
+Q 329.25312 323.424 329.25312 312.8832 
+L 329.25312 258.2028 
+Q 329.25312 247.662 311.484672 247.662 
+L 80.494848 247.662 
+Q 62.7264 247.662 62.7264 258.2028 
+L 62.7264 312.8832 
+Q 62.7264 323.424 80.494848 323.424 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #f3efff; stroke: #7c3aed; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 380.337408 323.424 
+L 611.327232 323.424 
+Q 629.09568 323.424 629.09568 312.8832 
+L 629.09568 258.2028 
+Q 629.09568 247.662 611.327232 247.662 
+L 380.337408 247.662 
+Q 362.56896 247.662 362.56896 258.2028 
+L 362.56896 312.8832 
+Q 362.56896 323.424 380.337408 323.424 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #eefcf3; stroke: #16a34a; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 717.93792 353.07 
+L 1073.30688 353.07 
+Q 1095.51744 353.07 1095.51744 339.894 
+L 1095.51744 96.138 
+Q 1095.51744 82.962 1073.30688 82.962 
+L 717.93792 82.962 
+Q 695.72736 82.962 695.72736 96.138 
+L 695.72736 339.894 
+Q 695.72736 353.07 717.93792 353.07 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #f2fbf4; stroke: #16a34a; stroke-width: 1.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 746.811648 221.31 
+L 1044.433152 221.31 
+Q 1062.2016 221.31 1062.2016 210.7692 
+L 1062.2016 152.7948 
+Q 1062.2016 142.254 1044.433152 142.254 
+L 746.811648 142.254 
+Q 729.0432 142.254 729.0432 152.7948 
+L 729.0432 210.7692 
+Q 729.0432 221.31 746.811648 221.31 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #ffffff; stroke: #16a34a; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_9">
+    <path d="M 746.811648 310.248 
+L 866.748672 310.248 
+Q 884.51712 310.248 884.51712 299.7072 
+L 884.51712 251.6148 
+Q 884.51712 241.074 866.748672 241.074 
+L 746.811648 241.074 
+Q 729.0432 241.074 729.0432 251.6148 
+L 729.0432 299.7072 
+Q 729.0432 310.248 746.811648 310.248 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #f3efff; stroke: #7c3aed; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_10">
+    <path d="M 921.164544 310.248 
+L 1041.101568 310.248 
+Q 1058.870016 310.248 1058.870016 299.7072 
+L 1058.870016 251.6148 
+Q 1058.870016 241.074 1041.101568 241.074 
+L 921.164544 241.074 
+Q 903.396096 241.074 903.396096 251.6148 
+L 903.396096 299.7072 
+Q 903.396096 310.248 921.164544 310.248 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #fff7e6; stroke: #d97706; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_11">
+    <path d="M 893.705546 218.584569 
+Q 851.201823 231.191839 810.413101 243.290413 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #334155; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 817.899218 244.616328 
+L 810.413101 243.290413 
+L 815.965503 238.097068 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #334155; stroke: #334155; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_12">
+    <path d="M 897.531289 218.619954 
+Q 937.269206 231.192635 975.301597 243.225704 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #334155; stroke-width: 1.6; stroke-linecap: round"/>
+    <path d="M 969.843971 237.932849 
+L 975.301597 243.225704 
+L 967.792737 244.416092 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #334155; stroke: #334155; stroke-width: 1.6; stroke-linecap: round"/>
+   </g>
+   <g id="patch_13">
+    <path d="M 51.62112 583.65 
+L 1073.30688 583.65 
+Q 1095.51744 583.65 1095.51744 570.474 
+L 1095.51744 418.95 
+Q 1095.51744 405.774 1073.30688 405.774 
+L 51.62112 405.774 
+Q 29.41056 405.774 29.41056 418.95 
+L 29.41056 570.474 
+Q 29.41056 583.65 51.62112 583.65 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #f5f2ff; stroke: #7c3aed; stroke-width: 1.7; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_14">
+    <path d="M 80.494848 544.122 
+L 344.800512 544.122 
+Q 362.56896 544.122 362.56896 533.5812 
+L 362.56896 462.4308 
+Q 362.56896 451.89 344.800512 451.89 
+L 80.494848 451.89 
+Q 62.7264 451.89 62.7264 462.4308 
+L 62.7264 533.5812 
+Q 62.7264 544.122 80.494848 544.122 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #eefcf3; stroke: #16a34a; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_15">
+    <path d="M 430.311168 544.122 
+L 694.616832 544.122 
+Q 712.38528 544.122 712.38528 533.5812 
+L 712.38528 462.4308 
+Q 712.38528 451.89 694.616832 451.89 
+L 430.311168 451.89 
+Q 412.54272 451.89 412.54272 462.4308 
+L 412.54272 533.5812 
+Q 412.54272 544.122 430.311168 544.122 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #fff0f3; stroke: #d7265e; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="patch_16">
+    <path d="M 780.127488 544.122 
+L 1044.433152 544.122 
+Q 1062.2016 544.122 1062.2016 533.5812 
+L 1062.2016 462.4308 
+Q 1062.2016 451.89 1044.433152 451.89 
+L 780.127488 451.89 
+Q 762.35904 451.89 762.35904 462.4308 
+L 762.35904 533.5812 
+Q 762.35904 544.122 780.127488 544.122 
+z
+" clip-path="url(#pf8bc618948)" style="fill: #fff7e6; stroke: #d97706; stroke-width: 1.35; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_1">
+    <path d="M 47.845325 125.784 
+L 666.187315 125.784 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #2563eb; stroke-width: 0.85; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_2">
+    <path d="M 81.050112 169.9236 
+L 310.929408 169.9236 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #2563eb; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_3">
+    <path d="M 380.892672 169.9236 
+L 610.771968 169.9236 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #d97706; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_4">
+    <path d="M 81.050112 281.9196 
+L 310.929408 281.9196 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #7c3aed; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_5">
+    <path d="M 380.892672 281.9196 
+L 610.771968 281.9196 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #16a34a; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_6">
+    <path d="M 709.053696 125.784 
+L 1082.191104 125.784 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #16a34a; stroke-width: 0.85; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_7">
+    <path d="M 750.698496 176.5116 
+L 1040.546304 176.5116 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #16a34a; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 741.814272 275.3316 
+L 871.746048 275.3316 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #7c3aed; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 916.167168 275.3316 
+L 1046.098944 275.3316 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #d97706; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 56.063232 448.596 
+L 1068.864768 448.596 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #7c3aed; stroke-width: 0.85; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 82.715904 486.1476 
+L 342.579456 486.1476 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #16a34a; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <path d="M 432.532224 486.1476 
+L 692.395776 486.1476 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #d7265e; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_13">
+    <path d="M 782.348544 486.1476 
+L 1042.212096 486.1476 
+" clip-path="url(#pf8bc618948)" style="fill: none; stroke: #d97706; stroke-width: 0.7; stroke-linecap: square"/>
+   </g>
+   <g id="text_1">
+    <text style="font-weight: 700; font-size: 24px; font-family: 'DejaVu Serif'; text-anchor: middle" x="562.464" y="46.51785" transform="rotate(-0 562.464 46.51785)">Fig. 8. Marked operator reconstruction and scope boundary</text>
+   </g>
+   <g id="text_2">
+    <!-- Exact reconstruction model on $H_0=\mathbb{Q}^4$ -->
+    <g transform="translate(189.73632 115.7373)">
+     <text>
+      <tspan x="0" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">E</tspan>
+      <tspan x="12.195312" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">x</tspan>
+      <tspan x="21.734375" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">a</tspan>
+      <tspan x="32.101562" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">c</tspan>
+      <tspan x="41.84375" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="49.234375" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="54.804688" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="63.234375" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="73.414062" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">c</tspan>
+      <tspan x="83.15625" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="93.828125" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">n</tspan>
+      <tspan x="105.460938" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">s</tspan>
+      <tspan x="114.46875" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="121.859375" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="130.289062" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">u</tspan>
+      <tspan x="141.921875" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">c</tspan>
+      <tspan x="151.664062" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="159.054688" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">i</tspan>
+      <tspan x="165.132812" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="175.804688" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">n</tspan>
+      <tspan x="187.4375" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="193.007812" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">m</tspan>
+      <tspan x="209.9375" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="220.609375" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">d</tspan>
+      <tspan x="231.796875" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="241.976562" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">l</tspan>
+      <tspan x="248.054688" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="253.625" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="264.296875" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'">n</tspan>
+      <tspan x="275.929688" y="-0.78125" style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="281.5" y="-0.78125" style="font-style: italic; font-size: 16px; font-family: 'STIXGeneral'">H</tspan>
+      <tspan x="314.939044" y="-0.78125" style="font-style: italic; font-size: 16px; font-family: 'STIXGeneral'">ℚ</tspan>
+      <tspan x="293.052002" y="1.3375" style="font-size: 11.2px; font-family: 'STIXGeneral'">0</tspan>
+      <tspan x="328.250475" y="-6.43125" style="font-size: 11.2px; font-family: 'STIXGeneral'">4</tspan>
+      <tspan x="301.668652" y="-0.78125" style="font-size: 16px; font-family: 'STIXGeneral'">=</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_3">
+    <!-- Lower nilpotent shift $S$ -->
+    <g transform="translate(113.76476 160.6984)">
+     <text>
+      <tspan x="0" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">L</tspan>
+      <tspan x="9.140625" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="17.811523" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">w</tspan>
+      <tspan x="29.002441" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="37.273438" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="44.122559" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="48.648438" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">n</tspan>
+      <tspan x="58.100098" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">i</tspan>
+      <tspan x="63.038574" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">l</tspan>
+      <tspan x="67.977051" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">p</tspan>
+      <tspan x="77.066895" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="85.737793" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="91.742676" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="100.013672" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">n</tspan>
+      <tspan x="109.465332" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="115.470215" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="119.996094" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">s</tspan>
+      <tspan x="127.314941" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">h</tspan>
+      <tspan x="136.766602" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">i</tspan>
+      <tspan x="141.705078" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">f</tspan>
+      <tspan x="147.297363" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="153.302246" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="157.828125" y="-0.125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'">S</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_4">
+    <text style="font-size: 10.2px; font-family: 'DejaVu Serif'" transform="translate(96.761291 192.706282)">S e1=e2,  S e2=e3,  S e3=e4,  S e4=0</text>
+    <text style="font-size: 10.2px; font-family: 'DejaVu Serif'" transform="translate(195.98976 204.360563)"/>
+    <!-- $S^4=0$ -->
+    <g transform="translate(183.34176 216.014843)">
+     <text>
+      <tspan x="0" y="-0.739062" style="font-style: italic; font-size: 10.2px; font-family: 'STIXGeneral'">S</tspan>
+      <tspan x="6.217656" y="-4.264062" style="font-size: 7.14px; font-family: 'STIXGeneral'">4</tspan>
+      <tspan x="11.725881" y="-0.739062" style="font-size: 10.2px; font-family: 'STIXGeneral'">=</tspan>
+      <tspan x="20.22722" y="-0.739062" style="font-size: 10.2px; font-family: 'STIXGeneral'">0</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_5">
+    <!-- Weight operator $W$ -->
+    <g transform="translate(428.29732 160.6984)">
+     <text>
+      <tspan x="0" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">W</tspan>
+      <tspan x="14.599609" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="22.870605" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">i</tspan>
+      <tspan x="27.809082" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">g</tspan>
+      <tspan x="36.898926" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">h</tspan>
+      <tspan x="46.350586" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="52.355469" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="56.881348" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="65.552246" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">p</tspan>
+      <tspan x="74.64209" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="82.913086" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="89.762207" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">a</tspan>
+      <tspan x="98.185547" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="104.19043" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="112.861328" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="119.710449" y="-0.125" style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="124.236328" y="-0.125" style="font-style: italic; font-size: 13px; font-family: 'STIXGeneral'">W</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_6">
+    <!-- $W=\mathrm{diag}(0,1,2,3)$ -->
+    <g transform="translate(457.08732 192.319962)">
+     <text>
+      <tspan x="0" y="-0.484375" style="font-style: italic; font-size: 10.5px; font-family: 'STIXGeneral'">W</tspan>
+      <tspan x="10.262708" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">=</tspan>
+      <tspan x="18.971414" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">d</tspan>
+      <tspan x="24.221414" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">i</tspan>
+      <tspan x="27.140405" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">a</tspan>
+      <tspan x="31.802408" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">g</tspan>
+      <tspan x="37.052408" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">(</tspan>
+      <tspan x="40.548898" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">0</tspan>
+      <tspan x="45.798898" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">,</tspan>
+      <tspan x="49.9401" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">1</tspan>
+      <tspan x="55.1901" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">,</tspan>
+      <tspan x="59.331302" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">2</tspan>
+      <tspan x="64.581302" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">,</tspan>
+      <tspan x="68.722504" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">3</tspan>
+      <tspan x="73.972504" y="-0.484375" style="font-size: 10.5px; font-family: 'STIXGeneral'">)</tspan>
+     </text>
+    </g>
+    <text style="font-size: 10.5px; font-family: 'DejaVu Serif'" transform="translate(495.83232 204.443344)"/>
+    <!-- $[W,S]=S$ -->
+    <g transform="translate(475.51482 216.440398)">
+     <text>
+      <tspan x="0" y="-0.65625" style="font-size: 10.5px; font-family: 'STIXGeneral'">[</tspan>
+      <tspan x="12.242996" y="-0.65625" style="font-size: 10.5px; font-family: 'STIXGeneral'">,</tspan>
+      <tspan x="21.634198" y="-0.65625" style="font-size: 10.5px; font-family: 'STIXGeneral'">]</tspan>
+      <tspan x="26.64689" y="-0.65625" style="font-size: 10.5px; font-family: 'STIXGeneral'">=</tspan>
+      <tspan x="3.49649" y="-0.65625" style="font-style: italic; font-size: 10.5px; font-family: 'STIXGeneral'">W</tspan>
+      <tspan x="16.384198" y="-0.65625" style="font-style: italic; font-size: 10.5px; font-family: 'STIXGeneral'">S</tspan>
+      <tspan x="35.355597" y="-0.65625" style="font-style: italic; font-size: 10.5px; font-family: 'STIXGeneral'">S</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_7">
+    <!-- Mark only $\{S\}$ -->
+    <g transform="translate(149.17726 272.3144)">
+     <text>
+      <tspan x="0" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'">M</tspan>
+      <tspan x="13.83667" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'">a</tspan>
+      <tspan x="21.936035" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="28.521729" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'">k</tspan>
+      <tspan x="37.182617" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="41.534424" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="49.871826" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'">n</tspan>
+      <tspan x="58.959961" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'">l</tspan>
+      <tspan x="63.708496" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'">y</tspan>
+      <tspan x="70.97168" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="75.323486" y="-0.125" style="font-size: 12.5px; font-family: 'STIXGeneral'">{</tspan>
+      <tspan x="87.573456" y="-0.125" style="font-size: 12.5px; font-family: 'STIXGeneral'">}</tspan>
+      <tspan x="81.323471" y="-0.125" style="font-style: italic; font-size: 12.5px; font-family: 'STIXGeneral'">S</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_8">
+    <!-- $\mathbb{Q}[S]=\mathrm{span}(I,S,S^2,S^3)$ -->
+    <g transform="translate(151.85676 304.45089)">
+     <text>
+      <tspan x="0" y="-0.570312" style="font-style: italic; font-size: 9.4px; font-family: 'STIXGeneral'">ℚ</tspan>
+      <tspan x="9.899994" y="-0.570312" style="font-style: italic; font-size: 9.4px; font-family: 'STIXGeneral'">S</tspan>
+      <tspan x="47.144971" y="-0.570312" style="font-style: italic; font-size: 9.4px; font-family: 'STIXGeneral'">I</tspan>
+      <tspan x="53.964343" y="-0.570312" style="font-style: italic; font-size: 9.4px; font-family: 'STIXGeneral'">S</tspan>
+      <tspan x="62.349344" y="-0.570312" style="font-style: italic; font-size: 9.4px; font-family: 'STIXGeneral'">S</tspan>
+      <tspan x="75.394657" y="-0.570312" style="font-style: italic; font-size: 9.4px; font-family: 'STIXGeneral'">S</tspan>
+      <tspan x="6.778122" y="-0.570312" style="font-size: 9.4px; font-family: 'STIXGeneral'">[</tspan>
+      <tspan x="14.587494" y="-0.570312" style="font-size: 9.4px; font-family: 'STIXGeneral'">]</tspan>
+      <tspan x="19.063116" y="-0.570312" style="font-size: 9.4px; font-family: 'STIXGeneral'">=</tspan>
+      <tspan x="26.838742" y="-0.570312" style="font-size: 9.4px; font-family: 'STIXGeneral'">s</tspan>
+      <tspan x="30.485608" y="-0.570312" style="font-size: 9.4px; font-family: 'STIXGeneral'">p</tspan>
+      <tspan x="35.173108" y="-0.570312" style="font-size: 9.4px; font-family: 'STIXGeneral'">a</tspan>
+      <tspan x="39.335599" y="-0.570312" style="font-size: 9.4px; font-family: 'STIXGeneral'">n</tspan>
+      <tspan x="44.023099" y="-0.570312" style="font-size: 9.4px; font-family: 'STIXGeneral'">(</tspan>
+      <tspan x="50.266843" y="-0.570312" style="font-size: 9.4px; font-family: 'STIXGeneral'">,</tspan>
+      <tspan x="58.651843" y="-0.570312" style="font-size: 9.4px; font-family: 'STIXGeneral'">,</tspan>
+      <tspan x="71.697156" y="-0.570312" style="font-size: 9.4px; font-family: 'STIXGeneral'">,</tspan>
+      <tspan x="84.742469" y="-0.570312" style="font-size: 9.4px; font-family: 'STIXGeneral'">)</tspan>
+      <tspan x="68.019031" y="-3.745313" style="font-size: 6.58px; font-family: 'STIXGeneral'">2</tspan>
+      <tspan x="81.064344" y="-3.745313" style="font-size: 6.58px; font-family: 'STIXGeneral'">3</tspan>
+     </text>
+    </g>
+    <!-- $\dim \mathbb{Q}[S]=4$ -->
+    <g transform="translate(172.30176 315.304204)">
+     <text>
+      <tspan x="0" y="-0.859375" style="font-size: 9.4px; font-family: 'STIXGeneral'">d</tspan>
+      <tspan x="4.6875" y="-0.859375" style="font-size: 9.4px; font-family: 'STIXGeneral'">i</tspan>
+      <tspan x="7.293747" y="-0.859375" style="font-size: 9.4px; font-family: 'STIXGeneral'">m</tspan>
+      <tspan x="22.493764" y="-0.859375" style="font-size: 9.4px; font-family: 'STIXGeneral'">[</tspan>
+      <tspan x="30.303136" y="-0.859375" style="font-size: 9.4px; font-family: 'STIXGeneral'">]</tspan>
+      <tspan x="34.778758" y="-0.859375" style="font-size: 9.4px; font-family: 'STIXGeneral'">=</tspan>
+      <tspan x="42.554384" y="-0.859375" style="font-size: 9.4px; font-family: 'STIXGeneral'">4</tspan>
+      <tspan x="15.715642" y="-0.859375" style="font-style: italic; font-size: 9.4px; font-family: 'STIXGeneral'">ℚ</tspan>
+      <tspan x="25.615636" y="-0.859375" style="font-style: italic; font-size: 9.4px; font-family: 'STIXGeneral'">S</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_9">
+    <!-- Mark $\{S,W\}$ -->
+    <g transform="translate(458.20732 272.312447)">
+     <text>
+      <tspan x="0" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'">M</tspan>
+      <tspan x="13.83667" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'">a</tspan>
+      <tspan x="21.936035" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="28.521729" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'">k</tspan>
+      <tspan x="37.182617" y="-0.125" style="font-weight: 700; font-size: 12.5px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="41.534424" y="-0.125" style="font-size: 12.5px; font-family: 'STIXGeneral'">{</tspan>
+      <tspan x="53.784393" y="-0.125" style="font-size: 12.5px; font-family: 'STIXGeneral'">,</tspan>
+      <tspan x="69.126865" y="-0.125" style="font-size: 12.5px; font-family: 'STIXGeneral'">}</tspan>
+      <tspan x="47.534409" y="-0.125" style="font-style: italic; font-size: 12.5px; font-family: 'STIXGeneral'">S</tspan>
+      <tspan x="58.714374" y="-0.125" style="font-style: italic; font-size: 12.5px; font-family: 'STIXGeneral'">W</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_10">
+    <text style="font-size: 9.4px; font-family: 'DejaVu Serif'" transform="translate(420.114586 304.054328)">lower-triangular matrix algebra</text>
+    <!-- $\dim\langle S,W\rangle=10$ -->
+    <g transform="translate(466.78632 314.928204)">
+     <text>
+      <tspan x="0" y="-0.578125" style="font-size: 9.4px; font-family: 'STIXGeneral'">d</tspan>
+      <tspan x="4.6875" y="-0.578125" style="font-size: 9.4px; font-family: 'STIXGeneral'">i</tspan>
+      <tspan x="7.293747" y="-0.578125" style="font-size: 9.4px; font-family: 'STIXGeneral'">m</tspan>
+      <tspan x="15.715642" y="-0.578125" style="font-size: 9.4px; font-family: 'STIXGeneral'">⟨</tspan>
+      <tspan x="24.153142" y="-0.578125" style="font-size: 9.4px; font-family: 'STIXGeneral'">,</tspan>
+      <tspan x="35.660015" y="-0.578125" style="font-size: 9.4px; font-family: 'STIXGeneral'">⟩</tspan>
+      <tspan x="40.763765" y="-0.578125" style="font-size: 9.4px; font-family: 'STIXGeneral'">=</tspan>
+      <tspan x="48.539391" y="-0.578125" style="font-size: 9.4px; font-family: 'STIXGeneral'">1</tspan>
+      <tspan x="53.226891" y="-0.578125" style="font-size: 9.4px; font-family: 'STIXGeneral'">0</tspan>
+      <tspan x="19.465642" y="-0.578125" style="font-style: italic; font-size: 9.4px; font-family: 'STIXGeneral'">S</tspan>
+      <tspan x="27.850643" y="-0.578125" style="font-style: italic; font-size: 9.4px; font-family: 'STIXGeneral'">W</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_11">
+    <!-- Distinct weights recover diagonal matrix units; $E_{ii}S^{i-j}E_{jj}=E_{ij}$ for $i\geq j$. -->
+    <g transform="translate(188.71632 342.567)">
+     <text>
+      <tspan x="0" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">D</tspan>
+      <tspan x="7.917358" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">i</tspan>
+      <tspan x="11.075623" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">s</tspan>
+      <tspan x="16.143311" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="20.111633" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">i</tspan>
+      <tspan x="23.269897" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">n</tspan>
+      <tspan x="29.629822" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">c</tspan>
+      <tspan x="35.1604" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="39.128723" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="42.2677" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">w</tspan>
+      <tspan x="50.720276" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="56.56427" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">i</tspan>
+      <tspan x="59.722534" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">g</tspan>
+      <tspan x="66.043884" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">h</tspan>
+      <tspan x="72.403809" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="76.372131" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">s</tspan>
+      <tspan x="81.439819" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="84.578796" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="89.299316" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="95.143311" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">c</tspan>
+      <tspan x="100.673889" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="106.619141" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">v</tspan>
+      <tspan x="112.197937" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="118.041931" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="122.762451" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="125.901428" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">d</tspan>
+      <tspan x="132.222778" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">i</tspan>
+      <tspan x="135.381042" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">a</tspan>
+      <tspan x="141.268433" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">g</tspan>
+      <tspan x="147.589783" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="153.535034" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">n</tspan>
+      <tspan x="159.894958" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">a</tspan>
+      <tspan x="165.782349" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">l</tspan>
+      <tspan x="168.940613" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="172.07959" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">m</tspan>
+      <tspan x="181.443481" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">a</tspan>
+      <tspan x="187.330872" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="191.299194" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="196.019714" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">i</tspan>
+      <tspan x="199.177979" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">x</tspan>
+      <tspan x="204.747131" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="207.886108" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">u</tspan>
+      <tspan x="214.246033" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">n</tspan>
+      <tspan x="220.605957" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">i</tspan>
+      <tspan x="223.764221" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="227.732544" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">s</tspan>
+      <tspan x="232.800232" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">;</tspan>
+      <tspan x="236.127258" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="296.880739" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="300.019716" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">f</tspan>
+      <tspan x="303.674623" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="309.619875" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="314.340395" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="332.586122" y="-0.892188" style="font-size: 9.9px; font-family: 'DejaVu Serif'">.</tspan>
+      <tspan x="239.266235" y="-0.892188" style="font-style: italic; font-size: 9.9px; font-family: 'STIXGeneral'">E</tspan>
+      <tspan x="249.58381" y="-0.892188" style="font-style: italic; font-size: 9.9px; font-family: 'STIXGeneral'">S</tspan>
+      <tspan x="266.629317" y="-0.892188" style="font-style: italic; font-size: 9.9px; font-family: 'STIXGeneral'">E</tspan>
+      <tspan x="286.563164" y="-0.892188" style="font-style: italic; font-size: 9.9px; font-family: 'STIXGeneral'">E</tspan>
+      <tspan x="317.479372" y="-0.892188" style="font-style: italic; font-size: 9.9px; font-family: 'STIXGeneral'">i</tspan>
+      <tspan x="329.840883" y="-0.892188" style="font-style: italic; font-size: 9.9px; font-family: 'STIXGeneral'">j</tspan>
+      <tspan x="245.29985" y="0.429688" style="font-style: italic; font-size: 6.93px; font-family: 'STIXGeneral'">i</tspan>
+      <tspan x="247.221518" y="0.429688" style="font-style: italic; font-size: 6.93px; font-family: 'STIXGeneral'">i</tspan>
+      <tspan x="255.613967" y="-4.417188" style="font-style: italic; font-size: 6.93px; font-family: 'STIXGeneral'">i</tspan>
+      <tspan x="264.267025" y="-4.417188" style="font-style: italic; font-size: 6.93px; font-family: 'STIXGeneral'">j</tspan>
+      <tspan x="272.662932" y="0.429688" style="font-style: italic; font-size: 6.93px; font-family: 'STIXGeneral'">j</tspan>
+      <tspan x="274.5846" y="0.429688" style="font-style: italic; font-size: 6.93px; font-family: 'STIXGeneral'">j</tspan>
+      <tspan x="292.596779" y="0.429688" style="font-style: italic; font-size: 6.93px; font-family: 'STIXGeneral'">i</tspan>
+      <tspan x="294.518447" y="0.429688" style="font-style: italic; font-size: 6.93px; font-family: 'STIXGeneral'">j</tspan>
+      <tspan x="258.533799" y="-4.417188" style="font-size: 6.93px; font-family: 'STIXGeneral'">−</tspan>
+      <tspan x="278.372841" y="-0.892188" style="font-size: 9.9px; font-family: 'STIXGeneral'">=</tspan>
+      <tspan x="321.65056" y="-0.892188" style="font-size: 9.9px; font-family: 'STIXGeneral'">≥</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_12">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'; text-anchor: middle" x="895.6224" y="115.5423" transform="rotate(-0 895.6224 115.5423)">Same filtered complex, different markings</text>
+   </g>
+   <g id="text_13">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'; text-anchor: middle" x="895.6224" y="167.284369" transform="rotate(-0 895.6224 167.284369)">Unmarked filtered object</text>
+   </g>
+   <g id="text_14">
+    <!-- $P_0=\mathbb{Q}^4$, all other $P_i=0$ -->
+    <g transform="translate(842.8984 198.641609)">
+     <text>
+      <tspan x="0" y="-0.739062" style="font-style: italic; font-size: 9.8px; font-family: 'STIXGeneral'">P</tspan>
+      <tspan x="19.304929" y="-0.739062" style="font-style: italic; font-size: 9.8px; font-family: 'STIXGeneral'">ℚ</tspan>
+      <tspan x="82.241386" y="-0.739062" style="font-style: italic; font-size: 9.8px; font-family: 'STIXGeneral'">P</tspan>
+      <tspan x="5.957245" y="0.582813" style="font-size: 6.86px; font-family: 'STIXGeneral'">0</tspan>
+      <tspan x="27.443559" y="-4.264062" style="font-size: 6.86px; font-family: 'STIXGeneral'">4</tspan>
+      <tspan x="11.218271" y="-0.739062" style="font-size: 9.8px; font-family: 'STIXGeneral'">=</tspan>
+      <tspan x="91.944503" y="-0.739062" style="font-size: 9.8px; font-family: 'STIXGeneral'">=</tspan>
+      <tspan x="100.031161" y="-0.739062" style="font-size: 9.8px; font-family: 'STIXGeneral'">0</tspan>
+      <tspan x="31.296684" y="-0.739062" style="font-size: 9.8px; font-family: 'DejaVu Serif'">,</tspan>
+      <tspan x="34.395927" y="-0.739062" style="font-size: 9.8px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="37.49517" y="-0.739062" style="font-size: 9.8px; font-family: 'DejaVu Serif'">a</tspan>
+      <tspan x="43.308036" y="-0.739062" style="font-size: 9.8px; font-family: 'DejaVu Serif'">l</tspan>
+      <tspan x="46.426323" y="-0.739062" style="font-size: 9.8px; font-family: 'DejaVu Serif'">l</tspan>
+      <tspan x="49.544609" y="-0.739062" style="font-size: 9.8px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="52.643852" y="-0.739062" style="font-size: 9.8px; font-family: 'DejaVu Serif'">o</tspan>
+      <tspan x="58.513847" y="-0.739062" style="font-size: 9.8px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="62.431938" y="-0.739062" style="font-size: 9.8px; font-family: 'DejaVu Serif'">h</tspan>
+      <tspan x="68.711357" y="-0.739062" style="font-size: 9.8px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="74.481376" y="-0.739062" style="font-size: 9.8px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="79.142143" y="-0.739062" style="font-size: 9.8px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="88.198631" y="0.582813" style="font-style: italic; font-size: 6.86px; font-family: 'STIXGeneral'">i</tspan>
+     </text>
+    </g>
+    <text style="font-size: 9.8px; font-family: 'DejaVu Serif'" transform="translate(828.083556 209.83886)">descending coordinate flag</text>
+   </g>
+   <g id="text_15">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Serif'; text-anchor: middle" x="806.78016" y="265.344525" transform="rotate(-0 806.78016 265.344525)">Allowed mark A</text>
+   </g>
+   <g id="text_16">
+    <!-- $\{S\}$ -->
+    <g transform="translate(799.84516 292.948568)">
+     <text>
+      <tspan x="0" y="-0.203125" style="font-size: 9.5px; font-family: 'STIXGeneral'">{</tspan>
+      <tspan x="9.309982" y="-0.203125" style="font-size: 9.5px; font-family: 'STIXGeneral'">}</tspan>
+      <tspan x="4.559998" y="-0.203125" style="font-style: italic; font-size: 9.5px; font-family: 'STIXGeneral'">S</tspan>
+     </text>
+    </g>
+    <!-- $\dim=4$ -->
+    <g transform="translate(791.77016 303.803045)">
+     <text>
+      <tspan x="0" y="-0.171875" style="font-size: 9.5px; font-family: 'STIXGeneral'">d</tspan>
+      <tspan x="4.749985" y="-0.171875" style="font-size: 9.5px; font-family: 'STIXGeneral'">i</tspan>
+      <tspan x="7.390976" y="-0.171875" style="font-size: 9.5px; font-family: 'STIXGeneral'">m</tspan>
+      <tspan x="17.296954" y="-0.171875" style="font-size: 9.5px; font-family: 'STIXGeneral'">=</tspan>
+      <tspan x="25.176245" y="-0.171875" style="font-size: 9.5px; font-family: 'STIXGeneral'">4</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_17">
+    <text style="font-weight: 700; font-size: 12px; font-family: 'DejaVu Serif'; text-anchor: middle" x="981.133056" y="265.344525" transform="rotate(-0 981.133056 265.344525)">Allowed mark B</text>
+   </g>
+   <g id="text_18">
+    <!-- $\{S,W\}$ -->
+    <g transform="translate(968.355556 292.948568)">
+     <text>
+      <tspan x="0" y="-0.203125" style="font-size: 9.5px; font-family: 'STIXGeneral'">{</tspan>
+      <tspan x="9.309982" y="-0.203125" style="font-size: 9.5px; font-family: 'STIXGeneral'">,</tspan>
+      <tspan x="20.970279" y="-0.203125" style="font-size: 9.5px; font-family: 'STIXGeneral'">}</tspan>
+      <tspan x="4.559998" y="-0.203125" style="font-style: italic; font-size: 9.5px; font-family: 'STIXGeneral'">S</tspan>
+      <tspan x="13.056781" y="-0.203125" style="font-style: italic; font-size: 9.5px; font-family: 'STIXGeneral'">W</tspan>
+     </text>
+    </g>
+    <!-- $\dim=10$ -->
+    <g transform="translate(963.748056 303.803045)">
+     <text>
+      <tspan x="0" y="-0.171875" style="font-size: 9.5px; font-family: 'STIXGeneral'">d</tspan>
+      <tspan x="4.749985" y="-0.171875" style="font-size: 9.5px; font-family: 'STIXGeneral'">i</tspan>
+      <tspan x="7.390976" y="-0.171875" style="font-size: 9.5px; font-family: 'STIXGeneral'">m</tspan>
+      <tspan x="17.296954" y="-0.171875" style="font-size: 9.5px; font-family: 'STIXGeneral'">=</tspan>
+      <tspan x="25.176245" y="-0.171875" style="font-size: 9.5px; font-family: 'STIXGeneral'">1</tspan>
+      <tspan x="29.92623" y="-0.171875" style="font-size: 9.5px; font-family: 'STIXGeneral'">0</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_19">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Serif'; text-anchor: middle" x="851.20128" y="221.679069" transform="rotate(-0 851.20128 221.679069)">choose</text>
+   </g>
+   <g id="text_20">
+    <text style="font-size: 8.5px; font-family: 'DejaVu Serif'; text-anchor: middle" x="937.2672" y="221.679069" transform="rotate(-0 937.2672 221.679069)">choose</text>
+   </g>
+   <g id="text_21">
+    <text style="font-style: italic; font-size: 10.1px; font-family: 'DejaVu Serif'; text-anchor: middle" x="895.6224" y="336.092969" transform="rotate(-0 895.6224 336.092969)">Both preserve the same filtration.</text>
+   </g>
+   <g id="text_22">
+    <text style="font-weight: 700; font-size: 16px; font-family: 'DejaVu Serif'; text-anchor: middle" x="562.464" y="438.3543" transform="rotate(-0 562.464 438.3543)">Scope boundary</text>
+   </g>
+   <g id="text_23">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'; text-anchor: middle" x="212.64768" y="476.920369" transform="rotate(-0 212.64768 476.920369)">What is determined</text>
+   </g>
+   <g id="text_24">
+    <text style="font-size: 9.8px; font-family: 'DejaVu Serif'" transform="translate(86.134274 519.308596)">Supplied marked chain maps descend to homology</text>
+    <!-- and generate $\mathcal{A}_{\rm eff}$. -->
+    <g transform="translate(168.25368 530.647073)">
+     <text>
+      <tspan x="0" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'">a</tspan>
+      <tspan x="5.812866" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'">n</tspan>
+      <tspan x="12.092285" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'">d</tspan>
+      <tspan x="18.333618" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="21.432861" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'">g</tspan>
+      <tspan x="27.674194" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="33.444214" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'">n</tspan>
+      <tspan x="39.723633" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="45.493652" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'">r</tspan>
+      <tspan x="50.154419" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'">a</tspan>
+      <tspan x="55.967285" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'">t</tspan>
+      <tspan x="59.885376" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'">e</tspan>
+      <tspan x="65.655396" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'"> </tspan>
+      <tspan x="85.232235" y="-0.40625" style="font-size: 9.8px; font-family: 'DejaVu Serif'">.</tspan>
+      <tspan x="68.754639" y="-0.40625" style="font-style: italic; font-size: 9.8px; font-family: 'STIXNonUnicode'"></tspan>
+      <tspan x="77.215864" y="0.915625" style="font-size: 6.86px; font-family: 'STIXGeneral'">e</tspan>
+      <tspan x="80.246161" y="0.915625" style="font-size: 6.86px; font-family: 'STIXGeneral'">f</tspan>
+      <tspan x="82.518885" y="0.915625" style="font-size: 6.86px; font-family: 'STIXGeneral'">f</tspan>
+     </text>
+    </g>
+   </g>
+   <g id="text_25">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'; text-anchor: middle" x="562.464" y="476.920369" transform="rotate(-0 562.464 476.920369)">What is not determined</text>
+   </g>
+   <g id="text_26">
+    <text style="font-size: 9.7px; font-family: 'DejaVu Serif'" transform="translate(472.508625 519.447736)">A bare complex, even with filtration,</text>
+    <text style="font-size: 9.7px; font-family: 'DejaVu Serif'" transform="translate(419.296547 530.530729)">does not select an arbitrary distinguished operator family.</text>
+   </g>
+   <g id="text_27">
+    <text style="font-weight: 700; font-size: 13px; font-family: 'DejaVu Serif'; text-anchor: middle" x="912.28032" y="476.920369" transform="rotate(-0 912.28032 476.920369)">Boundary of Paper III</text>
+   </g>
+   <g id="text_28">
+    <text style="font-size: 9.5px; font-family: 'DejaVu Serif'" transform="translate(813.495906 516.648651)">The theorem stops at finite marked data.</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Serif'" transform="translate(820.856922 527.503128)">It does not prove a canonical marking</text>
+    <text style="font-size: 9.5px; font-family: 'DejaVu Serif'" transform="translate(818.769148 538.492684)">for every inverse-Leibniz presentation.</text>
+   </g>
+   <g id="text_29">
+    <text style="font-size: 9.8px; font-family: 'DejaVu Serif'; text-anchor: middle" x="562.464" y="573.108516" transform="rotate(-0 562.464 573.108516)">Change of basis gives conjugate represented algebras; contractible summands do not alter the induced H0 action when descended marks are identified.</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pf8bc618948">
+   <rect x="7.2" y="7.2" width="1110.528" height="658.8"/>
+  </clipPath>
+ </defs>
+</svg>

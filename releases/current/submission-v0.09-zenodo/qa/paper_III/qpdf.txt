@@ -1,0 +1,6 @@
+checking /var/folders/34/y78yxtgj5db0fywg9b8nnvch0000gn/T/paper_III_submission_s6loa_az/paper_III_spectral_floor_v0_09.pdf
+PDF Version: 1.5
+File is not encrypted
+File is not linearized
+No syntax or stream encoding errors found; the file may still contain
+errors that qpdf cannot detect

@@ -1,0 +1,4 @@
+v0.50 intrinsic forced-core verifier: PASS
+im(h0)=U16 intrinsically, dim 35
+intrinsic forced module dim 19
+stable recurrent image dim 7

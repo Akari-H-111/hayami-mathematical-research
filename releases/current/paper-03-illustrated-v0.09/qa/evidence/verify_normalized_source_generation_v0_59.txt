@@ -1,0 +1,5 @@
+v0.59 Normalized-Source Generation verifier: PASS
+closure ranks = [2, 4, 5, 5]
+dim N_eq = 5
+forced char = (S - 5)*(S - 3)**2*(S + 2)**2
+forced min = (S - 5)*(S - 3)**2*(S + 2)**2

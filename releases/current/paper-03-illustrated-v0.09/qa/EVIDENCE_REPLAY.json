@@ -1,0 +1,42 @@
+{
+  "scope": "Five unchanged v0.57--v0.61 verifiers and the v0.03 recovery entry point with its v0.02 checks. Finite exact models, not proof-assistant formalization or Paper I high-arity replay.",
+  "runs": [
+    {
+      "script": "evidence/verification/part_III/verify_equation_operator_reconstruction_v0_61.py",
+      "exit_code": 0,
+      "script_sha256": "432090f6a6a6661f6c699c239549ba42e677b7643af7696069b4d917585e254a",
+      "log_sha256": "e108b5b0da0a1989512db21a294b1e7e309c0443b5925dcc3b662ffabcbe9e59"
+    },
+    {
+      "script": "evidence/verification/part_III/verify_forced_sector_extraction_v0_58.py",
+      "exit_code": 0,
+      "script_sha256": "2726cd3dc196fc8c6c010de56b448a520c3b1bab29e4f3d15577a9dd7930f7e2",
+      "log_sha256": "f94c2ab6520646baf9e32bf4cf0e4535c4d598cc9bb329dcb0e4b26a525ec272"
+    },
+    {
+      "script": "evidence/verification/part_III/verify_general_spectral_floor_tilt_quotient_v0_57.py",
+      "exit_code": 0,
+      "script_sha256": "e50df0e5761bf725c4d99df7c0bb335e170daf142f0a3e25278fbc7b64de3b0e",
+      "log_sha256": "2894a6f2fd2ee639b06623aadfb16ed27a929e0dad5ed56006aa1b7eefef2f60"
+    },
+    {
+      "script": "evidence/verification/part_III/verify_normalized_source_generation_v0_59.py",
+      "exit_code": 0,
+      "script_sha256": "949e219b4e559ae19080b58b288a9a7f062edcb08020f1a136556702234594b7",
+      "log_sha256": "a5b22ae0b31fc1d78faef2e2bfc77b5782d699b18805373a2b321bff38a908d7"
+    },
+    {
+      "script": "evidence/verification/part_III/verify_syzygy_to_constraint_propagator_v0_60.py",
+      "exit_code": 0,
+      "script_sha256": "316d7b9f93f9652ec0d4320de85be544bd90e8e3d79fad9258e250086ecc32e8",
+      "log_sha256": "056c6d05c7da3dcbfcb9bd82f40473a1bc6075755b35ac307d8b056852771b67"
+    },
+    {
+      "script": "evidence/verify_proof_recovery_v0_03.py",
+      "exit_code": 0,
+      "script_sha256": "a47cd78a5bc8f32b80a740eaf6995721d21c521bfe043f8384822acf6f0533bf",
+      "log_sha256": "ccd7590badb8afd766c0b5a9eaf320b9c5db44554b785bcff13929e6dd0220b6"
+    }
+  ],
+  "sympy_version": "1.14.0"
+}

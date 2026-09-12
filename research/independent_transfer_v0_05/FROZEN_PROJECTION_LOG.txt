@@ -1,0 +1,36 @@
+COMMAND: ['/Users/akari_hayami_64/TAGD_Master_Paper/.agent-venv/bin/python', 'research/independent_transfer_v0_05/verify_frozen_projection.py', 'research/independent_transfer_v0_05/experiment_02.json', 'research/independent_transfer_v0_05/complete_splitting.json', 'research/independent_transfer_v0_05/heldout_arity23.json']
+v0.47 cubic support multigrading verifier: PASS
+alpha support: x -> -E13, y -> +E13
+mixed-block alpha kernel = span{E12,E13,E22,E23}
+hook box dim = 45; rank ad_alpha|hook = 24
+U16 dim = 35; rank ad_alpha|U16 = 23
+span(stored h-values) = U16 exactly
+low-rail span rank = 19 inside 46 hook coordinates
+naive word-degree triangularity fails: 2 -> 3 on Q_alphaE
+recurrent loop gives A(E)=-2E
+FROZEN PASS: all global splitting identities, stored sources 7--22 and 100 original assignments
+FROZEN h2,p2 SHA256 55b5eb7323bd0ca89b4329ebf9ec01277405df96474475749885b5b129e77a55; computing held-out arity 23
+ARITY 23 monomial (0, 23): harmonic nonzero coordinates=17
+ARITY 23 monomial (1, 22): harmonic nonzero coordinates=21
+ARITY 23 monomial (2, 21): harmonic nonzero coordinates=21
+ARITY 23 monomial (3, 20): harmonic nonzero coordinates=21
+ARITY 23 monomial (4, 19): harmonic nonzero coordinates=21
+ARITY 23 monomial (5, 18): harmonic nonzero coordinates=17
+ARITY 23 monomial (6, 17): harmonic nonzero coordinates=17
+ARITY 23 monomial (7, 16): harmonic nonzero coordinates=17
+ARITY 23 monomial (8, 15): harmonic nonzero coordinates=17
+ARITY 23 monomial (9, 14): harmonic nonzero coordinates=17
+ARITY 23 monomial (10, 13): harmonic nonzero coordinates=21
+ARITY 23 monomial (11, 12): harmonic nonzero coordinates=17
+ARITY 23 monomial (12, 11): harmonic nonzero coordinates=17
+ARITY 23 monomial (13, 10): harmonic nonzero coordinates=17
+ARITY 23 monomial (14, 9): harmonic nonzero coordinates=17
+ARITY 23 monomial (15, 8): harmonic nonzero coordinates=17
+ARITY 23 monomial (16, 7): harmonic nonzero coordinates=17
+ARITY 23 monomial (17, 6): harmonic nonzero coordinates=17
+ARITY 23 monomial (18, 5): harmonic nonzero coordinates=0
+ARITY 23 monomial (19, 4): harmonic nonzero coordinates=0
+ARITY 23 monomial (20, 3): harmonic nonzero coordinates=0
+ARITY 23 monomial (21, 2): harmonic nonzero coordinates=0
+HELD-OUT COMPLETE: nonzero harmonic monomials=18
+EXIT STATUS: 0

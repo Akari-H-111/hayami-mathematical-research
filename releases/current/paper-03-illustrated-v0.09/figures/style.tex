@@ -1,0 +1,23 @@
+\documentclass[10pt,border=5pt]{standalone}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,mathrsfs,tikz}
+\usetikzlibrary{arrows.meta,positioning,calc}
+\definecolor{ink}{HTML}{192536}
+\definecolor{blue}{HTML}{2E70AE}
+\definecolor{gold}{HTML}{A66A15}
+\newcommand{\kk}{\Bbbk}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\im}{\operatorname{im}}
+\newcommand{\End}{\operatorname{End}}
+\newcommand{\Hom}{\operatorname{Hom}}
+\newcommand{\Aeff}{\mathscr A_{\mathrm{eq}}^{\mathrm{eff}}}
+\newcommand{\Neq}{N_{\mathrm{eq}}}
+\newcommand{\Geq}{\Gamma_{\mathrm{eq}}}
+\newcommand{\Gmark}{\mathfrak G_{\mathrm{mark}}}
+\tikzset{every node/.style={font=\small,text=ink,align=center},
+ box/.style={draw=blue,fill=blue!4,rounded corners=3pt,line width=.7pt,inner sep=7pt},
+ goldbox/.style={box,draw=gold,fill=gold!5},
+ neutral/.style={box,draw=ink!60,fill=black!2},
+ edge/.style={-{Stealth[length=4pt]},draw=ink,line width=.7pt},
+ note/.style={font=\small,text=ink!85}}
+\newcommand{\framewidth}{\path (-7.5,0) rectangle (7.5,0);}

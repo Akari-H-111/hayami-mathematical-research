@@ -1,0 +1,37 @@
+\input{style.tex}
+\begin{document}
+\begin{tikzpicture}
+\framewidth
+\node[box,text width=13.6cm] (core)
+ {\textbf{No assumption that $K=\ker H$ is invariant}\\[4pt]
+ $U=\displaystyle\bigcap_{j=0}^{n-1}\ker(HA^j)\subseteq K\subseteq R,\qquad n=\dim R>0$\\[4pt]
+ $U$ is the largest $A$-invariant subspace contained in $K$.};
+\node[box,text width=13.6cm,below=7mm of core] (orbit)
+ {\textbf{The full orbit is unchanged: $A_\tau=A+\tau H$}\\[4pt]
+ Every $A_\tau$ has the same $U$ and the same action $A|_U$.\\[4pt]
+ Choose $R=U\oplus X$. On $R/U$, the blocks range over $B+LC$;\\
+ the induced pair $(B,C)$ is observable.};
+\draw[edge] (core)--(orbit);
+\node[box,text width=6.4cm,below=7mm of orbit.south,xshift=-3.65cm] (one)
+ {\textbf{First quotient witness}\\[5pt]
+ $\chi_{A_{\tau_1}}=\chi_{A|_U}p_1$\\[4pt]
+ $\gcd(p_1,\chi_{A|_U})=1$};
+\node[box,text width=6.4cm] (two) at (one-|3.65,0)
+ {\textbf{Second quotient witness}\\[5pt]
+ $\chi_{A_{\tau_2}}=\chi_{A|_U}p_2$\\[4pt]
+ $\gcd(p_2,\chi_{A|_U}p_1)=1$};
+\draw[edge] (orbit.south)--++(0,-3mm)-|(one.north);
+\draw[edge] (one.east)--(two.west);
+\node[goldbox,text width=13.6cm,below=7mm of $(one.south)!0.5!(two.south)$] (floor)
+ {\textbf{Stable-core characteristic and minimal floors}\\[4pt]
+ Coprime quotient spectra split the extension for these two witnesses:\\[4pt]
+ $\mu_{A_{\tau_i}}=\mu_{A|_U}\mu_{B+L_iC}\quad(i=1,2).$\\[5pt]
+ $\displaystyle\gcd_\tau\chi_{A_\tau}=\chi_{A|_U},\qquad
+ \displaystyle\gcd_\tau\mu_{A_\tau}=\mu_{A|_U}$};
+\draw[edge] (two.south)--++(0,-3mm)-|(floor.north);
+\node[note,text width=13.6cm,below=4mm of floor]
+ {Over an infinite field, spectral avoidance supplies the two quotient blocks.\\
+ The perturbations still vanish on $K$, not merely on $U$.\\
+ If $K$ is invariant, $U=K$; zero-dimensional polynomials are $1$.};
+\end{tikzpicture}
+\end{document}

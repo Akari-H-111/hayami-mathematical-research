@@ -1,0 +1,70 @@
+v0.58 Forced-Sector Extraction Theorem
+
+INPUT:
+  finite data state (M,T)
+  landing Lambda:M->R
+  source D:R->F
+  normalized N subset F
+  quotient nu:F->F/N
+
+NORMALIZED TEST:
+  Gamma=nu D Lambda
+
+STATIC FORCED SECTOR:
+  K=D^{-1}(N) cap im Lambda
+  K ~= ker Gamma / ker Lambda
+  dim K = rank Lambda - rank Gamma
+
+LANDING CLOSURE:
+  ker Lambda T-invariant
+  equivalent rank[Lambda;Lambda T]=rank Lambda
+  then recurrent A is induced by T on M/ker Lambda.
+
+NORMALIZED CLOSURE:
+  A(K) subset K
+  iff ker Gamma T-invariant
+  iff rank[Gamma;Gamma T]=rank Gamma.
+
+OPERATOR:
+  A|K is conjugate to induced T on ker Gamma / ker Lambda.
+
+NON-INVARIANT CASE:
+  M_inf = intersection ker(Gamma T^n)
+        = ker O_N
+  O_N=[Gamma;Gamma T;...;Gamma T^(m-1)]
+  K_inf ~= M_inf/ker Lambda
+  dim K_inf=rank Lambda-rank O_N.
+
+FORCING BRIDGE:
+  Lambda=I P_F(T)
+  Gamma=nu D I P_F(T)
+So forced sector comes directly from forcing matrices.
+
+CYCLIC PID COROLLARY:
+If
+  ker Lambda=d_Lambda R/(c)
+  ker Gamma=d_Gamma R/(c)
+then
+  d_Gamma | d_Lambda
+and
+  K ~= R/(d_Lambda/d_Gamma).
+
+Thus
+  p_forced=d_Lambda/d_Gamma.
+
+If landing symbol sigma into R/(m):
+  d_Lambda=m/gcd(m,sigma)
+and normalized-source symbol gamma into R/(n):
+  d_Gamma=n/gcd(n,gamma)
+then
+  p_forced=
+  [m/gcd(m,sigma)]/[n/gcd(n,gamma)].
+
+CONNECTION TO v0.57:
+  extracted A|K gives exactly the characteristic/minimal spectral floor
+  of the full normalized tilt orbit.
+
+NEXT:
+Normalized-Source Generation Theorem:
+derive N intrinsically from deformation/boundary constraints before
+choosing a contraction.

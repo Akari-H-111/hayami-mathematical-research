@@ -1,0 +1,21 @@
+We reconstruct left and right algebra actions from a fixed bilinear map
+$B:A\times A\to V$ required to satisfy two Leibniz identities.
+The weak reconstruction fiber is affine; strict reconstruction adds the
+quadratic equations for a unital bimodule. Finite examples distinguish
+global uniqueness, infinitesimal rigidity, and nonreduced tangent directions.
+
+For $A=\mathbb{C}[\epsilon]/(\epsilon^4)$ and $V=\mathbb{C}^3$, the completed local ring is
+$\mathbb{C}[[u,v]]/(v^3)$. Every normalized contraction of the presentation DGLA
+has a nonzero quartic operation, whereas a single contraction of the
+constrained Hochschild DGLA retains the cubic obstruction and has
+vanishing degree-one operations at arities $4$ through $23$.
+A second fixed contraction has a nonzero arity-$23$ coefficient.
+
+For the preserved low-rail homotopy data, an autonomous triangular subsystem
+has an all-orders scalar recurrence. We determine its residual modules,
+complete landing operators, and the nested gcd stratifications of forcing,
+spectral support, and a specified polynomial lift.
+Exact cochain and matrix certificates accompany the proofs; two frozen
+out-of-sample checks provide separate finite evidence.
+The spectral results are relative to the fixed contraction, not invariants
+of an unmarked deformation problem.

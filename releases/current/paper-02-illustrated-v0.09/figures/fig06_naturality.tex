@@ -1,0 +1,35 @@
+\input{style.tex}
+\begin{document}
+\begin{tikzpicture}
+\node[note,text width=13.5cm] at (3.8,1.45)
+ {Resonance-faithful comparison: isomorphisms $\Phi_T,\Phi_P,\Phi_L$\\
+ preserving the marked line and the following two squares.};
+\node[heading] at (0,0.6) {Differential};
+\node[heading] at (7.6,0.6) {Bracket response, $a\in\Tr$};
+\node[box] (p) at (-1.45,-.2) {$\Prs$};
+\node[greenbox] (pp) at (1.45,-.2) {$\mathcal P'_{\mathrm{res}}$};
+\node[box] (l) at (-1.45,-2) {$\Lr$};
+\node[greenbox] (lp) at (1.45,-2) {$\mathcal L'_{\mathrm{res}}$};
+\draw[edge] (p)--node[above]{$\Phi_P$}(pp);
+\draw[edge] (l)--node[above]{$\Phi_L$}(lp);
+\draw[edge] (p)--node[left]{$\bar d$}(l);
+\draw[edge] (pp)--node[right]{$\bar d'$}(lp);
+\node[box] (q) at (6.15,-.2) {$\Prs$};
+\node[greenbox] (qp) at (9.05,-.2) {$\mathcal P'_{\mathrm{res}}$};
+\node[box] (m) at (6.15,-2) {$\Lr$};
+\node[greenbox] (mp) at (9.05,-2) {$\mathcal L'_{\mathrm{res}}$};
+\draw[edge] (q)--node[above]{$\Phi_P$}(qp);
+\draw[edge] (m)--node[above]{$\Phi_L$}(mp);
+\draw[edge] (q)--node[left]{$\bar D_a$}(m);
+\draw[edge] (qp)--node[right]{$\bar D'_{\Phi_Ta}$}(mp);
+\node[note] at (0,-3) {$\bar d'\Phi_P=\Phi_L\bar d$};
+\node[note] at (7.6,-3) {$\bar D'_{\Phi_Ta}\Phi_P=\Phi_L\bar D_a$};
+\node[greenbox,text width=13.5cm] (theta) at (3.8,-4.1)
+ {$\Theta'(\Phi_Ta)=\Phi_L\Theta(a)\Phi_L^{-1}$\\[5pt]
+ $\rho'_{\mathrm{res}}(\Phi_Ta)=\rr(a),\qquad
+ \rho'_{\mathrm{res}}=(\Phi_T^{-1})^\vee\rr$};
+\node[note,text width=13.5cm,below=5mm of theta]
+ {The scalar response is independent of the basis of the marked line.\\
+ Ordinary quasi-isomorphisms need not preserve this line.};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,50 @@
+{
+  "date": "2026-09-08",
+  "reviewer": "Codex visual inspection",
+  "pdf_sha256": "5fb904215611e2e381ce3d13a8d61863ee7124142adbdec37b4ad5cccfff19ac",
+  "pages_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "render_dpi": 120,
+  "layout_review_passed": true,
+  "figure_sha256": {
+    "fig01_roadmap.pdf": "377d721e5814a74ad3ecfef31a2db7f31618272f2834c192b8de7dd315f6ecc8",
+    "fig02_fixed_envelope.pdf": "6aedb67e8420f57c75b9caecc1aa22f62caddecdd07eca85436d511d40798e37",
+    "fig03_tilt_orbit.pdf": "0c2867d16eacea9ee8ce16aafc2f1db0a20d1acb4df8a7e19518342fb1bb3b54",
+    "fig04_surviving_rail.pdf": "1c6d19b2cfbca2a11041e1c2f309ecaf31da05605d03c68aa71f3c9b4acc2bae",
+    "fig05_response_descent.pdf": "8f10ac8fc593b7acfd32f6d5567dcc27e0439622a16c148b161e2d4cfcc33150",
+    "fig06_naturality.pdf": "bd6cd20124072be0d18231dfb679a15efcca937227352aa05be9097aae145190",
+    "fig07_cancellation.pdf": "fd56842bf094014fabf7b645335d3baa94b794b8ce8e4d19c0e4e1efd5c347b4"
+  },
+  "page_pixel_sha256": {
+    "page-01.png": "ca2dc83ecc28f66e08fe8001907c3f1a208e1b6b33eba4e626ee883f7dcedaff",
+    "page-02.png": "47dda4a3a470c6679d92a8ee5c7dfb44a2363a4c9cb952331969ffa4db61afd3",
+    "page-03.png": "9bb64bb95306fa9f930c6259083314d84bf141dd2b1b23f8c89c2ee39ef047c3",
+    "page-04.png": "24d2795f6db4b50028b37831c147c7e9301fb6e06e3f5f1647035b52aa420a8f",
+    "page-05.png": "e7fefeb7f630a08dd164979bfda57b4bff38a01be6d79b4376ec47552f1d4446",
+    "page-06.png": "7d359570ef0f50fab99e8764de682809d234d4e9aa62d890460b3d9d0b98eab4",
+    "page-07.png": "2a12f4b7e0980afbb05f58986f350093061f136550f7d0d56475511a96b8739d",
+    "page-08.png": "58dd7a6afac41ca7d96348ab609d4c883348a6bb42367831e4e5a772dc00032c",
+    "page-09.png": "4e4c23da0fdd2066d9fba0531f082a5cedcbc66e6f887c31a58a35c0424f8b66",
+    "page-10.png": "de83b3b3e824fb8626fb24522b59eb37365f345e93b0b0187de9fe09b869398f",
+    "page-11.png": "685e3be61df6a7c6e0fb2b9b9fa9207ff368ff5f1311e7250f97b5017139a679",
+    "page-12.png": "1fa45f611e6ffc2cc29e40bfb6c123fa5c7abb83f18b3905ef46b0f911f6418d",
+    "page-13.png": "050b1507f38f40362c48153a0c229a552de44a01ac686899dff43760997c5212",
+    "page-14.png": "e4a5492f4d4ca250a5630e5beb1417e40d2c25f011f267ec5347662d31e73e39"
+  },
+  "findings": "All 14 final pages inspected. All seven figures readable at manuscript width, with no clipped or overlapping labels or obscured arrows. Native captions, author, header, page numbers and bibliography checked. Large section-barrier gaps removed. Figure 3 chosen-complement scope, Figure 5 nonzero-line condition, and Figure 7 independent-model/sign convention checked against text.",
+  "scope": "Visual and editorial approval bound to the current PDF and seven vector PDFs, separate from mathematical replay."
+}

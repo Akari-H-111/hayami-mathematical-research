@@ -1,0 +1,11 @@
+local/
+archive/
+releases/archive/
+**/.lake/
+**/.venv/
+**/__pycache__/
+**/*.aux
+**/*.log
+**/*.out
+**/*.toc
+.DS_Store

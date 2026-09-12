@@ -1,0 +1,5 @@
+- 2026-09-07 — Imported figures need mathematical and printed-size QA: distinguish a chosen complement from a quotient, qualify the nonzero-line descent obstruction, label the independent cancellation model, and check every text box and diagram before integration.
+- 2026-09-08 — A process handle was unavailable after a new user message; inspect durable logs and process state, then rerun unfinished checks with explicit completion records rather than infer success.
+- 2026-09-08 — Initial figure QA found a tight footer gap and avoidable word hyphenation; add spacing and explicit line breaks before approving the PDF exports.
+- 2026-09-08 — Section-bounded floats triggered an underfull page with flush-bottom layout; use ragged-bottom pages and recheck the complete rendered manuscript. Standalone figure builds report shell escape disabled; these figures need no shell escape.
+- 2026-09-08 — Rendered pages still had large gaps at section float barriers; remove the unnecessary barriers while retaining nearby numbered callouts and final figure-order checks.

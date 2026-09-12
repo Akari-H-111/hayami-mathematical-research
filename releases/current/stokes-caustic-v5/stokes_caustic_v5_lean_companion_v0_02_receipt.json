@@ -1,0 +1,14 @@
+{
+  "release": "stokes_caustic_v5_lean_companion_v0_02",
+  "date": "2026-09-12",
+  "archive": "stokes_caustic_v5_lean_companion_v0_02.zip",
+  "archive_sha256": "4ab15df0129d14e4b0d1c0e1b26cdfcc7eaaa41b05021ccf9e3f7363376378d4",
+  "archive_bytes": 350538,
+  "members": 29,
+  "authoritative_pdf_sha256": "4e48c805c1550dbaee9171a56264bf4ff5275ef5ff5b64f9cd116803283c11c0",
+  "zip_crc": "PASS",
+  "local_replay": "PASS",
+  "extracted_replay": "PASS",
+  "scope": "Lean-certified observation-map chart and differentiability, finite algebra, and real root barriers; CAS-certified full Jacobian bridge; Whitney-fold criterion not formalized.",
+  "license": "Apache-2.0 for code; CC-BY-4.0 for scholarly and documentation material; see LICENSE.md."
+}

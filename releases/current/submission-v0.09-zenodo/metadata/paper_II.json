@@ -1,0 +1,14 @@
+{
+  "title": "Resonance-Marked Naturality and Homotopy-Tilt Non-Invariance in the Inverse-Leibniz Cubic Case",
+  "authors": "Akari Hayami (Jian-Yu Huang)",
+  "abstract": "We determine which features of a fixed cubic inverse-Leibniz calculation survive changes\nof its normalized homotopy splitting. In a seven-dimensional recurrent envelope,\nthe full internal tilt orbit consists of all operators satisfying $A(E)=-2E$.\nIts common characteristic and minimal polynomial divisor is $S+2$; the complementary\nquintic factor of the chosen contraction can be removed. We then define a primitive-free\nresonant boundary-response line and a response covector on the tangent subspace for\nwhich the bracket descends through the primitive quotient. We characterize this domain as the kernel of an explicit descent obstruction;\nany output quotient extending a transverse cubic direction must erase the marked line. The response is transported by strict comparisons preserving the marked\nline, differential, and bracket. An explicit four-generator DGLA has a contractible\nresonant pair that a strict quasi-isomorphism cancels, while the Maurer--Cartan functor\nover local Artin algebras remains a smooth two-parameter germ. Thus the positive\ncomparison theorem requires the resonance marking, which the ordinary deformation\nfunctor does not retain. All spectral claims concern the stated internal orbit;\nthe finite cubic input and the available computational checks are identified explicitly.",
+  "comments": "Paper II; illustrated edition v0.09; 14 pages, 7 figures.",
+  "primary_category_proposal": "math.RA",
+  "category_status": "proposal, not selected on platform",
+  "license": null,
+  "doi": null,
+  "arxiv_id": null,
+  "journal_reference": null,
+  "status": "local preparation; not uploaded or submitted",
+  "related_materials_doi": "10.5281/zenodo.22663942"
+}

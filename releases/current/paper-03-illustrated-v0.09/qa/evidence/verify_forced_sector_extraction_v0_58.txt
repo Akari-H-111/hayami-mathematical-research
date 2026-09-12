@@ -1,0 +1,4 @@
+v0.58 Forced-Sector Extraction verifier: PASS
+dim forced sector = 3
+forced char polynomial = (S - 3)*(S + 2)**2
+cyclic forced polynomial = (S + 2)**2

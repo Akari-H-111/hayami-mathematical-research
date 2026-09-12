@@ -1,0 +1,6 @@
+checking /var/folders/34/y78yxtgj5db0fywg9b8nnvch0000gn/T/paper_I_submission_us_ebwek/paper_I_fixed_cubic_v0_09.pdf
+PDF Version: 1.5
+File is not encrypted
+File is not linearized
+No syntax or stream encoding errors found; the file may still contain
+errors that qpdf cannot detect

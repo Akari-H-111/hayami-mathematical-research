@@ -1,0 +1,4 @@
+v0.57 general spectral-floor verifier: PASS
+chi_forced = (S - 3)*(S + 2)**2
+mu_forced = (S - 3)*(S + 2)**2
+tilt dimension = 18

@@ -1,0 +1,4 @@
+The Inverse Leibniz Problem, Papers I-III: illustrated v0.09 manuscripts and reproducibility materials
+Author: Akari Hayami (Jian-Yu Huang)
+Collection DOI: 10.5281/zenodo.22663942
+See README.md for the manuscript/source/evidence mapping and verification scope.

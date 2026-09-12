@@ -1,0 +1,14 @@
+COMMAND: ['/Users/akari_hayami_64/TAGD_Master_Paper/.agent-venv/bin/python', '-B', 'research/feedback_matrices_v0_06/sector_probe.py']
+v0.47 cubic support multigrading verifier: PASS
+alpha support: x -> -E13, y -> +E13
+mixed-block alpha kernel = span{E12,E13,E22,E23}
+hook box dim = 45; rank ad_alpha|hook = 24
+U16 dim = 35; rank ad_alpha|U16 = 23
+span(stored h-values) = U16 exactly
+low-rail span rank = 19 inside 46 hook coordinates
+naive word-degree triangularity fails: 2 -> 3 on Q_alphaE
+recurrent loop gives A(E)=-2E
+NEW CLOSED H CLASS 1 2 [[0, 1, 1]]
+NEW CLOSED H CLASS 2 2 [[0, -3, 4], [2, -6, 1], [3, 12, 1], [4, -2, 1], [5, 2, 1], [6, -6, 1], [7, 6, 1], [10, -8, 1], [11, 4, 1], [13, -4, 1], [16, -12, 1], [17, -3, 1], [18, -12, 1], [19, 18, 1], [22, 8, 1], [25, 10, 1], [35, 6, 1]]
+QUADRATIC: raw rank 267 differential rank 264 closed-H rank 2 old full projection image rank 3
+EXIT STATUS: 0

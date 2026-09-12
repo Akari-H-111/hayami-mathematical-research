@@ -1,0 +1,14 @@
+We determine which features of a fixed cubic inverse-Leibniz calculation survive changes
+of its normalized homotopy splitting. In a seven-dimensional recurrent envelope,
+the full internal tilt orbit consists of all operators satisfying $A(E)=-2E$.
+Its common characteristic and minimal polynomial divisor is $S+2$; the complementary
+quintic factor of the chosen contraction can be removed. We then define a primitive-free
+resonant boundary-response line and a response covector on the tangent subspace for
+which the bracket descends through the primitive quotient. We characterize this domain as the kernel of an explicit descent obstruction;
+any output quotient extending a transverse cubic direction must erase the marked line. The response is transported by strict comparisons preserving the marked
+line, differential, and bracket. An explicit four-generator DGLA has a contractible
+resonant pair that a strict quasi-isomorphism cancels, while the Maurer--Cartan functor
+over local Artin algebras remains a smooth two-parameter germ. Thus the positive
+comparison theorem requires the resonance marking, which the ordinary deformation
+functor does not retain. All spectral claims concern the stated internal orbit;
+the finite cubic input and the available computational checks are identified explicitly.

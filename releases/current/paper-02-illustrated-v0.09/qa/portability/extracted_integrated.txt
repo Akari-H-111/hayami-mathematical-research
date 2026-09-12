@@ -1,0 +1,2 @@
+PASS: 14 pages, seven vector figures, six bibliography entries, exact mathematical body preservation, author, citations, destinations, clean manuscript log, bounds and evidence hashes.
+Visual record validated: True

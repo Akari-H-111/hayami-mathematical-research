@@ -1,0 +1,18 @@
+PASS: two-representative floors, empty/full sectors, noncyclic Jordan example
+PASS: naturality with the primitive differential inverse
+PASS: DGLA identities, response domain C*alpha, Artin MC cancellation
+PASS: stable-core formula and missing-descent counterexample
+PASS: ambient isomorphism alone does not ensure generated-source equality
+PASS: actual cubic response direction, D_alpha E=2dE, [xi,xi]=-2dE
+PASS I: reconstructed weak rank 45, strict tangent rank 7; exact cubic ideal and rational all-orders section
+PASS I: finite free rank-three family; cubic fibers for q!=0, square-zero two-generator fiber for q=0
+PASS II: constrained C1 dimension 90, differential rank 88, Z1=span(alpha,xi), maximal response domain
+PASS II: combined source cycle intersection has dimension 2 (not its boundary dimension 1)
+PASS II: reconstructed v0.48 claims: ranks 35/23/100/116; intersections 7/1; 16*35=560 extensions
+PASS II: v0.53 E-rail and first three g3 source identities, boundary/nonclosed tilts, d^2K=0
+PASS III: single end-to-end marked model, including noninvariant normalization
+PASS III: same-orbit stable floors, two rational witnesses, noncyclic Jordan depths, conjugacy and multiple outputs
+PASS III: local versus global descent and future-output quotient boundary example
+PASS III: generated-seed coverage can hold without surjectivity onto the target seed image
+PASS III: empty stable core gives characteristic and minimal floors equal to one
+PASS: v0.03 proof-recovery suite; prior v0.02 regression checks included.

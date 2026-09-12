@@ -1,0 +1,37 @@
+\input{style.tex}
+\begin{document}
+\begin{tikzpicture}
+\framewidth
+\node[neutral,text width=13.6cm] (pres)
+ {\textbf{Relation presentation and zeroth homology}\\[4pt]
+ $P_1\xrightarrow{d_1}P_0\xrightarrow{\varepsilon}F_{\rm rel}\longrightarrow0,\qquad
+ H_0=P_0/\im d_1\xrightarrow[\sim]{\bar\varepsilon}F_{\rm rel}$};
+\node[box,text width=6.4cm,below=7mm of pres.south,xshift=-3.65cm] (syz)
+ {\textbf{Temporary equation algebra}\\[4pt]
+ $\mathscr A_{\rm eq}$ acts by chain maps.\\[4pt]
+ $\bar\rho:\mathscr A_{\rm eq}\to\End(H_0)$\\[4pt]
+ $C(a)=\bar\varepsilon\bar\rho(a)\bar\varepsilon^{-1}$\\[4pt]
+ $\mathscr C_{\rm syz}=\im C$\\[3pt]
+ $\simeq\mathscr A_{\rm eq}/\operatorname{Ann}(F_{\rm rel})$};
+\node[box,text width=6.4cm] (mark) at (syz-|3.65,0)
+ {\textbf{Supplied marked chain maps}\\[4pt]
+ $\Gmark=\{G_1,\ldots,G_t\}$\\[4pt]
+ $dG_j=G_jd\ \Longrightarrow\ \bar G_j\in\End(H_0)$\\[4pt]
+ $\Aeff=\kk\langle\bar G:G\in\Gmark\rangle$\\[4pt]
+ The smallest unital subalgebra\\
+ containing the descended marks.};
+\draw[edge] (pres.south)--++(0,-3mm)-|(syz.north);
+\draw[edge] (pres.south)--++(0,-3mm)-|(mark.north);
+\node[goldbox,text width=13.6cm,below=7mm of $(syz.south)!0.5!(mark.south)$] (id)
+ {\textbf{Identify the represented actions, then generate the source}\\[5pt]
+ $\mathscr C_{\rm syz}\simeq\Aeff,\qquad \Neq=\Aeff\im R_0$\\[4pt]
+ Transport uses $\bar\varepsilon$; this is not literal matrix equality in unrelated bases.};
+\draw[edge] (syz.south)--++(0,-3mm)-|(id.north);
+\draw[edge] (mark.south)--++(0,-3mm)-|(id.north);
+\node[neutral,text width=13.6cm,below=7mm of id]
+ {\textbf{Homotopy-compatible comparison of corresponding marks}\\[4pt]
+ $\Phi G-G'\Phi=d'H_G+H_Gd\quad\Longrightarrow\quad\bar\Phi\bar G=\bar G'\bar\Phi$\\[4pt]
+ If $\bar\Phi$ is invertible, the effective algebras are conjugate.\\
+ No extension of the source action outside the relation image is needed.};
+\end{tikzpicture}
+\end{document}

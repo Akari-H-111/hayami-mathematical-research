@@ -1,0 +1,31 @@
+\input{style.tex}
+\begin{document}
+\begin{tikzpicture}
+\framewidth
+\node[neutral,text width=13.6cm] (data)
+ {\textbf{Invariant normalized kernel over an infinite field}\\[4pt]
+ $H=qD,\quad K=\ker H,\quad A(K)\subseteq K,\quad A_\tau=A+\tau H$\\[3pt]
+ $\tau\in\Hom(\im H,R),\qquad \{\tau H\}=\{T\in\End(R):T|_K=0\}$};
+\node[box,text width=13.6cm,below=7mm of data] (orbit)
+ {\textbf{Choose a vector-space complement $R=K\oplus X$}\\[4pt]
+ $\mathcal O_{\rm tilt}(A)=\{B:B|_K=A|_K\},\qquad
+ B=\begin{pmatrix}A|_K&C\\0&B_X\end{pmatrix}$\\[4pt]
+ Both $C\in\Hom(X,K)$ and $B_X\in\End(X)$ are arbitrary.};
+\draw[edge] (data)--(orbit);
+\node[box,text width=13.6cm,below=7mm of orbit] (two)
+ {\textbf{Two block-diagonal witnesses, $c\ne d$ and $r=\dim X>0$}\\[4pt]
+ $B_c=A|_K\oplus cI_X,\qquad B_d=A|_K\oplus dI_X$\\[4pt]
+ $\chi_{B_c}=\chi_{A|_K}(S-c)^r,\qquad \chi_{B_d}=\chi_{A|_K}(S-d)^r$\\[4pt]
+ $\mu_{B_c}=\operatorname{lcm}(\mu_{A|_K},S-c),\quad
+ \mu_{B_d}=\operatorname{lcm}(\mu_{A|_K},S-d)$};
+\draw[edge] (orbit)--(two);
+\node[goldbox,text width=13.6cm,below=7mm of two] (floor)
+ {\textbf{Common divisors over the full tilt family}\\[5pt]
+ $\displaystyle\gcd_\tau\chi_{A_\tau}=\chi_{A|_K},\qquad
+ \displaystyle\gcd_\tau\mu_{A_\tau}=\mu_{A|_K}$};
+\draw[edge] (two)--(floor);
+\node[note,text width=13.6cm,below=4mm of floor]
+ {If $X=0$, the orbit is a singleton. Zero-dimensional polynomials equal $1$.\\
+ A more restricted tilt family can have a larger gcd.};
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,29 @@
+{
+  "pages": 63,
+  "figures": 14,
+  "figure_pages": {
+    "1": 4,
+    "2": 7,
+    "3": 10,
+    "4": 12,
+    "5": 17,
+    "6": 22,
+    "7": 28,
+    "8": 29,
+    "9": 37,
+    "10": 41,
+    "11": 45,
+    "12": 48,
+    "13": 51,
+    "14": 54
+  },
+  "body_preserved_exactly": true,
+  "all_labels_resolved": true,
+  "caption_destinations_match": true,
+  "no_overfull_missing_glyph_or_float_errors": true,
+  "all_character_bounds_valid": true,
+  "all_14_illustrations_vector": true,
+  "qpdf": "PASS",
+  "source_sha256": "a2ac16965a1fa11c8e3ed56132efe747d73543b5637a5a62869cd8897c38c276",
+  "pdf_sha256": "0a042c63659037562bca2d9f332ff7d0690cdc3db87aba040f783040605c23fc"
+}

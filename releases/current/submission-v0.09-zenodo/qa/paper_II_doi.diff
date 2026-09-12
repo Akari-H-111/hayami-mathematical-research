@@ -1,0 +1,26 @@
+--- preparation
++++ doi_release
+@@ -789,12 +789,12 @@
+ Akari Hayami (Jian-Yu Huang),
+ \emph{The Inverse Leibniz Problem: Reconstruction Fibers, Rigidity, Obstructions, and Deformation DGLAs},
+ Paper I, illustrated edition v0.09, based on the fixed-case v0.41 record, 2026.
+-Unpublished companion manuscript.
++Companion manuscript in the accompanying collection.
+ 
+ \bibitem{PaperIII}
+ Akari Hayami (Jian-Yu Huang),
+ \emph{General Spectral Floors from Marked Deformation Presentations},
+-Paper III, illustrated edition v0.09, 2026. Unpublished companion manuscript.
++Paper III, illustrated edition v0.09, 2026. Companion manuscript in the accompanying collection.
+ 
+ \bibitem{CubicRecords}
+ Akari Hayami (Jian-Yu Huang),
+@@ -805,7 +805,6 @@
+ \path{evidence/legacy/verification/part_II/}, with recovery checks in
+ \path{evidence/legacy/verify_proof_recovery_v0_03.py}.
+ See \path{EVIDENCE_MAP.md} for claim-to-file locations and
+-Section~\ref{sec:verification} for scope. No public archive identifier
+-has been assigned in this local version.
++Section~\ref{sec:verification} for scope. Accompanying collection: \href{https://doi.org/10.5281/zenodo.22663942}{doi:10.5281/zenodo.22663942}.
+ \end{thebibliography}
+ \end{document}

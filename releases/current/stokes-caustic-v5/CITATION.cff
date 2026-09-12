@@ -1,0 +1,14 @@
+cff-version: 1.2.0
+message: "If you use this companion, please cite the manuscript and this versioned verification package."
+title: "Stokes caustic v5 Lean companion"
+version: "0.02"
+date-released: 2026-09-12
+type: software
+authors:
+  - family-names: "Hayami"
+    given-names: "Akari"
+    alias: "Jian-Yu Huang"
+repository-code: "https://github.com/Akari-H-111/hayami-mathematical-research"
+license:
+  - Apache-2.0
+  - CC-BY-4.0

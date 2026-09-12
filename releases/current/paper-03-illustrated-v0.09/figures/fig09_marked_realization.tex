@@ -1,0 +1,31 @@
+\input{style.tex}
+\begin{document}
+\begin{tikzpicture}
+\framewidth
+\node[box,text width=13.6cm] (chain)
+ {\textbf{1. Marked relation complex}\\[5pt]
+ $P_1=\Q\xrightarrow{\ d_1(z)=(0,0,z)\ }P_0=\Q^3$\\[4pt]
+ $G_1=3,\qquad G_0=\operatorname{diag}(1,2,3),\qquad G_0d_1=d_1G_1$};
+\node[box,text width=13.6cm,below=7mm of chain] (hom)
+ {\textbf{2. Homology, effective algebra and seed closure}\\[5pt]
+ $H_0(P_\bullet)=\Q^2=F,\quad\iota=I,\quad\bar G=\operatorname{diag}(1,2)$\\[4pt]
+ $\Aeff=\Q[\bar G]=$ the two-dimensional diagonal algebra\\[4pt]
+ $R_0(s)=(s,0),\qquad N=\Neq=\Q(1,0)$};
+\draw[edge] (chain)--(hom);
+\node[box,text width=13.6cm,below=7mm of hom] (landing)
+ {\textbf{3. Supplied state and source maps}\\[5pt]
+ $M=R=\Q^3,\qquad T=A=\begin{pmatrix}0&0&0\\0&2&0\\1&0&3\end{pmatrix},\qquad \Lambda=I$\\[5pt]
+ $D(x_1,x_2,x_3)=(0,x_3),\qquad q(y_1,y_2)=y_2$\\[4pt]
+ $qD\Lambda=H=\begin{pmatrix}0&0&1\end{pmatrix}$};
+\draw[edge] (hom)--(landing);
+\node[goldbox,text width=13.6cm,below=7mm of landing] (floor)
+ {\textbf{4. Stable assembly and the exact floor}\\[5pt]
+ $\ker\Lambda=0,\quad W=U=\Q e_2,\quad T|_U=2I_U$\\[5pt]
+ $\chi_{\rm forced}=\mu_{\rm forced}=S-2$\\[4pt]
+ Landing descent holds; normalized closure fails because $Ae_1=e_3$.};
+\draw[edge] (landing)--(floor);
+\node[note,text width=13.6cm,below=4mm of floor]
+ {Here $q$ identifies $F/N$ with $\Q$. This is one explicit marked realization.\\
+ It does not canonically supply the inputs for every inverse-Leibniz presentation.};
+\end{tikzpicture}
+\end{document}

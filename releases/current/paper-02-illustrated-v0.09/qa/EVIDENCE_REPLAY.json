@@ -1,0 +1,46 @@
+{
+  "scope": "Six unchanged finite-evidence entry points plus corrected figure regressions; not proof-assistant formalization or a new replay of Paper I high-arity completions.",
+  "runs": [
+    {
+      "script": "evidence/verification/part_II/verify_cubic_support_multigrading_v0_47.py",
+      "exit_code": 0,
+      "script_sha256": "867ffa5063e388c5699f3045d7d53a2e2f999562c8556a72ba7336da9ed1b0d5",
+      "log_sha256": "22098eac0f6980c022fc751c4ad62cb39818366c35bcd72b48e0fbcfec6a5e1a"
+    },
+    {
+      "script": "evidence/verification/part_II/verify_extension_independent_forced_core_v0_49.py",
+      "exit_code": 0,
+      "script_sha256": "94de3107925fcd59b5a65d54962d5cd59814dda4e752b527243c83a5420ac3e8",
+      "log_sha256": "65608f2ac8f5df29e4620d6b2f217dafa03d0834783d52e214704001a9675d9c"
+    },
+    {
+      "script": "evidence/verification/part_II/verify_homotopy_tilt_quotient_v0_54.py",
+      "exit_code": 0,
+      "script_sha256": "f882d6d2b71eff4cc447f0ed26810dbad8e02dcaeb40752832dd3caafe5616d9",
+      "log_sha256": "add09bbe7c5f00ae7f53df773d3251e251563a356f1d3769a721016e6532d279"
+    },
+    {
+      "script": "evidence/verification/part_II/verify_intrinsic_partial_contraction_forced_core_v0_50.py",
+      "exit_code": 0,
+      "script_sha256": "9e8317208bbb58aedcdcde197f3f1a87f40ca1a0ae742abe6b92ad06610f622c",
+      "log_sha256": "376e6fc82f408929f9f6edfc6c47e33db0ceeb497e2cc24592800d7f91dcc66b"
+    },
+    {
+      "script": "evidence/verification/part_II/verify_partial_contraction_comparison_v0_51.py",
+      "exit_code": 0,
+      "script_sha256": "e8fa7982a9e53480cb2ed9dbb413af11e8ef2ae3ca65fc37fd9c81d1e108d57c",
+      "log_sha256": "65aa0e4dc2a5384903c971860bfeae09794572dbf4a0388ef260228119e2931f"
+    },
+    {
+      "script": "evidence/verify_proof_recovery_v0_03.py",
+      "exit_code": 0,
+      "script_sha256": "a47cd78a5bc8f32b80a740eaf6995721d21c521bfe043f8384822acf6f0533bf",
+      "log_sha256": "ccd7590badb8afd766c0b5a9eaf320b9c5db44554b785bcff13929e6dd0220b6"
+    }
+  ],
+  "block_parameters": 42,
+  "noninvariant_complement_witness": true,
+  "characteristic_and_minimal_gcd": "S+2",
+  "cancellation_MC_equation": "PASS",
+  "sympy_version": "1.14.0"
+}

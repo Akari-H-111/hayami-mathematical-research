@@ -1,0 +1,1 @@
+PASS: 63 pages; 14 vector figures; captions and PDF destinations 1–14 match; exact original body preservation; clean log; QPDF.

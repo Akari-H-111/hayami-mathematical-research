@@ -1,0 +1,13 @@
+RUN evidence/verification/part_II/verify_cubic_support_multigrading_v0_47.py
+PASS verify_cubic_support_multigrading_v0_47.py
+RUN evidence/verification/part_II/verify_extension_independent_forced_core_v0_49.py
+PASS verify_extension_independent_forced_core_v0_49.py
+RUN evidence/verification/part_II/verify_homotopy_tilt_quotient_v0_54.py
+PASS verify_homotopy_tilt_quotient_v0_54.py
+RUN evidence/verification/part_II/verify_intrinsic_partial_contraction_forced_core_v0_50.py
+PASS verify_intrinsic_partial_contraction_forced_core_v0_50.py
+RUN evidence/verification/part_II/verify_partial_contraction_comparison_v0_51.py
+PASS verify_partial_contraction_comparison_v0_51.py
+RUN evidence/verify_proof_recovery_v0_03.py
+PASS verify_proof_recovery_v0_03.py
+PASS: six finite-evidence entry points and corrected figure regressions.

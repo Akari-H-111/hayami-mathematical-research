@@ -1,0 +1,300 @@
+{
+  "source_sha256": "a2ac16965a1fa11c8e3ed56132efe747d73543b5637a5a62869cd8897c38c276",
+  "mathematical_body_preserved": true,
+  "figures": [
+    {
+      "figure": 1,
+      "suggested_manuscript_figure_number": 1,
+      "suggested_label": "fig:paperI-01",
+      "insert_before_line": 126,
+      "insert_before_text": "\\subsection{Position relative to adjacent frameworks}",
+      "source_anchors": [
+        {
+          "label": "prop:weak-affine",
+          "line": 272
+        },
+        {
+          "label": "sec:dgla",
+          "line": 606
+        },
+        {
+          "label": "sec:finite-feedback",
+          "line": 2296
+        },
+        {
+          "label": "sec:spectral-extension",
+          "line": 2811
+        },
+        {
+          "label": "sec:stratification",
+          "line": 3144
+        }
+      ]
+    },
+    {
+      "figure": 2,
+      "suggested_manuscript_figure_number": 2,
+      "suggested_label": "fig:paperI-02",
+      "insert_before_line": 284,
+      "insert_before_text": "\\section{Finite-dimensional matrix realization}",
+      "source_anchors": [
+        {
+          "label": "prop:weak-affine",
+          "line": 272
+        },
+        {
+          "label": "prop:fixed-B-gauge",
+          "line": 225
+        },
+        {
+          "label": "thm:tangent-formula",
+          "line": 422
+        }
+      ]
+    },
+    {
+      "figure": 3,
+      "suggested_manuscript_figure_number": 3,
+      "suggested_label": "fig:paperI-03",
+      "insert_before_line": 452,
+      "insert_before_text": "\\section{Second-order obstruction theory}",
+      "source_anchors": [
+        {
+          "label": "thm:four-points",
+          "line": 380
+        },
+        {
+          "label": "prop:inf-local",
+          "line": 442
+        }
+      ]
+    },
+    {
+      "figure": 4,
+      "suggested_manuscript_figure_number": 4,
+      "suggested_label": "fig:paperI-04",
+      "insert_before_line": 585,
+      "insert_before_text": "\\section{Higher-order recursion}",
+      "source_anchors": [
+        {
+          "label": "thm:false-tangent",
+          "line": 563
+        }
+      ]
+    },
+    {
+      "figure": 5,
+      "suggested_manuscript_figure_number": 7,
+      "suggested_label": "fig:paperI-05",
+      "insert_before_line": 1725,
+      "insert_before_text": "\\begin{proposition}[Finite flat structure of the same fixed weak fiber]",
+      "source_anchors": [
+        {
+          "label": "prop:two-parameter-scheme",
+          "line": 1264
+        },
+        {
+          "label": "thm:cubic-complete-germ",
+          "line": 1667
+        }
+      ]
+    },
+    {
+      "figure": 6,
+      "suggested_manuscript_figure_number": 8,
+      "suggested_label": "fig:paperI-06",
+      "insert_before_line": 1769,
+      "insert_before_text": "The theorem already proves that no new independent quartic",
+      "source_anchors": [
+        {
+          "label": "prop:cubic-flat-family",
+          "line": 1725
+        }
+      ]
+    },
+    {
+      "figure": 7,
+      "suggested_manuscript_figure_number": 5,
+      "suggested_label": "fig:paperI-07",
+      "insert_before_line": 906,
+      "insert_before_text": "\\subsection{Exact cohomology and the minimal Kuranishi sector for the dual-number example}",
+      "source_anchors": [
+        {
+          "label": "prop:relation-dgla-morphism",
+          "line": 830
+        },
+        {
+          "label": "cor:cohomological-projection",
+          "line": 866
+        }
+      ]
+    },
+    {
+      "figure": 8,
+      "suggested_manuscript_figure_number": 6,
+      "suggested_label": "fig:paperI-08",
+      "insert_before_line": 1244,
+      "insert_before_text": "\\subsection{A two-parameter mixed-obstruction example}",
+      "source_anchors": [
+        {
+          "label": "prop:minimal-equations",
+          "line": 1129
+        },
+        {
+          "label": "prop:effective-into-h2",
+          "line": 1177
+        },
+        {
+          "label": "cor:dual-effective",
+          "line": 1219
+        }
+      ]
+    },
+    {
+      "figure": 9,
+      "suggested_manuscript_figure_number": 9,
+      "suggested_label": "fig:paperI-09",
+      "insert_before_line": 2308,
+      "insert_before_text": "\\subsection{A split pure-mixed reservoir}",
+      "source_anchors": [
+        {
+          "label": "subsec:intrinsic-arity7",
+          "line": 3840
+        },
+        {
+          "label": "subsec:independent-transfer",
+          "line": 2337
+        },
+        {
+          "label": "prop:frozen-23",
+          "line": 2474
+        },
+        {
+          "label": "thm:compatible-23",
+          "line": 2587
+        }
+      ]
+    },
+    {
+      "figure": 10,
+      "suggested_manuscript_figure_number": 10,
+      "suggested_label": "fig:paperI-10",
+      "insert_before_line": 2586,
+      "insert_before_text": "\\begin{theorem}[One compatible contraction through arity $23$]",
+      "source_anchors": [
+        {
+          "label": "eq:split-mixed",
+          "line": 2328
+        },
+        {
+          "label": "eq:new-feedback",
+          "line": 2574
+        },
+        {
+          "label": "thm:compatible-23",
+          "line": 2587
+        },
+        {
+          "label": "rem:feedback-compatibility",
+          "line": 2671
+        }
+      ]
+    },
+    {
+      "figure": 11,
+      "suggested_manuscript_figure_number": 11,
+      "suggested_label": "fig:paperI-11",
+      "insert_before_line": 2811,
+      "insert_before_text": "\\section{Triangular spectral extension and residual modules}",
+      "source_anchors": [
+        {
+          "label": "eq:low-rails",
+          "line": 2714
+        },
+        {
+          "label": "eq:x4-rec",
+          "line": 2728
+        },
+        {
+          "label": "eq:x5-rec",
+          "line": 2735
+        },
+        {
+          "label": "eq:Y14-rec",
+          "line": 2789
+        },
+        {
+          "label": "prop:controller-terminality",
+          "line": 2697
+        }
+      ]
+    },
+    {
+      "figure": 12,
+      "suggested_manuscript_figure_number": 12,
+      "suggested_label": "fig:paperI-12",
+      "insert_before_line": 2997,
+      "insert_before_text": "\\section{Residual landing operators and spectral selection}",
+      "source_anchors": [
+        {
+          "label": "thm:residual-modules",
+          "line": 2881
+        },
+        {
+          "label": "prop:temporal-minimal",
+          "line": 2927
+        },
+        {
+          "label": "thm:triangular-spectral-extension",
+          "line": 2953
+        }
+      ]
+    },
+    {
+      "figure": 13,
+      "suggested_manuscript_figure_number": 13,
+      "suggested_label": "fig:paperI-13",
+      "insert_before_line": 3144,
+      "insert_before_text": "\\section{Spectral and extension stratifications}",
+      "source_anchors": [
+        {
+          "label": "prop:finite-jet-landing",
+          "line": 3001
+        },
+        {
+          "label": "thm:complete-landing",
+          "line": 3055
+        },
+        {
+          "label": "lem:gcd-landing",
+          "line": 3148
+        }
+      ]
+    },
+    {
+      "figure": 14,
+      "suggested_manuscript_figure_number": 14,
+      "suggested_label": "fig:paperI-14",
+      "insert_before_line": 3377,
+      "insert_before_text": "\\section{Conclusion and fixed-case scope}",
+      "source_anchors": [
+        {
+          "label": "thm:spectral-stratification",
+          "line": 3177
+        },
+        {
+          "label": "thm:two-axis",
+          "line": 3229
+        },
+        {
+          "label": "thm:three-level",
+          "line": 3296
+        },
+        {
+          "label": "rem:strat-scope",
+          "line": 3373
+        }
+      ]
+    }
+  ]
+}

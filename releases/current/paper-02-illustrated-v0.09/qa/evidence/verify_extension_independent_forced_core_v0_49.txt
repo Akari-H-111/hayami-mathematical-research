@@ -1,0 +1,9 @@
+v0.49 extension-independent forced core verifier: PASS
+maximal forced submodule dim C = 19
+char(A|C) = S**12*(S + 2)**2*(S**5 - 4*S**4 + 12*S**3 - 32*S**2 + 80*S - 192)
+minpoly(A|C) = S*(S + 2)*(S**5 - 4*S**4 + 12*S**3 - 32*S**2 + 80*S - 192)
+forced zero-mode dim = 12
+forced recurrent core dim = 7
+char recurrent core = (S + 2)**2*(S**5 - 4*S**4 + 12*S**3 - 32*S**2 + 80*S - 192)
+old cyclic core dim = 6 , plus E gives recurrent dim 7
+free completion blocks: 304 cross + 256 quotient = 560

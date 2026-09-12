@@ -1,0 +1,481 @@
+{
+  "file": "paper_III_spectral_floor_v0_09.pdf",
+  "sha256": "9fdc102e7d1c3f655209dc833f825830567123086cb756e3e4fb1d36d093cdac",
+  "pages": 22,
+  "bibliography_entries": 7,
+  "citation_key_uses": 13,
+  "metadata": {
+    "/Creator": "LaTeX with hyperref",
+    "/Title": "General Spectral Floors from Marked Deformation Presentations",
+    "/Subject": "Paper III: finite marked source closure and spectral floors",
+    "/Author": "Akari Hayami (Jian-Yu Huang)",
+    "/Producer": "xdvipdfmx (0.1)",
+    "/CreationDate": "D:20260908105224-00'00'"
+  },
+  "qpdf_exit_status": 0,
+  "qpdf_output": "checking ./paper_III_spectral_floor_v0_09.pdf\nPDF Version: 1.5\nFile is not encrypted\nFile is not linearized\nNo syntax or stream encoding errors found; the file may still contain\nerrors that qpdf cannot detect\n",
+  "checks": {
+    "missing_citation_keys": [],
+    "uncited_bibliography_keys": [],
+    "undefined_label_references": [],
+    "duplicate_labels": [],
+    "log_issues": [],
+    "blank_pages": [],
+    "pages_with_outside_text": []
+  },
+  "page_geometry": [
+    {
+      "page": 1,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 2167,
+      "text_bounds_x0_x1_top_bottom": [
+        82.4,
+        531.32,
+        115.85,
+        722.7
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 2,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1103,
+      "text_bounds_x0_x1_top_bottom": [
+        81.52,
+        531.32,
+        62.43,
+        376.25
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 3,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1310,
+      "text_bounds_x0_x1_top_bottom": [
+        81.52,
+        529.2,
+        62.43,
+        705.48
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 4,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1195,
+      "text_bounds_x0_x1_top_bottom": [
+        81.08,
+        531.02,
+        62.43,
+        482.97
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 5,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1565,
+      "text_bounds_x0_x1_top_bottom": [
+        81.9,
+        529.49,
+        62.43,
+        703.23
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 6,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 2520,
+      "text_bounds_x0_x1_top_bottom": [
+        81.08,
+        531.32,
+        62.43,
+        712.44
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 7,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1211,
+      "text_bounds_x0_x1_top_bottom": [
+        82.41,
+        531.33,
+        62.43,
+        324.27
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 8,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 950,
+      "text_bounds_x0_x1_top_bottom": [
+        82.8,
+        495.17,
+        62.43,
+        550.22
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 9,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1947,
+      "text_bounds_x0_x1_top_bottom": [
+        80.78,
+        531.32,
+        62.43,
+        708.5
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 10,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1260,
+      "text_bounds_x0_x1_top_bottom": [
+        81.08,
+        531.33,
+        62.43,
+        398.45
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 11,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 982,
+      "text_bounds_x0_x1_top_bottom": [
+        117.91,
+        529.2,
+        62.43,
+        613.0
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 12,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1891,
+      "text_bounds_x0_x1_top_bottom": [
+        81.08,
+        531.02,
+        62.43,
+        666.74
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 13,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1178,
+      "text_bounds_x0_x1_top_bottom": [
+        82.41,
+        531.02,
+        62.43,
+        653.24
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 14,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 2078,
+      "text_bounds_x0_x1_top_bottom": [
+        81.52,
+        531.02,
+        62.43,
+        699.15
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 15,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1768,
+      "text_bounds_x0_x1_top_bottom": [
+        82.8,
+        531.02,
+        62.43,
+        692.65
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 16,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1528,
+      "text_bounds_x0_x1_top_bottom": [
+        82.13,
+        531.02,
+        62.43,
+        552.06
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 17,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 844,
+      "text_bounds_x0_x1_top_bottom": [
+        118.67,
+        529.2,
+        62.43,
+        525.34
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 18,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 2261,
+      "text_bounds_x0_x1_top_bottom": [
+        82.4,
+        531.31,
+        62.43,
+        708.8
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 19,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1281,
+      "text_bounds_x0_x1_top_bottom": [
+        82.8,
+        529.2,
+        62.43,
+        640.13
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 20,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 897,
+      "text_bounds_x0_x1_top_bottom": [
+        82.8,
+        493.64,
+        62.43,
+        563.13
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 21,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 1658,
+      "text_bounds_x0_x1_top_bottom": [
+        82.8,
+        529.21,
+        62.43,
+        681.09
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    },
+    {
+      "page": 22,
+      "size_pt": [
+        612,
+        792
+      ],
+      "character_count": 2714,
+      "text_bounds_x0_x1_top_bottom": [
+        82.41,
+        531.33,
+        62.43,
+        549.4
+      ],
+      "outside_page_characters": [],
+      "embedded_image_count": 0
+    }
+  ],
+  "embedded_image_count": 0,
+  "structural_and_text_qa_passed": true,
+  "body_preserved_except_author_edition_and_marked_editorial_additions": true,
+  "author": "Akari Hayami (Jian-Yu Huang)",
+  "figure_pages": {
+    "1": 3,
+    "10": 21,
+    "2": 5,
+    "3": 8,
+    "4": 11,
+    "5": 13,
+    "6": 15,
+    "7": 17,
+    "8": 19,
+    "9": 20
+  },
+  "figure_checks": [
+    {
+      "file": "fig01_master_pipeline.pdf",
+      "sha256": "7e519d055c576f7d323423058cb2d797893b7f9bab76846e28365522b8b85eed",
+      "width_pt": 435.16,
+      "height_pt": 340.15,
+      "main_label_pt_at_manuscript_width": 9.23,
+      "vector": true
+    },
+    {
+      "file": "fig02_invariant_tilt_floor.pdf",
+      "sha256": "cb28d85116277c61ef421d5b957fdaa45ca2eb00aecabaffe3c4d5c583d5595b",
+      "width_pt": 435.16,
+      "height_pt": 338.31,
+      "main_label_pt_at_manuscript_width": 9.23,
+      "vector": true
+    },
+    {
+      "file": "fig03_stable_core_floor.pdf",
+      "sha256": "9ea5f65933b9ad4af51c0a26a3eead870dc66b2314f6def1668b1ffa18905f9e",
+      "width_pt": 435.16,
+      "height_pt": 383.13,
+      "main_label_pt_at_manuscript_width": 9.23,
+      "vector": true
+    },
+    {
+      "file": "fig04_landing_future_output.pdf",
+      "sha256": "7108796c83d7aaa542c9e0cfaf1249ed3634ce39e71c8f864358bb40a0eb1777",
+      "width_pt": 435.16,
+      "height_pt": 444.33,
+      "main_label_pt_at_manuscript_width": 9.23,
+      "vector": true
+    },
+    {
+      "file": "fig05_generated_source.pdf",
+      "sha256": "9f95a05a71de0285e5968a1f4be97cf01be61d3e63b560b91397b0dbbbe61173",
+      "width_pt": 435.16,
+      "height_pt": 376.56,
+      "main_label_pt_at_manuscript_width": 9.23,
+      "vector": true
+    },
+    {
+      "file": "fig06_syzygy_algebra.pdf",
+      "sha256": "0f3cafa3e7e59aea33a6a171ac6002f05eb4c6a9fd895269d82a86a8380ccdf4",
+      "width_pt": 435.16,
+      "height_pt": 327.84,
+      "main_label_pt_at_manuscript_width": 9.23,
+      "vector": true
+    },
+    {
+      "file": "fig07_stable_assembly.pdf",
+      "sha256": "fe6000201788752186a20e31628a35efa92367036b4f29c78650bdc8c30ffab1",
+      "width_pt": 435.16,
+      "height_pt": 358.36,
+      "main_label_pt_at_manuscript_width": 9.23,
+      "vector": true
+    },
+    {
+      "file": "fig08_exact_floor.pdf",
+      "sha256": "882c56f8ead41700d0ad3aee5ad1ad39afef8fe72867e3deecd96436dacac603",
+      "width_pt": 435.16,
+      "height_pt": 349.36,
+      "main_label_pt_at_manuscript_width": 9.23,
+      "vector": true
+    },
+    {
+      "file": "fig09_marked_realization.pdf",
+      "sha256": "fabc899f85747f4a4739f23e406caa7b4380175996aec66fada20f5904f2e489",
+      "width_pt": 435.16,
+      "height_pt": 395.71,
+      "main_label_pt_at_manuscript_width": 9.23,
+      "vector": true
+    },
+    {
+      "file": "fig10_marked_scope.pdf",
+      "sha256": "4af47ab7697e4e0133ccde402ba3b8748725437f016947a7f19d40817b421d62",
+      "width_pt": 435.16,
+      "height_pt": 367.33,
+      "main_label_pt_at_manuscript_width": 9.23,
+      "vector": true
+    }
+  ],
+  "evidence_records_valid": true,
+  "known_figure_build_notice": "Standalone reports shell escape disabled; no figure requires shell escape.",
+  "visual_record_validated": true
+}

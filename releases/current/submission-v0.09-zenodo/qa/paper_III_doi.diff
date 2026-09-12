@@ -1,0 +1,27 @@
+--- preparation
++++ doi_release
+@@ -974,12 +974,12 @@
+ Akari Hayami (Jian-Yu Huang),
+ \emph{The Inverse Leibniz Problem: Reconstruction Fibers, Rigidity, Obstructions, and Deformation DGLAs},
+ Paper I, illustrated edition v0.09, based on the fixed-case v0.41 record, 2026.
+-Unpublished companion manuscript.
++Companion manuscript in the accompanying collection.
+ 
+ \bibitem{PaperII}
+ Akari Hayami (Jian-Yu Huang),
+ \emph{Resonance-Marked Naturality and Homotopy-Tilt Non-Invariance in the Inverse-Leibniz Cubic Case},
+-Paper II, illustrated edition v0.09, 2026. Unpublished companion manuscript.
++Paper II, illustrated edition v0.09, 2026. Companion manuscript in the accompanying collection.
+ 
+ 
+ \bibitem{StacksHomotopy}
+@@ -1015,8 +1015,7 @@
+ \path{three_papers_v0_08_bundle.zip}, under
+ \path{evidence/legacy/verification/part_III/}.
+ See \path{EVIDENCE_MAP.md} for the stage-to-file mapping and the
+-additional stable-core and local-descent checks. No public archive
+-identifier has been assigned in this local version.
++additional stable-core and local-descent checks. Accompanying collection: \href{https://doi.org/10.5281/zenodo.22663942}{doi:10.5281/zenodo.22663942}.
+ \end{thebibliography}
+ 
+ \end{document}

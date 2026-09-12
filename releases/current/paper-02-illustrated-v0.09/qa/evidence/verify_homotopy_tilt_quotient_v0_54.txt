@@ -1,0 +1,9 @@
+v0.54 Homotopy-Tilt Quotient verifier: PASS
+dim recurrent core = 7
+dim closed source intersection = 1
+dim normalized internal tilt module = 42
+tilt orbit = {B : B(E)=-2E}
+original char = (S + 2)**2*(S**5 - 4*S**4 + 12*S**3 - 32*S**2 + 80*S - 192)
+tilt example 1 char = S**6*(S + 2)
+tilt example 2 char = (S - 3)**6*(S + 2)
+universal spectral divisor after quotient = S+2
