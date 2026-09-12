@@ -12,3 +12,14 @@ repository-code: "https://github.com/Akari-H-111/hayami-mathematical-research"
 license:
   - Apache-2.0
   - CC-BY-4.0
+preferred-citation:
+  type: software
+  title: "Stokes caustic v5 Lean companion"
+  version: "0.02"
+  date-released: 2026-09-12
+  doi: "10.5281/zenodo.22726977"
+  url: "https://zenodo.org/records/22726977"
+  authors:
+    - family-names: "Hayami"
+      given-names: "Akari"
+      alias: "Jian-Yu Huang"

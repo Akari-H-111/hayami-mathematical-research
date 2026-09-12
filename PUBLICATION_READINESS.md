@@ -1,4 +1,4 @@
-# Publication readiness
+# Publication status
 
 Checked: 2026-09-12.
 
@@ -15,7 +15,7 @@ Checked: 2026-09-12.
 - The Git repository is initialized locally on branch `main`; machine-local environments and provenance-sensitive archives are ignored.
 - The public-candidate tree contains no file larger than 50 MB and no `.env`, private-key, or PEM file after cache cleanup.
 
-## Blocking decisions before public upload
+## Resolved publication decisions
 
 1. Mixed license: approved and recorded in `LICENSE.md` and `LICENSE_POLICY.md`.
 2. GitHub scope: current sources/releases only; `archive/` and the 587 MB historical release archive remain local and ignored.
@@ -31,6 +31,9 @@ Recommended repository metadata:
 ## Platform status
 
 - GitHub CLI is authenticated locally.
-- A local Git repository now exists, with no commit or remote yet.
-- No GitHub remote has been created and nothing has been pushed.
-- No Zenodo draft or deposit has been created by this workflow.
+- Public GitHub repository: <https://github.com/Akari-H-111/hayami-mathematical-research>.
+- Public GitHub release: <https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.02>.
+- Published Zenodo record: <https://zenodo.org/records/22726977>.
+- Version DOI: <https://doi.org/10.5281/zenodo.22726977>.
+- Concept DOI: <https://doi.org/10.5281/zenodo.22726976>.
+- Public Zenodo downloads were re-fetched and matched the local SHA-256 values for the ZIP, receipt, and authoritative PDF.

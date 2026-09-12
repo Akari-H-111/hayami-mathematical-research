@@ -2,6 +2,16 @@
 
 This directory is the clean-room research archive for the inverse-Leibniz series and the three reconstructed legacy geometry papers.
 
+## Public releases
+
+- Repository: <https://github.com/Akari-H-111/hayami-mathematical-research>
+- Stokes caustic v5 Lean companion v0.02:
+  [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.02) ·
+  [Zenodo DOI 10.5281/zenodo.22726977](https://doi.org/10.5281/zenodo.22726977)
+- Concept DOI for all versions: <https://doi.org/10.5281/zenodo.22726976>
+- Verified v0.02 ZIP SHA-256:
+  `4ab15df0129d14e4b0d1c0e1b26cdfcc7eaaa41b05021ccf9e3f7363376378d4`
+
 ## Public topology
 
 - `papers/inverse-leibniz/` — current manuscripts and development notes.
