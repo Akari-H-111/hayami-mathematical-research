@@ -1,0 +1,1 @@
+4e48c805c1550dbaee9171a56264bf4ff5275ef5ff5b64f9cd116803283c11c0  ../../../papers/legacy-geometry/source-registry/final_pdfs/The_Stokes_Caustic_of_the_Orthogonal_Circle_Ruled_Surface_v5.pdf

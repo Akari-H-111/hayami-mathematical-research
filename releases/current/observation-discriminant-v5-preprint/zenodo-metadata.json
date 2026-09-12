@@ -1,0 +1,29 @@
+{
+  "metadata": {
+    "title": "Observation Discriminant and Spherical Fold Image of the Orthogonal-Circle Ruled Surface",
+    "upload_type": "publication",
+    "publication_type": "preprint",
+    "publication_date": "2026-07-29",
+    "creators": [
+      {"name": "Hayami, Akari"},
+      {"name": "Huang, Jian-Yu"}
+    ],
+    "description": "We determine the full critical locus of the planar observation map attached to the orthogonal-circle ruled surface. Its Jacobian factors into a symmetry component and signed rational arms. We distinguish the planar observation discriminant from the normalized spherical radial image, identify the ordinary-fold regime and exceptional common point, and provide exact polynomial identities, Sturm counts, and numerical checks. The accompanying Lean companion formally verifies the stated algebraic and root certificates; it does not claim a complete formalization of the plane-to-plane Whitney-fold theorem.",
+    "keywords": [
+      "singularity theory",
+      "Whitney fold",
+      "ruled surfaces",
+      "observation discriminant",
+      "formal verification"
+    ],
+    "license": "CC-BY-4.0",
+    "related_identifiers": [
+      {
+        "identifier": "10.5281/zenodo.22726977",
+        "relation": "isSupplementedBy",
+        "scheme": "doi",
+        "resource_type": "software"
+      }
+    ]
+  }
+}
