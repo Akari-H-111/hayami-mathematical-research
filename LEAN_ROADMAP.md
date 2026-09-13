@@ -12,6 +12,10 @@
 - `pB` 唯一根的固定實區間證書；
 - `R7`、`B`、`Q17` 的 exact sign barriers；
 - 正 `Q` chart 上的 real observation map、分母正性與 Fréchet differentiability。
+- explicit Fréchet derivative 與 exact Jacobian factorization；
+- ordinary symmetry/rational branches 的 rank-one kernel 與 transversality；
+- exceptional common point 的 transversality failure；
+- plane-to-plane Whitney-fold Jacobian criterion 及兩 ordinary branches 的證書。
 
 完整聲明與指令在 `companions/lean/stokes-caustic-v5/LEAN_STATUS.md`。已發布的 v0.02 封包保持不可變；新增定理進入工作 source，完成後另發 v0.03 或後續版本。
 
@@ -20,14 +24,14 @@
 | 里程碑 | 狀態 | 下一個可證命題 | 驗證／落點 |
 | --- | --- | --- | --- |
 | L0. Observation map 與可微性 | `LEAN-PASSED` | 已完成 | `StokesV5/ObservationMap.lean`; `LEAN_STATUS.md` |
-| L1. Explicit derivative | `NEXT` | 以 continuous linear map 明寫 `D F(t,u)`，由既有可微性與 `qChart_pos` 推導 | 優先擴充 `StokesV5/ObservationMap.lean`，必要時才另建單一 module |
-| L2. Jacobian factorization | `PLANNED` | 證 `det(D F) = -2 sin(t) (A(cos t)+u B(cos t))/qChart(t)^3` | 對照 `releases/current/stokes-caustic-v5/verification/verify_exact_geometry.py` |
-| L3. Ordinary-branch hypotheses | `PLANNED` | 對每個主張 branch 證 rank one 與 kernel transversality | `GEOMETRIC_CLOSURE_BOUNDARY.md`; `THEOREM_MAP.md` |
-| L4. Exceptional common point | `PLANNED` | 將 meeting point 與 ordinary folds 明確分離 | 同上 |
-| L5. Plane-to-plane fold criterion | `RESEARCH` | 在 Mathlib 中定位足夠定理；若不存在，證精確 local normal form，不以 axiom 引入 | 新定理必須列出 smoothness、rank、transversality 與 chart 假設 |
-| L6. v0.03 release | `BLOCKED BY L1–L5` | 更新 theorem map、axiom audit、重播與 release wording | 新封包；不得改寫 v0.02 ZIP 或 receipt |
+| L1. Explicit derivative | `LEAN-PASSED` | 已完成 | `StokesV5/ObservationMap.lean` |
+| L2. Jacobian factorization | `LEAN-PASSED` | 已完成 | `StokesV5/ObservationMap.lean` |
+| L3. Ordinary-branch hypotheses | `LEAN-PASSED` | 已完成 | `StokesV5/ObservationMap.lean`; `StokesV5/FoldGeometry.lean` |
+| L4. Exceptional common point | `LEAN-PASSED` | 已證 `(0,0)` 不滿足 fold criterion | `StokesV5/ObservationMap.lean`; `StokesV5/WhitneyFold.lean` |
+| L5. Plane-to-plane fold criterion | `LEAN-PASSED / CRITERION LEVEL` | 已定義 intrinsic Jacobian criterion 並套用兩 ordinary branches；未構造 `(x,y^2)` local coordinates | `StokesV5/WhitneyFold.lean` |
+| L6. v0.03 release | `CANDIDATE READY / NOT PUBLISHED` | 本地與解壓 replay 已通過；對外發布屬另一步驟 | `releases/candidates/stokes-caustic-v5-v0.03/`; v0.02 未改寫 |
 
-最短下一步是 L1：先證 explicit derivative，不同時開展通用 singularity-theory library。
+L1–L6 的本地 candidate 階段已完成。下一步只能是經明確授權後對外發布，或另開 coordinate-level local-normal-form 研究線。
 
 ## 第二優先：下一批 Lean 候選
 

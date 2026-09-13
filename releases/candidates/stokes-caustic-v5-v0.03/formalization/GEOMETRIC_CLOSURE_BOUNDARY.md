@@ -28,7 +28,7 @@ interval.  Each result is an exact Lean proof with no manuscript axiom.
 ## Remaining stronger statement
 
 The pinned Mathlib version contains no reusable parametric Morse lemma or
-Whitney-fold local-normal-form theorem. The working source therefore closes
+Whitney-fold local-normal-form theorem. This candidate therefore closes
 the intrinsic criterion used in the manuscript, not the stronger construction
 of local source and target diffeomorphisms conjugating the map to `(x, y^2)`.
 This coordinate-level distinction must remain explicit in release wording.
@@ -41,6 +41,5 @@ constructs the local normal-form coordinates.
 
 ## Next research line
 
-The v0.03 candidate has been packaged with an updated theorem map and receipt;
-both local and extracted release replays pass. Publication is a separate
-external action, and v0.02 remains unchanged.
+Keep the coordinate-level normal-form construction as a separate research
+line. Publication of this verified candidate is a separate external action.

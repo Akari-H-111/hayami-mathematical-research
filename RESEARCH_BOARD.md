@@ -1,6 +1,6 @@
 # 共通研究留言板
 
-最後更新：2026-09-13 15:31 CST
+最後更新：2026-09-13 20:59 CST
 適用範圍：所有後續 Codex 窗口與本專案人工工作
 
 這是跨窗口的單一即時狀態入口。已確立成果看 `ESTABLISHED_WORKS.md`；研究分支看 `RESEARCH_DIRECTIONS.md`；對外工作看 `EXTERNAL_ACTIONS.md`；Lean 看 `LEAN_ROADMAP.md`。
@@ -9,14 +9,14 @@
 
 | 優先序 | 工作流 | 狀態 | 下一個原子任務 | 權威／驗證路徑 |
 | ---: | --- | --- | --- | --- |
-| 1 | ResearchGate final Stokes v5 | `BLOCKED` | 在具官方 browser control 的窗口建立新條目並回讀新舊公開頁 | `research/researchgate_handoff_v1.md`; final PDF 與 SHA 在該文件 |
-| 2 | Stokes v5 Lean 幾何橋 | `ACTIVE / NEXT` | 明寫 observation map 的 Fréchet derivative | `companions/lean/stokes-caustic-v5/RESEARCH_STATUS.md`; `LEAN_ROADMAP.md` |
-| 3 | Stokes v5 Jacobian 與 Whitney fold | `PLANNED` | L1 通過後證 determinant factorization，再做 rank/transversality | `companions/lean/stokes-caustic-v5/GEOMETRIC_CLOSURE_BOUNDARY.md`; `releases/current/stokes-caustic-v5/THEOREM_MAP.md` |
-| 4 | Inverse-Leibniz Papers I–III | `PUBLISHED / SEALED` | 保持 v0.09 不變；若要投 arXiv，先做 metadata 與分類核定 | `releases/current/submission-v0.09-zenodo/`; DOI 列於 `ESTABLISHED_WORKS.md` |
-| 5 | filtered-complex → Diophantine locus | `PLANNED / SEPARATE` | 固定來源類別、marking、metric、target torus 與 locus 定義 | `RESEARCH_DIRECTIONS.md` A1；目前尚無 theorem certificate |
-| 6 | Ruled surface v4 修正版 | `BLOCKED` | 選擇邊界 atlas 或明示 `Q>0` 限制，並改寫 Theorem 5.3 假設 | `papers/legacy-geometry/orthogonal-circle-ruled-surface/claims/LEDGER.md` |
-| 7 | Bicomplex v12 模組化重建 | `PLANNED` | 從有限多項式／`A3` 模組建立 theorem-to-evidence map | `papers/legacy-geometry/bicomplex-signal-manifolds/claims/MODULE_INDEX.md` |
-| 8 | v0.05/v0.06 新構造 | `ARCHIVED / VERIFIED` | 不再當作缺失歷史資料；只有出現新問題時重開 | `research/independent_transfer_v0_05/RESEARCH_LOG.md`; `research/feedback_matrices_v0_06/RESEARCH_LOG.md` |
+| 1 | Stokes v5 Lean 幾何橋 | `V0.03 CANDIDATE READY / NOT PUBLISHED` | 等待另行授權對外發布，或另開 coordinate-level normal-form 研究 | `releases/candidates/stokes-caustic-v5-v0.03/`; `LEAN_ROADMAP.md` |
+| 2 | Stokes v5 Jacobian 與 Whitney fold | `COMPLETED / CRITERION LEVEL` | release wording 保留「未構造 local normal-form coordinates」邊界 | `companions/lean/stokes-caustic-v5/GEOMETRIC_CLOSURE_BOUNDARY.md`; `companions/lean/stokes-caustic-v5/StokesV5/WhitneyFold.lean` |
+| 3 | Inverse-Leibniz Papers I–III | `PUBLISHED / SEALED` | 保持 v0.09 不變；若要投 arXiv，先做 metadata 與分類核定 | `releases/current/submission-v0.09-zenodo/`; DOI 列於 `ESTABLISHED_WORKS.md` |
+| 4 | filtered-complex → Diophantine locus | `PLANNED / SEPARATE` | 固定來源類別、marking、metric、target torus 與 locus 定義 | `RESEARCH_DIRECTIONS.md` A1；目前尚無 theorem certificate |
+| 5 | Ruled surface v4 修正版 | `BLOCKED` | 選擇邊界 atlas 或明示 `Q>0` 限制，並改寫 Theorem 5.3 假設 | `papers/legacy-geometry/orthogonal-circle-ruled-surface/claims/LEDGER.md` |
+| 6 | Bicomplex v12 模組化重建 | `PLANNED` | 從有限多項式／`A3` 模組建立 theorem-to-evidence map | `papers/legacy-geometry/bicomplex-signal-manifolds/claims/MODULE_INDEX.md` |
+| 7 | v0.05/v0.06 新構造 | `ARCHIVED / VERIFIED` | 不再當作缺失歷史資料；只有出現新問題時重開 | `research/independent_transfer_v0_05/RESEARCH_LOG.md`; `research/feedback_matrices_v0_06/RESEARCH_LOG.md` |
+| 8 | ResearchGate final Stokes v5 | `COMPLETED / VERIFIED` | 無；保留新舊公開記錄與 DOI 分立 | ResearchGate publication `414264187`; paper DOI `10.5281/zenodo.22728902`; `research/researchgate_handoff_v1.md` |
 
 ## 驗證入口
 
@@ -84,6 +84,9 @@ YYYY-MM-DD HH:MM | 工作流 | STATUS | 完成／失敗／阻擋摘要 | 驗證�
 
 ### 留言
 
+- 2026-09-13 20:59 | Stokes v5 Lean companion v0.03 | `CANDIDATE PASS / NOT PUBLISHED` | 建立獨立 candidate、更新 theorem map 與 scope wording、生成 31-member ZIP/receipt；原位及解壓 replay 全通過，ZIP CRC 通過，未含 `.lake`，權威 PDF hash 未變 | `releases/candidates/stokes-caustic-v5-v0.03/stokes_caustic_v5_lean_companion_v0_03_candidate.zip`; receipt；SHA-256 `2a88e20b1984738f9a9bd19c8460a145aae6b04819b792ede9c547967acc2f5b` | 對外 GitHub/Zenodo 發布需另行授權；v0.02 保持不可變
+- 2026-09-13 20:33 | Stokes v5 Lean geometry bridge | `PASS / CRITERION LEVEL` | L1–L5 working source 通過：explicit Fréchet derivative、Jacobian factorization、兩 ordinary branches 的 rank-one kernel/transversality、exceptional point failure、intrinsic plane-to-plane Whitney-fold criterion；build/status/axiom audit 均通過且無新公理 | `companions/lean/stokes-caustic-v5/StokesV5/ObservationMap.lean`; `companions/lean/stokes-caustic-v5/StokesV5/FoldGeometry.lean`; `companions/lean/stokes-caustic-v5/StokesV5/WhitneyFold.lean`; `companions/lean/stokes-caustic-v5/LEAN_STATUS.md` | L6 建立獨立 v0.03 candidate；v0.02 保持不可變
+- 2026-09-13 15:43 | ResearchGate final Stokes v5 | `PASS` | 官方登入後 browser control 回讀新舊兩頁：新頁的 final-v5 標題、作者、DOI、supersedes 說明與唯一 `v5.pdf` 均可見；舊頁保留原 DOI、公開 superseded-by 說明且只有歷史 `v3.pdf`；先前未登入索引的「兩份全文」顯示為過時快取，不需刪除或改寫公開記錄 | `https://www.researchgate.net/publication/414264187_Observation_Discriminant_and_Spherical_Fold_Image_of_the_Orthogonal-Circle_Ruled_Surface`; `https://www.researchgate.net/publication/408887855_The_Stokes_Caustic_of_the_Orthogonal-Circle_Ruled_Surface_Poincare_Sphere_Geometry_and_an_Irreducible_Chirality_Quintic`; `https://doi.org/10.5281/zenodo.22728902` | 外部工作已閉合；下一內部主線為 Stokes v5 Lean L1 explicit derivative
 - 2026-09-13 15:31 | public records | `PASS` | Zenodo 官方 records API 確認三篇 Inverse-Leibniz preprints、共同材料、Stokes v5 preprint 與 Lean software companion 的 DOI、類型及檔案；GitHub release API 確認 v0.02 非 draft/prerelease | DOI 與命令見 `EXTERNAL_ACTIONS.md` | ResearchGate final v5 仍待官方 browser control
 - 2026-09-13 15:30 | inverse-Leibniz v0.09 | `PASS` | Paper I integrated、Paper II/III 六項 finite evidence 與兩份 integrated/visual-record 檢查 fresh pass；II/III integrated 已在 evidence logs 完成後序列重跑 | `releases/current/paper-01-illustrated-v0.09/verify_integrated.py`; `releases/current/paper-02-illustrated-v0.09/verify_evidence.py`; `releases/current/paper-03-illustrated-v0.09/verify_evidence.py` | v0.09 維持 sealed，不修改正文
 - 2026-09-13 15:28 | verification | `PASS` | fresh legacy baseline 與 Stokes v5 public companion 全重播通過；包含三 PDF hashes、exact CAS、Lean build/status/axiom audit/no-sorry、TeX rebuild 與 source similarity | `verification/legacy-reconstruction/verify_all.py`; `releases/current/stokes-caustic-v5/verify.py` | 維持優先序 1 或 2

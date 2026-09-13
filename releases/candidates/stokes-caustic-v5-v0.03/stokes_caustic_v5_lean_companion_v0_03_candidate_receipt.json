@@ -1,0 +1,15 @@
+{
+  "release": "stokes_caustic_v5_lean_companion_v0_03_candidate",
+  "date": "2026-09-13",
+  "archive": "stokes_caustic_v5_lean_companion_v0_03_candidate.zip",
+  "archive_sha256": "2a88e20b1984738f9a9bd19c8460a145aae6b04819b792ede9c547967acc2f5b",
+  "archive_bytes": 358340,
+  "members": 31,
+  "authoritative_pdf_sha256": "4e48c805c1550dbaee9171a56264bf4ff5275ef5ff5b64f9cd116803283c11c0",
+  "zip_crc": "PASS",
+  "local_replay": "PASS",
+  "extracted_replay": "PASS",
+  "status": "LOCAL RELEASE CANDIDATE; NOT PUBLISHED",
+  "scope": "Lean-certified explicit observation-map derivative, exact Jacobian factorization, intrinsic plane-to-plane Whitney-fold Jacobian criterion on both ordinary branches, and criterion failure at the exceptional point; no construction of local normal-form coordinate diffeomorphisms.",
+  "license": "Apache-2.0 for code; CC-BY-4.0 for scholarly and documentation material; see LICENSE.md."
+}

@@ -12,16 +12,17 @@
 - 三篇共同重現材料：`10.5281/zenodo.22663942`。
 - Stokes v5 final preprint：`10.5281/zenodo.22728902`。
 - Stokes v5 Lean companion v0.02：GitHub release `stokes-v5-companion-v0.02` 與 software DOI `10.5281/zenodo.22726977`。
+- ResearchGate final-v5 新 Preprint 條目：`https://www.researchgate.net/publication/414264187_Observation_Discriminant_and_Spherical_Fold_Image_of_the_Orthogonal-Circle_Ruled_Surface`；新條目公開顯示 final-v5 PDF 與論文 DOI `10.5281/zenodo.22728902`，舊條目保留 ResearchGate DOI `10.13140/RG.2.2.23759.04006`。
 
 這些 DOI 的類型不同：個別 preprint、共同材料、數學論文與 software companion 不可互相代替。
 
-## 目前唯一立即待辦：ResearchGate final v5
+## ResearchGate final v5：已完成
 
-狀態：`BLOCKED ON OFFICIAL BROWSER CONTROL`。
+狀態：`COMPLETED / VERIFIED`。
 
-下一個具備官方瀏覽器控制的窗口，直接依 `research/researchgate_handoff_v1.md` 操作：建立 final v5 的新 Preprint 條目、上傳 hash-bound PDF、填入論文 DOI `10.5281/zenodo.22728902`，再於舊條目加入 superseded 說明。舊 PDF、舊標題與舊 ResearchGate DOI `10.13140/RG.2.2.23759.04006` 必須保留。
+已依 `research/researchgate_handoff_v1.md` 建立 final v5 的新 Preprint 條目、上傳 final-v5 PDF、填入論文 DOI `10.5281/zenodo.22728902`，並完成新舊公開頁回讀。官方登入後頁面顯示：新頁只有 `v5.pdf` 且明列取代舊版；舊頁只有歷史 `v3.pdf`、保留原標題與 DOI `10.13140/RG.2.2.23759.04006`，並有指向 final v5 與新 DOI 的 superseded-by 說明。無需再刪除或改寫公開記錄。
 
-完成判準不是「按下儲存」，而是重新讀取兩個公開頁面並確認：
+本項依下列判準關閉：
 
 1. 新條目的標題、作者、PDF 與 Zenodo DOI 均公開可見。
 2. 舊條目的 DOI 未變。
@@ -31,10 +32,10 @@
 
 | 優先序 | 工作 | 前置條件 | 可用材料 | 完成判準 |
 | ---: | --- | --- | --- | --- |
-| 2 | 對 Papers I–III 規劃 arXiv 提交 | 作者確認分類、endorsement 與最後 metadata | `releases/current/submission-v0.09-zenodo/paper_*_v0_09_arxiv_source.zip`; `metadata/` | 每篇公開 arXiv 頁面、PDF、作者與 DOI relation 回讀一致 |
-| 3 | 統一 GitHub/Zenodo/ResearchGate 的引用文字 | ResearchGate final v5 完成 | `CITATION.cff`; 各 release README | 各平台引用中不再混淆 article DOI、collection DOI、software DOI |
-| 4 | 發布 v4 修正版 | v4 邊界 atlas 與 Theorem 5.3 修正通過 | v4 claim ledger 與 verifier | 新版本另立記錄；舊 v4 不覆寫，明列修正關係 |
-| 5 | 發布 v12 模組成果 | 每一模組通過其自身的數學審核 | v12 module index | 只發布已閉合模組；不宣稱整篇已重證 |
+| 1 | 對 Papers I–III 規劃 arXiv 提交 | 作者確認分類、endorsement 與最後 metadata | `releases/current/submission-v0.09-zenodo/paper_*_v0_09_arxiv_source.zip`; `metadata/` | 每篇公開 arXiv 頁面、PDF、作者與 DOI relation 回讀一致 |
+| 2 | 統一 GitHub/Zenodo/ResearchGate 的引用文字 | ResearchGate final v5 完成 | `CITATION.cff`; 各 release README | 各平台引用中不再混淆 article DOI、collection DOI、software DOI |
+| 3 | 發布 v4 修正版 | v4 邊界 atlas 與 Theorem 5.3 修正通過 | v4 claim ledger 與 verifier | 新版本另立記錄；舊 v4 不覆寫，明列修正關係 |
+| 4 | 發布 v12 模組成果 | 每一模組通過其自身的數學審核 | v12 module index | 只發布已閉合模組；不宣稱整篇已重證 |
 
 ## 外部狀態核對入口
 

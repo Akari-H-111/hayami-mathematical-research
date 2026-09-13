@@ -33,4 +33,4 @@ rg -n '^[[:space:]]*sorry\\b' StokesV5 StokesV5.lean
 - An explicit construction of local source and target diffeomorphisms carrying the map to `(x, y^2)`. Mathlib has no reusable parametric Morse/Whitney-fold theorem in the pinned version; the package instead proves the standard plane-to-plane Jacobian criterion directly.
 - Any physical or spinorial interpretation.
 
-The scope split and release wording are documented in `GEOMETRIC_CLOSURE_BOUNDARY.md`. The working source now closes the manuscript's criterion-level Whitney-fold claim, but it must not be described as a Lean construction of the local normal-form coordinate changes.
+The scope split and release wording are documented in `GEOMETRIC_CLOSURE_BOUNDARY.md`. This candidate closes the manuscript's criterion-level Whitney-fold claim, but it must not be described as a Lean construction of the local normal-form coordinate changes.

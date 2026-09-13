@@ -4,8 +4,7 @@ Updated: 2026-09-13.
 
 ## Completed milestone
 
-The working Lean source now closes L1–L5 at the intrinsic Jacobian-criterion
-level:
+This v0.03 candidate closes L1–L5 at the intrinsic Jacobian-criterion level:
 
 - the positive-`Q` chart;
 - the real two-coordinate observation map;
@@ -19,14 +18,14 @@ level:
   ordinary branches.
 
 These declarations compile without `sorry` and are included in the axiom audit.
-They extend the working source only; the sealed v0.02 release remains immutable.
+They are included in this candidate only; the sealed v0.02 release remains
+immutable.
 
-## Candidate status
+## Candidate verification obligation
 
-The separate v0.03 candidate is sealed locally under
-`releases/candidates/stokes-caustic-v5-v0.03/`. Its local and extracted replays
-pass. It is not published; any GitHub or Zenodo release is a separate external
-action. The sealed v0.02 remains unchanged.
+Run the candidate's top-level `python3 -B verify.py`, including the
+build/status/audit/no-`sorry` gates. Publication remains a separate external
+action.
 
 ## Closing criterion
 
