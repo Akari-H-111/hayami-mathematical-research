@@ -2,6 +2,16 @@
 
 This directory is the clean-room research archive for the inverse-Leibniz series and the three reconstructed legacy geometry papers.
 
+## Start here in every research window
+
+- [`RESEARCH_BOARD.md`](RESEARCH_BOARD.md) — current status, next atomic tasks, blockers, and verification entrypoints.
+- [`ESTABLISHED_WORKS.md`](ESTABLISHED_WORKS.md) — confirmed papers, research records, authority, and publication identifiers.
+- [`RESEARCH_DIRECTIONS.md`](RESEARCH_DIRECTIONS.md) — confirmed derived and advanced research directions.
+- [`EXTERNAL_ACTIONS.md`](EXTERNAL_ACTIONS.md) — completed and pending public-platform work.
+- [`LEAN_ROADMAP.md`](LEAN_ROADMAP.md) — Lean completion milestones and later formalization candidates.
+
+All Codex windows follow the short routing rules in [`AGENTS.md`](AGENTS.md). The board is the operational source of truth; the four inventories change only when evidence or an approved direction changes.
+
 ## Public releases
 
 - Repository: <https://github.com/Akari-H-111/hayami-mathematical-research>
