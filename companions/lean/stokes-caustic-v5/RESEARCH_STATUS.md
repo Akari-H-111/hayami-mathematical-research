@@ -25,8 +25,10 @@ They extend the working source only; the sealed v0.02 release remains immutable.
 
 The separate v0.03 candidate is sealed locally under
 `releases/candidates/stokes-caustic-v5-v0.03/`. Its local and extracted replays
-pass. It is not published; any GitHub or Zenodo release is a separate external
-action. The sealed v0.02 remains unchanged.
+pass, and GitHub release `stokes-v5-companion-v0.03` is public with its ZIP,
+receipt, and authoritative PDF hash-verified after download. Zenodo publication
+is pending only because the official record/UI/API was unreachable on
+2026-09-13. The sealed v0.02 remains unchanged.
 
 ## Closing criterion
 

@@ -29,9 +29,9 @@
 | L3. Ordinary-branch hypotheses | `LEAN-PASSED` | 已完成 | `StokesV5/ObservationMap.lean`; `StokesV5/FoldGeometry.lean` |
 | L4. Exceptional common point | `LEAN-PASSED` | 已證 `(0,0)` 不滿足 fold criterion | `StokesV5/ObservationMap.lean`; `StokesV5/WhitneyFold.lean` |
 | L5. Plane-to-plane fold criterion | `LEAN-PASSED / CRITERION LEVEL` | 已定義 intrinsic Jacobian criterion 並套用兩 ordinary branches；未構造 `(x,y^2)` local coordinates | `StokesV5/WhitneyFold.lean` |
-| L6. v0.03 release | `CANDIDATE READY / NOT PUBLISHED` | 本地與解壓 replay 已通過；對外發布屬另一步驟 | `releases/candidates/stokes-caustic-v5-v0.03/`; v0.02 未改寫 |
+| L6. v0.03 release | `GITHUB PUBLISHED / ZENODO BLOCKED` | GitHub assets 已公開並 hash 回讀；Zenodo 服務恢復後續版同一 concept DOI | GitHub tag `stokes-v5-companion-v0.03`; `EXTERNAL_ACTIONS.md`; v0.02 未改寫 |
 
-L1–L6 的本地 candidate 階段已完成。下一步只能是經明確授權後對外發布，或另開 coordinate-level local-normal-form 研究線。
+L1–L6 的本地 candidate 與 GitHub 發布已完成。下一步是 Zenodo 服務恢復後建立同一 concept DOI 的 v0.03 record，或另開 coordinate-level local-normal-form 研究線。
 
 ## 第二優先：下一批 Lean 候選
 
