@@ -1,6 +1,6 @@
 # 共通研究留言板
 
-最後更新：2026-09-14 01:11 CST
+最後更新：2026-09-14 01:21 CST
 適用範圍：所有後續 Codex 窗口與本專案人工工作
 
 這是跨窗口的單一即時狀態入口。已確立成果看 `ESTABLISHED_WORKS.md`；研究分支看 `RESEARCH_DIRECTIONS.md`；對外工作看 `EXTERNAL_ACTIONS.md`；Lean 看 `LEAN_ROADMAP.md`。
@@ -83,6 +83,9 @@ YYYY-MM-DD HH:MM | 工作流 | STATUS | 完成／失敗／阻擋摘要 | 驗證�
 ```
 
 ### 留言
+
+- 2026-09-14 01:21 | Citation boundary synchronization | `GitHub PASS / Zenodo VERIFY BLOCKED` | 根目錄 `CITATION.cff`、`README.md` 與 GitHub `stokes-v5-companion-v0.03` release body 已明確區分數學論文 DOI `10.5281/zenodo.22728902`、本版 Lean software DOI `10.5281/zenodo.22735974`、software concept DOI `10.5281/zenodo.22726976`；ResearchGate 維持既有正確的論文 DOI，不導入 software DOI。Zenodo v0.03 編輯頁顯示儲存成功，且已提交 Publish；但隨後公開頁與官方 API 均回傳 504，尚不能將 Zenodo 公開文字標為已驗證 | GitHub release `stokes-v5-companion-v0.03`; `https://zenodo.org/records/22735974`; `https://zenodo.org/api/records/22735974` | 待 Zenodo 恢復後，公開讀回 description，確認含 Citation boundary 段落，再關閉此待驗證項
+
 
 - 2026-09-14 01:11 | Stokes v5 Lean companion v0.03 | `PUBLISHED / API+DOWNLOAD PASS` | Zenodo 同一 concept DOI 的公開 version record `22735974` 已發布，version DOI `10.5281/zenodo.22735974`、concept DOI `10.5281/zenodo.22726976`；官方 API 顯示 `published`/`done`、三檔，三個公開下載 SHA-256 均與本地封存一致 | `https://zenodo.org/records/22735974`; `https://zenodo.org/api/records/22735974` | 保持 v0.02 與 v0.03 不可變；若續研，另開 coordinate-level local-normal-form 線
 - 2026-09-13 21:08 | Stokes v5 Lean companion v0.03 | `GITHUB PASS / ZENODO BLOCKED` | GitHub tag/release `stokes-v5-companion-v0.03` 已公開，下載 ZIP/receipt hash 與公開 assets digest 一致；Zenodo record 頁連續 504，API timeout，重試仍 504，故未能建立新 DOI | `https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.03`; `EXTERNAL_ACTIONS.md` | Zenodo 可達後從 v0.02 concept DOI `10.5281/zenodo.22726976` 建立新 version；v0.02 保持不可變
