@@ -1,6 +1,6 @@
 # ResearchGate 任務交接說明
 
-更新日期：2026-09-13
+更新日期：2026-09-14
 
 ## 任務目標
 
@@ -16,7 +16,7 @@
 - Zenodo 公開記錄：[22728902](https://zenodo.org/records/22728902)
 - Zenodo 版本 DOI：[10.5281/zenodo.22728902](https://doi.org/10.5281/zenodo.22728902)
 - Zenodo 概念 DOI：[10.5281/zenodo.22728901](https://doi.org/10.5281/zenodo.22728901)
-- Lean companion DOI：[10.5281/zenodo.22726977](https://doi.org/10.5281/zenodo.22726977)（不可當作數學論文 DOI）
+- Lean companion v0.03 software DOI：[10.5281/zenodo.22735974](https://doi.org/10.5281/zenodo.22735974)；concept DOI：[10.5281/zenodo.22726976](https://doi.org/10.5281/zenodo.22726976)（兩者不可當作數學論文 DOI）
 
 ## 舊 ResearchGate 條目
 

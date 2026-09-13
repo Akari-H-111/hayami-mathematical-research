@@ -15,12 +15,22 @@ All Codex windows follow the short routing rules in [`AGENTS.md`](AGENTS.md). Th
 ## Public releases
 
 - Repository: <https://github.com/Akari-H-111/hayami-mathematical-research>
-- Stokes caustic v5 Lean companion v0.02:
+- Stokes caustic v5 Lean companion v0.03:
+  [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.03) ·
+  [Zenodo software DOI 10.5281/zenodo.22735974](https://doi.org/10.5281/zenodo.22735974)
+- Historical Stokes caustic v5 Lean companion v0.02:
   [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.02) ·
   [Zenodo DOI 10.5281/zenodo.22726977](https://doi.org/10.5281/zenodo.22726977)
 - Concept DOI for all versions: <https://doi.org/10.5281/zenodo.22726976>
 - Verified v0.02 ZIP SHA-256:
   `4ab15df0129d14e4b0d1c0e1b26cdfcc7eaaa41b05021ccf9e3f7363376378d4`
+
+Citation boundary: cite the final-v5 mathematical paper as
+[*Observation Discriminant and Spherical Fold Image of the Orthogonal-Circle
+Ruled Surface*](https://doi.org/10.5281/zenodo.22728902); cite the Lean
+companion only when using its formalization or reproducibility package, using
+the version-specific software DOI above. The software concept DOI is not a
+paper DOI.
 
 ## Public topology
 
