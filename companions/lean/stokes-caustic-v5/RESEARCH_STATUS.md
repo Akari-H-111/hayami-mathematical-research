@@ -1,6 +1,6 @@
 # Whitney-fold formalization status
 
-Updated: 2026-09-13.
+Updated: 2026-09-14.
 
 ## Completed milestone
 
@@ -26,9 +26,11 @@ They extend the working source only; the sealed v0.02 release remains immutable.
 The separate v0.03 candidate is sealed locally under
 `releases/candidates/stokes-caustic-v5-v0.03/`. Its local and extracted replays
 pass, and GitHub release `stokes-v5-companion-v0.03` is public with its ZIP,
-receipt, and authoritative PDF hash-verified after download. Zenodo publication
-is pending only because the official record/UI/API was unreachable on
-2026-09-13. The sealed v0.02 remains unchanged.
+receipt, and authoritative PDF hash-verified after download. Zenodo version
+record `22735974` is now public as version DOI `10.5281/zenodo.22735974`,
+under the unchanged concept DOI `10.5281/zenodo.22726976`; its official API and
+public downloads reproduce all three sealed SHA-256 values. The sealed v0.02
+remains unchanged.
 
 ## Closing criterion
 

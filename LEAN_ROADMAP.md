@@ -1,6 +1,6 @@
 # Lean 完成與後續研究路線
 
-更新日期：2026-09-13
+更新日期：2026-09-14
 
 ## 目前基線
 
@@ -29,9 +29,9 @@
 | L3. Ordinary-branch hypotheses | `LEAN-PASSED` | 已完成 | `StokesV5/ObservationMap.lean`; `StokesV5/FoldGeometry.lean` |
 | L4. Exceptional common point | `LEAN-PASSED` | 已證 `(0,0)` 不滿足 fold criterion | `StokesV5/ObservationMap.lean`; `StokesV5/WhitneyFold.lean` |
 | L5. Plane-to-plane fold criterion | `LEAN-PASSED / CRITERION LEVEL` | 已定義 intrinsic Jacobian criterion 並套用兩 ordinary branches；未構造 `(x,y^2)` local coordinates | `StokesV5/WhitneyFold.lean` |
-| L6. v0.03 release | `GITHUB PUBLISHED / ZENODO BLOCKED` | GitHub assets 已公開並 hash 回讀；Zenodo 服務恢復後續版同一 concept DOI | GitHub tag `stokes-v5-companion-v0.03`; `EXTERNAL_ACTIONS.md`; v0.02 未改寫 |
+| L6. v0.03 release | `PUBLISHED / VERIFIED` | GitHub 與 Zenodo assets 均已公開並 hash 回讀；若續研，另開 coordinate-level local-normal-form 研究 | Zenodo version DOI `10.5281/zenodo.22735974`; concept DOI `10.5281/zenodo.22726976`; `EXTERNAL_ACTIONS.md`; v0.02 未改寫 |
 
-L1–L6 的本地 candidate 與 GitHub 發布已完成。下一步是 Zenodo 服務恢復後建立同一 concept DOI 的 v0.03 record，或另開 coordinate-level local-normal-form 研究線。
+L1–L6 的本地 candidate、GitHub 與 Zenodo 發布均已完成；v0.03 的 Zenodo version DOI 為 `10.5281/zenodo.22735974`，concept DOI 維持 `10.5281/zenodo.22726976`。下一步若續研，另開 coordinate-level local-normal-form 研究線。
 
 ## 第二優先：下一批 Lean 候選
 

@@ -1,6 +1,6 @@
 # 共通研究留言板
 
-最後更新：2026-09-13 21:08 CST
+最後更新：2026-09-14 01:11 CST
 適用範圍：所有後續 Codex 窗口與本專案人工工作
 
 這是跨窗口的單一即時狀態入口。已確立成果看 `ESTABLISHED_WORKS.md`；研究分支看 `RESEARCH_DIRECTIONS.md`；對外工作看 `EXTERNAL_ACTIONS.md`；Lean 看 `LEAN_ROADMAP.md`。
@@ -9,7 +9,7 @@
 
 | 優先序 | 工作流 | 狀態 | 下一個原子任務 | 權威／驗證路徑 |
 | ---: | --- | --- | --- | --- |
-| 1 | Stokes v5 Lean 幾何橋 | `GITHUB PUBLISHED / ZENODO BLOCKED` | Zenodo 恢復後建立 v0.03 software DOI；或另開 coordinate-level normal-form 研究 | GitHub release `stokes-v5-companion-v0.03`; `EXTERNAL_ACTIONS.md` |
+| 1 | Stokes v5 Lean 幾何橋 | `PUBLISHED / CRITERION LEVEL` | 若續研，另開 coordinate-level local-normal-form 研究；已發布版本保持不可變 | Zenodo version DOI `10.5281/zenodo.22735974`; concept DOI `10.5281/zenodo.22726976`; `EXTERNAL_ACTIONS.md` |
 | 2 | Stokes v5 Jacobian 與 Whitney fold | `COMPLETED / CRITERION LEVEL` | release wording 保留「未構造 local normal-form coordinates」邊界 | `companions/lean/stokes-caustic-v5/GEOMETRIC_CLOSURE_BOUNDARY.md`; `companions/lean/stokes-caustic-v5/StokesV5/WhitneyFold.lean` |
 | 3 | Inverse-Leibniz Papers I–III | `PUBLISHED / SEALED` | 保持 v0.09 不變；若要投 arXiv，先做 metadata 與分類核定 | `releases/current/submission-v0.09-zenodo/`; DOI 列於 `ESTABLISHED_WORKS.md` |
 | 4 | filtered-complex → Diophantine locus | `PLANNED / SEPARATE` | 固定來源類別、marking、metric、target torus 與 locus 定義 | `RESEARCH_DIRECTIONS.md` A1；目前尚無 theorem certificate |
@@ -84,6 +84,7 @@ YYYY-MM-DD HH:MM | 工作流 | STATUS | 完成／失敗／阻擋摘要 | 驗證�
 
 ### 留言
 
+- 2026-09-14 01:11 | Stokes v5 Lean companion v0.03 | `PUBLISHED / API+DOWNLOAD PASS` | Zenodo 同一 concept DOI 的公開 version record `22735974` 已發布，version DOI `10.5281/zenodo.22735974`、concept DOI `10.5281/zenodo.22726976`；官方 API 顯示 `published`/`done`、三檔，三個公開下載 SHA-256 均與本地封存一致 | `https://zenodo.org/records/22735974`; `https://zenodo.org/api/records/22735974` | 保持 v0.02 與 v0.03 不可變；若續研，另開 coordinate-level local-normal-form 線
 - 2026-09-13 21:08 | Stokes v5 Lean companion v0.03 | `GITHUB PASS / ZENODO BLOCKED` | GitHub tag/release `stokes-v5-companion-v0.03` 已公開，下載 ZIP/receipt hash 與公開 assets digest 一致；Zenodo record 頁連續 504，API timeout，重試仍 504，故未能建立新 DOI | `https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.03`; `EXTERNAL_ACTIONS.md` | Zenodo 可達後從 v0.02 concept DOI `10.5281/zenodo.22726976` 建立新 version；v0.02 保持不可變
 - 2026-09-13 20:59 | Stokes v5 Lean companion v0.03 | `CANDIDATE PASS / NOT PUBLISHED` | 建立獨立 candidate、更新 theorem map 與 scope wording、生成 31-member ZIP/receipt；原位及解壓 replay 全通過，ZIP CRC 通過，未含 `.lake`，權威 PDF hash 未變 | `releases/candidates/stokes-caustic-v5-v0.03/stokes_caustic_v5_lean_companion_v0_03_candidate.zip`; receipt；SHA-256 `2a88e20b1984738f9a9bd19c8460a145aae6b04819b792ede9c547967acc2f5b` | 對外 GitHub/Zenodo 發布需另行授權；v0.02 保持不可變
 - 2026-09-13 20:33 | Stokes v5 Lean geometry bridge | `PASS / CRITERION LEVEL` | L1–L5 working source 通過：explicit Fréchet derivative、Jacobian factorization、兩 ordinary branches 的 rank-one kernel/transversality、exceptional point failure、intrinsic plane-to-plane Whitney-fold criterion；build/status/axiom audit 均通過且無新公理 | `companions/lean/stokes-caustic-v5/StokesV5/ObservationMap.lean`; `companions/lean/stokes-caustic-v5/StokesV5/FoldGeometry.lean`; `companions/lean/stokes-caustic-v5/StokesV5/WhitneyFold.lean`; `companions/lean/stokes-caustic-v5/LEAN_STATUS.md` | L6 建立獨立 v0.03 candidate；v0.02 保持不可變

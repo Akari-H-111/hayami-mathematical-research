@@ -1,6 +1,6 @@
 # 接下來要對外做的處理
 
-更新日期：2026-09-13
+更新日期：2026-09-14
 
 ## 已完成
 
@@ -12,7 +12,7 @@
 - 三篇共同重現材料：`10.5281/zenodo.22663942`。
 - Stokes v5 final preprint：`10.5281/zenodo.22728902`。
 - Stokes v5 Lean companion v0.02：GitHub release `stokes-v5-companion-v0.02` 與 software DOI `10.5281/zenodo.22726977`。
-- Stokes v5 Lean companion v0.03：GitHub release `stokes-v5-companion-v0.03` 已公開；Zenodo v0.03 DOI 尚未建立，因官方 record/UI/API 於 2026-09-13 連續回傳 504 或 timeout。
+- Stokes v5 Lean companion v0.03：GitHub release `stokes-v5-companion-v0.03` 與 Zenodo version record `22735974` 已公開；software version DOI 為 `10.5281/zenodo.22735974`，沿用 concept DOI `10.5281/zenodo.22726976`。官方 API 的三檔與公開下載 SHA-256 已回讀一致。
 - ResearchGate final-v5 新 Preprint 條目：`https://www.researchgate.net/publication/414264187_Observation_Discriminant_and_Spherical_Fold_Image_of_the_Orthogonal-Circle_Ruled_Surface`；新條目公開顯示 final-v5 PDF 與論文 DOI `10.5281/zenodo.22728902`，舊條目保留 ResearchGate DOI `10.13140/RG.2.2.23759.04006`。
 
 這些 DOI 的類型不同：個別 preprint、共同材料、數學論文與 software companion 不可互相代替。
@@ -33,7 +33,7 @@
 
 | 優先序 | 工作 | 前置條件 | 可用材料 | 完成判準 |
 | ---: | --- | --- | --- | --- |
-| 1 | Zenodo 發布 Stokes v5 Lean companion v0.03 | Zenodo record/UI/API 恢復可達 | GitHub release `stokes-v5-companion-v0.03` 的 ZIP、receipt、PDF；沿用 concept DOI `10.5281/zenodo.22726976` | 新 version DOI、同一 concept DOI、三個檔案與 SHA-256 公開 API 回讀一致 |
+| 1 | Zenodo 發布 Stokes v5 Lean companion v0.03 | `COMPLETED` | Zenodo version DOI `10.5281/zenodo.22735974`；concept DOI `10.5281/zenodo.22726976` | 官方 API `published`/`done`、三檔 MD5 與公開下載 SHA-256 已一致 |
 | 2 | 對 Papers I–III 規劃 arXiv 提交 | 作者確認分類、endorsement 與最後 metadata | `releases/current/submission-v0.09-zenodo/paper_*_v0_09_arxiv_source.zip`; `metadata/` | 每篇公開 arXiv 頁面、PDF、作者與 DOI relation 回讀一致 |
 | 3 | 統一 GitHub/Zenodo/ResearchGate 的引用文字 | Stokes v5 companion v0.03 Zenodo DOI 已取得 | `CITATION.cff`; 各 release README | 各平台引用中不再混淆 article DOI、collection DOI、software DOI |
 | 4 | 發布 v4 修正版 | v4 邊界 atlas 與 Theorem 5.3 修正通過 | v4 claim ledger 與 verifier | 新版本另立記錄；舊 v4 不覆寫，明列修正關係 |
