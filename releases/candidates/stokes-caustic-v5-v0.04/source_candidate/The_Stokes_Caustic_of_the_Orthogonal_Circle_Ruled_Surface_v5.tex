@@ -1,0 +1,906 @@
+\documentclass[11pt]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs}
+\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{pgfplotstable}
+\usepgfplotslibrary{groupplots}
+
+\geometry{margin=1in}
+\pgfplotsset{compat=1.18}
+\makeatletter
+\renewcommand{\@seccntformat}[1]{\csname the#1\endcsname\hspace{1.25em}}
+\makeatother
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue!55!black,
+  citecolor=green!45!black,
+  urlcolor=blue!60!black
+}
+
+\definecolor{Teal}{HTML}{2A9D8F}
+\definecolor{Coral}{HTML}{E76F51}
+\definecolor{Amber}{HTML}{E9A23B}
+\definecolor{Blue}{HTML}{457B9D}
+\definecolor{Dark}{HTML}{264653}
+\definecolor{Pale}{HTML}{EAF4F2}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\renewcommand{\qedsymbol}{}
+
+\newcommand{\Ssurf}{\mathcal S}
+\newcommand{\Lfold}{\mathcal L_{\mathrm{fold}}}
+\newcommand{\LN}{\mathcal L_N}
+\newcommand{\Csym}{\mathcal C_0}
+\newcommand{\Crat}{\mathcal C_1}
+\newcommand{\DiscF}{\Delta_F}
+\newcommand{\cb}{0.613055096856276}
+\newcommand{\cabs}{0.673741152200546}
+
+\pgfmathdeclarefunction{ufold}{1}{%
+  \pgfmathparse{-(1-#1)*#1*(2-#1)*(1+2*#1-#1*#1)/(#1*#1*#1-3*#1+1)}%
+}
+\pgfplotstableread{
+c Sone Stwo Sthree
+0.613055096856 0.832749933396 0.000000000000 0.553649300937
+0.622728719435 0.834556278962 0.019816171686 0.550566196369
+0.632402342013 0.836333223457 0.039485267032 0.546797634441
+0.642075964592 0.838089816529 0.058969659229 0.542335725100
+0.651749587171 0.839835467001 0.078229521361 0.537174580890
+0.661423209749 0.841579989780 0.097222980237 0.531310467539
+0.671096832328 0.843333644368 0.115906289018 0.524741933185
+0.680770454906 0.845107164016 0.134234014798 0.517469912748
+0.690444077485 0.846911774681 0.152159236429 0.509497804388
+0.700117700064 0.848759203138 0.169633747004 0.500831515547
+0.709791322642 0.850661673801 0.186608254608 0.491479476721
+0.719464945221 0.852631894040 0.203032574186 0.481452621850
+0.729138567799 0.854683028057 0.218855802690 0.470764335077
+0.738812190378 0.856828659670 0.234026469039 0.459430364427
+0.748485812957 0.859082744598 0.248492649831 0.447468703837
+0.758159435535 0.861459553140 0.262202041099 0.434899445789
+0.767833058114 0.863973604357 0.275101975677 0.421744607498
+0.777506680692 0.866639593077 0.287139374800 0.408027934277
+0.787180303271 0.869472311201 0.298260621175 0.393774684193
+0.796853925850 0.872486564883 0.308411338850 0.379011398467
+0.806527548428 0.875697089234 0.317536062266 0.363765662300
+0.816201171007 0.879118462170 0.325577772592 0.348065860816
+0.825874793585 0.882765018984 0.332477273079 0.331940934721
+0.835548416164 0.886650769107 0.338172365693 0.315420140009
+0.845222038743 0.890789316390 0.342596777231 0.298532815677
+0.854895661321 0.895193784052 0.345678761940 0.281308162942
+0.864569283900 0.899876745235 0.347339275387 0.263775038924
+0.874242906478 0.904850159896 0.347489564216 0.245961767145
+0.883916529057 0.910125318562 0.346027936592 0.227895966638
+0.893590151635 0.915712793224 0.342835347473 0.209604400832
+0.903263774214 0.921622395485 0.337769211020 0.191112846842
+0.912937396793 0.927863141863 0.330654460347 0.172445985239
+0.922611019371 0.934443226009 0.321270146449 0.153627309963
+0.932284641950 0.941369997445 0.309328432834 0.134679057583
+0.941958264528 0.948649946330 0.294439801385 0.115622154830
+0.951631887107 0.956288693684 0.276051227924 0.096476183040
+0.961305509686 0.964290986410 0.253325650373 0.077259357957
+0.970979132264 0.972660696471 0.224874410979 0.057988523232
+0.980652754843 0.981400823513 0.188032833595 0.038679155865
+0.990326377421 0.990513500257 0.136046911071 0.019345381807
+1.000000000000 1.000000000000 0.000000000000 0.000000000000
+}\StokesTable
+\pgfplotstableread{
+t u N M
+0.910874496227 1.000000000000 -0.624163448219 -0.261919663769
+0.898570984577 0.959139710045 -0.581378114160 -0.215643645946
+0.886145789889 0.920223038547 -0.541415629433 -0.171349104722
+0.873593251028 0.883053718163 -0.504022685451 -0.128830295828
+0.860907328993 0.847460468518 -0.468978566000 -0.087906987128
+0.848081569503 0.813293131759 -0.436090113271 -0.048420510428
+0.835109060733 0.780419500131 -0.405187597707 -0.010230519456
+0.821982385398 0.748722694997 -0.376121308190 0.026787689497
+0.808693566249 0.718098988408 -0.348758720463 0.062745405459
+0.795234003814 0.688455982209 -0.322982132885 0.097742365972
+0.781594405009 0.659711077836 -0.298686682260 0.131868323878
+0.767764700936 0.631790183808 -0.275778670687 0.165204371800
+0.753733951759 0.604626618697 -0.254174148320 0.197824067463
+0.739490236135 0.578160175658 -0.233797707886 0.229794394496
+0.725020521980 0.552336321167 -0.214581455302 0.261176586678
+0.710310514593 0.527105505732 -0.196464127457 0.292026838373
+0.695344477089 0.502422568435 -0.179390333591 0.322396919696
+0.680105016704 0.478246220419 -0.163309900918 0.352334711682
+0.664572828708 0.454538595041 -0.148177308581 0.381884674029
+0.648726387174 0.431264854489 -0.133951196774 0.411088255886
+0.632541568472 0.408392844410 -0.120593940108 0.439984258395
+0.615991188697 0.385892789426 -0.108071276087 0.468609156320
+0.599044429712 0.363737023590 -0.096351981118 0.496997384910
+0.581666119164 0.341899750734 -0.085407587616 0.525181597268
+0.563815816366 0.320356830426 -0.075212136885 0.553192896649
+0.545446635986 0.299085585895 -0.065741963196 0.581061047567
+0.526503711372 0.278064630785 -0.056975505275 0.608814668997
+0.506922152705 0.257273712046 -0.048893141962 0.636481412593
+0.486624280980 0.236693566612 -0.041477049298 0.664088128443
+0.465515796881 0.216305789820 -0.034711076761 0.691661020652
+0.443480336093 0.196092713769 -0.028580640689 0.719225794772
+0.420371493889 0.176037294017 -0.023072633280 0.746807798937
+0.396000713888 0.156123003167 -0.018175345813 0.774432160429
+0.370118073383 0.136333730056 -0.013878404974 0.802123919273
+0.342380096510 0.116653683323 -0.010172721402 0.829908160423
+0.312291959535 0.097067298252 -0.007050449735 0.857810146022
+0.279093681921 0.077559145819 -0.004504959653 0.885855449245
+0.241505000911 0.058113842907 -0.002530817533 0.914070091240
+0.197027688516 0.038715962701 -0.001123778549 0.942480682709
+0.139206748637 0.019349944226 -0.000280789141 0.971114571794
+0.000000000000 0.000000000000 0.000000000000 1.000000000000
+}\CriticalTable
+
+\title{\textbf{Observation Discriminant and Spherical Fold Image}\\
+\large of the Orthogonal-Circle Ruled Surface}
+\author{Akari Hayami (Jian-Yu Huang)}
+\date{July 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We determine the full critical locus of the planar observation map attached
+to the orthogonal-circle ruled surface.  Its Jacobian factors as
+\[
+J_F=-\frac{2\sin t}{Q^3}\bigl(A(c)+uB(c)\bigr),
+\]
+so the critical set is not only the previously isolated rational branch: it
+also contains the complete symmetry segment $t=0$.  The symmetry segment is
+an ordinary Whitney fold for $u>0$.  The two signed rational arms are ordinary
+folds away from their common initial point and occupy
+$c_b\leq c\leq1$, where
+$c_b=0.613055096856276\ldots$ is the unique root in $(0,1)$ of
+$c^5-5c^4+6c^3-c^2+c-1$.  At $(t,u)=(0,0)$ the two critical branches meet and
+the ordinary-fold condition fails; locally
+$J_F=2t(u-t^2)+\text{higher-order terms}$.  Their critical values are
+different objects from the normalized surface-position curve: the symmetry
+fold maps to the segment $N=0$, while the rational arms share one
+discriminant curve tangent to that segment at $(N,M)=(0,1)$.
+
+For completeness we retain the parameter-free spherical radial image
+$\Phi=S/\lVert S\rVert$ of the rational branch.  It consists of two mirrored
+arcs that start regularly at $(1,0,0)$ and meet the parameter boundary at
+\[
+\left(\sqrt{\frac{2-c_b}{2}},0,\sqrt{\frac{c_b}{2}}\right)
+\approx(0.8327499334,0,0.5536493009).
+\]
+This radial image is not identified with the observation discriminant or the
+Gauss map.  Its third spherical component is monotone and maximal at the
+boundary.  Exact polynomial identities, Sturm counts and numerical checks are
+reproduced by a standard-library verifier.  No Jones-spinor, quantum,
+spinorial or Atiyah--Patodi--Singer interpretation is claimed.
+\end{abstract}
+
+\section{Correction scope and claim status}
+
+Let $c=\cos t$, $s=\sin t$ and
+$Q=\sqrt{c(2-c)}$, with
+$t\in[-\pi/2,\pi/2]$ and $u\in[0,1]$.  The ruled surface of
+\cite{hayami2026surface} is
+\begin{equation}\label{eq:surface}
+S(t,u)=
+\begin{pmatrix}
+c+2u(1-c)\\
+(1-u)s\\
+uQ
+\end{pmatrix}.
+\end{equation}
+Four distinct objects must be kept separate:
+\begin{enumerate}
+  \item the component-zero curve
+        $\LN=\{N=0\}$, given away from $c=1$ by
+        $u=(1-c)/2$;
+  \item the isolated immersion zeros, obtained only after all components of
+        $S_t\times S_u$ vanish; and
+  \item the full critical locus $\operatorname{Crit}(F)=\{J_F=0\}$ of the
+        planar observation map;
+  \item the discriminant $F(\operatorname{Crit}(F))\subset\mathbb R^2$ and
+        the separate radial sphere map $S/\lVert S\rVert\subset S^2$.
+\end{enumerate}
+Only the image of the third object under $F$ is the observation
+discriminant.  Radial normalization of the surface position is a different,
+origin-dependent construction.
+
+\begin{center}
+\begin{tabular}{@{}p{0.37\textwidth}p{0.18\textwidth}p{0.34\textwidth}@{}}
+\toprule
+Statement & Status here & Input\\
+\midrule
+Full critical-locus decomposition & theorem & exact factorization of $J_F$\\
+Fold status away from $(0,0)$ & theorem & kernel transversality/Sturm count\\
+Degenerate intersection at $(0,0)$ & theorem & local expansion\\
+Observation discriminant & theorem & restriction of $F$\\
+Spherical radial fold image & theorem & \eqref{eq:surface}\\
+\addlinespace[2pt]
+Jones, spinor or APS interpretation & not claimed & absent from this geometry\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Observation map and full critical locus}
+
+The complex observation field used in \cite{hayami2026surface} is
+$F=N+iM$, where
+\begin{align}
+N(c,u)&=(1-c)(1-c-2u),\\
+M(c,u)&=
+\frac{(1-u)c^2(2-c)-u(1-c)^2(1+c)}{Q}.
+\end{align}
+Its fold Jacobian is
+$J_F=N_tM_u-N_uM_t$.
+
+\begin{theorem}[Full critical locus]\label{thm:full-critical}
+Where $Q>0$, the Jacobian factors exactly as
+\begin{equation}\label{eq:jac-factor}
+J_F=-\frac{2s}{Q^3}\bigl(A(c)+uB(c)\bigr),
+\end{equation}
+where
+\[
+A(c)=(1-c)c(2-c)(1+2c-c^2),
+\qquad
+B(c)=c^3-3c+1.
+\]
+Consequently the critical locus in the parameter strip has two components:
+\begin{align}
+\Csym&=\{(t,u):t=0,\ 0\leq u\leq1\},\\
+\Crat&=\{(t,u):A(\cos t)+uB(\cos t)=0\}.
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Direct differentiation and collection in powers of $u$ gives
+\eqref{eq:jac-factor}.  In the real parameter interval, $s=0$ is exactly
+$t=0$.  The other factor gives $\Crat$.  Neither factor may be cancelled when
+determining the full zero set.
+\end{proof}
+
+\begin{proposition}[Rational critical branch]\label{thm:true-fold}
+Away from $s=0$ and the vertical asymptote $B(c)=0$, the component
+$\Crat$ is
+\begin{equation}\label{eq:true-fold}
+u=u_{\mathrm{fold}}(c):=
+-\frac{(1-c)c(2-c)(1+2c-c^2)}
+       {c^3-3c+1}.
+\end{equation}
+The curve $u=(1-c)/2$ is instead $\LN=\{N=0\}$ and is not equal to
+\eqref{eq:true-fold}.
+\end{proposition}
+
+\begin{proof}
+Solving $A+uB=0$ proves \eqref{eq:true-fold}.  The distinction is exact:
+at $c=4/5$,
+\[
+\frac{1-c}{2}=\frac1{10},
+\qquad
+u_{\mathrm{fold}}(c)=\frac{392}{925}.
+\]
+\end{proof}
+
+Write
+\begin{align}
+n(c)&:=-(1-c)c(2-c)(1+2c-c^2),\\
+d(c)&:=c^3-3c+1,
+\end{align}
+so $u_{\mathrm{fold}}=n/d$.
+
+\begin{proposition}[Physical fold interval]\label{prop:physical-fold}
+There is a unique $c_b\in(0,1)$ satisfying
+\begin{equation}\label{eq:boundary-polynomial}
+p_b(c_b)=0,\qquad
+p_b(c):=c^5-5c^4+6c^3-c^2+c-1.
+\end{equation}
+Numerically,
+\[
+c_b=0.613055096856276\ldots.
+\]
+The part of \eqref{eq:true-fold} lying in $0\leq u\leq1$ is exactly
+$c_b\leq c\leq1$, with $u(c_b)=1$ and $u(1)=0$.
+\end{proposition}
+
+\begin{proof}
+The equation $u_{\mathrm{fold}}=1$ is $n-d=0$, which expands to
+\eqref{eq:boundary-polynomial}.  The Sturm variations of $p_b$ at $0$ and
+$1$ are respectively $4$ and $3$, hence there is exactly one root in
+$(0,1)$.  It is isolated by
+$613/1000<c_b<614/1000$.  On $[c_b,1]$ the denominator has no zero,
+$d<0$, and the inequalities $0\leq n/d\leq1$ follow from the endpoint
+signs and uniqueness of the root of $n-d$.
+\end{proof}
+
+\begin{theorem}[Ordinary folds and the exceptional intersection]
+\label{thm:fold-types}
+Using the standard Whitney fold convention and its plane-to-plane
+criterion \cite{whitney1955,golubitsky1973}, the critical points have the
+following types.
+\begin{enumerate}
+\item Every point of $\Csym$ with $u>0$ is an ordinary Whitney fold of $F$.
+\item Every point of the physical part of $\Crat$ with $c_b\leq c<1$ is
+an ordinary Whitney fold, using a smooth extension across $u=1$ at the
+parameter boundary.
+\item At $(t,u)=(0,0)$ the two critical components meet transversely and the
+ordinary-fold condition fails.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+On $\Csym$,
+\[
+F(0,u)=(0,1-u),\qquad F_u(0,u)=(0,-1).
+\]
+The kernel of $DF$ is the $t$ direction, and direct differentiation gives
+$N_{tt}(0,u)=-2u$.  Hence
+\[
+\det\bigl(F_u,F_{tt}\bigr)=-2u\neq0
+\]
+for $u>0$, which is the fold criterion.
+
+On $\Crat$, let $v=(N_u,-N_t)$ span $\ker DF$.  Since
+$J_F=(-2s/Q^3)(A+uB)$, restriction to $A+uB=0$ gives
+\begin{equation}\label{eq:fold-transversality}
+\mathrm dJ_F(v)
+=-\frac{4s^2}{Q^3B(c)}\,C_8(c),
+\end{equation}
+where
+\[
+C_8(c)=(c-1)R_7(c)
+\]
+and
+\[
+R_7(c)=3c^7-8c^6-12c^5+60c^4-69c^3+30c^2-6c-1.
+\]
+The Sturm variation of $R_7$ is the same at $613/1000$ and $1$, so it
+has no root there; $R_7(1)=-3$.  Also $B$ has no root on this interval.
+Thus \eqref{eq:fold-transversality} is nonzero for $c_b\leq c<1$.
+
+Finally set $\delta=1-c$.  Exact substitution gives
+\[
+A=2\delta-3\delta^3+\delta^5,
+\qquad
+B=-1+3\delta^2-\delta^3.
+\]
+Since $\delta=t^2/2+O(t^4)$,
+\begin{equation}\label{eq:degenerate-jacobian}
+J_F(t,u)=2t(u-t^2)+O\!\left(|t|^5+|u||t|^3\right).
+\end{equation}
+The two local critical branches are therefore $t=0$ and
+$u=t^2+O(t^4)$, with distinct tangent lines.  At their intersection
+$DF$ has rank one but $\det(F_u,F_{tt})=0$, so the point is not an
+ordinary fold.  No finer singularity label is imposed here.
+\end{proof}
+
+\begin{definition}[Observation discriminant]
+\label{def:discriminant}
+The observation discriminant is
+\[
+\DiscF:=F\bigl(\operatorname{Crit}(F)\bigr)\subset\mathbb R^2.
+\]
+\end{definition}
+
+\begin{proposition}[Two critical components, two critical-value branches]
+\label{prop:discriminant}
+The symmetry component maps exactly to
+\[
+F(\Csym)=\{(N,M)=(0,m):0\leq m\leq1\}.
+\]
+The two signed arms of $\Crat$ have the same image because $F$ is even in
+$t$.  Writing $\delta=1-c$ along that image,
+\begin{align}
+u_{\mathrm{fold}}&=2\delta+O(\delta^3),\\
+N&=-3\delta^2+O(\delta^4),\\
+M&=1-3\delta+\frac32\delta^2+O(\delta^3).
+\end{align}
+Consequently the rational discriminant is tangent to the symmetry segment at
+$(N,M)=(0,1)$:
+\begin{equation}\label{eq:discriminant-contact}
+N=-\frac13(1-M)^2+O\bigl((1-M)^3\bigr).
+\end{equation}
+Its other physical endpoint is
+\[
+F(c_b,1)=
+\left(
+c_b^2-1,\
+-\frac{(1-c_b)^2(1+c_b)}{\sqrt{c_b(2-c_b)}}
+\right)
+\approx(-0.6241634482,-0.2619196638).
+\]
+\end{proposition}
+
+\begin{proof}
+At $t=0$, substitution in $N$ and $M$ gives $(0,1-u)$.  Evenness follows
+because $N$ and $M$ depend on $t$ only through $c=\cos t$ and $Q$.
+The displayed expansions follow from the exact $\delta$ expressions in the
+proof of \cref{thm:fold-types}.  Eliminating $\delta$ gives
+\eqref{eq:discriminant-contact}; setting $u=1$ gives the final endpoint.
+\end{proof}
+
+\begin{figure}[p]
+\centering
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=2 by 1,horizontal sep=1.5cm},
+  width=0.46\textwidth,
+  height=0.40\textwidth,
+  grid=major,
+  tick label style={font=\scriptsize},
+  label style={font=\small},
+  title style={font=\small}
+]
+\nextgroupplot[
+  title={full critical locus},
+  xlabel={$t$},ylabel={$u$},
+  xmin=-0.96,xmax=0.96,ymin=-0.03,ymax=1.06
+]
+  \addplot[Blue,very thick] coordinates {(0,0) (0,1)};
+  \addlegendentry{$\Csym$}
+  \addplot[Teal,very thick] table[x=t,y=u] {\CriticalTable};
+  \addplot[Teal,very thick] table[x expr=-\thisrow{t},y=u] {\CriticalTable};
+  \addlegendentry{$\Crat$}
+  \addplot[only marks,mark=*,mark size=2.7pt,Amber]
+    coordinates {(0,0)};
+\nextgroupplot[
+  title={observation discriminant},
+  xlabel={$N$},ylabel={$M$},
+  xmin=-0.68,xmax=0.05,ymin=-0.32,ymax=1.06
+]
+  \addplot[Blue,very thick] coordinates {(0,0) (0,1)};
+  \addlegendentry{$F(\Csym)$}
+  \addplot[Coral,very thick] table[x=N,y=M] {\CriticalTable};
+  \addlegendentry{$F(\Crat)$}
+  \addplot[only marks,mark=*,mark size=2.7pt,Amber]
+    coordinates {(0,1)};
+\end{groupplot}
+\end{tikzpicture}
+\caption{Left: the full critical locus contains the symmetry fold $\Csym$ and
+the two signed rational arms $\Crat$; they meet at the exceptional point
+(amber).  Right: the symmetry fold maps to a line segment, while both rational
+arms share one critical-value curve tangent to that segment at $(0,1)$.}
+\label{fig:critical-discriminant}
+\end{figure}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.9\textwidth,
+  height=6.2cm,
+  xmin=0.30,xmax=1.01,
+  ymin=0,ymax=1.12,
+  xlabel={$c=\cos t$},
+  ylabel={$u$},
+  grid=both,
+  grid style={gray!20},
+  legend style={at={(0.02,0.98)},anchor=north west,font=\small},
+  unbounded coords=jump
+]
+  \path[fill=Pale] (axis cs:\cb,0) rectangle (axis cs:1,1);
+  \addplot[gray!70,dashed,thick,domain=0.30:1,samples=100]
+    {(1-x)/2};
+  \addlegendentry{$\LN:\ u=(1-c)/2$}
+  \addplot[Coral,thick,domain=0.3476:1,samples=300,
+           restrict y to domain=0:1.12]
+    {ufold(x)};
+  \addlegendentry{algebraic continuation of $\Crat$}
+  \addplot[Teal,very thick,domain=\cb:1,samples=180]
+    {ufold(x)};
+  \addlegendentry{physical part of $\Crat$}
+  \addplot[Blue,densely dotted] coordinates {(\cb,0) (\cb,1.12)};
+  \node[Blue,anchor=south west,font=\small]
+    at (axis cs:\cb,0.03) {$c_b$};
+  \addplot[only marks,mark=*,mark size=2.5pt,Amber]
+    coordinates {(0.38196601125,0.30901699437)};
+  \node[Amber,anchor=south west,font=\scriptsize]
+    at (axis cs:0.38196601125,0.30901699437) {lateral zero};
+\end{axis}
+\end{tikzpicture}
+\caption{The component-zero curve $\LN$ and the rational critical component
+$\Crat$ are different.  The thick teal segment is the complete portion of
+$\Crat$ inside the parameter strip.  The symmetry component $\Csym$, visible
+in $(t,u)$ coordinates in \cref{fig:critical-discriminant}, collapses to the
+boundary line $c=1$ in this plot.}
+\label{fig:locus-audit}
+\end{figure}
+
+\clearpage
+\section{Spherical radial image of the rational component}
+
+\begin{definition}[Spherical radial fold map]\label{def:stokes-map}
+For $c\in[c_b,1]$, put $u=u_{\mathrm{fold}}(c)$ and define
+\begin{align}
+X(c)&=c+2u(1-c),\\
+Y_\pm(c)&=\pm(1-u)\sqrt{1-c^2},\\
+Z(c)&=u\sqrt{c(2-c)},\\
+R(c)&=\sqrt{X(c)^2+Y_\pm(c)^2+Z(c)^2}.
+\end{align}
+The two normalized branches are
+\begin{equation}\label{eq:corrected-stokes}
+\Phi_\pm(c):=\frac{1}{R(c)}
+\bigl(X(c),Y_\pm(c),Z(c)\bigr)\in S^2.
+\end{equation}
+\end{definition}
+
+The sign distinguishes $t>0$ and $t<0$; $R$ is independent of that sign.
+We use the conventional coordinate labels $(S_1,S_2,S_3)$ when plotting this
+unit vector on the Stokes--Poincar\'e sphere
+\cite{stokes1852,poincare1892}, but no Jones-vector identity is assumed.
+
+\begin{remark}[Three maps, no automatic bridge]\label{rem:three-maps}
+The observation discriminant $\DiscF\subset\mathbb R^2$, the radial map
+$\Phi=S/\lVert S\rVert$, and the Gauss map
+\[
+\nu=\frac{S_t\times S_u}{\lVert S_t\times S_u\rVert}
+\]
+are distinct constructions.  In particular, translating the surface changes
+$\Phi$ but leaves $F$, $\DiscF$ and $\nu$ unchanged.  Therefore neither a
+discriminant interpretation nor a polarization interpretation of $\Phi$
+follows from normalization alone.
+\end{remark}
+
+\begin{theorem}[Endpoints]\label{thm:endpoints}
+The two branches have common endpoints
+\begin{align}
+\Phi_\pm(1)&=(1,0,0),\\
+\Phi_\pm(c_b)&=
+\left(
+\sqrt{\frac{2-c_b}{2}},
+0,
+\sqrt{\frac{c_b}{2}}
+\right)\\
+&\approx(0.832749933396492,0,0.553649300937099).
+\end{align}
+\end{theorem}
+
+\begin{proof}
+At $c=1$, Proposition~\ref{prop:physical-fold} gives $u=0$, and
+\eqref{eq:surface} equals $(1,0,0)$.  At $c=c_b$, $u=1$, so
+$S=(2-c_b,0,\sqrt{c_b(2-c_b)})$.  Its squared norm is
+$2(2-c_b)$, which gives the displayed unit vector.
+\end{proof}
+
+\begin{theorem}[Regular radial starting point]\label{thm:regular-start}
+The spherical radial fold map is regular at $t=0$.  With $c=\cos t$ and the sign of
+$Y$ inherited from $t$,
+\begin{equation}\label{eq:start-expansion}
+\Phi(t)=
+\left(
+1-\frac{t^2}{2}+O(t^4),
+\ t+O(t^3),
+\ t^2+O(t^4)
+\right).
+\end{equation}
+Consequently
+\[
+\Phi'(0)=(0,1,0)\neq0.
+\]
+\end{theorem}
+
+\begin{proof}
+Expansion of \eqref{eq:true-fold} at $c=\cos t$ gives
+$u_{\mathrm{fold}}(\cos t)=t^2+O(t^4)$.  Substitution in
+\eqref{eq:surface}, followed by normalization, gives
+\eqref{eq:start-expansion}.
+\end{proof}
+
+\begin{remark}
+The former argument tested whether a one-dimensional curve surjects onto the
+two-dimensional tangent plane of $S^2$.  That is not the immersion
+criterion.  Rank one is maximal for a curve, and
+\cref{thm:regular-start} supplies the required nonzero derivative.
+\end{remark}
+
+\begin{figure}[p]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.78\textwidth,
+  height=8.2cm,
+  view={-52}{22},
+  xlabel={$S_1$},ylabel={$S_2$},zlabel={$S_3$},
+  xmin=0.80,xmax=1.01,
+  ymin=-0.46,ymax=0.46,
+  zmin=0,zmax=0.59,
+  grid=major,
+  legend style={at={(0.02,0.98)},anchor=north west,font=\small}
+]
+  \addplot3[Teal,very thick]
+    table[x=Sone,y=Stwo,z=Sthree] {\StokesTable};
+  \addlegendentry{$t>0$}
+  \addplot3[Coral,very thick]
+    table[x=Sone,y expr=-\thisrow{Stwo},z=Sthree] {\StokesTable};
+  \addlegendentry{$t<0$}
+  \addplot3[only marks,mark=*,mark size=2.8pt,Blue]
+    coordinates {(1,0,0)};
+  \addplot3[only marks,mark=*,mark size=2.8pt,Amber]
+    coordinates {(0.832749933396492,0,0.553649300937099)};
+\end{axis}
+\end{tikzpicture}
+\caption{Spherical radial image of the physical part of $\Crat$.  The two
+branches are mirror images across $S_2=0$ and share both the regular radial
+starting point (blue) and the parameter-boundary endpoint (amber).  This is
+not the planar discriminant shown in \cref{fig:critical-discriminant}.}
+\label{fig:stokes-3d}
+\end{figure}
+
+\begin{figure}[p]
+\centering
+\begin{tikzpicture}
+\begin{groupplot}[
+  group style={group size=3 by 1,horizontal sep=1.1cm},
+  width=0.31\textwidth,
+  height=0.31\textwidth,
+  grid=major,
+  tick label style={font=\scriptsize},
+  label style={font=\small},
+  title style={font=\small}
+]
+\nextgroupplot[
+  title={top view},
+  xlabel={$S_1$},ylabel={$S_2$},
+  xmin=0.80,xmax=1.01,ymin=-0.46,ymax=0.46
+]
+  \addplot[Teal,very thick]
+    table[x=Sone,y=Stwo] {\StokesTable};
+  \addplot[Coral,very thick]
+    table[x=Sone,y expr=-\thisrow{Stwo}] {\StokesTable};
+  \addplot[only marks,mark=*,Blue] coordinates {(1,0)};
+  \addplot[only marks,mark=*,Amber]
+    coordinates {(0.832749933396492,0)};
+\nextgroupplot[
+  title={front view},
+  xlabel={$S_1$},ylabel={$S_3$},
+  xmin=0.80,xmax=1.01,ymin=0,ymax=0.59
+]
+  \addplot[Teal,very thick]
+    table[x=Sone,y=Sthree] {\StokesTable};
+  \addplot[only marks,mark=*,Blue] coordinates {(1,0)};
+  \addplot[only marks,mark=*,Amber]
+    coordinates {(0.832749933396492,0.553649300937099)};
+\nextgroupplot[
+  title={side view},
+  xlabel={$S_2$},ylabel={$S_3$},
+  xmin=-0.46,xmax=0.46,ymin=0,ymax=0.59
+]
+  \addplot[Teal,very thick]
+    table[x=Stwo,y=Sthree] {\StokesTable};
+  \addplot[Coral,very thick]
+    table[x expr=-\thisrow{Stwo},y=Sthree] {\StokesTable};
+  \addplot[only marks,mark=*,Blue] coordinates {(0,0)};
+  \addplot[only marks,mark=*,Amber]
+    coordinates {(0,0.553649300937099)};
+\end{groupplot}
+\end{tikzpicture}
+\caption{Three orthogonal views of the spherical radial image.  These projections
+make the mirror symmetry and common endpoints visible without relying on a
+particular three-dimensional camera angle.}
+\label{fig:orthogonal-views}
+\end{figure}
+
+\clearpage
+\section{Boundary endpoint and third spherical component}
+
+Let $\mathcal C(c):=S_3(\Phi_+(c))=Z(c)/R(c)$.
+
+\begin{theorem}[Boundary maximum]\label{thm:boundary-maximum}
+On the physical fold interval $[c_b,1]$, $\mathcal C(c)$ decreases strictly
+with $c$.  Equivalently it increases from the regular start toward the
+parameter boundary.  Hence
+\begin{equation}
+\max_{c_b\leq c\leq1}\mathcal C(c)
+=\mathcal C(c_b)
+=\sqrt{\frac{c_b}{2}}
+\approx0.553649300937099.
+\end{equation}
+There is no interior critical point of the third spherical component on the
+physical part of $\Crat$.
+\end{theorem}
+
+\begin{proof}
+Writing $\mathcal C^2=A/R_{\mathrm{num}}$ with exact integer polynomials,
+direct differentiation gives
+\begin{equation}
+\frac{d}{dc}\mathcal C(c)^2
+=\frac{n(c)Q_{17}(c)}{R_{\mathrm{num}}(c)^2}.
+\end{equation}
+The polynomial $Q_{17}$ is given in
+\cref{app:certificate}.  Its Sturm variation is $9$ at both $613/1000$ and
+$1$, so it has no root on that interval; $Q_{17}(4/5)>0$.  Since
+$n(c)<0$ for $c_b<c<1$, the derivative is negative.  The endpoint value is
+Theorem~\ref{thm:endpoints}.
+\end{proof}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+  width=0.82\textwidth,
+  height=6cm,
+  xmin=0.60,xmax=1.01,
+  ymin=0,ymax=0.59,
+  xlabel={$c=\cos t$},
+  ylabel={$\mathcal C(c)=S_3$},
+  grid=both,
+  grid style={gray!20}
+]
+  \addplot[Teal,very thick]
+    table[x=c,y=Sthree] {\StokesTable};
+  \addplot[only marks,mark=*,mark size=2.8pt,Amber]
+    coordinates {(\cb,0.553649300937099)};
+  \addplot[Blue,densely dotted]
+    coordinates {(\cabs,0) (\cabs,0.59)};
+  \node[Blue,anchor=south west,font=\small]
+    at (axis cs:\cabs,0.03) {$c^{**}$};
+  \node[Amber,anchor=north west,font=\small]
+    at (axis cs:\cb,0.553649300937099) {boundary maximum};
+\end{axis}
+\end{tikzpicture}
+\caption{The third component of the spherical radial image.  The former
+critical value $c_{\mathrm{chiral}}\approx0.3103$ lies outside the physical
+interval and is therefore absent.  The dotted line marks the
+rational-critical-branch--skeleton intersection
+$c^{**}\approx0.673741$.  A circular-polarization interpretation is not
+assumed.}
+\label{fig:chirality}
+\end{figure}
+
+\begin{remark}[What this boundary is not]
+The point $u=1$ is a boundary point of the two-dimensional ruled-surface
+parameter strip.  The construction supplies neither a spinor bundle on
+$S^3$, a boundary Dirac operator, nor a self-adjoint boundary domain.
+Consequently it cannot by itself define an APS spectral projector.  Any such
+identification would be an additional bridge.
+\end{remark}
+
+\clearpage
+\section{Disposition of earlier claims}
+
+\begin{center}
+\begin{tabular}{@{}p{0.35\textwidth}p{0.55\textwidth}@{}}
+\toprule
+Earlier statement & Status in v5\\
+\midrule
+$u_*=(1-c)/2$ is the Whitney fold
+& False.  It is the component-zero curve $\LN$.\\
+The rational branch is the full locus $\{J_F=0\}$
+& False.  The symmetry component $\Csym$ was omitted.\\
+$\Phi=S/\lVert S\rVert$ is the observation discriminant
+& False without a bridge; the discriminant is $F(\operatorname{Crit}(F))$.\\
+The normalized curve is singular at $t=0$
+& False.  Its derivative is $(0,1,0)$.\\
+Endpoint $(2/\sqrt5,\pm1/\sqrt5,0)$
+& Belongs to the auxiliary $\LN$ curve, not the true fold.\\
+Irreducible chirality quintic
+& Describes an interior maximum of that auxiliary curve; it is outside the
+  physical true-fold interval.\\
+$\sqrt5$ endpoint thread
+& An identity for the auxiliary curve only; removed from the radial-fold
+  theorem.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The auxiliary $\LN$ construction can still be studied under its correct
+name, but none of its constants may be transferred to the observation
+discriminant or radial fold image without an additional theorem.
+
+\section{Conclusion}
+
+The observation map has a two-component critical locus.  The symmetry segment
+$\Csym$ consists of ordinary folds for $u>0$; the physical rational component
+$\Crat$ consists of ordinary folds away from its common initial point.  At
+$(0,0)$ the components meet, the Jacobian has the local factor
+$2t(u-t^2)$, and ordinary-fold regularity fails.  The discriminant is the
+union of a line segment and a rational critical-value curve with quadratic
+tangency at $(0,1)$.
+
+The separately defined spherical radial image retains the exact physical
+interval, endpoints, nonzero starting tangent and monotone third component
+proved in v4.  It is origin-dependent and is not identified with the
+observation discriminant or the Gauss map.  Thus no Jones, spinorial, quantum
+or APS conclusion follows from the present construction.  A future Hopf lift
+must first choose and justify which sphere map is being lifted.
+
+There remains one local singularity-theory problem.  Put $x=1-M$ and $y=t$.
+Since $x_u(0,0)=1$, $(x,y)$ are valid local source coordinates.  With weights
+$\operatorname{wt}(y)=1$ and $\operatorname{wt}(u)=2$, direct expansion gives
+\[
+x=u+\frac12y^2+O_{\mathrm w}(4),\qquad
+N=-uy^2+\frac14y^4+O_{\mathrm w}(6),
+\]
+and hence, after eliminating $u$,
+\[
+(x,N)=\left(x,-xy^2+\frac34y^4+O_{\mathrm w}(6)\right).
+\]
+Its displayed four-jet is equivalent by real rescalings to the specified
+jet $(x,xy^2+y^4)$ occurring in the plane-to-plane recognition problem
+\cite{kabata2016}.  This does not classify the full germ: the exact map is
+even under $t\mapsto-t$, and finite determinacy and the higher-jet recognition
+conditions remain to be checked.  The next well-posed problem is therefore an
+$\mathcal A$-classification, or a symmetry-preserving $\mathbb Z_2$
+classification, followed only then by a versal symmetry-breaking unfolding.
+
+\appendix
+\section{Exact verification certificate}\label{app:certificate}
+
+The companion file \texttt{verify\_stokes\_caustic\_v5.py} uses only the
+Python standard library.  It checks the exact Jacobian factors, the local
+$\delta=1-c$ expansions, the weighted map-germ jet, Sturm root counts, fold
+transversality, discriminant tangency, the physical interval, unit-sphere
+normalization, endpoint values, the nonzero radial starting derivative and
+third-component monotonicity.
+
+For reproducibility, the derivative factor in
+\cref{thm:boundary-maximum} is
+\[
+Q_{17}(c)=\sum_{j=0}^{17}q_jc^j,
+\]
+with coefficients in increasing order
+\[
+\begin{split}
+(q_0,\ldots,q_{17})={}&
+(0,-12,14,64,-346,856,-810,798,-4868,\\
+&14160,-21630,20432,-12800,5462,-1588,306,-36,2).
+\end{split}
+\]
+The exact Sturm counts used in the paper are
+\[
+\begin{array}{c|cc|c}
+\text{polynomial}&V(\text{left})&V(\text{right})&
+\text{roots in interval}\\
+\hline
+p_b,\ (0,1)&4&3&1\\
+R_7,\ (613/1000,1)&3&3&0\\
+Q_{17},\ (613/1000,1)&9&9&0.
+\end{array}
+\]
+
+\begin{thebibliography}{9}
+\bibitem{hayami2026surface}
+A.~Hayami (J.-Y.~Huang),
+``The orthogonal-circle ruled surface: Immersion theory, a topological
+dipole, and projection singularities,'' companion preprint, version of
+June 2026.
+
+\bibitem{whitney1955}
+H.~Whitney,
+``On singularities of mappings of Euclidean spaces. I. Mappings of the plane
+into the plane,''
+\emph{Annals of Mathematics}, vol.~62, no.~3, pp.~374--410, 1955,
+doi:10.2307/1970070.
+
+\bibitem{golubitsky1973}
+M.~Golubitsky and V.~Guillemin,
+\emph{Stable Mappings and Their Singularities}, Graduate Texts in
+Mathematics, vol.~14. Springer, 1973,
+doi:10.1007/978-1-4615-7904-5.
+
+\bibitem{kabata2016}
+Y.~Kabata,
+``Recognition of plane-to-plane map-germs,''
+\emph{Topology and its Applications}, vol.~202, pp.~216--238, 2016,
+doi:10.1016/j.topol.2016.01.011.
+
+\bibitem{stokes1852}
+G.~G.~Stokes,
+``On the composition and resolution of streams of polarized light from
+different sources,''
+\emph{Transactions of the Cambridge Philosophical Society}, vol.~9,
+pp.~399--416, 1852.
+
+\bibitem{poincare1892}
+H.~Poincar\'e,
+\emph{Th\'eorie Math\'ematique de la Lumi\`ere}, vol.~2.
+Gauthier--Villars, 1892.
+\end{thebibliography}
+
+\end{document}

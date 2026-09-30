@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "Please cite the specific paper or companion used, and cite this repository when relying on its verification infrastructure."
 title: "Hayami Mathematical Research"
-version: "0.03"
-date-released: 2026-09-13
+version: "0.04"
+date-released: 2026-09-30
 type: software
 authors:
   - family-names: "Hayami"
@@ -15,10 +15,9 @@ license:
 preferred-citation:
   type: software
   title: "Stokes caustic v5 Lean companion"
-  version: "0.03"
-  date-released: 2026-09-13
-  doi: "10.5281/zenodo.22735974"
-  url: "https://zenodo.org/records/22735974"
+  version: "0.04"
+  date-released: 2026-09-30
+  url: "https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.04"
   authors:
     - family-names: "Hayami"
       given-names: "Akari"

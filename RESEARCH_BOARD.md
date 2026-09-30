@@ -1,6 +1,6 @@
 # 共通研究留言板
 
-最後更新：2026-09-14 01:21 CST
+最後更新：2026-09-30 CST
 適用範圍：所有後續 Codex 窗口與本專案人工工作
 
 這是跨窗口的單一即時狀態入口。已確立成果看 `ESTABLISHED_WORKS.md`；研究分支看 `RESEARCH_DIRECTIONS.md`；對外工作看 `EXTERNAL_ACTIONS.md`；Lean 看 `LEAN_ROADMAP.md`。
@@ -9,8 +9,8 @@
 
 | 優先序 | 工作流 | 狀態 | 下一個原子任務 | 權威／驗證路徑 |
 | ---: | --- | --- | --- | --- |
-| 1 | Stokes v5 Lean 幾何橋 | `PUBLISHED / CRITERION LEVEL` | 若續研，另開 coordinate-level local-normal-form 研究；已發布版本保持不可變 | Zenodo version DOI `10.5281/zenodo.22735974`; concept DOI `10.5281/zenodo.22726976`; `EXTERNAL_ACTIONS.md` |
-| 2 | Stokes v5 Jacobian 與 Whitney fold | `COMPLETED / CRITERION LEVEL` | release wording 保留「未構造 local normal-form coordinates」邊界 | `companions/lean/stokes-caustic-v5/GEOMETRIC_CLOSURE_BOUNDARY.md`; `companions/lean/stokes-caustic-v5/StokesV5/WhitneyFold.lean` |
+| 1 | Stokes v5 Lean companion v0.04 | `LEAN PASS / RELEASE IN PROGRESS` | 新封包原位／解壓 replay 後發布 GitHub 與 Zenodo；Zenodo 須作者登入；v0.02／v0.03/PDF 不變 | `releases/candidates/stokes-caustic-v5-v0.04/`; `EXTERNAL_ACTIONS.md`; paper DOI `10.5281/zenodo.22728902` 不變 |
+| 2 | Stokes v5 全文已宣稱數學結果 | `COMPLETED / 258 PUBLIC THEOREMS` | actual ordinary-fold charts、exceptional no-fold/four-jet、物理 locus／discriminant／radial、展開、輔助 quintic、Sturm 表與有理数值界已證；open germ classification／unfolding 保留開放 | `companions/lean/stokes-caustic-v5/FULL_PAPER_COVERAGE.md`; `verify_lean.py` build/status/exhaustive axiom audit/proof-hole scan 全 PASS |
 | 3 | Inverse-Leibniz Papers I–III | `PUBLISHED / SEALED` | 保持 v0.09 不變；若要投 arXiv，先做 metadata 與分類核定 | `releases/current/submission-v0.09-zenodo/`; DOI 列於 `ESTABLISHED_WORKS.md` |
 | 4 | filtered-complex → Diophantine locus | `PLANNED / SEPARATE` | 固定來源類別、marking、metric、target torus 與 locus 定義 | `RESEARCH_DIRECTIONS.md` A1；目前尚無 theorem certificate |
 | 5 | Ruled surface v4 修正版 | `BLOCKED` | 選擇邊界 atlas 或明示 `Q>0` 限制，並改寫 Theorem 5.3 假設 | `papers/legacy-geometry/orthogonal-circle-ruled-surface/claims/LEDGER.md` |
@@ -38,10 +38,7 @@ local/cache/python/legacy-reconstruction-venv/bin/python -B \
 
 ```bash
 cd companions/lean/stokes-caustic-v5
-lake -q build StokesV5
-lake -q env lean StokesV5/Status.lean
-lake -q env lean StokesV5/Audit.lean
-rg -n '^[[:space:]]*sorry\b' StokesV5 StokesV5.lean
+python3 -B verify_lean.py
 ```
 
 ### Inverse-Leibniz illustrated releases
@@ -84,6 +81,8 @@ YYYY-MM-DD HH:MM | 工作流 | STATUS | 完成／失敗／阻擋摘要 | 驗證�
 
 ### 留言
 
+- 2026-09-30 | Stokes v5 全文已宣稱數學結果 | `LEAN PASS / 258 PUBLIC THEOREMS` | actual ordinary-fold charts、exceptional no-fold obstruction／ordinary four-jet、物理 locus/discriminant/radial、Big-O 展開、輔助 irreducible quintic／maximum、固定 Sturm 表／有理數值界均通過 exhaustive audit/build/status/proof-hole scan；原文 open germ classification／unfolding 仍開放。作者已授權獨立 v0.04 發布；paper PDF/DOI/v0.02/v0.03 不變。Zenodo v0.03 description Citation boundary 官方 API 回讀成功，504 blocker 關閉 | `companions/lean/stokes-caustic-v5/FULL_PAPER_COVERAGE.md`; `verify_lean.py`; `https://zenodo.org/api/records/22735974` | 新封包原位／解壓 replay 後發布 GitHub；Zenodo 需作者登入
+
 - 2026-09-14 01:21 | Citation boundary synchronization | `GitHub PASS / Zenodo VERIFY BLOCKED` | 根目錄 `CITATION.cff`、`README.md` 與 GitHub `stokes-v5-companion-v0.03` release body 已明確區分數學論文 DOI `10.5281/zenodo.22728902`、本版 Lean software DOI `10.5281/zenodo.22735974`、software concept DOI `10.5281/zenodo.22726976`；ResearchGate 維持既有正確的論文 DOI，不導入 software DOI。Zenodo v0.03 編輯頁顯示儲存成功，且已提交 Publish；但隨後公開頁與官方 API 均回傳 504，尚不能將 Zenodo 公開文字標為已驗證 | GitHub release `stokes-v5-companion-v0.03`; `https://zenodo.org/records/22735974`; `https://zenodo.org/api/records/22735974` | 待 Zenodo 恢復後，公開讀回 description，確認含 Citation boundary 段落，再關閉此待驗證項
 
 
@@ -100,6 +99,7 @@ YYYY-MM-DD HH:MM | 工作流 | STATUS | 完成／失敗／阻擋摘要 | 驗證�
 ## 不可跨越的聲明界線
 
 - Stokes v5 v0.02 不是完整 Whitney-fold theorem 的 Lean formalization。
+- 已發布 v0.03 保持 criterion-level；2026-09-30 全文覆蓋另屬 v0.04，不能追溯寫入既有封包或 DOI scope。原文 open germ classification／versal unfolding 不會因 four-jet 證明而自動成立。
 - v0.05/v0.06 是可重現的新構造，不是缺失歷史矩陣的復原。
 - v4 有已知邊界義務與 Theorem 5.3 counterexample。
 - v12 的 finite CAS checks 不證明 Green/Dirac/Pin/sheaf/operator-domain 結論。

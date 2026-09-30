@@ -1,6 +1,6 @@
 # 接下來要對外做的處理
 
-更新日期：2026-09-14
+更新日期：2026-09-30
 
 ## 已完成
 
@@ -35,9 +35,10 @@
 | ---: | --- | --- | --- | --- |
 | 1 | Zenodo 發布 Stokes v5 Lean companion v0.03 | `COMPLETED` | Zenodo version DOI `10.5281/zenodo.22735974`；concept DOI `10.5281/zenodo.22726976` | 官方 API `published`/`done`、三檔 MD5 與公開下載 SHA-256 已一致 |
 | 2 | 對 Papers I–III 規劃 arXiv 提交 | 作者確認分類、endorsement 與最後 metadata | `releases/current/submission-v0.09-zenodo/paper_*_v0_09_arxiv_source.zip`; `metadata/` | 每篇公開 arXiv 頁面、PDF、作者與 DOI relation 回讀一致 |
-| 3 | 統一 GitHub/Zenodo/ResearchGate 的引用文字 | GitHub/repository 已完成；Zenodo 公開讀回待驗證 | `CITATION.cff`; 各 release README | GitHub release body 與根目錄引用已區分 article DOI `10.5281/zenodo.22728902`、software DOI `10.5281/zenodo.22735974`、concept DOI `10.5281/zenodo.22726976`；ResearchGate 維持既有正確 article DOI。Zenodo 編輯已儲存並提交 Publish，但官方公開頁/API 回傳 504；恢復後讀回含 Citation boundary 的 description 才可結案。 |
+| 3 | 統一 GitHub/Zenodo/ResearchGate 的引用文字 | `COMPLETED / VERIFIED 2026-09-30` | `CITATION.cff`; 各 release README | Zenodo 官方 API 已恢復且公開 description 含 Citation boundary：paper `10.5281/zenodo.22728902`、software v0.03 `10.5281/zenodo.22735974`、concept `10.5281/zenodo.22726976`；先前 504 讀回 blocker 已關閉。ResearchGate paper DOI 不變。 |
 | 4 | 發布 v4 修正版 | v4 邊界 atlas 與 Theorem 5.3 修正通過 | v4 claim ledger 與 verifier | 新版本另立記錄；舊 v4 不覆寫，明列修正關係 |
 | 5 | 發布 v12 模組成果 | 每一模組通過其自身的數學審核 | v12 module index | 只發布已閉合模組；不宣稱整篇已重證 |
+| 6 | 發布 Stokes v5 Lean companion v0.04 | `AUTHORIZED / IN PROGRESS`；Zenodo browser 尚須登入 | `releases/candidates/stokes-caustic-v5-v0.04/`; `FULL_PAPER_COVERAGE.md` | 新版完整原位／解壓 replay、GitHub assets 及 Zenodo DOI/API/download 讀回。v0.02/v0.03/PDF 不改寫，paper DOI 不變，新 software DOI 不借用 v0.03。 |
 
 ## 外部狀態核對入口
 

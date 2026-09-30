@@ -1,6 +1,6 @@
 # Lean 完成與後續研究路線
 
-更新日期：2026-09-14
+更新日期：2026-09-30
 
 ## 目前基線
 
@@ -16,8 +16,12 @@
 - ordinary symmetry/rational branches 的 rank-one kernel 與 transversality；
 - exceptional common point 的 transversality failure；
 - plane-to-plane Whitney-fold Jacobian criterion 及兩 ordinary branches 的證書。
+- 兩 ordinary branches 的實際 `C∞` source／target local charts 與雙側 smooth inverses，將 map 化為 `(x,y^2)`；
+- 整個物理臨界集合／區間、exceptional source tangents、discriminant cubic contact error；
+- 實際球面 radial image 的 unit length、mirror symmetry、共同端點、非零起點導數、嚴格第三座標單調性與唯一邊界最大值。
+- 全文 Taylor／Big-O remainder、exceptional no-fold obstruction／ordinary four-jet／rescaling、固定 Sturm variations、輔助曲線 quintic／最大值與精確有理數值界。
 
-完整聲明與指令在 `companions/lean/stokes-caustic-v5/LEAN_STATUS.md`。已發布的 v0.02 封包保持不可變；新增定理進入工作 source，完成後另發 v0.03 或後續版本。
+全文逐項覆蓋在 `companions/lean/stokes-caustic-v5/FULL_PAPER_COVERAGE.md`；258 個公開定理的 audit/build/status 與 proof-hole scan 由 `verify_lean.py` 重播。已發布 v0.02／v0.03 保持不可變；新成果另封裝 v0.04。全文所列 open germ classification／versal unfolding 仍為開放問題。
 
 ## 第一優先：完成 Stokes v5 的幾何橋
 
@@ -28,10 +32,14 @@
 | L2. Jacobian factorization | `LEAN-PASSED` | 已完成 | `StokesV5/ObservationMap.lean` |
 | L3. Ordinary-branch hypotheses | `LEAN-PASSED` | 已完成 | `StokesV5/ObservationMap.lean`; `StokesV5/FoldGeometry.lean` |
 | L4. Exceptional common point | `LEAN-PASSED` | 已證 `(0,0)` 不滿足 fold criterion | `StokesV5/ObservationMap.lean`; `StokesV5/WhitneyFold.lean` |
-| L5. Plane-to-plane fold criterion | `LEAN-PASSED / CRITERION LEVEL` | 已定義 intrinsic Jacobian criterion 並套用兩 ordinary branches；未構造 `(x,y^2)` local coordinates | `StokesV5/WhitneyFold.lean` |
-| L6. v0.03 release | `PUBLISHED / VERIFIED` | GitHub 與 Zenodo assets 均已公開並 hash 回讀；若續研，另開 coordinate-level local-normal-form 研究 | Zenodo version DOI `10.5281/zenodo.22735974`; concept DOI `10.5281/zenodo.22726976`; `EXTERNAL_ACTIONS.md`; v0.02 未改寫 |
+| L5. Plane-to-plane fold criterion | `LEAN-PASSED / CRITERION LEVEL` | 已完成；更強座標結果見 L7 | `StokesV5/WhitneyFold.lean` |
+| L6. v0.03 release | `PUBLISHED / VERIFIED` | 保留原 criterion-level scope；不追溯加入後續定理 | Zenodo version DOI `10.5281/zenodo.22735974`; concept DOI `10.5281/zenodo.22726976`; `EXTERNAL_ACTIONS.md`; v0.02 未改寫 |
+| L7. Actual local normal forms | `LEAN-PASSED / WORKING SOURCE` | 已構造兩分支的 `(x,y^2)` source／target charts 與雙側局部 smooth inverses | `StokesV5/LocalNormalForm.lean`; `StokesV5/RationalCoordinates.lean`; `StokesV5/RationalNormalForm.lean` |
+| L8. Physical locus / discriminant / radial image | `LEAN-PASSED / WORKING SOURCE` | 已完成 theorem map 列出的主要幾何結論；後續發布為獨立作業 | `StokesV5/PhysicalLocus.lean`; `StokesV5/Discriminant.lean`; `StokesV5/RadialMonotonicity.lean`; `StokesV5/RadialGeometry.lean`; `COORDINATE_PROOFS.md` |
+| L9. Full asserted manuscript coverage | `LEAN-PASSED / WORKING SOURCE` | 逐項涵蓋定理、展開、four-jet、輔助 quintic、Sturm 表與數值界；不包含原文的開放研究問題 | `FULL_PAPER_COVERAGE.md`; `verify_lean.py` |
+| L10. v0.04 release | `AUTHORIZED / IN PROGRESS` | 新版封裝與解壓重播後發布；不覆寫 v0.03，不混用 paper/software DOI | `releases/candidates/stokes-caustic-v5-v0.04/`; `EXTERNAL_ACTIONS.md` |
 
-L1–L6 的本地 candidate、GitHub 與 Zenodo 發布均已完成；v0.03 的 Zenodo version DOI 為 `10.5281/zenodo.22735974`，concept DOI 維持 `10.5281/zenodo.22726976`。下一步若續研，另開 coordinate-level local-normal-form 研究線。
+L1–L6 公開發布已完成；v0.03 DOI 為 `10.5281/zenodo.22735974`，concept DOI 維持 `10.5281/zenodo.22726976`。L7–L9 本地證明完成。2026-09-30 作者已授權發布 v0.04；待新封包的完整重播與公開讀回後關閉 L10。
 
 ## 第二優先：下一批 Lean 候選
 
@@ -49,10 +57,7 @@ L1–L6 的本地 candidate、GitHub 與 Zenodo 發布均已完成；v0.03 的 Z
 從 `companions/lean/stokes-caustic-v5/` 執行：
 
 ```bash
-lake -q build StokesV5
-lake -q env lean StokesV5/Status.lean
-lake -q env lean StokesV5/Audit.lean
-rg -n '^[[:space:]]*sorry\b' StokesV5 StokesV5.lean
+python3 -B verify_lean.py
 ```
 
 完成一個里程碑後，同步更新：

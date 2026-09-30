@@ -15,7 +15,12 @@ All Codex windows follow the short routing rules in [`AGENTS.md`](AGENTS.md). Th
 ## Public releases
 
 - Repository: <https://github.com/Akari-H-111/hayami-mathematical-research>
-- Stokes caustic v5 Lean companion v0.03:
+- New Stokes caustic v5 Lean companion v0.04:
+  [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.04).
+  Covers all asserted mathematical results mapped in
+  [`FULL_PAPER_COVERAGE.md`](companions/lean/stokes-caustic-v5/FULL_PAPER_COVERAGE.md).
+  The new software version DOI is pending Zenodo publication; do not reuse v0.03's DOI.
+- Historical criterion-level Stokes caustic v5 Lean companion v0.03:
   [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.03) ·
   [Zenodo software DOI 10.5281/zenodo.22735974](https://doi.org/10.5281/zenodo.22735974)
 - Historical Stokes caustic v5 Lean companion v0.02:
@@ -54,10 +59,20 @@ local/cache/python/legacy-reconstruction-venv/bin/python -m pip install -r verif
 local/cache/python/legacy-reconstruction-venv/bin/python -B verification/legacy-reconstruction/verify_all.py
 ```
 
-The Stokes v5 Lean companion has its own replay entrypoint in:
-`releases/current/stokes-caustic-v5/package/verify.py`.
+The new Stokes v5 v0.04 companion's complete replay entrypoint is
+`releases/candidates/stokes-caustic-v5-v0.04/verify.py`.
+Its Lean-only exhaustive replay is
+`companions/lean/stokes-caustic-v5/verify_lean.py`.
+The historical v0.02 replay remains
+`releases/current/stokes-caustic-v5/verify.py`.
 
-The sealed v0.01 package remains unchanged in the local historical archive. The current v0.02 source additionally defines the real observation map and proves its Fréchet differentiability on the positive-`Q` chart. Lean certifies that analytic entry layer, finite algebra, and root barriers; CAS certifies the full Jacobian bridge; the general Whitney-fold theorem is not claimed as Lean-formalized.
+Sealed v0.01/v0.02/v0.03 remain unchanged. The new v0.04 adds actual smooth
+ordinary Whitney-fold charts, full physical locus/discriminant/radial results,
+displayed remainders, the exceptional no-fold obstruction and ordinary
+four-jet, auxiliary quintic/maximum, fixed Sturm data and rational bounds.
+All 258 public named theorems are axiom-audited. The paper's open full-germ
+classification/unfolding, plot samples and physical interpretations are
+excluded; no general Whitney/Morse or Sturm theorem is assumed.
 
 ## Provenance rules
 

@@ -1,0 +1,16 @@
+{
+  "release": "stokes_caustic_v5_lean_companion_v0_04_candidate",
+  "date": "2026-09-30",
+  "archive": "stokes_caustic_v5_lean_companion_v0_04_candidate.zip",
+  "archive_sha256": "6789042a046fc1f3f0f75610979fec3a7d8355179ab10549101f48265ad76244",
+  "archive_bytes": 413199,
+  "members": 52,
+  "authoritative_pdf_sha256": "4e48c805c1550dbaee9171a56264bf4ff5275ef5ff5b64f9cd116803283c11c0",
+  "zip_crc": "PASS",
+  "local_replay": "PASS",
+  "extracted_replay": "PASS",
+  "status": "LOCAL RELEASE CANDIDATE; NOT PUBLISHED",
+  "public_named_theorems": 258,
+  "scope": "Asserted final-v5 mathematical results mapped in formalization/FULL_PAPER_COVERAGE.md: actual ordinary Whitney-fold charts, full physical locus/discriminant, radial geometry, Taylor/Big-O remainders, exceptional no-fold obstruction and ordinary four-jet, auxiliary quintic/maximum, fixed Sturm data and rational enclosures. Open full exceptional-germ classification and versal unfolding, plot samples and physical interpretations are excluded.",
+  "license": "Apache-2.0 for code; CC-BY-4.0 for scholarly and documentation material; see LICENSE.md."
+}
