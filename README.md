@@ -16,10 +16,12 @@ All Codex windows follow the short routing rules in [`AGENTS.md`](AGENTS.md). Th
 
 - Repository: <https://github.com/Akari-H-111/hayami-mathematical-research>
 - New Stokes caustic v5 Lean companion v0.04:
-  [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.04).
+  [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.04) ·
+  [Zenodo software DOI 10.5281/zenodo.23057630](https://zenodo.org/records/23057630).
   Covers all asserted mathematical results mapped in
   [`FULL_PAPER_COVERAGE.md`](companions/lean/stokes-caustic-v5/FULL_PAPER_COVERAGE.md).
-  The new software version DOI is pending Zenodo publication; do not reuse v0.03's DOI.
+  Published on both platforms; public API/download hashes match the sealed assets.
+  The assigned DOI's `doi.org` resolution is not yet verified; use the Zenodo record link above.
 - Historical criterion-level Stokes caustic v5 Lean companion v0.03:
   [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.03) ·
   [Zenodo software DOI 10.5281/zenodo.22735974](https://doi.org/10.5281/zenodo.22735974)

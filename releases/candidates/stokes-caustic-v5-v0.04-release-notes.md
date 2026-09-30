@@ -26,8 +26,9 @@ assumed. Ordinary boundary folds are ambient-extension statements.
 
 Citation boundary: cite the mathematical paper using
 [paper DOI 10.5281/zenodo.22728902](https://doi.org/10.5281/zenodo.22728902).
-Cite this **software v0.04** via this versioned release and its own new DOI
-when assigned. The software concept DOI is
+Cite this **software v0.04** using
+[software DOI 10.5281/zenodo.23057630](https://zenodo.org/records/23057630).
+The software concept DOI is
 [10.5281/zenodo.22726976](https://doi.org/10.5281/zenodo.22726976).
 Do not cite v0.03 software DOI 10.5281/zenodo.22735974 as v0.04 or as the paper.
 
@@ -44,4 +45,8 @@ v0.04 ZIP SHA-256:
 
 v0.02/v0.03 archives, receipts and manifests are unchanged. The attached ZIP
 and sealing receipt report the original local and independently extracted
-replays; publication itself is verified separately on the public platform.
+replays; publication itself is verified separately on both public platforms.
+Zenodo record `23057630` is public as Software, version `0.04`, under the
+unchanged concept. Its official API and all three public download SHA-256
+values match the sealed assets. The new DOI's `doi.org` resolution is not yet
+verified (initial HTTP 404); the direct Zenodo record link above is available.

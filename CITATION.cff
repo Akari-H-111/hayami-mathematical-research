@@ -17,7 +17,8 @@ preferred-citation:
   title: "Stokes caustic v5 Lean companion"
   version: "0.04"
   date-released: 2026-09-30
-  url: "https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.04"
+  doi: "10.5281/zenodo.23057630"
+  url: "https://zenodo.org/records/23057630"
   authors:
     - family-names: "Hayami"
       given-names: "Akari"

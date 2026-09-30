@@ -64,7 +64,7 @@ full-germ classification/unfolding or physical/spinorial interpretations.
 
 There is no remaining coordinate-level proof blocker for the ordinary
 branches. The new v0.04 is sealed, independently replayed and published on
-GitHub with API/download hash readback. Its Zenodo publication requires
-author login; this is an external prerequisite, not a missing mathematical
-proof. Do not overwrite v0.02, v0.03,
-their receipts/manifests, or the authoritative PDF.
+GitHub and Zenodo with API/download hash readback. Zenodo record `23057630`
+has software DOI `10.5281/zenodo.23057630`; only its `doi.org` resolution
+remains unverified, not the publication or a mathematical proof.
+Do not overwrite v0.02, v0.03, their receipts/manifests, or the authoritative PDF.

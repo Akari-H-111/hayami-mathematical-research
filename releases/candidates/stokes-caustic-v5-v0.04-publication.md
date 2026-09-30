@@ -1,6 +1,7 @@
-# Stokes v5 v0.04 publication / Zenodo handoff
+# Stokes v5 v0.04 publication verification
 
-2026-09-30. GitHub **published and verified**; Zenodo **login required**.
+2026-09-30. GitHub and Zenodo **published / API+download verified**.
+The assigned Zenodo DOI's `doi.org` resolution is still unverified.
 This is a mutable external-state record, separate from the sealed payload.
 
 GitHub release:
@@ -22,25 +23,33 @@ GitHub release:
 | `stokes_caustic_v5_lean_companion_v0_04_candidate_receipt.json` | 1117 | `77bd10329e704ea191e1cbac11d6b55b54ad344bda2aa6cb5afdc022f22a22c6` |
 | `The_Stokes_Caustic_of_the_Orthogonal_Circle_Ruled_Surface_v5.pdf` | 316335 | `4e48c805c1550dbaee9171a56264bf4ff5275ef5ff5b64f9cd116803283c11c0` |
 
-## Remaining external step
+## Zenodo public readback
 
-The browser is at <https://zenodo.org/login/?next=/records/22735974> and is
-not authenticated. The author must log in to the existing owning account.
-No v0.04 Zenodo draft or DOI has yet been created; do not report publication
-or invent a new DOI.
+The author-login handoff is resolved. **New version** of the owning v0.03
+record produced the public record <https://zenodo.org/records/23057630>.
+The official API <https://zenodo.org/api/records/23057630> reports:
 
-After login, use **New version** from the owning v0.03 record
-<https://zenodo.org/records/22735974>, preserving software concept DOI
-`10.5281/zenodo.22726976`. Upload the three sealed assets above, set version
-`0.04`, publication date `2026-09-30`, and use the scope/citation boundary in
-`stokes-caustic-v5-v0.04-release-notes.md`. Do not replace v0.03 files.
-Publish under the existing software record type/ownership and verify the
-official public API, version DOI, metadata and all public download hashes.
-Then update root citation/README/board and the GitHub release body with the
-new software DOI, without resealing or changing the archived payload.
+- `state=done`, `submitted=true`, resource type `software`, version `0.04`;
+- title `Stokes caustic v5 Lean companion`, author Hayami, Akari;
+- publication date `2026-09-30`;
+- assigned version DOI `10.5281/zenodo.23057630` and unchanged concept DOI
+  `10.5281/zenodo.22726976`;
+- the three files/byte counts above, all publicly downloaded SHA-256 values
+  matching the sealed assets and API MD5 checksums;
+- public description containing the full statement-level scope, open-germ
+  boundary and separate paper/software citation identifiers;
+- preserved CC-BY-4.0 scholarly/documentation and Apache-2.0 code licenses.
+
+Initial `https://doi.org/10.5281/zenodo.23057630` readback returned HTTP 404.
+DOI resolution is therefore **pending verification**, not a publication
+failure: the Zenodo public record/API/downloads are already available. Do
+not create another version or change the assigned DOI to resolve this.
+Root citation/README/board and the GitHub v0.04 release notes use the assigned
+software DOI with the available direct Zenodo record link. The sealed ZIP,
+receipt, payload manifests and archived citation snapshot are not resealed.
 
 Paper DOI stays `10.5281/zenodo.22728902`; v0.03 software DOI stays
-`10.5281/zenodo.22735974`. v0.04 must receive its own software version DOI.
+`10.5281/zenodo.22735974`. v0.04 software DOI is `10.5281/zenodo.23057630`.
 No ResearchGate paper DOI change is needed. The former v0.03 citation-text
 504 blocker is closed: its official API now publicly contains Citation
 boundary and the correct separate identifiers.

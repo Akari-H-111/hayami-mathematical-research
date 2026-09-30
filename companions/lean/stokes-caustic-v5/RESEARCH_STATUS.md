@@ -76,7 +76,10 @@ rebuilt for alignment verification.
 No mathematical blocker remains for the asserted v5 results in the coverage
 map. The separate v0.04 has passed sealing, independent extracted complete
 replay and GitHub public API/download readback of all three assets. GitHub
-release `stokes-v5-companion-v0.04` is public. Zenodo's new version/DOI is
-pending author login; no new DOI has been invented or borrowed from v0.03.
+release `stokes-v5-companion-v0.04` and Zenodo record `23057630` are public.
+Zenodo assigned software version DOI `10.5281/zenodo.23057630` under the same
+concept; its public API and all three downloaded SHA-256 values match the
+sealed assets. The assigned DOI's `doi.org` resolution is not yet verified
+(initial HTTP 404); the direct Zenodo record is available. No v0.03 DOI is reused.
 The authoritative PDF and v0.02/v0.03 stay unchanged. Current external state:
 `releases/candidates/stokes-caustic-v5-v0.04-publication.md`.

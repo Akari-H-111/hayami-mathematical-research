@@ -2,7 +2,9 @@
 
 Verified: 2026-09-30. This working extension is not part of the immutable,
 published criterion-level v0.03 archive. The separately sealed v0.04 is now
-published on GitHub; its Zenodo version is pending author login.
+published on GitHub and Zenodo (record `23057630`, software version DOI
+`10.5281/zenodo.23057630`). Public API/download hashes match the sealed assets;
+the assigned DOI's `doi.org` resolution is not yet verified.
 
 Toolchain: Lean `4.33.1`, Lake `5.0.0`, Mathlib `v4.33.1`.
 
