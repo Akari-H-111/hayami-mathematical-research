@@ -1,7 +1,8 @@
 # Lean status: Stokes caustic v5 manuscript coverage
 
 Verified: 2026-09-30. This working extension is not part of the immutable,
-published criterion-level v0.03 archive.
+published criterion-level v0.03 archive. The separately sealed v0.04 is now
+published on GitHub; its Zenodo version is pending author login.
 
 Toolchain: Lean `4.33.1`, Lake `5.0.0`, Mathlib `v4.33.1`.
 

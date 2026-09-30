@@ -13,6 +13,7 @@
 - Stokes v5 final preprint：`10.5281/zenodo.22728902`。
 - Stokes v5 Lean companion v0.02：GitHub release `stokes-v5-companion-v0.02` 與 software DOI `10.5281/zenodo.22726977`。
 - Stokes v5 Lean companion v0.03：GitHub release `stokes-v5-companion-v0.03` 與 Zenodo version record `22735974` 已公開；software version DOI 為 `10.5281/zenodo.22735974`，沿用 concept DOI `10.5281/zenodo.22726976`。官方 API 的三檔與公開下載 SHA-256 已回讀一致。
+- Stokes v5 Lean companion v0.04：GitHub release `stokes-v5-companion-v0.04` 已公開，三檔下載與 API SHA-256 digest 均與封存一致；Zenodo 新 version 尚待作者登入，未建立／發布新 DOI。記錄見 `releases/candidates/stokes-caustic-v5-v0.04-publication.md`。
 - ResearchGate final-v5 新 Preprint 條目：`https://www.researchgate.net/publication/414264187_Observation_Discriminant_and_Spherical_Fold_Image_of_the_Orthogonal-Circle_Ruled_Surface`；新條目公開顯示 final-v5 PDF 與論文 DOI `10.5281/zenodo.22728902`，舊條目保留 ResearchGate DOI `10.13140/RG.2.2.23759.04006`。
 
 這些 DOI 的類型不同：個別 preprint、共同材料、數學論文與 software companion 不可互相代替。
@@ -38,7 +39,7 @@
 | 3 | 統一 GitHub/Zenodo/ResearchGate 的引用文字 | `COMPLETED / VERIFIED 2026-09-30` | `CITATION.cff`; 各 release README | Zenodo 官方 API 已恢復且公開 description 含 Citation boundary：paper `10.5281/zenodo.22728902`、software v0.03 `10.5281/zenodo.22735974`、concept `10.5281/zenodo.22726976`；先前 504 讀回 blocker 已關閉。ResearchGate paper DOI 不變。 |
 | 4 | 發布 v4 修正版 | v4 邊界 atlas 與 Theorem 5.3 修正通過 | v4 claim ledger 與 verifier | 新版本另立記錄；舊 v4 不覆寫，明列修正關係 |
 | 5 | 發布 v12 模組成果 | 每一模組通過其自身的數學審核 | v12 module index | 只發布已閉合模組；不宣稱整篇已重證 |
-| 6 | 發布 Stokes v5 Lean companion v0.04 | `AUTHORIZED / IN PROGRESS`；Zenodo browser 尚須登入 | `releases/candidates/stokes-caustic-v5-v0.04/`; `FULL_PAPER_COVERAGE.md` | 新版完整原位／解壓 replay、GitHub assets 及 Zenodo DOI/API/download 讀回。v0.02/v0.03/PDF 不改寫，paper DOI 不變，新 software DOI 不借用 v0.03。 |
+| 6 | 發布 Stokes v5 Lean companion v0.04 | `GITHUB PUBLISHED / VERIFIED; ZENODO LOGIN REQUIRED` | `releases/candidates/stokes-caustic-v5-v0.04-publication.md` | 原位／解壓 replay 與 GitHub 三檔 API+download SHA-256 全 PASS。登入 Zenodo 後從 v0.03 建立同 concept 的 new version、上傳三檔並發布／核對新 software DOI。paper DOI 與舊版本不變。 |
 
 ## 外部狀態核對入口
 

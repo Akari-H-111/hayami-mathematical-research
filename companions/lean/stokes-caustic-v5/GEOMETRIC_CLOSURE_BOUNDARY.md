@@ -63,7 +63,8 @@ full-germ classification/unfolding or physical/spinorial interpretations.
 ## Next research line
 
 There is no remaining coordinate-level proof blocker for the ordinary
-branches. Separately packaging these working results is the next release
-action, not a missing mathematical proof. The author has authorized a new
-v0.04 publication. Do not overwrite v0.02, v0.03,
+branches. The new v0.04 is sealed, independently replayed and published on
+GitHub with API/download hash readback. Its Zenodo publication requires
+author login; this is an external prerequisite, not a missing mathematical
+proof. Do not overwrite v0.02, v0.03,
 their receipts/manifests, or the authoritative PDF.

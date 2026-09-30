@@ -9,7 +9,7 @@
 
 | 優先序 | 工作流 | 狀態 | 下一個原子任務 | 權威／驗證路徑 |
 | ---: | --- | --- | --- | --- |
-| 1 | Stokes v5 Lean companion v0.04 | `LEAN PASS / RELEASE IN PROGRESS` | 新封包原位／解壓 replay 後發布 GitHub 與 Zenodo；Zenodo 須作者登入；v0.02／v0.03/PDF 不變 | `releases/candidates/stokes-caustic-v5-v0.04/`; `EXTERNAL_ACTIONS.md`; paper DOI `10.5281/zenodo.22728902` 不變 |
+| 1 | Stokes v5 Lean companion v0.04 | `GITHUB PUBLISHED / VERIFIED; ZENODO LOGIN REQUIRED` | 原位／解壓完整 replay 及 GitHub 三檔 API+download SHA-256 已 PASS；作者登入後建立 Zenodo 同 concept 的 new version／新 software DOI | `releases/candidates/stokes-caustic-v5-v0.04-publication.md`; `EXTERNAL_ACTIONS.md`; paper DOI `10.5281/zenodo.22728902` 不變 |
 | 2 | Stokes v5 全文已宣稱數學結果 | `COMPLETED / 258 PUBLIC THEOREMS` | actual ordinary-fold charts、exceptional no-fold/four-jet、物理 locus／discriminant／radial、展開、輔助 quintic、Sturm 表與有理数值界已證；open germ classification／unfolding 保留開放 | `companions/lean/stokes-caustic-v5/FULL_PAPER_COVERAGE.md`; `verify_lean.py` build/status/exhaustive axiom audit/proof-hole scan 全 PASS |
 | 3 | Inverse-Leibniz Papers I–III | `PUBLISHED / SEALED` | 保持 v0.09 不變；若要投 arXiv，先做 metadata 與分類核定 | `releases/current/submission-v0.09-zenodo/`; DOI 列於 `ESTABLISHED_WORKS.md` |
 | 4 | filtered-complex → Diophantine locus | `PLANNED / SEPARATE` | 固定來源類別、marking、metric、target torus 與 locus 定義 | `RESEARCH_DIRECTIONS.md` A1；目前尚無 theorem certificate |
@@ -31,7 +31,7 @@ local/cache/python/legacy-reconstruction-venv/bin/python -B \
 
 ```bash
 local/cache/python/legacy-reconstruction-venv/bin/python -B \
-  releases/current/stokes-caustic-v5/verify.py
+  releases/candidates/stokes-caustic-v5-v0.04/verify.py
 ```
 
 ### Stokes v5 working Lean source
@@ -80,6 +80,8 @@ YYYY-MM-DD HH:MM | 工作流 | STATUS | 完成／失敗／阻擋摘要 | 驗證�
 ```
 
 ### 留言
+
+- 2026-09-30 | Stokes v5 Lean companion v0.04 發布交接 | `GITHUB PASS / ZENODO LOGIN REQUIRED` | 新封包兩輪完整 replay、258 公開定理 exhaustive audit、52-member ZIP CRC、source alignment .982321 均 PASS；GitHub 非 draft/prerelease，三公開下載 SHA-256 與 API digest／本地封存一致。未建立 Zenodo 新 draft/DOI，停在既有 owner 登入前；原文 open germ classification／unfolding 仍未宣稱 | `https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.04`; `releases/candidates/stokes-caustic-v5-v0.04-publication.md` | 作者登入 `https://zenodo.org/login/?next=/records/22735974` 後，建立 v0.04 new version，發布並核對新 DOI/metadata/download；不重封裝或改舊版本
 
 - 2026-09-30 | Stokes v5 全文已宣稱數學結果 | `LEAN PASS / 258 PUBLIC THEOREMS` | actual ordinary-fold charts、exceptional no-fold obstruction／ordinary four-jet、物理 locus/discriminant/radial、Big-O 展開、輔助 irreducible quintic／maximum、固定 Sturm 表／有理數值界均通過 exhaustive audit/build/status/proof-hole scan；原文 open germ classification／unfolding 仍開放。作者已授權獨立 v0.04 發布；paper PDF/DOI/v0.02/v0.03 不變。Zenodo v0.03 description Citation boundary 官方 API 回讀成功，504 blocker 關閉 | `companions/lean/stokes-caustic-v5/FULL_PAPER_COVERAGE.md`; `verify_lean.py`; `https://zenodo.org/api/records/22735974` | 新封包原位／解壓 replay 後發布 GitHub；Zenodo 需作者登入
 

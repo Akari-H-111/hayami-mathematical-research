@@ -69,10 +69,14 @@ The original criterion-level line remains checked:
 The stronger coordinate-level line is now checked in the working source,
 but is not retroactively attributed to v0.03. The 2026-09-30 local replay
 passes build, status checks, the public-theorem axiom audit, and the no-`sorry`
-scan; the exact geometry and Sturm verifiers also pass. No PDF was recompiled
-and no external release or DOI metadata was modified in this task.
+scan; the exact geometry and Sturm verifiers also pass. The authoritative PDF
+was not recompiled or changed. Only isolated recovered-source copies were
+rebuilt for alignment verification.
 
 No mathematical blocker remains for the asserted v5 results in the coverage
-map. The author has authorized a separate v0.04 release. Sealing, independent
-extracted replay and public readback remain required before publication is
-marked complete. The authoritative PDF and v0.02/v0.03 stay unchanged.
+map. The separate v0.04 has passed sealing, independent extracted complete
+replay and GitHub public API/download readback of all three assets. GitHub
+release `stokes-v5-companion-v0.04` is public. Zenodo's new version/DOI is
+pending author login; no new DOI has been invented or borrowed from v0.03.
+The authoritative PDF and v0.02/v0.03 stay unchanged. Current external state:
+`releases/candidates/stokes-caustic-v5-v0.04-publication.md`.

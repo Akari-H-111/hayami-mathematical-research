@@ -37,9 +37,9 @@
 | L7. Actual local normal forms | `LEAN-PASSED / WORKING SOURCE` | 已構造兩分支的 `(x,y^2)` source／target charts 與雙側局部 smooth inverses | `StokesV5/LocalNormalForm.lean`; `StokesV5/RationalCoordinates.lean`; `StokesV5/RationalNormalForm.lean` |
 | L8. Physical locus / discriminant / radial image | `LEAN-PASSED / WORKING SOURCE` | 已完成 theorem map 列出的主要幾何結論；後續發布為獨立作業 | `StokesV5/PhysicalLocus.lean`; `StokesV5/Discriminant.lean`; `StokesV5/RadialMonotonicity.lean`; `StokesV5/RadialGeometry.lean`; `COORDINATE_PROOFS.md` |
 | L9. Full asserted manuscript coverage | `LEAN-PASSED / WORKING SOURCE` | 逐項涵蓋定理、展開、four-jet、輔助 quintic、Sturm 表與數值界；不包含原文的開放研究問題 | `FULL_PAPER_COVERAGE.md`; `verify_lean.py` |
-| L10. v0.04 release | `AUTHORIZED / IN PROGRESS` | 新版封裝與解壓重播後發布；不覆寫 v0.03，不混用 paper/software DOI | `releases/candidates/stokes-caustic-v5-v0.04/`; `EXTERNAL_ACTIONS.md` |
+| L10. v0.04 release | `GITHUB PUBLISHED / VERIFIED; ZENODO LOGIN REQUIRED` | 已封存／原位與解壓 replay／三檔公開 SHA-256 讀回通過；登入後建立 Zenodo 同 concept 的 new version | `releases/candidates/stokes-caustic-v5-v0.04-publication.md`; `EXTERNAL_ACTIONS.md` |
 
-L1–L6 公開發布已完成；v0.03 DOI 為 `10.5281/zenodo.22735974`，concept DOI 維持 `10.5281/zenodo.22726976`。L7–L9 本地證明完成。2026-09-30 作者已授權發布 v0.04；待新封包的完整重播與公開讀回後關閉 L10。
+L1–L6 公開發布已完成；v0.03 DOI 為 `10.5281/zenodo.22735974`，concept DOI 維持 `10.5281/zenodo.22726976`。L7–L9 證明已隨 GitHub v0.04 公開；完整重播與公開下載讀回均通過。L10 只餘作者登入後的 Zenodo 新版 DOI 發布與核對。
 
 ## 第二優先：下一批 Lean 候選
 
