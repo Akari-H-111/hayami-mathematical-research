@@ -1,0 +1,47 @@
+{
+  "status": "GITHUB PUBLISHED / PUBLIC API+PAGE+DOWNLOAD VERIFIED",
+  "checked_utc": "2026-10-01T01:09:37.334543+00:00",
+  "tag": "ruled-surface-v5-companion-v0.03",
+  "commit": "1caae5c9add976d9698f019be56c9f0b6ff6fa1b",
+  "url": "https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/ruled-surface-v5-companion-v0.03",
+  "published_at": "2026-10-01T01:08:51Z",
+  "draft": false,
+  "prerelease": false,
+  "assets": [
+    {
+      "name": "ruled-surface-v5-v0.03-source-receipt.json",
+      "bytes": 2388,
+      "sha256": "b6bd66014f2e801bdcf901b70f9488fc1e7f040db8a31cce38b103d0e6eae29c",
+      "api_digest": "sha256:b6bd66014f2e801bdcf901b70f9488fc1e7f040db8a31cce38b103d0e6eae29c",
+      "url": "https://github.com/Akari-H-111/hayami-mathematical-research/releases/download/ruled-surface-v5-companion-v0.03/ruled-surface-v5-v0.03-source-receipt.json",
+      "unauthenticated_download": "PASS"
+    },
+    {
+      "name": "ruled-surface-v5-v0.03-source-SHA256SUMS.txt",
+      "bytes": 8423,
+      "sha256": "df4f95282b15ce4a6f9d11cac452b66a3d5d65f689803dbd0f43256a0a8aba64",
+      "api_digest": "sha256:df4f95282b15ce4a6f9d11cac452b66a3d5d65f689803dbd0f43256a0a8aba64",
+      "url": "https://github.com/Akari-H-111/hayami-mathematical-research/releases/download/ruled-surface-v5-companion-v0.03/ruled-surface-v5-v0.03-source-SHA256SUMS.txt",
+      "unauthenticated_download": "PASS"
+    },
+    {
+      "name": "ruled-surface-v5-v0.03-source.zip",
+      "bytes": 216917,
+      "sha256": "40da570c30257f6bc060ecf173416946229d26420acd252ba185bd4e16119e0c",
+      "api_digest": "sha256:40da570c30257f6bc060ecf173416946229d26420acd252ba185bd4e16119e0c",
+      "url": "https://github.com/Akari-H-111/hayami-mathematical-research/releases/download/ruled-surface-v5-companion-v0.03/ruled-surface-v5-v0.03-source.zip",
+      "unauthenticated_download": "PASS"
+    }
+  ],
+  "pdf_assets": [],
+  "article_pdf_publication": "Held for reader-facing language/layout/paragraph/figure review and final artifact confirmation",
+  "doi_roles": {
+    "article": null,
+    "software_version": null,
+    "software_concept": null
+  },
+  "immutable_full_local_candidate_zip_sha256": "a080ab8b8a9dd403a8f4279ad6ef505044dadd030b3d6be5036f8debd620da7f",
+  "authorization": "Author explicitly requested GitHub publication first on 2026-10-01; supersedes earlier GitHub exclusion.",
+  "public_api_unauthenticated": true,
+  "public_page_http_200": true
+}

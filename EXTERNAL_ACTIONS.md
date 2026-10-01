@@ -1,8 +1,10 @@
 # 接下來要對外做的處理
 
-更新日期：2026-09-30
+更新日期：2026-10-01
 
 ## 已完成
+
+- Ruled surface v5 verification companion v0.03：GitHub `ruled-surface-v5-companion-v0.03` 已公開（software/source-only，沒有新 PDF）。公開 API／頁面及三檔免登入下載 SHA-256／API digest 一致；224 own／258 依賴 audit、source-only 原位／解壓重播 PASS。公開紀錄見 `releases/candidates/ruled-surface-v5-v0.03-github-publication.json`。作者指定後續先檢閱論文的自然語言、段落、版面與圖片引導，再提 ResearchGate／Zenodo PDF 發布；新 DOI 尚未指派。
 
 - 公開 GitHub repository：`https://github.com/Akari-H-111/hayami-mathematical-research`。
 - Inverse-Leibniz Papers I–III 的 Zenodo preprint DOI 已發布：
@@ -37,7 +39,7 @@
 | 1 | Zenodo 發布 Stokes v5 Lean companion v0.03 | `COMPLETED` | Zenodo version DOI `10.5281/zenodo.22735974`；concept DOI `10.5281/zenodo.22726976` | 官方 API `published`/`done`、三檔 MD5 與公開下載 SHA-256 已一致 |
 | 2 | 對 Papers I–III 規劃 arXiv 提交 | 作者確認分類、endorsement 與最後 metadata | `releases/current/submission-v0.09-zenodo/paper_*_v0_09_arxiv_source.zip`; `metadata/` | 每篇公開 arXiv 頁面、PDF、作者與 DOI relation 回讀一致 |
 | 3 | 統一 GitHub/Zenodo/ResearchGate 的引用文字 | `COMPLETED / VERIFIED 2026-09-30` | `CITATION.cff`; 各 release README | 最新 software v0.04 為 `10.5281/zenodo.23057630`；paper `10.5281/zenodo.22728902`、歷史 software v0.03 `10.5281/zenodo.22735974`、concept `10.5281/zenodo.22726976` 不變。Zenodo 公開 description 含 Citation boundary；ResearchGate paper DOI 不變。 |
-| 4 | 發布 v4 修正版 | v4 邊界 atlas 與 Theorem 5.3 修正通過 | v4 claim ledger 與 verifier | 新版本另立記錄；舊 v4 不覆寫，明列修正關係 |
+| 4 | Ruled v5 PDF 發布前的讀者檢閱 | `GITHUB SOURCE PUBLISHED / PDF EDITORIAL REVIEW` | 224 own／258 依賴已驗證，完整本地 v0.03 候選不改；來源 release 已回讀 | 先完成語言／段落／版面／圖片引導檢閱及新 PDF QA/hash/replay，最終 artifacts 核准後才發 ResearchGate／Zenodo；舊 v4 不覆寫 |
 | 5 | 發布 v12 模組成果 | 每一模組通過其自身的數學審核 | v12 module index | 只發布已閉合模組；不宣稱整篇已重證 |
 | 6 | 發布 Stokes v5 Lean companion v0.04 | `PUBLISHED / API+DOWNLOAD VERIFIED; DOI RESOLUTION PENDING` | `releases/candidates/stokes-caustic-v5-v0.04-publication.md`; `https://zenodo.org/records/23057630` | 原位／解壓 replay、兩平台公開 API／三檔 SHA-256 全 PASS。新 software DOI 已指派；只待 `doi.org` 解析回讀，不重發或更換 DOI。paper DOI 與舊版本不變。 |
 
