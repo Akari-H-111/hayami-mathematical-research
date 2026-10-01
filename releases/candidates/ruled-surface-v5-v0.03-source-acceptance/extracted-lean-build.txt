@@ -1,0 +1,227 @@
+⚠ [8712/8742] Replayed StokesV5.LocalNormalForm
+warning: StokesV5/LocalNormalForm.lean:114:8: `ext` did not consume the patterns `v`
+
+Note: This linter can be disabled with `set_option linter.unusedRCasesPattern false`
+warning: StokesV5/LocalNormalForm.lean:122:30: `ext` did not consume the patterns `v`
+
+Note: This linter can be disabled with `set_option linter.unusedRCasesPattern false`
+⚠ [8713/8742] Replayed StokesV5.RationalCoordinates
+warning: StokesV5/RationalCoordinates.lean:129:5: Variable name `ha1` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha1
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8714/8742] Replayed StokesV5.RationalNormalForm
+warning: StokesV5/RationalNormalForm.lean:122:51: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: StokesV5/RationalNormalForm.lean:158:37: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8715/8742] Replayed StokesV5.PhysicalLocus
+warning: StokesV5/PhysicalLocus.lean:28:6: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8717/8742] Replayed StokesV5.Discriminant
+warning: StokesV5/Discriminant.lean:192:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8718/8742] Replayed StokesV5.RadialGeometry
+warning: StokesV5/RadialGeometry.lean:172:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8721/8742] Replayed StokesV5.ExceptionalJet
+warning: StokesV5/ExceptionalJet.lean:269:76: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: StokesV5/ExceptionalJet.lean:270:76: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8722/8742] Replayed StokesV5.JacobianExpansion
+warning: StokesV5/JacobianExpansion.lean:126:67: This simp argument is unused:
+  abs_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_pow]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: StokesV5/JacobianExpansion.lean:126:76: This simp argument is unused:
+  abs_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Real.norm_eq_abs, abs_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8723/8742] Replayed StokesV5.PaperGeometry
+warning: StokesV5/PaperGeometry.lean:26:33: This simp argument is unused:
+  dNdt
+
+Hint: Omit it from the simp argument list.
+  [apply] simp
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: StokesV5/PaperGeometry.lean:26:43: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: StokesV5/PaperGeometry.lean:26:43: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: StokesV5/PaperGeometry.lean:26:23: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8726/8742] Built RuledV5.Degree (15s)
+warning: RuledV5/Degree.lean:159:44: This simp argument is unused:
+  mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ellipseRaw, Complex.add_im, Complex.ofReal_im, Complex.ofReal_re, Complex.mul_im, Complex.zero_im,
+    zero_mul, zero_add, add_zero] at him
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RuledV5/Degree.lean:163:47: This simp argument is unused:
+  mul_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ellipseRaw, Complex.add_re, Complex.ofReal_re, Complex.ofReal_im, Complex.mul_re, Complex.zero_re,
+    hs, zero_mul, zero_sub, neg_zero, add_zero] at hre
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RuledV5/Degree.lean:184:47: This simp argument is unused:
+  Complex.smul_im
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [blend, smul_eq_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RuledV5/Degree.lean:184:63: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [blend, Complex.smul_im]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RuledV5/Degree.lean:209:55: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RuledV5/Degree.lean:184:76: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: RuledV5/Degree.lean:209:55: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RuledV5/Degree.lean:263:24: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RuledV5/Degree.lean:263:24: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8727/8742] Built RuledV5.Signal (31s)
+warning: RuledV5/Signal.lean:45:2: Unused tactic linter: `change f x = f y ↔ whitney (source x) = whitney (source y)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RuledV5/Signal.lean:139:44: Variable name `hξ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hξ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RuledV5/Signal.lean:163:60: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8728/8742] Built RuledV5.Surface (32s)
+warning: RuledV5/Surface.lean:26:6: `ext` did not consume the patterns `v`
+
+Note: This linter can be disabled with `set_option linter.unusedRCasesPattern false`
+warning: RuledV5/Surface.lean:26:45: This simp argument is unused:
+  ruledSurface
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [surfaceDerivative, rowCLM]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: RuledV5/Surface.lean:79:12: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8729/8742] Built RuledV5.Boundary (23s)
+warning: RuledV5/Boundary.lean:56:6: `ext` did not consume the patterns `v`
+
+Note: This linter can be disabled with `set_option linter.unusedRCasesPattern false`
+⚠ [8730/8742] Built RuledV5.Fourier (25s)
+warning: RuledV5/Fourier.lean:16:36: Variable name `hξ` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hξ
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: RuledV5/Fourier.lean:65:79: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8731/8742] Built RuledV5.Geometry (15s)
+warning: RuledV5/Geometry.lean:21:6: `ext` did not consume the patterns `v`
+
+Note: This linter can be disabled with `set_option linter.unusedRCasesPattern false`
+warning: RuledV5/Geometry.lean:21:30: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RuledV5/Geometry.lean:21:30: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RuledV5/Geometry.lean:70:32: Variable name `hc0` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hc0
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8732/8742] Built RuledV5.Atlas (8.6s)
+warning: RuledV5/Atlas.lean:329:6: `ext` did not consume the patterns `v`
+
+Note: This linter can be disabled with `set_option linter.unusedRCasesPattern false`
+warning: RuledV5/Atlas.lean:359:40: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8737/8742] Built RuledV5.Transport (31s)
+warning: RuledV5/Transport.lean:28:6: `ext` did not consume the patterns `v`
+
+Note: This linter can be disabled with `set_option linter.unusedRCasesPattern false`
+warning: RuledV5/Transport.lean:55:12: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: RuledV5/Transport.lean:99:46: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RuledV5/Transport.lean:99:46: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+⚠ [8738/8742] Built RuledV5.DegreeApplication (32s)
+warning: RuledV5/DegreeApplication.lean:74:41: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: RuledV5/DegreeApplication.lean:74:41: Unused tactic linter: `(ext x; rfl)` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8740/8742] Built RuledV5.Global (35s)
+warning: RuledV5/Global.lean:220:8: `ext` did not consume the patterns `z`
+
+Note: This linter can be disabled with `set_option linter.unusedRCasesPattern false`
+warning: RuledV5/Global.lean:265:8: `ext` did not consume the patterns `z`
+
+Note: This linter can be disabled with `set_option linter.unusedRCasesPattern false`
+warning: RuledV5/Global.lean:268:31: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: RuledV5/Global.lean:268:31: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: RuledV5/Global.lean:340:67: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: RuledV5/Global.lean:380:6: `ext` did not consume the patterns `v`
+
+Note: This linter can be disabled with `set_option linter.unusedRCasesPattern false`
+warning: RuledV5/Global.lean:380:30: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: RuledV5/Global.lean:380:30: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`

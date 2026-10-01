@@ -1,0 +1,74 @@
+
+== verify_artifact_hashes.py ==
+PASS final-PDF hash: The_Orthogonal_Circle_Ruled_Surface_v4.pdf
+PASS final-PDF hash: The_Stokes_Caustic_of_the_Orthogonal_Circle_Ruled_Surface_v5.pdf
+PASS final-PDF hash: Geometric_Realization_of_Bicomplex_Signal_Manifolds_v12.pdf
+
+== ../shared/orthogonal_circle_surface/verify_shared_surface_core.py ==
+PASS Q_t identity
+PASS scalar triple product
+PASS first fundamental form G
+PASS first fundamental form F
+PASS first fundamental form E
+PASS cross-product x component
+PASS cross-product y component
+PASS cross-product z component
+PASS lateral root and parameter
+PASS G range certificate on 0 <= c <= 1
+BOUNDARY_SCOPE_REQUIRED: q=0 at c=0; all t-derivative identities above require q != 0.
+PASS interior shared-surface algebra
+
+== ../../papers/legacy-geometry/orthogonal-circle-ruled-surface/verification/verify_observation_field.py ==
+PASS phase-skeleton numerator identity
+PASS phase skeleton
+PASS observation Jacobian factorization
+PASS skeleton-fold quintic
+PASS absolute-singularity quintic has exactly one root in (0,1)
+PASS Whitney-fold kernel transversality factor is root-free on (0,1)
+PASS nondegenerate positive-lateral dipole determinant
+PASS polar observation-field zero is degenerate
+PASS v4 observation-field algebra on Q != 0
+
+== ../../papers/legacy-geometry/orthogonal-circle-ruled-surface/verification/verify_signal_claim_counterexample.py ==
+PASS transverse curve gamma(s)=(s,s) has injective Whitney observation
+COUNTEREXAMPLE v4 Thm. 5.3(1): a transverse fold crossing alone does not force pseudo-recurrence
+RECONSTRUCTION_REQUIREMENT: add a symmetry/retracing hypothesis and phase-lock the external rotation before any repaired theorem is stated
+
+== ../../papers/legacy-geometry/stokes-caustic/verification/verify_sturm_certificate.py ==
+PASS p_b on (0,1): variations 4 -> 3, roots=1
+PASS p_b isolation interval: variations 4 -> 3, roots=1
+PASS R7 on physical interval: variations 3 -> 3, roots=0
+PASS Q17 on physical interval: variations 9 -> 9, roots=0
+PASS B has no physical-interval pole: variations 1 -> 1, roots=0
+PASS physical-boundary polynomial identity p_b=n-d
+
+== ../../papers/legacy-geometry/stokes-caustic/verification/verify_exact_geometry.py ==
+PASS full Jacobian factorization
+PASS C0 ordinary-fold determinant is -2u for u>0
+PASS C1 kernel transversality factor
+PASS third-component derivative factor
+PASS radial endpoint norm identity
+PASS rational branch starts with u_fold=2 delta+O(delta^3)
+PASS radial starting derivative is (0,1,0)
+PASS v5 exact algebra on Q != 0
+
+== ../../papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_local_algebra.py ==
+PASS v12 Lemma 5.1: |P'(c0)|=sqrt(5)
+PASS v12 Theorem 5.6 algebraic coordinate identity
+PASS v12 Theorem 5.9 weighted covariance
+PASS v12 Proposition 5.10 interior critical point is a strict maximum
+
+== ../../papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_spectral_algebra.py ==
+PASS v12 Corollary 7.3 formal eigenvalue identity
+PASS v12 Theorem 7.4 finite-time Gram entry identity
+
+== ../../papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_crosscap_models.py ==
+PASS v12 Proposition 8.12: metric determinant and radial defect (7)
+PASS v12 Proposition 8.12: seam determinant and Schur complement (6)
+PASS v12 Theorem 5.3: epsilon^(3/4) scaling constant
+PASS v12 Theorems 5.6--5.7: mu=3, genus=1, two ends, spectrum {-i,1,i}
+PASS v12 Theorem 8.22: exact kernel observation norm (43)
+PASS v12 Proposition 9.3: {X,Y}=0
+PASS v12 Proposition 9.5: anti-periodic eta-spectrum pairing
+
+PASS reconstructed verification baseline

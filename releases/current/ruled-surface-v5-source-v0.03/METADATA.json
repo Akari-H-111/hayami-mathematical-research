@@ -1,0 +1,19 @@
+{
+  "distribution": "software-and-source-only",
+  "software_version": "0.03",
+  "date": "2026-10-01",
+  "author": "Akari Hayami (Jian-Yu Huang)",
+  "public_named_theorems": 224,
+  "separately_audited_dependency_theorems": 258,
+  "coverage": "Every asserted corrected mathematical result, with actual definitions and retained hypotheses; independent open research questions are excluded.",
+  "article_doi": null,
+  "software_version_doi": null,
+  "software_concept_doi": null,
+  "pdf_files_distributed": false,
+  "article_source_status": "Mathematically verified snapshot before reader-facing editorial review; not the final published article PDF.",
+  "github_tag": "ruled-surface-v5-companion-v0.03",
+  "local_full_candidate_zip_sha256": "a080ab8b8a9dd403a8f4279ad6ef505044dadd030b3d6be5036f8debd620da7f",
+  "local_full_candidate_receipt_sha256": "b8c00bebcbb250cfa588a6632521db6d287daca8b06b70bd833fd6d67663a7f5",
+  "historical_v4_paper_doi": "10.13140/RG.2.2.10337.26725",
+  "license": "Apache-2.0 code/build; CC-BY-4.0 original scholarly material"
+}

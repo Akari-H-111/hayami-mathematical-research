@@ -1,0 +1,42 @@
+PASS manifest: 68 source-only files; no PDF assets
+PASS Q_t identity
+PASS scalar triple product
+PASS first fundamental form G
+PASS first fundamental form F
+PASS first fundamental form E
+PASS cross-product x component
+PASS cross-product y component
+PASS cross-product z component
+PASS lateral root and parameter
+PASS G range certificate on 0 <= c <= 1
+BOUNDARY_SCOPE_REQUIRED: q=0 at c=0; all t-derivative identities above require q != 0.
+PASS interior shared-surface algebra
+PASS phase-skeleton numerator identity
+PASS phase skeleton
+PASS observation Jacobian factorization
+PASS skeleton-fold quintic
+PASS absolute-singularity quintic has exactly one root in (0,1)
+PASS Whitney-fold kernel transversality factor is root-free on (0,1)
+PASS nondegenerate positive-lateral dipole determinant
+PASS polar observation-field zero is degenerate
+PASS v4 observation-field algebra on Q != 0
+PASS transverse curve gamma(s)=(s,s) has injective Whitney observation
+COUNTEREXAMPLE v4 Thm. 5.3(1): a transverse fold crossing alone does not force pseudo-recurrence
+RECONSTRUCTION_REQUIREMENT: add a symmetry/retracing hypothesis and phase-lock the external rotation before any repaired theorem is stated
+PASS actual boundary atlas, endpoint derivative, and rank loss iff u=0
+PASS actual boundary second derivatives and zero mixed normal coefficient; regular Q=0 edge curvature is zero
+PASS global coordinate circle/ruling identities and nonzero endpoint Q rates; homeomorphism and manifold proofs are separate Lean results
+PASS signed transition identity, reciprocal derivatives, and regular paired-base tangent; r>=0 inverse boundary retained
+PASS incompatible corner tangent planes and three independent actual tangent limits; epsilon != 0
+PASS full interior zero system: polar zero plus two lateral zeros
+PASS physical-fold boundary, quintic isolation, and extra polar skeleton intersection
+PASS second u derivative, Euclidean Gram determinant, actual second-form curvature reduction, and skeleton range identity
+PASS curvature pullback cancellation for nonzero alpha; actual composed-map chain rule and atlas application are Lean proofs
+PASS boundary area-field extension differs from the interior coordinate field
+PASS exact leading Fourier coefficient and dominance-gap identity; all-mode bounds/odd-mode cancellation are Lean integral proofs
+PASS recurrence equality criterion, crossing counterexample, phase-lock counterexample, half-period response
+PASS new v5 exact corrections; analytic/topological claims require their separate proofs
+PASS 258 public named theorems; build/status/axioms/proof-hole scan
+PASS 224 public named theorems; build/status/full axiom audit/proof-hole scan
+PASS manifest: 68 source-only files; no PDF assets
+PASS source distribution: exact replay, pinned Lean build, complete axiom audits and proof-hole scans; PDF publication deferred

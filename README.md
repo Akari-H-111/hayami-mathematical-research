@@ -14,6 +14,13 @@ All Codex windows follow the short routing rules in [`AGENTS.md`](AGENTS.md). Th
 
 ## Public releases
 
+- Ruled surface v5 verification companion 0.03 (software and source only):
+  [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/ruled-surface-v5-companion-v0.03) ·
+  [sources and replay](releases/current/ruled-surface-v5-source-v0.03/README.md).
+  Claimwise coverage: 224 own public Lean theorems and 258 separately audited
+  dependencies. No new PDF is distributed; the article source precedes the
+  reader-facing editorial review. New article/software-version/software-concept
+  DOIs remain unassigned. The historical Ruled v4 paper DOI is not a new DOI.
 - Repository: <https://github.com/Akari-H-111/hayami-mathematical-research>
 - New Stokes caustic v5 Lean companion v0.04:
   [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.04) ·
@@ -28,7 +35,7 @@ All Codex windows follow the short routing rules in [`AGENTS.md`](AGENTS.md). Th
 - Historical Stokes caustic v5 Lean companion v0.02:
   [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/stokes-v5-companion-v0.02) ·
   [Zenodo DOI 10.5281/zenodo.22726977](https://doi.org/10.5281/zenodo.22726977)
-- Concept DOI for all versions: <https://doi.org/10.5281/zenodo.22726976>
+- Stokes software concept DOI for its versions: <https://doi.org/10.5281/zenodo.22726976>
 - Verified v0.02 ZIP SHA-256:
   `4ab15df0129d14e4b0d1c0e1b26cdfcc7eaaa41b05021ccf9e3f7363376378d4`
 

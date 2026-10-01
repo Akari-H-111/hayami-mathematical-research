@@ -1,0 +1,526 @@
+RuledV5.actual_projection_jacobian (θ : ℝ) {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  StokesV5.mapJacobian (RuledV5.projectionSurface θ) p =
+    StokesV5.observationN p * Real.cos θ - StokesV5.observationM p * Real.sin θ
+RuledV5.angular_boundary_left_inverse {t : ℝ} (ht : t ∈ Set.Ioc 0 (Real.pi / 2)) :
+  Real.arccos (RuledV5.boundaryC (StokesV5.qChart t)) = t
+RuledV5.angular_field_boundary_diverges {ε u : ℝ} (he : ε = 1 ∨ ε = -1) (hu : 0 < u) :
+  Filter.Tendsto (fun r => StokesV5.observationM (RuledV5.boundaryAngle ε r, u)) (nhdsWithin 0 (Set.Ioi 0)) Filter.atBot
+RuledV5.angular_field_boundary_residue {ε : ℝ} (he : ε = 1 ∨ ε = -1) (u : ℝ) :
+  Filter.Tendsto (fun r => r * StokesV5.observationM (RuledV5.boundaryAngle ε r, u)) (nhdsWithin 0 (Set.Ioi 0))
+    (nhds (-u))
+RuledV5.angular_qChart_range {t : ℝ} (ht : t ∈ Set.Ioc 0 (Real.pi / 2)) : StokesV5.qChart t ∈ Set.Ico 0 1
+RuledV5.angular_transition_contDiffAt {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  ContDiffAt ℝ (↑⊤) RuledV5.angularToBoundary p
+RuledV5.angular_transition_hasFDerivAt {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  HasFDerivAt RuledV5.angularToBoundary ((StokesV5.rowCLM (StokesV5.dQdt p) 0).prod (StokesV5.rowCLM 0 1)) p
+RuledV5.angular_transition_isSmoothChartAt {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) (hc1 : Real.cos p.1 < 1)
+  (hs : Real.sin p.1 ≠ 0) : StokesV5.IsSmoothChartAt RuledV5.angularToBoundary p
+RuledV5.arctan_remainder_bound (x : ℝ) : |Real.arctan x - x| ≤ |x| ^ 3 / 3
+RuledV5.arctan_remainder_nonneg {x : ℝ} (hx : 0 ≤ x) : 0 ≤ x - Real.arctan x ∧ x - Real.arctan x ≤ x ^ 3 / 3
+RuledV5.areaVector_eq {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  RuledV5.areaVector p =
+    (StokesV5.observationM p, -Real.sin p.1 * (2 * p.2 - Real.cos p.1 * (2 - Real.cos p.1)) / StokesV5.qChart p.1,
+      StokesV5.observationN p)
+RuledV5.areaVector_zero_iff_observation_zero {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) (hc : 0 < Real.cos p.1) :
+  RuledV5.areaVector p = 0 ↔ StokesV5.observationMap p = 0
+RuledV5.asymptote_cos_bounds : 0 < RuledV5.asymptoteCos ∧ RuledV5.asymptoteCos < 1
+RuledV5.asymptote_cos_cubic : StokesV5.BR RuledV5.asymptoteCos = 0
+RuledV5.asymptote_not_critical {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain)
+  (hc : Real.cos p.1 = RuledV5.asymptoteCos) (hs : Real.sin p.1 ≠ 0) :
+  StokesV5.mapJacobian StokesV5.observationMap p ≠ 0
+RuledV5.asymptote_unique_cubic_root {c : ℝ} (hc : c ∈ Set.Icc 0 1) : StokesV5.BR c = 0 ↔ c = RuledV5.asymptoteCos
+RuledV5.boundaryAngle_contDiffAt (ε : ℝ) {r : ℝ} (hr : r ∈ Set.Ioo (-1) 1) :
+  ContDiffAt ℝ (↑⊤) (RuledV5.boundaryAngle ε) r
+RuledV5.boundaryAngle_cos_sin {ε r : ℝ} (he : ε = 1 ∨ ε = -1) (hr : r ∈ Set.Ioo (-1) 1) :
+  Real.cos (RuledV5.boundaryAngle ε r) = RuledV5.boundaryC r ∧
+    Real.sin (RuledV5.boundaryAngle ε r) = RuledV5.boundaryS ε r
+RuledV5.boundaryAngle_qChart {ε r : ℝ} (he : ε = 1 ∨ ε = -1) (hr0 : 0 ≤ r) (hr1 : r < 1) :
+  StokesV5.qChart (RuledV5.boundaryAngle ε r) = r
+RuledV5.boundaryAngle_surface_inverse {ε r u : ℝ} (he : ε = 1 ∨ ε = -1) (hr0 : 0 ≤ r) (hr1 : r < 1) :
+  StokesV5.ruledSurface (RuledV5.boundaryAngle ε r, u) = RuledV5.boundarySurface ε (r, u)
+RuledV5.boundaryC_at_zero : RuledV5.boundaryC 0 = 0
+RuledV5.boundaryC_bounds {r : ℝ} (hr : r ∈ Set.Ioo (-1) 1) : 0 ≤ RuledV5.boundaryC r ∧ RuledV5.boundaryC r < 1
+RuledV5.boundaryC_circle_identity {r : ℝ} (hr : r ∈ Set.Icc (-1) 1) :
+  RuledV5.boundaryC r * (2 - RuledV5.boundaryC r) = r ^ 2
+RuledV5.boundaryC_contDiffAt {r : ℝ} (hr : r ∈ Set.Ioo (-1) 1) : ContDiffAt ℝ (↑⊤) RuledV5.boundaryC r
+RuledV5.boundaryC_hasDerivAt {r : ℝ} (hr : r ∈ Set.Ioo (-1) 1) : HasDerivAt RuledV5.boundaryC (r / √(1 - r ^ 2)) r
+RuledV5.boundaryC_hasDerivAt_zero : HasDerivAt RuledV5.boundaryC 0 0
+RuledV5.boundaryC_qChart {t : ℝ} (hc0 : 0 ≤ Real.cos t) (hc1 : Real.cos t ≤ 1) :
+  RuledV5.boundaryC (StokesV5.qChart t) = Real.cos t
+RuledV5.boundaryS_at_zero (ε : ℝ) : RuledV5.boundaryS ε 0 = ε
+RuledV5.boundaryS_hasDerivAt (ε : ℝ) {r : ℝ} (hr : r ∈ Set.Ioo (-1) 1) :
+  HasDerivAt (RuledV5.boundaryS ε) (-ε * RuledV5.boundaryC r * r / (√(1 - RuledV5.boundaryC r ^ 2) * √(1 - r ^ 2))) r
+RuledV5.boundaryS_hasDerivAt_zero (ε : ℝ) : HasDerivAt (RuledV5.boundaryS ε) 0 0
+RuledV5.boundary_actual_area_transform {ε : ℝ} (he : ε = 1 ∨ ε = -1) {p : ℝ × ℝ} (hr : p.1 ∈ Set.Ioo 0 1) :
+  StokesV5.cross3 ((fderiv ℝ (RuledV5.boundarySurface ε) p) (1, 0)) ((fderiv ℝ (RuledV5.boundarySurface ε) p) (0, 1)) =
+    RuledV5.boundaryAngleRate ε p.1 • RuledV5.areaVector (RuledV5.boundaryToAngular ε p)
+RuledV5.boundary_actual_observation_transform {ε : ℝ} (he : ε = 1 ∨ ε = -1) {p : ℝ × ℝ} (hr : p.1 ∈ Set.Ioo 0 1) :
+  RuledV5.boundaryObservation ε p =
+    RuledV5.boundaryAngleRate ε p.1 • StokesV5.observationMap (RuledV5.boundaryToAngular ε p)
+RuledV5.boundary_actual_tangent_basis (ε : ℝ) {p : ℝ × ℝ} (hr : p.1 ∈ Set.Ioo (-1) 1) :
+  (fderiv ℝ (RuledV5.boundarySurface ε) p) (1, 0) = RuledV5.boundaryTangentR ε p ∧
+    (fderiv ℝ (RuledV5.boundarySurface ε) p) (0, 1) = RuledV5.boundaryTangentU ε p
+RuledV5.boundary_angle_hasDerivAt (ε : ℝ) {r : ℝ} (hr : r ∈ Set.Ioo (-1) 1) :
+  HasDerivAt (RuledV5.boundaryAngle ε) (RuledV5.boundaryAngleRate ε r) r
+RuledV5.boundary_angle_rate_physical {ε r : ℝ} (he : ε = 1 ∨ ε = -1) (hr : r ∈ Set.Ioo 0 1) :
+  RuledV5.boundaryAngleRate ε r = -r / (RuledV5.boundaryS ε r * (1 - RuledV5.boundaryC r))
+RuledV5.boundary_areaVector (ε u : ℝ) :
+  StokesV5.cross3 ((fderiv ℝ (RuledV5.boundarySurface ε) (0, u)) (1, 0))
+      ((fderiv ℝ (RuledV5.boundarySurface ε) (0, u)) (0, 1)) =
+    (ε * u, 2 * u, 0)
+RuledV5.boundary_contDiffAt (ε u : ℝ) : ContDiffAt ℝ (↑⊤) (RuledV5.boundarySurface ε) (0, u)
+RuledV5.boundary_coordinate_homeomorphism :
+  Continuous ⇑RuledV5.boundaryCoordinateHomeomorph ∧
+    Continuous ⇑RuledV5.boundaryCoordinateHomeomorph.symm ∧ Function.Bijective ⇑RuledV5.boundaryCoordinateHomeomorph
+RuledV5.boundary_corner_kernel (ε : ℝ) :
+  (fderiv ℝ (RuledV5.boundarySurface ε) (0, 0)) (1, 0) = 0 ∧
+    (1, 0) ≠ 0 ∧ (fderiv ℝ (RuledV5.boundarySurface ε) (0, 0)) (0, 1) ≠ 0
+RuledV5.boundary_derivative_basis (ε u : ℝ) :
+  (fderiv ℝ (RuledV5.boundarySurface ε) (0, u)) (1, 0) = (0, 0, u) ∧
+    (fderiv ℝ (RuledV5.boundarySurface ε) (0, u)) (0, 1) = (2, -ε, 0)
+RuledV5.boundary_hasFDerivAt (ε u : ℝ) : HasFDerivAt (RuledV5.boundarySurface ε) (RuledV5.boundaryDerivative ε u) (0, u)
+RuledV5.boundary_matches_interior {t u ε : ℝ} (hc0 : 0 ≤ Real.cos t) (hc1 : Real.cos t ≤ 1)
+  (hs : Real.sin t = ε * √(1 - Real.cos t ^ 2)) :
+  RuledV5.boundarySurface ε (StokesV5.qChart t, u) = StokesV5.ruledSurface (t, u)
+RuledV5.boundary_observation_at_edge (ε u : ℝ) : RuledV5.boundaryObservation ε (0, u) = (0, ε * u)
+RuledV5.boundary_observation_limit (ε u : ℝ) :
+  Filter.Tendsto (fun r => RuledV5.boundaryObservation ε (r, u)) (nhds 0) (nhds (0, ε * u))
+RuledV5.boundary_pairing_constraint {ε r : ℝ} (he : ε = 1 ∨ ε = -1) (hr : r ∈ Set.Ico 0 1) :
+  Real.cos (RuledV5.boundaryAngle ε r) + Real.cos (Real.arcsin r) = 1
+RuledV5.boundary_pairing_regular_at_zero (ε : ℝ) :
+  HasDerivAt (fun r => (RuledV5.boundaryAngle ε r, Real.arcsin r)) (0, 1) 0
+RuledV5.boundary_regular_iff (ε u : ℝ) : Function.Injective ⇑(fderiv ℝ (RuledV5.boundarySurface ε) (0, u)) ↔ u ≠ 0
+RuledV5.boundary_second_u (ε u : ℝ) :
+  RuledV5.patchSecond (RuledV5.boundarySurface ε) (0, 1) (1, 0) (0, u) = (0, 0, 1) ∧
+    RuledV5.patchSecond (RuledV5.boundarySurface ε) (0, 1) (0, 1) (0, u) = 0
+RuledV5.boundary_surface_contDiffAt (ε : ℝ) {p : ℝ × ℝ} (hr : p.1 ∈ Set.Ioo (-1) 1) :
+  ContDiffAt ℝ (↑⊤) (RuledV5.boundarySurface ε) p
+RuledV5.boundary_transition_contDiffAt (ε : ℝ) {p : ℝ × ℝ} (hr : p.1 ∈ Set.Ioo (-1) 1) :
+  ContDiffAt ℝ (↑⊤) (RuledV5.boundaryToAngular ε) p
+RuledV5.boundary_transition_hasFDerivAt (ε : ℝ) {p : ℝ × ℝ} (hr : p.1 ∈ Set.Ioo (-1) 1) :
+  HasFDerivAt (RuledV5.boundaryToAngular ε)
+    ((StokesV5.rowCLM (RuledV5.boundaryAngleRate ε p.1) 0).prod (StokesV5.rowCLM 0 1)) p
+RuledV5.chart_phase_actual {ξ : ℝ} (hξ : ξ ≠ 0) (a ω τ : ℝ) :
+  RuledV5.phaseResponse ξ a ω τ = RuledV5.chartPhase (a ^ 2 / ξ) (ω * τ)
+RuledV5.chart_phase_doubled_harmonic_dominates {κ : ℝ} (hk0 : 0 < |κ|) (hk : |κ| ≤ 1 / 2) {n : ℕ} (hn : 0 < n)
+  (hn2 : n ≠ 2) : |RuledV5.cosineCoeff (RuledV5.chartPhase κ) n| < |RuledV5.cosineCoeff (RuledV5.chartPhase κ) 2|
+RuledV5.chart_phase_error (κ x : ℝ) : |RuledV5.chartPhase κ x - RuledV5.leadingPhase κ x| ≤ |κ| ^ 3 / 3
+RuledV5.chart_phase_odd_cosine_coeff_zero (κ : ℝ) {n : ℕ} (hn : Odd n) :
+  RuledV5.cosineCoeff (RuledV5.chartPhase κ) n = 0
+RuledV5.chart_phase_pi_periodic (κ : ℝ) : Function.Periodic (RuledV5.chartPhase κ) Real.pi
+RuledV5.chart_phase_sine_coeff_zero (κ : ℝ) (n : ℕ) : RuledV5.sineCoeff (RuledV5.chartPhase κ) n = 0
+RuledV5.circle_value_endpoints : RuledV5.circleValue 0 = 1 ∧ RuledV5.circleValue 1 = 1
+RuledV5.circle_value_norm (t : ℝ) : ‖RuledV5.circleValue t‖ = 1
+RuledV5.completed_singular_parameters {p : ℝ × ℝ} (ht : p.1 ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2)) :
+  ¬Function.Injective ⇑(RuledV5.atlasDifferential p) ↔ p ∈ RuledV5.singularParameters
+RuledV5.complex_circle_parameter (p : ℝ × ℝ) (r t : ℝ) :
+  Complex.equivRealProdCLM (Complex.equivRealProdCLM.symm p + r • RuledV5.circleValue t) = RuledV5.circleParameter p r t
+RuledV5.complex_observation_components (p : ℝ × ℝ) :
+  (RuledV5.complexObservation p).re = StokesV5.observationN p ∧
+    (RuledV5.complexObservation p).im = StokesV5.observationM p
+RuledV5.coreP_root_iff {c : ℝ} (hc0 : 0 ≤ c) (hc1 : c ≤ 1) : RuledV5.coreP c = 0 ↔ c = (3 - √5) / 2
+RuledV5.corner_paths_eventually_regular {ε : ℝ} (he : ε ≠ 0) (k : ℝ) :
+  ∀ᶠ (r : ℝ) in nhdsWithin 0 (Set.Ioi 0), Function.Injective ⇑(fderiv ℝ (RuledV5.boundarySurface ε) (r, k * r))
+RuledV5.corner_scaled_area_limit (ε k : ℝ) :
+  Filter.Tendsto
+    (fun r =>
+      r⁻¹ •
+        StokesV5.cross3 ((fderiv ℝ (RuledV5.boundarySurface ε) (r, k * r)) (1, 0))
+          ((fderiv ℝ (RuledV5.boundarySurface ε) (r, k * r)) (0, 1)))
+    (nhdsWithin 0 (Set.Ioi 0)) (nhds (ε * k, 2 * k, -ε))
+RuledV5.corner_scaled_tangent_actual (ε k : ℝ) {r : ℝ} (hr : r ∈ Set.Ioo (-1) 1) :
+  r • RuledV5.cornerScaledTangent ε k r = (fderiv ℝ (RuledV5.boundarySurface ε) (r, k * r)) (1, 0)
+RuledV5.corner_scaled_tangent_limit (ε k : ℝ) :
+  Filter.Tendsto (RuledV5.cornerScaledTangent ε k) (nhds 0) (nhds (1, 0, k))
+RuledV5.corner_tangent_u_limit (ε : ℝ) :
+  Filter.Tendsto (fun r => RuledV5.boundaryTangentU ε (r, 0)) (nhds 0) (nhds (2, -ε, 0))
+RuledV5.cosine_coefficient_error (κ : ℝ) (n : ℕ) :
+  |RuledV5.cosineCoeff (RuledV5.chartPhase κ) n - RuledV5.cosineCoeff (RuledV5.leadingPhase κ) n| ≤ 2 * |κ| ^ 3 / 3
+RuledV5.cosine_coefficient_uniform_bound (f : ℝ → ℝ) (C : ℝ) (hf : ∀ (x : ℝ), |f x| ≤ C) (n : ℕ) :
+  |RuledV5.cosineCoeff f n| ≤ 2 * C
+RuledV5.cosine_leading_coefficient (κ : ℝ) {n : ℕ} (hn : 0 < n) :
+  RuledV5.cosineCoeff (RuledV5.leadingPhase κ) n = if n = 2 then κ / 2 else 0
+RuledV5.cross_gram_identity (a b : ℝ × ℝ × ℝ) :
+  RuledV5.dot3 a a * RuledV5.dot3 b b - RuledV5.dot3 a b ^ 2 = RuledV5.euclideanSq (StokesV5.cross3 a b)
+RuledV5.curvature_zero_iff_parameter {p : ℝ × ℝ} (ht : p.1 ∈ Set.Ioo (-(Real.pi / 2)) (Real.pi / 2))
+  (hreg : Function.Injective ⇑(fderiv ℝ StokesV5.ruledSurface p)) :
+  RuledV5.gaussianCurvature StokesV5.ruledSurface p = 0 ↔
+    p.1 = 0 ∨ p.1 = RuledV5.lateralAngle ∨ p.1 = -RuledV5.lateralAngle
+RuledV5.differential_injective_iff_cross (L : ℝ × ℝ →L[ℝ] ℝ × ℝ × ℝ) :
+  Function.Injective ⇑L ↔ StokesV5.cross3 (L (1, 0)) (L (0, 1)) ≠ 0
+RuledV5.dual_vector_apply (L : ℝ × ℝ × ℝ →L[ℝ] ℝ) (v : ℝ × ℝ × ℝ) : RuledV5.dot3 (RuledV5.dualVector L) v = L v
+RuledV5.ellipse_loop_endpoints (β : ℂ) (hβ : β.im ≠ 0) :
+  (RuledV5.ellipseLoop β hβ) 0 = RuledV5.nonzeroExp 0 ∧ (RuledV5.ellipseLoop β hβ) 1 = RuledV5.nonzeroExp 0
+RuledV5.ellipse_loop_winding {β : ℂ} {ε : ℤ} (hε : ε = 1 ∨ ε = -1) (hβε : 0 < β.im * ↑ε) :
+  RuledV5.loopWinding (RuledV5.ellipseLoop β ⋯) = ↑ε
+RuledV5.ellipse_ne_zero {β : ℂ} (hβ : β.im ≠ 0) (t : ℝ) : RuledV5.ellipseRaw β t ≠ 0
+RuledV5.entire_skeleton_critical_intersection {t u : ℝ} (ht : t ∈ Set.Ioo (-(Real.pi / 2)) (Real.pi / 2))
+  (hu : u ∈ Set.Icc 0 1) :
+  StokesV5.observationM (t, u) = 0 ∧ StokesV5.mapJacobian StokesV5.observationMap (t, u) = 0 ↔
+    t = 0 ∧ u = 1 ∨ Real.cos t = RuledV5.intersectionCos ∧ u = RuledV5.skeletonHeight RuledV5.intersectionCos
+RuledV5.euclideanSq_pos_iff (v : ℝ × ℝ × ℝ) : 0 < RuledV5.euclideanSq v ↔ v ≠ 0
+RuledV5.exponential_loop_closed (z : ℂ) (n : ℤ) :
+  (RuledV5.exponentialLoop z n) 0 = RuledV5.nonzeroExp z ∧ (RuledV5.exponentialLoop z n) 1 = RuledV5.nonzeroExp z
+RuledV5.exponential_loop_index (n : ℤ) : RuledV5.loopWinding (RuledV5.exponentialLoop 0 n) = ↑n
+RuledV5.exponential_loop_winding (z : ℂ) (n : ℤ) : RuledV5.windingValue (RuledV5.exponentialLoop z n) z ⋯ = ↑n
+RuledV5.first_form_E {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  RuledV5.dot3 ((fderiv ℝ StokesV5.ruledSurface p) (1, 0)) ((fderiv ℝ StokesV5.ruledSurface p) (1, 0)) =
+    1 + (-4 * Real.sin p.1 ^ 2 - 2 * Real.cos p.1 ^ 2) * p.2 +
+      (4 * Real.sin p.1 ^ 2 + Real.cos p.1 ^ 2 + Real.sin p.1 ^ 2 * (1 - Real.cos p.1) ^ 2 / StokesV5.qChart p.1 ^ 2) *
+        p.2 ^ 2
+RuledV5.first_form_F {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  RuledV5.dot3 ((fderiv ℝ StokesV5.ruledSurface p) (1, 0)) ((fderiv ℝ StokesV5.ruledSurface p) (0, 1)) =
+    Real.sin p.1 * ((3 - 2 * Real.cos p.1) * p.2 - (2 - Real.cos p.1))
+RuledV5.first_form_G {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  RuledV5.dot3 ((fderiv ℝ StokesV5.ruledSurface p) (0, 1)) ((fderiv ℝ StokesV5.ruledSurface p) (0, 1)) =
+    2 * Real.cos p.1 ^ 2 - 6 * Real.cos p.1 + 5
+RuledV5.gaussian_curvature_boundary_edge (ε u : ℝ) (hu : u ≠ 0) :
+  RuledV5.gaussianCurvature (RuledV5.boundarySurface ε) (0, u) = 0
+RuledV5.gaussian_curvature_boundary_overlap {ε : ℝ} (he : ε = 1 ∨ ε = -1) {p : ℝ × ℝ} (hr : p.1 ∈ Set.Ioo 0 1)
+  (hreg : Function.Injective ⇑(fderiv ℝ StokesV5.ruledSurface (RuledV5.boundaryToAngular ε p))) :
+  RuledV5.gaussianCurvature (RuledV5.boundarySurface ε) p =
+    RuledV5.gaussianCurvature StokesV5.ruledSurface (RuledV5.boundaryToAngular ε p)
+RuledV5.gaussian_curvature_congr {S R : ℝ × ℝ → ℝ × ℝ × ℝ} {p : ℝ × ℝ} (h : S =ᶠ[nhds p] R) :
+  RuledV5.gaussianCurvature S p = RuledV5.gaussianCurvature R p
+RuledV5.gaussian_curvature_negative_iff {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain)
+  (hreg : Function.Injective ⇑(fderiv ℝ StokesV5.ruledSurface p)) :
+  RuledV5.gaussianCurvature StokesV5.ruledSurface p < 0 ↔ Real.sin p.1 ≠ 0 ∧ RuledV5.coreP (Real.cos p.1) ≠ 0
+RuledV5.gaussian_curvature_nonpos {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain)
+  (hreg : Function.Injective ⇑(fderiv ℝ StokesV5.ruledSurface p)) :
+  RuledV5.gaussianCurvature StokesV5.ruledSurface p ≤ 0
+RuledV5.gaussian_curvature_raw {S : ℝ × ℝ → ℝ × ℝ × ℝ} {p : ℝ × ℝ} (hv : RuledV5.patchArea S p ≠ 0) :
+  RuledV5.gaussianCurvature S p =
+    (RuledV5.dot3 (RuledV5.patchArea S p) (RuledV5.patchSecond S (1, 0) (1, 0) p) *
+          RuledV5.dot3 (RuledV5.patchArea S p) (RuledV5.patchSecond S (0, 1) (0, 1) p) -
+        RuledV5.dot3 (RuledV5.patchArea S p) (RuledV5.patchSecond S (0, 1) (1, 0) p) ^ 2) /
+      RuledV5.euclideanSq (RuledV5.patchArea S p) ^ 2
+RuledV5.gaussian_curvature_ruled {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain)
+  (hreg : Function.Injective ⇑(fderiv ℝ StokesV5.ruledSurface p)) :
+  RuledV5.gaussianCurvature StokesV5.ruledSurface p =
+    -(-RuledV5.coreP (Real.cos p.1) * Real.sin p.1 / StokesV5.qChart p.1) ^ 2 /
+      RuledV5.euclideanSq (RuledV5.areaVector p) ^ 2
+RuledV5.gaussian_curvature_separated {S : ℝ × ℝ → ℝ × ℝ × ℝ} {T : ℝ → ℝ} {p : ℝ × ℝ}
+  (hS : ContDiffAt ℝ 2 S (RuledV5.separatedMap T p)) (hT : ContDiffAt ℝ 2 T p.1) (hα : deriv T p.1 ≠ 0)
+  (hV : RuledV5.patchArea S (RuledV5.separatedMap T p) ≠ 0) :
+  RuledV5.gaussianCurvature (S ∘ RuledV5.separatedMap T) p = RuledV5.gaussianCurvature S (RuledV5.separatedMap T p)
+RuledV5.global_angle_contDiffAt {v : ℝ} (hv : v ∈ Set.Icc (-1) 1) : ContDiffAt ℝ (↑⊤) RuledV5.globalAngle v
+RuledV5.global_angle_continuous : Continuous RuledV5.globalAngle
+RuledV5.global_angle_hasDerivAt {v : ℝ} (hv : v ∈ Set.Icc (-1) 1) :
+  HasDerivAt RuledV5.globalAngle (RuledV5.globalAngleRate v) v
+RuledV5.global_angle_odd (v : ℝ) : RuledV5.globalAngle (-v) = -RuledV5.globalAngle v
+RuledV5.global_angle_range {v : ℝ} (hv : v ∈ Set.Icc (-1) 1) :
+  RuledV5.globalAngle v ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2)
+RuledV5.global_angle_smooth_formula {v : ℝ} (hv : v ^ 2 < 2) :
+  RuledV5.globalAngle v = 2 * Real.arcsin (v * √(1 - v ^ 2 / 2))
+RuledV5.global_angle_strictMonoOn : StrictMonoOn RuledV5.globalAngle (Set.Icc (-1) 1)
+RuledV5.global_angle_trig {v : ℝ} (hv : v ∈ Set.Icc (-1) 1) :
+  Real.cos (RuledV5.globalAngle v) = RuledV5.globalC v ∧ Real.sin (RuledV5.globalAngle v) = RuledV5.globalS v
+RuledV5.global_angular_overlap_isSmoothChartAt {p : ℝ × ℝ} (hp : p.1 ∈ Set.Ioo (-1) 1) :
+  StokesV5.IsSmoothChartAt RuledV5.globalToAngular p
+RuledV5.global_base_map_bijective : Function.Bijective RuledV5.globalBaseMap
+RuledV5.global_boundary_overlap_isSmoothChartAt {ε : ℝ} (he : ε = 1 ∨ ε = -1) (u : ℝ) :
+  StokesV5.IsSmoothChartAt RuledV5.globalToBoundary (ε, u)
+RuledV5.global_boundary_surface_actual {ε v : ℝ} (hv : v ∈ Set.Icc (-1) 1) (he : ε = 1 ∧ 0 ≤ v ∨ ε = -1 ∧ v ≤ 0)
+  (u : ℝ) : RuledV5.boundarySurface ε (RuledV5.globalQ v, u) = RuledV5.globalSurface (v, u)
+RuledV5.global_c_bounds {v : ℝ} (hv : v ∈ Set.Icc (-1) 1) : 0 ≤ RuledV5.globalC v ∧ RuledV5.globalC v ≤ 1
+RuledV5.global_c_strictAntiOn : StrictAntiOn RuledV5.globalC (Set.Icc 0 1)
+RuledV5.global_circle_identities {v : ℝ} (hv : v ∈ Set.Icc (-1) 1) :
+  RuledV5.globalC v ^ 2 + RuledV5.globalS v ^ 2 = 1 ∧
+    RuledV5.globalQ v ^ 2 = RuledV5.globalC v * (2 - RuledV5.globalC v)
+RuledV5.global_domain_homeomorphism :
+  Nonempty (RuledV5.GlobalDomain ≃ₜ ↑(Set.Icc (-(Real.pi / 2)) (Real.pi / 2)) × ↑(Set.Icc 0 1))
+RuledV5.global_domain_isManifold :
+  IsManifold ((modelWithCornersEuclideanHalfSpace 1).prod (modelWithCornersEuclideanHalfSpace 1)) (↑⊤)
+    RuledV5.GlobalDomain
+RuledV5.global_q_actual {v : ℝ} (hv : v ∈ Set.Icc (-1) 1) : StokesV5.qChart (RuledV5.globalAngle v) = RuledV5.globalQ v
+RuledV5.global_q_contDiffAt {v : ℝ} (hv : v ∈ Set.Icc (-1) 1) : ContDiffAt ℝ (↑⊤) RuledV5.globalQ v
+RuledV5.global_q_hasDerivAt_edge {ε : ℝ} (he : ε = 1 ∨ ε = -1) : HasDerivAt RuledV5.globalQ (-2 * ε * √2) ε
+RuledV5.global_radicands_positive {v : ℝ} (hv : v ∈ Set.Icc (-1) 1) :
+  0 < (2 - v ^ 2) * (1 + (1 - v ^ 2) ^ 2) ∧ 0 < 2 - RuledV5.globalC v
+RuledV5.global_surface_actual {v : ℝ} (hv : v ∈ Set.Icc (-1) 1) (u : ℝ) :
+  StokesV5.ruledSurface (RuledV5.globalAngle v, u) = RuledV5.globalSurface (v, u)
+RuledV5.global_surface_contDiffAt {p : ℝ × ℝ} (hp : p.1 ∈ Set.Icc (-1) 1) : ContDiffAt ℝ (↑⊤) RuledV5.globalSurface p
+RuledV5.global_surface_contMDiff :
+  ContMDiff ((modelWithCornersEuclideanHalfSpace 1).prod (modelWithCornersEuclideanHalfSpace 1))
+    (modelWithCornersSelf ℝ (ℝ × ℝ × ℝ)) ↑⊤ fun p => RuledV5.globalSurface (↑p.1, ↑p.2)
+RuledV5.integral_cos_integer {n : ℤ} (hn : n ≠ 0) : ∫ (x : ℝ) in -Real.pi..Real.pi, Real.cos (↑n * x) = 0
+RuledV5.interior_regular_iff {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) (hc : 0 < Real.cos p.1) :
+  Function.Injective ⇑(fderiv ℝ StokesV5.ruledSurface p) ↔ StokesV5.observationMap p ≠ 0
+RuledV5.interior_singular_parameters {p : ℝ × ℝ} (ht : p.1 ∈ Set.Ioo (-(Real.pi / 2)) (Real.pi / 2)) :
+  ¬Function.Injective ⇑(fderiv ℝ StokesV5.ruledSurface p) ↔
+    p = (0, 1) ∨ p = (RuledV5.lateralAngle, RuledV5.lateralRuling) ∨ p = (-RuledV5.lateralAngle, RuledV5.lateralRuling)
+RuledV5.intersection_cos_bounds :
+  673741 / 10 ^ 6 < RuledV5.intersectionCos ∧
+    RuledV5.intersectionCos < 673742 / 10 ^ 6 ∧ StokesV5.discriminantE RuledV5.intersectionCos = 0
+RuledV5.intersection_cos_physical : RuledV5.intersectionCos ∈ Set.Icc StokesV5.physicalBoundary 1
+RuledV5.intersection_cos_unique {c : ℝ} (hc : c ∈ Set.Icc StokesV5.physicalBoundary 1) :
+  StokesV5.discriminantE c = 0 ↔ c = RuledV5.intersectionCos
+RuledV5.jacobian_odd {t u : ℝ} (hp : (t, u) ∈ StokesV5.observationDomain) :
+  StokesV5.observationJacobian (-t, u) = -StokesV5.observationJacobian (t, u)
+RuledV5.lateral_actual_local_inverses :
+  StokesV5.IsSmoothChartAt StokesV5.observationMap (RuledV5.lateralAngle, RuledV5.lateralRuling) ∧
+    StokesV5.IsSmoothChartAt StokesV5.observationMap (-RuledV5.lateralAngle, RuledV5.lateralRuling)
+RuledV5.lateral_dipole_indices :
+  RuledV5.localObservationIndex (RuledV5.lateralAngle, RuledV5.lateralRuling) = some (-1) ∧
+    RuledV5.localObservationIndex (-RuledV5.lateralAngle, RuledV5.lateralRuling) = some 1
+RuledV5.lateral_jacobian {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) (hP : RuledV5.coreP (Real.cos p.1) = 0)
+  (hu : p.2 = (1 - Real.cos p.1) / 2) :
+  StokesV5.observationJacobian p = -5 * Real.sin p.1 * (1 - Real.cos p.1) ^ 2 / StokesV5.qChart p.1
+RuledV5.lateral_jacobians_nonzero :
+  StokesV5.observationJacobian (RuledV5.lateralAngle, RuledV5.lateralRuling) ≠ 0 ∧
+    StokesV5.observationJacobian (-RuledV5.lateralAngle, RuledV5.lateralRuling) ≠ 0
+RuledV5.lateral_observation_indices :
+  RuledV5.HasLocalObservationIndex (RuledV5.lateralAngle, RuledV5.lateralRuling) (-1) ∧
+    RuledV5.HasLocalObservationIndex (-RuledV5.lateralAngle, RuledV5.lateralRuling) 1
+RuledV5.lateral_parameters_bounds :
+  0 < RuledV5.lateralCos ∧
+    RuledV5.lateralCos < 1 ∧
+      0 < RuledV5.lateralAngle ∧
+        RuledV5.lateralAngle < Real.pi / 2 ∧ 0 < RuledV5.lateralRuling ∧ RuledV5.lateralRuling < 1
+RuledV5.linear_circle_winding (L : ℂ ≃L[ℝ] ℂ) {ε : ℤ} (hε : ε = 1 ∨ ε = -1) (hD : 0 < RuledV5.planeJacobian ↑L * ↑ε) :
+  RuledV5.loopWinding (RuledV5.linearCircleLoop L) = ↑ε
+RuledV5.local_fold_common_neighborhood {f : ℝ × ℝ → ℝ × ℝ} {p : ℝ × ℝ} (hf : StokesV5.HasWhitneyNormalFormAt f p)
+  (hc : ContinuousAt f p) :
+  ∃ source,
+    StokesV5.IsSmoothChartAt source p ∧
+      ∃ U,
+        IsOpen U ∧
+          p ∈ U ∧
+            ∀ x ∈ U,
+              ∀ y ∈ U,
+                f x = f y ↔ (source x).1 = (source y).1 ∧ ((source x).2 = (source y).2 ∨ (source x).2 = -(source y).2)
+RuledV5.local_fold_fiber_criterion {f : ℝ × ℝ → ℝ × ℝ} {p : ℝ × ℝ} (hf : StokesV5.HasWhitneyNormalFormAt f p)
+  (hc : ContinuousAt f p) :
+  ∃ source,
+    StokesV5.IsSmoothChartAt source p ∧
+      ∀ᶠ (x : ℝ × ℝ) (y : ℝ × ℝ) in nhds p,
+        f x = f y ↔ (source x).1 = (source y).1 ∧ ((source x).2 = (source y).2 ∨ (source x).2 = -(source y).2)
+RuledV5.local_observation_index_eq_of_has {p : ℝ × ℝ} {n : ℤ} (hn : RuledV5.HasLocalObservationIndex p n) :
+  RuledV5.localObservationIndex p = some n
+RuledV5.local_observation_index_unique {p : ℝ × ℝ} {n m : ℤ} (hn : RuledV5.HasLocalObservationIndex p n)
+  (hm : RuledV5.HasLocalObservationIndex p m) : n = m
+RuledV5.loop_winding_based {γ : C(↑unitInterval, RuledV5.NonzeroComplex)} (hγ : γ 0 = RuledV5.nonzeroExp 0) :
+  RuledV5.loopWinding γ = RuledV5.windingValue γ 0 hγ
+RuledV5.loop_winding_free_homotopy {γ₀ γ₁ : C(↑unitInterval, RuledV5.NonzeroComplex)} (H : γ₀.Homotopy γ₁)
+  (hclosed : ∀ (t : ↑unitInterval), H (t, 1) = H (t, 0)) : RuledV5.loopWinding γ₀ = RuledV5.loopWinding γ₁
+RuledV5.loop_winding_integral (γ : C(↑unitInterval, RuledV5.NonzeroComplex)) (hγ : γ 1 = γ 0) :
+  ∃ n, RuledV5.loopWinding γ = ↑n
+RuledV5.loop_winding_normalized (γ : C(↑unitInterval, RuledV5.NonzeroComplex)) :
+  RuledV5.loopWinding (RuledV5.normalizedLoop γ) = RuledV5.loopWinding γ
+RuledV5.negative_curvature_witness :
+  Function.Injective ⇑(fderiv ℝ StokesV5.ruledSurface (Real.pi / 3, 0)) ∧
+    RuledV5.gaussianCurvature StokesV5.ruledSurface (Real.pi / 3, 0) < 0
+RuledV5.negative_lateral_jacobian_positive :
+  0 < StokesV5.observationJacobian (-RuledV5.lateralAngle, RuledV5.lateralRuling)
+RuledV5.no_continuous_corner_normal {ε : ℝ} (he : ε ≠ 0) (n : ℝ × ℝ → ℝ × ℝ × ℝ) (hn : ContinuousAt n (0, 0))
+  (hortho :
+    ∀ (p : ℝ × ℝ),
+      p.1 ∈ Set.Ioo 0 (1 / 2) →
+        p.2 ∈ Set.Icc 0 1 →
+          RuledV5.dot3 (n p) ((fderiv ℝ (RuledV5.boundarySurface ε) p) (1, 0)) = 0 ∧
+            RuledV5.dot3 (n p) ((fderiv ℝ (RuledV5.boundarySurface ε) p) (0, 1)) = 0) :
+  n (0, 0) = 0
+RuledV5.no_continuous_corner_normal_local {ε δ : ℝ} (he : ε ≠ 0) (hδ : 0 < δ) (n : ℝ × ℝ → ℝ × ℝ × ℝ)
+  (hn : ContinuousAt n (0, 0))
+  (hortho :
+    ∀ (p : ℝ × ℝ),
+      p.1 ∈ Set.Ioo 0 δ →
+        p.2 ∈ Set.Icc 0 δ →
+          RuledV5.dot3 (n p) ((fderiv ℝ (RuledV5.boundarySurface ε) p) (1, 0)) = 0 ∧
+            RuledV5.dot3 (n p) ((fderiv ℝ (RuledV5.boundarySurface ε) p) (0, 1)) = 0) :
+  n (0, 0) = 0
+RuledV5.no_corner_flattening_chart {ε δ : ℝ} (he : ε ≠ 0) (hδ : 0 < δ) (hδ1 : δ ≤ 1 / 2) (χ : ℝ × ℝ × ℝ → ℝ × ℝ × ℝ)
+  (hc : ContDiffAt ℝ 1 χ (RuledV5.boundarySurface ε (0, 0)))
+  (hd : ∀ (p : ℝ × ℝ), p.1 ∈ Set.Ioo 0 δ → p.2 ∈ Set.Icc 0 δ → DifferentiableAt ℝ χ (RuledV5.boundarySurface ε p))
+  (hz : ∀ (p : ℝ × ℝ), p.1 ∈ Set.Ioo 0 δ → p.2 ∈ Set.Icc 0 δ → (χ (RuledV5.boundarySurface ε p)).2.2 = 0) :
+  ¬Function.Surjective ⇑(fderiv ℝ χ (RuledV5.boundarySurface ε (0, 0)))
+RuledV5.no_regular_corner_level_set {ε δ : ℝ} (he : ε ≠ 0) (hδ : 0 < δ) (hδ1 : δ ≤ 1 / 2) (g : ℝ × ℝ × ℝ → ℝ)
+  (hg : ContDiffAt ℝ 1 g (RuledV5.boundarySurface ε (0, 0)))
+  (hgd : ∀ (p : ℝ × ℝ), p.1 ∈ Set.Ioo 0 δ → p.2 ∈ Set.Icc 0 δ → DifferentiableAt ℝ g (RuledV5.boundarySurface ε p))
+  (hz : ∀ (p : ℝ × ℝ), p.1 ∈ Set.Ioo 0 δ → p.2 ∈ Set.Icc 0 δ → g (RuledV5.boundarySurface ε p) = 0) :
+  fderiv ℝ g (RuledV5.boundarySurface ε (0, 0)) = 0
+RuledV5.nondegenerate_zero_circle_winding {F : ℂ → ℂ} {z : ℂ} (L : ℂ ≃L[ℝ] ℂ) (hf : HasFDerivAt F (↑L) z)
+  (hF : ContDiffAt ℝ 1 F z) (hz : F z = 0) {ε : ℤ} (hε : ε = 1 ∨ ε = -1) (hD : 0 < RuledV5.planeJacobian ↑L * ↑ε) :
+  ∃ δ,
+    0 < δ ∧
+      ∀ r ∈ Set.Ioo 0 δ,
+        ∃ γ, (∀ (t : ↑unitInterval), ↑(γ t) = F (z + r • RuledV5.circleValue ↑t)) ∧ RuledV5.loopWinding γ = ↑ε
+RuledV5.nondegenerate_zero_small_homotopy {F : ℂ → ℂ} {z : ℂ} (L : ℂ ≃L[ℝ] ℂ) (hf : HasFDerivAt F (↑L) z)
+  (hz : F z = 0) :
+  ∃ δ, 0 < δ ∧ ∀ (w : ℂ), w ≠ z → ‖w - z‖ < δ → ∀ τ ∈ Set.Icc 0 1, L (w - z) + τ • (F w - L (w - z)) ≠ 0
+RuledV5.normalized_loop_start (γ : C(↑unitInterval, RuledV5.NonzeroComplex)) :
+  (RuledV5.normalizedLoop γ) 0 = RuledV5.nonzeroExp 0
+RuledV5.numerator_on_N_zero (c : ℝ) :
+  (1 - (1 - c) / 2) * c ^ 2 * (2 - c) - (1 - c) / 2 * (1 - c) ^ 2 * (1 + c) = -(1 + c) * RuledV5.coreP c / 2
+RuledV5.observationM_negative_iff {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  StokesV5.observationM p < 0 ↔ RuledV5.skeletonHeight (Real.cos p.1) < p.2
+RuledV5.observationM_positive_iff {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  0 < StokesV5.observationM p ↔ p.2 < RuledV5.skeletonHeight (Real.cos p.1)
+RuledV5.observationM_skeleton_factor {p : ℝ × ℝ} :
+  StokesV5.observationM p =
+    RuledV5.phaseD (Real.cos p.1) / StokesV5.qChart p.1 * (RuledV5.skeletonHeight (Real.cos p.1) - p.2)
+RuledV5.observation_even (t u : ℝ) : StokesV5.observationMap (-t, u) = StokesV5.observationMap (t, u)
+RuledV5.observation_index_of_nondegenerate_zero {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain)
+  (hphys : p ∈ RuledV5.physicalAngularInterior) (hzero : StokesV5.observationMap p = 0) {ε : ℤ} (hε : ε = 1 ∨ ε = -1)
+  (hJ : 0 < StokesV5.observationJacobian p * ↑ε) : RuledV5.HasLocalObservationIndex p ε
+RuledV5.observation_local_inverse {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain)
+  (hj : StokesV5.observationJacobian p ≠ 0) : StokesV5.IsSmoothChartAt StokesV5.observationMap p
+RuledV5.observation_zero_circle_winding {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain)
+  (hzero : StokesV5.observationMap p = 0) {ε : ℤ} (hε : ε = 1 ∨ ε = -1) (hJ : 0 < StokesV5.observationJacobian p * ↑ε) :
+  ∃ δ,
+    0 < δ ∧
+      ∀ r ∈ Set.Ioo 0 δ,
+        ∃ γ,
+          (∀ (t : ↑unitInterval),
+              ↑(γ t) =
+                RuledV5.complexObservation
+                  (p.1 + r * Real.cos (2 * Real.pi * ↑t), p.2 + r * Real.sin (2 * Real.pi * ↑t))) ∧
+            RuledV5.loopWinding γ = ↑ε
+RuledV5.observation_zero_iff {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) (hc : 0 < Real.cos p.1) :
+  StokesV5.observationMap p = 0 ↔
+    Real.cos p.1 = 1 ∧ p.2 = 1 ∨ RuledV5.coreP (Real.cos p.1) = 0 ∧ p.2 = (1 - Real.cos p.1) / 2
+RuledV5.off_skeleton_phase_not_axis {p : ℝ × ℝ} (hm : StokesV5.observationM p ≠ 0) :
+  (RuledV5.complexObservation p).arg ≠ 0 ∧ (RuledV5.complexObservation p).arg ≠ Real.pi
+RuledV5.paired_boundary_images_at_u_one :
+  RuledV5.boundarySurface 1 (0, 1) = (2, 0, 0) ∧ RuledV5.boundarySurface (-1) (0, 1) = (2, 0, 0)
+RuledV5.paired_label_image_at_u_one (t : ℝ) : StokesV5.ruledSurface (-t, 1) = StokesV5.ruledSurface (t, 1)
+RuledV5.pairing_constraint_hasFDerivAt (p : ℝ × ℝ) :
+  HasFDerivAt RuledV5.pairingConstraint (StokesV5.rowCLM (-Real.sin p.1) (-Real.sin p.2)) p
+RuledV5.pairing_constraint_regular {p : ℝ × ℝ} (ht : p.1 ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2))
+  (hφ : p.2 ∈ Set.Icc 0 (Real.pi / 2)) (hz : RuledV5.pairingConstraint p = 0) : fderiv ℝ RuledV5.pairingConstraint p ≠ 0
+RuledV5.patch_second_comp {S : ℝ × ℝ → ℝ × ℝ × ℝ} {φ : ℝ × ℝ → ℝ × ℝ} {p : ℝ × ℝ} (hS : ContDiffAt ℝ 2 S (φ p))
+  (hφ : ContDiffAt ℝ 2 φ p) (i j : ℝ × ℝ) :
+  RuledV5.patchSecond (S ∘ φ) i j p =
+    ((fderiv ℝ (fderiv ℝ S) (φ p)) ((fderiv ℝ φ p) j)) ((fderiv ℝ φ p) i) +
+      (fderiv ℝ S (φ p)) (((fderiv ℝ (fderiv ℝ φ) p) j) i)
+RuledV5.patch_second_iterated {S : ℝ × ℝ → ℝ × ℝ × ℝ} {p : ℝ × ℝ} (hS : ContDiffAt ℝ 2 S p) (i j : ℝ × ℝ) :
+  RuledV5.patchSecond S i j p = ((fderiv ℝ (fderiv ℝ S) p) j) i
+RuledV5.phaseD_pos (c : ℝ) : 0 < RuledV5.phaseD c
+RuledV5.phase_lock_iff (θ₁ θ₂ : ℝ) : RuledV5.rotation θ₁ = RuledV5.rotation θ₂ ↔ ∃ n, θ₁ - θ₂ = ↑n * (2 * Real.pi)
+RuledV5.phase_locked_retracing {p q : ℝ × ℝ} {θ₁ θ₂ : ℝ} (hf : StokesV5.observationMap p = StokesV5.observationMap q)
+  (hθ : RuledV5.rotation θ₁ = RuledV5.rotation θ₂) :
+  RuledV5.rotatedSignal θ₁ (RuledV5.complexObservation p) = RuledV5.rotatedSignal θ₂ (RuledV5.complexObservation q)
+RuledV5.phase_response_error_bound {ξ : ℝ} (hξ : ξ ≠ 0) (a ω t : ℝ) :
+  |RuledV5.phaseResponse ξ a ω t - a ^ 2 / ξ / 2 * (1 + Real.cos (2 * ω * t))| ≤ |a ^ 2 / ξ| ^ 3 / 3
+RuledV5.phase_response_half_period {ω : ℝ} (hω : ω ≠ 0) (ξ a t : ℝ) :
+  RuledV5.phaseResponse ξ a ω (t + Real.pi / ω) = RuledV5.phaseResponse ξ a ω t
+RuledV5.phase_response_positive_period {ω : ℝ} (hω : ω ≠ 0) (ξ a t : ℝ) :
+  0 < Real.pi / |ω| ∧ RuledV5.phaseResponse ξ a ω (t + Real.pi / |ω|) = RuledV5.phaseResponse ξ a ω t
+RuledV5.physical_boundary_strict_bounds :
+  613 / 1000 < StokesV5.physicalBoundary ∧ StokesV5.physicalBoundary < 614 / 1000
+RuledV5.physical_cos_labels {t c : ℝ} (ht : t ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2)) (hc0 : 0 ≤ c) (hc1 : c ≤ 1) :
+  Real.cos t = c ↔ t = Real.arccos c ∨ t = -Real.arccos c
+RuledV5.polar_has_no_interior_index (n : ℤ) : ¬RuledV5.HasLocalObservationIndex (0, 1) n
+RuledV5.polar_jacobian_zero : StokesV5.observationJacobian (0, 1) = 0
+RuledV5.polar_observation_index_none : RuledV5.localObservationIndex (0, 1) = none
+RuledV5.polar_observation_zero : StokesV5.observationMap (0, 1) = 0
+RuledV5.positive_lateral_jacobian_negative :
+  StokesV5.observationJacobian (RuledV5.lateralAngle, RuledV5.lateralRuling) < 0
+RuledV5.projection_hasFDerivAt (θ : ℝ) {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  HasFDerivAt (RuledV5.projectionSurface θ) (RuledV5.projectionCLM θ ∘SL RuledV5.surfaceDerivative p) p
+RuledV5.rational_intersection_surface_regular {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain)
+  (hc : Real.cos p.1 = RuledV5.intersectionCos) : Function.Injective ⇑(fderiv ℝ StokesV5.ruledSurface p)
+RuledV5.repeated_nonzero_signal_iff_phase_lock {z : ℂ} (hz : z ≠ 0) (θ₁ θ₂ : ℝ) :
+  RuledV5.rotatedSignal θ₁ z = RuledV5.rotatedSignal θ₂ z ↔ RuledV5.rotation θ₁ = RuledV5.rotation θ₂
+RuledV5.ruled_normal_orthogonal (p : ℝ × ℝ) :
+  RuledV5.dot3 (RuledV5.patchNormal StokesV5.ruledSurface p) (RuledV5.patchTangent StokesV5.ruledSurface (1, 0) p) = 0 ∧
+    RuledV5.dot3 (RuledV5.patchNormal StokesV5.ruledSurface p) (RuledV5.patchTangent StokesV5.ruledSurface (0, 1) p) = 0
+RuledV5.ruled_not_developable :
+  ¬RuledV5.IsDevelopableOn StokesV5.ruledSurface ((Set.Ioo (-(Real.pi / 2)) (Real.pi / 2)).prod (Set.Icc 0 1))
+RuledV5.ruled_second_eq_iterated {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) (i j : ℝ × ℝ) :
+  RuledV5.patchSecond StokesV5.ruledSurface i j p = ((fderiv ℝ (fderiv ℝ StokesV5.ruledSurface) p) j) i
+RuledV5.ruled_second_symmetric {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) (i j : ℝ × ℝ) :
+  RuledV5.patchSecond StokesV5.ruledSurface i j p = RuledV5.patchSecond StokesV5.ruledSurface j i p
+RuledV5.ruled_second_u {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  RuledV5.patchSecond StokesV5.ruledSurface (0, 1) (1, 0) p = (2 * Real.sin p.1, -Real.cos p.1, StokesV5.dQdt p) ∧
+    RuledV5.patchSecond StokesV5.ruledSurface (0, 1) (0, 1) p = 0
+RuledV5.ruled_unit_normal {p : ℝ × ℝ} (hreg : Function.Injective ⇑(fderiv ℝ StokesV5.ruledSurface p)) :
+  RuledV5.euclideanSq (RuledV5.patchNormal StokesV5.ruledSurface p) = 1
+RuledV5.ruling_hasFDerivAt {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  HasFDerivAt RuledV5.tangentU
+    ((StokesV5.rowCLM (2 * Real.sin p.1) 0).prod
+      ((StokesV5.rowCLM (-Real.cos p.1) 0).prod (StokesV5.rowCLM (StokesV5.dQdt p) 0)))
+    p
+RuledV5.ruling_metric_endpoint_values {ε : ℝ} (he : ε = 1 ∨ ε = -1) (u : ℝ) :
+  RuledV5.dot3 ((fderiv ℝ StokesV5.ruledSurface (0, u)) (0, 1)) ((fderiv ℝ StokesV5.ruledSurface (0, u)) (0, 1)) = 1 ∧
+    RuledV5.dot3 ((fderiv ℝ (RuledV5.boundarySurface ε) (0, u)) (0, 1))
+        ((fderiv ℝ (RuledV5.boundarySurface ε) (0, u)) (0, 1)) =
+      5
+RuledV5.ruling_metric_range {c : ℝ} (hc0 : 0 ≤ c) (hc1 : c ≤ 1) : 1 ≤ 2 * c ^ 2 - 6 * c + 5 ∧ 2 * c ^ 2 - 6 * c + 5 ≤ 5
+RuledV5.ruling_mixed_derivative {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  (fderiv ℝ RuledV5.tangentU p) (1, 0) = (2 * Real.sin p.1, -Real.cos p.1, StokesV5.dQdt p)
+RuledV5.scalar_triple_product {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  RuledV5.dot3 (RuledV5.areaVector p) ((fderiv ℝ RuledV5.tangentU p) (1, 0)) =
+    -RuledV5.coreP (Real.cos p.1) * Real.sin p.1 / StokesV5.qChart p.1
+RuledV5.separated_first_jet {T : ℝ → ℝ} {p : ℝ × ℝ} (hT : ContDiffAt ℝ 2 T p.1) :
+  fderiv ℝ (RuledV5.separatedMap T) p = (StokesV5.rowCLM (deriv T p.1) 0).prod (StokesV5.rowCLM 0 1)
+RuledV5.separated_second_basis {S : ℝ × ℝ → ℝ × ℝ × ℝ} {T : ℝ → ℝ} {p : ℝ × ℝ}
+  (hS : ContDiffAt ℝ 2 S (RuledV5.separatedMap T p)) (hT : ContDiffAt ℝ 2 T p.1) :
+  RuledV5.patchSecond (S ∘ RuledV5.separatedMap T) (1, 0) (1, 0) p =
+      deriv T p.1 ^ 2 • RuledV5.patchSecond S (1, 0) (1, 0) (RuledV5.separatedMap T p) +
+        deriv (deriv T) p.1 • RuledV5.patchTangent S (1, 0) (RuledV5.separatedMap T p) ∧
+    RuledV5.patchSecond (S ∘ RuledV5.separatedMap T) (0, 1) (1, 0) p =
+        deriv T p.1 • RuledV5.patchSecond S (0, 1) (1, 0) (RuledV5.separatedMap T p) ∧
+      RuledV5.patchSecond (S ∘ RuledV5.separatedMap T) (0, 1) (0, 1) p =
+        RuledV5.patchSecond S (0, 1) (0, 1) (RuledV5.separatedMap T p)
+RuledV5.separated_second_jet {T : ℝ → ℝ} {p : ℝ × ℝ} (hT : ContDiffAt ℝ 2 T p.1) (i j : ℝ × ℝ) :
+  ((fderiv ℝ (fderiv ℝ (RuledV5.separatedMap T)) p) j) i = (deriv (deriv T) p.1 * j.1 * i.1, 0)
+RuledV5.separated_tangent_basis {S : ℝ × ℝ → ℝ × ℝ × ℝ} {T : ℝ → ℝ} {p : ℝ × ℝ}
+  (hS : ContDiffAt ℝ 2 S (RuledV5.separatedMap T p)) (hT : ContDiffAt ℝ 2 T p.1) :
+  RuledV5.patchTangent (S ∘ RuledV5.separatedMap T) (1, 0) p =
+      deriv T p.1 • RuledV5.patchTangent S (1, 0) (RuledV5.separatedMap T p) ∧
+    RuledV5.patchTangent (S ∘ RuledV5.separatedMap T) (0, 1) p =
+      RuledV5.patchTangent S (0, 1) (RuledV5.separatedMap T p)
+RuledV5.signed_angular_boundary_left_inverse {ε t : ℝ} (he : ε = 1 ∨ ε = -1) (ht : t ∈ Set.Ioc 0 (Real.pi / 2)) :
+  RuledV5.boundaryAngle ε (StokesV5.qChart (ε * t)) = ε * t
+RuledV5.singularParameters_card : RuledV5.singularParameters.card = 5
+RuledV5.singularParameters_physical {p : ℝ × ℝ} (hp : p ∈ RuledV5.singularParameters) :
+  p.1 ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2) ∧ p.2 ∈ Set.Icc 0 1
+RuledV5.skeleton_equation_iff {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  StokesV5.observationM p = 0 ↔ p.2 = Real.cos p.1 ^ 2 * (2 - Real.cos p.1) / RuledV5.phaseD (Real.cos p.1)
+RuledV5.skeleton_height_physical {c : ℝ} (hc0 : 0 ≤ c) (hc1 : c ≤ 1) : RuledV5.skeletonHeight c ∈ Set.Icc 0 1
+RuledV5.skeleton_nonzero_phase_classification {p : ℝ × ℝ} (hm : StokesV5.observationM p = 0)
+  (hf : RuledV5.complexObservation p ≠ 0) :
+  (RuledV5.complexObservation p).arg = 0 ∨ (RuledV5.complexObservation p).arg = Real.pi
+RuledV5.skeleton_phase_pi_iff {p : ℝ × ℝ} (hm : StokesV5.observationM p = 0) :
+  (RuledV5.complexObservation p).arg = Real.pi ↔ StokesV5.observationN p < 0
+RuledV5.skeleton_phase_zero_iff {p : ℝ × ℝ} (hm : StokesV5.observationM p = 0) (hf : RuledV5.complexObservation p ≠ 0) :
+  (RuledV5.complexObservation p).arg = 0 ↔ 0 < StokesV5.observationN p
+RuledV5.smooth_chart_fderiv_bijective {g : ℝ × ℝ → ℝ × ℝ} {p : ℝ × ℝ} (hg : StokesV5.IsSmoothChartAt g p) :
+  Function.Bijective ⇑(fderiv ℝ g p)
+RuledV5.squared_cosine_response (ξ a ω t : ℝ) :
+  (a * Real.cos (ω * t)) ^ 2 / ξ = a ^ 2 / ξ / 2 * (1 + Real.cos (2 * ω * t))
+RuledV5.surface_contDiffAt {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) : ContDiffAt ℝ (↑⊤) StokesV5.ruledSurface p
+RuledV5.surface_fderiv_basis {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  (fderiv ℝ StokesV5.ruledSurface p) (1, 0) = RuledV5.tangentT p ∧
+    (fderiv ℝ StokesV5.ruledSurface p) (0, 1) = RuledV5.tangentU p
+RuledV5.surface_hasFDerivAt {p : ℝ × ℝ} (hp : p ∈ StokesV5.observationDomain) :
+  HasFDerivAt StokesV5.ruledSurface (RuledV5.surfaceDerivative p) p
+RuledV5.transition_derivative_nonzero {t u : ℝ} (hp : (t, u) ∈ StokesV5.observationDomain) (hc1 : Real.cos t < 1)
+  (hs : Real.sin t ≠ 0) : StokesV5.dQdt (t, u) ≠ 0
+RuledV5.transition_left_inverse {ε t u : ℝ} (he : ε = 1 ∨ ε = -1) (ht : t ∈ Set.Ioc 0 (Real.pi / 2)) :
+  RuledV5.boundaryToAngular ε (RuledV5.angularToBoundary (ε * t, u)) = (ε * t, u)
+RuledV5.transition_right_inverse {ε : ℝ} {p : ℝ × ℝ} (he : ε = 1 ∨ ε = -1) (hr : p.1 ∈ Set.Ico 0 1) :
+  RuledV5.angularToBoundary (RuledV5.boundaryToAngular ε p) = p
+RuledV5.transverse_crossing_derivative : HasDerivAt (fun s => s) 1 0
+RuledV5.transverse_crossing_observation_injective : Function.Injective fun s => RuledV5.whitney (s, s)
+RuledV5.uniform_remainder_sine_coefficient_zero (κ : ℝ) (n : ℕ) :
+  RuledV5.sineCoeff (fun x => RuledV5.chartPhase κ x - RuledV5.leadingPhase κ x) n = 0
+RuledV5.uniform_rotation_phase_lock {z : ℂ} (hz : z ≠ 0) (ω t₁ t₂ : ℝ) :
+  RuledV5.rotatedSignal (ω * t₁) z = RuledV5.rotatedSignal (ω * t₂) z ↔ ∃ n, ω * (t₁ - t₂) = ↑n * (2 * Real.pi)
+RuledV5.unlocked_rotation_counterexample : RuledV5.rotatedSignal 0 1 ≠ RuledV5.rotatedSignal Real.pi 1
+RuledV5.unlocked_rotation_counterexample_nonreal :
+  RuledV5.rotatedSignal 0 (1 + Complex.I) ≠ RuledV5.rotatedSignal Real.pi (1 + Complex.I)
+RuledV5.whitney_fiber_iff (p q : ℝ × ℝ) : RuledV5.whitney p = RuledV5.whitney q ↔ p.1 = q.1 ∧ (p.2 = q.2 ∨ p.2 = -q.2)
+RuledV5.winding_lift_actual (γ : C(↑unitInterval, RuledV5.NonzeroComplex)) (z : ℂ) (hz : γ 0 = RuledV5.nonzeroExp z) :
+  Continuous ⇑(RuledV5.windingLift γ z hz) ∧
+    RuledV5.nonzeroExp ∘ ⇑(RuledV5.windingLift γ z hz) = ⇑γ ∧ (RuledV5.windingLift γ z hz) 0 = z
+RuledV5.winding_value_homotopy_invariant {γ₀ γ₁ : C(↑unitInterval, RuledV5.NonzeroComplex)} (z : ℂ)
+  (h₀ : γ₀ 0 = RuledV5.nonzeroExp z) (h₁ : γ₁ 0 = RuledV5.nonzeroExp z) (h : γ₀.HomotopicRel γ₁ {0, 1}) :
+  RuledV5.windingValue γ₀ z h₀ = RuledV5.windingValue γ₁ z h₁
+RuledV5.winding_value_initial_independent (γ : C(↑unitInterval, RuledV5.NonzeroComplex)) (z w : ℂ)
+  (hz : γ 0 = RuledV5.nonzeroExp z) (hw : γ 0 = RuledV5.nonzeroExp w) :
+  RuledV5.windingValue γ z hz = RuledV5.windingValue γ w hw
+RuledV5.winding_value_integral (γ : C(↑unitInterval, RuledV5.NonzeroComplex)) (z : ℂ) (hz : γ 0 = RuledV5.nonzeroExp z)
+  (hclosed : γ 1 = γ 0) : ∃ n, RuledV5.windingValue γ z hz = ↑n
+RuledV5.zero_signal (θ : ℝ) : RuledV5.rotatedSignal θ 0 = 0

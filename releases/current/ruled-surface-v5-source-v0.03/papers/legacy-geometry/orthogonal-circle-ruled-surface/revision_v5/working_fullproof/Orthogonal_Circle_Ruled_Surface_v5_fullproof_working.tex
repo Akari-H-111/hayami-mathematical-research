@@ -1,0 +1,2548 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,longtable,microtype,xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue,citecolor=blue]{hyperref}
+\hypersetup{pdftitle={The Orthogonal-Circle Ruled Surface v5},pdfauthor={Akari Hayami (Jian-Yu Huang)},pdfsubject={Revised research manuscript; local publication preparation},pdfkeywords={ruled surface, boundary atlas, fold, conditional recurrence, Lean}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\Map}{\mathcal F}\newcommand{\Pcore}{\mathcal P}
+\title{The Orthogonal-Circle Ruled Surface:\\A Boundary Atlas, Five Rank Singularities,\\and Conditional Fold-Signal Recurrence}
+\author{Akari Hayami (Jian-Yu Huang)}
+\date{Ruled surface v5 --- illustrated working extension, 1 October 2026\\Full-proof preparation; not released}
+\begin{document}
+\maketitle
+\begin{abstract}
+We reconstruct the orthogonal-circle ruled surface from the hash-bound v4
+manuscript and correct its boundary and signal statements. A smooth atlas
+retains the entire closed parameter domain, including the two $Q=0$ edges.
+Its surface map loses rank at three angular-chart points and two additional
+boundary corners. The interior observation field has two nondegenerate
+lateral zeros and a degenerate polar zero. Its critical set includes a
+symmetry branch omitted from the old rational parametrization, with one
+exceptional point that is not a fold. We prove the physical rational-fold
+domain and the complete skeleton--critical intersection statement.
+Transverse crossing alone does not force recurrence. In actual fold charts,
+recurrence is characterized by equality of the tangential coordinates and
+equality up to sign of the normal coordinates; a repeated nonzero intrinsic
+observation survives an external rotation precisely when the phases lock.
+Squared-cosine frequency doubling is a conditional response in chosen target
+coordinates, not a trajectory-independent law. Exact replay and a separate
+Lean companion distinguish formal theorems, manuscript proofs, background
+references, and independent open research questions. Each asserted result
+has claimwise Lean coverage in the new companion.
+\end{abstract}
+\tableofcontents
+
+\section{Source authority and geometric domain}
+The immutable historical authority is \emph{The Orthogonal Circle Ruled
+Surface}, v4, 13 pages, SHA-256
+\begin{center}\small\ttfamily
+c90a8066be4d5e087592de1590eb04930574\\
+c7668a4f8e8d0560cfff17b15722
+\end{center}
+The located July 2026 TeX is a source ancestor, not the lost final source.
+The present source and PDF are new artifacts. Neither the historical PDF
+nor any sealed Stokes release is overwritten. This paper concerns a
+parametrized surface; it does not assert a global embedding of its image.
+
+\begin{definition}[Paired circles and interior surface map]\label{def:surface}
+Set $c=\cos t$, $s=\sin t$, $Q=\sqrt{c(2-c)}$ and
+\[
+ C_1(t)=(c,s,0),\qquad C_2(\varphi)=(1+\cos\varphi,0,\sin\varphi),
+ \qquad c+\cos\varphi=1,\quad \sin\varphi\geq0.
+\]
+For $-\pi/2\leq t\leq\pi/2$ and $0\leq u\leq1$, the continuous surface
+map is
+\begin{equation}\label{eq:surface}
+ S(t,u)=\big(c+2u(1-c),(1-u)s,uQ\big).
+\end{equation}
+Its angular chart is restricted to $-\pi/2<t<\pi/2$, where $Q>0$.
+The closed domain receives its smooth structure from that chart and the
+boundary charts below, rather than from the old closed $t$ rectangle.
+Equivalently it is the paired-angle curve
+$\{(t,\varphi):\cos t+\cos\varphi=1,\ -\pi/2\leq t\leq\pi/2,
+0\leq\varphi\leq\pi/2\}$, times $[0,1]$.
+The constraint has nonzero gradient everywhere on this curve:
+at its two endpoints $\sin t\ne0$, and at $t=0$ one has
+$\sin\varphi=1$. Thus this is the usual smooth structure of the pairing
+curve. Near its endpoints $r=\sin\varphi$ is a regular coordinate.
+\end{definition}
+
+\begin{theorem}[Boundary atlas without discarding the edges]\label{thm:atlas}
+For $\varepsilon\in\{-1,1\}$ and $0\leq r<1/2$, put
+\[
+ c_r=1-\sqrt{1-r^2},\quad s_r=\varepsilon\sqrt{1-c_r^2},\qquad
+ S_\varepsilon(r,u)=\big(c_r+2u(1-c_r),(1-u)s_r,ur\big).
+\]
+Together with the angular chart these maps describe the entire original
+closed parameter domain as a smooth manifold with corners, and the surface
+map extends smoothly in every chart. On the overlaps,
+$r=Q(t)$, $t=\varepsilon\arccos c_r$, and
+\begin{equation}\label{eq:transition}
+ \frac{dr}{dt}=-\frac{s(1-c)}{Q}\ne0.
+\end{equation}
+At the $r=0$ edge,
+\begin{equation}\label{eq:boundary-derivative}
+ (S_\varepsilon)_r=(0,0,u),\quad
+ (S_\varepsilon)_u=(2,-\varepsilon,0),\quad
+ (S_\varepsilon)_r\times(S_\varepsilon)_u=(\varepsilon u,2u,0).
+\end{equation}
+The boundary surface differential is injective exactly when $u\ne0$.
+\end{theorem}
+\begin{proof}
+The two radicands are positive for $|r|<1/2$, so the displayed functions
+extend smoothly to an open neighborhood across $r=0$ and across each
+$u$ endpoint. Also $c_r(2-c_r)=r^2$ and $c_r^2+s_r^2=1$.
+For $r>0$ the inverse formula matches the sign of $t$ and gives the original
+circle pairing; both transition maps are smooth, with nonzero derivative
+\eqref{eq:transition}. The angular chart covers the remaining part of the
+domain, including $t=0$. Thus no original surface points are removed.
+At $r=0$, $c'_r=s'_r=0$, which proves \eqref{eq:boundary-derivative}.
+For $u\ne0$ the two displayed vectors are independent; for $u=0$ the
+first is zero and the second is nonzero, giving rank one.
+A single global parameter makes the manifold assembly explicit. For
+$-1\leq v\leq1$ define
+\begin{align*}
+ c_g(v)&=(1-v^2)^2,\\
+ s_g(v)&=v\sqrt{(2-v^2)(1+(1-v^2)^2)},\\
+ q_g(v)&=(1-v^2)\sqrt{2-c_g(v)},\\
+ t_g(v)&=2\arcsin\!\left(v\sqrt{1-v^2/2}\right).
+\end{align*}
+Both square-root radicands in $s_g,q_g$ are strictly positive on this
+interval. Their exact identities are $c_g^2+s_g^2=1$,
+$q_g^2=c_g(2-c_g)$, and $(\cos t_g,\sin t_g,Q(t_g))=(c_g,s_g,q_g)$.
+Thus substituting these functions into \eqref{eq:surface} gives exactly
+the original surface. The function $t_g$ is continuous and strictly
+increasing, has endpoint values $\pm\pi/2$, and hence is a homeomorphism
+between the two closed base intervals. Its derivative is positive for
+$|v|<1$, while $q'_g(\pm1)=\mp2\sqrt2\ne0$. Therefore its angular and
+endpoint transitions have smooth local inverses and give the same atlas.
+The product $[-1,1]\times[0,1]$ carries the standard product of interval
+manifolds with boundary; the displayed surface is a smooth map on this
+genuine manifold with corners. These assertions, including the global
+homeomorphism and actual manifold smoothness, have corresponding Lean
+theorems rather than merely a list of coordinate formulas.
+
+\end{proof}
+
+\begin{proposition}[Boundary corner obstruction]\label{prop:corner}
+At either $(r,u)=(0,0)$ the image cannot be regularized as a $C^1$ embedded
+surface with a continuous tangent plane containing its neighboring regular
+patches. The rank loss is therefore not merely the old $1/Q$ formula.
+\end{proposition}
+\begin{proof}
+Write $V_r=(S_\varepsilon)_r\times(S_\varepsilon)_u$.
+For $0<r<1/2$, exact differentiation uses
+$c'_r=r/\sqrt{1-r^2}$ and
+$s'_r=-\varepsilon c_r r/(\sqrt{1-c_r^2}\sqrt{1-r^2})$.
+Dividing the actual cross product by $r$ and taking the one-sided limit gives
+\[
+ \lim_{r\downarrow0}\frac{V_r(r,0)}r=(0,0,-\varepsilon),\qquad
+ \lim_{r\downarrow0}\frac{V_r(r,r)}r=(\varepsilon,2,-\varepsilon).
+\]
+The limiting normal lines differ and both paths consist of regular points
+for sufficiently small $r>0$. A $C^1$ embedded surface containing these
+patches would have the same limiting tangent plane along both paths, a
+contradiction. This is a local image obstruction; it is not a classification
+of all global self-intersections.
+An equivalent obstruction avoids choosing a normalization of $V$.
+Direct differentiation gives
+\[
+ \lim_{r\downarrow0}S_r(r,0)/r=(1,0,0),\qquad
+ \lim_{r\downarrow0}S_r(r,r)/r=(1,0,1),\qquad
+ \lim_{r\downarrow0}S_u(r,0)=(2,-\varepsilon,0).
+\]
+A nonzero continuous local normal to a containing $C^1$ embedded patch
+must annihilate these three independent limiting directions. This forces
+all three components of that normal at the corner to vanish, contradicting
+regularity. More directly, let a $C^1$ ambient chart $\chi$ flatten a
+containing surface into $z=0$ and set $g=\chi_3$. The chain rule on the
+physical quadrant (with one-sided derivatives at $u=0$) makes $Dg$
+annihilate both actual surface tangents. The three limits force $Dg=0$
+at the corner, whereas invertibility of $D\chi$ makes its third row
+nonzero. The formal theorem uses any $0<\delta\leq1/2$, with
+$0<r<\delta$ and $0\leq u\leq\delta$; it does not require a chart
+covering the whole surface.
+
+\end{proof}
+
+\section{Intrinsic differential geometry and global rank classification}
+All formulas in this section that contain $Q^{-1}$ use the angular chart
+$Q>0$. We reserve $F_{\mathrm I}$ for the mixed metric coefficient to avoid
+confusion with the observation field.
+\begin{proposition}[Differential, metric, and non-developability]\label{prop:metric}
+The tangent vectors and mixed derivative are
+\[
+ S_t=((2u-1)s,(1-u)c,us(c-1)/Q),\quad S_u=(2(1-c),-s,Q),
+ \qquad S_{tu}=(2s,-c,s(c-1)/Q).
+\]
+The scalar triple product is
+\begin{equation}\label{eq:triple}
+ T=\det(S_t,S_u,S_{tu})=-\Pcore(c)s/Q,\qquad
+ \Pcore(c)=c^2-3c+1.
+\end{equation}
+The first fundamental form is
+\begin{align*}
+ G&=2c^2-6c+5,\\
+ F_{\mathrm I}&=s[(3-2c)u-(2-c)],\\
+ E&=1+(-4s^2-2c^2)u+
+       \left(4s^2+c^2+\frac{s^2(1-c)^2}{Q^2}\right)u^2.
+\end{align*}
+For $0\leq c\leq1$, $1\leq G\leq5$, with $G(1)=1$ and $G(0)=5$.
+At regular angular-chart points the Gaussian curvature is
+\begin{equation}\label{eq:curvature}
+ K=-\frac{T^2}{\lVert S_t\times S_u\rVert^4}\leq0.
+\end{equation}
+It is strictly negative except where $s\Pcore(c)=0$; in particular the
+surface is non-developable. Curvature agrees on the actual angular--boundary
+atlas overlaps, and each regular $r=0$ edge has $K=0$.
+\end{proposition}
+\begin{proof}
+Differentiate $Q^2=c(2-c)$ to obtain $Q_t=s(c-1)/Q$ and the displayed
+vectors. Dot products give $E,F_{\mathrm I},G$. The bounds follow from
+$G-1=(1-c)(4-2c)$ and $5-G=c(6-2c)$.
+For the triple product, write $S=C_1+u d$. The term containing $u d'$ in
+$\det(C'_1+ud',d,d')$ vanishes. Expansion reduces the remaining
+numerator to
+$s[c^2(2-c)-(1-c)^3]=-s\Pcore(c)$.
+At a regular point let $n=(S_t\times S_u)/\lVert S_t\times S_u\rVert$.
+The $uu$ coefficient of the second fundamental form is zero because
+$S_{uu}=0$, and its mixed coefficient is $n\cdot S_{tu}=T/\lVert
+S_t\times S_u\rVert$. The Gram determinant of the first form is
+$\lVert S_t\times S_u\rVert^2$. Substitution in the definition of
+Gaussian curvature proves \eqref{eq:curvature}. In the physical angular
+interval its zero directions are exactly $t=0,\pm t_0$, excluding the rank
+singularities where $K$ is undefined. The actual regular point
+$(t,u)=(\pi/3,0)$ has $K<0$, proving non-developability.
+On a separated atlas transition $(r,u)\mapsto(T(r),u)$ with
+$\alpha=T'(r)\ne0$, the first tangents transform as
+$(S_r,S_u)=(\alpha S_t,S_u)$ and the second derivatives as
+$(S_{rr},S_{ru},S_{uu})=(\alpha^2S_{tt}+T''S_t,\alpha S_{tu},S_{uu})$.
+The normal annihilates the added tangential term. The numerator and
+denominator of $K$ both acquire the factor $\alpha^4$, proving
+consistency on the actual atlas overlaps. At $r=0$, direct differentiation
+gives $S_{ru}=(0,0,1)$ and $S_{uu}=0$, while the regular area vector
+$(\varepsilon u,2u,0)$ is orthogonal to $S_{ru}$. Thus $K=0$ on both
+regular boundary edges; their $u=0$ corners have no regular curvature.
+\end{proof}
+
+\begin{theorem}[Five rank singularities on the completed domain]\label{thm:regularity}
+The surface differential loses rank at precisely the polar point $(t,u)=(0,1)$,
+the two lateral points $(t,u)=(\pm t_0,u_0)$, and the two boundary
+corners $(r,u)=(0,0)$, where
+\[
+ c_0=\frac{3-\sqrt5}{2},\quad t_0=\arccos c_0,\quad
+ u_0=\frac{1-c_0}{2}=\frac{\sqrt5-1}{4}.
+\]
+Every other point of the completed parameter domain is an immersion point.
+This corrects the three-point global assertion of v4 Theorem 2.3.
+\end{theorem}
+\begin{proof}
+In the angular chart direct cross multiplication gives
+\begin{equation}\label{eq:cross}
+ V=S_t\times S_u=\left(
+ \frac{c^2(2-c)-u(1-c+c^2)}Q,
+ -\frac{s[2u-c(2-c)]}Q,
+ (1-c)(1-c-2u)\right).
+\end{equation}
+At $c=1$ one has $t=s=0$ and $V=(1-u,0,0)$, so precisely $u=1$
+loses rank. At $0<c<1$, $s\ne0$. The last component forces
+$u=(1-c)/2$, and the second then forces $\Pcore(c)=0$.
+For this $u$ the first numerator is
+$-(1+c)\Pcore(c)/2$, so no additional condition remains.
+$\Pcore$ decreases strictly on $[0,1]$, has opposite endpoint signs,
+and its only root there is $c_0$. The cosine equation gives exactly the
+two stated angular points. The boundary charts are classified by
+Theorem~\ref{thm:atlas}. A two-dimensional differential into $\R^3$ is
+injective exactly when the cross product of its basis images is nonzero,
+which completes the argument.
+\end{proof}
+\begin{remark}
+At $u=1$, the two labels $t$ and $-t$ have the same image on $C_2$.
+In particular both $Q=0,u=1$ points map to $(2,0,0)$. Immersion of a
+labelled branch does not imply a global embedding or identify the two
+parameter points. We do not quotient these labels in the domain.
+\end{remark}
+
+\section{Interior observation field, skeleton, and zeros}
+\begin{definition}[Fixed angular-chart observation field]\label{def:observation}
+On $Q>0$ define
+\[
+ N=(1-c)(1-c-2u),\quad H=c^2(2-c)-uD(c),\quad
+ D(c)=1-c+c^2,\quad M=H/Q,
+\]
+and $\Map(t,u)=(N,M)$, equivalently $F=N+iM$.
+For the rotated coordinate projection $(X_\theta,Y_\theta)
+=(x\cos\theta+z\sin\theta,y)$, its Jacobian is
+$J_\theta=N\cos\theta-M\sin\theta$.
+This projection Jacobian is distinct from $\det D\Map$ below.
+\end{definition}
+The projection identity follows by bilinearity from the $z$ and $x$
+components of \eqref{eq:cross}. These components are coordinate area
+densities. On a boundary overlap,
+\begin{equation}\label{eq:field-transform}
+ F_r=\frac{dt}{dr}F_t=-\frac{r}{s(1-c)}F_t.
+\end{equation}
+For fixed $u>0$, $M_t\sim-u/r$ diverges, whereas the new chart has
+$F_r\longrightarrow i\varepsilon u$ at its edge. Thus the full surface
+is retained, but this fixed $F_t$ and its fold set are not asserted to
+extend as the same global scalar observation. Chart-dependent field
+zeros and critical points must not be silently identified across $Q=0$.
+
+\begin{proposition}[Skeleton and complete zero set]\label{prop:zeros}
+The interior skeleton $\{M=0\}$ is
+\[
+ u_{\rm skel}(c)=\frac{c^2(2-c)}{D(c)},\qquad
+ D(c)=(c-1/2)^2+3/4>0.
+\]
+It lies in $[0,1]$ for $0\leq c\leq1$. The zeros of $\Map$ coincide
+with the angular-chart rank singularities: two lateral zeros and the
+polar zero $(0,1)$. Along the skeleton $F$ is real wherever it is
+nonzero. Off it, $M$ has opposite signs on its two sides; neither side
+is a region of constant phase $0$ or $\pi$.
+\end{proposition}
+\begin{proof}
+Solve $H=0$ using $D>0$. Its numerator is nonnegative and
+$D-c^2(2-c)=(1-c)^2(1+c)\geq0$, giving the range.
+The system $N=H=0$ at $c\ne1$ gives $u=(1-c)/2$ and then
+$H=-(1+c)\Pcore(c)/2=0$. At $c=1$ it gives $u=1$.
+The proof of Theorem~\ref{thm:regularity} shows that the middle area
+component vanishes at those same points. Finally $H$ is strictly
+decreasing in $u$, so $M>0$ below and $M<0$ above the skeleton.
+\end{proof}
+
+\begin{theorem}[Lateral dipole with a separate polar zero]\label{thm:dipole}
+Writing $s_0=\sin t_0>0$ and $Q_0=\sqrt{c_0(2-c_0)}>0$, one has
+\[
+ \det D\Map(\pm t_0,u_0)=\mp\frac{5s_0(1-c_0)^2}{Q_0}.
+\]
+Both lateral zeros are nondegenerate, with local indices $-1,+1$
+in the ordered coordinates $(t,u)$ and target $(N,M)$, so their total
+charge is zero. The polar zero has zero Jacobian and is on the domain
+boundary $u=1$; no interior local-degree index is assigned to it here.
+\end{theorem}
+\begin{proof}
+Differentiate $N,H,Q$ in the positive-$Q$ chart. At the lateral zero,
+using $c_0^2=3c_0-1$ gives
+\[
+ N_t=s(1-c_0),\quad N_u=-2(1-c_0),\quad
+ M_u=-2c_0/Q_0,\quad M_t=-s(5-7c_0)/(2Q_0).
+\]
+The determinant simplifies to $-5s(1-c_0)^2/Q_0$. The field is even
+in $t$, so the determinants at the two points have opposite signs.
+Here the planar local index means the winding number of the actual
+nonzero observation on all sufficiently small positively oriented source
+circles. For a closed nonzero complex loop $\gamma$, normalize it by
+$\gamma(0)$ and lift that loop through $\exp:\C\to\C\setminus\{0\}$
+with initial value zero. Its winding is the imaginary endpoint divided by
+$2\pi$. Covering-space lifting proves that this is an integer, independent
+of a chosen initial logarithm, and invariant under closed-loop homotopies.
+
+Write the actual observation near a zero as $F(p+h)=Lh+R(h)$, where
+$L$ is its invertible real derivative and $R(h)=o(\lVert h\rVert)$.
+For all sufficiently small $h\ne0$,
+$\lVert R(h)\rVert<\lVert h\rVert/(2\lVert L^{-1}\rVert)$,
+so $Lh+\tau R(h)$ never vanishes for $0\leq\tau\leq1$.
+This homotopes every sufficiently small actual observation circle to its
+linear image. Normalize that image by $L(1)$: it becomes
+$\cos\theta+\beta\sin\theta$, where $\beta=L(i)/L(1)$ and
+$\operatorname{Im}\beta=\det L/|L(1)|^2$.
+Deforming $\beta$ to $\varepsilon i$, with
+$\varepsilon=\operatorname{sign}\det L$, preserves this imaginary sign
+and hence nonvanishing. The resulting exponential circle has winding
+$\varepsilon$. All source circles are chosen inside the physical interior
+by reducing their radius once more. This proves the indices $-1,+1$
+from genuine winding, rather than defining them as determinant signs.
+These lifting, homotopy, linear-circle, and actual-field application
+statements are proved in Lean. The convention agrees with the standard
+planar index discussed in \cite{degree}; no unproved local-index theorem
+is a formal dependency.
+At $(0,1)$ both field components vanish and the Jacobian below has its
+$s=0$ factor, proving degeneracy.
+\end{proof}
+
+\section{The full physical critical locus and its folds}
+Set
+\[
+ A(c)=(1-c)c(2-c)(1+2c-c^2),\quad B(c)=c^3-3c+1,
+\]
+\[
+ p_b(c)=c^5-5c^4+6c^3-c^2+c-1=-A(c)-B(c).
+\]
+\begin{theorem}[Critical locus with the missing symmetry branch]\label{thm:critical}
+In the angular chart,
+\begin{equation}\label{eq:jacobian}
+ J_{\Map}=-\frac{2s}{Q^3}\,[A(c)+uB(c)].
+\end{equation}
+Let $c_b$ be the unique root of $p_b$ in $[0,1]$; then
+$613/1000<c_b<614/1000$. In the physical domain $0\leq u\leq1$,
+\begin{equation}\label{eq:critical}
+ J_{\Map}=0\quad\Longleftrightarrow\quad
+ t=0\quad\text{or}\quad
+ [\,c_b\leq c\leq1,\ u=u_{\rm fold}(c):=-A(c)/B(c)\,].
+\end{equation}
+The rational branch reaches $u=1$ at $c_b$ and $u=0$ at $c=1$.
+The root $c_*=2\cos(4\pi/9)$ of $B$ in $(0,1)$ is an asymptote of
+the algebraic rational expression, not a critical point in the physical
+domain. The rational formula alone is not the full critical locus.
+\end{theorem}
+\begin{proof}
+The quotient rule with $Q_t=s(c-1)/Q$ gives
+\eqref{eq:jacobian}. For $0<c<1$, $A>0$. If $A+uB=0$ with
+$0\leq u\leq1$, necessarily $B<0$ and $p_b=-A-B\geq0$.
+Conversely if $B<0$, the solution $u=-A/B$ lies in $[0,1]$ precisely
+when $p_b\geq0$. At $c=1$, $A=0,B=-1$, giving $u=0$.
+The derivative of $p_b$ is positive on $[0,1]$, as the following exact
+Bernstein expression shows:
+\[
+ p'_b(c)=(1-c)^4+2c(1-c)^3+18c^2(1-c)^2+14c^3(1-c)+2c^4>0.
+\]
+Thus its opposite endpoint signs give a unique root, and exact endpoint
+evaluation gives the stated rational interval. For $c\geq613/1000$,
+$B<0$ (or directly use $B'=3c^2-3<0$ and $B(613/1000)<0$).
+This proves the equivalence and endpoints. The factor $s=0$ in this
+angular interval means $t=0$ and supplies the omitted branch.
+$B$ is strictly decreasing on $(0,1)$ and the triple-angle identity
+$B(2\cos\alpha)=2\cos3\alpha+1$ gives $c_*$.
+At $c=c_*$ one has $A>0$, so no $u$ solves the fold equation there.
+\end{proof}
+
+\begin{theorem}[Ordinary folds and the exceptional point]\label{thm:fold}
+Every physical critical point other than $(t,u)=(0,0)$ has actual smooth
+source and target local charts, with smooth two-sided inverses, taking
+$\Map$ to $(\xi,\eta)\mapsto(\xi,\eta^2)$.
+At $(0,0)$ the ordinary fold criterion fails and the germ is not a fold.
+This statement uses the extension to open angular-chart neighborhoods;
+at $u=0$ or $u=1$ it does not claim a full two-sided physical preimage.
+\end{theorem}
+\begin{proof}
+For the symmetry branch $(0,u_*)$, $u_*>0$, explicit charts are
+\[
+ (\xi,\eta)=\left(1-u_*-M(t,u),
+        2\sin(t/2)\sqrt{u-(1-c)/2}\right),\quad
+ T(N,M)=(1-u_*-M,-N).
+\]
+The radicand is positive nearby, the source determinant at $(0,u_*)$
+is $-\sqrt{u_*}\ne0$, and the target determinant is $-1$.
+The exact identity $1-c=2\sin^2(t/2)$ gives $T\Map=(\xi,\eta^2)$.
+The smooth inverse function theorem supplies both inverses.
+
+On the rational branch, $N_u=-2(1-c)\ne0$ and the kernel vector is
+$v=(N_u,-N_t)$. Direct differentiation on the branch gives
+\[
+ dJ_{\Map}(v)=-\frac{4s^2(c-1)R_7(c)}{Q^3B(c)},
+\]
+where
+\[
+ R_7=3c^7-8c^6-12c^5+60c^4-69c^3+30c^2-6c-1.
+\]
+It never vanishes on $[0,1]$, since
+\begin{align*}
+ -R_7(c)={}&(1-c)^7+13c(1-c)^6+27c^2(1-c)^5
+             +44c^3(1-c)^4\\
+          &+71c^4(1-c)^3+57c^5(1-c)^2+21c^6(1-c)+3c^7>0.
+\end{align*}
+The map is smooth and has rank one. The kernel is transverse to its
+critical locus, so the smooth fold recognition theorem applies
+\cite[Theorem 3.4(1)]{ishikawa}. These are its actual hypotheses, not
+only smoothness of the critical curve. Independently, the pinned Lean
+dependency constructs the source and target charts and both inverses
+for this same physical branch; it does not postulate the recognition
+theorem as an axiom.
+
+At $(0,0)$, the derivative of $\Map$ is $(v_t,v_u)\mapsto(0,-v_u)$,
+whereas $dJ_{\Map}=0$. A fold has nonzero kernel derivative of its
+Jacobian. This property is invariant under smooth invertible coordinate
+changes (at a critical point the Jacobian is multiplied by nonzero
+factors). Hence this germ is not a fold. Its further classification is
+not asserted in this paper.
+\end{proof}
+
+\begin{theorem}[Skeleton--critical intersection]\label{thm:intersection}
+The entire physical intersection is the polar point $(0,1)$ plus the two
+rational-branch points with $t=\pm\arccos c_{**}$,
+$u=u_{\rm skel}(c_{**})$, where
+\[
+ E_5(c)=c^5-3c^4+5c^3-6c^2+c+1,\qquad
+ 673741/10^6<c_{**}<673742/10^6.
+\]
+There is exactly one root $c_{**}$ of $E_5$ on the physical rational-fold
+interval. These are observation-fold intersections; neither rational
+intersection is a surface immersion singularity.
+\end{theorem}
+\begin{proof}
+On the rational branch $D>0$, $B<0$, and $c(2-c)>0$.
+Multiplying $u_{\rm skel}=u_{\rm fold}$ by these nonzero factors gives
+\[
+ cB+(1-c)(1+2c-c^2)D=E_5(c)=0.
+\]
+On $[3/5,1]$ the derivative of $E_5$ is negative. For example set
+$x=(5c-3)/2$; its negative derivative is
+\[
+ \frac{343}{125}(1-x)^4+\frac{1504}{125}x(1-x)^3+
+ \frac{474}{25}x^2(1-x)^2+\frac{64}{5}x^3(1-x)+3x^4>0.
+\]
+The exact signs at the two isolating endpoints imply existence and
+uniqueness on $[c_b,1]$. The physical critical classification excludes
+any other rational intersection. On $t=0$, $M=1-u$, so only $u=1$
+lies on the skeleton. Finally $c_{**}>0.673$ while $c_0<0.383$, and
+$t\ne0$ at the rational intersections, excluding every surface rank
+singularity. The old name ``absolute singularity'' conflated these
+different kinds of degeneracy and is not used as a surface claim here.
+\end{proof}
+
+\section{Signal response and a proved replacement for Theorem 5.3}
+\begin{proposition}[Local squared-cosine response]\label{prop:response}
+In a fixed pair of Whitney charts choose a trajectory with
+$\xi=\xi_0\ne0$ and $\eta(\tau)=a\cos(\omega\tau)$ whose entire
+range stays in the chosen chart. Define the chosen target-coordinate
+phase, using a fixed arctangent branch, by
+\[
+ \phi_W(\tau)=\arctan\left(\frac{\eta(\tau)^2}{\xi_0}\right),\qquad
+ \kappa=a^2/\xi_0.
+\]
+For $\omega\ne0$ this response has period $\pi/|\omega|$ (not
+necessarily its least period when $a=0$), and
+\begin{equation}\label{eq:response-bound}
+ \left|\phi_W(\tau)-\frac\kappa2[1+\cos(2\omega\tau)]\right|
+       \leq |\kappa|^3/3.
+\end{equation}
+For $0<|\kappa|\leq1/2$, the leading nonconstant harmonic is at
+$2|\omega|$; the constant term is retained. These claims concern
+$\phi_W$, not the phase of a general physical signal under a nonlinear
+target chart or an additional rotation.
+\end{proposition}
+\begin{proof}
+Use $\cos^2 x=(1+\cos2x)/2$ and
+$\cos(x+\pi)^2=\cos^2x$. The derivatives of
+$x-\arctan x$ and $x^3/3-x+\arctan x$ are respectively
+$x^2/(1+x^2)$ and $x^4/(1+x^2)$, both nonnegative.
+Both functions vanish at zero. Monotonicity for $x\geq0$, followed by
+oddness for $x<0$, therefore proves
+$|\arctan x-x|\leq |x|^3/3$.
+Since $|\kappa\cos^2(\omega\tau)|\leq|\kappa|$, the bound follows.
+Half-period invariance excludes odd harmonics relative to $\omega$.
+For a concrete leading-harmonic statement, the uniform remainder has
+real sine/cosine coefficients of magnitude at most $2|\kappa|^3/3$.
+The $2\omega$ cosine coefficient differs from $\kappa/2$ by at most
+that amount; all higher nonconstant coefficients have that bound, and
+the sine coefficients vanish by evenness. When $|\kappa|\leq1/2$,
+$|\kappa|/2-2|\kappa|^3/3>2|\kappa|^3/3$.
+Thus the fundamental doubled cosine term dominates the higher ones.
+No general spectrum for an arbitrary transverse trajectory follows.
+\end{proof}
+
+\begin{theorem}[Exact conditional recurrence]\label{thm:recurrence}
+Let $\Map$ have an ordinary fold at $p$, with source chart
+$\sigma=(\xi,\eta)$ and invertible target chart $T$. In a sufficiently
+small common neighborhood, any two points $p_1,p_2$ satisfy
+\begin{equation}\label{eq:fiber}
+ \Map(p_1)=\Map(p_2)\quad\Longleftrightarrow\quad
+ \xi(p_1)=\xi(p_2),\quad
+ [\eta(p_1)=\eta(p_2)\ \text{or}\ \eta(p_1)=-\eta(p_2)].
+\end{equation}
+In particular a trajectory containing two distinct-time points with
+the same $\xi$ and opposite nonzero $\eta$ retraces an observation.
+These are sufficient conditions by a proved equality, not by transverse
+crossing alone.
+
+For the explicitly defined rotated observation signal
+\[
+ Z(\tau)=F(\gamma(\tau)),\qquad
+ \Psi(\tau)=e^{i\theta(\tau)}Z(\tau),
+\]
+if $Z(\tau_1)=Z(\tau_2)=z\ne0$, then
+\begin{equation}\label{eq:phase-lock}
+ \Psi(\tau_1)=\Psi(\tau_2)
+ \quad\Longleftrightarrow\quad
+ \theta(\tau_1)-\theta(\tau_2)\in2\pi\mathbb Z.
+\end{equation}
+For $z=0$ no phase lock is needed. For uniform rotation this condition is
+$\omega_0(\tau_1-\tau_2)\in2\pi\mathbb Z$.
+If an alternative amplitude/phase readout is used, it must first be
+specified as a single-valued function of $\Map$ for its equalities to
+be transported from \eqref{eq:fiber}.
+\end{theorem}
+\begin{proof}
+Shrink the source and target neighborhoods so both chart inverses
+hold there. Then $T\Map= (\xi,\eta^2)$ and injectivity of $T$ imply
+that equality of observations is equivalent to equality of $\xi$ and
+$\eta^2$. Factoring $\eta_1^2-\eta_2^2$ proves \eqref{eq:fiber}.
+Multiplying the repeated nonzero $z$ by two rotations gives the same
+signal precisely when the rotations themselves are equal. The complex
+exponential has kernel $2\pi i\mathbb Z$, which proves
+\eqref{eq:phase-lock}. At $z=0$ both products vanish.
+\end{proof}
+
+\begin{proposition}[Two distinct failures of unrestricted recurrence]\label{prop:counterexamples}
+The curve $\gamma(\tau)=(\tau,\tau)$ crosses the model fold transversely
+at zero, but $(\tau,\tau^2)$ is injective. Even a retraced nonzero
+observation need not recur after rotation: at $z=1+i$, phases $0$ and
+$\pi$ give different signals.
+\end{proposition}
+\begin{proof}
+The derivative of the normal coordinate at zero is one, while equality
+of the first output coordinates forces equality of the times.
+For the second statement $e^{i\pi}z=-z\ne z$.
+\end{proof}
+Consequently v4 Theorem 5.3 is replaced, not retroactively certified.
+There is no assertion here that an arbitrary nonperiodic trajectory
+crossing a fold has a repeated signal, a dominant Fourier frequency,
+or a dynamically produced oscillator.
+
+\section{Geometric and signal figures}
+These vector figures are regenerated from the displayed formulas. Their
+finite samples illustrate the proved statements; they do not certify
+regularity, root uniqueness, tangent limits, or Fourier dominance. The
+three-dimensional view is an oblique display projection.
+\begin{table}[htp]\centering\small
+\begin{tabular}{@{}p{.26\linewidth}p{.34\linewidth}p{.32\linewidth}@{}}
+\toprule
+Condition & Two inputs / times & Observation equality\\
+\midrule
+Transverse model crossing & $(-a,-a)$ and $(a,a)$, $a>0$ & $(-a,a^2)\ne(a,a^2)$\\
+Fixed tangential coordinate & $(\xi_0,-a)$ and $(\xi_0,a)$ & Both give $(\xi_0,a^2)$\\
+Repeated $z\ne0$, unlocked & Rotation phases $0,\pi$ & $z\ne-z$\\
+Repeated $z\ne0$, locked & Rotation phases $0,2\pi$ & Both give $z$\\
+\bottomrule
+\end{tabular}
+\caption{The independent retracing and phase-lock conditions. The first
+row is a counterexample to unrestricted v4 recurrence; the remaining
+rows instantiate the proved replacement and its phase-lock criterion.}
+\end{table}
+\begin{figure}[htp]\centering
+\setlength{\unitlength}{1mm}\begin{picture}(150,80)%
+{\color{blue!45!black}\linethickness{.25pt}%
+\qbezier[28](40.06000,8.00000)(40.89712,8.00540)(41.73425,8.01079)%
+\qbezier[28](41.73425,8.01079)(42.55616,8.02698)(43.37807,8.04316)%
+\qbezier[27](43.37807,8.04316)(44.18350,8.07010)(44.98892,8.09704)%
+\qbezier[27](44.98892,8.09704)(45.77663,8.13470)(46.56433,8.17236)%
+\qbezier[26](46.56433,8.17236)(47.33310,8.22068)(48.10187,8.26901)%
+\qbezier[26](48.10187,8.26901)(48.85051,8.32791)(49.59915,8.38682)%
+\qbezier[25](49.59915,8.38682)(50.32652,8.45622)(51.05388,8.52563)%
+\qbezier[24](51.05388,8.52563)(51.75885,8.60542)(52.46381,8.68521)%
+\qbezier[23](52.46381,8.68521)(53.14529,8.77527)(53.82677,8.86532)%
+\qbezier[23](53.82677,8.86532)(54.48371,8.96550)(55.14065,9.06569)%
+\qbezier[22](55.14065,9.06569)(55.77204,9.17584)(56.40343,9.28600)%
+\qbezier[21](56.40343,9.28600)(57.00830,9.40595)(57.61317,9.52591)%
+\qbezier[20](57.61317,9.52591)(58.19058,9.65548)(58.76799,9.78506)%
+\qbezier[19](58.76799,9.78506)(59.31706,9.92405)(59.86612,10.06304)%
+\qbezier[19](59.86612,10.06304)(60.38599,10.21123)(60.90586,10.35943)%
+\qbezier[18](60.90586,10.35943)(61.39574,10.51659)(61.88561,10.67376)%
+\qbezier[17](61.88561,10.67376)(62.34474,10.83966)(62.80386,11.00556)%
+\qbezier[16](62.80386,11.00556)(63.23153,11.17994)(63.65920,11.35432)%
+\qbezier[15](63.65920,11.35432)(64.05475,11.53690)(64.45030,11.71948)%
+\qbezier[14](64.45030,11.71948)(64.81312,11.90999)(65.17594,12.10051)%
+\qbezier[13](65.17594,12.10051)(65.50547,12.29865)(65.83501,12.49679)%
+\qbezier[13](65.83501,12.49679)(66.13075,12.70226)(66.42649,12.90773)%
+\qbezier[12](66.42649,12.90773)(66.68798,13.12021)(66.94946,13.33268)%
+\qbezier[11](66.94946,13.33268)(67.17630,13.55185)(67.40313,13.77101)%
+\qbezier[10](67.40313,13.77101)(67.59496,13.99651)(67.78679,14.22202)%
+\qbezier[10](67.78679,14.22202)(67.94332,14.45352)(68.09985,14.68502)%
+\qbezier[9](68.09985,14.68502)(68.22084,14.92216)(68.34183,15.15930)%
+\qbezier[9](68.34183,15.15930)(68.42709,15.40172)(68.51235,15.64413)%
+\qbezier[9](68.51235,15.64413)(68.56175,15.89145)(68.61115,16.13876)%
+\qbezier[9](68.61115,16.13876)(68.62462,16.39060)(68.63808,16.64243)%
+\qbezier[9](68.63808,16.64243)(68.61559,16.89840)(68.59310,17.15436)%
+\qbezier[9](68.59310,17.15436)(68.53469,17.41406)(68.47628,17.67376)%
+\qbezier[10](68.47628,17.67376)(68.38203,17.93680)(68.28779,18.19983)%
+\qbezier[10](68.28779,18.19983)(68.15786,18.46580)(68.02793,18.73176)%
+\qbezier[11](68.02793,18.73176)(67.86251,19.00025)(67.69710,19.26874)%
+\qbezier[12](67.69710,19.26874)(67.49645,19.53933)(67.29581,19.80992)%
+\qbezier[13](67.29581,19.80992)(67.06024,20.08220)(66.82467,20.35448)%
+\qbezier[13](66.82467,20.35448)(66.55454,20.62802)(66.28442,20.90157)%
+\qbezier[14](66.28442,20.90157)(65.98015,21.17597)(65.67588,21.45036)%
+\qbezier[15](65.67588,21.45036)(65.33794,21.72518)(65.00000,22.00000)%
+\qbezier[16](65.00000,22.00000)(64.62891,22.27482)(64.25782,22.54964)%
+\qbezier[17](64.25782,22.54964)(63.85415,22.82403)(63.45047,23.09843)%
+\qbezier[18](63.45047,23.09843)(63.01485,23.37198)(62.57922,23.64552)%
+\qbezier[19](62.57922,23.64552)(62.11231,23.91780)(61.64539,24.19008)%
+\qbezier[19](61.64539,24.19008)(61.14791,24.46067)(60.65044,24.73126)%
+\qbezier[20](60.65044,24.73126)(60.12316,24.99975)(59.59588,25.26824)%
+\qbezier[21](59.59588,25.26824)(59.03962,25.53420)(58.48336,25.80017)%
+\qbezier[22](58.48336,25.80017)(57.89897,26.06320)(57.31458,26.32624)%
+\qbezier[23](57.31458,26.32624)(56.70297,26.58594)(56.09135,26.84564)%
+\qbezier[23](56.09135,26.84564)(55.45346,27.10160)(54.81556,27.35757)%
+\qbezier[24](54.81556,27.35757)(54.15236,27.60940)(53.48916,27.86124)%
+\qbezier[25](53.48916,27.86124)(52.80169,28.10855)(52.11421,28.35587)%
+\qbezier[26](52.11421,28.35587)(51.40352,28.59828)(50.69283,28.84070)%
+\qbezier[26](50.69283,28.84070)(49.96002,29.07784)(49.22720,29.31498)%
+\qbezier[27](49.22720,29.31498)(48.47340,29.54648)(47.71959,29.77798)%
+\qbezier[27](47.71959,29.77798)(46.94596,30.00349)(46.17233,30.22899)%
+\qbezier[28](46.17233,30.22899)(45.38006,30.44815)(44.58779,30.66732)%
+\qbezier[28](44.58779,30.66732)(43.77811,30.87979)(42.96842,31.09227)%
+\qbezier[29](42.96842,31.09227)(42.14258,31.29774)(41.31673,31.50321)%
+\qbezier[29](41.31673,31.50321)(40.47598,31.70135)(39.63524,31.89949)%
+\qbezier[30](39.63524,31.89949)(38.78091,32.09001)(37.92657,32.28052)%
+\qbezier[30](37.92657,32.28052)(37.05995,32.46310)(36.19333,32.64568)%
+\qbezier[30](36.19333,32.64568)(35.31578,32.82006)(34.43822,32.99444)%
+\qbezier[31](34.43822,32.99444)(33.55107,33.16034)(32.66392,33.32624)%
+\qbezier[31](32.66392,33.32624)(31.76855,33.48341)(30.87318,33.64057)%
+\qbezier[31](30.87318,33.64057)(29.97097,33.78877)(29.06876,33.93696)%
+\qbezier[31](29.06876,33.93696)(28.16110,34.07595)(27.25344,34.21494)%
+\qbezier[31](27.25344,34.21494)(26.34172,34.34452)(25.43001,34.47409)%
+\qbezier[31](25.43001,34.47409)(24.51566,34.59405)(23.60130,34.71400)%
+\qbezier[31](23.60130,34.71400)(22.68571,34.82416)(21.77012,34.93431)%
+\qbezier[31](21.77012,34.93431)(20.85471,35.03450)(19.93930,35.13468)%
+\qbezier[31](19.93930,35.13468)(19.02547,35.22473)(18.11165,35.31479)%
+\qbezier[31](18.11165,35.31479)(17.20082,35.39458)(16.29000,35.47437)%
+\qbezier[31](16.29000,35.47437)(15.38357,35.54378)(14.47715,35.61318)%
+\qbezier[31](14.47715,35.61318)(13.57653,35.67209)(12.67590,35.73099)%
+\qbezier[30](12.67590,35.73099)(11.78247,35.77932)(10.88903,35.82764)%
+\qbezier[30](10.88903,35.82764)(10.00416,35.86530)(9.11929,35.90296)%
+\qbezier[30](9.11929,35.90296)(8.24435,35.92990)(7.36941,35.95684)%
+\qbezier[29](7.36941,35.95684)(6.50575,35.97302)(5.64210,35.98921)%
+\qbezier[29](5.64210,35.98921)(4.79105,35.99460)(3.94000,36.00000)}%
+{\color{blue!45!black}\linethickness{.25pt}%
+\qbezier[30](48.55250,9.75000)(49.17947,10.36164)(49.80645,10.97329)%
+\qbezier[23](49.80645,10.97329)(50.42027,11.22989)(51.03409,11.48649)%
+\qbezier[22](51.03409,11.48649)(51.63382,11.68966)(52.23355,11.89284)%
+\qbezier[21](52.23355,11.89284)(52.81825,12.07157)(53.40296,12.25031)%
+\qbezier[20](53.40296,12.25031)(53.97174,12.41590)(54.54052,12.58149)%
+\qbezier[20](54.54052,12.58149)(55.09251,12.73975)(55.64449,12.89800)%
+\qbezier[19](55.64449,12.89800)(56.17882,13.05236)(56.71315,13.20672)%
+\qbezier[18](56.71315,13.20672)(57.22901,13.35942)(57.74487,13.51212)%
+\qbezier[18](57.74487,13.51212)(58.24146,13.66469)(58.73804,13.81726)%
+\qbezier[17](58.73804,13.81726)(59.21460,13.97081)(59.69115,14.12435)%
+\qbezier[17](59.69115,14.12435)(60.14693,14.27968)(60.60271,14.43501)%
+\qbezier[16](60.60271,14.43501)(61.03702,14.59273)(61.47132,14.75045)%
+\qbezier[15](61.47132,14.75045)(61.88349,14.91103)(62.29565,15.07160)%
+\qbezier[15](62.29565,15.07160)(62.68504,15.23539)(63.07442,15.39917)%
+\qbezier[14](63.07442,15.39917)(63.44043,15.56643)(63.80644,15.73368)%
+\qbezier[13](63.80644,15.73368)(64.14850,15.90461)(64.49057,16.07555)%
+\qbezier[13](64.49057,16.07555)(64.80816,16.25030)(65.12575,16.42505)%
+\qbezier[12](65.12575,16.42505)(65.41838,16.60373)(65.71101,16.78240)%
+\qbezier[11](65.71101,16.78240)(65.97824,16.96506)(66.24546,17.14773)%
+\qbezier[11](66.24546,17.14773)(66.48685,17.33440)(66.72825,17.52108)%
+\qbezier[10](66.72825,17.52108)(66.94345,17.71177)(67.15865,17.90246)%
+\qbezier[10](67.15865,17.90246)(67.34732,18.09715)(67.53600,18.29183)%
+\qbezier[9](67.53600,18.29183)(67.69785,18.49046)(67.85970,18.68909)%
+\qbezier[9](67.85970,18.68909)(67.99449,18.89160)(68.12927,19.09410)%
+\qbezier[8](68.12927,19.09410)(68.23678,19.30039)(68.34429,19.50669)%
+\qbezier[8](68.34429,19.50669)(68.42436,19.71666)(68.50443,19.92663)%
+\qbezier[8](68.50443,19.92663)(68.55693,20.14016)(68.60943,20.35368)%
+\qbezier[8](68.60943,20.35368)(68.63429,20.57062)(68.65915,20.78755)%
+\qbezier[8](68.65915,20.78755)(68.65632,21.00774)(68.65349,21.22792)%
+\qbezier[8](68.65349,21.22792)(68.62298,21.45118)(68.59247,21.67443)%
+\qbezier[8](68.59247,21.67443)(68.53433,21.90057)(68.47619,22.12670)%
+\qbezier[9](68.47619,22.12670)(68.39050,22.35550)(68.30481,22.58430)%
+\qbezier[9](68.30481,22.58430)(68.19172,22.81553)(68.07862,23.04677)%
+\qbezier[10](68.07862,23.04677)(67.93828,23.28020)(67.79795,23.51362)%
+\qbezier[10](67.79795,23.51362)(67.63060,23.74898)(67.46324,23.98434)%
+\qbezier[11](67.46324,23.98434)(67.26912,24.22134)(67.07500,24.45835)%
+\qbezier[11](67.07500,24.45835)(66.85442,24.69670)(66.63384,24.93506)%
+\qbezier[12](66.63384,24.93506)(66.38714,25.17446)(66.14043,25.41386)%
+\qbezier[13](66.14043,25.41386)(65.86799,25.65396)(65.59554,25.89407)%
+\qbezier[13](65.59554,25.89407)(65.29777,26.13453)(65.00000,26.37500)%
+\qbezier[14](65.00000,26.37500)(64.67737,26.61547)(64.35473,26.85593)%
+\qbezier[15](64.35473,26.85593)(64.00773,27.09602)(63.66073,27.33610)%
+\qbezier[15](63.66073,27.33610)(63.28990,27.57542)(62.91907,27.81473)%
+\qbezier[16](62.91907,27.81473)(62.52498,28.05286)(62.13089,28.29099)%
+\qbezier[16](62.13089,28.29099)(61.71415,28.52752)(61.29741,28.76405)%
+\qbezier[17](61.29741,28.76405)(60.85866,28.99854)(60.41991,29.23304)%
+\qbezier[18](60.41991,29.23304)(59.95983,29.46505)(59.49974,29.69706)%
+\qbezier[18](59.49974,29.69706)(59.01904,29.92614)(58.53833,30.15521)%
+\qbezier[19](58.53833,30.15521)(58.03774,30.38089)(57.53716,30.60657)%
+\qbezier[19](57.53716,30.60657)(57.01746,30.82837)(56.49776,31.05018)%
+\qbezier[20](56.49776,31.05018)(55.95975,31.26763)(55.42175,31.48509)%
+\qbezier[20](55.42175,31.48509)(54.86626,31.69770)(54.31078,31.91032)%
+\qbezier[21](54.31078,31.91032)(53.73867,32.11761)(53.16656,32.32490)%
+\qbezier[21](53.16656,32.32490)(52.57871,32.52637)(51.99086,32.72785)%
+\qbezier[22](51.99086,32.72785)(51.38818,32.92300)(50.78550,33.11816)%
+\qbezier[22](50.78550,33.11816)(50.16891,33.30650)(49.55232,33.49484)%
+\qbezier[22](49.55232,33.49484)(48.92278,33.67587)(48.29324,33.85689)%
+\qbezier[23](48.29324,33.85689)(47.65171,34.03010)(47.01019,34.20331)%
+\qbezier[23](47.01019,34.20331)(46.35767,34.36819)(45.70515,34.53308)%
+\qbezier[23](45.70515,34.53308)(45.04265,34.68914)(44.38014,34.84519)%
+\qbezier[23](44.38014,34.84519)(43.70867,34.99191)(43.03719,35.13863)%
+\qbezier[24](43.03719,35.13863)(42.35779,35.27549)(41.67838,35.41235)%
+\qbezier[24](41.67838,35.41235)(40.99210,35.53883)(40.30581,35.66532)%
+\qbezier[24](40.30581,35.66532)(39.61370,35.78089)(38.92158,35.89646)%
+\qbezier[24](38.92158,35.89646)(38.22471,36.00058)(37.52784,36.10469)%
+\qbezier[24](37.52784,36.10469)(36.82729,36.19677)(36.12673,36.28885)%
+\qbezier[24](36.12673,36.28885)(35.42357,36.36830)(34.72042,36.44776)%
+\qbezier[24](34.72042,36.44776)(34.01574,36.51393)(33.31106,36.58011)%
+\qbezier[24](33.31106,36.58011)(32.60595,36.63232)(31.90084,36.68452)%
+\qbezier[24](31.90084,36.68452)(31.19639,36.72196)(30.49193,36.75940)%
+\qbezier[24](30.49193,36.75940)(29.78922,36.78118)(29.08651,36.80295)%
+\qbezier[24](29.08651,36.80295)(28.38662,36.80798)(27.68673,36.81300)%
+\qbezier[24](27.68673,36.81300)(26.99074,36.79994)(26.29476,36.78687)%
+\qbezier[24](26.29476,36.78687)(25.60375,36.75397)(24.91274,36.72107)%
+\qbezier[23](24.91274,36.72107)(24.22777,36.66590)(23.54280,36.61073)%
+\qbezier[23](23.54280,36.61073)(22.86493,36.52970)(22.18707,36.44867)%
+\qbezier[23](22.18707,36.44867)(21.51734,36.33584)(20.84762,36.22301)%
+\qbezier[23](20.84762,36.22301)(20.18707,36.06699)(19.52652,35.91097)%
+\qbezier[23](19.52652,35.91097)(18.87617,35.68268)(18.22581,35.45440)%
+\qbezier[30](18.22581,35.45440)(17.58666,34.85220)(16.94750,34.25000)}%
+{\color{blue!45!black}\linethickness{.25pt}%
+\qbezier[43](57.04500,11.50000)(57.46182,12.71789)(57.87864,13.93578)%
+\qbezier[22](57.87864,13.93578)(58.28438,14.43280)(58.69012,14.92983)%
+\qbezier[19](58.69012,14.92983)(59.08414,15.30923)(59.47817,15.68863)%
+\qbezier[17](59.47817,15.68863)(59.85987,16.00844)(60.24158,16.32825)%
+\qbezier[16](60.24158,16.32825)(60.61038,16.61112)(60.97918,16.89398)%
+\qbezier[15](60.97918,16.89398)(61.33450,17.15158)(61.68983,17.40918)%
+\qbezier[14](61.68983,17.40918)(62.03113,17.64850)(62.37243,17.88782)%
+\qbezier[14](62.37243,17.88782)(62.69918,18.11342)(63.02593,18.33903)%
+\qbezier[13](63.02593,18.33903)(63.33762,18.55412)(63.64932,18.76920)%
+\qbezier[13](63.64932,18.76920)(63.94548,18.97611)(64.24164,19.18302)%
+\qbezier[12](64.24164,19.18302)(64.52181,19.38352)(64.80198,19.58403)%
+\qbezier[11](64.80198,19.58403)(65.06573,19.77951)(65.32948,19.97500)%
+\qbezier[11](65.32948,19.97500)(65.57640,20.16657)(65.82332,20.35815)%
+\qbezier[10](65.82332,20.35815)(66.05302,20.54673)(66.28273,20.73530)%
+\qbezier[10](66.28273,20.73530)(66.49487,20.92162)(66.70702,21.10794)%
+\qbezier[9](66.70702,21.10794)(66.90127,21.29263)(67.09552,21.47733)%
+\qbezier[9](67.09552,21.47733)(67.27158,21.66094)(67.44764,21.84454)%
+\qbezier[9](67.44764,21.84454)(67.60523,22.02752)(67.76283,22.21049)%
+\qbezier[8](67.76283,22.21049)(67.90172,22.39323)(68.04061,22.57597)%
+\qbezier[8](68.04061,22.57597)(68.16059,22.75881)(68.28056,22.94165)%
+\qbezier[7](68.28056,22.94165)(68.38142,23.12489)(68.48229,23.30813)%
+\qbezier[7](68.48229,23.30813)(68.56390,23.49204)(68.64550,23.67594)%
+\qbezier[7](68.64550,23.67594)(68.70772,23.86072)(68.76994,24.04550)%
+\qbezier[7](68.76994,24.04550)(68.81268,24.23135)(68.85542,24.41720)%
+\qbezier[7](68.85542,24.41720)(68.87861,24.60428)(68.90180,24.79136)%
+\qbezier[7](68.90180,24.79136)(68.90540,24.97980)(68.90901,25.16824)%
+\qbezier[7](68.90901,25.16824)(68.89302,25.35815)(68.87704,25.54806)%
+\qbezier[7](68.87704,25.54806)(68.84149,25.73952)(68.80594,25.93097)%
+\qbezier[7](68.80594,25.93097)(68.75088,26.12403)(68.69582,26.31708)%
+\qbezier[7](68.69582,26.31708)(68.62134,26.51176)(68.54686,26.70644)%
+\qbezier[8](68.54686,26.70644)(68.45306,26.90274)(68.35927,27.09904)%
+\qbezier[8](68.35927,27.09904)(68.24631,27.29694)(68.13335,27.49484)%
+\qbezier[8](68.13335,27.49484)(68.00140,27.69427)(67.86945,27.89371)%
+\qbezier[9](67.86945,27.89371)(67.71871,28.09459)(67.56797,28.29548)%
+\qbezier[9](67.56797,28.29548)(67.39868,28.49771)(67.22938,28.69994)%
+\qbezier[10](67.22938,28.69994)(67.04179,28.90336)(66.85420,29.10677)%
+\qbezier[10](66.85420,29.10677)(66.64861,29.31121)(66.44302,29.51565)%
+\qbezier[11](66.44302,29.51565)(66.21973,29.72089)(65.99645,29.92614)%
+\qbezier[11](65.99645,29.92614)(65.75582,30.13195)(65.51520,30.33777)%
+\qbezier[11](65.51520,30.33777)(65.25760,30.54388)(65.00000,30.75000)%
+\qbezier[12](65.00000,30.75000)(64.72583,30.95611)(64.45165,31.16223)%
+\qbezier[12](64.45165,31.16223)(64.16132,31.36800)(63.87099,31.57378)%
+\qbezier[13](63.87099,31.57378)(63.56496,31.77886)(63.25893,31.98393)%
+\qbezier[13](63.25893,31.98393)(62.93766,32.18792)(62.61639,32.39190)%
+\qbezier[14](62.61639,32.39190)(62.28039,32.59437)(61.94439,32.79683)%
+\qbezier[14](61.94439,32.79683)(61.59416,32.99733)(61.24394,33.19784)%
+\qbezier[14](61.24394,33.19784)(60.88003,33.39590)(60.51613,33.59396)%
+\qbezier[15](60.51613,33.59396)(60.13910,33.78907)(59.76208,33.98419)%
+\qbezier[15](59.76208,33.98419)(59.37252,34.17585)(58.98296,34.36750)%
+\qbezier[15](58.98296,34.36750)(58.58146,34.55514)(58.17996,34.74279)%
+\qbezier[16](58.17996,34.74279)(57.76715,34.92586)(57.35433,35.10893)%
+\qbezier[16](57.35433,35.10893)(56.93084,35.28685)(56.50734,35.46477)%
+\qbezier[16](56.50734,35.46477)(56.07381,35.63694)(55.64029,35.80911)%
+\qbezier[16](55.64029,35.80911)(55.19740,35.97491)(54.75452,36.14071)%
+\qbezier[16](54.75452,36.14071)(54.30296,36.29952)(53.85140,36.45833)%
+\qbezier[17](53.85140,36.45833)(53.39186,36.60951)(52.93231,36.76069)%
+\qbezier[17](52.93231,36.76069)(52.46550,36.90358)(51.99869,37.04647)%
+\qbezier[17](51.99869,37.04647)(51.52532,37.18041)(51.05195,37.31434)%
+\qbezier[17](51.05195,37.31434)(50.57277,37.43865)(50.09358,37.56295)%
+\qbezier[17](50.09358,37.56295)(49.60931,37.67692)(49.12503,37.79089)%
+\qbezier[17](49.12503,37.79089)(48.63643,37.89381)(48.14782,37.99674)%
+\qbezier[17](48.14782,37.99674)(47.65563,38.08788)(47.16343,38.17902)%
+\qbezier[17](47.16343,38.17902)(46.66842,38.25761)(46.17340,38.33620)%
+\qbezier[17](46.17340,38.33620)(45.67632,38.40144)(45.17925,38.46669)%
+\qbezier[17](45.17925,38.46669)(44.68088,38.51774)(44.18250,38.56880)%
+\qbezier[17](44.18250,38.56880)(43.68361,38.60477)(43.18471,38.64074)%
+\qbezier[17](43.18471,38.64074)(42.68605,38.66066)(42.18740,38.68057)%
+\qbezier[17](42.18740,38.68057)(41.68976,38.68335)(41.19211,38.68613)%
+\qbezier[17](41.19211,38.68613)(40.69625,38.67058)(40.20039,38.65503)%
+\qbezier[17](40.20039,38.65503)(39.70707,38.61976)(39.21375,38.58449)%
+\qbezier[17](39.21375,38.58449)(38.72373,38.52786)(38.23372,38.47122)%
+\qbezier[17](38.23372,38.47122)(37.74776,38.39122)(37.26180,38.31121)%
+\qbezier[17](37.26180,38.31121)(36.78066,38.20530)(36.29951,38.09938)%
+\qbezier[17](36.29951,38.09938)(35.82392,37.96416)(35.34832,37.82895)%
+\qbezier[17](35.34832,37.82895)(34.87902,37.65971)(34.40971,37.49047)%
+\qbezier[17](34.40971,37.49047)(33.94740,37.28009)(33.48510,37.06971)%
+\qbezier[18](33.48510,37.06971)(33.03052,36.80639)(32.57594,36.54307)%
+\qbezier[19](32.57594,36.54307)(32.12978,36.20408)(31.68363,35.86509)%
+\qbezier[22](31.68363,35.86509)(31.24658,35.39234)(30.80953,34.91959)%
+\qbezier[43](30.80953,34.91959)(30.38226,33.70979)(29.95500,32.50000)}%
+{\color{blue!45!black}\linethickness{.25pt}%
+\qbezier[62](65.53750,13.25000)(65.74417,15.07414)(65.95084,16.89827)%
+\qbezier[26](65.95084,16.89827)(66.14849,17.63572)(66.34614,18.37317)%
+\qbezier[20](66.34614,18.37317)(66.53446,18.92879)(66.72279,19.48442)%
+\qbezier[17](66.72279,19.48442)(66.90149,19.94531)(67.08020,20.40620)%
+\qbezier[15](67.08020,20.40620)(67.24902,20.80633)(67.41783,21.20647)%
+\qbezier[14](67.41783,21.20647)(67.57650,21.56342)(67.73516,21.92036)%
+\qbezier[12](67.73516,21.92036)(67.88343,22.24464)(68.03170,22.56891)%
+\qbezier[11](68.03170,22.56891)(68.16934,22.86742)(68.30698,23.16594)%
+\qbezier[11](68.30698,23.16594)(68.43379,23.44354)(68.56059,23.72114)%
+\qbezier[10](68.56059,23.72114)(68.67637,23.98142)(68.79214,24.24169)%
+\qbezier[9](68.79214,24.24169)(68.89670,24.48736)(69.00126,24.73304)%
+\qbezier[9](69.00126,24.73304)(69.09445,24.96629)(69.18763,25.19954)%
+\qbezier[8](69.18763,25.19954)(69.26931,25.42212)(69.35098,25.64470)%
+\qbezier[8](69.35098,25.64470)(69.42101,25.85807)(69.49104,26.07143)%
+\qbezier[8](69.49104,26.07143)(69.54931,26.27681)(69.60759,26.48220)%
+\qbezier[7](69.60759,26.48220)(69.65403,26.68066)(69.70047,26.87911)%
+\qbezier[7](69.70047,26.87911)(69.73500,27.07157)(69.76952,27.26403)%
+\qbezier[7](69.76952,27.26403)(69.79209,27.45131)(69.81465,27.63858)%
+\qbezier[7](69.81465,27.63858)(69.82521,27.82139)(69.83577,28.00421)%
+\qbezier[6](69.83577,28.00421)(69.83432,28.18321)(69.83287,28.36222)%
+\qbezier[6](69.83287,28.36222)(69.81940,28.53801)(69.80593,28.71381)%
+\qbezier[6](69.80593,28.71381)(69.78047,28.88692)(69.75501,29.06004)%
+\qbezier[6](69.75501,29.06004)(69.71759,29.23097)(69.68018,29.40190)%
+\qbezier[6](69.68018,29.40190)(69.63087,29.57110)(69.58156,29.74029)%
+\qbezier[6](69.58156,29.74029)(69.52043,29.90816)(69.45930,30.07603)%
+\qbezier[7](69.45930,30.07603)(69.38644,30.24294)(69.31358,30.40985)%
+\qbezier[7](69.31358,30.40985)(69.22911,30.57614)(69.14464,30.74244)%
+\qbezier[7](69.14464,30.74244)(69.04869,30.90841)(68.95274,31.07439)%
+\qbezier[7](68.95274,31.07439)(68.84545,31.24031)(68.73816,31.40624)%
+\qbezier[7](68.73816,31.40624)(68.61970,31.57234)(68.50124,31.73844)%
+\qbezier[8](68.50124,31.73844)(68.37180,31.90491)(68.24235,32.07138)%
+\qbezier[8](68.24235,32.07138)(68.10212,32.23838)(67.96189,32.40537)%
+\qbezier[8](67.96189,32.40537)(67.81108,32.57301)(67.66028,32.74064)%
+\qbezier[8](67.66028,32.74064)(67.49913,32.90899)(67.33799,33.07734)%
+\qbezier[9](67.33799,33.07734)(67.16676,33.24644)(66.99552,33.41554)%
+\qbezier[9](66.99552,33.41554)(66.81446,33.58537)(66.63340,33.75520)%
+\qbezier[9](66.63340,33.75520)(66.44280,33.92572)(66.25219,34.09623)%
+\qbezier[9](66.25219,34.09623)(66.05233,34.26733)(65.85247,34.43842)%
+\qbezier[10](65.85247,34.43842)(65.64366,34.60995)(65.43486,34.78147)%
+\qbezier[10](65.43486,34.78147)(65.21743,34.95324)(65.00000,35.12500)%
+\qbezier[10](65.00000,35.12500)(64.77428,35.29676)(64.54857,35.46852)%
+\qbezier[10](64.54857,35.46852)(64.31491,35.63999)(64.08125,35.81145)%
+\qbezier[10](64.08125,35.81145)(63.84002,35.98230)(63.59878,36.15314)%
+\qbezier[11](63.59878,36.15314)(63.35034,36.32297)(63.10190,36.49281)%
+\qbezier[11](63.10190,36.49281)(62.84663,36.66121)(62.59136,36.82962)%
+\qbezier[11](62.59136,36.82962)(62.32966,36.99613)(62.06796,37.16264)%
+\qbezier[11](62.06796,37.16264)(61.80024,37.32674)(61.53251,37.49085)%
+\qbezier[11](61.53251,37.49085)(61.25917,37.65201)(60.98583,37.81317)%
+\qbezier[11](60.98583,37.81317)(60.70729,37.97080)(60.42876,38.12843)%
+\qbezier[11](60.42876,38.12843)(60.14546,38.28191)(59.86217,38.43540)%
+\qbezier[11](59.86217,38.43540)(59.57454,38.58409)(59.28692,38.73278)%
+\qbezier[11](59.28692,38.73278)(58.99541,38.87600)(58.70390,39.01922)%
+\qbezier[11](58.70390,39.01922)(58.40896,39.15627)(58.11402,39.29331)%
+\qbezier[11](58.11402,39.29331)(57.81610,39.42344)(57.51818,39.55358)%
+\qbezier[11](57.51818,39.55358)(57.21774,39.67604)(56.91730,39.79851)%
+\qbezier[11](56.91730,39.79851)(56.61480,39.91252)(56.31231,40.02653)%
+\qbezier[11](56.31231,40.02653)(56.00822,40.13129)(55.70413,40.23605)%
+\qbezier[11](55.70413,40.23605)(55.39893,40.33071)(55.09372,40.42538)%
+\qbezier[11](55.09372,40.42538)(54.78786,40.50910)(54.48200,40.59282)%
+\qbezier[11](54.48200,40.59282)(54.17597,40.66470)(53.86993,40.73659)%
+\qbezier[11](53.86993,40.73659)(53.56419,40.79572)(53.25844,40.85485)%
+\qbezier[11](53.25844,40.85485)(52.95346,40.90027)(52.64848,40.94568)%
+\qbezier[11](52.64848,40.94568)(52.34474,40.97638)(52.04100,41.00708)%
+\qbezier[11](52.04100,41.00708)(51.73895,41.02200)(51.43691,41.03691)%
+\qbezier[10](51.43691,41.03691)(51.13704,41.03491)(50.83717,41.03291)%
+\qbezier[10](50.83717,41.03291)(50.53993,41.01277)(50.24268,40.99263)%
+\qbezier[10](50.24268,40.99263)(49.94853,40.95301)(49.65438,40.91338)%
+\qbezier[10](49.65438,40.91338)(49.36377,40.85277)(49.07316,40.79216)%
+\qbezier[10](49.07316,40.79216)(48.78654,40.70885)(48.49993,40.62555)%
+\qbezier[11](48.49993,40.62555)(48.21774,40.51756)(47.93556,40.40958)%
+\qbezier[11](47.93556,40.40958)(47.65824,40.27454)(47.38092,40.13949)%
+\qbezier[11](47.38092,40.13949)(47.10890,39.97446)(46.83688,39.80943)%
+\qbezier[12](46.83688,39.80943)(46.57058,39.61065)(46.30427,39.41188)%
+\qbezier[12](46.30427,39.41188)(46.04409,39.17436)(45.78391,38.93684)%
+\qbezier[13](45.78391,38.93684)(45.53026,38.65352)(45.27661,38.37021)%
+\qbezier[14](45.27661,38.37021)(45.02987,38.03048)(44.78314,37.69074)%
+\qbezier[16](44.78314,37.69074)(44.54370,37.27693)(44.30427,36.86312)%
+\qbezier[20](44.30427,36.86312)(44.07250,36.34117)(43.84073,35.81922)%
+\qbezier[26](43.84073,35.81922)(43.61699,35.10200)(43.39325,34.38478)%
+\qbezier[62](43.39325,34.38478)(43.17787,32.56739)(42.96250,30.75000)}%
+{\color{blue!45!black}\linethickness{.25pt}%
+\qbezier[82](74.03000,15.00000)(74.02652,17.43038)(74.02304,19.86077)%
+\qbezier[33](74.02304,19.86077)(74.01260,20.83863)(74.00216,21.81650)%
+\qbezier[25](74.00216,21.81650)(73.98479,22.54836)(73.96741,23.28022)%
+\qbezier[21](73.96741,23.28022)(73.94312,23.88218)(73.91883,24.48414)%
+\qbezier[18](73.91883,24.48414)(73.88766,25.00155)(73.85649,25.51896)%
+\qbezier[16](73.85649,25.51896)(73.81850,25.97525)(73.78050,26.43154)%
+\qbezier[14](73.78050,26.43154)(73.73574,26.84078)(73.69097,27.25001)%
+\qbezier[13](73.69097,27.25001)(73.63951,27.62143)(73.58804,27.99285)%
+\qbezier[12](73.58804,27.99285)(73.52995,28.33297)(73.47187,28.67309)%
+\qbezier[11](73.47187,28.67309)(73.40725,28.98672)(73.34263,29.30035)%
+\qbezier[10](73.34263,29.30035)(73.27158,29.59121)(73.20053,29.88206)%
+\qbezier[10](73.20053,29.88206)(73.12316,30.15307)(73.04579,30.42409)%
+\qbezier[9](73.04579,30.42409)(72.96221,30.67767)(72.87864,30.93125)%
+\qbezier[9](72.87864,30.93125)(72.78899,31.16940)(72.69934,31.40756)%
+\qbezier[9](72.69934,31.40756)(72.60376,31.63201)(72.50817,31.85645)%
+\qbezier[8](72.50817,31.85645)(72.40680,32.06868)(72.30542,32.28090)%
+\qbezier[8](72.30542,32.28090)(72.19842,32.48221)(72.09141,32.68352)%
+\qbezier[8](72.09141,32.68352)(71.97894,32.87509)(71.86647,33.06667)%
+\qbezier[8](71.86647,33.06667)(71.74870,33.24956)(71.63093,33.43245)%
+\qbezier[8](71.63093,33.43245)(71.50805,33.60762)(71.38517,33.78279)%
+\qbezier[8](71.38517,33.78279)(71.25737,33.95114)(71.12957,34.11948)%
+\qbezier[7](71.12957,34.11948)(70.99704,34.28181)(70.86452,34.44414)%
+\qbezier[7](70.86452,34.44414)(70.72747,34.60123)(70.59042,34.75831)%
+\qbezier[7](70.59042,34.75831)(70.44906,34.91085)(70.30770,35.06339)%
+\qbezier[7](70.30770,35.06339)(70.16225,35.21204)(70.01680,35.36070)%
+\qbezier[7](70.01680,35.36070)(69.86748,35.50608)(69.71816,35.65146)%
+\qbezier[7](69.71816,35.65146)(69.56521,35.79414)(69.41225,35.93682)%
+\qbezier[8](69.41225,35.93682)(69.25589,36.07731)(69.09953,36.21781)%
+\qbezier[8](69.09953,36.21781)(68.94002,36.35660)(68.78050,36.49540)%
+\qbezier[8](68.78050,36.49540)(68.61806,36.63292)(68.45563,36.77044)%
+\qbezier[8](68.45563,36.77044)(68.29053,36.90708)(68.12544,37.04372)%
+\qbezier[8](68.12544,37.04372)(67.95793,37.17981)(67.79042,37.31591)%
+\qbezier[8](67.79042,37.31591)(67.62077,37.45174)(67.45111,37.58758)%
+\qbezier[8](67.45111,37.58758)(67.27956,37.72339)(67.10801,37.85920)%
+\qbezier[8](67.10801,37.85920)(66.93484,37.99517)(66.76167,38.13114)%
+\qbezier[8](66.76167,38.13114)(66.58713,38.26738)(66.41260,38.40363)%
+\qbezier[8](66.41260,38.40363)(66.23698,38.54023)(66.06136,38.67682)%
+\qbezier[8](66.06136,38.67682)(65.88492,38.81376)(65.70849,38.95070)%
+\qbezier[8](65.70849,38.95070)(65.53150,39.08794)(65.35452,39.22518)%
+\qbezier[8](65.35452,39.22518)(65.17726,39.36259)(65.00000,39.50000)%
+\qbezier[8](65.00000,39.50000)(64.82274,39.63741)(64.64548,39.77481)%
+\qbezier[8](64.64548,39.77481)(64.46850,39.91197)(64.29151,40.04913)%
+\qbezier[8](64.29151,40.04913)(64.11508,40.18574)(63.93864,40.32234)%
+\qbezier[8](63.93864,40.32234)(63.76302,40.45803)(63.58740,40.59371)%
+\qbezier[8](63.58740,40.59371)(63.41287,40.72806)(63.23833,40.86240)%
+\qbezier[8](63.23833,40.86240)(63.06516,40.99492)(62.89199,41.12744)%
+\qbezier[8](62.89199,41.12744)(62.72044,41.25759)(62.54889,41.38774)%
+\qbezier[8](62.54889,41.38774)(62.37923,41.51495)(62.20958,41.64215)%
+\qbezier[7](62.20958,41.64215)(62.04207,41.76575)(61.87456,41.88936)%
+\qbezier[7](61.87456,41.88936)(61.70947,42.00868)(61.54437,42.12801)%
+\qbezier[7](61.54437,42.12801)(61.38194,42.24232)(61.21950,42.35663)%
+\qbezier[7](61.21950,42.35663)(61.05998,42.46515)(60.90047,42.57368)%
+\qbezier[7](60.90047,42.57368)(60.74411,42.67560)(60.58775,42.77751)%
+\qbezier[6](60.58775,42.77751)(60.43479,42.87198)(60.28184,42.96644)%
+\qbezier[6](60.28184,42.96644)(60.13252,43.05256)(59.98320,43.13868)%
+\qbezier[6](59.98320,43.13868)(59.83775,43.21553)(59.69230,43.29238)%
+\qbezier[6](59.69230,43.29238)(59.55094,43.35900)(59.40958,43.42562)%
+\qbezier[5](59.40958,43.42562)(59.27253,43.48102)(59.13548,43.53642)%
+\qbezier[5](59.13548,43.53642)(59.00296,43.57955)(58.87043,43.62269)%
+\qbezier[5](58.87043,43.62269)(58.74263,43.65249)(58.61483,43.68229)%
+\qbezier[5](58.61483,43.68229)(58.49195,43.69762)(58.36907,43.71296)%
+\qbezier[4](58.36907,43.71296)(58.25130,43.71266)(58.13353,43.71235)%
+\qbezier[4](58.13353,43.71235)(58.02106,43.69515)(57.90859,43.67796)%
+\qbezier[4](57.90859,43.67796)(57.80158,43.64255)(57.69458,43.60714)%
+\qbezier[4](57.69458,43.60714)(57.59320,43.55208)(57.49183,43.49703)%
+\qbezier[5](57.49183,43.49703)(57.39624,43.42078)(57.30066,43.34452)%
+\qbezier[5](57.30066,43.34452)(57.21101,43.24536)(57.12136,43.14619)%
+\qbezier[5](57.12136,43.14619)(57.03779,43.02219)(56.95421,42.89818)%
+\qbezier[6](56.95421,42.89818)(56.87684,42.74712)(56.79947,42.59606)%
+\qbezier[7](56.79947,42.59606)(56.72842,42.41536)(56.65737,42.23467)%
+\qbezier[8](56.65737,42.23467)(56.59275,42.02122)(56.52813,41.80776)%
+\qbezier[9](56.52813,41.80776)(56.47005,41.55770)(56.41196,41.30764)%
+\qbezier[10](56.41196,41.30764)(56.36049,41.01601)(56.30903,40.72438)%
+\qbezier[12](56.30903,40.72438)(56.26426,40.38455)(56.21950,40.04472)%
+\qbezier[14](56.21950,40.04472)(56.18150,39.64734)(56.14351,39.24995)%
+\qbezier[16](56.14351,39.24995)(56.11234,38.78086)(56.08117,38.31178)%
+\qbezier[19](56.08117,38.31178)(56.05688,37.74748)(56.03259,37.18317)%
+\qbezier[24](56.03259,37.18317)(56.01521,36.47826)(55.99784,35.77334)%
+\qbezier[33](55.99784,35.77334)(55.98740,34.81166)(55.97696,33.84997)%
+\qbezier[81](55.97696,33.84997)(55.97348,31.42499)(55.97000,29.00000)}%
+{\color{blue!45!black}\linethickness{.25pt}%
+\qbezier[102](82.52250,16.75000)(82.30887,19.78663)(82.09524,22.82326)%
+\qbezier[42](82.09524,22.82326)(81.87671,24.04155)(81.65819,25.25984)%
+\qbezier[32](81.65819,25.25984)(81.43511,26.16792)(81.21203,27.07601)%
+\qbezier[26](81.21203,27.07601)(80.98474,27.81905)(80.75745,28.56209)%
+\qbezier[23](80.75745,28.56209)(80.52630,29.19676)(80.29515,29.83144)%
+\qbezier[21](80.29515,29.83144)(80.06049,30.38708)(79.82584,30.94273)%
+\qbezier[19](79.82584,30.94273)(79.58804,31.43691)(79.35024,31.93110)%
+\qbezier[17](79.35024,31.93110)(79.10967,32.37543)(78.86910,32.81976)%
+\qbezier[16](78.86910,32.81976)(78.62612,33.22239)(78.38314,33.62503)%
+\qbezier[15](78.38314,33.62503)(78.13813,33.99202)(77.89313,34.35902)%
+\qbezier[14](77.89313,34.35902)(77.64647,34.69505)(77.39981,35.03107)%
+\qbezier[14](77.39981,35.03107)(77.15188,35.33985)(76.90394,35.64863)%
+\qbezier[13](76.90394,35.64863)(76.65512,35.93321)(76.40630,36.21780)%
+\qbezier[13](76.40630,36.21780)(76.15697,36.48074)(75.90765,36.74369)%
+\qbezier[12](75.90765,36.74369)(75.65820,36.98720)(75.40875,37.23071)%
+\qbezier[12](75.40875,37.23071)(75.15956,37.45670)(74.91038,37.68268)%
+\qbezier[11](74.91038,37.68268)(74.66184,37.89285)(74.41330,38.10301)%
+\qbezier[11](74.41330,38.10301)(74.16579,38.29888)(73.91828,38.49475)%
+\qbezier[11](73.91828,38.49475)(73.67219,38.67772)(73.42609,38.86069)%
+\qbezier[10](73.42609,38.86069)(73.18179,39.03203)(72.93748,39.20336)%
+\qbezier[10](72.93748,39.20336)(72.69535,39.36426)(72.45321,39.52515)%
+\qbezier[10](72.45321,39.52515)(72.21362,39.67670)(71.97402,39.82825)%
+\qbezier[10](71.97402,39.82825)(71.73734,39.97148)(71.50066,40.11471)%
+\qbezier[10](71.50066,40.11471)(71.26725,40.25060)(71.03384,40.38648)%
+\qbezier[9](71.03384,40.38648)(70.80407,40.51592)(70.57430,40.64537)%
+\qbezier[9](70.57430,40.64537)(70.34852,40.76922)(70.12274,40.89307)%
+\qbezier[9](70.12274,40.89307)(69.90130,41.01213)(69.67986,41.13120)%
+\qbezier[9](69.67986,41.13120)(69.46309,41.24621)(69.24633,41.36123)%
+\qbezier[8](69.24633,41.36123)(69.03458,41.47289)(68.82283,41.58455)%
+\qbezier[8](68.82283,41.58455)(68.61643,41.69350)(68.41002,41.80244)%
+\qbezier[8](68.41002,41.80244)(68.20927,41.90925)(68.00852,42.01606)%
+\qbezier[8](68.00852,42.01606)(67.81374,42.12125)(67.61896,42.22644)%
+\qbezier[8](67.61896,42.22644)(67.43045,42.33048)(67.24194,42.43451)%
+\qbezier[7](67.24194,42.43451)(67.05998,42.53779)(66.87803,42.64106)%
+\qbezier[7](66.87803,42.64106)(66.70292,42.74390)(66.52781,42.84674)%
+\qbezier[7](66.52781,42.84674)(66.35981,42.94940)(66.19180,43.05206)%
+\qbezier[7](66.19180,43.05206)(66.03117,43.15473)(65.87054,43.25740)%
+\qbezier[7](65.87054,43.25740)(65.71752,43.36019)(65.56450,43.46299)%
+\qbezier[6](65.56450,43.46299)(65.41934,43.56593)(65.27417,43.66888)%
+\qbezier[6](65.27417,43.66888)(65.13709,43.77194)(65.00000,43.87500)%
+\qbezier[6](65.00000,43.87500)(64.87120,43.97805)(64.74240,44.08111)%
+\qbezier[6](64.74240,44.08111)(64.62209,44.18396)(64.50177,44.28681)%
+\qbezier[6](64.50177,44.28681)(64.39013,44.38918)(64.27849,44.49155)%
+\qbezier[5](64.27849,44.49155)(64.17569,44.59308)(64.07290,44.69462)%
+\qbezier[5](64.07290,44.69462)(63.97910,44.79490)(63.88531,44.89519)%
+\qbezier[5](63.88531,44.89519)(63.80066,44.99371)(63.71601,45.09224)%
+\qbezier[5](63.71601,45.09224)(63.64065,45.18844)(63.56528,45.28464)%
+\qbezier[4](63.56528,45.28464)(63.49930,45.37788)(63.43332,45.47112)%
+\qbezier[4](63.43332,45.47112)(63.37685,45.56071)(63.32037,45.65029)%
+\qbezier[4](63.32037,45.65029)(63.27347,45.73546)(63.22657,45.82062)%
+\qbezier[3](63.22657,45.82062)(63.18933,45.90055)(63.15209,45.98048)%
+\qbezier[3](63.15209,45.98048)(63.12456,46.05431)(63.09703,46.12813)%
+\qbezier[3](63.09703,46.12813)(63.07925,46.19492)(63.06148,46.26172)%
+\qbezier[2](63.06148,46.26172)(63.05349,46.32051)(63.04550,46.37931)%
+\qbezier[2](63.04550,46.37931)(63.04730,46.42908)(63.04910,46.47885)%
+\qbezier[2](63.04910,46.47885)(63.06070,46.51854)(63.07229,46.55823)%
+\qbezier[2](63.07229,46.55823)(63.09366,46.58671)(63.11503,46.61520)%
+\qbezier[2](63.11503,46.61520)(63.14614,46.63133)(63.17725,46.64745)%
+\qbezier[2](63.17725,46.64745)(63.21805,46.65001)(63.25885,46.65256)%
+\qbezier[2](63.25885,46.65256)(63.30929,46.64027)(63.35972,46.62799)%
+\qbezier[3](63.35972,46.62799)(63.41971,46.59953)(63.47969,46.57107)%
+\qbezier[3](63.47969,46.57107)(63.54914,46.52504)(63.61858,46.47902)%
+\qbezier[4](63.61858,46.47902)(63.69738,46.41393)(63.77618,46.34884)%
+\qbezier[5](63.77618,46.34884)(63.86421,46.26310)(63.95224,46.17736)%
+\qbezier[5](63.95224,46.17736)(64.04937,46.06925)(64.14649,45.96114)%
+\qbezier[6](64.14649,45.96114)(64.25256,45.82878)(64.35863,45.69641)%
+\qbezier[7](64.35863,45.69641)(64.47349,45.53771)(64.58834,45.37900)%
+\qbezier[8](64.58834,45.37900)(64.71180,45.19160)(64.83526,45.00420)%
+\qbezier[9](64.83526,45.00420)(64.96713,44.78539)(65.09901,44.56658)%
+\qbezier[10](65.09901,44.56658)(65.23909,44.31317)(65.37918,44.05975)%
+\qbezier[11](65.37918,44.05975)(65.52726,43.76790)(65.67534,43.47604)%
+\qbezier[13](65.67534,43.47604)(65.83119,43.14094)(65.98704,42.80585)%
+\qbezier[14](65.98704,42.80585)(66.15041,42.42137)(66.31379,42.03688)%
+\qbezier[16](66.31379,42.03688)(66.48444,41.59475)(66.65509,41.15261)%
+\qbezier[19](66.65509,41.15261)(66.83275,40.64115)(67.01041,40.12969)%
+\qbezier[21](67.01041,40.12969)(67.19481,39.53125)(67.37921,38.93281)%
+\qbezier[25](67.37921,38.93281)(67.57006,38.21802)(67.76092,37.50323)%
+\qbezier[31](67.76092,37.50323)(67.95793,36.61535)(68.15494,35.72747)%
+\qbezier[41](68.15494,35.72747)(68.35781,34.52132)(68.56068,33.31516)%
+\qbezier[102](68.56068,33.31516)(68.76909,30.28258)(68.97750,27.25000)}%
+{\color{blue!45!black}\linethickness{.25pt}%
+\qbezier[123](91.01500,18.50000)(90.59122,22.14288)(90.16743,25.78575)%
+\qbezier[51](90.16743,25.78575)(89.74082,27.24446)(89.31421,28.70317)%
+\qbezier[39](89.31421,28.70317)(88.88543,29.78749)(88.45665,30.87180)%
+\qbezier[33](88.45665,30.87180)(88.02636,31.75592)(87.59607,32.64003)%
+\qbezier[29](87.59607,32.64003)(87.16494,33.39198)(86.73380,34.14393)%
+\qbezier[27](86.73380,34.14393)(86.30249,34.79892)(85.87117,35.45391)%
+\qbezier[25](85.87117,35.45391)(85.44035,36.03305)(85.00952,36.61220)%
+\qbezier[23](85.00952,36.61220)(84.57984,37.12943)(84.15015,37.64667)%
+\qbezier[22](84.15015,37.64667)(83.72229,38.11182)(83.29442,38.57697)%
+\qbezier[20](83.29442,38.57697)(82.86902,38.99733)(82.44362,39.41769)%
+\qbezier[19](82.44362,39.41769)(82.02135,39.79889)(81.59908,40.18009)%
+\qbezier[19](81.59908,40.18009)(81.18059,40.52663)(80.76210,40.87318)%
+\qbezier[18](80.76210,40.87318)(80.34803,41.18876)(79.93396,41.50434)%
+\qbezier[17](79.93396,41.50434)(79.52496,41.79208)(79.11595,42.07982)%
+\qbezier[17](79.11595,42.07982)(78.71264,42.34239)(78.30933,42.60497)%
+\qbezier[16](78.30933,42.60497)(77.91233,42.84472)(77.51533,43.08447)%
+\qbezier[15](77.51533,43.08447)(77.12526,43.30348)(76.73519,43.52250)%
+\qbezier[15](76.73519,43.52250)(76.35264,43.72267)(75.97010,43.92284)%
+\qbezier[14](75.97010,43.92284)(75.59567,44.10588)(75.22125,44.28893)%
+\qbezier[14](75.22125,44.28893)(74.85552,44.45643)(74.48979,44.62394)%
+\qbezier[13](74.48979,44.62394)(74.13332,44.77738)(73.77685,44.93082)%
+\qbezier[13](73.77685,44.93082)(73.43019,45.07159)(73.08353,45.21235)%
+\qbezier[13](73.08353,45.21235)(72.74721,45.34174)(72.41090,45.47112)%
+\qbezier[12](72.41090,45.47112)(72.08544,45.59035)(71.75999,45.70958)%
+\qbezier[12](71.75999,45.70958)(71.44589,45.81981)(71.13180,45.93004)%
+\qbezier[11](71.13180,45.93004)(70.82956,46.03236)(70.52732,46.13468)%
+\qbezier[11](70.52732,46.13468)(70.23739,46.23013)(69.94746,46.32557)%
+\qbezier[10](69.94746,46.32557)(69.67029,46.41511)(69.39313,46.50465)%
+\qbezier[10](69.39313,46.50465)(69.12915,46.58918)(68.86517,46.67371)%
+\qbezier[9](68.86517,46.67371)(68.61479,46.75408)(68.36441,46.83445)%
+\qbezier[9](68.36441,46.83445)(68.12801,46.91142)(67.89160,46.98840)%
+\qbezier[8](67.89160,46.98840)(67.66955,47.06269)(67.44750,47.13698)%
+\qbezier[8](67.44750,47.13698)(67.24013,47.20922)(67.03277,47.28145)%
+\qbezier[7](67.03277,47.28145)(66.84041,47.35219)(66.64805,47.42292)%
+\qbezier[7](66.64805,47.42292)(66.47100,47.49263)(66.29395,47.56234)%
+\qbezier[6](66.29395,47.56234)(66.13248,47.63141)(65.97100,47.70049)%
+\qbezier[6](65.97100,47.70049)(65.82536,47.76924)(65.67971,47.83799)%
+\qbezier[5](65.67971,47.83799)(65.55011,47.90663)(65.42052,47.97527)%
+\qbezier[5](65.42052,47.97527)(65.30718,48.04393)(65.19383,48.11258)%
+\qbezier[4](65.19383,48.11258)(65.09692,48.18129)(65.00000,48.25000)%
+\qbezier[4](65.00000,48.25000)(64.91966,48.31870)(64.83932,48.38740)%
+\qbezier[4](64.83932,48.38740)(64.77568,48.45594)(64.71203,48.52448)%
+\qbezier[3](64.71203,48.52448)(64.66519,48.59262)(64.61835,48.66075)%
+\qbezier[3](64.61835,48.66075)(64.58837,48.72814)(64.55840,48.79553)%
+\qbezier[3](64.55840,48.79553)(64.54534,48.86175)(64.53228,48.92797)%
+\qbezier[3](64.53228,48.92797)(64.53616,48.99250)(64.54004,49.05704)%
+\qbezier[3](64.54004,49.05704)(64.56085,49.11929)(64.58166,49.18153)%
+\qbezier[3](64.58166,49.18153)(64.61937,49.24082)(64.65707,49.30010)%
+\qbezier[3](64.65707,49.30010)(64.71162,49.35566)(64.76617,49.41122)%
+\qbezier[3](64.76617,49.41122)(64.83747,49.46223)(64.90877,49.51323)%
+\qbezier[4](64.90877,49.51323)(64.99672,49.55878)(65.08467,49.60433)%
+\qbezier[4](65.08467,49.60433)(65.18913,49.64346)(65.29359,49.68258)%
+\qbezier[5](65.29359,49.68258)(65.41440,49.71425)(65.53521,49.74592)%
+\qbezier[5](65.53521,49.74592)(65.67218,49.76905)(65.80916,49.79217)%
+\qbezier[6](65.80916,49.79217)(65.96208,49.80560)(66.11500,49.81903)%
+\qbezier[6](66.11500,49.81903)(66.28364,49.82155)(66.45228,49.82407)%
+\qbezier[7](66.45228,49.82407)(66.63638,49.81443)(66.82048,49.80478)%
+\qbezier[7](66.82048,49.80478)(67.01975,49.78163)(67.21901,49.75849)%
+\qbezier[8](67.21901,49.75849)(67.43315,49.72046)(67.64728,49.68243)%
+\qbezier[8](67.64728,49.68243)(67.87595,49.62806)(68.10462,49.57368)%
+\qbezier[9](68.10462,49.57368)(68.34747,49.50143)(68.59032,49.42918)%
+\qbezier[10](68.59032,49.42918)(68.84698,49.33743)(69.10363,49.24568)%
+\qbezier[10](69.10363,49.24568)(69.37370,49.13270)(69.64377,49.01972)%
+\qbezier[11](69.64377,49.01972)(69.92684,48.88365)(70.20991,48.74759)%
+\qbezier[12](70.20991,48.74759)(70.50553,48.58642)(70.80115,48.42525)%
+\qbezier[13](70.80115,48.42525)(71.10888,48.23678)(71.41661,48.04830)%
+\qbezier[13](71.41661,48.04830)(71.73597,47.83006)(72.05532,47.61182)%
+\qbezier[14](72.05532,47.61182)(72.38582,47.36102)(72.71631,47.11022)%
+\qbezier[15](72.71631,47.11022)(73.05743,46.82366)(73.39855,46.53709)%
+\qbezier[16](73.39855,46.53709)(73.74977,46.21097)(74.10099,45.88484)%
+\qbezier[18](74.10099,45.88484)(74.46177,45.51458)(74.82255,45.14431)%
+\qbezier[19](74.82255,45.14431)(75.19233,44.72418)(75.56211,44.30406)%
+\qbezier[21](75.56211,44.30406)(75.94033,43.82672)(76.31854,43.34938)%
+\qbezier[23](76.31854,43.34938)(76.70461,42.80494)(77.09067,42.26050)%
+\qbezier[25](77.09067,42.26050)(77.48399,41.63496)(77.87731,41.00943)%
+\qbezier[28](77.87731,41.00943)(78.27728,40.28164)(78.67725,39.55385)%
+\qbezier[32](78.67725,39.55385)(79.08324,38.68856)(79.48924,37.82328)%
+\qbezier[39](79.48924,37.82328)(79.90064,36.75244)(80.31205,35.68159)%
+\qbezier[51](80.31205,35.68159)(80.72822,34.23097)(81.14439,32.78035)%
+\qbezier[123](81.14439,32.78035)(81.56470,29.14018)(81.98500,25.50000)}%
+{\color{blue!45!black}\linethickness{.25pt}%
+\qbezier[144](99.50750,20.25000)(98.87357,24.49912)(98.23963,28.74824)%
+\qbezier[61](98.23963,28.74824)(97.60493,30.44738)(96.97024,32.14651)%
+\qbezier[48](96.97024,32.14651)(96.33575,33.40705)(95.70127,34.66760)%
+\qbezier[41](95.70127,34.66760)(95.06798,35.69279)(94.43469,36.71797)%
+\qbezier[36](94.43469,36.71797)(93.80358,37.58720)(93.17246,38.45642)%
+\qbezier[33](93.17246,38.45642)(92.54449,39.21075)(91.91651,39.96509)%
+\qbezier[31](91.91651,39.96509)(91.29265,40.62919)(90.66879,41.29329)%
+\qbezier[29](90.66879,41.29329)(90.05000,41.88343)(89.43121,42.47358)%
+\qbezier[27](89.43121,42.47358)(88.81845,43.00124)(88.20569,43.52891)%
+\qbezier[26](88.20569,43.52891)(87.59990,44.00263)(86.99412,44.47635)%
+\qbezier[25](86.99412,44.47635)(86.39624,44.90273)(85.79836,45.32910)%
+\qbezier[24](85.79836,45.32910)(85.20931,45.71341)(84.62025,46.09772)%
+\qbezier[23](84.62025,46.09772)(84.04094,46.44431)(83.46162,46.79089)%
+\qbezier[22](83.46162,46.79089)(82.89294,47.10342)(82.32426,47.41595)%
+\qbezier[21](82.32426,47.41595)(81.76708,47.69759)(81.20990,47.97922)%
+\qbezier[21](81.20990,47.97922)(80.66509,48.23274)(80.12028,48.48625)%
+\qbezier[20](80.12028,48.48625)(79.58868,48.71412)(79.05707,48.94199)%
+\qbezier[19](79.05707,48.94199)(78.53950,49.14646)(78.02192,49.35093)%
+\qbezier[18](78.02192,49.35093)(77.51916,49.53405)(77.01641,49.71717)%
+\qbezier[18](77.01641,49.71717)(76.52925,49.88084)(76.04210,50.04451)%
+\qbezier[17](76.04210,50.04451)(75.57130,50.19050)(75.10049,50.33650)%
+\qbezier[16](75.10049,50.33650)(74.64676,50.46648)(74.19304,50.59646)%
+\qbezier[16](74.19304,50.59646)(73.75709,50.71199)(73.32113,50.82753)%
+\qbezier[15](73.32113,50.82753)(72.90363,50.93010)(72.48613,51.03267)%
+\qbezier[14](72.48613,51.03267)(72.08772,51.12369)(71.68930,51.21471)%
+\qbezier[13](71.68930,51.21471)(71.31060,51.29550)(70.93190,51.37629)%
+\qbezier[13](70.93190,51.37629)(70.57348,51.44812)(70.21507,51.51995)%
+\qbezier[12](70.21507,51.51995)(69.87749,51.58401)(69.53992,51.64807)%
+\qbezier[11](69.53992,51.64807)(69.22372,51.70547)(68.90751,51.76287)%
+\qbezier[10](68.90751,51.76287)(68.61315,51.81466)(68.31879,51.86645)%
+\qbezier[10](68.31879,51.86645)(68.04674,51.91360)(67.77469,51.96074)%
+\qbezier[9](67.77469,51.96074)(67.52536,52.00413)(67.27603,52.04752)%
+\qbezier[8](67.27603,52.04752)(67.04981,52.08795)(66.82360,52.12839)%
+\qbezier[7](66.82360,52.12839)(66.62083,52.16658)(66.41807,52.20478)%
+\qbezier[7](66.41807,52.20478)(66.23908,52.24136)(66.06009,52.27794)%
+\qbezier[6](66.06009,52.27794)(65.90515,52.31343)(65.75020,52.34892)%
+\qbezier[5](65.75020,52.34892)(65.61954,52.38375)(65.48888,52.41857)%
+\qbezier[4](65.48888,52.41857)(65.38271,52.45306)(65.27654,52.48755)%
+\qbezier[3](65.27654,52.48755)(65.19502,52.52192)(65.11349,52.55629)%
+\qbezier[3](65.11349,52.55629)(65.05675,52.59064)(65.00000,52.62500)%
+\qbezier[2](65.00000,52.62500)(64.96812,52.65935)(64.93623,52.69370)%
+\qbezier[2](64.93623,52.69370)(64.92926,52.72793)(64.92229,52.76216)%
+\qbezier[2](64.92229,52.76216)(64.94025,52.79606)(64.95820,52.82995)%
+\qbezier[2](64.95820,52.82995)(65.00105,52.86320)(65.04390,52.89644)%
+\qbezier[3](65.04390,52.89644)(65.11158,52.92860)(65.17926,52.96075)%
+\qbezier[4](65.17926,52.96075)(65.27166,52.99130)(65.36407,53.02184)%
+\qbezier[5](65.36407,53.02184)(65.48105,53.05013)(65.59804,53.07843)%
+\qbezier[5](65.59804,53.07843)(65.73943,53.10375)(65.88082,53.12908)%
+\qbezier[6](65.88082,53.12908)(66.04640,53.15061)(66.21197,53.17215)%
+\qbezier[7](66.21197,53.17215)(66.40147,53.18900)(66.59098,53.20584)%
+\qbezier[8](66.59098,53.20584)(66.80412,53.21701)(67.01726,53.22818)%
+\qbezier[8](67.01726,53.22818)(67.25371,53.23261)(67.49016,53.23703)%
+\qbezier[9](67.49016,53.23703)(67.74955,53.23358)(68.00894,53.23013)%
+\qbezier[10](68.00894,53.23013)(68.29088,53.21758)(68.57281,53.20504)%
+\qbezier[11](68.57281,53.20504)(68.87686,53.18212)(69.18091,53.15920)%
+\qbezier[11](69.18091,53.15920)(69.50659,53.12456)(69.83228,53.08992)%
+\qbezier[12](69.83228,53.08992)(70.17910,53.04214)(70.52592,52.99435)%
+\qbezier[13](70.52592,52.99435)(70.89335,52.93194)(71.26078,52.86952)%
+\qbezier[14](71.26078,52.86952)(71.64824,52.79091)(72.03571,52.71230)%
+\qbezier[14](72.03571,52.71230)(72.44261,52.61584)(72.84951,52.51938)%
+\qbezier[15](72.84951,52.51938)(73.27523,52.40334)(73.70094,52.28730)%
+\qbezier[16](73.70094,52.28730)(74.14481,52.14982)(74.58868,52.01235)%
+\qbezier[17](74.58868,52.01235)(75.05003,51.85147)(75.51137,51.69060)%
+\qbezier[18](75.51137,51.69060)(75.98947,51.50421)(76.46757,51.31781)%
+\qbezier[18](76.46757,51.31781)(76.96169,51.10359)(77.45582,50.88937)%
+\qbezier[19](77.45582,50.88937)(77.96520,50.64478)(78.47459,50.40019)%
+\qbezier[20](78.47459,50.40019)(78.99845,50.12241)(79.52231,49.84463)%
+\qbezier[21](79.52231,49.84463)(80.05983,49.53044)(80.59736,49.21624)%
+\qbezier[22](80.59736,49.21624)(81.14772,48.86192)(81.69809,48.50761)%
+\qbezier[23](81.69809,48.50761)(82.26045,48.10877)(82.82280,47.70993)%
+\qbezier[25](82.82280,47.70993)(83.39628,47.26126)(83.96976,46.81258)%
+\qbezier[26](83.96976,46.81258)(84.55347,46.30743)(85.13719,45.80227)%
+\qbezier[28](85.13719,45.80227)(85.73025,45.23208)(86.32330,44.66188)%
+\qbezier[30](86.32330,44.66188)(86.92478,44.01513)(87.52626,43.36838)%
+\qbezier[32](87.52626,43.36838)(88.13524,42.62878)(88.74421,41.88917)%
+\qbezier[36](88.74421,41.88917)(89.35975,41.03203)(89.97528,40.17488)%
+\qbezier[40](89.97528,40.17488)(90.59642,39.15911)(91.21757,38.14334)%
+\qbezier[47](91.21757,38.14334)(91.84336,36.88953)(92.46915,35.63572)%
+\qbezier[61](92.46915,35.63572)(93.09863,33.94063)(93.72811,32.24555)%
+\qbezier[144](93.72811,32.24555)(94.36031,27.99777)(94.99250,23.75000)}%
+{\color{blue!45!black}\linethickness{.25pt}%
+\qbezier[165](108.00000,22.00000)(107.15591,26.85537)(106.31183,31.71074)%
+\qbezier[71](106.31183,31.71074)(105.46904,33.65029)(104.62626,35.58985)%
+\qbezier[56](104.62626,35.58985)(103.78608,37.02662)(102.94589,38.46339)%
+\qbezier[48](102.94589,38.46339)(102.10960,39.62965)(101.27332,40.79592)%
+\qbezier[43](101.27332,40.79592)(100.44222,41.78241)(99.61112,42.76891)%
+\qbezier[40](99.61112,42.76891)(98.78648,43.62259)(97.96185,44.47627)%
+\qbezier[37](97.96185,44.47627)(97.14496,45.22533)(96.32806,45.97439)%
+\qbezier[35](96.32806,45.97439)(95.52016,46.63744)(94.71227,47.30049)%
+\qbezier[34](94.71227,47.30049)(93.91462,47.89067)(93.11697,48.48085)%
+\qbezier[32](93.11697,48.48085)(92.33079,49.00794)(91.54461,49.53502)%
+\qbezier[31](91.54461,49.53502)(90.77112,50.00657)(89.99763,50.47812)%
+\qbezier[29](89.99763,50.47812)(89.23802,50.90019)(88.47841,51.32226)%
+\qbezier[28](88.47841,51.32226)(87.73385,51.69985)(86.98929,52.07744)%
+\qbezier[27](86.98929,52.07744)(86.26092,52.41476)(85.53256,52.75208)%
+\qbezier[26](85.53256,52.75208)(84.82152,53.05278)(84.11048,53.35348)%
+\qbezier[25](84.11048,53.35348)(83.41786,53.62076)(82.72523,53.88804)%
+\qbezier[24](82.72523,53.88804)(82.05210,54.12476)(81.37896,54.36148)%
+\qbezier[23](81.37896,54.36148)(80.72635,54.57025)(80.07373,54.77902)%
+\qbezier[22](80.07373,54.77902)(79.44265,54.96221)(78.81157,55.14541)%
+\qbezier[21](78.81157,55.14541)(78.20299,55.30524)(77.59441,55.46508)%
+\qbezier[21](77.59441,55.46508)(77.00927,55.60362)(76.42413,55.74217)%
+\qbezier[20](76.42413,55.74217)(75.86334,55.86136)(75.30254,55.98056)%
+\qbezier[19](75.30254,55.98056)(74.76696,56.08225)(74.23137,56.18393)%
+\qbezier[18](74.23137,56.18393)(73.72182,56.26985)(73.21227,56.35577)%
+\qbezier[17](73.21227,56.35577)(72.72954,56.42757)(72.24681,56.49938)%
+\qbezier[16](72.24681,56.49938)(71.79164,56.55864)(71.33647,56.61790)%
+\qbezier[15](71.33647,56.61790)(70.90957,56.66612)(70.48267,56.71433)%
+\qbezier[14](70.48267,56.71433)(70.08470,56.75291)(69.68672,56.79149)%
+\qbezier[13](69.68672,56.79149)(69.31828,56.82176)(68.94984,56.85203)%
+\qbezier[12](68.94984,56.85203)(68.61151,56.87524)(68.27318,56.89845)%
+\qbezier[11](68.27318,56.89845)(67.96548,56.91577)(67.65777,56.93308)%
+\qbezier[10](67.65777,56.93308)(67.38117,56.94557)(67.10457,56.95805)%
+\qbezier[9](67.10457,56.95805)(66.85950,56.96669)(66.61442,56.97532)%
+\qbezier[8](66.61442,56.97532)(66.40126,56.98098)(66.18809,56.98664)%
+\qbezier[7](66.18809,56.98664)(66.00716,56.99009)(65.82623,56.99354)%
+\qbezier[5](65.82623,56.99354)(65.67782,56.99544)(65.52940,56.99735)%
+\qbezier[4](65.52940,56.99735)(65.41373,56.99825)(65.29806,56.99916)%
+\qbezier[3](65.29806,56.99916)(65.21531,56.99950)(65.13255,56.99983)%
+\qbezier[2](65.13255,56.99983)(65.08285,56.99991)(65.03315,56.99999)%
+\qbezier[2](65.03315,56.99999)(65.01658,56.99999)(65.00000,57.00000)%
+\qbezier[2](65.00000,57.00000)(65.01658,56.99999)(65.03315,56.99999)%
+\qbezier[2](65.03315,56.99999)(65.08285,56.99991)(65.13255,56.99983)%
+\qbezier[3](65.13255,56.99983)(65.21531,56.99950)(65.29806,56.99916)%
+\qbezier[4](65.29806,56.99916)(65.41373,56.99825)(65.52940,56.99735)%
+\qbezier[5](65.52940,56.99735)(65.67782,56.99544)(65.82623,56.99354)%
+\qbezier[7](65.82623,56.99354)(66.00716,56.99009)(66.18809,56.98664)%
+\qbezier[8](66.18809,56.98664)(66.40126,56.98098)(66.61442,56.97532)%
+\qbezier[9](66.61442,56.97532)(66.85950,56.96669)(67.10457,56.95805)%
+\qbezier[10](67.10457,56.95805)(67.38117,56.94557)(67.65777,56.93308)%
+\qbezier[11](67.65777,56.93308)(67.96548,56.91577)(68.27318,56.89845)%
+\qbezier[12](68.27318,56.89845)(68.61151,56.87524)(68.94984,56.85203)%
+\qbezier[13](68.94984,56.85203)(69.31828,56.82176)(69.68672,56.79149)%
+\qbezier[14](69.68672,56.79149)(70.08470,56.75291)(70.48267,56.71433)%
+\qbezier[15](70.48267,56.71433)(70.90957,56.66612)(71.33647,56.61790)%
+\qbezier[16](71.33647,56.61790)(71.79164,56.55864)(72.24681,56.49938)%
+\qbezier[17](72.24681,56.49938)(72.72954,56.42757)(73.21227,56.35577)%
+\qbezier[18](73.21227,56.35577)(73.72182,56.26985)(74.23137,56.18393)%
+\qbezier[19](74.23137,56.18393)(74.76696,56.08225)(75.30254,55.98056)%
+\qbezier[20](75.30254,55.98056)(75.86334,55.86136)(76.42413,55.74217)%
+\qbezier[21](76.42413,55.74217)(77.00927,55.60362)(77.59441,55.46508)%
+\qbezier[21](77.59441,55.46508)(78.20299,55.30524)(78.81157,55.14541)%
+\qbezier[22](78.81157,55.14541)(79.44265,54.96221)(80.07373,54.77902)%
+\qbezier[23](80.07373,54.77902)(80.72635,54.57025)(81.37896,54.36148)%
+\qbezier[24](81.37896,54.36148)(82.05210,54.12476)(82.72523,53.88804)%
+\qbezier[25](82.72523,53.88804)(83.41786,53.62076)(84.11048,53.35348)%
+\qbezier[26](84.11048,53.35348)(84.82152,53.05278)(85.53256,52.75208)%
+\qbezier[27](85.53256,52.75208)(86.26092,52.41476)(86.98929,52.07744)%
+\qbezier[28](86.98929,52.07744)(87.73385,51.69985)(88.47841,51.32226)%
+\qbezier[29](88.47841,51.32226)(89.23802,50.90019)(89.99763,50.47812)%
+\qbezier[31](89.99763,50.47812)(90.77112,50.00657)(91.54461,49.53502)%
+\qbezier[32](91.54461,49.53502)(92.33079,49.00794)(93.11697,48.48085)%
+\qbezier[34](93.11697,48.48085)(93.91462,47.89067)(94.71227,47.30049)%
+\qbezier[35](94.71227,47.30049)(95.52016,46.63744)(96.32806,45.97439)%
+\qbezier[37](96.32806,45.97439)(97.14496,45.22533)(97.96185,44.47627)%
+\qbezier[40](97.96185,44.47627)(98.78648,43.62259)(99.61112,42.76891)%
+\qbezier[43](99.61112,42.76891)(100.44222,41.78241)(101.27332,40.79592)%
+\qbezier[48](101.27332,40.79592)(102.10960,39.62965)(102.94589,38.46339)%
+\qbezier[56](102.94589,38.46339)(103.78608,37.02662)(104.62626,35.58985)%
+\qbezier[71](104.62626,35.58985)(105.46904,33.65029)(106.31183,31.71074)%
+\qbezier[165](106.31183,31.71074)(107.15591,26.85537)(108.00000,22.00000)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](40.06000,8.00000)(74.03000,15.00000)(108.00000,22.00000)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](46.56433,8.17236)(73.91883,24.48414)(101.27332,40.79592)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](52.46381,8.68521)(73.58804,27.99285)(94.71227,47.30049)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](57.61317,9.52591)(73.04579,30.42409)(88.47841,51.32226)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](61.88561,10.67376)(72.30542,32.28090)(82.72523,53.88804)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](65.17594,12.10051)(71.38517,33.78279)(77.59441,55.46508)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](67.40313,13.77101)(70.30770,35.06339)(73.21227,56.35577)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](68.51235,15.64413)(69.09953,36.21781)(69.68672,56.79149)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](68.47628,17.67376)(67.79042,37.31591)(67.10457,56.95805)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](67.29581,19.80992)(66.41260,38.40363)(65.52940,56.99735)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](65.00000,22.00000)(65.00000,39.50000)(65.00000,57.00000)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](61.64539,24.19008)(63.58740,40.59371)(65.52940,56.99735)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](57.31458,26.32624)(62.20958,41.64215)(67.10457,56.95805)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](52.11421,28.35587)(60.90047,42.57368)(69.68672,56.79149)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](46.17233,30.22899)(59.69230,43.29238)(73.21227,56.35577)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](39.63524,31.89949)(58.61483,43.68229)(77.59441,55.46508)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](32.66392,33.32624)(57.69458,43.60714)(82.72523,53.88804)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](25.43001,34.47409)(56.95421,42.89818)(88.47841,51.32226)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](18.11165,35.31479)(56.41196,41.30764)(94.71227,47.30049)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](10.88903,35.82764)(56.08117,38.31178)(101.27332,40.79592)}%
+{\color{black!35}\linethickness{.25pt}%
+\qbezier[500](3.94000,36.00000)(55.97000,29.00000)(108.00000,22.00000)}%
+{\color{blue}\linethickness{1pt}%
+\qbezier[28](40.06000,8.00000)(40.89712,8.00540)(41.73425,8.01079)%
+\qbezier[28](41.73425,8.01079)(42.55616,8.02698)(43.37807,8.04316)%
+\qbezier[27](43.37807,8.04316)(44.18350,8.07010)(44.98892,8.09704)%
+\qbezier[27](44.98892,8.09704)(45.77663,8.13470)(46.56433,8.17236)%
+\qbezier[26](46.56433,8.17236)(47.33310,8.22068)(48.10187,8.26901)%
+\qbezier[26](48.10187,8.26901)(48.85051,8.32791)(49.59915,8.38682)%
+\qbezier[25](49.59915,8.38682)(50.32652,8.45622)(51.05388,8.52563)%
+\qbezier[24](51.05388,8.52563)(51.75885,8.60542)(52.46381,8.68521)%
+\qbezier[23](52.46381,8.68521)(53.14529,8.77527)(53.82677,8.86532)%
+\qbezier[23](53.82677,8.86532)(54.48371,8.96550)(55.14065,9.06569)%
+\qbezier[22](55.14065,9.06569)(55.77204,9.17584)(56.40343,9.28600)%
+\qbezier[21](56.40343,9.28600)(57.00830,9.40595)(57.61317,9.52591)%
+\qbezier[20](57.61317,9.52591)(58.19058,9.65548)(58.76799,9.78506)%
+\qbezier[19](58.76799,9.78506)(59.31706,9.92405)(59.86612,10.06304)%
+\qbezier[19](59.86612,10.06304)(60.38599,10.21123)(60.90586,10.35943)%
+\qbezier[18](60.90586,10.35943)(61.39574,10.51659)(61.88561,10.67376)%
+\qbezier[17](61.88561,10.67376)(62.34474,10.83966)(62.80386,11.00556)%
+\qbezier[16](62.80386,11.00556)(63.23153,11.17994)(63.65920,11.35432)%
+\qbezier[15](63.65920,11.35432)(64.05475,11.53690)(64.45030,11.71948)%
+\qbezier[14](64.45030,11.71948)(64.81312,11.90999)(65.17594,12.10051)%
+\qbezier[13](65.17594,12.10051)(65.50547,12.29865)(65.83501,12.49679)%
+\qbezier[13](65.83501,12.49679)(66.13075,12.70226)(66.42649,12.90773)%
+\qbezier[12](66.42649,12.90773)(66.68798,13.12021)(66.94946,13.33268)%
+\qbezier[11](66.94946,13.33268)(67.17630,13.55185)(67.40313,13.77101)%
+\qbezier[10](67.40313,13.77101)(67.59496,13.99651)(67.78679,14.22202)%
+\qbezier[10](67.78679,14.22202)(67.94332,14.45352)(68.09985,14.68502)%
+\qbezier[9](68.09985,14.68502)(68.22084,14.92216)(68.34183,15.15930)%
+\qbezier[9](68.34183,15.15930)(68.42709,15.40172)(68.51235,15.64413)%
+\qbezier[9](68.51235,15.64413)(68.56175,15.89145)(68.61115,16.13876)%
+\qbezier[9](68.61115,16.13876)(68.62462,16.39060)(68.63808,16.64243)%
+\qbezier[9](68.63808,16.64243)(68.61559,16.89840)(68.59310,17.15436)%
+\qbezier[9](68.59310,17.15436)(68.53469,17.41406)(68.47628,17.67376)%
+\qbezier[10](68.47628,17.67376)(68.38203,17.93680)(68.28779,18.19983)%
+\qbezier[10](68.28779,18.19983)(68.15786,18.46580)(68.02793,18.73176)%
+\qbezier[11](68.02793,18.73176)(67.86251,19.00025)(67.69710,19.26874)%
+\qbezier[12](67.69710,19.26874)(67.49645,19.53933)(67.29581,19.80992)%
+\qbezier[13](67.29581,19.80992)(67.06024,20.08220)(66.82467,20.35448)%
+\qbezier[13](66.82467,20.35448)(66.55454,20.62802)(66.28442,20.90157)%
+\qbezier[14](66.28442,20.90157)(65.98015,21.17597)(65.67588,21.45036)%
+\qbezier[15](65.67588,21.45036)(65.33794,21.72518)(65.00000,22.00000)%
+\qbezier[16](65.00000,22.00000)(64.62891,22.27482)(64.25782,22.54964)%
+\qbezier[17](64.25782,22.54964)(63.85415,22.82403)(63.45047,23.09843)%
+\qbezier[18](63.45047,23.09843)(63.01485,23.37198)(62.57922,23.64552)%
+\qbezier[19](62.57922,23.64552)(62.11231,23.91780)(61.64539,24.19008)%
+\qbezier[19](61.64539,24.19008)(61.14791,24.46067)(60.65044,24.73126)%
+\qbezier[20](60.65044,24.73126)(60.12316,24.99975)(59.59588,25.26824)%
+\qbezier[21](59.59588,25.26824)(59.03962,25.53420)(58.48336,25.80017)%
+\qbezier[22](58.48336,25.80017)(57.89897,26.06320)(57.31458,26.32624)%
+\qbezier[23](57.31458,26.32624)(56.70297,26.58594)(56.09135,26.84564)%
+\qbezier[23](56.09135,26.84564)(55.45346,27.10160)(54.81556,27.35757)%
+\qbezier[24](54.81556,27.35757)(54.15236,27.60940)(53.48916,27.86124)%
+\qbezier[25](53.48916,27.86124)(52.80169,28.10855)(52.11421,28.35587)%
+\qbezier[26](52.11421,28.35587)(51.40352,28.59828)(50.69283,28.84070)%
+\qbezier[26](50.69283,28.84070)(49.96002,29.07784)(49.22720,29.31498)%
+\qbezier[27](49.22720,29.31498)(48.47340,29.54648)(47.71959,29.77798)%
+\qbezier[27](47.71959,29.77798)(46.94596,30.00349)(46.17233,30.22899)%
+\qbezier[28](46.17233,30.22899)(45.38006,30.44815)(44.58779,30.66732)%
+\qbezier[28](44.58779,30.66732)(43.77811,30.87979)(42.96842,31.09227)%
+\qbezier[29](42.96842,31.09227)(42.14258,31.29774)(41.31673,31.50321)%
+\qbezier[29](41.31673,31.50321)(40.47598,31.70135)(39.63524,31.89949)%
+\qbezier[30](39.63524,31.89949)(38.78091,32.09001)(37.92657,32.28052)%
+\qbezier[30](37.92657,32.28052)(37.05995,32.46310)(36.19333,32.64568)%
+\qbezier[30](36.19333,32.64568)(35.31578,32.82006)(34.43822,32.99444)%
+\qbezier[31](34.43822,32.99444)(33.55107,33.16034)(32.66392,33.32624)%
+\qbezier[31](32.66392,33.32624)(31.76855,33.48341)(30.87318,33.64057)%
+\qbezier[31](30.87318,33.64057)(29.97097,33.78877)(29.06876,33.93696)%
+\qbezier[31](29.06876,33.93696)(28.16110,34.07595)(27.25344,34.21494)%
+\qbezier[31](27.25344,34.21494)(26.34172,34.34452)(25.43001,34.47409)%
+\qbezier[31](25.43001,34.47409)(24.51566,34.59405)(23.60130,34.71400)%
+\qbezier[31](23.60130,34.71400)(22.68571,34.82416)(21.77012,34.93431)%
+\qbezier[31](21.77012,34.93431)(20.85471,35.03450)(19.93930,35.13468)%
+\qbezier[31](19.93930,35.13468)(19.02547,35.22473)(18.11165,35.31479)%
+\qbezier[31](18.11165,35.31479)(17.20082,35.39458)(16.29000,35.47437)%
+\qbezier[31](16.29000,35.47437)(15.38357,35.54378)(14.47715,35.61318)%
+\qbezier[31](14.47715,35.61318)(13.57653,35.67209)(12.67590,35.73099)%
+\qbezier[30](12.67590,35.73099)(11.78247,35.77932)(10.88903,35.82764)%
+\qbezier[30](10.88903,35.82764)(10.00416,35.86530)(9.11929,35.90296)%
+\qbezier[30](9.11929,35.90296)(8.24435,35.92990)(7.36941,35.95684)%
+\qbezier[29](7.36941,35.95684)(6.50575,35.97302)(5.64210,35.98921)%
+\qbezier[29](5.64210,35.98921)(4.79105,35.99460)(3.94000,36.00000)}%
+{\color{green!50!black}\linethickness{1pt}%
+\qbezier[2](65.00000,57.00000)(65.01658,56.99999)(65.03315,56.99999)%
+\qbezier[2](65.03315,56.99999)(65.08285,56.99991)(65.13255,56.99983)%
+\qbezier[3](65.13255,56.99983)(65.21531,56.99950)(65.29806,56.99916)%
+\qbezier[4](65.29806,56.99916)(65.41373,56.99825)(65.52940,56.99735)%
+\qbezier[5](65.52940,56.99735)(65.67782,56.99544)(65.82623,56.99354)%
+\qbezier[7](65.82623,56.99354)(66.00716,56.99009)(66.18809,56.98664)%
+\qbezier[8](66.18809,56.98664)(66.40126,56.98098)(66.61442,56.97532)%
+\qbezier[9](66.61442,56.97532)(66.85950,56.96669)(67.10457,56.95805)%
+\qbezier[10](67.10457,56.95805)(67.38117,56.94557)(67.65777,56.93308)%
+\qbezier[11](67.65777,56.93308)(67.96548,56.91577)(68.27318,56.89845)%
+\qbezier[12](68.27318,56.89845)(68.61151,56.87524)(68.94984,56.85203)%
+\qbezier[13](68.94984,56.85203)(69.31828,56.82176)(69.68672,56.79149)%
+\qbezier[14](69.68672,56.79149)(70.08470,56.75291)(70.48267,56.71433)%
+\qbezier[15](70.48267,56.71433)(70.90957,56.66612)(71.33647,56.61790)%
+\qbezier[16](71.33647,56.61790)(71.79164,56.55864)(72.24681,56.49938)%
+\qbezier[17](72.24681,56.49938)(72.72954,56.42757)(73.21227,56.35577)%
+\qbezier[18](73.21227,56.35577)(73.72182,56.26985)(74.23137,56.18393)%
+\qbezier[19](74.23137,56.18393)(74.76696,56.08225)(75.30254,55.98056)%
+\qbezier[20](75.30254,55.98056)(75.86334,55.86136)(76.42413,55.74217)%
+\qbezier[21](76.42413,55.74217)(77.00927,55.60362)(77.59441,55.46508)%
+\qbezier[21](77.59441,55.46508)(78.20299,55.30524)(78.81157,55.14541)%
+\qbezier[22](78.81157,55.14541)(79.44265,54.96221)(80.07373,54.77902)%
+\qbezier[23](80.07373,54.77902)(80.72635,54.57025)(81.37896,54.36148)%
+\qbezier[24](81.37896,54.36148)(82.05210,54.12476)(82.72523,53.88804)%
+\qbezier[25](82.72523,53.88804)(83.41786,53.62076)(84.11048,53.35348)%
+\qbezier[26](84.11048,53.35348)(84.82152,53.05278)(85.53256,52.75208)%
+\qbezier[27](85.53256,52.75208)(86.26092,52.41476)(86.98929,52.07744)%
+\qbezier[28](86.98929,52.07744)(87.73385,51.69985)(88.47841,51.32226)%
+\qbezier[29](88.47841,51.32226)(89.23802,50.90019)(89.99763,50.47812)%
+\qbezier[31](89.99763,50.47812)(90.77112,50.00657)(91.54461,49.53502)%
+\qbezier[32](91.54461,49.53502)(92.33079,49.00794)(93.11697,48.48085)%
+\qbezier[34](93.11697,48.48085)(93.91462,47.89067)(94.71227,47.30049)%
+\qbezier[35](94.71227,47.30049)(95.52016,46.63744)(96.32806,45.97439)%
+\qbezier[37](96.32806,45.97439)(97.14496,45.22533)(97.96185,44.47627)%
+\qbezier[40](97.96185,44.47627)(98.78648,43.62259)(99.61112,42.76891)%
+\qbezier[43](99.61112,42.76891)(100.44222,41.78241)(101.27332,40.79592)%
+\qbezier[48](101.27332,40.79592)(102.10960,39.62965)(102.94589,38.46339)%
+\qbezier[56](102.94589,38.46339)(103.78608,37.02662)(104.62626,35.58985)%
+\qbezier[71](104.62626,35.58985)(105.46904,33.65029)(106.31183,31.71074)%
+\qbezier[165](106.31183,31.71074)(107.15591,26.85537)(108.00000,22.00000)}%
+{\color{red}\put(65.00000,57.00000){\circle*{2}}}%
+{\color{red}\put(43.31614,39.44296){\circle*{2}}}%
+{\color{red}\put(66.38202,21.56243){\circle*{2}}}%
+{\color{red}\put(3.94000,36.00000){\circle*{2}}}%
+{\color{red}\put(40.06000,8.00000){\circle*{2}}}%
+\put(2.00000,72.00000){\makebox(0,0)[l]{\scriptsize Oblique projection of the actual $S(t,u)$}}%
+\put(6.00000,3.00000){\makebox(0,0)[l]{\scriptsize $C_1$: blue; $C_2$: green; five singular source labels: red}}%
+\end{picture}
+\caption{The two paired circles and the entire ruled surface, including
+both $Q=0$ edges. Red dots mark the images of the five singular source
+labels. The paired $u=1$ labels are retained separately in the domain.}
+\end{figure}
+\begin{figure}[htp]\centering
+\setlength{\unitlength}{1mm}\begin{picture}(150,80)%
+{\color{black}\linethickness{.35pt}%
+\qbezier[500](12.00000,65.00000)(12.00000,37.50000)(12.00000,10.00000)%
+\qbezier[500](12.00000,10.00000)(75.00000,10.00000)(138.00000,10.00000)}%
+\put(138.00000,68.00000){\makebox(0,0)[r]{\scriptsize $t$}}%
+\put(12.00000,68.00000){\makebox(0,0)[l]{\scriptsize $u$}}%
+{\color{black!35}\linethickness{.35pt}%
+\qbezier[500](12.00000,65.00000)(75.00000,65.00000)(138.00000,65.00000)%
+\qbezier[500](138.00000,65.00000)(138.00000,37.50000)(138.00000,10.00000)}%
+{\color{violet}\linethickness{.65pt}%
+\qbezier[27](12.00000,10.00000)(12.78750,10.08637)(13.57500,10.17273)%
+\qbezier[28](13.57500,10.17273)(14.36250,10.43701)(15.15000,10.70128)%
+\qbezier[31](15.15000,10.70128)(15.93750,11.14858)(16.72500,11.59587)%
+\qbezier[34](16.72500,11.59587)(17.51250,12.22722)(18.30000,12.85856)%
+\qbezier[38](18.30000,12.85856)(19.08750,13.67031)(19.87500,14.48206)%
+\qbezier[42](19.87500,14.48206)(20.66250,15.46551)(21.45000,16.44896)%
+\qbezier[47](21.45000,16.44896)(22.23750,17.59026)(23.02500,18.73157)%
+\qbezier[51](23.02500,18.73157)(23.81250,20.01193)(24.60000,21.29229)%
+\qbezier[54](24.60000,21.29229)(25.38750,22.68857)(26.17500,24.08485)%
+\qbezier[57](26.17500,24.08485)(26.96250,25.57045)(27.75000,27.05604)%
+\qbezier[58](27.75000,27.05604)(28.53750,28.60209)(29.32500,30.14813)%
+\qbezier[59](29.32500,30.14813)(30.11250,31.72479)(30.90000,33.30146)%
+\qbezier[59](30.90000,33.30146)(31.68750,34.87935)(32.47500,36.45724)%
+\qbezier[58](32.47500,36.45724)(33.26250,38.00869)(34.05000,39.56014)%
+\qbezier[57](34.05000,39.56014)(34.83750,41.06033)(35.62500,42.56052)%
+\qbezier[55](35.62500,42.56052)(36.41250,43.98828)(37.20000,45.41603)%
+\qbezier[52](37.20000,45.41603)(37.98750,46.75439)(38.77500,48.09275)%
+\qbezier[49](38.77500,48.09275)(39.56250,49.32915)(40.35000,50.56554)%
+\qbezier[46](40.35000,50.56554)(41.13750,51.69174)(41.92500,52.81793)%
+\qbezier[43](41.92500,52.81793)(42.71250,53.82974)(43.50000,54.84155)%
+\qbezier[40](43.50000,54.84155)(44.28750,55.73837)(45.07500,56.63518)%
+\qbezier[38](45.07500,56.63518)(45.86250,57.41943)(46.65000,58.20367)%
+\qbezier[35](46.65000,58.20367)(47.43750,58.88020)(48.22500,59.55672)%
+\qbezier[33](48.22500,59.55672)(49.01250,60.13223)(49.80000,60.70774)%
+\qbezier[31](49.80000,60.70774)(50.58750,61.19025)(51.37500,61.67275)%
+\qbezier[30](51.37500,61.67275)(52.16250,62.07107)(52.95000,62.46940)%
+\qbezier[29](52.95000,62.46940)(53.73750,62.79277)(54.52500,63.11613)%
+\qbezier[28](54.52500,63.11613)(55.31250,63.37385)(56.10000,63.63157)%
+\qbezier[28](56.10000,63.63157)(56.88750,63.83273)(57.67500,64.03389)%
+\qbezier[27](57.67500,64.03389)(58.46250,64.18720)(59.25000,64.34050)%
+\qbezier[27](59.25000,64.34050)(60.03750,64.45409)(60.82500,64.56768)%
+\qbezier[27](60.82500,64.56768)(61.61250,64.64904)(62.40000,64.73040)%
+\qbezier[27](62.40000,64.73040)(63.18750,64.78627)(63.97500,64.84215)%
+\qbezier[27](63.97500,64.84215)(64.76250,64.87852)(65.55000,64.91490)%
+\qbezier[27](65.55000,64.91490)(66.33750,64.93695)(67.12500,64.95901)%
+\qbezier[27](67.12500,64.95901)(67.91250,64.97112)(68.70000,64.98323)%
+\qbezier[27](68.70000,64.98323)(69.48750,64.98896)(70.27500,64.99470)%
+\qbezier[27](70.27500,64.99470)(71.06250,64.99682)(71.85000,64.99895)%
+\qbezier[27](71.85000,64.99895)(72.63750,64.99944)(73.42500,64.99993)%
+\qbezier[27](73.42500,64.99993)(74.21250,64.99997)(75.00000,65.00000)%
+\qbezier[27](75.00000,65.00000)(75.78750,64.99997)(76.57500,64.99993)%
+\qbezier[27](76.57500,64.99993)(77.36250,64.99944)(78.15000,64.99895)%
+\qbezier[27](78.15000,64.99895)(78.93750,64.99682)(79.72500,64.99470)%
+\qbezier[27](79.72500,64.99470)(80.51250,64.98896)(81.30000,64.98323)%
+\qbezier[27](81.30000,64.98323)(82.08750,64.97112)(82.87500,64.95901)%
+\qbezier[27](82.87500,64.95901)(83.66250,64.93695)(84.45000,64.91490)%
+\qbezier[27](84.45000,64.91490)(85.23750,64.87852)(86.02500,64.84215)%
+\qbezier[27](86.02500,64.84215)(86.81250,64.78627)(87.60000,64.73040)%
+\qbezier[27](87.60000,64.73040)(88.38750,64.64904)(89.17500,64.56768)%
+\qbezier[27](89.17500,64.56768)(89.96250,64.45409)(90.75000,64.34050)%
+\qbezier[27](90.75000,64.34050)(91.53750,64.18720)(92.32500,64.03389)%
+\qbezier[28](92.32500,64.03389)(93.11250,63.83273)(93.90000,63.63157)%
+\qbezier[28](93.90000,63.63157)(94.68750,63.37385)(95.47500,63.11613)%
+\qbezier[29](95.47500,63.11613)(96.26250,62.79277)(97.05000,62.46940)%
+\qbezier[30](97.05000,62.46940)(97.83750,62.07107)(98.62500,61.67275)%
+\qbezier[31](98.62500,61.67275)(99.41250,61.19025)(100.20000,60.70774)%
+\qbezier[33](100.20000,60.70774)(100.98750,60.13223)(101.77500,59.55672)%
+\qbezier[35](101.77500,59.55672)(102.56250,58.88020)(103.35000,58.20367)%
+\qbezier[38](103.35000,58.20367)(104.13750,57.41943)(104.92500,56.63518)%
+\qbezier[40](104.92500,56.63518)(105.71250,55.73837)(106.50000,54.84155)%
+\qbezier[43](106.50000,54.84155)(107.28750,53.82974)(108.07500,52.81793)%
+\qbezier[46](108.07500,52.81793)(108.86250,51.69174)(109.65000,50.56554)%
+\qbezier[49](109.65000,50.56554)(110.43750,49.32915)(111.22500,48.09275)%
+\qbezier[52](111.22500,48.09275)(112.01250,46.75439)(112.80000,45.41603)%
+\qbezier[55](112.80000,45.41603)(113.58750,43.98828)(114.37500,42.56052)%
+\qbezier[57](114.37500,42.56052)(115.16250,41.06033)(115.95000,39.56014)%
+\qbezier[58](115.95000,39.56014)(116.73750,38.00869)(117.52500,36.45724)%
+\qbezier[59](117.52500,36.45724)(118.31250,34.87935)(119.10000,33.30146)%
+\qbezier[59](119.10000,33.30146)(119.88750,31.72479)(120.67500,30.14813)%
+\qbezier[58](120.67500,30.14813)(121.46250,28.60209)(122.25000,27.05604)%
+\qbezier[57](122.25000,27.05604)(123.03750,25.57045)(123.82500,24.08485)%
+\qbezier[54](123.82500,24.08485)(124.61250,22.68857)(125.40000,21.29229)%
+\qbezier[51](125.40000,21.29229)(126.18750,20.01193)(126.97500,18.73157)%
+\qbezier[47](126.97500,18.73157)(127.76250,17.59026)(128.55000,16.44896)%
+\qbezier[42](128.55000,16.44896)(129.33750,15.46551)(130.12500,14.48206)%
+\qbezier[38](130.12500,14.48206)(130.91250,13.67031)(131.70000,12.85856)%
+\qbezier[34](131.70000,12.85856)(132.48750,12.22722)(133.27500,11.59587)%
+\qbezier[31](133.27500,11.59587)(134.06250,11.14858)(134.85000,10.70128)%
+\qbezier[28](134.85000,10.70128)(135.63750,10.43701)(136.42500,10.17273)%
+\qbezier[27](136.42500,10.17273)(137.21250,10.08637)(138.00000,10.00000)}%
+{\color{orange!80!black}\linethickness{.8pt}%
+\qbezier[8](75.00000,10.00000)(74.77167,10.00357)(74.54334,10.00713)%
+\qbezier[8](74.54334,10.00713)(74.31502,10.01782)(74.08669,10.02852)%
+\qbezier[8](74.08669,10.02852)(73.85836,10.04634)(73.63003,10.06417)%
+\qbezier[8](73.63003,10.06417)(73.40170,10.08911)(73.17338,10.11406)%
+\qbezier[8](73.17338,10.11406)(72.94505,10.14613)(72.71672,10.17821)%
+\qbezier[8](72.71672,10.17821)(72.48839,10.21740)(72.26006,10.25659)%
+\qbezier[8](72.26006,10.25659)(72.03174,10.30289)(71.80341,10.34920)%
+\qbezier[8](71.80341,10.34920)(71.57508,10.40261)(71.34675,10.45603)%
+\qbezier[8](71.34675,10.45603)(71.11842,10.51654)(70.89010,10.57706)%
+\qbezier[8](70.89010,10.57706)(70.66177,10.64468)(70.43344,10.71229)%
+\qbezier[9](70.43344,10.71229)(70.20511,10.78700)(69.97678,10.86170)%
+\qbezier[9](69.97678,10.86170)(69.74846,10.94349)(69.52013,11.02528)%
+\qbezier[9](69.52013,11.02528)(69.29180,11.11415)(69.06347,11.20301)%
+\qbezier[9](69.06347,11.20301)(68.83514,11.29895)(68.60682,11.39489)%
+\qbezier[9](68.60682,11.39489)(68.37849,11.49789)(68.15016,11.60090)%
+\qbezier[9](68.15016,11.60090)(67.92183,11.71096)(67.69350,11.82102)%
+\qbezier[9](67.69350,11.82102)(67.46517,11.93814)(67.23685,12.05526)%
+\qbezier[9](67.23685,12.05526)(67.00852,12.17942)(66.78019,12.30359)%
+\qbezier[9](66.78019,12.30359)(66.55186,12.43481)(66.32353,12.56603)%
+\qbezier[9](66.32353,12.56603)(66.09521,12.70429)(65.86688,12.84256)%
+\qbezier[10](65.86688,12.84256)(65.63855,12.98787)(65.41022,13.13319)%
+\qbezier[10](65.41022,13.13319)(65.18189,13.28556)(64.95357,13.43792)%
+\qbezier[10](64.95357,13.43792)(64.72524,13.59734)(64.49691,13.75677)%
+\qbezier[10](64.49691,13.75677)(64.26858,13.92325)(64.04025,14.08974)%
+\qbezier[10](64.04025,14.08974)(63.81193,14.26330)(63.58360,14.43687)%
+\qbezier[10](63.58360,14.43687)(63.35527,14.61752)(63.12694,14.79817)%
+\qbezier[10](63.12694,14.79817)(62.89861,14.98592)(62.67029,15.17368)%
+\qbezier[11](62.67029,15.17368)(62.44196,15.36856)(62.21363,15.56344)%
+\qbezier[11](62.21363,15.56344)(61.98530,15.76547)(61.75697,15.96750)%
+\qbezier[11](61.75697,15.96750)(61.52865,16.17672)(61.30032,16.38593)%
+\qbezier[11](61.30032,16.38593)(61.07199,16.60236)(60.84366,16.81879)%
+\qbezier[11](60.84366,16.81879)(60.61533,17.04247)(60.38701,17.26615)%
+\qbezier[11](60.38701,17.26615)(60.15868,17.49713)(59.93035,17.72811)%
+\qbezier[12](59.93035,17.72811)(59.70202,17.96644)(59.47369,18.20477)%
+\qbezier[12](59.47369,18.20477)(59.24537,18.45051)(59.01704,18.69625)%
+\qbezier[12](59.01704,18.69625)(58.78871,18.94947)(58.56038,19.20268)%
+\qbezier[12](58.56038,19.20268)(58.33205,19.46344)(58.10373,19.72420)%
+\qbezier[12](58.10373,19.72420)(57.87540,19.99258)(57.64707,20.26096)%
+\qbezier[12](57.64707,20.26096)(57.41874,20.53706)(57.19041,20.81316)%
+\qbezier[13](57.19041,20.81316)(56.96209,21.09707)(56.73376,21.38098)%
+\qbezier[13](56.73376,21.38098)(56.50543,21.67282)(56.27710,21.96465)%
+\qbezier[13](56.27710,21.96465)(56.04877,22.26452)(55.82045,22.56440)%
+\qbezier[13](55.82045,22.56440)(55.59212,22.87244)(55.36379,23.18048)%
+\qbezier[14](55.36379,23.18048)(55.13546,23.49684)(54.90713,23.81320)%
+\qbezier[14](54.90713,23.81320)(54.67881,24.13803)(54.45048,24.46285)%
+\qbezier[14](54.45048,24.46285)(54.22215,24.79632)(53.99382,25.12979)%
+\qbezier[14](53.99382,25.12979)(53.76549,25.47208)(53.53717,25.81438)%
+\qbezier[14](53.53717,25.81438)(53.30884,26.16570)(53.08051,26.51702)%
+\qbezier[15](53.08051,26.51702)(52.85218,26.87760)(52.62385,27.23817)%
+\qbezier[15](52.62385,27.23817)(52.39552,27.60823)(52.16720,27.97830)%
+\qbezier[15](52.16720,27.97830)(51.93887,28.35811)(51.71054,28.73793)%
+\qbezier[16](51.71054,28.73793)(51.48221,29.12778)(51.25388,29.51764)%
+\qbezier[16](51.25388,29.51764)(51.02556,29.91784)(50.79723,30.31804)%
+\qbezier[16](50.79723,30.31804)(50.56890,30.72893)(50.34057,31.13982)%
+\qbezier[16](50.34057,31.13982)(50.11224,31.56176)(49.88392,31.98371)%
+\qbezier[17](49.88392,31.98371)(49.65559,32.41711)(49.42726,32.85051)%
+\qbezier[17](49.42726,32.85051)(49.19893,33.29581)(48.97060,33.74110)%
+\qbezier[18](48.97060,33.74110)(48.74228,34.19877)(48.51395,34.65644)%
+\qbezier[18](48.51395,34.65644)(48.28562,35.12701)(48.05729,35.59758)%
+\qbezier[18](48.05729,35.59758)(47.82896,36.08161)(47.60064,36.56565)%
+\qbezier[19](47.60064,36.56565)(47.37231,37.06378)(47.14398,37.56191)%
+\qbezier[19](47.14398,37.56191)(46.91565,38.07482)(46.68732,38.58774)%
+\qbezier[20](46.68732,38.58774)(46.45900,39.11619)(46.23067,39.64464)%
+\qbezier[20](46.23067,39.64464)(46.00234,40.18946)(45.77401,40.73427)%
+\qbezier[21](45.77401,40.73427)(45.54568,41.29637)(45.31736,41.85847)%
+\qbezier[21](45.31736,41.85847)(45.08903,42.43887)(44.86070,43.01926)%
+\qbezier[22](44.86070,43.01926)(44.63237,43.61906)(44.40404,44.21886)%
+\qbezier[23](44.40404,44.21886)(44.17572,44.83930)(43.94739,45.45975)%
+\qbezier[23](43.94739,45.45975)(43.71906,46.10221)(43.49073,46.74467)%
+\qbezier[24](43.49073,46.74467)(43.26240,47.41069)(43.03408,48.07670)%
+\qbezier[25](43.03408,48.07670)(42.80575,48.76797)(42.57742,49.45924)%
+\qbezier[26](42.57742,49.45924)(42.34909,50.17767)(42.12076,50.89610)%
+\qbezier[27](42.12076,50.89610)(41.89244,51.64385)(41.66411,52.39159)%
+\qbezier[28](41.66411,52.39159)(41.43578,53.17106)(41.20745,53.95052)%
+\qbezier[29](41.20745,53.95052)(40.97912,54.76444)(40.75080,55.57835)%
+\qbezier[30](40.75080,55.57835)(40.52247,56.42980)(40.29414,57.28125)%
+\qbezier[31](40.29414,57.28125)(40.06581,58.17374)(39.83748,59.06623)%
+\qbezier[33](39.83748,59.06623)(39.60916,60.00378)(39.38083,60.94132)%
+\qbezier[34](39.38083,60.94132)(39.15250,61.92852)(38.92417,62.91572)%
+\qbezier[36](38.92417,62.91572)(38.69584,63.95786)(38.46751,65.00000)}%
+{\color{orange!80!black}\linethickness{.8pt}%
+\qbezier[8](75.00000,10.00000)(75.22833,10.00357)(75.45666,10.00713)%
+\qbezier[8](75.45666,10.00713)(75.68498,10.01782)(75.91331,10.02852)%
+\qbezier[8](75.91331,10.02852)(76.14164,10.04634)(76.36997,10.06417)%
+\qbezier[8](76.36997,10.06417)(76.59830,10.08911)(76.82662,10.11406)%
+\qbezier[8](76.82662,10.11406)(77.05495,10.14613)(77.28328,10.17821)%
+\qbezier[8](77.28328,10.17821)(77.51161,10.21740)(77.73994,10.25659)%
+\qbezier[8](77.73994,10.25659)(77.96826,10.30289)(78.19659,10.34920)%
+\qbezier[8](78.19659,10.34920)(78.42492,10.40261)(78.65325,10.45603)%
+\qbezier[8](78.65325,10.45603)(78.88158,10.51654)(79.10990,10.57706)%
+\qbezier[8](79.10990,10.57706)(79.33823,10.64468)(79.56656,10.71229)%
+\qbezier[9](79.56656,10.71229)(79.79489,10.78700)(80.02322,10.86170)%
+\qbezier[9](80.02322,10.86170)(80.25154,10.94349)(80.47987,11.02528)%
+\qbezier[9](80.47987,11.02528)(80.70820,11.11415)(80.93653,11.20301)%
+\qbezier[9](80.93653,11.20301)(81.16486,11.29895)(81.39318,11.39489)%
+\qbezier[9](81.39318,11.39489)(81.62151,11.49789)(81.84984,11.60090)%
+\qbezier[9](81.84984,11.60090)(82.07817,11.71096)(82.30650,11.82102)%
+\qbezier[9](82.30650,11.82102)(82.53483,11.93814)(82.76315,12.05526)%
+\qbezier[9](82.76315,12.05526)(82.99148,12.17942)(83.21981,12.30359)%
+\qbezier[9](83.21981,12.30359)(83.44814,12.43481)(83.67647,12.56603)%
+\qbezier[9](83.67647,12.56603)(83.90479,12.70429)(84.13312,12.84256)%
+\qbezier[10](84.13312,12.84256)(84.36145,12.98787)(84.58978,13.13319)%
+\qbezier[10](84.58978,13.13319)(84.81811,13.28556)(85.04643,13.43792)%
+\qbezier[10](85.04643,13.43792)(85.27476,13.59734)(85.50309,13.75677)%
+\qbezier[10](85.50309,13.75677)(85.73142,13.92325)(85.95975,14.08974)%
+\qbezier[10](85.95975,14.08974)(86.18807,14.26330)(86.41640,14.43687)%
+\qbezier[10](86.41640,14.43687)(86.64473,14.61752)(86.87306,14.79817)%
+\qbezier[10](86.87306,14.79817)(87.10139,14.98592)(87.32971,15.17368)%
+\qbezier[11](87.32971,15.17368)(87.55804,15.36856)(87.78637,15.56344)%
+\qbezier[11](87.78637,15.56344)(88.01470,15.76547)(88.24303,15.96750)%
+\qbezier[11](88.24303,15.96750)(88.47135,16.17672)(88.69968,16.38593)%
+\qbezier[11](88.69968,16.38593)(88.92801,16.60236)(89.15634,16.81879)%
+\qbezier[11](89.15634,16.81879)(89.38467,17.04247)(89.61299,17.26615)%
+\qbezier[11](89.61299,17.26615)(89.84132,17.49713)(90.06965,17.72811)%
+\qbezier[12](90.06965,17.72811)(90.29798,17.96644)(90.52631,18.20477)%
+\qbezier[12](90.52631,18.20477)(90.75463,18.45051)(90.98296,18.69625)%
+\qbezier[12](90.98296,18.69625)(91.21129,18.94947)(91.43962,19.20268)%
+\qbezier[12](91.43962,19.20268)(91.66795,19.46344)(91.89627,19.72420)%
+\qbezier[12](91.89627,19.72420)(92.12460,19.99258)(92.35293,20.26096)%
+\qbezier[12](92.35293,20.26096)(92.58126,20.53706)(92.80959,20.81316)%
+\qbezier[13](92.80959,20.81316)(93.03791,21.09707)(93.26624,21.38098)%
+\qbezier[13](93.26624,21.38098)(93.49457,21.67282)(93.72290,21.96465)%
+\qbezier[13](93.72290,21.96465)(93.95123,22.26452)(94.17955,22.56440)%
+\qbezier[13](94.17955,22.56440)(94.40788,22.87244)(94.63621,23.18048)%
+\qbezier[14](94.63621,23.18048)(94.86454,23.49684)(95.09287,23.81320)%
+\qbezier[14](95.09287,23.81320)(95.32119,24.13803)(95.54952,24.46285)%
+\qbezier[14](95.54952,24.46285)(95.77785,24.79632)(96.00618,25.12979)%
+\qbezier[14](96.00618,25.12979)(96.23451,25.47208)(96.46283,25.81438)%
+\qbezier[14](96.46283,25.81438)(96.69116,26.16570)(96.91949,26.51702)%
+\qbezier[15](96.91949,26.51702)(97.14782,26.87760)(97.37615,27.23817)%
+\qbezier[15](97.37615,27.23817)(97.60448,27.60823)(97.83280,27.97830)%
+\qbezier[15](97.83280,27.97830)(98.06113,28.35811)(98.28946,28.73793)%
+\qbezier[16](98.28946,28.73793)(98.51779,29.12778)(98.74612,29.51764)%
+\qbezier[16](98.74612,29.51764)(98.97444,29.91784)(99.20277,30.31804)%
+\qbezier[16](99.20277,30.31804)(99.43110,30.72893)(99.65943,31.13982)%
+\qbezier[16](99.65943,31.13982)(99.88776,31.56176)(100.11608,31.98371)%
+\qbezier[17](100.11608,31.98371)(100.34441,32.41711)(100.57274,32.85051)%
+\qbezier[17](100.57274,32.85051)(100.80107,33.29581)(101.02940,33.74110)%
+\qbezier[18](101.02940,33.74110)(101.25772,34.19877)(101.48605,34.65644)%
+\qbezier[18](101.48605,34.65644)(101.71438,35.12701)(101.94271,35.59758)%
+\qbezier[18](101.94271,35.59758)(102.17104,36.08161)(102.39936,36.56565)%
+\qbezier[19](102.39936,36.56565)(102.62769,37.06378)(102.85602,37.56191)%
+\qbezier[19](102.85602,37.56191)(103.08435,38.07482)(103.31268,38.58774)%
+\qbezier[20](103.31268,38.58774)(103.54100,39.11619)(103.76933,39.64464)%
+\qbezier[20](103.76933,39.64464)(103.99766,40.18946)(104.22599,40.73427)%
+\qbezier[21](104.22599,40.73427)(104.45432,41.29637)(104.68264,41.85847)%
+\qbezier[21](104.68264,41.85847)(104.91097,42.43887)(105.13930,43.01926)%
+\qbezier[22](105.13930,43.01926)(105.36763,43.61906)(105.59596,44.21886)%
+\qbezier[23](105.59596,44.21886)(105.82428,44.83930)(106.05261,45.45975)%
+\qbezier[23](106.05261,45.45975)(106.28094,46.10221)(106.50927,46.74467)%
+\qbezier[24](106.50927,46.74467)(106.73760,47.41069)(106.96592,48.07670)%
+\qbezier[25](106.96592,48.07670)(107.19425,48.76797)(107.42258,49.45924)%
+\qbezier[26](107.42258,49.45924)(107.65091,50.17767)(107.87924,50.89610)%
+\qbezier[27](107.87924,50.89610)(108.10756,51.64385)(108.33589,52.39159)%
+\qbezier[28](108.33589,52.39159)(108.56422,53.17106)(108.79255,53.95052)%
+\qbezier[29](108.79255,53.95052)(109.02088,54.76444)(109.24920,55.57835)%
+\qbezier[30](109.24920,55.57835)(109.47753,56.42980)(109.70586,57.28125)%
+\qbezier[31](109.70586,57.28125)(109.93419,58.17374)(110.16252,59.06623)%
+\qbezier[33](110.16252,59.06623)(110.39084,60.00378)(110.61917,60.94132)%
+\qbezier[34](110.61917,60.94132)(110.84750,61.92852)(111.07583,62.91572)%
+\qbezier[36](111.07583,62.91572)(111.30416,63.95786)(111.53249,65.00000)}%
+{\color{orange!80!black}\linethickness{.8pt}%
+\qbezier[500](75.00000,10.00000)(75.00000,37.50000)(75.00000,65.00000)}%
+{\color{red}\put(75.00000,65.00000){\circle*{2.2}}}%
+{\color{red}\put(122.28114,26.99593){\circle*{2.2}}}%
+{\color{red}\put(27.71886,26.99593){\circle*{2.2}}}%
+{\color{red}\put(138.00000,10.00000){\circle*{2.2}}}%
+{\color{red}\put(12.00000,10.00000){\circle*{2.2}}}%
+{\color{black}\put(41.64953,52.44035){\circle{3.2}}}%
+{\color{black}\put(108.35047,52.44035){\circle{3.2}}}%
+{\color{black}\put(75.00000,65.00000){\circle{3.2}}}%
+\put(12.00000,5.00000){\makebox(0,0)[l]{\scriptsize $-\pi/2$}}%
+\put(75.00000,5.00000){\makebox(0,0)[l]{\scriptsize $0$}}%
+\put(138.00000,5.00000){\makebox(0,0)[r]{\scriptsize $\pi/2$}}%
+\put(15.00000,74.00000){\makebox(0,0)[l]{\scriptsize Violet: skeleton; orange: full critical set; black rings: intersections}}%
+\end{picture}
+\caption{Physical parameter labels $(t,u)$: all five surface rank losses,
+the skeleton, the symmetry critical branch, and both rational-fold
+branches. The three black rings give the complete skeleton--critical
+intersection. This closed angular rectangle is a label plot, not a smooth
+chart across $Q=0$. Numerical root values are used only for placement.}
+\end{figure}
+\begin{figure}[htp]\centering
+\setlength{\unitlength}{1mm}\begin{picture}(150,82)%
+{\color{black}\linethickness{.35pt}%
+\qbezier[500](12.00000,68.00000)(12.00000,43.00000)(12.00000,18.00000)%
+\qbezier[500](12.00000,18.00000)(75.00000,18.00000)(138.00000,18.00000)}%
+\put(138.00000,71.00000){\makebox(0,0)[r]{\scriptsize $r$}}%
+\put(12.00000,71.00000){\makebox(0,0)[l]{\scriptsize $V(r,u)/r$}}%
+{\color{violet}\linethickness{.65pt}%
+\qbezier[27](12.00000,35.00000)(12.78750,35.00000)(13.57500,35.00000)%
+\qbezier[27](13.57500,35.00000)(14.36250,35.00000)(15.15000,35.00000)%
+\qbezier[27](15.15000,35.00000)(15.93750,35.00000)(16.72500,34.99999)%
+\qbezier[27](16.72500,34.99999)(17.51250,34.99999)(18.30000,34.99998)%
+\qbezier[27](18.30000,34.99998)(19.08750,34.99998)(19.87500,34.99997)%
+\qbezier[27](19.87500,34.99997)(20.66250,34.99996)(21.45000,34.99994)%
+\qbezier[27](21.45000,34.99994)(22.23750,34.99993)(23.02500,34.99991)%
+\qbezier[27](23.02500,34.99991)(23.81250,34.99989)(24.60000,34.99987)%
+\qbezier[27](24.60000,34.99987)(25.38750,34.99984)(26.17500,34.99981)%
+\qbezier[27](26.17500,34.99981)(26.96250,34.99978)(27.75000,34.99974)%
+\qbezier[27](27.75000,34.99974)(28.53750,34.99970)(29.32500,34.99965)%
+\qbezier[27](29.32500,34.99965)(30.11250,34.99960)(30.90000,34.99955)%
+\qbezier[27](30.90000,34.99955)(31.68750,34.99949)(32.47500,34.99943)%
+\qbezier[27](32.47500,34.99943)(33.26250,34.99936)(34.05000,34.99929)%
+\qbezier[27](34.05000,34.99929)(34.83750,34.99921)(35.62500,34.99912)%
+\qbezier[27](35.62500,34.99912)(36.41250,34.99903)(37.20000,34.99894)%
+\qbezier[27](37.20000,34.99894)(37.98750,34.99883)(38.77500,34.99872)%
+\qbezier[27](38.77500,34.99872)(39.56250,34.99860)(40.35000,34.99848)%
+\qbezier[27](40.35000,34.99848)(41.13750,34.99835)(41.92500,34.99822)%
+\qbezier[27](41.92500,34.99822)(42.71250,34.99807)(43.50000,34.99792)%
+\qbezier[27](43.50000,34.99792)(44.28750,34.99775)(45.07500,34.99759)%
+\qbezier[27](45.07500,34.99759)(45.86250,34.99741)(46.65000,34.99723)%
+\qbezier[27](46.65000,34.99723)(47.43750,34.99703)(48.22500,34.99683)%
+\qbezier[27](48.22500,34.99683)(49.01250,34.99662)(49.80000,34.99640)%
+\qbezier[27](49.80000,34.99640)(50.58750,34.99616)(51.37500,34.99593)%
+\qbezier[27](51.37500,34.99593)(52.16250,34.99567)(52.95000,34.99542)%
+\qbezier[27](52.95000,34.99542)(53.73750,34.99514)(54.52500,34.99487)%
+\qbezier[27](54.52500,34.99487)(55.31250,34.99457)(56.10000,34.99427)%
+\qbezier[27](56.10000,34.99427)(56.88750,34.99395)(57.67500,34.99363)%
+\qbezier[27](57.67500,34.99363)(58.46250,34.99329)(59.25000,34.99295)%
+\qbezier[27](59.25000,34.99295)(60.03750,34.99258)(60.82500,34.99222)%
+\qbezier[27](60.82500,34.99222)(61.61250,34.99183)(62.40000,34.99144)%
+\qbezier[27](62.40000,34.99144)(63.18750,34.99102)(63.97500,34.99060)%
+\qbezier[27](63.97500,34.99060)(64.76250,34.99016)(65.55000,34.98972)%
+\qbezier[27](65.55000,34.98972)(66.33750,34.98925)(67.12500,34.98878)%
+\qbezier[27](67.12500,34.98878)(67.91250,34.98828)(68.70000,34.98778)%
+\qbezier[27](68.70000,34.98778)(69.48750,34.98725)(70.27500,34.98673)%
+\qbezier[27](70.27500,34.98673)(71.06250,34.98617)(71.85000,34.98561)%
+\qbezier[27](71.85000,34.98561)(72.63750,34.98503)(73.42500,34.98444)%
+\qbezier[27](73.42500,34.98444)(74.21250,34.98382)(75.00000,34.98320)%
+\qbezier[27](75.00000,34.98320)(75.78750,34.98255)(76.57500,34.98190)%
+\qbezier[27](76.57500,34.98190)(77.36250,34.98121)(78.15000,34.98053)%
+\qbezier[27](78.15000,34.98053)(78.93750,34.97981)(79.72500,34.97909)%
+\qbezier[27](79.72500,34.97909)(80.51250,34.97834)(81.30000,34.97758)%
+\qbezier[27](81.30000,34.97758)(82.08750,34.97679)(82.87500,34.97600)%
+\qbezier[27](82.87500,34.97600)(83.66250,34.97518)(84.45000,34.97435)%
+\qbezier[27](84.45000,34.97435)(85.23750,34.97349)(86.02500,34.97262)%
+\qbezier[27](86.02500,34.97262)(86.81250,34.97172)(87.60000,34.97082)%
+\qbezier[27](87.60000,34.97082)(88.38750,34.96987)(89.17500,34.96893)%
+\qbezier[27](89.17500,34.96893)(89.96250,34.96795)(90.75000,34.96697)%
+\qbezier[27](90.75000,34.96697)(91.53750,34.96594)(92.32500,34.96492)%
+\qbezier[27](92.32500,34.96492)(93.11250,34.96385)(93.90000,34.96278)%
+\qbezier[27](93.90000,34.96278)(94.68750,34.96167)(95.47500,34.96056)%
+\qbezier[27](95.47500,34.96056)(96.26250,34.95941)(97.05000,34.95826)%
+\qbezier[27](97.05000,34.95826)(97.83750,34.95706)(98.62500,34.95586)%
+\qbezier[27](98.62500,34.95586)(99.41250,34.95461)(100.20000,34.95337)%
+\qbezier[27](100.20000,34.95337)(100.98750,34.95207)(101.77500,34.95078)%
+\qbezier[27](101.77500,34.95078)(102.56250,34.94944)(103.35000,34.94810)%
+\qbezier[27](103.35000,34.94810)(104.13750,34.94671)(104.92500,34.94532)%
+\qbezier[27](104.92500,34.94532)(105.71250,34.94388)(106.50000,34.94244)%
+\qbezier[27](106.50000,34.94244)(107.28750,34.94095)(108.07500,34.93946)%
+\qbezier[27](108.07500,34.93946)(108.86250,34.93791)(109.65000,34.93637)%
+\qbezier[27](109.65000,34.93637)(110.43750,34.93477)(111.22500,34.93318)%
+\qbezier[27](111.22500,34.93318)(112.01250,34.93153)(112.80000,34.92988)%
+\qbezier[27](112.80000,34.92988)(113.58750,34.92817)(114.37500,34.92646)%
+\qbezier[27](114.37500,34.92646)(115.16250,34.92470)(115.95000,34.92294)%
+\qbezier[27](115.95000,34.92294)(116.73750,34.92112)(117.52500,34.91930)%
+\qbezier[27](117.52500,34.91930)(118.31250,34.91742)(119.10000,34.91554)%
+\qbezier[27](119.10000,34.91554)(119.88750,34.91361)(120.67500,34.91167)%
+\qbezier[27](120.67500,34.91167)(121.46250,34.90967)(122.25000,34.90767)%
+\qbezier[27](122.25000,34.90767)(123.03750,34.90561)(123.82500,34.90355)%
+\qbezier[27](123.82500,34.90355)(124.61250,34.90143)(125.40000,34.89931)%
+\qbezier[27](125.40000,34.89931)(126.18750,34.89712)(126.97500,34.89494)%
+\qbezier[27](126.97500,34.89494)(127.76250,34.89268)(128.55000,34.89043)%
+\qbezier[27](128.55000,34.89043)(129.33750,34.88811)(130.12500,34.88580)%
+\qbezier[27](130.12500,34.88580)(130.91250,34.88341)(131.70000,34.88103)%
+\qbezier[27](131.70000,34.88103)(132.48750,34.87857)(133.27500,34.87612)%
+\qbezier[27](133.27500,34.87612)(134.06250,34.87359)(134.85000,34.87107)%
+\qbezier[27](134.85000,34.87107)(135.63750,34.86848)(136.42500,34.86588)%
+\qbezier[27](136.42500,34.86588)(137.21250,34.86322)(138.00000,34.86055)}%
+{\color{violet}\linethickness{.65pt}%
+\qbezier[27](12.00000,35.00000)(12.78750,34.97344)(13.57500,34.94687)%
+\qbezier[27](15.15000,34.89375)(15.93750,34.86718)(16.72500,34.84062)%
+\qbezier[27](18.30000,34.78748)(19.08750,34.76091)(19.87500,34.73434)%
+\qbezier[27](21.45000,34.68119)(22.23750,34.65461)(23.02500,34.62804)%
+\qbezier[27](24.60000,34.57487)(25.38750,34.54828)(26.17500,34.52169)%
+\qbezier[27](27.75000,34.46849)(28.53750,34.44188)(29.32500,34.41528)%
+\qbezier[27](30.90000,34.36205)(31.68750,34.33543)(32.47500,34.30880)%
+\qbezier[27](34.05000,34.25554)(34.83750,34.22889)(35.62500,34.20225)%
+\qbezier[27](37.20000,34.14894)(37.98750,34.12227)(38.77500,34.09560)%
+\qbezier[27](40.35000,34.04223)(41.13750,34.01554)(41.92500,33.98884)%
+\qbezier[27](43.50000,33.93542)(44.28750,33.90869)(45.07500,33.88196)%
+\qbezier[27](46.65000,33.82848)(47.43750,33.80172)(48.22500,33.77496)%
+\qbezier[27](49.80000,33.72140)(50.58750,33.69460)(51.37500,33.66780)%
+\qbezier[27](52.95000,33.61417)(53.73750,33.58733)(54.52500,33.56049)%
+\qbezier[27](56.10000,33.50677)(56.88750,33.47989)(57.67500,33.45301)%
+\qbezier[27](59.25000,33.39920)(60.03750,33.37227)(60.82500,33.34534)%
+\qbezier[27](62.40000,33.29144)(63.18750,33.26446)(63.97500,33.23748)%
+\qbezier[27](65.55000,33.18347)(66.33750,33.15643)(67.12500,33.12940)%
+\qbezier[27](68.70000,33.07528)(69.48750,33.04819)(70.27500,33.02110)%
+\qbezier[27](71.85000,32.96686)(72.63750,32.93971)(73.42500,32.91256)%
+\qbezier[27](75.00000,32.85820)(75.78750,32.83099)(76.57500,32.80377)%
+\qbezier[27](78.15000,32.74928)(78.93750,32.72200)(79.72500,32.69472)%
+\qbezier[27](81.30000,32.64008)(82.08750,32.61273)(82.87500,32.58538)%
+\qbezier[27](84.45000,32.53060)(85.23750,32.50318)(86.02500,32.47575)%
+\qbezier[27](87.60000,32.42082)(88.38750,32.39331)(89.17500,32.36581)%
+\qbezier[27](90.75000,32.31072)(91.53750,32.28313)(92.32500,32.25555)%
+\qbezier[27](93.90000,32.20029)(94.68750,32.17262)(95.47500,32.14494)%
+\qbezier[27](97.05000,32.08951)(97.83750,32.06175)(98.62500,32.03399)%
+\qbezier[27](100.20000,31.97837)(100.98750,31.95052)(101.77500,31.92266)%
+\qbezier[27](103.35000,31.86686)(104.13750,31.83890)(104.92500,31.81095)%
+\qbezier[27](106.50000,31.75495)(107.28750,31.72689)(108.07500,31.69884)%
+\qbezier[27](109.65000,31.64263)(110.43750,31.61447)(111.22500,31.58631)%
+\qbezier[27](112.80000,31.52989)(113.58750,31.50162)(114.37500,31.47335)%
+\qbezier[27](115.95000,31.41671)(116.73750,31.38833)(117.52500,31.35994)%
+\qbezier[27](119.10000,31.30307)(119.88750,31.27457)(120.67500,31.24607)%
+\qbezier[27](122.25000,31.18895)(123.03750,31.16033)(123.82500,31.13171)%
+\qbezier[27](125.40000,31.07434)(126.18750,31.04559)(126.97500,31.01685)%
+\qbezier[27](128.55000,30.95922)(129.33750,30.93034)(130.12500,30.90147)%
+\qbezier[27](131.70000,30.84357)(132.48750,30.81456)(133.27500,30.78555)%
+\qbezier[27](134.85000,30.72738)(135.63750,30.69823)(136.42500,30.66907)}%
+{\color{violet}\linethickness{.65pt}%
+\qbezier[27](12.00000,18.00000)(12.78750,18.00004)(13.57500,18.00008)%
+\qbezier[27](13.57500,18.00008)(14.36250,18.00021)(15.15000,18.00033)%
+\qbezier[27](15.15000,18.00033)(15.93750,18.00054)(16.72500,18.00075)%
+\qbezier[27](16.72500,18.00075)(17.51250,18.00104)(18.30000,18.00133)%
+\qbezier[27](18.30000,18.00133)(19.08750,18.00170)(19.87500,18.00208)%
+\qbezier[27](19.87500,18.00208)(20.66250,18.00253)(21.45000,18.00299)%
+\qbezier[27](21.45000,18.00299)(22.23750,18.00353)(23.02500,18.00407)%
+\qbezier[27](23.02500,18.00407)(23.81250,18.00469)(24.60000,18.00531)%
+\qbezier[27](24.60000,18.00531)(25.38750,18.00602)(26.17500,18.00672)%
+\qbezier[27](26.17500,18.00672)(26.96250,18.00751)(27.75000,18.00830)%
+\qbezier[27](27.75000,18.00830)(28.53750,18.00917)(29.32500,18.01004)%
+\qbezier[27](29.32500,18.01004)(30.11250,18.01100)(30.90000,18.01195)%
+\qbezier[27](30.90000,18.01195)(31.68750,18.01299)(32.47500,18.01403)%
+\qbezier[27](32.47500,18.01403)(33.26250,18.01515)(34.05000,18.01627)%
+\qbezier[27](34.05000,18.01627)(34.83750,18.01747)(35.62500,18.01868)%
+\qbezier[27](35.62500,18.01868)(36.41250,18.01996)(37.20000,18.02125)%
+\qbezier[27](37.20000,18.02125)(37.98750,18.02262)(38.77500,18.02399)%
+\qbezier[27](38.77500,18.02399)(39.56250,18.02544)(40.35000,18.02689)%
+\qbezier[27](40.35000,18.02689)(41.13750,18.02843)(41.92500,18.02997)%
+\qbezier[27](41.92500,18.02997)(42.71250,18.03158)(43.50000,18.03320)%
+\qbezier[27](43.50000,18.03320)(44.28750,18.03490)(45.07500,18.03661)%
+\qbezier[27](45.07500,18.03661)(45.86250,18.03839)(46.65000,18.04018)%
+\qbezier[27](46.65000,18.04018)(47.43750,18.04204)(48.22500,18.04391)%
+\qbezier[27](48.22500,18.04391)(49.01250,18.04586)(49.80000,18.04781)%
+\qbezier[27](49.80000,18.04781)(50.58750,18.04985)(51.37500,18.05188)%
+\qbezier[27](51.37500,18.05188)(52.16250,18.05400)(52.95000,18.05611)%
+\qbezier[27](52.95000,18.05611)(53.73750,18.05831)(54.52500,18.06051)%
+\qbezier[27](54.52500,18.06051)(55.31250,18.06280)(56.10000,18.06508)%
+\qbezier[27](56.10000,18.06508)(56.88750,18.06744)(57.67500,18.06981)%
+\qbezier[27](57.67500,18.06981)(58.46250,18.07226)(59.25000,18.07471)%
+\qbezier[27](59.25000,18.07471)(60.03750,18.07724)(60.82500,18.07977)%
+\qbezier[27](60.82500,18.07977)(61.61250,18.08239)(62.40000,18.08500)%
+\qbezier[27](62.40000,18.08500)(63.18750,18.08770)(63.97500,18.09040)%
+\qbezier[27](63.97500,18.09040)(64.76250,18.09318)(65.55000,18.09596)%
+\qbezier[27](65.55000,18.09596)(66.33750,18.09882)(67.12500,18.10169)%
+\qbezier[27](67.12500,18.10169)(67.91250,18.10463)(68.70000,18.10758)%
+\qbezier[27](68.70000,18.10758)(69.48750,18.11061)(70.27500,18.11364)%
+\qbezier[27](70.27500,18.11364)(71.06250,18.11675)(71.85000,18.11987)%
+\qbezier[27](71.85000,18.11987)(72.63750,18.12306)(73.42500,18.12626)%
+\qbezier[27](73.42500,18.12626)(74.21250,18.12954)(75.00000,18.13282)%
+\qbezier[27](75.00000,18.13282)(75.78750,18.13618)(76.57500,18.13954)%
+\qbezier[27](76.57500,18.13954)(77.36250,18.14299)(78.15000,18.14643)%
+\qbezier[27](78.15000,18.14643)(78.93750,18.14996)(79.72500,18.15349)%
+\qbezier[27](79.72500,18.15349)(80.51250,18.15710)(81.30000,18.16071)%
+\qbezier[27](81.30000,18.16071)(82.08750,18.16440)(82.87500,18.16810)%
+\qbezier[27](82.87500,18.16810)(83.66250,18.17188)(84.45000,18.17565)%
+\qbezier[27](84.45000,18.17565)(85.23750,18.17951)(86.02500,18.18338)%
+\qbezier[27](86.02500,18.18338)(86.81250,18.18732)(87.60000,18.19126)%
+\qbezier[27](87.60000,18.19126)(88.38750,18.19529)(89.17500,18.19932)%
+\qbezier[27](89.17500,18.19932)(89.96250,18.20343)(90.75000,18.20754)%
+\qbezier[27](90.75000,18.20754)(91.53750,18.21173)(92.32500,18.21592)%
+\qbezier[27](92.32500,18.21592)(93.11250,18.22020)(93.90000,18.22447)%
+\qbezier[27](93.90000,18.22447)(94.68750,18.22883)(95.47500,18.23319)%
+\qbezier[27](95.47500,18.23319)(96.26250,18.23763)(97.05000,18.24208)%
+\qbezier[27](97.05000,18.24208)(97.83750,18.24660)(98.62500,18.25113)%
+\qbezier[27](98.62500,18.25113)(99.41250,18.25573)(100.20000,18.26034)%
+\qbezier[27](100.20000,18.26034)(100.98750,18.26504)(101.77500,18.26973)%
+\qbezier[27](101.77500,18.26973)(102.56250,18.27450)(103.35000,18.27928)%
+\qbezier[27](103.35000,18.27928)(104.13750,18.28413)(104.92500,18.28899)%
+\qbezier[27](104.92500,18.28899)(105.71250,18.29393)(106.50000,18.29887)%
+\qbezier[27](106.50000,18.29887)(107.28750,18.30390)(108.07500,18.30892)%
+\qbezier[27](108.07500,18.30892)(108.86250,18.31403)(109.65000,18.31914)%
+\qbezier[27](109.65000,18.31914)(110.43750,18.32433)(111.22500,18.32952)%
+\qbezier[27](111.22500,18.32952)(112.01250,18.33479)(112.80000,18.34007)%
+\qbezier[27](112.80000,18.34007)(113.58750,18.34543)(114.37500,18.35078)%
+\qbezier[27](114.37500,18.35078)(115.16250,18.35622)(115.95000,18.36167)%
+\qbezier[27](115.95000,18.36167)(116.73750,18.36719)(117.52500,18.37271)%
+\qbezier[27](117.52500,18.37271)(118.31250,18.37832)(119.10000,18.38393)%
+\qbezier[27](119.10000,18.38393)(119.88750,18.38962)(120.67500,18.39531)%
+\qbezier[27](120.67500,18.39531)(121.46250,18.40108)(122.25000,18.40686)%
+\qbezier[27](122.25000,18.40686)(123.03750,18.41271)(123.82500,18.41857)%
+\qbezier[27](123.82500,18.41857)(124.61250,18.42451)(125.40000,18.43045)%
+\qbezier[27](125.40000,18.43045)(126.18750,18.43648)(126.97500,18.44250)%
+\qbezier[27](126.97500,18.44250)(127.76250,18.44861)(128.55000,18.45472)%
+\qbezier[27](128.55000,18.45472)(129.33750,18.46091)(130.12500,18.46710)%
+\qbezier[27](130.12500,18.46710)(130.91250,18.47337)(131.70000,18.47965)%
+\qbezier[27](131.70000,18.47965)(132.48750,18.48601)(133.27500,18.49236)%
+\qbezier[27](133.27500,18.49236)(134.06250,18.49881)(134.85000,18.50525)%
+\qbezier[27](134.85000,18.50525)(135.63750,18.51177)(136.42500,18.51830)%
+\qbezier[27](136.42500,18.51830)(137.21250,18.52491)(138.00000,18.53152)}%
+{\color{blue}\linethickness{.65pt}%
+\qbezier[27](12.00000,52.00000)(12.78750,52.00000)(13.57500,52.00000)%
+\qbezier[27](13.57500,52.00000)(14.36250,52.00000)(15.15000,52.00000)%
+\qbezier[27](15.15000,52.00000)(15.93750,52.00000)(16.72500,51.99999)%
+\qbezier[27](16.72500,51.99999)(17.51250,51.99999)(18.30000,51.99998)%
+\qbezier[27](18.30000,51.99998)(19.08750,51.99998)(19.87500,51.99997)%
+\qbezier[27](19.87500,51.99997)(20.66250,51.99996)(21.45000,51.99994)%
+\qbezier[27](21.45000,51.99994)(22.23750,51.99993)(23.02500,51.99991)%
+\qbezier[27](23.02500,51.99991)(23.81250,51.99989)(24.60000,51.99987)%
+\qbezier[27](24.60000,51.99987)(25.38750,51.99984)(26.17500,51.99981)%
+\qbezier[27](26.17500,51.99981)(26.96250,51.99978)(27.75000,51.99975)%
+\qbezier[27](27.75000,51.99975)(28.53750,51.99970)(29.32500,51.99966)%
+\qbezier[27](29.32500,51.99966)(30.11250,51.99961)(30.90000,51.99956)%
+\qbezier[27](30.90000,51.99956)(31.68750,51.99951)(32.47500,51.99945)%
+\qbezier[27](32.47500,51.99945)(33.26250,51.99938)(34.05000,51.99931)%
+\qbezier[27](34.05000,51.99931)(34.83750,51.99923)(35.62500,51.99915)%
+\qbezier[27](35.62500,51.99915)(36.41250,51.99906)(37.20000,51.99898)%
+\qbezier[27](37.20000,51.99898)(37.98750,51.99887)(38.77500,51.99877)%
+\qbezier[27](38.77500,51.99877)(39.56250,51.99866)(40.35000,51.99855)%
+\qbezier[27](40.35000,51.99855)(41.13750,51.99842)(41.92500,51.99830)%
+\qbezier[27](41.92500,51.99830)(42.71250,51.99816)(43.50000,51.99802)%
+\qbezier[27](43.50000,51.99802)(44.28750,51.99786)(45.07500,51.99771)%
+\qbezier[27](45.07500,51.99771)(45.86250,51.99754)(46.65000,51.99737)%
+\qbezier[27](46.65000,51.99737)(47.43750,51.99719)(48.22500,51.99700)%
+\qbezier[27](48.22500,51.99700)(49.01250,51.99680)(49.80000,51.99660)%
+\qbezier[27](49.80000,51.99660)(50.58750,51.99638)(51.37500,51.99617)%
+\qbezier[27](51.37500,51.99617)(52.16250,51.99593)(52.95000,51.99570)%
+\qbezier[27](52.95000,51.99570)(53.73750,51.99544)(54.52500,51.99519)%
+\qbezier[27](54.52500,51.99519)(55.31250,51.99492)(56.10000,51.99465)%
+\qbezier[27](56.10000,51.99465)(56.88750,51.99436)(57.67500,51.99407)%
+\qbezier[27](57.67500,51.99407)(58.46250,51.99376)(59.25000,51.99345)%
+\qbezier[27](59.25000,51.99345)(60.03750,51.99311)(60.82500,51.99278)%
+\qbezier[27](60.82500,51.99278)(61.61250,51.99243)(62.40000,51.99208)%
+\qbezier[27](62.40000,51.99208)(63.18750,51.99170)(63.97500,51.99133)%
+\qbezier[27](63.97500,51.99133)(64.76250,51.99093)(65.55000,51.99054)%
+\qbezier[27](65.55000,51.99054)(66.33750,51.99012)(67.12500,51.98970)%
+\qbezier[27](67.12500,51.98970)(67.91250,51.98926)(68.70000,51.98881)%
+\qbezier[27](68.70000,51.98881)(69.48750,51.98835)(70.27500,51.98788)%
+\qbezier[27](70.27500,51.98788)(71.06250,51.98739)(71.85000,51.98690)%
+\qbezier[27](71.85000,51.98690)(72.63750,51.98638)(73.42500,51.98586)%
+\qbezier[27](73.42500,51.98586)(74.21250,51.98532)(75.00000,51.98478)%
+\qbezier[27](75.00000,51.98478)(75.78750,51.98421)(76.57500,51.98364)%
+\qbezier[27](76.57500,51.98364)(77.36250,51.98304)(78.15000,51.98245)%
+\qbezier[27](78.15000,51.98245)(78.93750,51.98183)(79.72500,51.98120)%
+\qbezier[27](79.72500,51.98120)(80.51250,51.98055)(81.30000,51.97990)%
+\qbezier[27](81.30000,51.97990)(82.08750,51.97922)(82.87500,51.97854)%
+\qbezier[27](82.87500,51.97854)(83.66250,51.97783)(84.45000,51.97712)%
+\qbezier[27](84.45000,51.97712)(85.23750,51.97638)(86.02500,51.97564)%
+\qbezier[27](86.02500,51.97564)(86.81250,51.97488)(87.60000,51.97411)%
+\qbezier[27](87.60000,51.97411)(88.38750,51.97331)(89.17500,51.97251)%
+\qbezier[27](89.17500,51.97251)(89.96250,51.97168)(90.75000,51.97085)%
+\qbezier[27](90.75000,51.97085)(91.53750,51.96998)(92.32500,51.96912)%
+\qbezier[27](92.32500,51.96912)(93.11250,51.96823)(93.90000,51.96733)%
+\qbezier[27](93.90000,51.96733)(94.68750,51.96640)(95.47500,51.96547)%
+\qbezier[27](95.47500,51.96547)(96.26250,51.96451)(97.05000,51.96355)%
+\qbezier[27](97.05000,51.96355)(97.83750,51.96256)(98.62500,51.96156)%
+\qbezier[27](98.62500,51.96156)(99.41250,51.96053)(100.20000,51.95950)%
+\qbezier[27](100.20000,51.95950)(100.98750,51.95844)(101.77500,51.95737)%
+\qbezier[27](101.77500,51.95737)(102.56250,51.95627)(103.35000,51.95517)%
+\qbezier[27](103.35000,51.95517)(104.13750,51.95404)(104.92500,51.95290)%
+\qbezier[27](104.92500,51.95290)(105.71250,51.95173)(106.50000,51.95056)%
+\qbezier[27](106.50000,51.95056)(107.28750,51.94935)(108.07500,51.94814)%
+\qbezier[27](108.07500,51.94814)(108.86250,51.94689)(109.65000,51.94565)%
+\qbezier[27](109.65000,51.94565)(110.43750,51.94436)(111.22500,51.94308)%
+\qbezier[27](111.22500,51.94308)(112.01250,51.94175)(112.80000,51.94043)%
+\qbezier[27](112.80000,51.94043)(113.58750,51.93907)(114.37500,51.93771)%
+\qbezier[27](114.37500,51.93771)(115.16250,51.93630)(115.95000,51.93490)%
+\qbezier[27](115.95000,51.93490)(116.73750,51.93346)(117.52500,51.93202)%
+\qbezier[27](117.52500,51.93202)(118.31250,51.93054)(119.10000,51.92906)%
+\qbezier[27](119.10000,51.92906)(119.88750,51.92753)(120.67500,51.92601)%
+\qbezier[27](120.67500,51.92601)(121.46250,51.92445)(122.25000,51.92288)%
+\qbezier[27](122.25000,51.92288)(123.03750,51.92128)(123.82500,51.91967)%
+\qbezier[27](123.82500,51.91967)(124.61250,51.91802)(125.40000,51.91637)%
+\qbezier[27](125.40000,51.91637)(126.18750,51.91468)(126.97500,51.91299)%
+\qbezier[27](126.97500,51.91299)(127.76250,51.91126)(128.55000,51.90952)%
+\qbezier[27](128.55000,51.90952)(129.33750,51.90775)(130.12500,51.90597)%
+\qbezier[27](130.12500,51.90597)(130.91250,51.90414)(131.70000,51.90232)%
+\qbezier[27](131.70000,51.90232)(132.48750,51.90045)(133.27500,51.89859)%
+\qbezier[27](133.27500,51.89859)(134.06250,51.89668)(134.85000,51.89476)%
+\qbezier[27](134.85000,51.89476)(135.63750,51.89280)(136.42500,51.89085)%
+\qbezier[27](136.42500,51.89085)(137.21250,51.88884)(138.00000,51.88684)}%
+{\color{blue}\linethickness{.65pt}%
+\qbezier[27](12.00000,69.00000)(12.78750,68.97352)(13.57500,68.94704)%
+\qbezier[27](15.15000,68.89441)(15.93750,68.86826)(16.72500,68.84211)%
+\qbezier[27](18.30000,68.79014)(19.08750,68.76432)(19.87500,68.73849)%
+\qbezier[27](21.45000,68.68717)(22.23750,68.66167)(23.02500,68.63617)%
+\qbezier[27](24.60000,68.58550)(25.38750,68.56032)(26.17500,68.53514)%
+\qbezier[27](27.75000,68.48510)(28.53750,68.46024)(29.32500,68.43539)%
+\qbezier[27](30.90000,68.38598)(31.68750,68.36144)(32.47500,68.33690)%
+\qbezier[27](34.05000,68.28812)(34.83750,68.26389)(35.62500,68.23966)%
+\qbezier[27](37.20000,68.19152)(37.98750,68.16760)(38.77500,68.14368)%
+\qbezier[27](40.35000,68.09615)(41.13750,68.07254)(41.92500,68.04893)%
+\qbezier[27](43.50000,68.00202)(44.28750,67.97872)(45.07500,67.95542)%
+\qbezier[27](46.65000,67.90912)(47.43750,67.88612)(48.22500,67.86312)%
+\qbezier[27](49.80000,67.81743)(50.58750,67.79473)(51.37500,67.77204)%
+\qbezier[27](52.95000,67.72695)(53.73750,67.70456)(54.52500,67.68217)%
+\qbezier[27](56.10000,67.63768)(56.88750,67.61559)(57.67500,67.59349)%
+\qbezier[27](59.25000,67.54961)(60.03750,67.52781)(60.82500,67.50602)%
+\qbezier[27](62.40000,67.46272)(63.18750,67.44122)(63.97500,67.41972)%
+\qbezier[27](65.55000,67.37702)(66.33750,67.35582)(67.12500,67.33461)%
+\qbezier[27](68.70000,67.29250)(69.48750,67.27159)(70.27500,67.25068)%
+\qbezier[27](71.85000,67.20916)(72.63750,67.18854)(73.42500,67.16792)%
+\qbezier[27](75.00000,67.12698)(75.78750,67.10665)(76.57500,67.08633)%
+\qbezier[27](78.15000,67.04597)(78.93750,67.02594)(79.72500,67.00590)%
+\qbezier[27](81.30000,66.96612)(82.08750,66.94638)(82.87500,66.92663)%
+\qbezier[27](84.45000,66.88743)(85.23750,66.86798)(86.02500,66.84852)%
+\qbezier[27](87.60000,66.80990)(88.38750,66.79073)(89.17500,66.77156)%
+\qbezier[27](90.75000,66.73352)(91.53750,66.71464)(92.32500,66.69576)%
+\qbezier[27](93.90000,66.65828)(94.68750,66.63969)(95.47500,66.62110)%
+\qbezier[27](97.05000,66.58420)(97.83750,66.56590)(98.62500,66.54759)%
+\qbezier[27](100.20000,66.51127)(100.98750,66.49325)(101.77500,66.47523)%
+\qbezier[27](103.35000,66.43948)(104.13750,66.42175)(104.92500,66.40402)%
+\qbezier[27](106.50000,66.36884)(107.28750,66.35139)(108.07500,66.33395)%
+\qbezier[27](109.65000,66.29934)(110.43750,66.28218)(111.22500,66.26503)%
+\qbezier[27](112.80000,66.23099)(113.58750,66.21412)(114.37500,66.19725)%
+\qbezier[27](115.95000,66.16379)(116.73750,66.14721)(117.52500,66.13062)%
+\qbezier[27](119.10000,66.09774)(119.88750,66.08144)(120.67500,66.06514)%
+\qbezier[27](122.25000,66.03284)(123.03750,66.01683)(123.82500,66.00082)%
+\qbezier[27](125.40000,65.96909)(126.18750,65.95336)(126.97500,65.93764)%
+\qbezier[27](128.55000,65.90649)(129.33750,65.89106)(130.12500,65.87563)%
+\qbezier[27](131.70000,65.84505)(132.48750,65.82991)(133.27500,65.81477)%
+\qbezier[27](134.85000,65.78478)(135.63750,65.76993)(136.42500,65.75508)}%
+{\color{blue}\linethickness{.65pt}%
+\qbezier[27](12.00000,18.00000)(12.78750,18.05317)(13.57500,18.10633)%
+\qbezier[27](13.57500,18.10633)(14.36250,18.15958)(15.15000,18.21283)%
+\qbezier[27](15.15000,18.21283)(15.93750,18.26616)(16.72500,18.31950)%
+\qbezier[27](16.72500,18.31950)(17.51250,18.37291)(18.30000,18.42633)%
+\qbezier[27](18.30000,18.42633)(19.08750,18.47983)(19.87500,18.53333)%
+\qbezier[27](19.87500,18.53333)(20.66250,18.58691)(21.45000,18.64049)%
+\qbezier[27](21.45000,18.64049)(22.23750,18.69415)(23.02500,18.74782)%
+\qbezier[27](23.02500,18.74782)(23.81250,18.80156)(24.60000,18.85531)%
+\qbezier[27](24.60000,18.85531)(25.38750,18.90914)(26.17500,18.96297)%
+\qbezier[27](26.17500,18.96297)(26.96250,19.01689)(27.75000,19.07080)%
+\qbezier[27](27.75000,19.07080)(28.53750,19.12480)(29.32500,19.17879)%
+\qbezier[27](29.32500,19.17879)(30.11250,19.23287)(30.90000,19.28695)%
+\qbezier[27](30.90000,19.28695)(31.68750,19.34112)(32.47500,19.39528)%
+\qbezier[27](32.47500,19.39528)(33.26250,19.44952)(34.05000,19.50377)%
+\qbezier[27](34.05000,19.50377)(34.83750,19.55810)(35.62500,19.61243)%
+\qbezier[27](35.62500,19.61243)(36.41250,19.66684)(37.20000,19.72125)%
+\qbezier[27](37.20000,19.72125)(37.98750,19.77575)(38.77500,19.83024)%
+\qbezier[27](38.77500,19.83024)(39.56250,19.88482)(40.35000,19.93940)%
+\qbezier[27](40.35000,19.93940)(41.13750,19.99406)(41.92500,20.04872)%
+\qbezier[27](41.92500,20.04872)(42.71250,20.10346)(43.50000,20.15821)%
+\qbezier[27](43.50000,20.15821)(44.28750,20.21303)(45.07500,20.26786)%
+\qbezier[27](45.07500,20.26786)(45.86250,20.32277)(46.65000,20.37768)%
+\qbezier[27](46.65000,20.37768)(47.43750,20.43268)(48.22500,20.48767)%
+\qbezier[27](48.22500,20.48767)(49.01250,20.54275)(49.80000,20.59782)%
+\qbezier[27](49.80000,20.59782)(50.58750,20.65298)(51.37500,20.70814)%
+\qbezier[27](51.37500,20.70814)(52.16250,20.76339)(52.95000,20.81863)%
+\qbezier[27](52.95000,20.81863)(53.73750,20.87396)(54.52500,20.92928)%
+\qbezier[27](54.52500,20.92928)(55.31250,20.98469)(56.10000,21.04010)%
+\qbezier[27](56.10000,21.04010)(56.88750,21.09559)(57.67500,21.15109)%
+\qbezier[27](57.67500,21.15109)(58.46250,21.20666)(59.25000,21.26224)%
+\qbezier[27](59.25000,21.26224)(60.03750,21.31790)(60.82500,21.37356)%
+\qbezier[27](60.82500,21.37356)(61.61250,21.42930)(62.40000,21.48504)%
+\qbezier[27](62.40000,21.48504)(63.18750,21.54087)(63.97500,21.59670)%
+\qbezier[27](63.97500,21.59670)(64.76250,21.65261)(65.55000,21.70852)%
+\qbezier[27](65.55000,21.70852)(66.33750,21.76451)(67.12500,21.82050)%
+\qbezier[27](67.12500,21.82050)(67.91250,21.87658)(68.70000,21.93266)%
+\qbezier[27](68.70000,21.93266)(69.48750,21.98882)(70.27500,22.04498)%
+\qbezier[27](70.27500,22.04498)(71.06250,22.10122)(71.85000,22.15747)%
+\qbezier[27](71.85000,22.15747)(72.63750,22.21380)(73.42500,22.27012)%
+\qbezier[27](73.42500,22.27012)(74.21250,22.32654)(75.00000,22.38295)%
+\qbezier[27](75.00000,22.38295)(75.78750,22.43944)(76.57500,22.49594)%
+\qbezier[27](76.57500,22.49594)(77.36250,22.55252)(78.15000,22.60910)%
+\qbezier[27](78.15000,22.60910)(78.93750,22.66576)(79.72500,22.72243)%
+\qbezier[27](79.72500,22.72243)(80.51250,22.77917)(81.30000,22.83592)%
+\qbezier[27](81.30000,22.83592)(82.08750,22.89275)(82.87500,22.94959)%
+\qbezier[27](82.87500,22.94959)(83.66250,23.00650)(84.45000,23.06342)%
+\qbezier[27](84.45000,23.06342)(85.23750,23.12042)(86.02500,23.17742)%
+\qbezier[27](86.02500,23.17742)(86.81250,23.23450)(87.60000,23.29159)%
+\qbezier[27](87.60000,23.29159)(88.38750,23.34876)(89.17500,23.40593)%
+\qbezier[27](89.17500,23.40593)(89.96250,23.46318)(90.75000,23.52044)%
+\qbezier[27](90.75000,23.52044)(91.53750,23.57777)(92.32500,23.63511)%
+\qbezier[27](92.32500,23.63511)(93.11250,23.69254)(93.90000,23.74996)%
+\qbezier[27](93.90000,23.74996)(94.68750,23.80747)(95.47500,23.86498)%
+\qbezier[27](95.47500,23.86498)(96.26250,23.92257)(97.05000,23.98017)%
+\qbezier[27](97.05000,23.98017)(97.83750,24.03784)(98.62500,24.09552)%
+\qbezier[27](98.62500,24.09552)(99.41250,24.15329)(100.20000,24.21105)%
+\qbezier[27](100.20000,24.21105)(100.98750,24.26890)(101.77500,24.32675)%
+\qbezier[27](101.77500,24.32675)(102.56250,24.38469)(103.35000,24.44262)%
+\qbezier[27](103.35000,24.44262)(104.13750,24.50064)(104.92500,24.55866)%
+\qbezier[27](104.92500,24.55866)(105.71250,24.61677)(106.50000,24.67488)%
+\qbezier[27](106.50000,24.67488)(107.28750,24.73307)(108.07500,24.79126)%
+\qbezier[27](108.07500,24.79126)(108.86250,24.84954)(109.65000,24.90782)%
+\qbezier[27](109.65000,24.90782)(110.43750,24.96619)(111.22500,25.02455)%
+\qbezier[27](111.22500,25.02455)(112.01250,25.08301)(112.80000,25.14146)%
+\qbezier[27](112.80000,25.14146)(113.58750,25.20000)(114.37500,25.25854)%
+\qbezier[27](114.37500,25.25854)(115.16250,25.31716)(115.95000,25.37579)%
+\qbezier[27](115.95000,25.37579)(116.73750,25.43450)(117.52500,25.49321)%
+\qbezier[27](117.52500,25.49321)(118.31250,25.55201)(119.10000,25.61081)%
+\qbezier[27](119.10000,25.61081)(119.88750,25.66970)(120.67500,25.72859)%
+\qbezier[27](120.67500,25.72859)(121.46250,25.78756)(122.25000,25.84654)%
+\qbezier[27](122.25000,25.84654)(123.03750,25.90560)(123.82500,25.96467)%
+\qbezier[27](123.82500,25.96467)(124.61250,26.02382)(125.40000,26.08297)%
+\qbezier[27](125.40000,26.08297)(126.18750,26.14221)(126.97500,26.20145)%
+\qbezier[27](126.97500,26.20145)(127.76250,26.26078)(128.55000,26.32011)%
+\qbezier[27](128.55000,26.32011)(129.33750,26.37952)(130.12500,26.43894)%
+\qbezier[27](130.12500,26.43894)(130.91250,26.49845)(131.70000,26.55796)%
+\qbezier[27](131.70000,26.55796)(132.48750,26.61755)(133.27500,26.67715)%
+\qbezier[27](133.27500,26.67715)(134.06250,26.73683)(134.85000,26.79652)%
+\qbezier[27](134.85000,26.79652)(135.63750,26.85630)(136.42500,26.91607)%
+\qbezier[27](136.42500,26.91607)(137.21250,26.97594)(138.00000,27.03580)}%
+\put(9.00000,18.00000){\makebox(0,0)[r]{\scriptsize -1}}%
+\put(9.00000,35.00000){\makebox(0,0)[r]{\scriptsize 0}}%
+\put(9.00000,52.00000){\makebox(0,0)[r]{\scriptsize 1}}%
+\put(9.00000,69.00000){\makebox(0,0)[r]{\scriptsize 2}}%
+\put(12.00000,13.00000){\makebox(0,0)[l]{\scriptsize $0$}}%
+\put(138.00000,13.00000){\makebox(0,0)[r]{\scriptsize $0.25$}}%
+\put(14.00000,75.00000){\makebox(0,0)[l]{\scriptsize $\varepsilon=+1$: violet $u=0$; blue $u=r$}}%
+\put(15.00000,7.00000){\makebox(0,0)[l]{\scriptsize Limits: $(0,0,-1)$ and $(1,2,-1)$; normal lines differ}}%
+\end{picture}
+\caption{Two approaches to the positive boundary corner. Components of
+the actual scaled area vector $V/r$ approach incompatible normal lines.
+The negative corner follows by reflection. The limits are analytic and
+are independently replayed; the displayed curves are finite samples.}
+\end{figure}
+\begin{figure}[htp]\centering
+\setlength{\unitlength}{1mm}\begin{picture}(150,82)%
+{\color{black}\linethickness{.35pt}%
+\qbezier[500](12.00000,66.00000)(12.00000,39.00000)(12.00000,12.00000)%
+\qbezier[500](12.00000,12.00000)(75.00000,12.00000)(138.00000,12.00000)}%
+\put(138.00000,69.00000){\makebox(0,0)[r]{\scriptsize $x=\omega	au$}}%
+\put(12.00000,69.00000){\makebox(0,0)[l]{\scriptsize Chosen phase $\phi_W$}}%
+{\color{blue}\linethickness{.8pt}%
+\qbezier[14](12.00000,55.75823)(12.39375,55.72767)(12.78750,55.69710)%
+\qbezier[14](12.78750,55.69710)(13.18125,55.60551)(13.57500,55.51392)%
+\qbezier[15](13.57500,55.51392)(13.96875,55.36163)(14.36250,55.20935)%
+\qbezier[15](14.36250,55.20935)(14.75625,54.99695)(15.15000,54.78454)%
+\qbezier[16](15.15000,54.78454)(15.54375,54.51280)(15.93750,54.24107)%
+\qbezier[18](15.93750,54.24107)(16.33125,53.91106)(16.72500,53.58105)%
+\qbezier[19](16.72500,53.58105)(17.11875,53.19407)(17.51250,52.80709)%
+\qbezier[20](17.51250,52.80709)(17.90625,52.36474)(18.30000,51.92238)%
+\qbezier[22](18.30000,51.92238)(18.69375,51.42653)(19.08750,50.93068)%
+\qbezier[23](19.08750,50.93068)(19.48125,50.38353)(19.87500,49.83638)%
+\qbezier[24](19.87500,49.83638)(20.26875,49.24045)(20.66250,48.64452)%
+\qbezier[26](20.66250,48.64452)(21.05625,48.00267)(21.45000,47.36081)%
+\qbezier[27](21.45000,47.36081)(21.84375,46.67625)(22.23750,45.99168)%
+\qbezier[28](22.23750,45.99168)(22.63125,45.26796)(23.02500,44.54425)%
+\qbezier[29](23.02500,44.54425)(23.41875,43.78530)(23.81250,43.02634)%
+\qbezier[30](23.81250,43.02634)(24.20625,42.23642)(24.60000,41.44650)%
+\qbezier[31](24.60000,41.44650)(24.99375,40.63020)(25.38750,39.81391)%
+\qbezier[31](25.38750,39.81391)(25.78125,38.97615)(26.17500,38.13838)%
+\qbezier[32](26.17500,38.13838)(26.56875,37.28434)(26.96250,36.43029)%
+\qbezier[32](26.96250,36.43029)(27.35625,35.56539)(27.75000,34.70049)%
+\qbezier[32](27.75000,34.70049)(28.14375,33.83035)(28.53750,32.96022)%
+\qbezier[32](28.53750,32.96022)(28.93125,32.09061)(29.32500,31.22100)%
+\qbezier[32](29.32500,31.22100)(29.71875,30.35777)(30.11250,29.49454)%
+\qbezier[32](30.11250,29.49454)(30.50625,28.64356)(30.90000,27.79258)%
+\qbezier[31](30.90000,27.79258)(31.29375,26.95969)(31.68750,26.12679)%
+\qbezier[30](31.68750,26.12679)(32.08125,25.31772)(32.47500,24.50865)%
+\qbezier[30](32.47500,24.50865)(32.86875,23.72899)(33.26250,22.94933)%
+\qbezier[29](33.26250,22.94933)(33.65625,22.20444)(34.05000,21.45955)%
+\qbezier[27](34.05000,21.45955)(34.44375,20.75453)(34.83750,20.04952)%
+\qbezier[26](34.83750,20.04952)(35.23125,19.38919)(35.62500,18.72885)%
+\qbezier[25](35.62500,18.72885)(36.01875,18.11765)(36.41250,17.50645)%
+\qbezier[23](36.41250,17.50645)(36.80625,16.94846)(37.20000,16.39047)%
+\qbezier[22](37.20000,16.39047)(37.59375,15.88939)(37.98750,15.38830)%
+\qbezier[20](37.98750,15.38830)(38.38125,14.94737)(38.77500,14.50645)%
+\qbezier[19](38.77500,14.50645)(39.16875,14.12854)(39.56250,13.75064)%
+\qbezier[17](39.56250,13.75064)(39.95625,13.43815)(40.35000,13.12566)%
+\qbezier[16](40.35000,13.12566)(40.74375,12.88057)(41.13750,12.63549)%
+\qbezier[15](41.13750,12.63549)(41.53125,12.45933)(41.92500,12.28317)%
+\qbezier[14](41.92500,12.28317)(42.31875,12.17703)(42.71250,12.07090)%
+\qbezier[14](42.71250,12.07090)(43.10625,12.03545)(43.50000,12.00000)%
+\qbezier[14](43.50000,12.00000)(43.89375,12.03545)(44.28750,12.07090)%
+\qbezier[14](44.28750,12.07090)(44.68125,12.17703)(45.07500,12.28317)%
+\qbezier[15](45.07500,12.28317)(45.46875,12.45933)(45.86250,12.63549)%
+\qbezier[16](45.86250,12.63549)(46.25625,12.88057)(46.65000,13.12566)%
+\qbezier[17](46.65000,13.12566)(47.04375,13.43815)(47.43750,13.75064)%
+\qbezier[19](47.43750,13.75064)(47.83125,14.12854)(48.22500,14.50645)%
+\qbezier[20](48.22500,14.50645)(48.61875,14.94737)(49.01250,15.38830)%
+\qbezier[22](49.01250,15.38830)(49.40625,15.88939)(49.80000,16.39047)%
+\qbezier[23](49.80000,16.39047)(50.19375,16.94846)(50.58750,17.50645)%
+\qbezier[25](50.58750,17.50645)(50.98125,18.11765)(51.37500,18.72885)%
+\qbezier[26](51.37500,18.72885)(51.76875,19.38919)(52.16250,20.04952)%
+\qbezier[27](52.16250,20.04952)(52.55625,20.75453)(52.95000,21.45955)%
+\qbezier[29](52.95000,21.45955)(53.34375,22.20444)(53.73750,22.94933)%
+\qbezier[30](53.73750,22.94933)(54.13125,23.72899)(54.52500,24.50865)%
+\qbezier[30](54.52500,24.50865)(54.91875,25.31772)(55.31250,26.12679)%
+\qbezier[31](55.31250,26.12679)(55.70625,26.95969)(56.10000,27.79258)%
+\qbezier[32](56.10000,27.79258)(56.49375,28.64356)(56.88750,29.49454)%
+\qbezier[32](56.88750,29.49454)(57.28125,30.35777)(57.67500,31.22100)%
+\qbezier[32](57.67500,31.22100)(58.06875,32.09061)(58.46250,32.96022)%
+\qbezier[32](58.46250,32.96022)(58.85625,33.83035)(59.25000,34.70049)%
+\qbezier[32](59.25000,34.70049)(59.64375,35.56539)(60.03750,36.43029)%
+\qbezier[32](60.03750,36.43029)(60.43125,37.28434)(60.82500,38.13838)%
+\qbezier[31](60.82500,38.13838)(61.21875,38.97615)(61.61250,39.81391)%
+\qbezier[31](61.61250,39.81391)(62.00625,40.63020)(62.40000,41.44650)%
+\qbezier[30](62.40000,41.44650)(62.79375,42.23642)(63.18750,43.02634)%
+\qbezier[29](63.18750,43.02634)(63.58125,43.78530)(63.97500,44.54425)%
+\qbezier[28](63.97500,44.54425)(64.36875,45.26796)(64.76250,45.99168)%
+\qbezier[27](64.76250,45.99168)(65.15625,46.67625)(65.55000,47.36081)%
+\qbezier[26](65.55000,47.36081)(65.94375,48.00267)(66.33750,48.64452)%
+\qbezier[24](66.33750,48.64452)(66.73125,49.24045)(67.12500,49.83638)%
+\qbezier[23](67.12500,49.83638)(67.51875,50.38353)(67.91250,50.93068)%
+\qbezier[22](67.91250,50.93068)(68.30625,51.42653)(68.70000,51.92238)%
+\qbezier[20](68.70000,51.92238)(69.09375,52.36474)(69.48750,52.80709)%
+\qbezier[19](69.48750,52.80709)(69.88125,53.19407)(70.27500,53.58105)%
+\qbezier[18](70.27500,53.58105)(70.66875,53.91106)(71.06250,54.24107)%
+\qbezier[16](71.06250,54.24107)(71.45625,54.51280)(71.85000,54.78454)%
+\qbezier[15](71.85000,54.78454)(72.24375,54.99695)(72.63750,55.20935)%
+\qbezier[15](72.63750,55.20935)(73.03125,55.36163)(73.42500,55.51392)%
+\qbezier[14](73.42500,55.51392)(73.81875,55.60551)(74.21250,55.69710)%
+\qbezier[14](74.21250,55.69710)(74.60625,55.72767)(75.00000,55.75823)%
+\qbezier[14](75.00000,55.75823)(75.39375,55.72767)(75.78750,55.69710)%
+\qbezier[14](75.78750,55.69710)(76.18125,55.60551)(76.57500,55.51392)%
+\qbezier[15](76.57500,55.51392)(76.96875,55.36163)(77.36250,55.20935)%
+\qbezier[15](77.36250,55.20935)(77.75625,54.99695)(78.15000,54.78454)%
+\qbezier[16](78.15000,54.78454)(78.54375,54.51280)(78.93750,54.24107)%
+\qbezier[18](78.93750,54.24107)(79.33125,53.91106)(79.72500,53.58105)%
+\qbezier[19](79.72500,53.58105)(80.11875,53.19407)(80.51250,52.80709)%
+\qbezier[20](80.51250,52.80709)(80.90625,52.36474)(81.30000,51.92238)%
+\qbezier[22](81.30000,51.92238)(81.69375,51.42653)(82.08750,50.93068)%
+\qbezier[23](82.08750,50.93068)(82.48125,50.38353)(82.87500,49.83638)%
+\qbezier[24](82.87500,49.83638)(83.26875,49.24045)(83.66250,48.64452)%
+\qbezier[26](83.66250,48.64452)(84.05625,48.00267)(84.45000,47.36081)%
+\qbezier[27](84.45000,47.36081)(84.84375,46.67625)(85.23750,45.99168)%
+\qbezier[28](85.23750,45.99168)(85.63125,45.26796)(86.02500,44.54425)%
+\qbezier[29](86.02500,44.54425)(86.41875,43.78530)(86.81250,43.02634)%
+\qbezier[30](86.81250,43.02634)(87.20625,42.23642)(87.60000,41.44650)%
+\qbezier[31](87.60000,41.44650)(87.99375,40.63020)(88.38750,39.81391)%
+\qbezier[31](88.38750,39.81391)(88.78125,38.97615)(89.17500,38.13838)%
+\qbezier[32](89.17500,38.13838)(89.56875,37.28434)(89.96250,36.43029)%
+\qbezier[32](89.96250,36.43029)(90.35625,35.56539)(90.75000,34.70049)%
+\qbezier[32](90.75000,34.70049)(91.14375,33.83035)(91.53750,32.96022)%
+\qbezier[32](91.53750,32.96022)(91.93125,32.09061)(92.32500,31.22100)%
+\qbezier[32](92.32500,31.22100)(92.71875,30.35777)(93.11250,29.49454)%
+\qbezier[32](93.11250,29.49454)(93.50625,28.64356)(93.90000,27.79258)%
+\qbezier[31](93.90000,27.79258)(94.29375,26.95969)(94.68750,26.12679)%
+\qbezier[30](94.68750,26.12679)(95.08125,25.31772)(95.47500,24.50865)%
+\qbezier[30](95.47500,24.50865)(95.86875,23.72899)(96.26250,22.94933)%
+\qbezier[29](96.26250,22.94933)(96.65625,22.20444)(97.05000,21.45955)%
+\qbezier[27](97.05000,21.45955)(97.44375,20.75453)(97.83750,20.04952)%
+\qbezier[26](97.83750,20.04952)(98.23125,19.38919)(98.62500,18.72885)%
+\qbezier[25](98.62500,18.72885)(99.01875,18.11765)(99.41250,17.50645)%
+\qbezier[23](99.41250,17.50645)(99.80625,16.94846)(100.20000,16.39047)%
+\qbezier[22](100.20000,16.39047)(100.59375,15.88939)(100.98750,15.38830)%
+\qbezier[20](100.98750,15.38830)(101.38125,14.94737)(101.77500,14.50645)%
+\qbezier[19](101.77500,14.50645)(102.16875,14.12854)(102.56250,13.75064)%
+\qbezier[17](102.56250,13.75064)(102.95625,13.43815)(103.35000,13.12566)%
+\qbezier[16](103.35000,13.12566)(103.74375,12.88057)(104.13750,12.63549)%
+\qbezier[15](104.13750,12.63549)(104.53125,12.45933)(104.92500,12.28317)%
+\qbezier[14](104.92500,12.28317)(105.31875,12.17703)(105.71250,12.07090)%
+\qbezier[14](105.71250,12.07090)(106.10625,12.03545)(106.50000,12.00000)%
+\qbezier[14](106.50000,12.00000)(106.89375,12.03545)(107.28750,12.07090)%
+\qbezier[14](107.28750,12.07090)(107.68125,12.17703)(108.07500,12.28317)%
+\qbezier[15](108.07500,12.28317)(108.46875,12.45933)(108.86250,12.63549)%
+\qbezier[16](108.86250,12.63549)(109.25625,12.88057)(109.65000,13.12566)%
+\qbezier[17](109.65000,13.12566)(110.04375,13.43815)(110.43750,13.75064)%
+\qbezier[19](110.43750,13.75064)(110.83125,14.12854)(111.22500,14.50645)%
+\qbezier[20](111.22500,14.50645)(111.61875,14.94737)(112.01250,15.38830)%
+\qbezier[22](112.01250,15.38830)(112.40625,15.88939)(112.80000,16.39047)%
+\qbezier[23](112.80000,16.39047)(113.19375,16.94846)(113.58750,17.50645)%
+\qbezier[25](113.58750,17.50645)(113.98125,18.11765)(114.37500,18.72885)%
+\qbezier[26](114.37500,18.72885)(114.76875,19.38919)(115.16250,20.04952)%
+\qbezier[27](115.16250,20.04952)(115.55625,20.75453)(115.95000,21.45955)%
+\qbezier[29](115.95000,21.45955)(116.34375,22.20444)(116.73750,22.94933)%
+\qbezier[30](116.73750,22.94933)(117.13125,23.72899)(117.52500,24.50865)%
+\qbezier[30](117.52500,24.50865)(117.91875,25.31772)(118.31250,26.12679)%
+\qbezier[31](118.31250,26.12679)(118.70625,26.95969)(119.10000,27.79258)%
+\qbezier[32](119.10000,27.79258)(119.49375,28.64356)(119.88750,29.49454)%
+\qbezier[32](119.88750,29.49454)(120.28125,30.35777)(120.67500,31.22100)%
+\qbezier[32](120.67500,31.22100)(121.06875,32.09061)(121.46250,32.96022)%
+\qbezier[32](121.46250,32.96022)(121.85625,33.83035)(122.25000,34.70049)%
+\qbezier[32](122.25000,34.70049)(122.64375,35.56539)(123.03750,36.43029)%
+\qbezier[32](123.03750,36.43029)(123.43125,37.28434)(123.82500,38.13838)%
+\qbezier[31](123.82500,38.13838)(124.21875,38.97615)(124.61250,39.81391)%
+\qbezier[31](124.61250,39.81391)(125.00625,40.63020)(125.40000,41.44650)%
+\qbezier[30](125.40000,41.44650)(125.79375,42.23642)(126.18750,43.02634)%
+\qbezier[29](126.18750,43.02634)(126.58125,43.78530)(126.97500,44.54425)%
+\qbezier[28](126.97500,44.54425)(127.36875,45.26796)(127.76250,45.99168)%
+\qbezier[27](127.76250,45.99168)(128.15625,46.67625)(128.55000,47.36081)%
+\qbezier[26](128.55000,47.36081)(128.94375,48.00267)(129.33750,48.64452)%
+\qbezier[24](129.33750,48.64452)(129.73125,49.24045)(130.12500,49.83638)%
+\qbezier[23](130.12500,49.83638)(130.51875,50.38353)(130.91250,50.93068)%
+\qbezier[22](130.91250,50.93068)(131.30625,51.42653)(131.70000,51.92238)%
+\qbezier[20](131.70000,51.92238)(132.09375,52.36474)(132.48750,52.80709)%
+\qbezier[19](132.48750,52.80709)(132.88125,53.19407)(133.27500,53.58105)%
+\qbezier[18](133.27500,53.58105)(133.66875,53.91106)(134.06250,54.24107)%
+\qbezier[16](134.06250,54.24107)(134.45625,54.51280)(134.85000,54.78454)%
+\qbezier[15](134.85000,54.78454)(135.24375,54.99695)(135.63750,55.20935)%
+\qbezier[15](135.63750,55.20935)(136.03125,55.36163)(136.42500,55.51392)%
+\qbezier[14](136.42500,55.51392)(136.81875,55.60551)(137.21250,55.69710)%
+\qbezier[14](137.21250,55.69710)(137.60625,55.72767)(138.00000,55.75823)}%
+{\color{orange!80!black}\linethickness{.65pt}%
+\qbezier[14](12.00000,58.00000)(12.39375,57.96455)(12.78750,57.92910)%
+\qbezier[15](13.57500,57.71683)(13.96875,57.54067)(14.36250,57.36451)%
+\qbezier[17](15.15000,56.87430)(15.54375,56.56176)(15.93750,56.24923)%
+\qbezier[20](16.72500,55.49315)(17.11875,55.05194)(17.51250,54.61072)%
+\qbezier[23](18.30000,53.60739)(18.69375,53.04836)(19.08750,52.48934)%
+\qbezier[26](19.87500,51.26346)(20.26875,50.60038)(20.66250,49.93731)%
+\qbezier[29](21.45000,48.51906)(21.84375,47.76826)(22.23750,47.01747)%
+\qbezier[31](23.02500,45.44178)(23.41875,44.62175)(23.81250,43.80172)%
+\qbezier[32](24.60000,42.10739)(24.99375,41.23832)(25.38750,40.36924)%
+\qbezier[33](26.17500,38.59799)(26.56875,37.70128)(26.96250,36.80456)%
+\qbezier[33](27.75000,35.00000)(28.14375,34.09772)(28.53750,33.19544)%
+\qbezier[33](29.32500,31.40201)(29.71875,30.51638)(30.11250,29.63076)%
+\qbezier[32](30.90000,27.89261)(31.29375,27.04545)(31.68750,26.19828)%
+\qbezier[30](32.47500,24.55822)(32.86875,23.77038)(33.26250,22.98253)%
+\qbezier[28](34.05000,21.48094)(34.44375,20.77182)(34.83750,20.06269)%
+\qbezier[25](35.62500,18.73654)(36.01875,18.12360)(36.41250,17.51066)%
+\qbezier[22](37.20000,16.39261)(37.59375,15.89094)(37.98750,15.38928)%
+\qbezier[19](38.77500,14.50685)(39.16875,14.12881)(39.56250,13.75077)%
+\qbezier[16](40.35000,13.12570)(40.74375,12.88060)(41.13750,12.63549)%
+\qbezier[14](41.92500,12.28317)(42.31875,12.17703)(42.71250,12.07090)%
+\qbezier[14](43.50000,12.00000)(43.89375,12.03545)(44.28750,12.07090)%
+\qbezier[15](45.07500,12.28317)(45.46875,12.45933)(45.86250,12.63549)%
+\qbezier[17](46.65000,13.12570)(47.04375,13.43824)(47.43750,13.75077)%
+\qbezier[20](48.22500,14.50685)(48.61875,14.94806)(49.01250,15.38928)%
+\qbezier[23](49.80000,16.39261)(50.19375,16.95164)(50.58750,17.51066)%
+\qbezier[26](51.37500,18.73654)(51.76875,19.39962)(52.16250,20.06269)%
+\qbezier[29](52.95000,21.48094)(53.34375,22.23174)(53.73750,22.98253)%
+\qbezier[31](54.52500,24.55822)(54.91875,25.37825)(55.31250,26.19828)%
+\qbezier[32](56.10000,27.89261)(56.49375,28.76168)(56.88750,29.63076)%
+\qbezier[33](57.67500,31.40201)(58.06875,32.29872)(58.46250,33.19544)%
+\qbezier[33](59.25000,35.00000)(59.64375,35.90228)(60.03750,36.80456)%
+\qbezier[33](60.82500,38.59799)(61.21875,39.48362)(61.61250,40.36924)%
+\qbezier[32](62.40000,42.10739)(62.79375,42.95455)(63.18750,43.80172)%
+\qbezier[30](63.97500,45.44178)(64.36875,46.22962)(64.76250,47.01747)%
+\qbezier[28](65.55000,48.51906)(65.94375,49.22818)(66.33750,49.93731)%
+\qbezier[25](67.12500,51.26346)(67.51875,51.87640)(67.91250,52.48934)%
+\qbezier[22](68.70000,53.60739)(69.09375,54.10906)(69.48750,54.61072)%
+\qbezier[19](70.27500,55.49315)(70.66875,55.87119)(71.06250,56.24923)%
+\qbezier[16](71.85000,56.87430)(72.24375,57.11940)(72.63750,57.36451)%
+\qbezier[14](73.42500,57.71683)(73.81875,57.82297)(74.21250,57.92910)%
+\qbezier[14](75.00000,58.00000)(75.39375,57.96455)(75.78750,57.92910)%
+\qbezier[15](76.57500,57.71683)(76.96875,57.54067)(77.36250,57.36451)%
+\qbezier[17](78.15000,56.87430)(78.54375,56.56176)(78.93750,56.24923)%
+\qbezier[20](79.72500,55.49315)(80.11875,55.05194)(80.51250,54.61072)%
+\qbezier[23](81.30000,53.60739)(81.69375,53.04836)(82.08750,52.48934)%
+\qbezier[26](82.87500,51.26346)(83.26875,50.60038)(83.66250,49.93731)%
+\qbezier[29](84.45000,48.51906)(84.84375,47.76826)(85.23750,47.01747)%
+\qbezier[31](86.02500,45.44178)(86.41875,44.62175)(86.81250,43.80172)%
+\qbezier[32](87.60000,42.10739)(87.99375,41.23832)(88.38750,40.36924)%
+\qbezier[33](89.17500,38.59799)(89.56875,37.70128)(89.96250,36.80456)%
+\qbezier[33](90.75000,35.00000)(91.14375,34.09772)(91.53750,33.19544)%
+\qbezier[33](92.32500,31.40201)(92.71875,30.51638)(93.11250,29.63076)%
+\qbezier[32](93.90000,27.89261)(94.29375,27.04545)(94.68750,26.19828)%
+\qbezier[30](95.47500,24.55822)(95.86875,23.77038)(96.26250,22.98253)%
+\qbezier[28](97.05000,21.48094)(97.44375,20.77182)(97.83750,20.06269)%
+\qbezier[25](98.62500,18.73654)(99.01875,18.12360)(99.41250,17.51066)%
+\qbezier[22](100.20000,16.39261)(100.59375,15.89094)(100.98750,15.38928)%
+\qbezier[19](101.77500,14.50685)(102.16875,14.12881)(102.56250,13.75077)%
+\qbezier[16](103.35000,13.12570)(103.74375,12.88060)(104.13750,12.63549)%
+\qbezier[14](104.92500,12.28317)(105.31875,12.17703)(105.71250,12.07090)%
+\qbezier[14](106.50000,12.00000)(106.89375,12.03545)(107.28750,12.07090)%
+\qbezier[15](108.07500,12.28317)(108.46875,12.45933)(108.86250,12.63549)%
+\qbezier[17](109.65000,13.12570)(110.04375,13.43824)(110.43750,13.75077)%
+\qbezier[20](111.22500,14.50685)(111.61875,14.94806)(112.01250,15.38928)%
+\qbezier[23](112.80000,16.39261)(113.19375,16.95164)(113.58750,17.51066)%
+\qbezier[26](114.37500,18.73654)(114.76875,19.39962)(115.16250,20.06269)%
+\qbezier[29](115.95000,21.48094)(116.34375,22.23174)(116.73750,22.98253)%
+\qbezier[31](117.52500,24.55822)(117.91875,25.37825)(118.31250,26.19828)%
+\qbezier[32](119.10000,27.89261)(119.49375,28.76168)(119.88750,29.63076)%
+\qbezier[33](120.67500,31.40201)(121.06875,32.29872)(121.46250,33.19544)%
+\qbezier[33](122.25000,35.00000)(122.64375,35.90228)(123.03750,36.80456)%
+\qbezier[33](123.82500,38.59799)(124.21875,39.48362)(124.61250,40.36924)%
+\qbezier[32](125.40000,42.10739)(125.79375,42.95455)(126.18750,43.80172)%
+\qbezier[30](126.97500,45.44178)(127.36875,46.22962)(127.76250,47.01747)%
+\qbezier[28](128.55000,48.51906)(128.94375,49.22818)(129.33750,49.93731)%
+\qbezier[25](130.12500,51.26346)(130.51875,51.87640)(130.91250,52.48934)%
+\qbezier[22](131.70000,53.60739)(132.09375,54.10906)(132.48750,54.61072)%
+\qbezier[19](133.27500,55.49315)(133.66875,55.87119)(134.06250,56.24923)%
+\qbezier[16](134.85000,56.87430)(135.24375,57.11940)(135.63750,57.36451)%
+\qbezier[14](136.42500,57.71683)(136.81875,57.82297)(137.21250,57.92910)}%
+\put(9.00000,12.00000){\makebox(0,0)[r]{\scriptsize 0}}%
+\put(9.00000,35.00000){\makebox(0,0)[r]{\scriptsize 0.2}}%
+\put(9.00000,58.00000){\makebox(0,0)[r]{\scriptsize 0.4}}%
+\put(14.00000,74.00000){\makebox(0,0)[l]{\scriptsize Blue: $\arctan(0.4\cos^2 x)$; dashed: $0.4\cos^2 x$}}%
+\put(12.00000,7.00000){\makebox(0,0)[l]{\scriptsize $0$}}%
+\put(75.00000,7.00000){\makebox(0,0)[l]{\scriptsize $\pi$}}%
+\put(138.00000,7.00000){\makebox(0,0)[r]{\scriptsize $2\pi$}}%
+\put(15.00000,1.00000){\makebox(0,0)[l]{\scriptsize Uniform analytic error bound: $|\kappa|^3/3$; fixed chart only}}%
+\end{picture}
+\caption{The conditional squared-cosine phase response in a fixed
+Whitney target chart. The analytic cubic error bound accompanies the
+plot. No general physical oscillator or arbitrary-trajectory spectrum
+is inferred from this chosen input.}
+\end{figure}
+\clearpage
+\section{Verification boundary and publication status}
+The companion provides a per-claim map and builds against Lean 4.33.1,
+Mathlib v4.33.1, and the existing Stokes v5 working theorems. It formalizes
+the actual surface and observation functions, their Fr\'echet derivatives,
+boundary differentials, injectivity criteria, and local chart transport,
+rather than only polynomial proxies. Imported actual fold charts carry
+their physical-domain hypotheses. Independent SymPy replay checks exact
+identities, isolating intervals, both counterexamples, and the boundary
+tangent limits. No random sampling is used in this revision replay.
+
+The current extension proves the genuine global manifold-with-corners,
+its label homeomorphism, actual smooth surface and atlas compatibility.
+Curvature uses actual first and second Fr\'echet derivatives and fundamental
+forms. The local corner theorem excludes an invertible $C^1$ ambient
+flattening on arbitrarily small physical corner neighborhoods. Complete
+skeleton--critical intersection, projection/source-area transport, complex
+phase signs and asymptote exclusion are proved. Real Fourier coefficients
+are actual interval integrals, with kernel-checked error, doubled-harmonic
+dominance, vanishing sine coefficients and odd-cosine cancellation.
+
+The lateral indices are defined by the winding of the actual observation
+on every sufficiently small physical source circle. Continuous logarithm
+lifts, integer winding, free homotopy invariance, the nondegenerate-zero
+homotopy and its application to both lateral zeros are kernel-checked.
+Curvature is unchanged on the actual separated-coordinate atlas overlaps;
+it is zero on every regular $r=0$ edge. Every asserted mathematical result
+in the corrected paper is mapped to these or the independently audited
+dependency theorems in the companion's claim ledger. This is a claimwise
+formalization of the stated results, not a literal encoding of every prose
+sentence or a proof of a general curvature-invariance theorem for arbitrary
+coordinate changes. The further research questions stated below are not
+results claimed by this paper. Public release still requires final artifact
+acceptance and the author's confirmation.
+Further exceptional-germ classification, regular-image identifications, and invariant
+global boundary observation conventions are not claimed results.
+
+This is a local v5 preparation. Article DOI, companion software version
+DOI, and software concept DOI are separate metadata roles. No new DOI is
+assigned here, and the Stokes article or software DOIs must not be used
+as identifiers for this ruled-surface revision. Public Zenodo and ResearchGate actions require the author's final approval after the
+candidate artifacts and their verification scope can be reviewed.
+
+\begin{thebibliography}{9}
+\bibitem{whitney} H. Whitney, On singularities of mappings of Euclidean
+spaces. I. Mappings of the plane into the plane, \emph{Ann. of Math.}
+62 (1955), 374--410. Historical reference; no genericity assertion is
+substituted for an explicit fold check.
+\bibitem{ishikawa} G. Ishikawa, \emph{Recognition Problem of Frontal
+Singularities}, arXiv:1808.09594v2 (2019), Theorem 3.4(1).
+\url{https://arxiv.org/html/1808.09594v2}.
+\bibitem{gg} M. Golubitsky and V. Guillemin, \emph{Stable Mappings and
+Their Singularities}, Springer, 1973. Background reference.
+\bibitem{degree} J. W. Milnor, \emph{Topology from the Differentiable
+Viewpoint}, University Press of Virginia, 1965, sections on degree and
+the index of a zero. Consulted copy:
+\url{https://people.dm.unipi.it/benedett/MILNOR-TDVPOINT.pdf}.
+This is background for the planar-index convention; the lifting and
+nondegenerate-zero winding proof is independently kernel-checked here.
+\end{thebibliography}
+\end{document}
