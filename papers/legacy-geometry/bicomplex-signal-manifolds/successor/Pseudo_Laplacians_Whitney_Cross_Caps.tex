@@ -1,0 +1,609 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,xcolor}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=teal,citecolor=teal,urlcolor=teal]{hyperref}
+\hypersetup{pdftitle={Pseudo-Laplacians at Whitney Cross-Caps},pdfauthor={Akari Hayami (Jian-Yu Huang)}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}\newcommand{\Z}{\mathbb Z}
+\newcommand{\Dom}{\operatorname{Dom}}\newcommand{\dd}{\,d}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\newcommand{\cH}{\mathcal H}\newcommand{\cV}{\mathcal V}\newcommand{\inte}{\operatorname{int}}
+\DeclareMathOperator{\rank}{rank}
+\title{Pseudo-Laplacians at Whitney Cross-Caps:\\
+Point Interactions on Surfaces Mapped into Three-Space}
+\author{Akari Hayami (Jian-Yu Huang)}
+\date{October 2026\\\small Working draft}
+\begin{document}\maketitle
+\begin{abstract}
+On a smooth Riemannian surface, Colin de Verdière showed that the Laplacian
+restricted to functions vanishing near a point admits a one-parameter family of
+self-adjoint extensions, the pseudo-Laplacians, whose domains are described
+by a logarithm and a constant. We show that the same picture holds at the
+Whitney cross-caps of a surface mapped into $\R^3$. These are the generic
+singularities of such maps, and the induced metric degenerates at them.
+Each cross-cap carries exactly one logarithmic channel. The leading coefficient
+is the universal $-1/(2\pi)$ in the intrinsic distance, or equivalently in the
+extrinsic radius, and the regular part is H\"older continuous. With $k$
+cross-caps, the extensions of the point-restricted Laplacian are classified by
+$U(k)$ in explicit geometric boundary coordinates with a $2\pi$ Green pairing.
+The Friedrichs extension is the unique extension with a sub-Markovian
+semigroup, and the unique one invariant under change of logarithmic reference
+length. The key
+step is an arclength coordinate in which the metric is the identity up to
+$O(\rho^{1/2})$, refining Grieser's quasi-isometry of the Whitney umbrella.
+Examples include Steiner's Roman surface: its six cross-caps carry a
+$U(6)$-family of pseudo-Laplacians, and octahedral symmetry forces its Green
+matrix to have at most three eigenvalues.
+\end{abstract}
+\tableofcontents
+
+\section{Introduction}\label{sec:intro}
+Let $X$ be a smooth Riemannian surface and $x_0\in X$. Colin de Verdière
+\cite{cdv} observed that the Laplacian on $C_c^\infty(X\setminus\{x_0\})$ is
+not essentially self-adjoint. Its deficiency indices are $(1,1)$, and the
+self-adjoint extensions, the \emph{pseudo-Laplacians}, are singled out by the
+behaviour
+\[
+ f(x)=\lambda\Bigl(\sin\alpha\,\tfrac{1}{2\pi}\log r+\cos\alpha\Bigr)+o(1),
+ \qquad r=d(x,x_0).
+\]
+This picture underlies point interactions on manifolds. For conical points
+of a flat surface \cite{hk}, the logarithm is again the only channel when the
+cone angle is at most $2\pi$; larger angles add power-law channels.
+
+Generic smooth maps of a compact surface into $\R^3$ are not immersions.
+Whitney showed that their only singularities are isolated \emph{cross-caps}
+\cite{whitney44,gg}. At a cross-cap the differential has rank one, and the
+induced metric $g=f^*\delta$ degenerates. This paper asks what happens to
+point interactions at these points, and gives a complete answer: a cross-cap
+behaves exactly like a regular point of the surface.
+
+\paragraph{Main results.} Let $f:\Sigma\to\R^3$ be a smooth map of a compact
+surface, immersive except at finitely many cross-caps; the precise setting is
+Definition~\ref{def:setting}. Let $H_F$ be the Friedrichs Laplacian of $g$,
+with Dirichlet condition if $\Sigma$ has a boundary, and let $p_1,\dots,p_k$ be
+the interior cross-caps.
+\begin{enumerate}
+\item $H_F$ has compact resolvent (Theorem~\ref{thm:compact}). Every
+$u\in\Dom H_F$ is continuous at each $p_j$, and $\tau u=(u(p_j))_j$ is a
+graph-bounded surjection onto $\C^k$ with dense kernel
+(Theorem~\ref{thm:trace}).
+\item The restriction $A=H_F|_{\ker\tau}$ has deficiency indices $(k,k)$, and
+its self-adjoint extensions form a $U(k)$-family with explicit Krein resolvent
+formula (Theorem~\ref{thm:triple}).
+\item Every $\varphi\in\Dom A^*$ has the expansion
+$\varphi=\ell_j\log d_g(\cdot,p_j)+b_j+O(d_g^\beta)$ at each $p_j$, and the Green
+form is $2\pi(\langle\ell,b'\rangle-\langle b,\ell'\rangle)$. In particular the
+resolvent Green vectors have leading term $-\frac1{2\pi}\log d_g$
+(Theorems~\ref{thm:log} and~\ref{thm:boundary}).
+\item $H_F$ is the only extension with a sub-Markovian semigroup, and the only
+one invariant under a common change of logarithmic reference length.
+Coefficients on the two sheets meeting at a cross-cap agree in the limit
+(Section~\ref{sec:uniqueness}).
+\end{enumerate}
+Each cross-cap therefore carries one channel, as a regular point does, and
+its Whitney invariants enter only through the regular part. The geometric
+input is an arclength coordinate (Lemma~\ref{lem:arclength}) in which the
+metric equals the identity up to $O(\rho^{1/2})$. This refines Grieser's
+quasi-isometry of the Whitney umbrella with the plane \cite{grieser} from
+bounded distortion to asymptotic equality, which is what fixes the exact
+coefficient $-1/(2\pi)$.
+
+The theory is local at the cross-caps but needs a global boundary condition.
+If one instead closes the Laplacian on functions compactly supported in the
+interior, every regular boundary arc contributes infinitely many deficiency
+modes (Section~\ref{sec:boundary}). The examples in Section~\ref{sec:examples}
+are Steiner's Roman surface, a closed surface with six cross-caps, and a ruled
+surface from an earlier signal model, which also has cross-caps on its boundary.
+
+\paragraph{Relation to the literature.} The abstract extension theory is
+Posilicano's \cite{pos}, and the scalar regularity input is the
+De Giorgi--Nash--Moser theory in the form of \cite{simon}. Colin de Verdière
+\cite{cdv} treats regular points of smooth surfaces and Hillairet--Kokotov
+\cite{hk} conical points. Grieser \cite{grieser} supplies the quasi-isometric
+coordinates. The contribution here is to carry this circle of ideas to the
+generic singular points of surfaces in $\R^3$, together with the sharpened
+local geometry that this requires.
+
+\section{Setting}\label{sec:setting}
+\begin{definition}\label{def:setting}
+Let $\Sigma$ be a compact connected smooth surface, either closed or with a
+piecewise smooth Lipschitz boundary, and let $f:\Sigma\to\R^3$ be smooth up to
+the boundary. Assume that $f$ is an immersion except on a finite set
+$Z\cup Z_\partial$, where $Z\subset\inte\Sigma$ and $Z_\partial\subset\partial\Sigma$,
+and that every point of $Z\cup Z_\partial$ is a \emph{Whitney cross-cap} of $f$, or of
+a smooth extension of $f$ near $\partial\Sigma$. That is, $df$ has rank one there,
+and for a kernel vector $\eta$ and a complementary vector $\xi$,
+\begin{equation}\label{eq:whitney}
+ \det\bigl(f_\xi,\,f_{\xi\eta},\,f_{\eta\eta}\bigr)\neq0.
+\end{equation}
+At each $p\in Z_\partial$ we assume that, in some smooth chart of the extension
+centred at $p$, $\Sigma$ is a closed sector $\{\theta_1\leq\theta\leq\theta_2\}$.
+We write $Z=\{p_1,\dots,p_k\}$. There are two regimes:
+\begin{itemize}
+\item[(D)] $\partial\Sigma\neq\emptyset$, with the Dirichlet condition imposed
+on the whole boundary;
+\item[(N)] $\Sigma$ is closed, in which case $Z_\partial=\emptyset$.
+\end{itemize}
+\end{definition}
+
+The condition \eqref{eq:whitney} is the standard recognition criterion for
+the cross-cap $(x,y)\mapsto(x,xy,y^2)$ \cite{hasegawa}. A theorem of Whitney
+\cite{whitney44}, see also \cite{gg}, states that the cross-cap is the only
+stable singularity of maps from surfaces to $\R^3$. Consequently, for a
+generic map the hypotheses hold with $Z_\partial=\emptyset$.
+
+Put $g=f^*\delta$ on $\Sigma\setminus(Z\cup Z_\partial)$. Let $\cH=L^2(\Sigma,dA_g)$
+and $q(u,v)=\int\langle\nabla u,\nabla v\rangle_g\dd A_g$. Take as core
+$\mathcal C=C_c^\infty(\inte\Sigma\setminus Z)$ in case (D), and the smooth
+functions on $\Sigma$ vanishing near $Z$ in case (N). The closure $\cV$ of
+$\mathcal C$ in the norm $(q(u,u)+\norm u^2)^{1/2}$ defines a closed form, and
+we let $H_F$ be its self-adjoint operator. Scalar products are
+conjugate-linear in the first slot.
+
+\section{Local geometry at a cross-cap}\label{sec:local}
+\begin{lemma}[Adapted form]\label{lem:adapted}
+After a translation and a rotation of $\R^3$ and a smooth change of source
+coordinates centred at a cross-cap, $f(x,y)=(x,h(x,y))$ with $h(0)=0$,
+$Dh(0)=0$ and
+\[
+ h_y(x,y)=xv+2yw+O(R^2),\qquad R=(x^2+y^2)^{1/2},
+\]
+where $v,w\in\R^2$ are linearly independent. Hence $cR\leq|h_y|\leq CR$ and
+$|h_x|\leq CR$. In any smooth chart centred at the point, $g\leq CI$ and
+$cR^2\leq\det g\leq CR^2$; in particular $dA_g\asymp R\dd x\dd y$.
+\end{lemma}
+\begin{proof}
+Rotate so that $f_\xi(0)$ points along the first axis. Use $x$, the first
+component of $f$, together with a coordinate $y$ along the kernel direction.
+Then $h_x(0)=0$ and $h_y(0)=0$. The vectors $v=h_{xy}(0)$ and $2w=h_{yy}(0)$
+are independent by \eqref{eq:whitney}. In these coordinates
+$g=\bigl(\begin{smallmatrix}1+|h_x|^2&h_x\cdot h_y\\h_x\cdot h_y&|h_y|^2\end{smallmatrix}\bigr)$,
+whose entries are bounded and whose determinant lies between $|h_y|^2$ and
+$(1+|h_x|^2)|h_y|^2$. A smooth change of chart has bounded derivative and
+inverse, so these bounds persist.
+\end{proof}
+
+\begin{lemma}[Arclength coordinate]\label{lem:arclength}
+In the coordinates of Lemma~\ref{lem:adapted} put
+\[
+ V(x,y)=\int_0^y|h_y(x,s)|\dd s,\qquad \Xi(x,y)=(x,V),\qquad
+ \rho=|\Xi|.
+\]
+Then $\Xi$ is a homeomorphism of a neighbourhood of $0$ onto a neighbourhood
+of $0$, and a $C^1$ diffeomorphism off $0$. In the coordinates $(X,V)=\Xi$,
+the metric $G$, the density $m=\sqrt{\det G}$ and the divergence tensor
+$a=mG^{-1}$ satisfy
+\[
+ G-I=O(\rho^{1/2}),\qquad a-I=O(\rho^{1/2}),\qquad m-1=O(\rho),
+\]
+and are bounded and uniformly elliptic. The extrinsic radius
+$\rho_e=|f-f(0)|$ satisfies $\rho_e/\rho=1+O(\rho^{1/2})$.
+\end{lemma}
+\begin{proof}
+For fixed $x$, $V$ is strictly increasing in $y$, and
+$cy^2\leq|V|\leq C(|xy|+y^2)$. Its inverse is therefore continuous, also at
+zero. Differentiating under the integral, with $n=h_y/|h_y|$, gives
+$V_y=|h_y|$ and $V_x=\int_0^yn\cdot h_{xy}\dd s$, so $|V_x|\leq C|y|$. Both are
+continuous, and $V_y>0$ off zero. In the new coordinates $f_X=(1,q)$ and
+$f_V=(0,n)$, where $q=h_x-V_xn$, so
+\[
+ G=\begin{pmatrix}1+|q|^2&q\cdot n\\q\cdot n&1\end{pmatrix},\qquad
+ \det G=1+|q|^2-(q\cdot n)^2\geq1.
+\]
+Since $|q|\leq CR$ and $R^2\leq C\rho$, the stated bounds follow.
+
+For the radii, Taylor's formula gives $|h-wy^2|\leq C(x^2+|xy|+|y|R^2)$.
+Integrating $\bigl||h_y(x,s)|-2|w||s|\bigr|\leq C(|x|+x^2+s^2)$ gives
+$\bigl|V-\operatorname{sgn}(y)|w|y^2\bigr|\leq C(|xy|+|y|R^2)$. Hence
+$\bigl||h|-|V|\bigr|\leq CR\rho$, and comparing the norms of $(x,|h|)$ and
+$(x,|V|)$ gives $|\rho_e-\rho|\leq CR\rho\leq C\rho^{3/2}$.
+\end{proof}
+
+\begin{corollary}[Intrinsic distance]\label{cor:distance}
+Let $d_g$ be the path distance of $g$ on the source. Near a cross-cap $p$,
+\[
+ d_g(\cdot,p)=\rho\bigl(1+O(\rho^{1/2})\bigr),\qquad
+ \log d_g(\cdot,p)-\log\rho_e=O(\rho^{1/2}).
+\]
+\end{corollary}
+\begin{proof}
+In the arclength coordinates, $|v|^2(1-C\rho^{1/2})\leq v^TGv\leq|v|^2(1+C\rho^{1/2})$.
+The straight segment to a point at radius $\rho$ has length at most
+$\rho(1+C\rho^{1/2})$. A curve from $p$ to that point either stays in the disk
+of radius $2\rho$, and then has length at least $\rho(1-C\rho^{1/2})$, or
+crosses the annulus $\rho\leq|\cdot|\leq2\rho$, which costs at least
+$\rho(1-C\rho^{1/2})$. Lemma~\ref{lem:arclength} compares $\rho$ with $\rho_e$.
+\end{proof}
+
+\begin{remark}
+Grieser proved that the Whitney umbrella metric is quasi-isometric to the
+Euclidean plane through a singular coordinate change \cite[\S1]{grieser}.
+Lemma~\ref{lem:arclength} sharpens this from bounded distortion to
+$G=I+O(\rho^{1/2})$. Bounded distortion would suffice for continuity of
+point values, but the exact constant $-1/(2\pi)$ requires the sharper form.
+\end{remark}
+
+\section{The Friedrichs Laplacian}\label{sec:friedrichs}
+\begin{proposition}[Zero capacity]\label{prop:capacity}
+Each interior cross-cap has zero capacity for $q$. Consequently $\cV$ is also
+the closure of $C_c^\infty(\inte\Sigma)$ in case (D), or of $C^\infty(\Sigma)$ in
+case (N).
+\end{proposition}
+\begin{proof}
+In the arclength coordinates, $q$ and the $L^2$ norm on a small disk are
+equivalent to the Euclidean $H^1$ and $L^2$ norms. Cutoffs equal to
+$\log(\varepsilon/\rho)/\log(1/\varepsilon)$ for $\varepsilon^2\leq\rho\leq\varepsilon$,
+suitably smoothed, have Euclidean Dirichlet energy $O(1/\log(1/\varepsilon))$.
+Multiplying a smooth function by one minus such a cutoff therefore
+approximates it in the form norm by functions vanishing near the point. Smooth
+source functions have finite energy, because $|\nabla u|_g^2\dd A_g=O(R^{-1})\dd x\dd y$
+by Lemma~\ref{lem:adapted}.
+\end{proof}
+
+\begin{theorem}[Compactness]\label{thm:compact}
+The embedding $\cV\hookrightarrow\cH$ is compact, so $H_F$ has compact
+resolvent. In case (D), $H_F\geq\lambda_D>0$. In case (N),
+$\ker H_F$ consists of the constants.
+\end{theorem}
+\begin{proof}
+Fix $p\in Z\cup Z_\partial$ and chart coordinates of Definition~\ref{def:setting},
+in which a neighbourhood of $p$ in $\Sigma$ is a sector. Let $\chi$ be a
+chart cutoff, equal to $1$ near $p$, and let $u\in\mathcal C$, so that $h=\chi u$
+vanishes near $p$. On each ray, integrating $(R|h|^2)'$ and applying
+Cauchy--Schwarz gives
+\[
+ \int_0^{R_0}|h|^2\dd R\leq4\int_0^{R_0}R^2|\partial_Rh|^2\dd R .
+\]
+Integrating over the angular interval and using Lemma~\ref{lem:adapted}
+($dA_g\asymp R\dd x\dd y$ and $g\leq CI$),
+\[
+ \int\frac{|h|^2}{R^2}\dd A_g\leq C\int R|\nabla h|^2\dd x\dd y\leq C'\bigl(q(u,u)+\norm u^2\bigr).
+\]
+This extends to $\cV$ by closure. Hence the $L^2$ mass in $\{R<\varepsilon\}$ is
+at most $C\varepsilon^2$ times the form norm, uniformly over the finitely many
+singular points. On the complement of these small sectors, $g$ is a smooth
+Riemannian metric on a compact Lipschitz domain, where Rellich's theorem
+applies. A diagonal argument together with the uniform small-sector bound gives
+compactness.
+
+If $q(u_n,u_n)\to0$ with $\norm{u_n}=1$, a subsequence converges in $\cH$ to a
+function with zero gradient on the connected regular locus, which is a
+constant. In case (D) its Dirichlet trace on a regular boundary arc vanishes,
+so the constant is zero, a contradiction. In case (N) the constants lie in
+$\cV$ and form the kernel.
+\end{proof}
+
+\section{Point values and the extension problem}\label{sec:extension}
+\begin{theorem}[Point traces]\label{thm:trace}
+Each $u\in\Dom H_F$ has a unique representative that is continuous at every
+$p_j$, H\"older continuous in the arclength coordinates. The map
+$\tau u=(u(p_1),\dots,u(p_k))$ satisfies
+$|\tau u|\leq C(\norm u+\norm{H_Fu})$, is onto $\C^k$, and has kernel dense
+in $\cH$.
+\end{theorem}
+\begin{proof}
+Near $p_j$, in the arclength coordinates, $u$ is a local $H^1$ weak solution
+of $-\operatorname{div}(a\nabla u)=m\,H_Fu$. This equation holds across the
+point because, by Proposition~\ref{prop:capacity}, test functions vanishing
+near the point are dense in $H^1$. The coefficients are real, bounded and
+uniformly elliptic, and $m\,H_Fu\in L^2$ with $2>\dim/2$, so the interior
+H\"older estimate \cite[Thm.~8.24]{gt}, \cite[Lect.~18]{simon} gives
+$\norm u_{C^\alpha}\leq C(\norm u_{L^2}+\norm{H_Fu}_{L^2})$ on a smaller disk.
+A cutoff $\chi_j$ equal to $1$ near $p_j$, supported away from the other
+singular points and from $\partial\Sigma$, has $\Delta_g\chi_j$ smooth and
+supported on a regular annulus, so $\chi_j\in\Dom H_F$ and $\tau\chi_j=e_j$.
+Finally the core $\mathcal C$ consists of smooth functions vanishing near $Z$
+(and near $\partial\Sigma$ in case (D)); integration by parts on the regular locus
+puts it in $\Dom H_F\cap\ker\tau$, and it is dense in $\cH$.
+\end{proof}
+
+\begin{theorem}[The point-restricted Laplacian]\label{thm:triple}
+The operator $A=H_F|_{\ker\tau}$ is closed, densely defined and symmetric, with
+deficiency indices $(k,k)$, and its Friedrichs extension is $H_F$. Fix
+$\eta<0$, let $R_z=(H_F-z)^{-1}$, and put $G_z=(\tau R_{\bar z})^*:\C^k\to\cH$.
+Then
+\[
+ \Dom A^*=\Dom H_F\dotplus G_\eta\C^k,\qquad A^*(u+G_\eta a)=H_Fu+\eta G_\eta a.
+\]
+The maps $\Gamma_0(u+G_\eta a)=a$ and $\Gamma_1(u+G_\eta a)=\tau u$ form a
+boundary triple. The self-adjoint extensions are exactly the operators
+$(U-I)\Gamma_1+i(U+I)\Gamma_0=0$, $U\in U(k)$, and their resolvents differ from
+$R_z$ by operators of rank at most $k$. All of them have compact resolvent. In
+case (D), the Krein--von Neumann extension has domain
+$\Dom A\dotplus G_0\C^k$ and kernel of dimension $k$.
+\end{theorem}
+\begin{proof}
+Graph continuity makes $\ker\tau$ graph-closed. For nonreal $z$, the bounded
+surjection $\tau R_z:\cH\to\C^k$ has kernel $\operatorname{ran}(A-z)$, so
+$\dim\ker(A^*-\bar z)=k$. The form core $\mathcal C$ lies in $\Dom A$, so the
+Friedrichs extension of $A$ is $H_F$. The decomposition and the Green identity
+\[
+ \langle A^*\varphi,\psi\rangle-\langle \varphi,A^*\psi\rangle
+ =\langle\Gamma_1\varphi,\Gamma_0\psi\rangle-\langle\Gamma_0\varphi,\Gamma_1\psi\rangle
+\]
+follow from $\langle(H_F-\eta)u,G_\eta b\rangle=\langle\tau u,b\rangle$. This is
+the framework of \cite{pos}. Resolvent differences have range in
+$\ker(A^*-z)$, which has dimension $k$, and $R_z$ is compact. In case (D) $A$
+is strictly positive, and the Krein theorem \cite[Thm.~2.1]{krein} gives
+$\Dom A_K=\Dom A\dotplus\ker A^*$, with $\ker A^*=G_0\C^k$ since $0\in\rho(H_F)$.
+\end{proof}
+
+\section{Logarithmic normalization}\label{sec:log}
+\begin{theorem}[Green vectors]\label{thm:log}
+For real $\eta<0$ there are $\beta>0$ and a real symmetric matrix $B_\eta$ such
+that, near each $p_i$,
+\[
+ G_{\eta,j}=-\frac{\delta_{ij}}{2\pi}\log d_g(\cdot,p_i)+(B_\eta)_{ij}+O\bigl(d_g(\cdot,p_i)^\beta\bigr).
+\]
+The same holds with $d_g$ replaced by the extrinsic radius
+$\rho_{e,i}=|f-f(p_i)|$, with the same matrix $B_\eta$.
+\end{theorem}
+\begin{proof}
+In arclength coordinates at $p_i$, let $h_0=-\chi\log\rho/(2\pi)$ with a cutoff
+$\chi$. Then $-\Delta h_0=\delta_0+k_0$ with $k_0$ bounded and supported in the
+cutoff annulus. Writing $E=a-I$,
+\[
+ \bigl(-\operatorname{div}(a\nabla)-\eta m\bigr)h_0=\delta_0+\mathcal F,
+\]
+where $\mathcal F$ consists of a divergence term with density $E\nabla h_0$ and
+a scalar term $k_0-\eta mh_0$. Since $|E\nabla h_0|\leq C\rho^{-1/2}$, the
+divergence density lies in $L^3$, and the scalar term lies in $L^2$. Thus
+$\mathcal F$ is a bounded functional on $\cV$. Lax--Milgram for the coercive
+form $q-\eta\langle\cdot,\cdot\rangle$ gives $w\in\cV$ with
+$q_\eta(w,\cdot)=\mathcal F$, and the H\"older estimate with divergence data in
+$L^q$, $q>2$ \cite[Lect.~18]{simon}, makes $w$ H\"older continuous. So
+$g_i=h_0-w$ solves the point-source equation, with a logarithm plus a H\"older
+regular part.
+
+To identify $g_i$ with $G_{\eta,i}$, take $u\in\Dom H_F$. The H\"older estimate
+gives $|u-u(p_i)|\leq C\rho^\alpha$, and testing the equation with a cutoff
+times $u-u(p_i)$ gives $\int_{B_r}|\nabla u|^2\leq Cr^{2\alpha}$. The improper
+pairing $\int a\nabla h_0\cdot\nabla u$ therefore converges. Excising
+$B_\varepsilon$ with cutoffs of gradient $O(1/\varepsilon)$ costs
+$O(|\log\varepsilon|\varepsilon^\alpha)$, and the flux of $-\log\rho/(2\pi)$
+contributes $u(p_i)$ in the limit. Hence
+$\langle g_i,(H_F-\eta)u\rangle=u(p_i)$ for all $u$, which is the defining
+property of $G_{\eta,i}=(\tau_iR_\eta)^*1$. The coefficients are real since
+$q$ and $\eta$ are. Symmetry follows from self-adjointness of $R_\eta$ applied
+to normalized indicators shrinking to the poles, using uniform convergence near
+the other poles. Corollary~\ref{cor:distance} and Lemma~\ref{lem:arclength}
+replace $\log\rho$ by $\log d_g$ or $\log\rho_e$, at the cost of reducing
+$\beta$ to at most $1/2$.
+\end{proof}
+
+\begin{theorem}[Geometric boundary coordinates]\label{thm:boundary}
+Every $\varphi\in\Dom A^*$ has unique coefficients $\ell,b\in\C^k$ with
+\[
+ \varphi=\ell_i\log d_g(\cdot,p_i)+b_i+O(d_g^\beta)\quad\text{at }p_i,
+\]
+namely $\ell=-a/(2\pi)$ and $b=\tau u+B_\eta a$ for $\varphi=u+G_\eta a$. The map
+$\varphi\mapsto(\ell,b)$ is graph-bounded, onto $\C^k\oplus\C^k$, and has kernel
+$\Dom A$. If $\psi$ has coefficients $(\ell',b')$, then
+\[
+ \langle A^*\varphi,\psi\rangle-\langle \varphi,A^*\psi\rangle=2\pi\bigl(\langle\ell,b'\rangle-\langle b,\ell'\rangle\bigr).
+\]
+The Friedrichs domain is $\{\ell=0\}$, and the self-adjoint extensions are the
+maximal isotropic planes of this form, namely $(U-I)b+i(U+I)a=0$ with
+$a=-2\pi\ell$ and $U\in U(k)$. For a Hermitian matrix $C$, the extension
+$b=Ca$ has resolvent $R_z+G_z(C-B_\eta-M_z)^{-1}G_{\bar z}^*$, where
+$M_z=(z-\eta)\tau R_zG_\eta$.
+\end{theorem}
+\begin{proof}
+Substitute Theorem~\ref{thm:log} into the decomposition of
+Theorem~\ref{thm:triple}. Uniqueness follows by dividing by the logarithm.
+The pairing changes from $\langle\tau u,a'\rangle-\langle a,\tau u'\rangle$ by
+the symmetric shift $B_\eta$, which cancels. The resolvent formula follows from
+$G_z-G_\eta=(z-\eta)R_zG_\eta\in\Dom H_F$.
+\end{proof}
+
+\section{Uniqueness, scale and sheets}\label{sec:uniqueness}
+\begin{corollary}[Markov uniqueness]\label{cor:markov}
+$H_F$ is the only self-adjoint extension of $A$ whose semigroup is
+sub-Markovian.
+\end{corollary}
+\begin{proof}
+$q$ is a Dirichlet form, so $H_F$ is sub-Markovian. If $H$ is another
+sub-Markovian extension, then $\norm{(H+\lambda)^{-1}h}_\infty\leq\lambda^{-1}\norm h_\infty$
+for bounded $h\in\cH$. By Theorem~\ref{thm:boundary}, a nonzero logarithmic
+coefficient would make $(H+\lambda)^{-1}h$ unbounded near its pole, since the
+density is bounded below in arclength coordinates. All coefficients therefore
+vanish, the two resolvents agree on a dense set, and $H=H_F$.
+\end{proof}
+The same argument shows that, in the plane, the free Laplacian is the only
+Markovian point interaction with respect to Lebesgue measure. Dirichlet forms
+associated with point interactions are studied in \cite{abr}.
+
+\begin{corollary}[Reference length]\label{cor:scale}
+Replacing $\log d_g$ by $\log(d_g/\lambda_i)$ changes $b$ to
+$b+\operatorname{diag}(\log\lambda_i)\ell$. The only self-adjoint boundary plane
+invariant under every common change $\lambda_i\mapsto e^t\lambda_i$ is the
+Friedrichs plane $\ell=0$.
+\end{corollary}
+\begin{proof}
+If $(\ell,b)$ lies in an invariant plane, so does $(0,\ell)$. Pairing the two
+gives $2\pi\norm\ell^2=0$.
+\end{proof}
+
+\begin{corollary}[Sheet-even coefficients]\label{cor:sheets}
+If $s_\varepsilon\neq t_\varepsilon$ tend to the same $p_i$ with
+$f(s_\varepsilon)=f(t_\varepsilon)$, then for every $\varphi\in\Dom A^*$,
+$\varphi(s_\varepsilon)-\varphi(t_\varepsilon)=O(\rho_e^\beta)\to0$. The coefficients
+are the same on both sheets.
+\end{corollary}
+\begin{proof}
+The two points have the same extrinsic radius, so the expansions in
+$\rho_{e,i}$ agree up to the remainders.
+\end{proof}
+
+\section{Why the boundary must be fixed}\label{sec:boundary}
+Let $H_0$ be the graph closure of $-\Delta_g$ on $C_c^\infty(\inte\Sigma\setminus Z)$
+in case (D).
+\begin{proposition}\label{prop:outer}
+The deficiency spaces of $H_0$ are infinite-dimensional, and $H_0$ has at least
+two distinct sub-Markovian self-adjoint extensions.
+\end{proposition}
+\begin{proof}
+Take a regular boundary arc. For smooth boundary data $\phi$ supported in it,
+let $w_\phi$ be a smooth collar extension, supported away from $Z\cup Z_\partial$, and
+put $v_\phi=w_\phi-(H_F-z)^{-1}(-\Delta_g-z)w_\phi$ for nonreal $z$. Then
+$(-\Delta_g-z)v_\phi=0$ in the interior, so $v_\phi\in\ker(H_0^*-z)$, and the trace
+of $v_\phi$ on the arc is $\phi$. Independent $\phi$ give independent $v_\phi$.
+For the second claim, $H_F$ is one sub-Markovian extension. Closing $q$ on smooth
+functions with free boundary values gives another, the Neumann Laplacian,
+whose kernel contains the constants.
+\end{proof}
+The finite classification of Section~\ref{sec:extension} therefore requires
+the outer boundary condition to be part of the definition of the operator.
+
+\section{Examples}\label{sec:examples}
+\subsection{Steiner's Roman surface}
+Let $\Sigma=\mathbb{RP}^2$ and let $f[x:y:z]=(yz,zx,xy)$ on unit
+representatives. This is case (N).
+\begin{proposition}\label{prop:roman}
+$f$ is an immersion except at the six points
+$[1:\pm1:0]$, $[1:0:\pm1]$ and $[0:1:\pm1]$, each of which is a Whitney
+cross-cap. In an orthonormal adapted frame, the Whitney determinant
+\eqref{eq:whitney} equals $\pm2$.
+\end{proposition}
+\begin{proof}
+On $S^2$ the differential is the restriction of
+$M=\bigl(\begin{smallmatrix}0&z&y\\z&0&x\\y&x&0\end{smallmatrix}\bigr)$, and $\det M=2xyz$.
+The restriction to the tangent plane has rank below two only if $M$ has a
+kernel vector tangent to the sphere. This forces one coordinate to vanish and
+the other two to be equal up to sign, which gives twelve points on $S^2$ and
+six on $\mathbb{RP}^2$. With $\eta$ the tangent kernel vector,
+$\xi=p\times\eta$ and the chart $(s,t)\mapsto(p+s\xi+t\eta)/|p+s\xi+t\eta|$,
+an exact computation (replayed in the verifier) gives $f_t=0$, $|f_s|=1$ and
+$\det(f_s,f_{st},f_{tt})=\pm2$.
+\end{proof}
+Theorems~\ref{thm:trace}--\ref{thm:boundary} therefore give a $U(6)$-family of
+pseudo-Laplacians on the Roman surface, each with six logarithmic channels.
+
+\begin{theorem}[Symmetry of the Green matrix]\label{thm:romanB}
+Index the cross-caps so that $P_\perp$ pairs each with the unique one whose
+line is orthogonal to it, and let $P_\circ=J-I-P_\perp$ be the adjacency of the
+remaining pairs, whose lines meet at $60^\circ$. For every $\eta<0$ there are
+real numbers $r,\gamma_\perp,\gamma_\circ$ with
+\[
+ B_\eta=r\,I+\gamma_\perp P_\perp+\gamma_\circ P_\circ .
+\]
+Hence $B_\eta$ has at most three eigenvalues: $r+\gamma_\perp+4\gamma_\circ$ on
+the constants, $r+\gamma_\perp-2\gamma_\circ$ with multiplicity two, and
+$r-\gamma_\perp$ with multiplicity three.
+\end{theorem}
+\begin{proof}
+Each signed permutation $\sigma$ of coordinates descends to an isometry of
+$(\mathbb{RP}^2,g)$, because $f\circ\sigma=L_\sigma\circ f$ for a signed
+permutation $L_\sigma$ of $\R^3$, which is a Euclidean isometry. The pullback by
+$\sigma$ is unitary, commutes with $H_F$ and $R_\eta$, permutes the cross-caps,
+and preserves extrinsic radii. Hence it permutes the Green vectors, and
+$(B_\eta)_{\sigma i\,\sigma j}=(B_\eta)_{ij}$. This group acts transitively on
+the six cross-caps, and its orbits on ordered pairs of distinct cross-caps are
+exactly the six orthogonal pairs and the twenty-four $60^\circ$ pairs
+(verified). Symmetry of $B_\eta$ completes the form. $P_\perp$ and $P_\circ$
+commute; $P_\circ$ is the adjacency matrix of the octahedron. Their joint
+eigenvalues are $(1,4)$ on the constants, $(1,-2)$ on matching-even vectors of
+sum zero, and $(-1,0)$ on matching-odd vectors.
+\end{proof}
+
+\subsection{A ruled surface with boundary cross-caps}
+The ruled map
+\[
+ S(t,u)=\bigl(\cos t+2u(1-\cos t),\,(1-u)\sin t,\,u\sqrt{\cos t(2-\cos t)}\bigr)
+\]
+on $[-\pi/2,\pi/2]\times[0,1]$, completed at $t=\pm\pi/2$ by the chart $r=Q$,
+arose in a two-component signal model \cite{paper1,ruled}. It has five rank-one
+points, all Whitney cross-caps \cite{ruled}. Two are interior:
+$P_\pm=(\pm t_0,u_0)$ with $\cos t_0=(3-\sqrt5)/2$ and $u_0=(1-\cos t_0)/2$.
+Three lie on the boundary: a half-germ at $(0,1)$ and two quarter-germs at
+the lower corners. In the completed charts the boundary is formed by
+coordinate lines, so Definition~\ref{def:setting} holds in case (D) with
+$k=2$. All results apply. Moreover $S(-t,u)=JS(t,u)$ with
+$J=\mathrm{diag}(1,-1,1)$, and the argument of Theorem~\ref{thm:romanB} shows
+$B_\eta=\bigl(\begin{smallmatrix}r&\gamma\\\gamma&r\end{smallmatrix}\bigr)$. The Krein
+extension has a two-dimensional kernel. An earlier preprint on this surface
+\cite{record} defined the two-point problem through the compact-core closure
+$H_0$ and claimed indices $(2,2)$; Proposition~\ref{prop:outer} shows why the
+outer boundary must be fixed first.
+
+\section{Open problems}\label{sec:open}
+\begin{itemize}
+\item \emph{Explicit regular parts.} Compute or estimate $B_\eta$, for instance
+the three Roman-surface parameters, and relate them to global geometry.
+\item \emph{Spectral asymptotics.} The finite-rank structure transfers
+eigenvalue counting from $H_F$ to every extension. A Weyl law for $H_F$ at
+degenerate metrics, and heat-trace contributions of cross-caps, remain to be
+determined.
+\item \emph{Dirac operators.} A spinor or twisted Dirac analogue at cross-caps
+needs closed domains, cut traces and transmission conditions. The
+square-root monodromy of the observation field of the ruled surface suggests
+a natural twist \cite{paper1}.
+\item \emph{Other singularities.} Non-generic germs such as cuspidal edges or
+$S_k^\pm$ singularities may carry different channel structures.
+\end{itemize}
+
+\appendix
+\section{Evidence}\label{app:evidence}
+The proofs above are written in full. External inputs:
+\begin{itemize}
+\item the cross-cap recognition criterion \cite{hasegawa} and Whitney's
+genericity theorem \cite{whitney44,gg};
+\item the scalar H\"older estimates \cite{gt,simon};
+\item the abstract extension and Krein theorems \cite{pos,krein}.
+\end{itemize}
+An exact replay checks:
+\begin{itemize}
+\item the adapted metric matrix and determinant identities;
+\item the Roman-surface singular set and Whitney determinants;
+\item the symmetry orbits on pairs of cross-caps;
+\item the eigenvalue pattern of $rI+\gamma_\perp P_\perp+\gamma_\circ P_\circ$;
+\item the symmetry identity of the ruled surface.
+\end{itemize}
+These checks confirm the algebra only, not the analysis. No Lean formalization
+of the analytic statements is claimed.
+
+{\small
+\begin{thebibliography}{99}
+\bibitem{cdv} Y. Colin de Verdi\`ere, Pseudo-laplaciens I, \emph{Ann. Inst.
+Fourier} 32 (1982), 275--286.
+\bibitem{hk} L. Hillairet and A. Kokotov, Krein formula and $S$-matrix for
+Euclidean surfaces with conical singularities, \emph{J. Geom. Anal.} 23 (2013),
+1498--1529;
+\href{https://arxiv.org/abs/1011.5034}{arXiv:1011.5034}.
+\bibitem{grieser} D. Grieser, Quasiisometry of singular metrics, \emph{Houston
+J. Math.} 28 (2002), 741--752.
+\bibitem{whitney44} H. Whitney, The singularities of a smooth $n$-manifold in
+$(2n-1)$-space, \emph{Ann. of Math.} 45 (1944), 247--293.
+\bibitem{gg} M. Golubitsky and V. Guillemin, \emph{Stable Mappings and Their
+Singularities}, Springer, 1973.
+\bibitem{hasegawa} M. Hasegawa et al., Intrinsic properties of surfaces with
+singularities, \href{https://arxiv.org/abs/1409.0281}{arXiv:1409.0281}, \S4.
+\bibitem{pos} A. Posilicano, Boundary triples and Weyl functions for singular
+perturbations of self-adjoint operators, \emph{Methods Funct. Anal. Topology}
+10 (2004), 57--63; \href{https://arxiv.org/abs/math/0309077}{arXiv:math/0309077}.
+\bibitem{gt} D. Gilbarg and N. S. Trudinger, \emph{Elliptic Partial
+Differential Equations of Second Order}, Springer, Thm.~8.24.
+\bibitem{simon} L. Simon, Lectures on PDE, Lecture 18, Theorems 2--3,
+\url{https://math.stanford.edu/~lms/lecs-on-pde.pdf}.
+\bibitem{krein} M. S. Ashbaugh, F. Gesztesy, M. Mitrea, R. Shterenberg and
+G. Teschl, The Krein--von Neumann extension and its connection to an abstract
+buckling problem, \href{https://arxiv.org/abs/0907.1439}{arXiv:0907.1439}.
+\bibitem{abr} S. Albeverio, J. Brasche and M. R\"ockner, Dirichlet forms and
+generalized Schr\"odinger operators, in \emph{Schr\"odinger Operators}, Lecture
+Notes in Physics 345, Springer, 1989.
+\bibitem{ruled} A. Hayami, The Orthogonal-Circle Ruled Surface, 2026,
+\href{https://doi.org/10.5281/zenodo.23073642}{doi:10.5281/zenodo.23073642}.
+\bibitem{paper1} A. Hayami, Realization Limits of the Bicomplex Signal Surface:
+Analytic Rigidity, Observation Monodromy and Corrections, in preparation.
+\bibitem{record} A. Hayami (J.-Y. Huang), Geometric Realization of Bicomplex
+Signal Manifolds, preprint, ResearchGate, 2026,
+\href{https://doi.org/10.13140/RG.2.2.17048.15361}{doi:10.13140/RG.2.2.17048.15361}.
+\end{thebibliography}}
+\end{document}

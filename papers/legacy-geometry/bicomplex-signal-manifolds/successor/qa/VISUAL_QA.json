@@ -1,12 +1,11 @@
 {
   "date": "2026-10-02",
-  "document": "Successor paper 1, editorial revision r1",
   "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Realization_Limits_Bicomplex_Signal_Surface.tex",
-  "source_sha256": "d2c14f301037a2f898711dfb8406d6ff98f60955dabe38abfb049027faa3d9b1",
+  "source_sha256": "b13f84054f4cfebe99e4bf34b4117d052e2a94d15c8f7a1531d1749fa1e19e4b",
   "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Realization_Limits_Bicomplex_Signal_Surface.pdf",
-  "pdf_sha256": "5cc61bdf2ddbdf13652971b80e2ca7beaa1f86b3739dd6b0364dae35af539b8f",
+  "pdf_sha256": "9eb46a83254cff0bb2c3d37a6304dedc7b6cd17151e1f9655b70b41ced22f5b8",
   "pages": 17,
-  "pdftotext_sha256": "8e7a16b96a20aa283c4f6660ef916315a507d93d77c99e07802a200925d1f55b",
+  "pdftotext_sha256": "fcefcc45bf527b556874b268d5c56540efeddd3710ee20078aee8ccfa830bbd2",
   "render": {
     "tool": "pdftoppm -r 80 -png",
     "page_png_sha256": {
@@ -26,13 +25,14 @@
       "14": "08fe943ef3cfbae11c64382b9ec4301bcde638c85fd2e22a4dfe2153ef8339d7",
       "15": "ac94bf08faf442d7bac3ab03cc7a9bb9c08f8e83fba94d6cd299fac53cb5cb30",
       "16": "590c305d73de4e5c2836de443ec159e2cafa81b4689d2149a806d8459659cc92",
-      "17": "0f62597e2cd358910aaeaf15d7d19f47cd435fefc4a820f3ab59b0ae9b3e6c90"
+      "17": "7f28cc9249c70accd1d682851a5167932134f9c7c7b34e6ada81c296ac9269dc"
     }
   },
+  "diagnostics": "PASS: byte-safe scan, no Overfull/Underfull/LaTeX Warning/Warning:/undefined",
+  "document": "Successor paper 1, editorial revision r1 (companion citation updated)",
   "builder": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_paper1_pdf.py",
   "verifier": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper1.py",
-  "diagnostics": "PASS: byte-safe scan, no Overfull/Underfull/LaTeX Warning/Warning:/undefined",
-  "visual_inspection": "PASS: all 17 pages of the r1 build inspected; after the final table/citation fixes pages 6 and 8 changed and were re-inspected, the other 15 renders are byte-identical",
+  "visual_inspection": "PASS: all 17 r1 pages inspected earlier; the companion-title update changed only page 17, which was re-inspected; pages 1-16 byte-identical",
   "category_counts": {
     "H": 43,
     "C": 13,
@@ -43,10 +43,5 @@
     "D": 1
   },
   "editorial_record": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R1.md",
-  "repaired_attempts": [
-    "First r1 build failed: \\Hom macro had been dropped; restored.",
-    "Three overfull lines (decoder table, Theorem 4.1 statement, inline pedal formula) fixed by layout.",
-    "Decoder-table caption overstated that cutoffs vanish near every decoder singularity (the arg branch cut is handled by the open-set argument); caption corrected."
-  ],
-  "status": "EDITORIAL R1 COMPLETE / AWAITING AUTHOR READING / NOT APPROVED FOR PUBLICATION"
+  "status": "EDITORIAL R1 / AWAITING AUTHOR READING / NOT APPROVED FOR PUBLICATION"
 }

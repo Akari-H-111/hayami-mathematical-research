@@ -1,5 +1,14 @@
 # Primary-reference and hypothesis audit
 
+## Paper 2 first draft: additional citations (2026-10-02)
+
+| Source | Retrieval boundary | Use |
+| --- | --- | --- |
+| Whitney, *The singularities of a smooth n-manifold in (2n−1)-space*, Ann. of Math. 45 (1944) 247–293; Golubitsky–Guillemin, *Stable Mappings and Their Singularities* (1973) | **Not retrieved**; standard classical statements | Genericity remark only: the cross-cap is the only stable singularity of maps from surfaces to R³. No proof depends on it |
+| Hillairet–Kokotov, J. Geom. Anal. 23 (2013) 1498–1529 | Journal data confirmed at search level; arXiv text read as recorded above | Conical comparison |
+| Posilicano, Methods Funct. Anal. Topology 10 (2004) 57–63 | Journal data confirmed at search level; arXiv full text checked in the 0.03 round | Boundary-triple framework |
+| Albeverio–Brasche–Röckner 1989 | **Not retrieved**; cited only as related Dirichlet-form work, with no specific claim attributed to it | Context remark after the Markov corollary |
+
 ## Paper 2 literature comparison, round 1 (2026-10-02)
 
 | Primary source | Retrieval and reading | Consequence |

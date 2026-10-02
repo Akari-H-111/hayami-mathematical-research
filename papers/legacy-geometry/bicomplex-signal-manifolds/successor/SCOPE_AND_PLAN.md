@@ -144,3 +144,28 @@ v11 已依作者核准取回並登錄，見 `../claims/V11_COMPARISON.md`。同�
 - 建議把論文二擴大成「具 Whitney cross-cap 的緊緻浸入曲面」的一般定理，以 S 為主例。這需要先證明一般情形的全域緊緻性。
 
 仍待取得：Albeverio 等關於 2D point interaction 尺度與 Markov 性的經典文獻。
+
+## 10. 論文二：一般定理第一版完成（2026-10-02）
+
+作者同意把論文二擴大，並授權自由使用本機檔案、網路檢索與原創研究。新稿為 `Pseudo_Laplacians_Whitney_Cross_Caps.tex`／`.pdf`，9 頁，題名 *Pseudo-Laplacians at Whitney Cross-Caps: Point Interactions on Surfaces Mapped into Three-Space*。
+
+- **一般定理。** 對象是緊緻曲面映到 ℝ³、除有限個 Whitney cross-cap 外為 immersion 的映射，分 Dirichlet（D）與 closed（N）兩種情形。結論：
+  - compactness；
+  - point traces；
+  - (k,k)、U(k) 延拓族與 Krein resolvent formula；
+  - Green 向量領頭項為通用的 −(1/2π)log d_g（亦可用外在半徑）；
+  - 幾何邊界座標與 2π pairing；
+  - Markov 唯一性、reference-length 唯一性、兩 sheet 係數相同；
+  - 必須固定外邊界（反例）。
+
+  由 Whitney 的定理，這涵蓋 generic map。
+- **新證明的部分。**
+  - 一般情形下的緊緻性：在 sector 上用 Hardy 估計，加上 Rellich；
+  - Intrinsic distance 推論：d_g=ρ(1+O(ρ^{1/2}))，使正規化與 Colin de Verdière 的形式完全一致；
+  - Steiner Roman surface：6 個 cross-cap 經精確驗證，Whitney determinant 為 ±2；
+  - 由 symmetry 推得 Green 矩陣 B_η=rI+γ⊥P⊥+γ∘P∘，最多 3 個特徵值，重數 1、2、3。
+- **ruled surface S 作為例子**，含邊界 sector germs；反射對稱給出 2×2 的 B_η。
+- **驗證。** `verify_successor_paper2.py`、export 與 9 頁逐頁 QA 皆 PASS，記錄在 `qa_paper2/`。
+- **論文一同步。** 對應的 companion 書目改為新題名；只有第 17 頁改變，已重新檢視。
+
+**狀態：** 第一版，尚未做編輯審閱。下一步：論文二編輯審閱 r1；補 Albeverio 等經典文獻；考慮 Weyl law 等開放問題。

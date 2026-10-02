@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-02",
+  "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Pseudo_Laplacians_Whitney_Cross_Caps.tex",
+  "source_sha256": "4537fa528da98af1fa4cf04eccd05b063e13b0b520645b409f01507e9b51ecb8",
+  "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Pseudo_Laplacians_Whitney_Cross_Caps.pdf",
+  "pdf_sha256": "da8ed8481636bdca2221a3e02fac13681a35219ed1cd73ac17903677603f380b",
+  "pages": 9,
+  "pdftotext_sha256": "6237198f48d2d858698329666834bb60612f30bf61b231bd30ab46cd4bcd9e28",
+  "render": {
+    "tool": "pdftoppm -r 80 -png",
+    "page_png_sha256": {
+      "1": "f1682520ab480a692ddd3e335b1535befde8f13f12898f92d6c1b182a56d2120",
+      "2": "c3e54a188b8fd23ec7767bb649369cf61dca889198ecaaf0f4d2aee387700fbd",
+      "3": "b70b11554efda487149853e80bb3f7861d805c9aae1b8d9e42c22477d2271b26",
+      "4": "4c9f6638188f4ac07c468d9496ef4641f77e421875637644b161a1f9954425e2",
+      "5": "63492a520563ea5e190a30aa9f7e402066cc01ea3cd8167e407bf6ca01c72a88",
+      "6": "5753b5ecf15a51955df1267ce9f95fe09042d73763efea2ca07765cc66c5dd56",
+      "7": "9e4b5d8115ffb39a8c3fe8d66179264e53f92e3ca7811b8da5cfa75908c0403e",
+      "8": "74c2d9913c56928d48acb48fcc82de5dc6bc14f3cee31a279903311eebef1846",
+      "9": "6829188791b7882d5519544a7d488f7bae25dafe95d65518bd4c53e2c1c84150"
+    }
+  },
+  "diagnostics": "PASS: byte-safe scan, no Overfull/Underfull/LaTeX Warning/Warning:/undefined",
+  "document": "Successor paper 2, first full draft (general theorem; Roman surface and ruled surface examples)",
+  "builder": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_paper2_pdf.py",
+  "verifier": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper2.py",
+  "visual_inspection": "PASS: all 9 pages of the first build inspected; after citation/wording fixes pages 1, 6, 9 changed and were re-inspected; other renders byte-identical",
+  "repaired_attempts": [
+    "First build failed: \\inte macro missing; added.",
+    "Notation clash: elements of Dom A* and symmetry coefficients renamed (phi/psi, gamma) to avoid the map f and metric g.",
+    "Albeverio-Brasche-Rockner was cited for a specific planar claim not read in the original; claim now rests on the paper's own argument and the citation is general.",
+    "Hillairet-Kokotov and Posilicano journal data confirmed at search level and completed."
+  ],
+  "status": "FIRST FULL DRAFT / NOT EDITORIALLY REVIEWED / NOT APPROVED FOR PUBLICATION"
+}
