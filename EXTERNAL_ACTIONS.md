@@ -84,9 +84,10 @@ ResearchGate 新條目 `415154912`、`415164048` 與舊頁 `408878000` 同樣只
 
 狀態（2026-10-03）：本機 `main` 在 `5803d6a`，比共同祖先 `fb9e1c1` 多 1 個其他窗口的 commit；`origin/main` 在收尾 commit 之前多 11 個 commit（Bicomplex 後繼論文與發布紀錄，皆由隔離分支 `publish/bicomplex-successor` 推送，不含其他系列）。commit 層級沒有衝突：`git merge-tree --write-tree main origin/main` 於 2026-10-03 只回傳一個 tree。阻礙在工作區：其他窗口約 47 個未提交項目（`git status --short | grep -vi bicomplex | wc -l`），其中不少路徑在 origin/main 也存在（共用文件被修改、Bicomplex 檔案未追蹤），直接 `git merge` 會被拒。建議流程：
 
+0. **先做的本機保護（2026-10-03 已做，可回復）：** 私有 v7 PDF 的路徑已寫入本機的 `.git/info/exclude`（只在這份 clone，不進任何 commit；重新 clone 後要重加）。**絕不使用 `git add -A` 或 `git add .`：** 目前未追蹤且未被忽略的檔案有 2,850 個、約 7.4 GB（`the-Self-Adjoint-Arithmetic-Mellin-Transform/` 的 parquet 資料約 7.2 GB，其中 23 個檔案超過 50 MB，GitHub 單檔上限是 100 MB；已封存的 Ruled／Bicomplex 候選約 158 MB）。一律用明確路徑 stage；大型資料目錄要忽略或另存，由 SAMT 窗口決定。
 1. 各窗口先把自己的工作做成 scoped commit（或 `git stash push -u`）。
 2. `git fetch origin`。
-3. 工作區中仍是未追蹤、且與 origin/main 逐位元組相同的檔案，可刪除後由合併取回；用下列指令列出（唯讀）：
+3. 工作區中仍是未追蹤、且與 origin/main 逐位元組相同的檔案（2026-10-03 為 176 個），可用明確路徑 `git add` 後提交（內容相同的 add/add 合併時不衝突），或刪除後由合併取回；用下列指令列出（唯讀）：
 
    ```bash
    git ls-tree -r --name-only origin/main | while read -r f; do
@@ -95,5 +96,5 @@ ResearchGate 新條目 `415154912`、`415164048` 與舊頁 `408878000` 同樣只
    done
    ```
 
-4. `git merge origin/main`。共用文件（`RESEARCH_BOARD.md`、`README.md`、`ESTABLISHED_WORKS.md`、`EXTERNAL_ACTIONS.md`、`LEAN_ROADMAP.md`、`RESEARCH_DIRECTIONS.md`）若衝突，以本機版本為準（它同時含 Bicomplex 現況與其他系列的現況），只補入 origin 版本中本機版本尚缺的 Bicomplex 事實。
+4. `git merge -X ours origin/main`（先用 `git merge-tree --write-tree -X ours main origin/main` 預演）。2026-10-03 的模擬——把工作區目前的版本原樣提交，再合併 origin/main——只有 6 個共用文件衝突：`EXTERNAL_ACTIONS.md`、`LEAN_ROADMAP.md`、`README.md`、`RESEARCH_BOARD.md`、`RESEARCH_DIRECTIONS.md`、`SOURCE_REGISTRY.md`；`-X ours` 全部以本機文字解決。被捨棄的只有 origin 上其他系列的舊狀態文字與重複的 Bicomplex 措辭，本機版本已含全部 Bicomplex 事實。合併時 origin 若又有新的改動，要重新預演，不要沿用這個結論。
 5. 在作者決定其他系列的公開範圍之前不要 push `main`。公開 push 一律用像 `publish/bicomplex-successor` 這樣由 `git commit-tree` 建立、只含該系列檔案的隔離分支。私有 v7 PDF 只存在於本機未追蹤的 `papers/legacy-geometry/source-registry/historical_drafts/` 與本機分支 `research/bicomplex-continuation-0.04`，兩者都不得 push。
