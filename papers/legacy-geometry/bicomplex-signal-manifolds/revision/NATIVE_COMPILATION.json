@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-02",
+  "scope": "Four standalone working sources; previous three source/diagnostic bindings unchanged",
+  "documents": [
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Signal_Manifolds_v13_working.tex",
+      "source_sha256": "d054c5ee1ad7800b41a4670b347efddbb7a019c286aa9c5ddbbfafa48825bc01",
+      "kind": "success",
+      "diagnostics": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/native-manuscript.json",
+      "diagnostics_sha256": "033ac1bbfb6a37423d2922e6e55f73c004f754074a93707d8033455e1698df32",
+      "editor_open": "queued"
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Companion_v0_01_working.tex",
+      "source_sha256": "8ea40d542f93fddd4476c05dd852a5eec1061cda498049f912abf7b048755a3f",
+      "kind": "success",
+      "diagnostics": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/native-companion.json",
+      "diagnostics_sha256": "56cd3720369ae4d6ba322e6bd9afb38ff6c9e1c38c6442ca120c1a7900ba03b9",
+      "editor_open": "queued"
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex",
+      "source_sha256": "0ee001e2c29eaf0f5bf680bbcec3116ff5bbc484d4d101a2e1d2d02c2ebaf626",
+      "kind": "success",
+      "diagnostics": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/native-continuation.json",
+      "diagnostics_sha256": "897b80000e43eed10ee40ab792af3b97b44c26a133e257447d8b524b44a52af8",
+      "editor_open": "queued"
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Whitney_Green_Domains_v0_03_working.tex",
+      "source_sha256": "ceb8d2e56bf1be7f532c4efaaca93c0b20ba181323d3fd00b9084725c26f445a",
+      "kind": "success",
+      "diagnostics": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/native-green-v0.03.json",
+      "diagnostics_sha256": "a52ed48134a732299afcfa226b3bb9ca760e9343cfb76069d2ca2137872c3452",
+      "editor_open": "queued"
+    }
+  ]
+}

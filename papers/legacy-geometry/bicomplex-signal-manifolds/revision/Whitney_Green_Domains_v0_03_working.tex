@@ -1,0 +1,455 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,xcolor}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=teal,citecolor=teal,urlcolor=teal]{hyperref}
+\hypersetup{pdftitle={Logarithmic Green Domains at Actual Whitney Cross-Caps},pdfauthor={Akari Hayami (Jian-Yu Huang)},pdfsubject={Local continuation 0.03}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\Dom}{\operatorname{Dom}}\newcommand{\dd}{\,d}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\title{Logarithmic Green Domains\\at Actual Whitney Cross-Caps}
+\author{Akari Hayami (Jian-Yu Huang)}
+\date{2 October 2026\\\small Research continuation 0.03; local working draft}
+\begin{document}\maketitle
+\begin{abstract}
+An arclength coordinate along the degenerate direction of a smooth Euclidean
+Whitney germ makes its scalar divergence tensor equal to the identity up to
+$O(\rho^{1/2})$. Subtracting the planar logarithmic fundamental solution
+therefore leaves a divergence source in $L^3$ and a scalar source in $L^2$.
+The scalar H\"older theorem gives a continuous regular part. For the
+fixed-Dirichlet two-point restriction on the signal normalization this identifies
+the actual resolvent Green vectors, proves their universal logarithmic
+coefficient, and gives geometric boundary coordinates on the whole adjoint
+domain. These coordinates establish Markov uniqueness and invariance under a
+common change of logarithmic reference length, as well as sheet-even limiting
+coefficients. The abstract extension framework is classical. The result repairs
+the scalar domain statements for a specified operator; singular Dirac and Pin
+transmission and publication priority remain separate questions.
+\end{abstract}
+
+\section{The operator and the comparison being made}\label{sec:scope}
+The source is the completed physical rectangle of the map
+\[
+ S(t,u)=\bigl(c+2u(1-c),(1-u)s,u\sqrt{c(2-c)}\bigr),\qquad
+ c=\cos t,\quad s=\sin t,
+\]
+with $-\pi/2\leq t\leq\pi/2$ and $0\leq u\leq1$. Endpoints use the
+completed smooth charts of the v13 manuscript \cite{v13}. Let $P_+,P_-$ be its
+two interior Whitney rank-loss points, let $g=S^*g_{\R^3}$, and let
+$\mathcal H=L^2(\dd A_g)$. Our scalar product is conjugate-linear in its
+first argument. The closed gradient form with fixed outer Dirichlet condition
+defines the positive self-adjoint operator $H_F$. The previous continuation
+\cite{v02} establishes graph-bounded, surjective values
+\[
+ \tau:\Dom H_F\longrightarrow\C^2,\qquad
+ \tau u=(u(P_+),u(P_-)),
+ \qquad \overline{\ker\tau}^{\mathcal H}=\mathcal H.
+\]
+Write $A=H_F|_{\ker\tau}$. It is closed, dense and symmetric, with
+deficiency indices $(2,2)$. For $\eta<0$ put
+\[
+ R_\eta=(H_F-\eta)^{-1},\quad
+ G_\eta=(\tau R_\eta)^*,\quad G_{\eta,j}=G_\eta e_j.
+\]
+The written Hilbert-space argument of \cite{v02}, also an instance of
+Posilicano's established framework \cite{pos}, gives
+\begin{equation}\label{eq:decomposition}
+ \Dom A^*=\Dom H_F\dotplus G_\eta\C^2,\qquad
+ A^*(u+G_\eta a)=H_Fu+\eta G_\eta a.
+\end{equation}
+The purpose here is to turn these resolvent coordinates into actual asymptotic
+coefficients. The local argument concerns full neighborhoods of the two
+interior cross-caps. No extra boundary coefficients are introduced at the
+other three rank-loss labels: their Friedrichs form and the outer boundary
+condition are already fixed.
+
+This choice matters. The graph closure $H_0$ of the compactly supported
+interior Laplacian leaves infinitely many outer-boundary modes free. Its
+deficiency and harmonic kernel are infinite-dimensional \cite{v13}.
+Statements below about $A$ cannot be read as a finite classification of $H_0$.
+
+\section{An asymptotically Euclidean coordinate}\label{sec:coordinate}
+At an actual smooth Euclidean Whitney germ, a target translation and rotation,
+followed by a smooth source coordinate change, put the map in the form
+\begin{equation}\label{eq:adapted}
+ \begin{gathered}
+ F(x,y)=(x,h(x,y)),\qquad h(0)=0,\quad Dh(0)=0,\\
+ h_y(x,y)=xv+2yw+O(R^2),\qquad R=(x^2+y^2)^{1/2},
+ \end{gathered}
+\end{equation}
+where $h$ takes values in $\R^2$ and $v,w$ are linearly independent.
+Indeed, take $x$ to be the target tangent-axis projection of $F$, and choose
+$y$ along its kernel at zero. The Whitney determinant
+$\det(F_x,F_{xy},F_{yy})(0)\ne0$ gives the independence of $v,w$.
+This uses the actual Euclidean metric; an arbitrary target diffeomorphism
+would not preserve it. In a sufficiently small neighborhood,
+$cR\leq|h_y|\leq CR$ off zero and $|h_x|\leq CR$.
+
+\begin{lemma}[Arclength resolution]\label{lem:arclength}
+Set
+\[
+ V(x,y)=\int_0^y |h_y(x,s)|\dd s,\qquad
+ \Xi(x,y)=(X,V)=(x,V(x,y)),\qquad \rho=(X^2+V^2)^{1/2}.
+\]
+The map $\Xi$ is a local homeomorphism and a $C^1$ diffeomorphism off zero.
+In its coordinates the metric matrix $G$, its density $m=\sqrt{\det G}$,
+and its divergence tensor $a=mG^{-1}$ satisfy
+\begin{equation}\label{eq:euclidean}
+ G-I=O(\rho^{1/2}),\qquad a-I=O(\rho^{1/2}),\qquad m-1=O(\rho).
+\end{equation}
+They extend continuously at zero with $G(0)=a(0)=I$, $m(0)=1$, and are
+bounded and uniformly elliptic near zero. The actual extrinsic radius
+$\rho_e=|F(x,y)|$ satisfies
+\begin{equation}\label{eq:radii}
+ \rho_e/\rho=1+O(\rho^{1/2}),\qquad
+ \log\rho_e-\log\rho=O(\rho^{1/2}).
+\end{equation}
+\end{lemma}
+\begin{proof}
+For fixed $x$, $V$ is strictly increasing in $y$. The bounds on $h_y$ imply
+\[
+ c y^2/2\leq |V(x,y)|\leq C(|xy|+y^2).
+\]
+Thus its inverse is continuous at zero and elsewhere, and its image contains
+a neighborhood of zero. Put $n=h_y/|h_y|$ away from zero. Differentiation
+under the integral, justified by the uniform bound on $h_{xy}$ and dominated
+convergence, gives
+\[
+ V_y=|h_y|,\qquad V_x=\int_0^y n(x,s)\cdot h_{xy}(x,s)\dd s,
+ \qquad |V_x|\leq C|y|.
+\]
+The single undefined integrand value at $(x,s)=(0,0)$ has no effect.
+These derivatives are continuous, including at zero. Since $V_y>0$ off
+zero, the inverse-function theorem gives the asserted $C^1$ regularity.
+We need no second derivative of $V$ along $x=0$.
+
+Let $q=h_x-V_xn$. Differentiating the actual map in the new coordinates yields
+$F_X=(1,q)$, $F_V=(0,n)$, and hence
+\[
+ G=\begin{pmatrix}1+|q|^2&q\cdot n\\q\cdot n&1\end{pmatrix},\qquad
+ \det G=1+|q|^2-(q\cdot n)^2\geq1.
+\]
+Here $|q|\leq CR$. Since $y^2\leq C|V|$, we have $R^2\leq C\rho$
+after shrinking the neighborhood. This proves \eqref{eq:euclidean} and
+uniform ellipticity, including the better density estimate.
+
+To compare radii, Taylor's formula gives
+\[
+ |h-wy^2|\leq C\{x^2+|xy|+|y|R^2\},\qquad
+ |V-\operatorname{sgn}(y)|w|y^2|
+       \leq C\{|xy|+|y|R^2\}.
+\]
+The second estimate follows by integrating
+$\bigl||h_y(x,s)|-2|w||s|\bigr|\leq C(|x|+x^2+s^2)$.
+It follows that $\bigl||h|-|V|\bigr|\leq CR(|x|+y^2)\leq CR\rho$.
+Comparing the norms of $(x,|h|)$ and $(x,|V|)$ proves
+$|\rho_e-\rho|\leq CR\rho$. As $R\leq C\rho^{1/2}$, both radius
+claims follow.
+\end{proof}
+
+Grieser already proved singular quasi-Euclidean coordinate resolution for the
+standard Whitney metric \cite{grieser}. The present proof supplies the
+asymptotic identity tensor and the extrinsic-radius normalization for an
+actual Euclidean germ. This is a refinement to be compared with the literature,
+not a claim to have originated singular coordinate resolution.
+
+\section{The actual Green vectors}\label{sec:green}
+We use the following external scalar regularity input \cite{simon}:
+if $a$ is real, bounded and uniformly elliptic in dimension two, an $H^1$
+weak solution of
+$-\operatorname{div}(a\nabla w)=f_0-\operatorname{div}F_0$
+is locally H\"older when $F_0\in L^q$, $f_0\in L^{q/2}$, $q>2$.
+Bounded zeroth-order terms can be moved to $f_0$; here $q=3$ and $w\in L^2$.
+Real and imaginary parts are treated separately. Simon's Lecture 18,
+Theorems 2 and 3, printed pages 212--216, give the local boundedness and
+H\"older estimates with precisely these hypotheses.
+
+\begin{theorem}[Logarithmic normalization]\label{thm:log}
+At $P_i$, with $\rho_{e,i}=|S-S(P_i)|$, there are real constants
+$B_{\eta,ij}$ and $\beta>0$ such that
+\begin{equation}\label{eq:greenexp}
+ G_{\eta,j}=-\frac{\delta_{ij}}{2\pi}\log\rho_{e,i}
+                  +B_{\eta,ij}+O(\rho_{e,i}^{\beta}).
+\end{equation}
+The matrix $B_\eta$ is real symmetric. The Green vector has the fixed outer
+Dirichlet condition inherited from $R_\eta$.
+\end{theorem}
+\begin{proof}
+Work first with real functions at one pole in the coordinate of
+Lemma~\ref{lem:arclength}. The form is locally
+$\int \nabla f\cdot a\nabla v\dd X\dd V$ and the measure is
+$m\dd X\dd V$. Take a cutoff $\chi=1$ near zero, supported in this chart,
+and set $h_0=-\chi\log\rho/(2\pi)$. It is in $\mathcal H$, but not in
+the form domain. Distributionally $-\Delta h_0=\delta_0+k$, where $k$
+is supported in the cutoff annulus and is bounded. Write $E=a-I$.
+The remaining functional in
+\[
+ (-\operatorname{div}(a\nabla)-\eta m)h_0=\delta_0+\mathcal F
+\]
+is represented by $E\nabla h_0$ in the divergence term, together with $k$
+and $-\eta mh_0$ in the scalar term. In particular
+\[
+ |E\nabla h_0|\leq C\rho^{-1/2},\qquad
+ E\nabla h_0\in L^3,\qquad k-\eta mh_0\in L^2.
+\]
+Indeed $\int_0^\epsilon \rho^{1-3/2}\dd\rho<\infty$. The cutoff
+annulus adds only bounded terms. Extending by zero makes $\mathcal F$ a
+bounded functional on the global form domain. Lax--Milgram for the coercive
+form $q_\eta=q-\eta\langle\cdot,\cdot\rangle$ gives a unique form-domain
+$w$ with $q_\eta(w,v)=\mathcal F(v)$. The quoted scalar theorem applies
+to its weak equation (including the $\eta mw$ term in $L^2$), so $w$ is
+H\"older at the pole. Thus $g=h_0-w$ has a logarithm and a H\"older
+regular part, and solves the point-source equation. Away from its pole it is
+a weak homogeneous solution and is H\"older at the other pole as well.
+Equation~\eqref{eq:radii} replaces $\log\rho$ by $\log\rho_e$, reducing
+the exponent, if necessary, to $\beta\leq1/2$.
+
+We must still identify this solution with the resolvent-defined vector;
+distributional existence by itself would not suffice. For
+$u\in\Dom H_F$, scalar regularity gives $|u-u(P_i)|\leq C\rho^\alpha$.
+Testing its weak equation with a cutoff times $u-u(P_i)$ gives the local
+Caccioppoli bound
+\[
+ \int_{B_r}|\nabla u|^2\leq C r^{2\alpha},\qquad 0<r<r_0,
+\]
+after taking $0<\alpha<1$. The gradient-cutoff term is bounded by
+$Cr^{-2}\int_{B_{2r}}|u-u(P_i)|^2\leq Cr^{2\alpha}$; the scalar source
+term is at most $Cr^{1+\alpha}\norm{mH_Fu}_{L^2(B_{2r})}$, which has
+the same bound for small $r$. Ellipticity absorbs the cross term.
+
+The improper integral $\int a\nabla h_0\cdot\nabla u$ therefore
+converges: on dyadic annuli $\norm{\nabla\log\rho}_{L^2}$ is bounded,
+while $\norm{\nabla u}_{L^2}=O(r^\alpha)$, a summable bound. Let
+$\theta_\epsilon$ vanish on $B_\epsilon$ and equal one off $B_{2\epsilon}$,
+with $|\nabla\theta_\epsilon|\leq C/\epsilon$.
+The form test $h_0\theta_\epsilon$ in the equation for $u$ has an extra
+term bounded by $C|\log\epsilon|\epsilon^\alpha\to0$.
+Consequently
+\[
+ \langle h_0,(H_F-\eta)u\rangle
+       =u(P_i)+\mathcal F(u).
+\]
+For the identity on the right, the planar radial flux of
+$-\log\rho/(2\pi)$ has total mass one; replacing $u$ by its circle mean
+gives $u(P_i)$ in the limit, with error $O(\epsilon^\alpha)$.
+The $E$ and scalar terms converge in their form-dual pairings. The equation
+for $w$ similarly gives
+$\langle w,(H_F-\eta)u\rangle=\mathcal F(u)$.
+Thus $\langle g,(H_F-\eta)u\rangle=u(P_i)$ for every $u\in\Dom H_F$.
+Taking $u=R_\eta f$ identifies $g=(\tau_iR_\eta)^*1=G_{\eta,i}$.
+Complex functions follow by linearity with the stated scalar-product convention.
+
+Reality of the form and $\eta$ makes all $G_{\eta,j}$ and their regular
+constants real. For reciprocity, let $\delta_{\epsilon,i}$ be the normalized
+indicator of a resolved ball about $P_i$, normalized using $\dd A_g$.
+Graph H\"older estimates imply
+$\langle\delta_{\epsilon,i},\cdot\rangle\to\tau_i$ in the dual graph norm,
+so $R_\eta\delta_{\epsilon,i}\to G_{\eta,i}$ in $\mathcal H$.
+Near a different pole these functions solve the homogeneous equation;
+the local H\"older and boundedness estimates improve convergence to uniform
+convergence on a smaller ball. Self-adjointness of $R_\eta$ gives
+\[
+ \langle\delta_{\epsilon,i},R_\eta\delta_{\epsilon,j}\rangle
+ =\langle\delta_{\epsilon,j},R_\eta\delta_{\epsilon,i}\rangle.
+\]
+For $i\ne j$, passage to the limit gives
+$G_{\eta,j}(P_i)=G_{\eta,i}(P_j)$. The diagonal entries are already real,
+so $B_\eta$ is real symmetric.
+\end{proof}
+
+\section{Geometric coordinates on the whole adjoint domain}\label{sec:domains}
+\begin{theorem}[Expansion and Green pairing]\label{thm:boundary}
+Every $f\in\Dom A^*$ has unique coefficients $\ell,b\in\C^2$ with
+\begin{equation}\label{eq:maxexp}
+ f=\ell_i\log\rho_{e,i}+b_i+O(\rho_{e,i}^{\beta})\quad\hbox{at }P_i.
+\end{equation}
+For $f=u+G_\eta a$ in \eqref{eq:decomposition}, they are
+\[
+ \ell=-a/(2\pi),\qquad b=\tau u+B_\eta a.
+\]
+Both coefficient maps are bounded in the graph norm of $A^*$, and the combined
+map is onto $\C^2\oplus\C^2$, with kernel $\Dom A$. For $f,g$ with
+coefficients $(\ell,b)$ and $(\ell',b')$,
+\begin{equation}\label{eq:greenpair}
+ \langle A^*f,g\rangle-\langle f,A^*g\rangle
+ =2\pi\{\langle\ell,b'\rangle-\langle b,\ell'\rangle\}.
+\end{equation}
+The Friedrichs domain is precisely $\ell=0$. All self-adjoint extensions are
+the inverse images of maximal isotropic planes for \eqref{eq:greenpair}.
+Equivalently they have, for a unique $U\in U(2)$,
+\[
+ (U-I)b+i(U+I)a=0,\qquad a=-2\pi\ell.
+\]
+Here $U=I$ gives $H_F$. This parametrization differs by the regular-part
+shift $B_\eta$ from the resolvent coordinates in \cite{v02}.
+\end{theorem}
+\begin{proof}
+Theorem~\ref{thm:log}, the graph H\"older estimate for $u$, and
+\eqref{eq:decomposition} give the expansion. Its uniqueness follows by
+first dividing by $\log\rho_e$ and then taking the remaining limit.
+Moreover $u=R_\eta(A^*-\eta)f$ is graph-bounded, and the finite-dimensional
+inverse on $G_\eta\C^2$ bounds $a$. Surjectivity follows by prescribing $a$
+and then using surjectivity of $\tau$ to prescribe $b-B_\eta a$.
+Their common kernel is $a=0$, $\tau u=0$, namely $\Dom A$.
+
+The actual resolvent decomposition gives the pairing
+$\langle\tau u,a'\rangle-\langle a,\tau u'\rangle$.
+Substituting $\tau u=b-B_\eta a$ cancels the $B_\eta$ terms by symmetry
+and gives \eqref{eq:greenpair}. Vanishing $a$ is exactly
+$\Dom H_F$ in the direct sum. The finite-dimensional maximal-isotropic
+classification now applies to this surjective actual boundary map; its Cayley
+description gives the displayed $U(2)$ equation.
+\end{proof}
+
+For $z\in\rho(H_F)$, retain the previous Weyl matrix
+$M_z=(z-\eta)\tau R_zG_\eta$. The actual geometric regular-part matrix is
+\begin{equation}\label{eq:regularmatrix}
+ B_z=B_\eta+M_z,
+\end{equation}
+because $G_z-G_\eta=(z-\eta)R_zG_\eta\in\Dom H_F$.
+If a self-adjoint matrix $C$ specifies $b=Ca$, the resolvent is
+\[
+ (H_C-z)^{-1}=R_z+G_z(C-B_z)^{-1}G_{\bar z}^*,
+\]
+whenever the inverse exists. The Krein extension of $A$ has plane $b=B_0a$
+and kernel $G_0\C^2$. These are consequences of the existing extension
+framework, with a now-proved interpretation of its coefficients.
+
+\begin{corollary}[Actual reflection symmetry]\label{cor:reflection}
+For real $\eta<0$ the matrix $B_\eta$ has the form
+$\left(\begin{smallmatrix}r_\eta&g_\eta\\g_\eta&r_\eta\end{smallmatrix}\right)$.
+The same holds at $z=0$.
+\end{corollary}
+\begin{proof}
+The actual map satisfies $S(-t,u)=J S(t,u)$, where
+$J(X,Y,Z)=(X,-Y,Z)$ is Euclidean orthogonal. Source reflection preserves
+the induced form, area and fixed outer Dirichlet condition, so its unitary
+pullback commutes with $H_F$ and $R_\eta$ and exchanges $G_{\eta,+}$ and
+$G_{\eta,-}$. It exchanges the extrinsic radii exactly. The two diagonal
+constants are consequently equal; reciprocity supplies the equal real
+off-diagonal constants. The argument also applies to $R_0$ since $H_F$ has
+a positive gap. This symmetry exchanges the two poles; it is distinct from
+the local sheet exchange at a single cross-cap.
+\end{proof}
+
+\section{Two uniqueness statements and local parity}\label{sec:uniqueness}
+\begin{corollary}[Markov uniqueness for the specified restriction]\label{cor:markov}
+$H_F$ is the only self-adjoint extension of $A$ whose heat semigroup is
+submarkovian.
+\end{corollary}
+\begin{proof}
+The closed gradient form with outer Dirichlet condition is a Dirichlet form:
+normal contractions decrease the gradient energy and preserve its closure.
+Thus its operator $H_F$ generates a submarkovian semigroup.
+Conversely, for any such self-adjoint extension $H$, $\lambda>0$, and
+$h\in L^2\cap L^\infty$, the Laplace-transform formula for its resolvent
+gives
+\[
+ \norm{(H+\lambda)^{-1}h}_\infty\leq\lambda^{-1}\norm h_\infty.
+\]
+By \eqref{eq:maxexp}, any nonzero logarithmic coefficient makes this
+resolvent vector essentially unbounded near its pole; the regular remainder
+is bounded and the resolved measure has a positive bounded density.
+Hence every coefficient vanishes. The vector lies in $\Dom H_F$, and
+$(H+\lambda)^{-1}h=(H_F+\lambda)^{-1}h$. Bounded $L^2$ inputs are dense,
+so the resolvents, and therefore the self-adjoint operators, are equal.
+\end{proof}
+
+\begin{corollary}[Common reference-length invariance]\label{cor:scale}
+Among self-adjoint boundary planes for $A$, the only one invariant under all
+simultaneous changes of logarithmic reference length is the Friedrichs plane.
+\end{corollary}
+\begin{proof}
+Writing $f=\ell_i\log(\rho_{e,i}/\lambda_i)+b_i^{(\lambda)}+o(1)$ gives
+$b^{(\lambda)}=b+\operatorname{diag}(\log\lambda_i)\ell$.
+The change $\lambda_i\mapsto e^t\lambda_i$ acts by
+$(\ell,b)\mapsto(\ell,b+t\ell)$. If a maximal isotropic plane $L$ is
+invariant for every real $t$, then $(\ell,b)\in L$ implies $(0,\ell)\in L$.
+Pairing these vectors in \eqref{eq:greenpair} yields
+$2\pi\norm\ell^2=0$, so $\ell=0$. Dimension two gives the entire
+Friedrichs plane. It is itself invariant.
+\end{proof}
+This statement changes a reference convention. It does not assert a dilation
+isometry of the actual surface or a physical renormalization law.
+
+\begin{corollary}[Sheet-even limiting coefficients]\label{cor:parity}
+If paired source points $p_\epsilon,q_\epsilon$ approach the same interior
+cross-cap and $S(p_\epsilon)=S(q_\epsilon)$, then every
+$f\in\Dom A^*$ satisfies
+$f(p_\epsilon)-f(q_\epsilon)=O(\rho_e^\beta)\to0$.
+Thus the logarithmic and regular boundary coefficients are sheet-even.
+\end{corollary}
+\begin{proof}
+The common image has exactly the same extrinsic radius on both branches.
+Their logarithmic terms in \eqref{eq:maxexp} cancel, their constant terms
+coincide, and both remainders tend to zero with the stated bound.
+\end{proof}
+This is asymptotic parity of scalar coefficients. It requires no sheet
+isometry of the actual metric and asserts no invariance of the full Green
+function. The ordinary support obstruction and the odd-to-even equivariant
+linear obstruction of v13 remain applicable. No canonical derived-sheaf-to-
+operator morphism, phase-fiber map or singular Pin transmission is supplied.
+
+\section{What has been repaired, and what is still missing}\label{sec:comparison}
+The ancestral TeX and the authoritative final v12 are different records.
+The 1,908-line ancestor supplies the earlier signal motivation; the 43-page
+final v12 adds the late scalar and spinorial assertions. This continuation
+proves logarithmic coefficients and scalar uniqueness for $A$, replacing the
+ill-defined finite classification of the old $H_0$. It recovers the intended
+two-point conclusion under a specified fixed outer boundary, not under the
+old compact-core definition.
+
+The construction in continuation 0.02 uses component powers $(1-u,u)$.
+The ancestral moment assignment was $(\cos t,1-\cos t)$. They are different
+state families. The explicit new quadrature realization proves that $S$ can
+be realized with supplied phases; it does not derive $S$ from the ancestral
+moment map alone. The Hermitian no-go also explains why changing this
+readout into three pure-state quantum expectations is impossible.
+
+Abstract boundary triples and resolvent formulas are established theory
+\cite{pos}. Markov uniqueness for degenerate operators also has a substantial
+earlier literature \cite{robsik}; its theorem for a compact core on an open
+Euclidean domain is not imported here, because our outer boundary is fixed
+and its coefficient hypotheses differ. The potential contribution lies in
+the actual Euclidean Whitney estimates, coefficient normalization and the
+fully specified application. Independent derivation and a new proof in this
+project do not establish publication priority. That question needs further
+comparison with singular-metric and point-interaction literature.
+
+The principal mathematical tasks still open are the actual singular Dirac
+graph domains, conformal and gauge estimates, front/seam overlap control,
+and a proved phase-fiber/Pin transmission map. The scalar H\"older theorem
+does not prove a Dirac system estimate. The earlier weight-zero commutator
+problem and the missing fiber identification remain unresolved. Physical
+clock, spin, chirality, channel capacity or arithmetic realizations need
+their own objects and assumptions. The new scalar PDE and operator proofs
+are written proofs using external theorems; the existing 33-theorem Lean
+inventory has not been enlarged or reinterpreted as full formalization.
+
+\begin{thebibliography}{9}
+\bibitem{v13} A. Hayami (J.-Y. Huang), \emph{Bicomplex Signal Geometry:
+ Completed Source Charts, Monodromy and Spectral Stability},
+ v13 local working manuscript, 1 October 2026. Preserved companion 0.01.
+\bibitem{v02} A. Hayami (J.-Y. Huang), \emph{Bicomplex Signal Realization
+ and Fixed-Boundary Point Extensions}, local continuation 0.02, 1 October 2026.
+\bibitem{grieser} D. Grieser, \emph{Quasiisometry of singular metrics},
+ Houston J. Math. \textbf{28} (2002), 741--752.
+ \url{https://www.math.uh.edu/~hjm/Vol28-4.html}.
+\bibitem{pos} A. Posilicano, \emph{Boundary Triples and Weyl Functions for
+ Singular Perturbations of Self-Adjoint Operators}, arXiv preprint 2003,
+ revised 15 January 2004.
+ \url{https://arxiv.org/abs/math/0309077}. Sections 2--3, Theorems 2.2 and 3.1.
+\bibitem{simon} L. Simon, \emph{Lectures on PDE}, author notes, updated
+ 5 March 2015, Lecture 18, Theorems 2--3, printed pp.212--216.
+ \url{https://math.stanford.edu/~lms/lecs-on-pde.pdf}.
+\bibitem{robsik} D. W. Robinson and A. Sikora, \emph{Markov uniqueness of
+ degenerate elliptic operators}, Ann. Sc. Norm. Super. Pisa Cl. Sci.
+ (5) \textbf{10} (2011), 683--710.
+ \url{https://arxiv.org/abs/0912.4536}. Related theory; not used as a theorem
+ for the resolved coefficients or the fixed-Dirichlet restriction.
+\end{thebibliography}
+\end{document}

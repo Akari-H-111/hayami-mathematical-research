@@ -1,6 +1,9 @@
 # Spectral module audit (v12 Section 7)
 
-Source scope: final PDF, pp. 13--15.
+Source scope: immutable final v12 PDF, physical pages 14--16. Its printed page
+numbers agree with physical pages (the title/abstract is page 1). Rechecked on
+2026-10-01: Theorem 7.1 starts on p.14, Theorem 7.4 on p.15, and Corollary 7.8
+on p.16. The former `13--15` range was stale, not an alternative convention.
 
 ## Theorem 7.1 and Corollary 7.3
 

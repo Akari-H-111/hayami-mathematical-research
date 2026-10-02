@@ -1,0 +1,9 @@
+import Bicomplex
+
+#check Bicomplex.actual_source_rank_classification
+#check Bicomplex.actual_polar_fold
+#check Bicomplex.local_observation_root_sign
+#check Bicomplex.mellin_interval_green
+#check Bicomplex.gram_eigenvalue_enclosure
+#check Bicomplex.quadrature_actual_surface
+#check Bicomplex.actual_crosscap_energy_lower

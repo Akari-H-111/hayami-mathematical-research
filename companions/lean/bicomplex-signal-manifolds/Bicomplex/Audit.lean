@@ -1,0 +1,35 @@
+import Bicomplex
+
+#print axioms Bicomplex.zero_boundary_core_witness
+#print axioms Bicomplex.transmission_unit_modulus_iff
+#print axioms Bicomplex.real_transgression_coefficient
+#print axioms Bicomplex.sign_intertwiner_zero
+#print axioms Bicomplex.cusp_return_square
+#print axioms Bicomplex.half_integer_pairing
+#print axioms Bicomplex.actual_source_rank_classification
+#print axioms Bicomplex.actual_endpoint_rank
+#print axioms Bicomplex.actual_polar_fold
+#print axioms Bicomplex.actual_dipole
+#print axioms Bicomplex.observation_field_even
+#print axioms Bicomplex.normalized_polynomial_derivative
+#print axioms Bicomplex.crosscap_lift_injective
+#print axioms Bicomplex.crosscap_actual_fibers
+#print axioms Bicomplex.crosscap_metric_determinant
+#print axioms Bicomplex.crosscap_residual_positive
+#print axioms Bicomplex.square_root_lift
+#print axioms Bicomplex.log_lift_endpoint
+#print axioms Bicomplex.unit_winding_sign_change
+#print axioms Bicomplex.local_observation_root_sign
+#print axioms Bicomplex.mellin_interval_green
+#print axioms Bicomplex.mellin_zero_boundary_pairing
+#print axioms Bicomplex.formal_coefficient_symmetry
+#print axioms Bicomplex.gram_diagonal
+#print axioms Bicomplex.gram_entry_integral
+#print axioms Bicomplex.gram_entry_bound
+#print axioms Bicomplex.gram_eigenvalue_enclosure
+#print axioms Bicomplex.quadrature_unit_power
+#print axioms Bicomplex.quadrature_readout
+#print axioms Bicomplex.quadrature_actual_surface
+#print axioms Bicomplex.pure_state_bloch_norm
+#print axioms Bicomplex.actual_crosscap_energy_lower
+#print axioms Bicomplex.actual_crosscap_energy_upper

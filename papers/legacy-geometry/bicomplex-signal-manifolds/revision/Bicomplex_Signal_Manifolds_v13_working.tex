@@ -1,0 +1,1110 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,longtable,xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=teal,citecolor=teal,urlcolor=teal]{hyperref}
+\hypersetup{pdftitle={Bicomplex Signal Geometry: Completed Source Charts, Monodromy and Spectral Stability},
+ pdfauthor={Akari Hayami (Jian-Yu Huang)},pdfsubject={v13 working research revision}}
+\newtheoremstyle{readable}{6pt}{6pt}{\itshape}{}{\bfseries}{.}{\newline}{}
+\theoremstyle{readable}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}\newcommand{\T}{\mathbb T}
+\newcommand{\dd}{\,d}\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\Dom}{\operatorname{Dom}}\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\capg}{\operatorname{Cap}_{g}}
+\DeclareMathOperator{\sgn}{sgn}\DeclareMathOperator{\rank}{rank}
+\title{Bicomplex Signal Geometry:\\Completed Source Charts, Monodromy and Spectral Stability}
+\author{Akari Hayami (Jian-Yu Huang)}
+\date{1 October 2026\\\small v13 working revision; local research draft}
+\begin{document}
+\maketitle
+\begin{abstract}
+We study an explicit ruled map associated with a two-component signal model.
+A completed source atlas includes its two previously omitted endpoint
+singularities. The planar observation field has two interior zeros of opposite
+index; continuous square-root lifting gives a sign change on one traversal and
+restoration on two. The standard fold and cross-cap residuals have sublevel
+exponent $3/4$. Their real links, an explicitly chosen complex $A_3$ completion,
+and the actual principal-curvature cusp are treated as distinct constructions.
+On a fixed Lebesgue Hilbert space we prove the Mellin integration-by-parts
+identity, identify the half-line domain obstruction, and establish finite-time
+Gram estimates. Distinct finite frequencies are independent for every positive
+observation time. We also prove local zero capacity and explain why it is a
+statement about closed forms rather than minimal operator domains.
+Weighted radial estimates give compactness and a positive fixed-Dirichlet
+gap on the completed source, including its endpoint corners.
+An audit of the later operator claims exposes a concrete domain error:
+closing the interior compact core leaves infinitely many outer-boundary
+deficiency modes. We give a corrected conditional construction from a
+Dirichlet realization and bounded point traces. The actual Green and twisted
+Dirac parametrices require further estimates, which are stated explicitly.
+The normalization defect, the phase sign line, and a chosen full-spin
+transmission map retain different data and roles. No communication capacity,
+particle assignment, or arithmetic weight follows from a numerical analogy.
+\end{abstract}
+\tableofcontents
+
+\section{The model and its mathematical inputs}\label{sec:model}
+The geometric object in this paper is the map
+\begin{equation}\label{eq:S}
+ S(t,u)=\bigl(c+2u(1-c),(1-u)s,uQ\bigr),\qquad
+ c=\cos t,\quad s=\sin t,\quad Q=\sqrt{c(2-c)},
+\end{equation}
+with physical labels $D=[-\pi/2,\pi/2]\times[0,1]$.
+We keep source labels distinct even when their images coincide. In particular,
+$S(t,1)=S(-t,1)$ is an image relation, not a quotient defining the source.
+The term bicomplex can be made precise by taking commuting units $i,j$ with
+$i^2=j^2=-1$ and idempotents $e_\pm=(1\pm ij)/2$. The algebra then identifies
+with $\C e_+\oplus\C e_-$. Choosing the coefficient norm
+$|z_+|^2+|z_-|^2$ is additional Hilbert data; it is not a multiplicative
+bicomplex modulus. None of the proofs below depends on bicomplex multiplication.
+
+The momentum map $(z_+,z_-)\mapsto(|z_+|^2,|z_-|^2)$ and the unit-power
+constraint define a sphere and its moment interval. They do not, by themselves,
+define a two-dimensional source, a lift of \eqref{eq:S}, or a projection taking
+that lift to $S$. We therefore take \eqref{eq:S} as an explicit model input.
+A signal realization through an ambient projection would have to supply those
+maps separately. This resolves a missing definition in historical v12,
+rather than declaring that an unspecified map exists.
+
+We use conjugate-linear first inner products throughout:
+$\langle f,g\rangle=\int\overline f g$. A fold in this paper means a smooth
+plane-to-plane germ equivalent to $(x,y)\mapsto(x,y^2)$. A cross-cap means a
+smooth plane-to-three-space germ equivalent to $(x,y)\mapsto(x,xy,y^2)$.
+These dimension-specific normal forms are not definitions for arbitrary maps
+$\R^n\to\R^m$.
+
+\section{The completed source and its five singular labels}\label{sec:atlas}
+The angular formula is smooth where $c>0$ but fails to be a smooth chart at
+$Q=0$. This defect is repaired by changing the source coordinate, while keeping
+the full physical surface \cite{ruled}.
+\begin{proposition}[Endpoint charts and complete rank set]\label{prop:atlas}
+Near either endpoint let $\epsilon\in\{1,-1\}$, $r=Q\geq0$, and set
+\[
+ C(r)=1-\sqrt{1-r^2},\qquad
+ B_\epsilon(r,u)=\bigl(C+2u(1-C),\epsilon(1-u)\sqrt{1-C^2},ur\bigr).
+\]
+The formula extends smoothly to $|r|<1$ near $r=0$, agrees with $S$ on the
+physical overlap, and satisfies
+\[
+ (B_\epsilon)_r(0,u)=(0,0,u),\quad
+ (B_\epsilon)_u(0,u)=(2,-\epsilon,0),\quad
+ (B_\epsilon)_r\times(B_\epsilon)_u=(\epsilon u,2u,0).
+\]
+The rank-loss labels of the completed source are exactly
+\[
+ P_0=(0,1),\quad P_\pm=(\pm t_0,u_0),\quad
+ E_\pm=(\pm\pi/2,0),\qquad
+ c_0=\frac{3-\sqrt5}{2},\ t_0=\arccos c_0,\ u_0=\frac{1-c_0}{2}.
+\]
+Their smooth extensions are cross-caps. The physical restrictions at $P_0$
+and $E_\pm$ are respectively a boundary half-germ and corner quarter-germs.
+\end{proposition}
+\begin{proof}
+The radicands are positive near $r=0$. Since
+$C(r)(2-C(r))=r^2$, $C(Q)=c$ when $0\leq c\leq1$; the sign of $s$ fixes
+$\epsilon$. Differentiation gives the displayed endpoint vectors, so an
+endpoint loses rank exactly at $u=0$. On $c>0$, the full cross-product
+equations reduce either to $c=1,u=1$, or to
+$u=(1-c)/2=c(2-c)/2$. The latter equation is $P(c)=c^2-3c+1=0$ and has
+exactly one root in $(0,1)$. Direct substitution checks the remaining component.
+Thus $P(c)$ selects the lateral points, not all surface singularities.
+
+For a rank-one ruled germ choose the nonzero ruling vector and its kernel
+direction. Because $S_{uu}=0$, the cross-cap recognition determinant reduces
+to $\det(S_u,S_{ut},S_{tt})$. Its values are
+\[
+ \Delta(P_0)=1,\qquad \Delta(P_\pm)=-5\sqrt{\sqrt5-2}\ne0.
+\]
+In the endpoint chart,
+$\det(B_u,B_{ur},B_{rr})(0,0)=-\epsilon\ne0$.
+The smooth cross-cap criterion applies to these actual maps with their adapted
+directions \cite[Corollary 4.5 and its proof]{whitneymetric}. It supplies
+smooth source and target diffeomorphisms, beyond a two-jet resemblance.
+The half- and quarter-germs refer to the original physical inequalities in
+those charts; no coordinate straightening of their boundaries is assumed.
+\end{proof}
+
+\begin{figure}[ht]
+\centering
+\setlength{\unitlength}{1mm}
+\begin{picture}(125,55)
+\put(15,8){\framebox(95,35){}}
+\put(15,43){\circle{1.7}}\put(110,43){\circle{1.7}}
+\put(15,8){\circle*{1.7}}\put(110,8){\circle*{1.7}}
+\put(62.5,43){\circle*{1.7}}
+\put(26.8,18.8){\circle*{1.7}}\put(98.2,18.8){\circle*{1.7}}
+\put(7,1){$E_-$}\put(105,1){$E_+$}\put(60,47){$P_0$}
+\put(21,22){$P_-$}\put(96,22){$P_+$}
+\put(54,1){$t$}\put(4,25){$u$}
+\end{picture}
+\caption{Filled markers are the five rank-loss source labels; open markers are
+the two regular upper corners, which remain distinct source labels.
+Positions are drawn from $t_0,u_0$ of
+Proposition~\ref{prop:atlas}; this parameter diagram is not a surface embedding.}
+\end{figure}
+
+Put $D_{\rm reg}=D\setminus\{P_0,P_+,P_-,E_+,E_-\}$ with the completed atlas.
+It is a connected orientable surface with retained regular boundary corners.
+Deleting boundary points from a disk does not create an interior hole:
+one may retract collar arcs into the interior. Removing the two interior
+points leaves a twice-punctured disk. For example, excise two disjoint small
+disks and retract the remaining disk onto two circles joined to a base point
+by disjoint arcs. Hence $H_1(D_{\rm reg};\Z)=\Z^2$, and its orientation cover
+is the disconnected trivial cover. Orientation comes from the source charts;
+there is no need for an invalid angular normal at $Q=0$. The paired top-edge
+image relation has a fixed point and supplies no free boundary gluing.
+
+\section{The actual observation field and square-root lifting}\label{sec:field}
+On the open angular chart $|t|<\pi/2$ define
+\begin{equation}\label{eq:F}
+ N=(1-c)(1-c-2u),\quad
+ M=\frac{c^2(2-c)-u(1-c+c^2)}{Q},\quad F=N+iM.
+\end{equation}
+Both $N$ and $M$ are even in $t$. Their Jacobian determinant is odd, because
+the $t$ derivatives reverse sign. A source area reparametrization multiplies
+this field by its Jacobian. The angular field generally diverges at $Q=0$;
+it is not a continuous global scalar field on the completed rectangle.
+\begin{theorem}[Interior dipole and restoration]\label{thm:dipole}
+The interior zeros of $F$ are exactly $P_\pm$. With the $(t,u)$ orientation,
+\[
+ \det DF(P_\pm)=\mp\frac{5s_0(1-c_0)^2}{Q_0},\qquad
+ \operatorname{Ind}(P_\pm)=\mp1.
+\]
+Every continuous square-root branch transported round a sufficiently small
+positive loop about either point changes sign. Two traversals restore it.
+\end{theorem}
+\begin{proof}
+Solving \eqref{eq:F} gives the same lateral roots as above. The determinant
+formula follows by substitution and $c_0^2=3c_0-1$. It is nonzero.
+The actual small-circle winding of a smooth planar nondegenerate zero is
+the sign of its determinant: a linear homotopy to the derivative avoids zero
+on sufficiently small circles; an invertible real linear map has winding
+$1$ or $-1$ according to orientation. The predecessor proof applies to
+exactly \eqref{eq:F}, the same open domain and orientation \cite{ruled}.
+
+Along a loop write $F(\gamma(s))=\exp L(s)$ using a continuous logarithm
+lift. Its endpoint is $L(1)=L(0)+2\pi i n$, where $n=\pm1$. Thus
+$\chi(s)=\exp(L(s)/2)$ satisfies $\chi(1)=(-1)^n\chi(0)=-\chi(0)$.
+Any other continuous root divided by $\chi$ is a continuous map from a
+connected interval to $\{1,-1\}$ and is constant. Repeating the loop makes
+the sign positive. This is a traversal count; it does not assign a physical
+clock or equate the root cover with the normalization-sheet cover.
+\end{proof}
+
+\begin{proposition}[A genuine polar fold]\label{prop:polar}
+The smooth extension of $\Psi=(N,M)$ at $P_0$ is a fold. It has full-extension
+local degree zero. No interior winding index is assigned on its physical
+half-neighbourhood.
+\end{proposition}
+\begin{proof}
+Use source coordinates
+\[
+ a=-M(t,u),\qquad b=2\sin(t/2)\sqrt{u-(1-\cos t)/2},
+\]
+and target coordinates $(N,M)\mapsto(-M,-N)$. Near $(0,1)$ the source
+radicand is positive, and its derivative matrix is
+$\left(\begin{smallmatrix}0&1\\1&0\end{smallmatrix}\right)$, which is
+invertible. The inverse-function theorem gives two-sided smooth charts.
+The exact identity $-N=b^2$ puts the map into $(a,b^2)$; thus no conclusion
+is inferred from a Taylor jet alone. Reflection of $b$ pairs regular
+preimages with opposite signs, or, equivalently, the model circle lies in a
+half-plane and has zero winding. The target/source orientation changes do
+not change zero degree. In historical v12 the displayed remainder for $M$
+omitted $M(t,1)=-t^4/2+O(t^6)$; this term does not invalidate these charts.
+\end{proof}
+
+\section{Residual volume and an explicit complex completion}\label{sec:residual}
+For the standard models take source Lebesgue measure and residuals
+$K_f=x^2+y^4$ and $K_\times=x^2(1+y^2)+y^4$.
+\begin{theorem}[Sublevel law with quantitative comparison]
+Writing $B=B(1/4,3/2)$, one has, for $\varepsilon>0$,
+\[
+ V_f(\varepsilon)=B\varepsilon^{3/4},\qquad
+ \frac{B\varepsilon^{3/4}}{\sqrt{1+\sqrt\varepsilon}}
+ \leq V_\times(\varepsilon)\leq B\varepsilon^{3/4}.
+\]
+The common exponent is $3/4$. A smooth positive density changes the leading
+constant by its value at the origin. Smooth invertible source and target
+changes preserve the exponent, but not generally the displayed coefficient.
+\end{theorem}
+\begin{proof}
+Slicing in $y$ gives
+$4\int_0^{\varepsilon^{1/4}}\sqrt{\varepsilon-y^4}\dd y$ for the fold.
+Set $y=\varepsilon^{1/4}v$ and then $z=v^4$ to obtain $B\varepsilon^{3/4}$.
+For the cross-cap the integrand has the additional factor $(1+y^2)^{-1/2}$;
+on this interval it lies between $(1+\sqrt\varepsilon)^{-1/2}$ and $1$.
+After anisotropic scaling the density converges uniformly to its value at
+the origin. A target diffeomorphism fixing zero compares squared norms by
+positive constants; a source diffeomorphism has a bounded positive Jacobian.
+These comparisons retain the power exponent. They do not make the standard
+Euclidean coefficient an invariant of arbitrary coordinates or metrics.
+\end{proof}
+The corresponding geometric cost satisfies
+$-\log V(\varepsilon)=\tfrac34\log(\varepsilon^{-1})-\log B+o(1)$ in the
+specified standard measure. Separately, $|P'(c_0)|=\sqrt5$ for the monic
+$P(c)=c^2-3c+1$; multiplying $P$ by a nonzero constant changes that derivative.
+
+\begin{theorem}[Chosen $A_3$ completion and its cohomology]
+Extend the coefficients of $K_\times$ to $\C$. Its holomorphic germ is
+right-equivalent to $X^2+Y^4$, with Milnor and Tjurina numbers three.
+The affine fiber $U=\{X^2+Y^4=1\}$ compactifies to a smooth genus-one
+curve $E$ with two points removed. Its first cohomology has dimension three
+and monodromy spectrum $\{-i,1,i\}$. Its mixed Hodge weight-graded
+dimensions in weights one and two are respectively two and one.
+\end{theorem}
+\begin{proof}
+On a disk $|y|<1$ choose the holomorphic square root of $1+y^2$ taking value
+one at zero. The coordinates $X=x\sqrt{1+y^2},Y=y$ have invertible derivative
+and give the equality exactly. The Jacobian algebra is
+$\C\{Y\}/(Y^3)$; weighted Euler's identity puts $X^2+Y^4$ in its Jacobian
+ideal, giving the same Tjurina dimension.
+
+The weighted projective compactification is
+$X^2+Y^4=Z^4$ in $\mathbb P(2,1,1)$. It avoids the ambient weighted
+singular point. The map to $[Y:Z]\in\mathbb P^1$ is a double cover
+branched at four simple roots. Riemann--Hurwitz gives genus one. At infinity
+$W=X/Y^2$ takes the two distinct values $\pm i$, so both ends are smooth
+and unramified. The first Betti number is $2g+2-1=3$. Weighted homogeneity
+identifies this fiber with the local Milnor fiber \cite{milnor,dimca}.
+The monodromy $h(X,Y)=(-X,iY)$ pulls $dY/X$ back to $-i\,dY/X$ and acts
+by $i$ on its conjugate. Near infinity $(s,W)=(1/Y,X/Y^2)$ transforms as
+$(-is,W)$, so the boundary class is fixed. Finally the Gysin sequence of
+mixed Hodge structures is
+\[
+ 0\longrightarrow H^1(E;\Q)\longrightarrow H^1(U;\Q)
+ \longrightarrow\widetilde H^0(\{\infty_+,\infty_-\};\Q)(-1)
+ \longrightarrow0.
+\]
+The first term is pure of weight one with types $(1,0),(0,1)$; the last has
+type $(1,1)$ and weight two \cite{deligne,peters}. These are external
+cohomological theorems with their required smooth algebraic pair explicitly
+constructed. No Hodge structure is inferred from the real surface or a
+Mellin parameter.
+\end{proof}
+
+\section{Three different projected curves}\label{sec:links}
+\begin{proposition}[Real link and embedded lift]
+For every $r>0$, $L_r=\{K_\times=r^2\}$ is a smooth circle. Its cross-cap
+image has one transverse double point and is homeomorphic to $S^1\vee S^1$.
+The lift $(x,xy,y^2,y)$ is a smooth embedding of the source plane.
+\end{proposition}
+\begin{proof}
+The gradient of $K_\times$ vanishes only at zero. The compact level set is
+the two graphs $x=\pm\sqrt{(r^2-y^4)/(1+y^2)}$, joined at
+$y=\pm\sqrt r$, and is connected. A connected compact smooth one-manifold
+is a circle. Equality of cross-cap images forces $x=x'$ and $y'=\pm y$;
+distinct preimages on the link occur only at $(0,\pm\sqrt r)$.
+The tangent images there are $(1,\pm\sqrt r,0)$, which are transverse.
+Elsewhere the source map has rank two, so the link restriction is immersed.
+The compact-domain quotient identifies exactly that pair and gives the
+figure-eight graph. The first and fourth lift coordinates supply a continuous
+smooth inverse, and their differential has rank two everywhere. This proves
+an embedding, rather than injectivity alone.
+\end{proof}
+
+\begin{proposition}[Weighted orbit and its amplitude domain]
+The primitive positive weights of $X^2+Y^4$ are $(2,1)$.
+For $a,b>0$, $a^2+b^4=1$, the orbit
+$\Gamma(s)=(ae^{2is},be^{is})$, $s\in\R/2\pi\Z$, is embedded.
+Its rectangular shadow $(b\sin s,a\sin2s)$ is a transverse figure-eight;
+adding $\Re Y$ reconstructs the orbit. The frequency ratio is $2:1$.
+The quadratic phase action is $2\pi(4a^2+b^2)$. Its infimum on
+nondegenerate orbits is $2\pi$, attained only in their degenerate closure;
+its unique interior critical point $b^2=1/8$ is a strict maximum.
+\end{proposition}
+\begin{proof}
+The equation $2w_X=4w_Y$ and coprimality give $(2,1)$.
+The $Y$ coordinate determines the phase, so the lifted circle is embedded.
+The shadow has only the distinct pair $s=0,\pi$ over its double point;
+the tangent determinant is $4ab\ne0$. Eliminating phase gives
+$v^2=4a^2(u^2/b^2)(1-u^2/b^2)$, and adding $b\cos s$ fixes phase.
+Differentiation gives $X''+4X=0$, $Y''+Y=0$.
+With $z=b^2\in(0,1)$ the action divided by $2\pi$ is
+$4+z-4z^2=1+(1-z)(4z+3)>1$. Its derivative vanishes only at $z=1/8$
+and its second derivative is $-8$. The value $1$ occurs at $z=1$ in the
+closed family. Replacing $s$ by $\omega_0 t$ changes the clock for every
+$\omega_0>0$. The orbit leaves the fixed fiber $f=1$ at general phases:
+$f(\Gamma(s))=e^{4is}$. It is an orbit in the ambient completion.
+\end{proof}
+
+\begin{proposition}[Actual principal-curvature cusp]\label{prop:cusp}
+For the actual lateral germs, the Euclidean Whitney invariants obey
+$b_\pm^2+a_\pm c_\pm^2=0$ with $c_\pm>0$.
+Their principal-curvature exceptional traces have an ordinary cusp at the
+double return, rather than a transverse node.
+\end{proposition}
+\begin{proof}
+Use the actual adapted pair
+$\xi=\partial_u/\sqrt3$, $\eta=-\partial_t+\lambda_\pm\partial_u$,
+$\lambda_\pm=-c_0s_\pm/[2(1-c_0)]$. Let $\Pi$ project onto the normal
+plane of $S_u$, and put
+$A=\Pi(S_{tt}-2\lambda_\pm S_{tu})$, $B=\Pi(-S_{tu}/\sqrt3)$.
+The independent derivative computation yields
+\[
+ \begin{aligned}
+ N=|A|^2&=\frac{-335+162\sqrt5}{12},\\
+ M^2=\langle A,B\rangle^2&=\frac{-520+249\sqrt5}{27},\\
+ R=|B|^2-M^2/N&=\frac{20(140+11\sqrt5)}{11397}>0.
+ \end{aligned}
+\]
+Oriented Gram--Schmidt gives
+$a=-M^2/(2N^{3/2})$, $b_\pm=\pm\sqrt{M^2R}/N$,
+$c=\sqrt{2R}/N^{1/4}$. Hence the discriminant vanishes exactly.
+The external Euclidean normal-form and pedal identities
+\cite[Proposition 2.1 and Eq.~(2.8)]{principal} apply to these nondegenerate
+cross-caps. In their notation the pedal trace is
+\[
+ p(\tau)=\frac{2(c\tau^2+2b\tau-ac)}{c^2+4\tau^2}(-c,2\tau).
+\]
+Set $\tau_*=-b/c$. Its numerator is $c(\tau-\tau_*)^2$.
+Writing $p(\tau_*+h)=h^2v(h)$, one has $v(0)\ne0$ and
+\[
+ \det(p''(\tau_*),p'''(\tau_*))
+ =-\frac{96c^3}{(c^2+4b^2/c^2)^2}\ne0.
+\]
+This proves the ordinary cusp criterion, beyond the vanishing discriminant.
+It concerns the exceptional trace specified by the pedal theorem; it is not
+a global classification of the whole principal-curvature surface.
+\end{proof}
+
+\begin{table}[ht]\centering
+\begin{tabular}{@{}lll@{}}\toprule
+Construction & Source & Projected feature\\\midrule
+Real cross-cap link & $K_\times=r^2$ & transverse node\\
+Weighted phase orbit & circle in $\C^2$ & transverse node\\
+Actual exceptional trace & adapted direction $\tau$ & ordinary cusp\\\bottomrule
+\end{tabular}
+\caption{Distinct maps produce distinct curves. No amplitude, clock, or
+scattering rule transfers between these constructions.}
+\end{table}
+
+\section{Mellin integration, measures and operator domains}\label{sec:mellin}
+\begin{theorem}[Formal Green identity and measure dependence]
+Let $T_\sigma f=-i(xf'+\sigma f)$, $\sigma\in\R$. For complex $C^1$
+functions on $[a,b]\subset(0,\infty)$,
+\[
+ \int_a^b\bigl(\overline{T_\sigma f}\,g-\overline f\,T_{1-\sigma}g\bigr)\dd x
+ =i[x\overline f g]_a^b.
+\]
+Thus on $C_c^\infty((1,\infty))\subset L^2(dx)$ the formal adjoint
+expression is $T_{1-\sigma}$ and symmetry holds exactly at $\sigma=1/2$.
+For measure $x^{2\beta-1}\dd x$, the formal adjoint parameter is
+$2\beta-\sigma$, so the symmetry parameter is $\sigma=\beta$.
+\end{theorem}
+\begin{proof}
+The first integrand is $i(x\overline f g)'$; integrating gives the endpoint
+term. Compact support permits an interval with zero endpoint terms and
+then the actual improper integral equality. The compact core is dense by
+local truncation and smooth approximation in $L^2$. On a weighted space,
+$ (x x^{2\beta-1})'/x^{2\beta-1}=2\beta$ replaces the constant one in
+the same integration by parts. Necessity of the formal coefficient equality
+can be tested on a nonzero compactly supported $f=g$. The weighted inner
+product in the historical introduction therefore cannot be silently used
+for the Lebesgue threshold: if $\beta=\sigma$, the weighted expression is
+formally symmetric for every $\sigma$.
+\end{proof}
+
+\begin{proposition}[Actual half-line closures and adjoints]
+For $\sigma=1/2$ define
+$(Uf)(s)=e^{s/2}f(e^s)$ from $L^2([1,\infty),dx)$ to $L^2([0,\infty),ds)$.
+It is unitary and takes the compact-core operator to $-i\partial_s$.
+Its closure has domain $H^1_0(0,\infty)$, its adjoint has domain
+$H^1(0,\infty)$, and its deficiency indices are $(1,0)$.
+On the full multiplicative line the corresponding closed domain is carried
+to $H^1(\R)$; that operator is self-adjoint.
+\end{proposition}
+\begin{proof}
+The substitution $x=e^s$ proves norm equality and supplies the inverse;
+the chain rule gives the operator identity. The graph norm of $-i\partial_s$
+is exactly the $H^1$ norm, so closure of the compact core is $H^1_0$.
+Distributional integration by parts characterizes the adjoint domain as
+$H^1$ with no endpoint constraint. The adjoint Green term is
+$-i\overline{h(0)}k(0)$ under our convention; there is no term at infinity
+for $H^1$ functions. The equations $-ih'=\pm ih$ give $h=e^{-s}$ and
+$h=e^s$; only the first is square-integrable. Unequal indices exclude every
+self-adjoint extension. On $\R$ neither solution is square-integrable,
+and the Fourier transform identifies the closure with multiplication by
+real frequency on its maximal domain \cite{reed}.
+
+Alternatively the Haar-to-Lebesgue map $Wf(x)=x^{-1/2}f(x)$ is unitary
+from $L^2(dx/x)$ to $L^2(dx)$ on the full group and conjugates
+$-ix\partial_x$ to $T_{1/2}$. Restriction to a half-line does not preserve
+the full-line self-adjointness result.
+\end{proof}
+Direct differentiation gives $T_\sigma x^{-\sigma-i\omega}
+=-\omega x^{-\sigma-i\omega}$. Its half-line norm squared is
+$\int_1^\infty x^{-2\sigma}\dd x$, finite exactly for $\sigma>1/2$.
+Even then its trace at $x=1$ is one, so it is outside the minimal zero-trace
+domain. At $\sigma=1/2$ it is a generalized eigenfunction, not an $L^2$
+vector. Real formal eigenvalues alone imply no orthogonality.
+
+\section{Actual finite-time Gram integrals}\label{sec:gram}
+Let $\omega_1,\ldots,\omega_M$ be distinct real frequencies, $T>0$,
+and $\psi_j(t)=e^{-i\omega_jt}$. Set
+\[
+ G_{jk}=T^{-1}\int_0^T\overline{\psi_j(t)}\psi_k(t)\dd t.
+\]
+This convention makes the quadratic form $c^*Gc$ the norm squared of the
+synthesis $\sum_jc_j\psi_j$, divided by $T$.
+\begin{theorem}[Independence and quantitative spectral enclosure]
+For $M\geq2$ put $\delta=\min_{j\ne k}|\omega_j-\omega_k|>0$ and
+$\varepsilon=2(M-1)/(T\delta)$. Then
+\[
+ G_{jj}=1,\quad
+ G_{jk}=\frac{e^{iT(\omega_j-\omega_k)}-1}{iT(\omega_j-\omega_k)},\quad
+ |G_{jk}|\leq\frac{2}{T|\omega_j-\omega_k|}\ (j\ne k),\quad
+ \norm{G-I}_{2\to2}\leq\varepsilon.
+\]
+The phasors are independent and $G$ is positive definite for every $T>0$.
+If $\varepsilon<1$, then
+\[
+ 1-\varepsilon\leq\lambda_j(G)\leq1+\varepsilon,\qquad
+ \kappa_2(G)\leq\frac{1+\varepsilon}{1-\varepsilon},\qquad
+ M\log(1-\varepsilon)\leq\log\det G\leq0.
+\]
+In particular $-\log\det G\leq M\varepsilon/(1-\varepsilon)$.
+For $M=1$, $G=(1)$; an empty family has empty Gram matrix and determinant
+one, with no condition number or separation minimum required.
+\end{theorem}
+\begin{proof}
+The entries are actual elementary integrals. The numerator has modulus at
+most two. The matrix is Hermitian. Each row of $G-I$ has absolute sum at
+most $\varepsilon$, so Gershgorin places all its eigenvalues in
+$[-\varepsilon,\varepsilon]$. The spectral theorem for a finite Hermitian
+matrix then gives the Euclidean operator norm, not just an arbitrary
+matrix norm.
+
+For independence, a synthesis vanishing almost everywhere on $[0,T]$
+vanishes everywhere by continuity. Differentiate at any interior time
+$t_*$ to orders $0,\ldots,M-1$. The coefficient vector
+$(c_je^{-i\omega_jt_*})_j$ is killed by the Vandermonde matrix of the
+distinct numbers $-i\omega_j$. Its determinant is nonzero, so $c=0$.
+This proves positivity for all positive $T$; the separation threshold is
+only a sufficient conditioning estimate. Multiplying the eigenvalue lower
+bounds gives the log-determinant lower bound. Hadamard's inequality applied
+to the positive Gram matrix with unit diagonal gives $\det G\leq1$.
+Finally $-\log(1-\varepsilon)\leq\varepsilon/(1-\varepsilon)$ follows by
+integrating $(1-s)^{-1}$ on $[0,\varepsilon]$.
+\end{proof}
+For distinct positive integers take $\omega_j=\log n_j$. Multiplicative
+independence is unnecessary. These estimates compare a fixed finite family
+as $T\to\infty$; they are not a uniform theorem for growing frequency sets.
+
+\section{Hardy evaluation and Bohr--Haar completion}\label{sec:hardy}
+Define the Dirichlet Hilbert space by its coefficient norm:
+$\mathcal H_D^2=\{(a_n):\sum|a_n|^2<\infty\}$, with Dirichlet evaluation
+initially defined on finite polynomials. For $\Re s=\sigma>1/2$,
+Cauchy--Schwarz gives
+$|\sum a_nn^{-s}|\leq\norm{a}_{\ell^2}\zeta(2\sigma)^{1/2}$.
+At $\sigma\leq1/2$, use the finite coefficient vector proportional to
+$(n^{-\bar s})_{n\leq N}$. Its unit-norm evaluation is
+$(\sum_{n\leq N}n^{-2\sigma})^{1/2}\to\infty$.
+Thus evaluation has no bounded extension at or below that boundary.
+This direct proof also specifies what ``evaluation'' means where not every
+infinite series converges \cite{hardy}.
+
+Write $n=\prod_p p^{v_p(n)}$ and
+$\chi_n(z)=\prod_pz_p^{v_p(n)}$ on the product torus $\T^{\mathcal P}$.
+With product normalized Haar measure,
+\[
+ \int\overline{\chi_n}\chi_m\dd m_H=\delta_{nm},\qquad
+ \lim_{T\to\infty}T^{-1}\int_0^T n^{it}m^{-it}\dd t=\delta_{nm}.
+\]
+The first identity follows by integrating the finite coordinate product:
+unique factorization makes at least one nonzero exponent when $n\ne m$,
+and its circle integral is zero. The second follows from the actual Gram
+integral. A finite integer set may generate a lower-rank exponent lattice
+(for example $2,4$); this relation is retained by the torus construction.
+The half-density and evaluation boundary are two different analytic results,
+not a common arithmetic or physical theorem.
+
+\section{Induced metric, exact refinement and zero capacity}\label{sec:capacity}
+On the corrected $D_{\rm reg}$ take $g=S^*\delta_{\R^3}$ in its completed
+atlas, $\mathcal H_g=L^2(dA_g)$, and
+\[
+ \mathcal E(f,h)=\int g^{ab}\overline{\partial_af}\partial_bh\dd A_g.
+\]
+For nested finite-energy conforming spaces whose bases satisfy
+\[
+ \phi_i^{(n)}=\sum_\alpha J_{\alpha i}\phi_\alpha^{(n+1)},
+\]
+sesquilinearity gives $J^*G_{n+1}J=G_n$ and $J^*K_{n+1}J=K_n$ exactly.
+These identities require exact integration; they assert no discretization
+convergence or solver accuracy.
+
+\begin{theorem}[Capacity and form removability]\label{thm:capacity}
+Every one of the five rank-loss labels has local $1$-capacity zero, using
+a full, half-, or quarter-neighbourhood as appropriate. Deleting $P_\pm$
+does not change the closed form with fixed outer Dirichlet boundary.
+\end{theorem}
+\begin{proof}
+For the standard cross-cap,
+\[
+ g=\begin{pmatrix}1+y^2&xy\\xy&x^2+4y^2\end{pmatrix},\quad
+ w^2=\det g=x^2+4y^2+4y^4,\quad
+ \rho^2=x^2(1+y^2)+y^4.
+\]
+Since $\rho$ is ambient distance, $|\nabla_g\rho|\leq1$ on the regular
+locus. For $0<r<1$, the set $\rho<r$ lies in
+$|x|<r,|y|<\sqrt r$ and $w\leq3\sqrt r$, so its area $A(r)\leq12r^2$.
+Choose a cutoff equal to one below $\varepsilon^2$, zero above
+$\varepsilon$, and $\log(\varepsilon/\rho)/\log(1/\varepsilon)$ between.
+Smooth its corners on comparable annuli. Its squared $L^2$ norm is
+$O(\varepsilon^2)$, and its energy is bounded by
+\[
+ \frac{C}{\log^2(1/\varepsilon)}
+ \int_{\varepsilon^2}^{\varepsilon}r^{-2}\dd A(r)
+ \leq\frac{C'}{\log(1/\varepsilon)}\longrightarrow0.
+\]
+The estimate follows from Stieltjes integration by parts:
+the endpoint contribution is bounded and
+$2\int r^{-3}A(r)\dd r=O(\log(1/\varepsilon))$.
+These cutoffs are smooth source functions because they are constant near
+the singularity. Restricting them to half- or quarter-domains decreases
+their norms and energies.
+
+The actual cross-cap equivalences in Proposition~\ref{prop:atlas} compare
+the induced quadratic forms by positive constants: the target derivative
+and its inverse are bounded. In dimension two this also compares area
+densities and Dirichlet energies. Thus capacity transfers to all five actual
+germs; no metric isometry is required. Multiplying a compactly supported
+smooth test function by $1-\chi_\varepsilon$ near $P_\pm$ approximates it
+in $\mathcal E+L^2$ norm, by the product rule and the displayed bounds.
+The reverse closure inclusion is immediate. This is equality of form
+closures, not of operator graph closures.
+\end{proof}
+
+\begin{theorem}[Actual compactness and positive Dirichlet gap]\label{thm:compact}
+The fixed-outer-Dirichlet form domain embeds compactly into $\mathcal H_g$.
+Its Friedrichs operator $H_F$ has compact resolvent and satisfies
+$H_F\geq\lambda_D I$ for some $\lambda_D>0$.
+\end{theorem}
+\begin{proof}
+Use the original completed-source coordinates at each of the five points,
+translated to the origin, and write $R=(x^2+y^2)^{1/2}$.
+The standard cross-cap has area density comparable to $R$.
+The actual source and target diffeomorphisms from
+Proposition~\ref{prop:atlas}, with bounded derivatives and inverses, therefore
+give $\dd A_g\asymp R\dd x\dd y$ in these coordinates.
+Also $g\leq C I$ since the actual extended map has bounded derivative.
+Consequently the energy dominates $c\int R|\nabla f|^2\dd x\dd y$.
+The physical coordinate domains are a disk, half-disk or quarter-disk;
+their radial angular intervals are fixed. No metric cone equivalence is used.
+
+Let $\chi$ be a chart cutoff, equal to one near zero and vanishing near its
+outer circular edge. For a smooth core function set $h=\chi f$.
+On each radial ray, integration of $(R|h|^2)'$ and Cauchy--Schwarz give
+\[
+ \int_0^{R_0}|h|^2\dd R
+ =-2\Re\int_0^{R_0}R\overline h\,\partial_Rh\dd R
+ \leq2\Bigl(\int|h|^2\dd R\Bigr)^{1/2}
+          \Bigl(\int R^2|\partial_Rh|^2\dd R\Bigr)^{1/2}.
+\]
+The endpoint terms vanish; the initial core avoids the singularity.
+Squaring and integrating the fixed angular interval yields
+\[
+ \int\frac{|\chi f|^2}{R^2}\dd A_g
+ \leq C\int R|\nabla(\chi f)|^2\dd x\dd y
+ \leq C'(\mathcal E(f,f)+\norm f^2).
+\]
+The cutoff derivative lies on a regular compact annulus, where the last
+bound follows from the product rule. The inequality extends by form closure.
+In particular, the $L^2$ mass below $R<\varepsilon$ is bounded by
+$C\varepsilon^2$ times the form norm squared, uniformly at all five points.
+
+Away from these disks the actual metric is smooth and uniformly elliptic
+on a compact source with ordinary Lipschitz boundary and retained regular
+corners. The usual Rellich theorem \cite{brezis} gives compactness there.
+A diagonal subsequence followed by the uniform small-disk mass bound gives
+compactness on the whole source, including both endpoint corners.
+
+If no positive gap existed, take $\norm{f_n}=1$ and
+$\mathcal E(f_n,f_n)\to0$. Compactness gives a strong $L^2$ limit of norm
+one. On every regular chart its weak derivative is zero, hence it is
+constant on the connected interior. On a regular outer-boundary collar,
+the zero Dirichlet trace passes to the weak $H^1$ limit and makes this
+constant zero, a contradiction. This proves the gap. The form representation
+theorem and compact form embedding give the claimed compact resolvent.
+\end{proof}
+
+For the standard metric an additional exact identity is
+\[
+ 1-|\nabla_g\rho|^2
+ =\frac{x^2y^4}{(x^2+4y^2+4y^4)(x^2(1+y^2)+y^4)}\leq\rho/4.
+\]
+The front coordinates
+$x=r\cos\theta/\sqrt{1+r\sin\theta}$,
+$y=\epsilon\sqrt{r\sin\theta}$, $0<\theta<\pi$, have $\rho=r$.
+Each front has limiting length $\pi r$. Indeed its normalized speed
+converges to one away from the endpoints and is bounded by
+$C(1+\sqrt{r/\sin\theta})$, with an integrable dominating function.
+The two fronts join on the source to one circle, so $L(r)/r\to2\pi$.
+Wirtinger's inequality on that circle gives
+\[
+ \int_{\rho<r_0}\frac{|u-\Pi_\rho u|^2}{\rho^2}\dd A_g
+ \leq C\mathcal E(u,u)
+\]
+for the standard model: coarea uses $|\nabla\rho|$ bounded above and below,
+and the tangential part of the energy controls the link derivative.
+In seam coordinates $x=\xi,y=\xi z$ the determinant is
+$\xi^4(1+4z^2+4\xi^2z^4)$, and the density-weighted inverse metric has
+Schur complement $\sqrt{1+4z^2+4\xi^2z^4}/[\xi^2(1+4z^2)]$.
+On fixed strips $|z|\leq K$ it bounds the weighted one-dimensional
+Poincare estimate. The transverse zero solutions, a constant and a
+primitive of $\sqrt{1+4z^2}$, are not localized in
+$L^2(\R,\sqrt{1+4z^2}\dd z)$.
+These calculations establish model inequalities. They alone do not exclude
+all defect modes of an actual patched unbounded operator.
+
+\section{The operator domain and its boundary obstruction}\label{sec:green}
+Let $H_F$ be the self-adjoint operator associated with the closed fixed-outer-
+Dirichlet form. This definition uses form closure and makes sense before a
+point-trace theorem is available. Historical v12 instead set the punctured
+minimum equal to the graph closure of $-\Delta_g$ on
+$C_c^\infty(D^\circ\setminus\{P_+,P_-\})$. Denote that closure by $H_0$.
+\begin{theorem}[Outer-boundary deficiency obstruction]\label{thm:outer}
+For that definition of $H_0$, both deficiency spaces are infinite-dimensional.
+In particular, its claimed indices $(2,2)$ and exhaustive $U(2)$ extension
+family are false. Fixing the outer boundary in a sentence does not alter
+the adjoint of the specified compact-core operator.
+\end{theorem}
+\begin{proof}
+Choose a regular open outer-boundary arc away from all five singular labels
+and corners. It carries a smooth uniformly elliptic metric and the usual
+Sobolev trace. For any smooth boundary value $h$ supported inside this arc,
+choose a smooth collar extension $w_h$, supported away from the singular
+points. For $z\in\C\setminus\R$ put
+\[
+ v_h=w_h-(H_F-z)^{-1}(-\Delta_g-z)w_h.
+\]
+This is an $L^2$ function. Distributionally on the interior it satisfies
+$(-\Delta_g-z)v_h=0$, so testing against the punctured compact core puts
+$v_h$ in $\ker(H_0^*-z)$. The resolvent term belongs to the fixed Dirichlet
+form domain and has zero trace on the regular arc. Hence $v_h$ has trace
+$h$. Linearly independent choices of $h$ give linearly independent $v_h$.
+The argument works for $z=i$ and $z=-i$ and requires no claim about the
+cross-cap Green asymptotics. The Hilbert space is separable, so these
+deficiency dimensions are countably infinite.
+
+An elementary interval witness illustrates the graph-closure distinction:
+$v(x)=x(1-x)$ has Dirichlet values zero but
+$\langle-v'',1\rangle-\langle v,-1''\rangle=2$. The same pairing is zero
+for every interior compact test function and remains zero under graph
+limits. Thus even the ordinary Dirichlet domain is larger than that compact
+graph closure.
+\end{proof}
+
+\begin{theorem}[Conditional point restriction with fixed outer boundary]\label{thm:conditional}
+Assume that the actual $H_F$ domain admits a graph-continuous surjective
+trace $\tau:\Dom H_F\to\C^2$ at the interior singularities, and that
+$\ker\tau$ is dense in $\mathcal H_g$. Then
+$A=H_F|_{\ker\tau}$ is closed, densely defined and symmetric, with
+deficiency indices $(2,2)$. Its self-adjoint extensions are parametrized by
+$U(2)$. These hypotheses do not assert the actual existence of the traces.
+\end{theorem}
+\begin{proof}
+The kernel is closed in the graph norm. For nonreal $z$, the bounded
+surjection $\tau(H_F-z)^{-1}:\mathcal H_g\to\C^2$ has kernel
+$\operatorname{ran}(A-z)$. The adjoint of this map supplies two independent
+defect vectors, because
+$\ker(A^*-\bar z)=\operatorname{ran}(A-z)^\perp$. Thus both dimensions
+are two. Von Neumann's unitary classification now applies to this corrected
+operator. The regular Dirichlet point-interaction construction
+\cite[Proposition 2.1 and Theorem 2.2]{point} uses exactly this restriction,
+but its interior elliptic $H^2$ point estimate is not a theorem for our
+degenerate Whitney metric. The proof here is an abstract conditional theorem.
+\end{proof}
+
+The standard metric has the exact residual
+\[
+ \Delta_g\log\rho=
+ \frac{2x^2y^2(3x^2y^4+5x^2y^2+x^2+7y^6+5y^4)}
+ {(x^2+4y^2+4y^4)^2(x^2(1+y^2)+y^4)^2}.
+\]
+To check integrability directly, set $R=(x^2+y^2)^{1/2}<1$.
+The numerator is at most $C x^2y^2(x^2+y^4)$, whereas the denominator
+is at least $(x^2+y^2)^2(x^2+y^4)^2$. Thus the residual is bounded by
+$C/R^2$ and $\dd A_g\leq C R\dd x\dd y$.
+Its $p$th power is bounded in integral by
+$C\int_0^{R_0}R^{2-2p}\dd R$, finite for $1<p<3/2$.
+On $\rho=r$, the preceding radial defect bound and link length limit give
+$r^{-1}\int_{\rho=r}|\nabla_g\rho|\dd\ell\to2\pi$.
+This standard flux and residual motivate a logarithmic Green
+candidate. It does not prove that applying an actual resolvent to the
+remainder gives a continuous correction, a graph-bounded point trace,
+or an exhaustive maximal-domain expansion. Those are different estimates.
+The required completion is a two-sided parametrix in specified front/seam
+weighted spaces, with an overlap estimate controlling the localized graph
+norm and proving the actual resolvent maps that $L^p$ remainder into
+continuous functions. A global parametrix must also cover both endpoint
+corner charts, although compactness is already established in
+Theorem~\ref{thm:compact}. The conifold assumptions in \cite{pacini} do not hold
+automatically in the degenerating seam coordinates.
+
+\begin{proposition}[Reference-scale invariant boundary planes]
+On $\C^2_a\oplus\C^2_b$ with form
+$\omega((a,b),(c,d))=2\pi(\langle a,d\rangle-\langle b,c\rangle)$,
+the only complex Lagrangian plane invariant under every
+$R_t(a,b)=(a,b+ta)$ is $\{a=0\}$.
+\end{proposition}
+\begin{proof}
+For $(a,b)$ in an invariant plane, subtract its $R_1$ image to see that
+$(0,a)$ belongs to the plane. Isotropy gives $2\pi|a|^2=0$, so $a=0$.
+Dimension equality gives the stated plane; direct substitution checks
+invariance. This is a finite-plane theorem. Identifying it with the
+Friedrichs extension requires the actual Green coefficients and form/domain
+comparison, beyond Theorem~\ref{thm:conditional}.
+\end{proof}
+Zero puncture capacity proves the fixed-boundary form removability of
+Theorem~\ref{thm:capacity}. A claim of uniqueness among all submarkovian
+extensions additionally needs a theorem classifying those extensions by the
+relevant Dirichlet forms with the same outer boundary. The old minimum admits
+other outer-boundary conditions, so that unrestricted uniqueness claim also
+fails. Concretely, close the same energy on smooth completed-source functions
+allowed to have nonzero outer trace. Such functions have finite local energy:
+bounded derivatives and the cross-cap metric give an integrable $O(1/R)$
+energy density in source coordinates. The form is closable, as can be checked
+first on regular compact subdomains and then in the global weighted gradient
+space. Smooth contractions and the chain rule give the Markov property after
+closure. The associated Neumann form operator extends the interior compact
+operator and contains the constant function in its zero eigenspace. In
+contrast, the positive Dirichlet gap excludes that eigenfunction for $H_F$.
+This supplies two distinct submarkovian extensions of the old $H_0$.
+Their existence is not altered by the finite-plane calculation.
+
+\begin{theorem}[Actual Krein and buckling results for the compact-core minimum]
+The actual closed compact-core operator $H_0$ is densely defined, symmetric
+and strictly positive. Its Friedrichs extension is $H_F$.
+Its Krein extension satisfies
+\[
+ \Dom(H_0)_K=\Dom H_0\dotplus\ker H_0^*,\qquad
+ \ker(H_0)_K=\ker H_0^*.
+\]
+The kernel is infinite-dimensional. The reduced positive spectrum is
+discrete with finite multiplicities, and its eigenvalues are the weak
+buckling eigenvalues on $\Dom H_0$:
+\[
+ \langle H_0v,H_0\varphi\rangle
+ =\lambda\langle v,H_0\varphi\rangle\qquad(\varphi\in\Dom H_0).
+\]
+\end{theorem}
+\begin{proof}
+Interior compact smooth functions are dense in $\mathcal H_g$ by truncation
+and smooth approximation on the regular locus. Integration by parts makes
+the initial operator symmetric, and its graph closure is contained in
+$H_F$. The positive gap in Theorem~\ref{thm:compact} passes to this closure.
+The capacity theorem identifies the two Friedrichs forms, hence its
+Friedrichs extension is $H_F$.
+For the kernel repeat the collar construction in
+Theorem~\ref{thm:outer} at $z=0$; the bounded inverse $H_F^{-1}$ now
+exists. Independent boundary values inject into $\ker H_0^*$.
+The abstract Krein/buckling theorems apply to this actual closed densely
+defined strictly positive operator \cite[Hypothesis 2.2, Theorem 2.4 and
+Theorem 3.4]{buckling}. Compact resolvent of $H_F$ gives discreteness of
+the reduced positive Krein spectrum. This retains the valid global spectral
+conclusion while correcting the false finite-channel dimension.
+\end{proof}
+
+Under the point-trace hypotheses of Theorem~\ref{thm:conditional}, the
+corrected $A$ is also strictly positive by restriction, and the abstract
+Krein theorem gives
+\[
+ \Dom A_K=\Dom A\dotplus\ker A^*,\qquad\ker A_K=\ker A^*.
+\]
+If actual logarithmic boundary coordinates and zero-energy Green vectors
+are established, this domain becomes $b=R_0a$, with $R_0$ Hermitian and
+reference transformation $R_0\mapsto R_0+tI$. Its reduced nonzero
+spectrum obeys the weak buckling equation
+$\langle Av,A\varphi\rangle=\lambda\langle v,A\varphi\rangle$ on
+$\Dom A$ \cite{krein,buckling}. Its Friedrichs form must be compared with
+the fixed Dirichlet form before transferring that compactness conclusion to
+$A$. The actual point traces, finite trace rank and logarithmic coordinates
+remain unproved. The global compactness result above concerns $H_F$ and the
+explicitly defined $H_0$; it does not supply these missing Green coefficients.
+
+\section{Normalization defect and the support obstruction}\label{sec:sheaf}
+Let $X$ be a sufficiently small standard cross-cap image, and
+$\nu:\widetilde X\to X$ its proper topological normalization, obtained from
+the source map. It is one-to-one off the open double ray $L$ and two-to-one
+on $L$, with one preimage at the pinch. In the ordinary sheaf category,
+\[
+ \mathcal Q_\nu=\nu_*\Q_{\widetilde X}/\Q_X
+\simeq j_!\mathcal L_{\rm sgn},\qquad j:L\hookrightarrow X.
+\]
+Here $j$ is locally closed; extension by zero means the open-ray extension
+inside its closed support, followed by the closed direct image.
+Indeed the diagonal stalk map is an isomorphism at one-preimage points and
+has one-dimensional anti-invariant quotient at two-preimage points.
+Properness gives these direct-image stalks by shrinking neighbourhoods.
+The quotient pinch stalk is zero. The restriction is the sheet-sign line;
+the extension-by-zero description follows by the adjunction map and its
+stalk isomorphisms \cite{stacks}.
+
+Let $i$ include the pinch. Every ordinary morphism
+$j_!\mathcal L_{\rm sgn}\to i_*\C$ is zero, since every stalk map is zero.
+For the local ray the nearby group $H^0(i^*Rj_*\mathcal L_{\rm sgn})$
+and degree-one costalk $H^1(i^!j_!\mathcal L_{\rm sgn})$ are one-dimensional.
+One may compute the latter from the compactly supported cohomology of
+$(0,\varepsilon)$, or the local recollement triangle. Sheet exchange acts
+by $-1$. A linear equivariant map from that line to a sheet-even line
+must satisfy $T(-v)=T(v)$ and therefore vanishes in characteristic zero.
+This sheaf theorem is independent of the existence of an actual scalar Green
+line. The standard logarithm is sheet-even because
+$\rho(0,y)=\rho(0,-y)$; exporting this interpretation to an actual exhaustive
+Green space still depends on the analytic construction above.
+
+An underlying compact or condensed set does not fix a structure sheaf:
+even a one-point space supports both $\Q$ and $\Q[\epsilon]/(\epsilon^2)$.
+The chosen algebraic fiber instead has its explicitly supplied coordinate
+ring $\Q[X,Y]/(X^2+Y^4-1)$. Neither its structure sheaf nor its mixed Hodge
+data is recovered from a bare topological normalization defect.
+
+\section{Phase lines, cone models and transmission hypotheses}\label{sec:spin}
+The squaring cover pulled back by $F/|F|$ supplies a flat Hermitian sign
+line on each punctured interior source disk. Theorem~\ref{thm:dipole}
+gives its holonomy $-1$, with no continuous holonomy parameter.
+On an exact round cone the scalar twisted angular eigenvalues are
+$n+1/2$, and the radial indicial powers are $r^{\pm|n+1/2|}$.
+Since $r^\lambda\in L^2(r\dd r)$ exactly for $\lambda>-1$, the two
+weights $n=0,-1$ are limit-circle channels. This scalar model has two
+lowest channels, not a preferred one-dimensional normalization defect.
+
+For the disk-bounding spin structure the untwisted angular weights are also
+$\Z+1/2$. Twisting by the sign line makes them $\Z$.
+The chiral exact-cone operator has the form
+$c(dr)(\partial_r+1/(2r)+A_\partial/r)$. On its angular zero eigenspace,
+$r^{-1/2}f(r)$ gives a unitary map from $L^2(dr)$, reducing the operator
+to $c(dr)\partial_r$. Locally at the tip, $H^1$ has an endpoint trace and
+the minimal closure has zero trace. Thus that exact block contributes one
+complex endpoint coefficient per chirality. The full block contributes two.
+This is a local tip quotient after excluding the regular outer-boundary
+trace, not the unrestricted maximal/minimal quotient on a bounded punctured
+disk. The latter contains infinitely many regular boundary traces.
+
+The intrinsic periodic Dirac spectrum on any metric link circle of length
+$L(r)$ is $2\pi\Z/L(r)$ once its total flat holonomy is trivial. This
+link result does not construct a parametrix for the surface Dirac operator.
+The model inverse for $\partial_r+k/r$ is
+\[
+ Q_kf(r)=\begin{cases}
+ r^{-k}\int_0^r s^kf(s)\dd s,&k>0,\\
+ -r^{-k}\int_r^{r_0}s^kf(s)\dd s,&k<0,\\
+ \int_0^rf(s)\dd s,&k=0.
+ \end{cases}
+\]
+Differentiation checks $(\partial_r+k/r)Q_kf=f$. To patch such inverses,
+one must prove boundedness in chosen graph spaces and control the overlap
+remainders. The claim that all cutoff commutators gain positive weight is
+false without further construction: under $r=\varepsilon R$,
+$\varepsilon\partial_r\chi(r/\varepsilon)=\chi'(R)$. Composing that
+commutator with a first-order model inverse leaves weight zero, not a
+factor tending to zero. Shrinking alone therefore does not justify the
+claimed Neumann series. Cone-operator theory \cite{cone,dirac} cannot be
+imported until the actual Whitney seam and domain hypotheses are verified.
+The actual chiral/full trace dimensions in v12 are consequently unproved.
+
+\begin{proposition}[First-order phase/deck comparison]
+The pullback $h_F(v,w)=\Re(dF(v)\overline{dF(w)})$ is positive definite at
+$P_\pm$. Its restriction normalizes the kernel of $dS$.
+For $k_\pm=\partial_t+c_0s_\pm\partial_u/[2(1-c_0)]$,
+\[
+ dS(k_\pm)=0,\qquad |dF(k_\pm)|^2=655/4-72\sqrt5>0.
+\]
+The two normalization branches have opposite first-order $F$ phases.
+Their four limiting square roots form a nonsplit $\Z_4$ torsor over the
+two branches. A chosen orthogonal source reflection lifts to Pin and
+exchanges the two chiral Clifford lines.
+\end{proposition}
+\begin{proof}
+Invertibility of $dF$ proves positive definiteness. Actual differentiation
+gives $dF(k_\pm)=s_\pm(1-2c_0)
+-i s_\pm(15c_0-4)/[2Q_0(1-c_0)]$; reduction by $c_0^2=3c_0-1$
+gives the squared norm. The two double branches approach in directions
+$\pm k$, so their normalized phases tend to $a,-a$. If $\alpha^2=a$,
+their roots are $\{\alpha,i\alpha,-\alpha,-i\alpha\}$. Multiplication by
+$i$ squares to the phase-deck sign, and the extension
+$\Z_2\to\Z_4\to\Z_2$ has no group section. Finally Clifford
+multiplication by a unit reflecting vector anticommutes with chirality,
+and its two Pin lifts differ by a central sign \cite{pin}.
+\end{proof}
+The reflection requires a chosen positive metric and either a Pin$^+$ or
+Pin$^-$ convention. It is not an automatic isometry of the actual induced
+metric. Right--left cross-cap equivalence only compares metrics: for example
+the target shear $(X,Y,Z)\mapsto(X,Y,Z+Y)$ preserves the cross-cap germ
+but destroys the standard $y\mapsto-y$ source metric symmetry.
+Likewise a Pin map of the spin fibers does not supply an identification of
+the separate phase-line fibers. Their first-order quarter-turn is precisely
+the distinction that the four-phase torsor records.
+
+\begin{proposition}[Conditional full-spin cut action]
+On regular paired cut banks assume specified trace spaces, Dirac Green's
+formula, and a unitary full-spin bundle map $U$ including a phase-line
+identification, such that $U^*c(\nu_2)U=-c(\nu_1)$.
+Then the graph $(v,\lambda Uv)$ is isotropic for the Green form exactly
+when $|\lambda|=1$, and is fiberwise maximal isotropic.
+The real Green transgression coefficient is uniquely $1/2$.
+If a fixed Pin reduction is additionally required, scalar multiples of its
+chosen lift remain Pin lifts exactly for $\lambda=\pm1$.
+\end{proposition}
+\begin{proof}
+The Green pairing restricted to the graph is
+$(1-|\lambda|^2)\int\langle c(\nu_1)v,w\rangle\dd s$.
+The boundary Clifford map is invertible, so isotropy is equivalent to the
+coefficient being zero. The graph has half the doubled fiber dimension,
+giving fiberwise maximality. For
+$x=\sum_j\langle\psi_j,D_j\psi_j\rangle$, the self-pairing Green term is
+$\bar x-x$. Hence $x+a(\bar x-x)$ is real for arbitrary $x$ exactly when
+$a=1/2$. Its variation has no boundary term on a common isotropic trace
+space. This does not single out this graph among all isotropic conditions.
+The kernel of the chosen Pin double cover is $\{1,-1\}$, giving the last
+claim once that reduction has been supplied \cite{dirac,pin}.
+\end{proof}
+The conditional trace theorem neither identifies the phase and normalization
+lines nor fixes their relative unitary trivialization. Without that additional
+input a continuous phase freedom remains. It also leaves an overall action
+multiplier and a clock unspecified. End behaviour of the singular cut must
+be included before turning the regular-bank calculation into a global
+self-adjoint Dirac realization.
+
+For the self-adjoint circle operator $-i\partial_\theta$ with
+$H^1$ boundary condition $f(2\pi)=-f(0)$, the eigenvalues are
+$n+1/2$. The involution $n\mapsto-n-1$ pairs each with its negative.
+Thus its eta series vanishes absolutely for $\Re s>1$ and its meromorphic
+continuation has value zero at $s=0$ \cite{aps}. This elementary model
+produces no net spectral chirality.
+
+\section{Structural limits and the remaining research problem}\label{sec:limits}
+Several negative conclusions need little machinery but prevent unjustified
+identifications. A residual does not fix communication capacity: on identical
+binary labels a constant stochastic channel has capacity zero and a noiseless
+one has capacity $\log2$. The kernel and resource constraints are absent from
+the residual. A proposed sphere-volume to disk-area ratio with
+$r=\phi^{-2}R$ is $2\pi\phi^4R$ and scales as a length; dividing by $R$
+defines a dimensionless number but no mass operator.
+For the canonical Kahler form on $\C^2$, the power coordinates depend on
+disjoint canonical pairs and satisfy $\{|z_+|^2,|z_-|^2\}=0$.
+The full $SU(2)$ moment map is a different observable algebra.
+A nonempty proper subset of $SU(2)$ cannot be invariant under its full
+transitive left action; this conclusion is conditional on an actual proper
+source lift, which \eqref{eq:S} alone has not specified.
+
+The chosen complex residual supplies the smooth algebraic pair $(E,D)$
+needed for its mixed Hodge calculation. Real signal topology and the number
+$\sigma=1/2$ do not specify such a pair, a finite-field model, Frobenius,
+or an $\ell$-adic sheaf. A single curve is not a Weil cohomology theory.
+For a separately specified realization extended to open varieties with
+localization and Tate twists, its localization sequence has boundary term
+the kernel of the sum map $H^0(D)(-1)\to H^2(E)$, of dimension one.
+That is a conditional evaluation of an existing theory.
+
+The outstanding actual analytic problem is concrete. Construct the corrected
+fixed-boundary point traces and a two-sided Green/Dirac parametrix with
+uniform overlap graph estimates. Prove the needed resolvent regularity and
+exclude additional modes. Global compactness and the positive fixed-Dirichlet
+gap are established above, including both endpoint corners. Specify the spin domains,
+Pin convention and phase-line transmission data before claiming an actual
+trace interface. The earlier proof labels of v12 do not resolve these
+obligations; the domain counterexample shows why they must be revisited.
+The source geometry, capacity theorem and independent spectral results remain
+available while this analytic work continues.
+
+\appendix
+\section{Claim audit, formal coverage and reproducibility}
+The immutable historical authority is the 43-page final v12 PDF with SHA-256
+\begin{quote}\small
+\nolinkurl{4ebb8f0a7d6e88a6c5cd97f65d224b4e938867cabad54f057d3ceafb24167d5a}
+\end{quote}
+Physical and printed page numbers agree; Section 7 is on pages 14--16,
+not 13--15. The full machine-readable and human-readable claim maps pin
+66 named blocks, including definitions and remarks, to this PDF. Abstract,
+conclusion, figure and historical status-table assertions inherit those
+audited results, not their former ``proven'' labels.
+
+The accompanying Lean project uses Lean/Mathlib 4.33.1 with the unchanged
+RuledV5 and StokesV5 source dependencies. It proves actual atlas/rank and
+small-circle statements through those identical maps, a genuine polar fold
+through existing smooth inverse charts, actual Mellin interval integrals,
+actual Gram entry integrals and eigenvalue estimates, and selected finite
+boundary identities. The separate companion lists precisely what is encoded.
+Capacity integrals, Hilbert operator domains, cohomology, sheaf theory and
+the actual Green/Dirac parametrices are not certified by that finite inventory.
+External Whitney recognition, Milnor comparison, Gysin/MHS and abstract
+Krein/buckling results remain cited dependencies with explicit hypotheses.
+
+Independent exact replay rebuilds the actual derivative determinants and
+Euclidean jet invariants, the polar remainder correction, weighted adjoint
+coefficient, model logarithmic residual and counterexample calculations.
+It supplies neither an infinite-dimensional parametrix nor an unbounded
+operator-domain certificate. The two registered ancestor figures were reviewed:
+the monodromy schematic is useful but can be mistaken for a uniform clock;
+the golden-rectangle image is correct background but adds no proof. The new
+source diagram and comparison table instead guide the corrected statements.
+All ancestor files and historical sealed artifacts remain unchanged.
+
+\begin{thebibliography}{99}
+\bibitem{ruled} A. Hayami, \emph{The Orthogonal-Circle Ruled Surface}, corrected v5,
+2026. \href{https://doi.org/10.5281/zenodo.23073642}{doi:10.5281/zenodo.23073642}.
+Proof companion version 0.03:
+\href{https://doi.org/10.5281/zenodo.23073654}{doi:10.5281/zenodo.23073654}.
+\bibitem{whitneymetric} M. Hasegawa et al., \emph{Intrinsic properties of surfaces
+with singularities}, \href{https://arxiv.org/abs/1409.0281}{arXiv:1409.0281},
+Section 4, especially Corollary 4.5.
+\bibitem{milnor} J. Milnor, \emph{Singular Points of Complex Hypersurfaces},
+Annals of Mathematics Studies 61, Princeton University Press, 1968.
+\bibitem{dimca} A. Dimca, \emph{Singularities and Topology of Hypersurfaces},
+Springer, 1992.
+\bibitem{deligne} P. Deligne, Theorie de Hodge II, \emph{Publ. Math. IHES} 40
+(1971), 5--57; III, 44 (1974), 5--77.
+\bibitem{peters} C. Peters and J. Steenbrink, \emph{Mixed Hodge Structures},
+Springer, 2008. Smooth open curves and localization.
+\bibitem{principal} L. F. Martins, K. Saji, S. P. dos Santos and R. Shimada,
+\emph{Geometry on principal curvature surfaces},
+\href{https://arxiv.org/abs/2607.21796}{arXiv:2607.21796v1},
+Proposition 2.1 and Eq.~(2.8).
+\bibitem{reed} M. Reed and B. Simon, \emph{Methods of Modern Mathematical
+Physics I: Functional Analysis}, Academic Press, 1972.
+\bibitem{brezis} H. Brezis, \emph{Functional Analysis, Sobolev Spaces and
+Partial Differential Equations}, Springer, 2011. Rellich compactness and
+Sobolev traces on bounded Lipschitz domains.
+\bibitem{hardy} H. Hedenmalm, P. Lindqvist and K. Seip, A Hilbert space of
+Dirichlet series and systems of dilated functions in $L^2(0,1)$,
+\emph{Duke Math. J.} 86 (1997), 1--37.
+\href{https://arxiv.org/abs/math/9512211}{arXiv:math/9512211}.
+\bibitem{point} D. Noja and F. Raso Stoia, \emph{The Dirichlet Laplacian
+with a point interaction on unbounded Lipschitz domains},
+\href{https://arxiv.org/abs/2607.04349}{arXiv:2607.04349v1},
+Proposition 2.1 and Theorem 2.2. Regular-domain comparison only.
+\bibitem{pacini} T. Pacini, \emph{Desingularizing isolated conical singularities:
+uniform estimates via weighted Sobolev spaces},
+\href{https://arxiv.org/abs/1005.3511}{arXiv:1005.3511}. Conifold hypotheses
+are not assumed for a Whitney seam.
+\bibitem{krein} G. Fucci et al., \emph{The Krein--von Neumann extension revisited},
+\href{https://arxiv.org/abs/2102.00685}{arXiv:2102.00685}.
+\bibitem{buckling} M. S. Ashbaugh et al., \emph{The Krein--von Neumann
+extension and its connection to an abstract buckling problem},
+\href{https://arxiv.org/abs/0907.1439}{arXiv:0907.1439}.
+\bibitem{stacks} The Stacks Project Authors, Open immersions and extension by
+zero, \href{https://stacks.math.columbia.edu/tag/009Z}{Tag 009Z}.
+\bibitem{cone} T. Krainer and G. A. Mendoza, \emph{Elliptic complexes of
+first-order cone operators: ideal boundary conditions},
+\href{https://arxiv.org/abs/1611.06526}{arXiv:1611.06526}. The cone
+hypotheses require a separate actual-metric verification.
+\bibitem{dirac} C. Bar and W. Ballmann, \emph{Guide to boundary value problems
+for Dirac-type operators},
+\href{https://arxiv.org/abs/1307.3021}{arXiv:1307.3021}, Section 2.
+\bibitem{pin} R. C. Kirby and L. R. Taylor, Pin structures on low-dimensional
+manifolds, \emph{Geometry of Low-Dimensional Manifolds 2}, Cambridge
+University Press, 1991, 177--242.
+\bibitem{aps} M. F. Atiyah, V. K. Patodi and I. M. Singer, Spectral asymmetry
+and Riemannian geometry I, \emph{Math. Proc. Cambridge Philos. Soc.} 77
+(1975), 43--69. \href{https://doi.org/10.1017/S0305004100049410}{doi:10.1017/S0305004100049410}.
+\end{thebibliography}
+\end{document}

@@ -1,0 +1,1353 @@
+{
+  "source_sha256": "4ebb8f0a7d6e88a6c5cd97f65d224b4e938867cabad54f057d3ceafb24167d5a",
+  "date": "2026-10-02",
+  "page_convention": "physical=printed; page 1 is title/abstract",
+  "claims": [
+    {
+      "id": "3.1",
+      "kind": "Definition",
+      "physical_page": 4,
+      "printed_page": 4,
+      "original_statement": "Definition 3.1 (Geometric Projection). The Geometric Projection 𝒫 : R4 → R3 maps the 4D\nsignal state to 3D observational space. The realization 𝒫(𝒮) exhibits immersion singularities\nwhere the normal vector 𝑉 = 𝑆𝑡 × 𝑆𝑢 vanishes.",
+      "status": "DEFINITION GAP",
+      "issue": "No explicit lift or projection is defined by the momentum constraint.",
+      "corrected_statement": "Use the explicit ruled map as the model; C2 is identified with bicomplex idempotent coordinates only after specifying the algebra.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:model",
+      "domain_and_hypotheses": "Explicit S on the completed physical rectangle; no unspecified momentum lift.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized; no fabricated C2-to-surface map.",
+      "remaining_obligation": "An actual momentum-compatible lift/projection would be additional input."
+    },
+    {
+      "id": "3.2",
+      "kind": "Definition",
+      "physical_page": 4,
+      "printed_page": 4,
+      "original_statement": "Definition 3.2 (Mellin–Hilbert Spectral Operator). The Mellin–Hilbert Spectral Operator is\nthe family of operators              (︂       )︂\n                                         𝑑\n                             𝒯𝜎 = −𝑖 𝑥     +𝜎 ,       𝜎 ∈ R,\n                                        𝑑𝑥\nacting on 𝒟 = 𝐶𝑐∞ ((1, ∞)) ⊂ 𝐿2 ([1, ∞), 𝑑𝑥). The formal eigenfunctions 𝑓𝜔 (𝑥) = 𝑥−(𝜎+𝑖𝜔) satisfy\n𝒯𝜎 𝑓𝜔 = −𝜔 𝑓𝜔 with real eigenvalue −𝜔 (see Corollary 7.3).\n",
+      "status": "REPAIRED",
+      "issue": "The introduction uses a different weighted measure.",
+      "corrected_statement": "Fix L2(dx), conjugate-linear first inner product, and the compactly supported core.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:mellin",
+      "domain_and_hypotheses": "Real sigma; conjugate-first L2(dx), compact core inside (1,infinity).",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "mellin_interval_green; mellin_zero_boundary_pairing",
+      "remaining_obligation": "Full Hilbert adjoint/closure and deficiency domains have written proofs; not Lean encoded."
+    },
+    {
+      "id": "3.3",
+      "kind": "Definition",
+      "physical_page": 5,
+      "printed_page": 5,
+      "original_statement": "Definition 3.3 (Singular Resolution Cost). For a non-negative local residual 𝐾 and 𝜀 > 0,\ndefine\n                  𝑉𝐾 (𝜀) := vol{𝑥 : 𝐾(𝑥) ≤ 𝜀},   𝒞𝐾 (𝜀) := − log 𝑉𝐾 (𝜀).\nThis is a geometric resolution cost. It is not called a communication-channel capacity unless a\nprobability law, noise model, and resource constraint are specified independently.",
+      "status": "WRITTEN PROOF",
+      "issue": "Use Lebesgue source volume with a smooth positive density if changed.",
+      "corrected_statement": "Retain geometric resolution cost and the explicitly chosen residual.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:residual",
+      "domain_and_hypotheses": "Standard residual and source Lebesgue volume; smooth positive density if changed.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "No integral-volume Lean theorem.",
+      "remaining_obligation": "Do not identify Euclidean coefficient with arbitrary source density."
+    },
+    {
+      "id": "4.1",
+      "kind": "Theorem",
+      "physical_page": 5,
+      "printed_page": 5,
+      "original_statement": "Theorem 4.1 (Interior Topological Dipole). The field 𝐹 = 𝑁 + 𝑖𝑀 has exactly two non-\ndegenerate isolated zeros in the interior of 𝐷, namely 𝑃± = (±𝑡0 , 𝑢0 ), with indices Ind(𝑃+ ) = −1\nand Ind(𝑃− ) = +1. At 𝑃+ the Jacobian determinant of (𝑡, 𝑢) ↦→ (𝑁, 𝑀 ) equals −5𝑠0 (1 −\n𝑐0 )2 /𝑄0 < 0, confirming non-degeneracy. In addition, 𝐹 (𝑃0 ) = 0 at the boundary point 𝑃0 =\n(0, 1); this zero is degenerate and has local degree zero by Proposition 8.8, so it is not a third\nmember of the interior vortex–antivortex pair.",
+      "status": "REPAIRED / DEPENDENCY LEAN",
+      "issue": "F is an angular-chart field, not a continuous global boundary field.",
+      "corrected_statement": "Two interior zeros and their actual small-circle indices; separate all five surface rank-loss labels.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:field",
+      "domain_and_hypotheses": "F=N+iM on open angular chart; small positively oriented circles inside physical interior.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "actual_dipole; actual_source_rank_classification",
+      "remaining_obligation": "No index assigned on a physical half-neighbourhood."
+    },
+    {
+      "id": "4.2",
+      "kind": "Theorem",
+      "physical_page": 5,
+      "printed_page": 5,
+      "original_statement": "Theorem 4.2 (Geometric Monodromy and 4𝜋 Restoration). Let 𝛾 : [0, 1] → 𝑈 ∖ {𝑃         √+ } be a\nsmall positively oriented loop encircling 𝑃+ once. Any locally defined square root 𝜒 = 𝐹 along\n𝛾 satisfies\n                                        𝜒(𝛾(1)) = −𝜒(𝛾(0)).\nConsequently the geometric period of 𝜒 in parameter space is 4𝜋: two full traversals of 𝛾 are\nrequired to restore 𝜒.",
+      "status": "WRITTEN / PARTIAL LEAN",
+      "issue": "Two traversals is topological restoration, not an absolute time period.",
+      "corrected_statement": "Use continuous logarithm lifting and uniqueness of continuous square-root branches.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:field",
+      "domain_and_hypotheses": "Continuous nonzero closed path; exponential lift; actual winding plus or minus one.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "square_root_lift; unit_winding_sign_change; local_observation_root_sign",
+      "remaining_obligation": "Apply actual dipole winding; uniqueness statement remains written."
+    },
+    {
+      "id": "4.3",
+      "kind": "Remark",
+      "physical_page": 5,
+      "printed_page": 5,
+      "original_statement": "Remark 4.3. Theorem 4.2 establishes a purely geometric monodromy result: the complex field\n𝐹 , whose topological\n            √         dipole structure is rigorously derived from the surface geometry, forces any\nbranch of 𝐹 to have period 4𝜋. This is analogous to spinor periodicity in 𝑆𝑈 (2), but the\nidentification with physical Spin- 21 requires additional physical assumptions and is not claimed\nhere as a mathematical theorem.\n",
+      "status": "RESTORATION SCOPE",
+      "issue": "A loop parameter is not an absolute time clock.",
+      "corrected_statement": "Retain two-traversal sign restoration; no physical spin identification.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:field",
+      "domain_and_hypotheses": "A loop parameter is not an absolute time clock. Physical spin requires an independently supplied representation/model.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "unit_winding_sign_change",
+      "remaining_obligation": "Physical spin requires an independently supplied representation/model."
+    },
+    {
+      "id": "4.4",
+      "kind": "Corollary",
+      "physical_page": 6,
+      "printed_page": 6,
+      "original_statement": "Corollary 4.4 (Local Degree via Jacobian Sign). For a smooth map Φ : R2 → R2 with an\nisolated zero at 𝑝 and non-degenerate Jacobian det(𝐷Φ(𝑝)) ̸= 0, the topological index satisfies\n                                               (︀          )︀\n                                  Ind(𝑝) = sgn det(𝐷Φ(𝑝)) .\n\nApplied to Φ = (𝑁, 𝑀 ) and the lateral singularities:\n\n                                    ⃒       5 𝑠0 (1 − 𝑐0 )2\n                            det(𝐷𝐹 )⃒𝑃+ = −                 < 0 ⇒ Ind(𝑃+ ) = −1,\n                                                  𝑄0\n                                    ⃒       5 𝑠0 (1 − 𝑐0 )2\n                            det(𝐷𝐹 )⃒𝑃− = +                 > 0 ⇒ Ind(𝑃− ) = +1.\n                                                  𝑄0\nThis gives an explicit, computable derivation of the topological dipole, with numerical values\n| det(𝐷𝐹 )|𝑃± | ≈ 2.245.",
+      "status": "REPAIRED / DEPENDENCY LEAN",
+      "issue": "Both N and M are even; the Jacobian is odd.",
+      "corrected_statement": "Correct the parity explanation; degree of actual small circles is inherited with the same orientation.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:field",
+      "domain_and_hypotheses": "Actual planar observation field and source (t,u) orientation.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "actual_dipole; observation_field_even",
+      "remaining_obligation": "General Brouwer homology theory not reimplemented."
+    },
+    {
+      "id": "5.1",
+      "kind": "Lemma",
+      "physical_page": 7,
+      "printed_page": 7,
+      "original_statement": "Lemma 5.1 (Spectral Compression Rate).    √        The derivative of the core invariant polynomial\n𝒫(𝑐) = 𝑐2 − 3𝑐 + 1 at its root 𝑐0 = (3 − 5)/2 satisfies\n                                                        √\n                                           |𝒫 ′ (𝑐0 )| = 5.\n                                       √",
+      "status": "WRITTEN + LEAN",
+      "issue": "Derivative depends on monic normalization.",
+      "corrected_statement": "Absolute derivative is sqrt(5) for P(c)=c2-3c+1.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:residual",
+      "domain_and_hypotheses": "Monic P(c)=c^2-3c+1, c0=(3-sqrt5)/2.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "normalized_polynomial_derivative",
+      "remaining_obligation": "No invariant derivative of the zero set claimed."
+    },
+    {
+      "id": "5.2",
+      "kind": "Remark",
+      "physical_page": 7,
+      "printed_page": 7,
+      "original_statement": "Remark 5.2. The Jacobian determinant√at 𝑃+ evaluated in [1] is 5𝑠0 (1−𝑐0 )2 /𝑄0 ≈ 2.245, which\nis numerically close to but\n                         √︁ not  exactly 5 ≈ 2.236. The exact value involves (1 − 𝑐0 ) = 𝜙−1 ,\n                              √                                    √\n𝑄0 = 𝜙−1/2 , and 𝑠0 = (3 5 − 5)/2. Lemma 5.1 identifies 5 as the rate of vanishing of\nthe chosen monic polynomial 𝒫. It is not an invariant of the zero germ     √ by itself: replacing 𝒫\nby 𝑎𝒫, 𝑎 ̸= 0, preserves the zero set but changes the derivative to |𝑎| 5. The same constant\nreappears as an intensity, rather than a rate: in the companion paper [2], the√Stokes caustic on\nthe Poincaré sphere induced by the fold locus of 𝒮 has total intensity exactly 5/2 = |𝒫 ′ (𝑐0 )|/2\nat its far endpoint—an independent derivation converging on the same constant. This repetition\nis a noteworthy structural observation, but it does not by itself define capacity.",
+      "status": "DERIVATIVE NORMALIZATION REPAIR",
+      "issue": "The displayed lateral Jacobian magnitude is not sqrt(5), and its sign must agree with the chosen orientation.",
+      "corrected_statement": "Keep sqrt(5) only as the monic P derivative; actual Jacobian sign is checked at P+ and P-.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:residual",
+      "domain_and_hypotheses": "The displayed lateral Jacobian magnitude is not sqrt(5), and its sign must agree with the chosen orientation. No numerical identification with an unrelated caustic intensity.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "normalized_polynomial_derivative; actual_dipole",
+      "remaining_obligation": "No numerical identification with an unrelated caustic intensity."
+    },
+    {
+      "id": "5.3",
+      "kind": "Theorem",
+      "physical_page": 7,
+      "printed_page": 7,
+      "original_statement": "Theorem 5.3 (Intrinsic Sublevel Exponent). For the Whitney fold 𝑓f (𝑥, 𝑦) = (𝑥, 𝑦 2 ) with squared\nresidual 𝐾f = ‖𝑓f ‖2 = 𝑥2 + 𝑦 4 ,\n                                   𝑉𝐾f (𝜀) = B 14 , 32 𝜀3/4 .\n                                              (︀      )︀\n\nFor the Whitney cross-cap 𝑓× (𝑥, 𝑦) = (𝑥, 𝑥𝑦, 𝑦 2 ) with 𝐾× = ‖𝑓× ‖2 = 𝑥2 (1 + 𝑦 2 ) + 𝑦 4 ,\n\n                               𝑉𝐾× (𝜀) = B 41 , 32 𝜀3/4 1 + 𝑜(1) .\n                                            (︀     )︀    (︀     )︀\n\nThus both local models have the intrinsic sublevel, or singular-learning, exponent 𝜆 = 3/4.",
+      "status": "WRITTEN PROOF",
+      "issue": "Only the exponent survives smooth positive density changes.",
+      "corrected_statement": "Exact beta constant for standard fold; explicit two-sided cross-cap bounds and density comparison.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:residual",
+      "domain_and_hypotheses": "Standard fold/cross-cap residuals on R2; epsilon positive; local positive source densities.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "crosscap_residual_positive (algebra only)",
+      "remaining_obligation": "Volume integral and dominated convergence are not Lean encoded."
+    },
+    {
+      "id": "5.4",
+      "kind": "Remark",
+      "physical_page": 7,
+      "printed_page": 7,
+      "original_statement": "Remark 5.4 (A Logarithmic Signal-Resolution Observation). If an operational model indepen-\ndently identifies 𝑆 = 𝜀−1 , then Theorem 5.3 gives\n\n                              𝒞𝐾 (𝑆 −1 ) = 34 log 𝑆 − log B 41 , 32 + 𝑜(1).\n                                                           (︀      )︀\n\n                                                                                                   √\nIt is worth noting that a logarithmic law survives, but its intrinsic local coefficient is 3/4, not 5.\nCalling this quantity a Shannon capacity would still require a channel law and a noise/resource\nconstraint; no such physical identification is asserted here.\n",
+      "status": "WRITTEN SCOPE OBSERVATION",
+      "issue": "Resolution S=epsilon^-1 is an additional operational definition.",
+      "corrected_statement": "Cost is 3/4 log(S)-log(B)+o(1) in the stated standard model.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:residual",
+      "domain_and_hypotheses": "Resolution S=epsilon^-1 is an additional operational definition. No Shannon capacity without a channel kernel and constraints.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "No volume Lean theorem.",
+      "remaining_obligation": "No Shannon capacity without a channel kernel and constraints."
+    },
+    {
+      "id": "5.5",
+      "kind": "Proposition",
+      "physical_page": 8,
+      "printed_page": 8,
+      "original_statement": "Proposition 5.5 (Residual Geometry Does Not Fix Channel Capacity). The residual germ and\nits sublevel volumes do not uniquely determine a Shannon capacity.",
+      "status": "WRITTEN NO-GO",
+      "issue": "No stochastic kernel is supplied.",
+      "corrected_statement": "Constant versus noiseless binary kernels on identical labels have capacities 0 and log(2).",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:limits",
+      "domain_and_hypotheses": "Finite binary stochastic kernels with identical label spaces; no kernel fixed by residual.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No physical capacity law."
+    },
+    {
+      "id": "5.6",
+      "kind": "Theorem",
+      "physical_page": 8,
+      "printed_page": 8,
+      "original_statement": "Theorem 5.6 (𝐴3 residual germ). The complex analytic germ\n                                    𝐾× (𝑥, 𝑦) = 𝑥2 (1 + 𝑦 2 ) + 𝑦 4\nis right-equivalent at the origin to 𝑓 (𝑋, 𝑌 ) = 𝑋 2 + 𝑌 4 . Its Milnor and Tjurina numbers are\n𝜇(𝐾× ) = 𝜏 (𝐾× ) = 3.",
+      "status": "WRITTEN / EXTERNAL THEOREM",
+      "issue": "Holomorphic branch and local invertible derivative required.",
+      "corrected_statement": "Explicit holomorphic coordinate change; Jacobian/Tjurina algebra dimension 3.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:residual",
+      "domain_and_hypotheses": "Holomorphic cross-cap residual near complex origin; chosen sqrt(1+y^2) branch.",
+      "external_theorems": [
+        "Holomorphic inverse-function theorem; Jacobian algebra of chosen isolated germ."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "Exact coordinate check is not a proof of holomorphic IFT."
+    },
+    {
+      "id": "5.7",
+      "kind": "Theorem",
+      "physical_page": 8,
+      "printed_page": 8,
+      "original_statement": "Theorem 5.7 (Milnor fiber and finite monodromy). The global Milnor fiber\n                                𝑈 = {(𝑋, 𝑌 ) ∈ C2 : 𝑋 2 + 𝑌 4 = 1}\nis a genus-one curve with two points removed. Hence dim 𝐻 1 (𝑈 ; Q) = 3. Its geometric mon-\nodromy can be chosen as\n                             ℎ(𝑋, 𝑌 ) = (−𝑋, 𝑖𝑌 ),   ℎ4 = id,\nand on first cohomology\n                     spec(ℎ* ) = {−𝑖, 1, 𝑖},     det(𝑡𝐼 − ℎ* ) = (𝑡 − 1)(𝑡2 + 1).",
+      "status": "WRITTEN / EXTERNAL THEOREM",
+      "issue": "Smooth compactification, weighted homogeneous local/global fiber comparison.",
+      "corrected_statement": "Genus-one double cover with two unramified ends and monodromy eigenvalues -i,1,i.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:residual",
+      "domain_and_hypotheses": "Chosen isolated weighted-homogeneous A3 singularity and smooth affine fiber U over C.",
+      "external_theorems": [
+        "Milnor weighted-homogeneous fiber comparison; Riemann-Hurwitz; smooth-curve cohomology."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "Riemann-Hurwitz, Milnor fiber comparison and cohomology remain external dependencies."
+    },
+    {
+      "id": "5.8",
+      "kind": "Proposition",
+      "physical_page": 9,
+      "printed_page": 9,
+      "original_statement": "Proposition 5.8 (The cross-cap link is a figure-eight quotient). For 𝑟 > 0, let\n\n                                 𝐿𝑟 := {(𝑥, 𝑦) ∈ R2 : 𝐾× (𝑥, 𝑦) = 𝑟2 }.\n\nThen 𝐿𝑟 is a smooth circle. The restriction 𝑓× |𝐿𝑟 : 𝐿𝑟 → 𝑆𝑟2 is an immersion with exactly one\ntransverse double point,           √              √\n                             𝑓× (0, 𝑟) = 𝑓× (0, − 𝑟) = (0, 0, 𝑟).\nConsequently its image is homeomorphic to the figure-eight graph 𝑆 1 ∨ 𝑆 1 . Moreover,\n\n                                     𝑓̃︀× (𝑥, 𝑦) := (𝑥, 𝑥𝑦, 𝑦 2 , 𝑦) ∈ R4\n\nis an embedding and satisfies the reconstruction identity\n\n                                             𝜋123 ∘ 𝑓̃︀× = 𝑓× ,\n\nwhere 𝜋123 forgets the last coordinate.",
+      "status": "WRITTEN / PARTIAL LEAN",
+      "issue": "Every r>0 for the specified polynomial, not every actual germ globally.",
+      "corrected_statement": "Connected smooth link, unique double pair, transverse tangents, continuous inverse to lifted embedding.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:links",
+      "domain_and_hypotheses": "Standard cross-cap source link K=r^2, every r>0; source plane lift into R4.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "crosscap_actual_fibers; crosscap_lift_injective",
+      "remaining_obligation": "Smooth circle classification and immersion proof remain written."
+    },
+    {
+      "id": "5.9",
+      "kind": "Theorem",
+      "physical_page": 9,
+      "printed_page": 9,
+      "original_statement": "Theorem 5.9 (𝐴3 weighted phase orbit and figure-eight shadow). The primitive positive integral\nweights of 𝑋 2 + 𝑌 4 are (2, 1). Define\n\n                                      Φ𝑠 (𝑋, 𝑌 ) := (𝑒2𝑖𝑠 𝑋, 𝑒𝑖𝑠 𝑌 ).\nThen\n                           𝑓 (Φ𝑠 (𝑋, 𝑌 )) = 𝑒4𝑖𝑠 𝑓 (𝑋, 𝑌 ),       Φ𝜋/2 = ℎ.\nFor any 𝑎, 𝑏 > 0 satisfying 𝑎2 + 𝑏4 = 1, the orbit\n\n                             Γ𝑎,𝑏 (𝑠) := (𝑎𝑒2𝑖𝑠 , 𝑏𝑒𝑖𝑠 ),     𝑠 ∈ R/2𝜋Z,\n\nis an embedded circle in C2 . Its rectangular projection\n\n                          𝑃 (Γ𝑎,𝑏 (𝑠)) = (Im 𝑌, Im 𝑋) = (𝑏 sin 𝑠, 𝑎 sin 2𝑠)\n\nhas exactly one transverse double point and obeys\n                                               2    𝑢2\n                                                 (︂    )︂\n                                      2     2𝑢\n                                    𝑣 = 4𝑎 2 1 − 2 .\n                                             𝑏      𝑏\nAdding the single lost coordinate Re 𝑌 = 𝑏 cos 𝑠 reconstructs the lifted orbit. Along the phase\nparameter,\n                              𝑑2 𝑋                    𝑑2 𝑌\n                                    +  4𝑋  = 0,            + 𝑌 = 0,\n                               𝑑𝑠2                     𝑑𝑠2\nso the dimensionless frequency ratio is exactly 2 : 1.",
+      "status": "WRITTEN PROOF",
+      "issue": "The orbit is not contained in f=1 except at fourth-root phases.",
+      "corrected_statement": "Primitive weights (2,1); embedding, projection equation, transverse node, reconstruction and oscillator ratio.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:links",
+      "domain_and_hypotheses": "Positive amplitudes a,b with a^2+b^4=1; phase circle in ambient C2.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No source identification or absolute clock."
+    },
+    {
+      "id": "5.10",
+      "kind": "Proposition",
+      "physical_page": 10,
+      "printed_page": 10,
+      "original_statement": "Proposition 5.10 (The Euclidean phase action does not fix the bridge). For the orbit family in\nTheorem 5.9, the Euclidean quadratic action is\n                                    ∫︁ 2𝜋\n                         ℰ(𝑎, 𝑏) :=       ‖Γ′𝑎,𝑏 (𝑠)‖2 𝑑𝑠 = 2𝜋(4𝑎2 + 𝑏2 ).\n                                        0\n\nSubject to 𝑎2 + 𝑏4 = 1, its minimum is the degenerate orbit (𝑎, 𝑏) = (0, 1). Its unique interior\ncritical point satisfies\n                                         1             63\n                                    𝑏2 = ,       𝑎2 = ,\n                                         8             64\nand is a strict maximum. Thus this action fixes neither a non-degenerate figure-eight amplitude\nnor an absolute clock.",
+      "status": "WRITTEN PROOF",
+      "issue": "a,b>0 exclude the minimum; it is attained only in the closure.",
+      "corrected_statement": "On nondegenerate orbits the infimum is 2pi; boundary closure minimizes at (0,1); z=1/8 is a maximum.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:links",
+      "domain_and_hypotheses": "b^2 in (0,1), with minimizer only in degenerate closure; specified quadratic phase action.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "Keep amplitude domain distinction."
+    },
+    {
+      "id": "5.11",
+      "kind": "Remark",
+      "physical_page": 11,
+      "printed_page": 11,
+      "original_statement": "Remark 5.11 (Wave and reconstruction scope). The phase orbit gives an exact two-frequency\noscillator, not yet a spacetime wave equation. Treating its planar shadow as a metric graph\nwould require an independent matching condition at the four-valent vertex [9]. The normaliza-\ntion lift instead keeps the two source points distinct and therefore specifies source continuation\nwithout creating a physical scattering vertex. The value 𝑏4 = 1/64 at the interior maximum of\nProposition 5.10 is metric- and action-dependent; it is not identified with 1/(64𝜋 2 ).",
+      "status": "WRITTEN SCOPE OBSERVATION",
+      "issue": "The oscillator and graph vertex have different continuation data.",
+      "corrected_statement": "No spacetime wave equation or graph scattering law follows; action extrema remain amplitude-domain dependent.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:links",
+      "domain_and_hypotheses": "The oscillator and graph vertex have different continuation data. A metric graph would need separately specified vertex matching.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "A metric graph would need separately specified vertex matching."
+    },
+    {
+      "id": "5.12",
+      "kind": "Proposition",
+      "physical_page": 11,
+      "printed_page": 11,
+      "original_statement": "Proposition 5.12 (The actual ruled cross-caps remain on the cusp boundary). Let 𝑃𝜎 =\n(𝜎𝑡0 , 𝑢0 ), 𝜎 ∈ {+1, −1}, be the two lateral cross-caps of the ruled surface 𝑆, and write its unique\noriented Euclidean Whitney normal form as in [10, Proposition 2.1]. Its second-order invariants\n(𝑎𝜎 , 𝑏𝜎 , 𝑐𝜎 ) are\n                                                √                            √\n                     𝑀2                           𝑀 2𝑅                         2𝑅\n           𝑎𝜎 = −      3/2\n                           ,            𝑏𝜎 = 𝜎          ,              𝑐𝜎 = 1/4 ,\n                    2𝑁       √                     𝑁       √                 𝑁          √\n                  −335 + 162 5            2    −520  + 249   5               20(140 + 11 5)\n           𝑁=                  ,       𝑀 =                     ,       𝑅=                    .\n                        12                           27                           11397\nIn particular,\n                  (𝑎+ , 𝑏+ , 𝑐+ ) ≈ (−0.1991214663, 0.2763032014, 0.6191941949),\nwhile 𝑎− = 𝑎+ , 𝑏− = −𝑏+ , and 𝑐− = 𝑐+ . The orientation-free data are 𝑎𝜎 , |𝑏𝜎 |, and 𝑐𝜎 . They\nobey the exact identity\n                                      𝑏2𝜎 + 𝑎𝜎 𝑐2𝜎 = 0.                                      (2)\nConsequently the polynomial selecting returns of the principal-curvature exceptional trace to the\norigin factors as\n                                                            𝑏𝜎 2\n                                                      (︂       )︂\n                                2\n                            𝑐𝜎 𝜏 + 2𝑏𝜎 𝜏 − 𝑎𝜎 𝑐𝜎 = 𝑐𝜎 𝜏 +         .\n                                                            𝑐𝜎\nThe trace therefore has a double return direction and a cusp, not a transverse node or figure-eight.\n                      √              √                       √",
+      "status": "WRITTEN / EXACT REBUILD",
+      "issue": "Finite jet does not prove global germ equivalence.",
+      "corrected_statement": "Rebuilt Euclidean invariant N,M2,R; pedal second/third derivatives prove an ordinary cusp at the double return.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:links",
+      "domain_and_hypotheses": "Actual lateral Euclidean cross-caps, adapted first/second derivatives; exceptional pedal trace.",
+      "external_theorems": [
+        "Euclidean Whitney normal form and exceptional pedal trace, primary 2607.21796v1 Prop.2.1 Eq.(2.8)."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "cusp_return_square (factorization only)",
+      "remaining_obligation": "External principal-curvature pedal identity retained with its actual assumptions."
+    },
+    {
+      "id": "5.13",
+      "kind": "Remark",
+      "physical_page": 12,
+      "printed_page": 12,
+      "original_statement": "Remark 5.13 (Principal-curvature bridge no-go). This conclusion uses only the actual second\njet and no fitted scale. It is also structural: 𝑆 is affine in its ruling coordinate, so 𝑆𝑢𝑢 = 0, and\nthe canonical normal-form shear forces (2). Higher jets may change the geometry away from\nthe exceptional trace, but cannot change this two-jet discriminant. Thus the principal-curvature\nconstruction supplies neither the amplitudes (𝑎, 𝑏) of Theorem 5.9 nor a canonical identification\nwith Proposition 5.8.",
+      "status": "WRITTEN GEOMETRIC NO-GO",
+      "issue": "The exceptional cusp is not the real link or the weighted orbit.",
+      "corrected_statement": "Affine ruling plus actual adapted normal-plane invariants force the cusp discriminant and derivative criterion.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:links",
+      "domain_and_hypotheses": "The exceptional cusp is not the real link or the weighted orbit. No global curvature-surface classification or amplitude bridge.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "cusp_return_square is factorization only.",
+      "remaining_obligation": "No global curvature-surface classification or amplitude bridge."
+    },
+    {
+      "id": "6.1",
+      "kind": "Proposition",
+      "physical_page": 12,
+      "printed_page": 12,
+      "original_statement": "Proposition 6.1 (Governing Invariant). The immersion singularities\n                                                        √          of 𝒮 are governed by 𝑐2 −\n                                                 −2\n3𝑐 + 1 = 0, whose unique root in (0, 1) is 𝑐0 = 𝜙 = (3 − 5)/2.\n",
+      "status": "REPAIRED / DEPENDENCY LEAN",
+      "issue": "P(c)=0 only selects lateral interior singularities.",
+      "corrected_statement": "The completed source has P0, P+, P-, and two Q=0 lower corners.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:atlas",
+      "domain_and_hypotheses": "Completed source -pi/2<=t<=pi/2, 0<=u<=1; smooth r endpoint extension.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "actual_source_rank_classification; actual_endpoint_rank",
+      "remaining_obligation": "Do not drop t=0 or use angular derivatives at Q=0."
+    },
+    {
+      "id": "6.2",
+      "kind": "Proposition",
+      "physical_page": 13,
+      "printed_page": 13,
+      "original_statement": "Proposition 6.2 (Cross-Cap Classification). At the three rank-one points of the smooth exten-\nsion of (1), namely the central point 𝑃0 = (0, 1) and the lateral points 𝑃± , the determinant\n\n                                                                               Δ := det(𝑆𝑢 , 𝑆𝑢𝑡 , 𝑆𝑡𝑡 )\n\nis non-zero. More precisely,\n                                                                                                                  √\n                                                                                                                √︁\n                                                  Δ(𝑃0 ) = 1,                    Δ(𝑃+ ) = Δ(𝑃− ) = −5                   5 − 2.\n\nConsequently each smooth interior germ is a Whitney cross-cap. At 𝑃0 the original parameter\nrectangle shows only the corresponding boundary half-germ.",
+      "status": "REPAIRED / EXTERNAL THEOREM",
+      "issue": "There are five smooth-extension rank-one germs.",
+      "corrected_statement": "Actual adapted cross-cap determinants: P0=1, lateral=-5 sqrt(sqrt5-2), corner=-epsilon. Physical corner restriction is a quarter-germ.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:atlas",
+      "domain_and_hypotheses": "Actual full smooth extensions; original physical half- or quarter-restrictions retained.",
+      "external_theorems": [
+        "Smooth Whitney cross-cap recognition, primary 1409.0281 Corollary 4.5 proof."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Endpoint differentials and full rank set inherited; cross-cap recognition not encoded.",
+      "remaining_obligation": "Whitney determinant criterion supplies actual germ equivalence in prose."
+    },
+    {
+      "id": "7.1",
+      "kind": "Theorem",
+      "physical_page": 14,
+      "printed_page": 14,
+      "original_statement": "Theorem 7.1 (Formal Self-Adjointness). On the domain 𝒟 = 𝐶𝑐∞ ((1, ∞)) in 𝐿2 ([1, ∞), 𝑑𝑥),\nthe formal adjoint of 𝒯𝜎 = −𝑖(𝑥𝜕𝑥 + 𝜎) is\n                                      (︂              )︂\n                                           𝑑\n                              𝒯𝜎* = −𝑖 𝑥     + (1 − 𝜎) = 𝒯1−𝜎 .\n                                          𝑑𝑥\n\nConsequently 𝒯𝜎 is formally self-adjoint (𝒯𝜎 = 𝒯𝜎* ) if and only if 𝜎 = 12 .",
+      "status": "REPAIRED / ACTUAL INTEGRAL LEAN",
+      "issue": "Weighted intro and dx domain conflict; formal expression is not adjoint-domain equality.",
+      "corrected_statement": "IBP with endpoint term; formal adjoint parameter 1-sigma only for dx. For x^(2beta-1) dx it is 2beta-sigma.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:mellin",
+      "domain_and_hypotheses": "Complex C1 functions on a positive compact interval; real sigma,beta and chosen measure.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "mellin_interval_green; mellin_zero_boundary_pairing; formal_coefficient_symmetry",
+      "remaining_obligation": "Dense-core to Hilbert adjoint domain remains written."
+    },
+    {
+      "id": "7.2",
+      "kind": "Remark",
+      "physical_page": 14,
+      "printed_page": 14,
+      "original_statement": "Remark 7.2 (Von Neumann Deficiency Indices). On 𝐿2 ([1, ∞)) with domain 𝐶𝑐∞ ((1, ∞)), the\nvon Neumann deficiency indices of 𝒯1/2 are (𝑛+ , 𝑛− ) = (1, 0): the solution 𝜓+ (𝑥) = 𝑥−3/2 to\n                                            ∫︀ ∞ −3\n(𝒯1/2 )* 𝜓 = 𝑖𝜓 lies in 𝐿2 ([1, ∞))  (since   1 𝑥   𝑑𝑥 = 21 < ∞), while the solution 𝜓− (𝑥) = 𝑥1/2\n                                   ∞\nto (𝒯1/2 )* 𝜓 = −𝑖𝜓 does not ( 1 𝑥 𝑑𝑥 = ∞). Unequal deficiency indices (1, 0) mean 𝒯1/2 on this\n                                ∫︀\n\ndomain is not essentially self-adjoint and admits no self-adjoint extension.\n    By contrast, on 𝐿2 ((0, ∞)) with domain 𝐶𝑐∞ ((0, ∞)), neither 𝑥−3/2 (diverges at 0) nor 𝑥1/2\n(diverges at ∞) lies in the space, so deficiency indices are (0, 0) and 𝒯1/2 is essentially self-\nadjoint there—as confirmed by the Mellin–Plancherel isomorphism ℳ : 𝐿2 ((0, ∞)) → 𝐿2 (R)\nwhich conjugates 𝒯1/2 to multiplication by 𝜔 [16]. For the signal-theoretic setting with the semi-\ninfinite domain [1, ∞), Theorem 7.1 (formal self-adjointness) is the appropriate statement.",
+      "status": "WRITTEN DOMAIN PROOF",
+      "issue": "Specify H1_0 and H1 after logarithmic unitary.",
+      "corrected_statement": "Half-line -i d/ds has indices (1,0), no SA extension; full-line H1 generator is SA.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:mellin",
+      "domain_and_hypotheses": "Logarithmic unitary on L2 half-line; minimal H1_0 and maximal H1 derivative domains.",
+      "external_theorems": [
+        "Sobolev closure/trace and full-line Fourier-Plancherel; deficiency ODE solved in manuscript."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No closed half-line self-adjoint operator inferred."
+    },
+    {
+      "id": "7.3",
+      "kind": "Corollary",
+      "physical_page": 14,
+      "printed_page": 14,
+      "original_statement": "Corollary 7.3 (Real Phase Frequencies). The formal eigenfunctions 𝑓𝜔 (𝑥) = 𝑥−(𝜎+𝑖𝜔) , 𝜔 ∈ R,\nsatisfy 𝒯𝜎 𝑓𝜔 = −𝜔 𝑓𝜔 with eigenvalue −𝜔 ∈ R for all 𝜎. These are generalized eigenfunctions\nrather than vectors in the half-line 𝐿2 space, so no Hilbert-space orthogonality follows from formal\nself-adjointness alone.\n",
+      "status": "REPAIRED",
+      "issue": "For sigma>1/2 the displayed function IS L2 on the half-line.",
+      "corrected_statement": "At sigma=1/2 it is generalized; sigma>1/2 gives L2 but violates the minimal zero trace at x=1.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:mellin",
+      "domain_and_hypotheses": "x^(-sigma-i omega) on [1,infinity), real parameters; trace one at x=1.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Exact differentiation only.",
+      "remaining_obligation": "Do not assert non-L2 for every sigma."
+    },
+    {
+      "id": "7.4",
+      "kind": "Theorem",
+      "physical_page": 15,
+      "printed_page": 15,
+      "original_statement": "Theorem 7.4 (Gram Matrix Bound). For a finite set S ⊂ N with |S| = 𝑀 , let 𝐺 = (⟨𝜓𝑛 , 𝜓𝑚 ⟩𝑇 )\n                                                   ∫︀ 𝑇\nbe the Gram matrix with entries ⟨𝜓𝑛 , 𝜓𝑚 ⟩𝑇 = 𝑇1 0 𝜓𝑛 𝜓𝑚 𝑑𝑡. If 𝛿 := min𝑛̸=𝑚∈S | ln(𝑛/𝑚)| > 0,\nthen\n                                                    2(𝑀 − 1)\n                                     ‖𝐺 − 𝐼‖op ≤               .\n                                                        𝑇𝛿\n                                                            ⃒∫︀ 𝑇",
+      "status": "REPAIRED / ACTUAL INTEGRAL LEAN",
+      "issue": "Require positive T and frequencies; M=0,1 need no undefined min separation.",
+      "corrected_statement": "Consistent conjugate-first Gram integral, off-diagonal bound, Hermitian spectral enclosure and operator bound.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:gram",
+      "domain_and_hypotheses": "Finite distinct real frequencies, T>0; delta>0 for at least two frequencies.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "gram_entry_integral; gram_entry_bound; gram_eigenvalue_enclosure",
+      "remaining_obligation": "Hermitian matrix operator-norm translation remains written."
+    },
+    {
+      "id": "7.5",
+      "kind": "Remark",
+      "physical_page": 15,
+      "printed_page": 15,
+      "original_statement": "Remark 7.5 (Asymptotic Orthogonality). The bound ‖𝐺 − 𝐼‖op = 𝑂(𝑇 −1 ) as 𝑇 → ∞ confirms\nthat the phasors become asymptotically orthogonal, with the rate controlled by the minimal log-\nseparation 𝛿 of the node set.\n",
+      "status": "WRITTEN / ACTUAL INTEGRAL LEAN",
+      "issue": "Hold the finite frequency set fixed when T grows.",
+      "corrected_statement": "Gram minus identity has Euclidean operator norm O(T^-1).",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:gram",
+      "domain_and_hypotheses": "Hold the finite frequency set fixed when T grows. No uniform growing-set estimate asserted.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "gram_entry_bound; gram_eigenvalue_enclosure",
+      "remaining_obligation": "No uniform growing-set estimate asserted."
+    },
+    {
+      "id": "7.6",
+      "kind": "Proposition",
+      "physical_page": 16,
+      "printed_page": 16,
+      "original_statement": "Proposition 7.6 (Linear Independence and Positive Definiteness). Under the hypotheses of\nTheorem 7.4, the phasor family {𝜓𝑛 }𝑛∈S is linearly independent in 𝐿2 ([0, 𝑇 ]) whenever\n\n                                               2(𝑀 − 1)\n                                        𝑇 >             .\n                                                  𝛿\nEquivalently, the Gram matrix 𝐺 is positive definite, with 𝜆min (𝐺) ≥ 1 − 2(𝑀 − 1)/(𝑇 𝛿) > 0.",
+      "status": "STRENGTHENED / WRITTEN PROOF",
+      "issue": "The threshold is sufficient for conditioning, not necessary for independence.",
+      "corrected_statement": "Distinct finite frequencies are independent for every T>0 by continuity plus Vandermonde derivatives.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:gram",
+      "domain_and_hypotheses": "Finite distinct real frequencies, every T>0; normalized conjugate-first Gram matrix.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "Quantitative positivity with epsilon<1 follows from proved enclosure."
+    },
+    {
+      "id": "7.7",
+      "kind": "Remark",
+      "physical_page": 16,
+      "printed_page": 16,
+      "original_statement": "Remark 7.7 (Bohr Interpretation). The limit 𝐺 → 𝐼 has a precise compact-group realization\nthrough the prime-exponent characters of the Bohr torus; see Theorem 8.4. No freeness assertion\nof rank 𝑀 is needed, and multiplicative relations among the selected integers are retained.",
+      "status": "WRITTEN BOHR SCOPE",
+      "issue": "Finite integer relations must be retained.",
+      "corrected_statement": "Prime-exponent product characters realize the fixed-set limiting Gram matrix.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:hardy",
+      "domain_and_hypotheses": "Finite integer relations must be retained. Haar/product-group construction not Lean encoded.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Gram integral bound only.",
+      "remaining_obligation": "Haar/product-group construction not Lean encoded."
+    },
+    {
+      "id": "7.8",
+      "kind": "Corollary",
+      "physical_page": 16,
+      "printed_page": 16,
+      "original_statement": "Corollary 7.8 (Condition Number and Stability Bound). Under the hypotheses of Theorem 7.4\nwith 𝜀 := 2(𝑀 − 1)/(𝑇 𝛿) < 1, the Gram matrix satisfies\n\n                            1 − 𝜀 ≤ 𝜆min (𝐺) ≤ 𝜆max (𝐺) ≤ 1 + 𝜀,\n\nand the condition number is bounded by\n\n                                            𝜆max (𝐺)   1+𝜀\n                                 𝜅(𝐺) :=             ≤     .\n                                            𝜆min (𝐺)   1−𝜀\n\nMoreover, the log-determinant satisfies log det(𝐺) ≥ 𝑀 log(1 − 𝜀), so the information-geometric\nvolume of the phasor family is at most 𝑀 𝜀/(1 − 𝜀) below the ideal orthogonal value.",
+      "status": "WRITTEN PROOF",
+      "issue": "Define conditioning and log-volume by det G.",
+      "corrected_statement": "Eigenvalue, condition-number, Hadamard upper bound and logdet lower/loss inequalities for epsilon<1.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:gram",
+      "domain_and_hypotheses": "Positive Gram matrix, epsilon<1; Euclidean condition number and logdet.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Eigenvalue enclosure only.",
+      "remaining_obligation": "Determinant/product and full norm proof not Lean encoded."
+    },
+    {
+      "id": "8.1",
+      "kind": "Proposition",
+      "physical_page": 16,
+      "printed_page": 16,
+      "original_statement": "Proposition 8.1 (Full-Line Plancherel Realization). The map\n\n                 𝑊 : 𝐿2 (R>0 , 𝑑𝑡/𝑡) −→ 𝐿2 (R>0 , 𝑑𝑡),      (𝑊 𝑓 )(𝑡) = 𝑡−1/2 𝑓 (𝑡),\nFigure 8: Finite-time spectral stability of a phasor family. Panel (a) shows one illustrative\nGram matrix; panels (b) and (c) summarize the exact enclosure and condition-number bounds\nof Theorem 7.4, Proposition 7.6, and Corollary 7.8. With 𝑥 = 𝑇 𝛿/(𝑀 − 1) > 2, the displayed\ncondition bound is the equivalent form 𝜅(𝐺) ≤ (𝑥 + 2)/(𝑥 − 2). The numerical entries illustrate\nthe inequalities and are not additional data or assumptions.\nis unitary and satisfies\n                                 𝑊 𝐴𝑊 −1 = −𝑖 𝑡𝜕𝑡 + 21 = 𝒯1/2 .\n                                             (︀       )︀\n\nThus the half-density 𝑡−1/2 is fixed by the change from multiplicative Haar measure to Lebesgue\nmeasure. On [1, ∞) this operator is only the half-line restriction and retains the deficiency\nobstruction of Remark 7.2; Plancherel does not make that restriction self-adjoint.\n                               ∫︀ ∞                 ∫︀ ∞",
+      "status": "WRITTEN / EXTERNAL THEOREM",
+      "issue": "Full group and half-line realizations differ.",
+      "corrected_statement": "Both logarithmic unitaries and full-line Fourier multiplication operator have explicit domains.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:mellin",
+      "domain_and_hypotheses": "Full multiplicative group (0,infinity) with Haar/Lebesgue unitaries; full-line H1.",
+      "external_theorems": [
+        "Full-line Fourier-Plancherel; unbounded multiplication operator domain."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "Fourier-Plancherel and essential self-adjointness are external standard results."
+    },
+    {
+      "id": "8.2",
+      "kind": "Theorem",
+      "physical_page": 18,
+      "printed_page": 18,
+      "original_statement": "Theorem 8.2 (Dirichlet–Hardy Evaluation Boundary). Let\n                            ⎧                                 ⎫\n                            ⎨        ∑︁          ∑︁           ⎬\n                      ℋ𝐷2\n                          = 𝑓 (𝑠) =     𝑎𝑛 𝑛−𝑠 :    |𝑎𝑛 |2 < ∞ .\n                            ⎩                                 ⎭\n                                           𝑛≥1            𝑛≥1\n\nFor 𝜎 = ℜ𝑠 > 1/2, point evaluation is bounded and\n\n                                    |𝑓 (𝑠)| ≤ ‖(𝑎𝑛 )‖ℓ2 𝜁(2𝜎)1/2 .\n\nFor 𝜎 ≤ 1/2 the evaluation vector (𝑛−¯𝑠 )𝑛 is not in ℓ2 , so point evaluation is not a bounded\nfunctional on ℋ𝐷  2 . Hence 𝜎 = 1/2 is the canonical analytic boundary of this Hilbert space of\n\nDirichlet series.",
+      "status": "WRITTEN PROOF",
+      "issue": "At/below boundary evaluation is initially defined on finite Dirichlet polynomials.",
+      "corrected_statement": "Cauchy-Schwarz upper bound and normalized finite evaluation vectors proving unboundedness.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:hardy",
+      "domain_and_hypotheses": "Coefficient l2 Dirichlet space; evaluation initially on finite polynomials.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "Coefficient l2 identification is part of definition."
+    },
+    {
+      "id": "8.3",
+      "kind": "Remark",
+      "physical_page": 18,
+      "printed_page": 18,
+      "original_statement": "Remark 8.3 (A Noteworthy Half-Density Observation). The same value 𝜎 = 1/2 occurs in two\nindependent analytic roles: formal-adjoint symmetry on the half-line and the evaluation boundary\nof ℋ𝐷2 . This coincidence is worth recording for signal analysis, but it is not a Deligne weight\n\nformula or a proof of a physical critical line.",
+      "status": "WRITTEN SCOPE OBSERVATION",
+      "issue": "Half-density and Hardy evaluation concern different operators/spaces.",
+      "corrected_statement": "Both thresholds are proved separately; their coincidence gives no Deligne weight or physical critical line.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:hardy",
+      "domain_and_hypotheses": "Half-density and Hardy evaluation concern different operators/spaces. No arithmetic or physical identification.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "formal_coefficient_symmetry only.",
+      "remaining_obligation": "No arithmetic or physical identification."
+    },
+    {
+      "id": "8.4",
+      "kind": "Theorem",
+      "physical_page": 18,
+      "printed_page": 18,
+      "original_statement": "Theorem 8.4 (Bohr–Haar Orthogonality). With normalized Haar measure 𝑚H ,\n                          ∫︁\n                              𝜒𝑛 (𝑧)𝜒𝑚 (𝑧) 𝑑𝑚H (𝑧) = 𝛿𝑛𝑚 .\n                                  T𝒫\n\nMoreover,                                  ∫︁ 𝑇\n                                       1\n                                   lim            𝑛−𝑖𝑡 𝑚𝑖𝑡 𝑑𝑡 = 𝛿𝑛𝑚 .\n                                  𝑇 →∞ 𝑇    0\nThus the limiting identity Gram matrix is the character orthogonality relation on the Bohr torus,\nwhile Theorem 7.4 quantifies its finite-time approximation.\n",
+      "status": "WRITTEN / EXTERNAL THEOREM",
+      "issue": "Distinct positive integers and prime-exponent vectors.",
+      "corrected_statement": "Product-Haar character orthogonality; direct actual finite-time limit.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:hardy",
+      "domain_and_hypotheses": "Distinct positive integers and prime-exponent characters; normalized product Haar.",
+      "external_theorems": [
+        "Product normalized Haar existence and unique integer factorization."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Gram entry bound only.",
+      "remaining_obligation": "Infinite product Haar existence and unique factorization retained."
+    },
+    {
+      "id": "8.5",
+      "kind": "Remark",
+      "physical_page": 19,
+      "printed_page": 19,
+      "original_statement": "Remark 8.5 (What the Arithmetic Structure Does Not Fix). The multiplicative group generated\nby a finite set of 𝑀 integers need not have rank 𝑀 ; for example, {2, 4} generates a rank-one\ngroup. The canonical completion is therefore the torus determined by the prime-exponent lattice,\nnot a freely declared Z𝑀 and not a Weil-cohomological object. The resemblance between phase\ndecorrelation and arithmetic character orthogonality remains a useful observation point only.",
+      "status": "WRITTEN ARITHMETIC SCOPE",
+      "issue": "The example 2,4 has exponent-lattice rank one.",
+      "corrected_statement": "Retain relations in the product torus and coefficient Hilbert space.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:hardy",
+      "domain_and_hypotheses": "The example 2,4 has exponent-lattice rank one. No freely declared rank-M lattice or Weil theory.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No freely declared rank-M lattice or Weil theory."
+    },
+    {
+      "id": "8.6",
+      "kind": "Proposition",
+      "physical_page": 19,
+      "printed_page": 19,
+      "original_statement": "Proposition 8.6 (Normalization Defect Sheaf). For rational constant sheaves, the quotient\n\n                                        𝒬𝜈 := 𝜈* Q𝑋̃︀ /Q𝑋\n\nis canonical and is supported on 𝐿. More precisely, 𝒬𝜈 ≃ 𝑗! ℒsgn , where ℒsgn is the rank-one\nanti-invariant local system of the two-sheet cover. Its stalk is 0 where 𝜈 has one preimage and Q\nwhere 𝜈 has two preimages. On a simply connected local branch, choosing an order of the sheets\ntrivializes ℒsgn ∼\n                 = Q𝐿 .",
+      "status": "WRITTEN / EXTERNAL THEOREM",
+      "issue": "Topological normalization is a proper finite map on a specified local cross-cap image.",
+      "corrected_statement": "Diagonal constant-sheaf map and quotient j! sign local system with zero pinch stalk.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:sheaf",
+      "domain_and_hypotheses": "Proper local standard cross-cap normalization; ordinary sheaves; locally closed double ray.",
+      "external_theorems": [
+        "Ordinary sheaf extension by zero and stalk adjunction, Stacks 009Z."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "sign_intertwiner_zero only.",
+      "remaining_obligation": "Ordinary sheaf category; no mixed-Hodge identification."
+    },
+    {
+      "id": "8.7",
+      "kind": "Remark",
+      "physical_page": 19,
+      "printed_page": 19,
+      "original_statement": "Remark 8.7 (Scope of the Condensed View). A compact Hausdorff realization does define a\ncondensed set, but that fact alone supplies neither a canonical structure sheaf nor a tangent\nmodule whose freeness detects the singularity. Proposition 8.6 is the canonical local invariant\navailable from the normalization map. No stronger condensed-smoothness or exceptional-pullback\nidentity is asserted. The obstruction is elementary: the same one-point topological space supports,\nfor example, the nonisomorphic stalk rings Q and Q[𝜖]/(𝜖2 ). Once the polynomial complexification\nis chosen, however,\n                                𝑈Q = Spec Q[𝑋, 𝑌 ]/(𝑋 2 + 𝑌 4 − 1)\nhas its ordinary algebraic structure sheaf. That sheaf is constructed from the stated coordinate\nring; it is not recovered from an underlying condensed set alone [14].\n8.4   The Polar Fold of the Observation Field",
+      "status": "WRITTEN STRUCTURE-SHEAF NO-GO",
+      "issue": "Underlying topology does not specify stalk rings.",
+      "corrected_statement": "One point supports Q and dual numbers; the chosen A3 affine curve has its separately supplied coordinate ring.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:sheaf",
+      "domain_and_hypotheses": "Underlying topology does not specify stalk rings. No condensed smoothness criterion or tangent module inferred.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No condensed smoothness criterion or tangent module inferred."
+    },
+    {
+      "id": "8.8",
+      "kind": "Proposition",
+      "physical_page": 20,
+      "printed_page": 20,
+      "original_statement": "Proposition 8.8 (Polar Whitney Fold). At the boundary point (𝑡, 𝑢) = (0, 1), the planar map\nΨ = (𝑁, 𝑀 ) has                             (︂     )︂\n                                              0 0\n                                𝐷Ψ(0, 1) =            .\n                                              0 −1\nFor 𝜏 = 𝑡 and 𝜌 = 1 − 𝑢,\n\n                    𝑁 (𝜏, 𝜌) = −𝜏 2 + 𝑂(𝜏 3 , 𝜏 𝜌),        𝑀 (𝜏, 𝜌) = 𝜌 + 𝑂(𝜏 2 𝜌, 𝜌2 ).\n\nHence its smooth extension has Whitney-fold normal form and local degree zero. This is distinct\nfrom the cross-cap singularity of 𝑆 : 𝐷 → R3 in Proposition 6.2.",
+      "status": "REPAIRED / ACTUAL NORMAL-FORM LEAN",
+      "issue": "M(t,1)=-t4/2+O(t6), omitted by old remainder.",
+      "corrected_statement": "Explicit symmetry source/target smooth charts prove genuine fold; full-extension degree zero, not physical boundary index.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:field",
+      "domain_and_hypotheses": "Actual observation map extended to a full smooth neighborhood of (0,1).",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "actual_polar_fold",
+      "remaining_obligation": "Local full-extension winding-zero proof remains written."
+    },
+    {
+      "id": "8.9",
+      "kind": "Proposition",
+      "physical_page": 20,
+      "printed_page": 20,
+      "original_statement": "Proposition 8.9 (The source is not a closed non-orientable surface). The regular source 𝐷reg\nis a connected orientable surface with boundary. It has\n\n                                          𝐻1 (𝐷reg ; Z) ∼\n                                                        = Z2 ,\n\nand its orientation double cover is the disconnected trivial cover 𝐷reg ⊔ 𝐷reg . In particular, it is\nnot a closed non-orientable surface.\n    The equality 𝑆(𝑡, 1) = 𝑆(−𝑡, 1) does not change this conclusion: the involution 𝑡 ↦→ −𝑡 has\nthe fixed point 𝑡 = 0, so it is not a free orientation-reversing boundary gluing. The sign local\nsystem in Proposition 8.6 instead records sheet exchange in the singular image.",
+      "status": "REPAIRED / WRITTEN PROOF",
+      "issue": "Old Dreg includes degenerate lower corners; source still has corners.",
+      "corrected_statement": "Delete all five rank labels; oriented twice-punctured disk with retained regular boundary corners; H1=Z2.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:atlas",
+      "domain_and_hypotheses": "Completed source minus all five rank labels; regular boundary corners retained.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Actual rank classification only.",
+      "remaining_obligation": "Topology/H1 deformation retraction is not Lean encoded."
+    },
+    {
+      "id": "8.10",
+      "kind": "Proposition",
+      "physical_page": 20,
+      "printed_page": 20,
+      "original_statement": "Proposition 8.10 (Induced-metric Galerkin consistency). Let\n                                                    ∫︁\n                       2\n                ℋ𝑔 = 𝐿 (𝐷reg , 𝑑𝐴𝑔 ),   ℰ𝑔 (𝑓, ℎ) =     𝑔 𝛼𝛽 𝜕𝛼 𝑓 𝜕𝛽 ℎ 𝑑𝐴𝑔 .\n                                                                𝐷reg\nFor any nested conforming finite-element spaces 𝑉𝑛 ⊂ 𝑉𝑛+1 ⊂ 𝐻 1 (𝐷reg ), choose bases satisfying\n                                     (𝑛)\n                                          ∑︁\n                                    𝜑𝑖 =      (𝐽𝑛 )𝛼𝑖 𝜑(𝑛+1)\n                                                       𝛼     .\n                                                            𝛼\n\nIf the induced metric is integrated exactly, the mass and stiffness matrices\n                                         (𝑛)     (𝑛)                                   (𝑛)    (𝑛)\n                       (𝐺𝑛 )𝑖𝑗 = ⟨𝜑𝑖 , 𝜑𝑗 ⟩ℋ𝑔 ,                      (𝐾𝑛 )𝑖𝑗 = ℰ𝑔 (𝜑𝑖 , 𝜑𝑗 )\n\nsatisfy the exact refinement identities\n\n                              𝐽𝑛* 𝐺𝑛+1 𝐽𝑛 = 𝐺𝑛 ,                     𝐽𝑛* 𝐾𝑛+1 𝐽𝑛 = 𝐾𝑛 .",
+      "status": "WRITTEN PROOF",
+      "issue": "Use the corrected regular source and conforming finite-energy spaces.",
+      "corrected_statement": "Exact sesquilinear pullback for mass and stiffness; no convergence assertion.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:capacity",
+      "domain_and_hypotheses": "Nested conforming finite-energy trial spaces with exact sesquilinear integration.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "Integration must be exact."
+    },
+    {
+      "id": "8.11",
+      "kind": "Proposition",
+      "physical_page": 21,
+      "printed_page": 21,
+      "original_statement": "Proposition 8.11 (Zero capacity and fixed-boundary removability). Let 𝑝 ∈ {𝑃0 , 𝑃+ , 𝑃− } and\nlet 𝑈𝑝 be a sufficiently small source neighbourhood, taken as a half-neighbourhood at the boundary\npoint 𝑃0 . For the local 1-capacity\n                                               (︁                            )︁\n                           Cap𝑔,𝑈𝑝 ({𝑝}) := inf ‖𝜂‖2𝐿2 (𝑈𝑝 ,𝑑𝐴𝑔 ) + ℰ𝑔 (𝜂, 𝜂) ,\n                                                       𝜂\n\nwhere 𝜂 ranges over compactly supported smooth cutoffs equal to one near 𝑝, one has\n\n                                                 Cap𝑔,𝑈𝑝 ({𝑝}) = 0.\n\nIn particular, if 𝑍int = {𝑃+ , 𝑃− } and the outer boundary is held at the Dirichlet condition, then\n                                  ℰ1                       ℰ1\n               𝐶𝑐∞ (𝐷∘ ∖ 𝑍int )        = 𝐶𝑐∞ (𝐷∘ ) ,                 ℰ1 (𝑓 ) := ℰ𝑔 (𝑓, 𝑓 ) + ‖𝑓 ‖2𝐿2 (𝑑𝐴𝑔 ) .      (3)\n\nThus removing the two interior cross-cap points does not alter the fixed-boundary Friedrichs\nDirichlet form.",
+      "status": "REPAIRED / WRITTEN PROOF",
+      "issue": "Add both endpoint quarter-germs; closures are form closures, not graph closures.",
+      "corrected_statement": "Explicit area/log-cutoff estimates prove capacity zero at all five; interior-puncture Friedrichs form unchanged.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:capacity",
+      "domain_and_hypotheses": "Actual induced metric on full/half/quarter germs; fixed outer Dirichlet form closure.",
+      "external_theorems": [
+        "Actual smooth Whitney equivalence; energy/area comparison and cutoffs proved in manuscript."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Metric algebra only.",
+      "remaining_obligation": "No deficiency index conclusion from capacity."
+    },
+    {
+      "id": "8.12",
+      "kind": "Proposition",
+      "physical_page": 22,
+      "printed_page": 22,
+      "original_statement": "Proposition 8.12 (Uniform front/seam coercivity). Let 𝑝 = 𝑃+ or 𝑃− , put 𝜚(𝑞) = ‖𝑆(𝑞)−𝑆(𝑝)‖,\nand let 𝐶𝑟 = {𝜚 = 𝑟} in a sufficiently small source neighbourhood. If Π𝑟 denotes the 𝑑𝑠𝑔 -average\non the connected link 𝐶𝑟 , then, with constants independent of 𝑟 and of the sign of 𝑝,\n\n                        |𝑢 − Π𝜚 𝑢|2\n               ∫︁\n                                    𝑑𝐴𝑔 ≤ 𝐶 ℰ𝑔 (𝑢, 𝑢),    𝑢 ∈ 𝐶𝑐∞ ({0 < 𝜚 < 𝑟0 }).            (4)\n                 0<𝜚<𝑟0      𝜚2\n\nFor the standard cross-cap, the two front charts are\n                         𝑟 cos 𝜃                 √\n               𝑥= √                 ,       𝑦 = 𝜖 𝑟 sin 𝜃,          0 < 𝜃 < 𝜋,    𝜖 ∈ {+1, −1},             (5)\n                        1 + 𝑟 sin 𝜃\nand the seam charts are 𝑥 = 𝜍𝜉, 𝑦 = 𝜉𝑧 with 𝜍 ∈ {+1, −1}. On every fixed seam strip |𝑧| ≤ 𝐾, if\n                                                       ∫︀ 𝐾\n                                                            𝑢(𝜉, 𝑧)𝑊𝜉 (𝑧) 𝑑𝑧\n                                                  𝑢𝜉 = −𝐾∫︀ 𝐾\n                           √︀\n                 𝑊𝜉 (𝑧) = 1 + 4𝑧 2 + 4𝜉 2 𝑧 4 ,                              ,\n                                                            −𝐾 𝑊𝜉 (𝑧) 𝑑𝑧\n\nthen         ∫︁ 𝐾                                   ∫︁ 𝐾\n                                                           𝐴𝑖𝑗                               det 𝑔 𝑔 −1 .\n                                                                                        √︀\n                    |𝑢 − 𝑢𝜉 |2 𝜉 2 𝑊𝜉 𝑑𝑧 ≤ 𝐶𝐾 𝜉 4           𝜉 𝜕𝑖 𝑢 𝜕𝑗 𝑢 𝑑𝑧,      𝐴𝜉 =                       (6)\n              −𝐾                                     −𝐾\nConsequently a seam has no independent square-integrable zero channel: it only matches the\nconstant modes of its adjacent front charts.",
+      "status": "STANDARD MODEL PROOF / ACTUAL ESTIMATE OPEN",
+      "issue": "Model identities and link Wirtinger do not supply the claimed uniform actual parametrix.",
+      "corrected_statement": "Prove standard link length, radial defect, inequality and finite-strip Schur/Poincare; separate transfer estimates.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:capacity",
+      "domain_and_hypotheses": "Standard front/seam metric; finite strips; separate actual weighted radial form estimate.",
+      "external_theorems": [
+        "Regular-domain Rellich/trace only; singular weighted Hardy estimate independently proved."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Metric determinant only.",
+      "remaining_obligation": "Actual weighted derivative bounds in overlap norms; not simply right-left equivalence."
+    },
+    {
+      "id": "8.13",
+      "kind": "Proposition",
+      "physical_page": 23,
+      "printed_page": 23,
+      "original_statement": "Proposition 8.13 (Cross-cap Green parametrix and boundary space). Fix the outer Dirichlet\nboundary, let 𝐻𝐹 = −Δ𝑔 be the Friedrichs operator, and let 𝐻min be the graph closure of its\nrestriction to 𝐶𝑐∞ (𝐷∘ ∖ {𝑃+ , 𝑃− }). For 𝑧 ∈ C ∖ R and 𝜎 ∈ {+, −} there is a Green vector\n                                    1\n                            𝐺𝜎,𝑧 = −  log 𝜚𝜎 + 𝑅𝜎,𝑧 ,           𝑅𝜎,𝑧 ∈ 𝐶 0 ,                        (10)\n                                   2𝜋\nwhere 𝜚𝜎 = ‖𝑆 − 𝑆(𝑃𝜎 )‖. These vectors give\n                   *\n              ker(𝐻min − 𝑧) = span{𝐺+,𝑧 , 𝐺−,𝑧 },         𝑛+ (𝐻min ) = 𝑛− (𝐻min ) = 2.\n               * ) has, modulo Dom(𝐻\nEvery 𝑢 ∈ Dom(𝐻min                   min ), unique coefficients\n\n                                𝑢 = 𝑎𝜎 log 𝜚𝜎 + 𝑏𝜎 + 𝑜(1)       at 𝑃𝜎 ,                             (11)\nand the boundary form is\n                                                          ∑︁\n                           *                *\n                         ⟨𝐻min 𝑢, 𝑣⟩ − ⟨𝑢, 𝐻min 𝑣⟩ = 2𝜋        (𝑎𝜎 𝑑𝜎 − 𝑏𝜎 𝑐𝜎 ),                    (12)\n                                                          𝜎=±\n\nwhere (𝑐𝜎 , 𝑑𝜎 ) are the coefficients of 𝑣. Hence the self-adjoint extensions form the usual 𝑈 (2)\nfamily of Lagrangian boundary conditions; the Friedrichs member is 𝑎+ = 𝑎− = 0.\nFigure 9: Front–seam decomposition near an interior cross-cap. The two front charts meet\nthrough seam charts to give one connected link. Their respective normal scales are 𝑟−2 and 𝜉 −4 ;\nthe uniform estimates leave exactly one matched constant channel and no seam-localized zero\nmode (Proposition 8.12).",
+      "status": "REFUTED AS DEFINED / REPLACEMENT CONDITIONAL",
+      "issue": "Cc interior graph closure does not fix outer Dirichlet data: infinite outer-boundary deficiency spaces.",
+      "corrected_statement": "New boundary-data/resolvent injection proof; replacement A=HF restricted to kernel of a graph-continuous surjective point trace.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:green",
+      "domain_and_hypotheses": "H0=graph closure of Cc interior Laplacian; fixed-Dirichlet HF; conditional graph-bounded surjective tau.",
+      "external_theorems": [
+        "Closed form representation and self-adjoint resolvent; von Neumann classification only after tau hypotheses."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "zero_boundary_core_witness is only a scalar check.",
+      "remaining_obligation": "Prove actual point trace and actual parametrix before n=(2,2), Green expansion or U(2) is asserted."
+    },
+    {
+      "id": "8.14",
+      "kind": "Proposition",
+      "physical_page": 25,
+      "printed_page": 25,
+      "original_statement": "Proposition 8.14 (Canonical Markov and no-running-scale selection). Keep the outer Dirich-\nlet condition fixed. Among the self-adjoint extensions of 𝐻min that generate a submarkovian\nsemigroup, 𝐻𝐹 is unique.\n    Independently, introduce reference lengths ℓ𝜎 > 0 in the maximal expansions,\n\n                                 𝑢 = 𝑎𝜎 log(𝜚𝜎 /ℓ𝜎 ) + 𝑏(ℓ)\n                                                        𝜎 + 𝑜(1).\n\nUnder the common change ℓ′𝜎 = 𝑒𝑡 ℓ𝜎 , the boundary data obey\n\n                    𝑅𝑡 (𝑎, 𝑏) = (𝑎, 𝑏 + 𝑡𝑎),    𝑎 = (𝑎+ , 𝑎− ),   𝑏 = (𝑏+ , 𝑏− ).                (14)\n\nThe only Lagrangian boundary plane invariant under 𝑅𝑡 for every 𝑡 ∈ R is\n\n                                      ℒ𝐹 = {(𝑎, 𝑏) : 𝑎 = 0},\n\nthe Friedrichs plane. Consequently every non-Friedrichs extension requires either non-Markovian\nboundary dynamics or a boundary matrix that runs with the chosen logarithmic reference scale;\nit is not a parameter-free consequence of the local cross-cap geometry.",
+      "status": "CONDITIONAL / FINITE PLANE PROOF",
+      "issue": "Markov uniqueness is false for the old all-boundaries minimum: outer Robin/Neumann alternatives remain.",
+      "corrected_statement": "No-running-scale isotropic-plane theorem proved; Markov uniqueness restricted to correctly fixed outer boundary and suitable extension hypotheses.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:green",
+      "domain_and_hypotheses": "Old H0 with unfixed outer traces; finite complex Lagrangian planes for scale theorem.",
+      "external_theorems": [
+        "Closed Dirichlet-form/submarkovian representation, with actual Dirichlet/Neumann forms distinguished."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Finite-plane proof in prose.",
+      "remaining_obligation": "Graph trace + actual Markov extension criterion, not just finite plane algebra."
+    },
+    {
+      "id": "8.15",
+      "kind": "Theorem",
+      "physical_page": 26,
+      "printed_page": 26,
+      "original_statement": "Theorem 8.15 (Canonical soft extension from zero-energy Green data). Let\n                                                              ℰ1\n                                        𝒱0 := 𝐶𝑐∞ (𝐷∘ )            ˓→ ℋ𝑔 .\n\nThe embedding is compact, and there is a constant 𝜆𝐷 > 0 such that\n\n                                  ℰ𝑔 (𝑢, 𝑢) ≥ 𝜆𝐷 ‖𝑢‖2ℋ𝑔 ,              𝑢 ∈ 𝒱0 .                             (15)\n\nConsequently 0 ∈ 𝜌(𝐻𝐹 ) and 𝐻min ≥ 𝜆𝐷 𝐼.\n   The Green construction of Proposition 8.13 therefore extends to 𝑧 = 0. Put\n\n                                  ℎ𝜎 := −2𝜋𝐺𝜎,0 ,              𝜎 ∈ {+, −},\n\nand define the zero-energy Robin matrix R0 by\n\n                              ℎ𝜎 = 𝛿𝜏 𝜎 log 𝜚𝜏 + (R0 )𝜏 𝜎 + 𝑜(1)             at 𝑃𝜏 .                        (16)\n\nThen\n                                   *\n                              ker 𝐻min = span{ℎ+ , ℎ− },                 R0 = R*0 .\nThe reflection 𝑡 ↦→ −𝑡 gives real numbers 𝑟0 , 𝑔0 with\n                                                (︂       )︂\n                                                   𝑟0 𝑔0\n                                        R0 =                .                                               (17)\n                                                  𝑔0 𝑟0\n\nUnder the common reference-length change ℓ′𝜎 = 𝑒𝑡 ℓ𝜎 , its representative transforms as\n                                             (ℓ′ )      (ℓ)\n                                           R0        = R0 + 𝑡𝐼2 ;                                           (18)\n\nin particular, 𝑔0 is reference-scale invariant.\n    The Krein–von Neumann extension 𝐻𝐾 of 𝐻min is the self-adjoint extension\n                                                        *\n                               dom 𝐻𝐾 = dom 𝐻min ∔ ker 𝐻min\n                                                      *                                                     (19)\n                                          = {𝑢 ∈ dom 𝐻min : 𝑏 = R0 𝑎}.\n\nIt is nonnegative, has ker 𝐻𝐾 = span{ℎ+ , ℎ− }, and is not submarkovian. Thus the global positive\noperator selects a canonical non-Friedrichs member without a fitted boundary matrix, although it\ndoes not identify source states with a quotient of the singular image.",
+      "status": "REPAIRED ACTUAL OPERATOR / EXTERNAL THEOREM",
+      "issue": "The compact-core minimum has infinitely many outer-boundary harmonic modes, not two.",
+      "corrected_statement": "Weighted radial Hardy estimate proves actual compact form embedding and positive Dirichlet gap including corners; actual H0 Krein kernel is infinite-dimensional, reduced positive spectrum discrete.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:green",
+      "domain_and_hypotheses": "Actual closed densely defined positive H0; compact Friedrichs HF; no two-channel assumption.",
+      "external_theorems": [
+        "Abstract positive Krein/buckling theorem 0907.1439 Hyp.2.2 Thms.2.4,3.4; actual hypotheses proved."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "Two-point Green coordinates require the separately corrected point restriction and actual graph traces."
+    },
+    {
+      "id": "8.16",
+      "kind": "Corollary",
+      "physical_page": 27,
+      "printed_page": 27,
+      "original_statement": "Corollary 8.16 (Intrinsic non-harmonic variational principle). The positive spectrum of the\nreduced operator 𝐻𝐾 |(ker 𝐻𝐾 )⊥ is the spectrum of the weak buckling problem\n\n                       ⟨𝐻min 𝑣, 𝐻min 𝜑⟩ = 𝜆⟨𝑣, 𝐻min 𝜑⟩,     𝜑 ∈ dom 𝐻min .                     (20)\n\nEquivalently it is generated by stationary values of\n                                       1           𝜆\n                               𝒜𝜆 [𝑣] = ‖𝐻min 𝑣‖2 − ⟨𝑣, 𝐻min 𝑣⟩.                               (21)\n                                       2           2\nThis is a non-harmonic action derived from 𝐻min itself; 𝜆 is the spectral Lagrange multiplier, not\na fitted interface coupling [36].",
+      "status": "REPAIRED ACTUAL OPERATOR / EXTERNAL THEOREM",
+      "issue": "Use actual H0 and its actual graph domain; no finite U(2) boundary classification.",
+      "corrected_statement": "Actual density, symmetry, strict positivity and compact Friedrichs resolvent proved; abstract theorem yields the weak buckling equivalence and discrete positive spectrum.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:green",
+      "domain_and_hypotheses": "Actual Dom H0 with its graph norm; nonzero reduced Krein/buckling spectrum.",
+      "external_theorems": [
+        "Same abstract buckling equivalence with actual graph domain."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No two-channel zero-energy Robin matrix until actual point traces are established."
+    },
+    {
+      "id": "8.17",
+      "kind": "Remark",
+      "physical_page": 28,
+      "printed_page": 28,
+      "original_statement": "Remark 8.17 (What geometry fixes, and what remains external). The embedded unit circles fix\n𝑔, 𝑑𝐴𝑔 , and the normalized Dirichlet generator through its principal symbol 𝑔 −1 . Thus a kinetic\nrescaling is fixed once one requires the generator to be exactly Δ𝑔 . The result is compatible with\nrefinement constructions that preserve a discrete de Rham complex [28, 29]; it also supplies the\ngeometry-derived alternative to the earlier counting-Hilbert normalization.\n    An arbitrary multiplier of a classical action not tied to this generator remains free. Proposi-\ntion 8.11 closes the narrower fixed-outer-boundary Markov-form question: the punctures 𝑃± are\nremovable for the Friedrichs form. Proposition 8.13 shows that the punctured minimal operator\nis not essentially self-adjoint and classifies its 𝑈 (2) Green boundary space. The induced geometry\nfixes the pairing but does not select a non-Friedrichs Lagrangian plane. Proposition 8.14 strength-\nens this boundary: submarkovianity and parameter-free reference-scale invariance each select the\nFriedrichs plane uniquely. Theorem 8.15 adds a distinct global statement: strict positivity and\nthe zero-energy Green matrix canonically supply the scale-covariant running matrix of the Krein\nextension. This does not contradict the local no-go, because R0 uses the full fixed-boundary re-\nsolvent rather than only a cross-cap germ. The point 𝑃0 belongs to the outer boundary and is\nnot an additional interior channel, while the global choice among Dirichlet, Neumann, or Robin\nouter conditions remains external to the local calculation.\n    Nor does the induced metric decide whether states live on the source normalization or on\na quotient of the singular image. The theorem below shows that the ordinary map from the\nextension-by-zero normalization defect to the point boundary sheaf is forced to vanish; the nonzero\nnearby replacement has a different sheet representation. Different extensions can alter propaga-\ntion through a degenerate locus in related models [37]; that literature is methodological guidance,\nnot a direct theorem about the present cross-caps. In the smooth compact spin setting a Dirac\noperator can recover the Riemannian metric through its spectral data [38], but the remaining\nextension data must be fixed before importing such a spectral calibration.",
+      "status": "REPAIRED OPERATOR SCOPE",
+      "issue": "A fixed principal symbol does not uniquely fix an arbitrary action or lower-order terms.",
+      "corrected_statement": "The specified Laplace-Beltrami expression fixes its kinetic generator; puncture form removability is proved, but the old minimum has infinite boundary deficiency.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:green",
+      "domain_and_hypotheses": "A fixed principal symbol does not uniquely fix an arbitrary action or lower-order terms. Actual corrected point traces remain required; compactness and positivity are proved in v13.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "zero_boundary_core_witness is only a scalar check.",
+      "remaining_obligation": "Actual corrected point traces remain required; compactness and positivity are proved in v13."
+    },
+    {
+      "id": "8.18",
+      "kind": "Theorem",
+      "physical_page": 28,
+      "printed_page": 28,
+      "original_statement": "Theorem 8.18 (Normalization-to-Green bridge obstruction). Let 𝑥𝜎 = 𝑆(𝑃𝜎 ), let 𝑖 : 𝑍 =\n{𝑥+ , 𝑥− } ˓→ 𝑋, and on pairwise disjoint cross-cap neighbourhoods write\n                                            ⨁︁\n                                 𝒬𝜈,𝑍,C :=       𝑗𝜎! ℒsgn,𝜎 ⊗Q C.                  (22)\n                                                𝜎=±\n\nRepresent the two logarithmic Green coefficient lines by the skyscraper sheaf\n\n                                𝒢𝜕 := 𝑖* C𝑍 ,     Γ(𝑍, C𝑍 ) = C2Green .                             (23)\n\nThen every ordinary sheaf morphism is zero:\n\n                                       Hom𝑋 (𝒬𝜈,𝑍,C , 𝒢𝜕 ) = 0.                                     (24)\n\n   The closest nonzero boundary object is instead the nearby/costalk line\n                                                         (︁               )︁\n                     𝒩𝜎 := 𝐻 0 (𝑖*𝜎 𝑅𝑗𝜎* ℒsgn,𝜎,C ) ∼\n                                                    = 𝐻 1 𝑖!𝜎 𝑗𝜎! ℒsgn,𝜎,C ∼ = C,                   (25)\n\nso 𝒩+ ⊕ 𝒩− has the desired dimension two. However, sheet exchange acts as −1 on each 𝒩𝜎\nand as +1 on the scalar logarithmic Green line. Consequently\n\n                                        HomZ2 (𝒩𝜎 , C𝑒𝜎 ) = 0.                                      (26)\nIf sheet equivariance is discarded and bases are chosen, support-preserving isomorphisms are\nmultiplication by nonzero scalars 𝜆𝜎 ; reflection relates the two scalars but leaves one nonzero\nscalar parameter. Requiring an inverse reconstruction map does not remove it, since 𝜆−1 𝜆 = 1\nfor every 𝜆 ̸= 0.",
+      "status": "WRITTEN NO-GO / CONDITIONAL GREEN INTERPRETATION",
+      "issue": "Sheaf support result holds independently of a claimed actual Green channel.",
+      "corrected_statement": "Ordinary Hom is zero; ray nearby/costalk sign line; model odd-to-even intertwiner is zero.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:sheaf",
+      "domain_and_hypotheses": "Ordinary Hom to point support and derived local ray groups; parity action in characteristic zero.",
+      "external_theorems": [
+        "Ordinary sheaf stalk/support and derived ray recollement; no Green-channel existence inferred."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "sign_intertwiner_zero only.",
+      "remaining_obligation": "Actual scalar point-channel parity still depends on the correctly defined Green theorem."
+    },
+    {
+      "id": "8.19",
+      "kind": "Remark",
+      "physical_page": 30,
+      "printed_page": 30,
+      "original_statement": "Remark 8.19 (What would reopen the bridge). The obstruction is specific and local. It does\nnot rule out a bridge to a sign-twisted Green sheaf, a differential-form or spinor operator with\na genuine sheet-odd deficiency channel, or a separately oriented/trivialized double cover. Each\noption adds structure absent from the scalar induced-metric Laplacian. A rescaled odd difference\nsuch as (𝑢(0, 𝑦) − 𝑢(0, −𝑦))/𝑦 would also require a chosen transverse coordinate and is not the\nboundary coefficient classified above. Therefore none may be used as an implicit normalization\nof the present model.",
+      "status": "WRITTEN BRIDGE OPTIONS",
+      "issue": "An odd Green or spinor channel is extra analytic structure.",
+      "corrected_statement": "Support and parity obstructions do not rule out a separately defined twisted operator; no such construction is implicit here.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:sheaf",
+      "domain_and_hypotheses": "An odd Green or spinor channel is extra analytic structure. A new operator/domain or transverse trivialization must be independently constructed.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "sign_intertwiner_zero only.",
+      "remaining_obligation": "A new operator/domain or transverse trivialization must be independently constructed."
+    },
+    {
+      "id": "8.20",
+      "kind": "Proposition",
+      "physical_page": 30,
+      "printed_page": 30,
+      "original_statement": "Proposition 8.20 (Derived sign twist and cone-normal spectrum). The flat line ℰ𝐹,𝜎 is deter-\nmined by the existing observation field and has holonomy −1 around either interior cross-cap:\n                                  Hol𝛾𝜎 (ℰ𝐹,𝜎 ) = (−1)Ind(𝑃𝜎 ) = −1.                                (29)\nNo continuous holonomy parameter is introduced.\n   On the limiting round link from (9), the connection-Laplacian normal family is\n                  𝑁 (Δℰ𝐹 ) = −𝜕𝑟2 − 𝑟−1 𝜕𝑟 + 𝑟−2 𝐷1/2\n                                                  2\n                                                      ,          spec(𝐷1/2 ) = Z + 12 .             (30)\n\nIts indicial roots are 𝜆 = ±|𝑛 + 12 |. The two angular weights 𝑛 = 0, −1 have modulus 1/2 < 1, so\nboth powers 𝑟−1/2 and 𝑟1/2 are square-integrable with measure 𝑟 𝑑𝑟. Thus the scalar sign twist has\ntwo lowest limit-circle angular channels and does not by itself select the one-dimensional nearby\nline in (25).\n    By contrast, restrict the unique spin structure of the oriented source disk to 𝑈𝜎* . On either\nchiral spinor line, its bounding link spin structure has spectrum Z + 12 . Tensoring with ℰ𝐹,𝜎\nmultiplies the two link holonomies and gives the chiral tangential spectrum\n                             spec(𝐴𝐹,+\n                                   𝜕 ) = Z,            dimC ker 𝐴𝐹,+\n                                                                 𝜕   = 1.                           (31)\nFor the exact-cone chiral spin-Dirac normal operator\n                                             (︂              )︂\n                                  +                 1  1 𝐹,+\n                              𝑁 (𝐷𝐹 ) = 𝑐(𝑑𝑟) 𝜕𝑟 +    + 𝐴       ,                                   (32)\n                                                   2𝑟 𝑟 𝜕\nthe zero angular eigenspinor has radial profile 𝑟−1/2 and\n                                      ∫︁ 𝜀\n                                           |𝑟−1/2 |2 𝑟 𝑑𝑟 = 𝜀.                                      (33)\n                                          0\n\nOn this zero-mode block, the unitary map 𝑓 (𝑟) ↦→ 𝑟−1/2 𝑓 (𝑟)𝜑0 from 𝐿2 (𝑑𝑟) to 𝐿2 (𝑟 𝑑𝑟) conjugates\n𝑁 (𝐷𝐹+ ) to 𝑐(𝑑𝑟)𝜕𝑟 . Its trace 𝑓 (0) is therefore exactly one complex boundary channel in the\nchiral exact-cone normal family. The adjoint chiral block has its own one-dimensional trace;\nconsequently the full rank-two spin Dirac operator has a two-dimensional zero angular space, not\na single channel. The untwisted bounding spectrum has no eigenvalue in (−1/2, 1/2) and satisfies\nthe usual spinorial Witt gap [22].\n",
+      "status": "WRITTEN / EXACT CONE MODEL",
+      "issue": "Conical local endpoint quotient must exclude the regular outer-boundary trace.",
+      "corrected_statement": "Derived -1 flat holonomy; scalar indicial integrability; bounding-spin twist and local endpoint trace on exact cone.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:spin",
+      "domain_and_hypotheses": "Exact round cone, supplied bounding spin structure and sign twist; local tip quotient only.",
+      "external_theorems": [
+        "Bounding-spin circle model and local endpoint Sobolev trace; no cone-to-Whitney transfer."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "half_integer_pairing only.",
+      "remaining_obligation": "Actual Whitney-metric transfer is a separate problem."
+    },
+    {
+      "id": "8.21",
+      "kind": "Theorem",
+      "physical_page": 31,
+      "printed_page": 31,
+      "original_statement": "Theorem 8.21 (Actual front–seam twisted-spin parametrix). Let 𝐷𝐹,𝜎      be the chiral spin Dirac\n                                   *                              −\noperator of the induced metric on 𝑈𝜎 , twisted by ℰ𝐹,𝜎 , and let 𝐷𝐹,𝜎 be its formal adjoint. If\n𝐶𝑟 = {𝜚𝜎 = 𝑟}, 𝐿𝜎 (𝑟) = length𝑔 (𝐶𝑟 ), and 𝐴𝐹,+\n                                             𝜎,𝑟 is the intrinsic twisted chiral Dirac operator on\n𝐶𝑟 , then\n                              2𝜋\n              spec(𝐴𝐹,+\n                     𝜎,𝑟 ) =        Z,     dimC ker 𝐴𝐹,+\n                                                      𝜎,𝑟 = 1,       inf |𝑟𝜆| −→ 1.           (34)\n                             𝐿𝜎 (𝑟)                                 𝜆̸=0\n\nAfter the radial density unitary, the front operator has the regular-singular form\n                                     (︁                     )︁\n                    +\n                𝒰𝑟 𝐷𝐹,𝜎 𝒰𝑟−1 = 𝑐(𝑑𝑟) 𝜕𝑟 + 𝑟−1 𝐴 ̂︀𝐹,+ + 𝑅𝜎,𝑟 ,\n                                                  𝜎,𝑟\n                                                                   ̂︀𝐹,+ := 𝑟𝐴𝐹,+ ,\n                                                                   𝐴 𝜎,𝑟       𝜎,𝑟                    (35)\n\nwhere 𝑟𝑅𝜎,𝑟 → 0 in the localized graph norm on closed front subcharts.\n   In a seam 𝑥 = 𝜍𝜉, 𝑦 = 𝜉𝑧, put\n                                                            √︀\n                        ℓ𝜎,𝜍 (𝑧) := 𝑑𝐹𝑃𝜎 (𝜍, 𝑧),  𝑊0 (𝑧) := 1 + 4𝑧 2 .                                (36)\n\nThe non-degeneracy of 𝑑𝐹𝑃𝜎 implies ℓ𝜎,𝜍 (𝑧) ̸= 0 for every real 𝑧. Up to constant unitary changes\nof frame, the seam normal family is\n                                                              1        𝑖               𝑖\n               +\n              𝐷𝐹,𝜎 = 𝜉 −2 𝑐2 𝐵𝜎,𝜍 + 𝑂(𝜉 −1 ),       𝐵𝜎,𝜍 =          𝑒− 2 arg ℓ𝜎,𝜍 𝜕𝑧 𝑒 2 arg ℓ𝜎,𝜍 .   (37)\n                                                             𝑊0 (𝑧)\n\nIts zero solution has constant modulus and is not in 𝐿2 (R, 𝑊0 (𝑧) 𝑑𝑧). Hence a seam contributes\nno localized spinor channel and only transports the unique zero line between its two adjacent front\ncharts.\n    The front mode inverses, after the density conjugation, are\n                                        ⎧     ∫︁ 𝑟\n                                        ⎪\n                                        ⎪\n                                        ⎪𝑟 −𝑘       𝑠𝑘 𝑓 (𝑠) 𝑑𝑠,     𝑘 > 0,\n                                        ⎪       0\n                                                     𝑟0\n                                        ⎪\n                                        ⎨        ∫︁\n                           (𝑄𝑘 𝑓 )(𝑟) = −𝑟−𝑘            𝑠𝑘 𝑓 (𝑠) 𝑑𝑠, 𝑘 < 0,                    (38)\n                                        ⎪          𝑟\n                                        ⎪\n                                        ⎪\n                                        ⎪\n                                         ∫︁ 𝑟\n                                              𝑓 (𝑠) 𝑑𝑠,              𝑘 = 0.\n                                        ⎪\n                                        ⎩\n                                                0\n\nPatching these inverses with the seam inverse gives left and right local parametrices with compact\npositive-weight remainders. After shrinking 𝑈𝜎 , the remainders are removed by a Neumann\nseries. Consequently\n                               +\n                          Dom 𝐷𝐹,𝜎,max               Dom 𝐷𝐹,𝜎,max ∼ 2\n                                         ∼\n                                       = C,                       =C ,                          (39)\n                               +                     Dom 𝐷𝐹,𝜎,min\n                          Dom 𝐷𝐹,𝜎,min\n\nwhere the first line is the chiral trace represented by 𝑟−1/2 𝜑𝜎,𝑟 , and the second is the full spin\nDirac quotient, with one trace from each chirality.",
+      "status": "ACTUAL PARAMETRIX UNPROVED / DOMAIN REPAIR",
+      "issue": "Outer domain quotient unspecified; cutoff commutators have weight zero under dilation.",
+      "corrected_statement": "Keep exact link spectrum and exact normal inverse identities; replace unsupported promotion by explicit actual graph-norm estimate obligations.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:spin",
+      "domain_and_hypotheses": "Specified link circle and formal normal inverses; actual Whitney graph spaces not yet constructed.",
+      "external_theorems": [
+        "Cone papers are background only; their Whitney hypotheses are not asserted."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "Construct spaces/cutoffs, patched two-sided bounded inverses, small remainder proof and exclusion of additional actual modes."
+    },
+    {
+      "id": "8.22",
+      "kind": "Theorem",
+      "physical_page": 32,
+      "printed_page": 32,
+      "original_statement": "Theorem 8.22 (First-order deck–phase comparison and Pin obstruction). Put 𝐾𝜎 = ker 𝑑𝑆𝑃𝜎 .\nSince 𝑑𝐹𝑃𝜎 is invertible,                   (︁               )︁\n                           ℎ𝐹,𝜎 (𝑣, 𝑤) := Re 𝑑𝐹𝑃𝜎 (𝑣)𝑑𝐹𝑃𝜎 (𝑤)                       (41)\nis a positive-definite inner product on 𝑇𝑃𝜎 𝐷 and canonically normalizes the kernel line. For the\nruled surface (1), a generator is\n                               𝑠𝜎 𝑐0\n                 𝑘𝜎 = 𝜕𝑡 +              𝜕𝑢 ,    𝑠𝜎 := sin(𝜎𝑡0 ),        𝑑𝑆𝑃𝜎 (𝑘𝜎 ) = 0,              (42)\n                             2(1 − 𝑐0 )\n\nand\n                                                    655     √\n                                  |𝑑𝐹𝑃𝜎 (𝑘𝜎 )|2 =       − 72 5 > 0.                                  (43)\n                                                     4\n    Let 𝑘 be either ℎ𝐹,𝜎 -unit generator of 𝐾𝜎 , put 𝑎 = 𝑑𝐹𝑃𝜎 (𝑘) ∈ 𝑆 1 , and choose one 𝛼 with\n𝛼2 = 𝑎. The two branches of the normalization double locus approach the pinch as 𝑃𝜎 ±𝑟𝑘+𝑂(𝑟2 ),\nso the limiting square-root phases over both branches form\n\n                                           {𝛼, 𝑖𝛼, −𝛼, −𝑖𝛼}.                                         (44)\n\nThey constitute a principal Z4 torsor fitting into the nonsplit extension\n\n                              1 −→ Zphase\n                                    2     −→ Z4 −→ Zsheet\n                                                    2     −→ 1.                                      (45)\n\nConsequently there is no canonical identification of the normalization-sheet Z2 torsor with the\nphase square-root torsor that is compatible with 𝜁 2 = 𝐹/|𝐹 |.\n     Moreover, the linearized sheet exchange is a reflection of the oriented source plane. It has\nno lift in Spin(2) preserving either chiral line. Each of its two Pin(2) lifts is Clifford-odd and\ninterchanges the two chiral lines. Thus neither one-dimensional trace in Theorem 8.21 is deck-\nstable; the full rank-two trace is the minimal spinorial carrier of normalization-sheet exchange.\nUnit Clifford normalization fixes the norm of this odd exchange operator, but the two central Pin\nlifts remain distinct.",
+      "status": "WRITTEN / EXACT CHECK / PIN DATA REPAIR",
+      "issue": "Pin+ versus Pin- and metric-compatible reflection must be specified.",
+      "corrected_statement": "Actual kernel norm and four-phase nonsplit Z4 torsor; orthogonal reflection swaps chirality for a chosen Clifford metric.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:spin",
+      "domain_and_hypotheses": "Actual first-order F at lateral labels; chosen positive Clifford metric and Pin convention.",
+      "external_theorems": [
+        "Chosen Clifford/Pin double-cover and chirality anticommutation; no induced-metric symmetry assumed."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "sign_intertwiner_zero only.",
+      "remaining_obligation": "No canonical identification of phase flat line and normalization deck line; no unproved g-isometry."
+    },
+    {
+      "id": "8.23",
+      "kind": "Theorem",
+      "physical_page": 33,
+      "printed_page": 33,
+      "original_statement": "Theorem 8.23 (Green-derived full-spin interface action). Cut a sufficiently small normalization\nneighbourhood along the two preimages of its open double locus. For either pairing of correspond-\ning banks, write 𝐿1 , 𝐿2 ≃ 𝐿 for the paired boundary curves, 𝜈𝑗 for their outward unit conormals,\n𝛾𝑗 for spinor trace, and 𝐷𝑗 for the full phase-twisted Dirac operator on the two cut pieces. Their\nGreen form is\n                                                2\n                                               ∑︁ (︀                                    )︀\n                            Ω𝐿 (Ψ, Φ) :=               ⟨𝐷𝑗 𝜓𝑗 , 𝜑𝑗 ⟩ − ⟨𝜓𝑗 , 𝐷𝑗 𝜑𝑗 ⟩\n                                               𝑗=1\n                                               2\n                                           ∫︁ ∑︁\n                                       =                ⟨𝑐(𝜈𝑗 )𝛾𝑗 𝜓𝑗 , 𝛾𝑗 𝜑𝑗 ⟩ 𝑑𝑠.                             (46)\n                                               𝐿 𝑗=1\n\nLet 𝑈 : S|𝐿1 → S|𝐿2 be either unit Pin lift of the bank reflection from Theorem 8.22. It is full-spin,\nexchanges chirality, and obeys\n                                       𝑈 * 𝑐(𝜈2 )𝑈 = −𝑐(𝜈1 ).                                     (47)\nFor a scalar 𝜆 ̸= 0, consider the transmission graph\n                              ℒ𝜆𝑈 := {(𝜓, 𝜆𝑈 𝜓) : 𝜓 ∈ 𝐻 1/2 (𝐿1 ; S)}.                                         (48)\nThen                                                            ∫︁\n                                                            2\n                                Ω𝐿 |ℒ𝜆𝑈 = (1 − |𝜆| )                 ⟨𝑐(𝜈1 ) ·, ·⟩𝑑𝑠.                          (49)\n                                                                 𝐿\nHence the transmission domain is Green-Lagrangian exactly when |𝜆| = 1. If 𝜆𝑈 is additionally\nrequired to remain a Pin lift of the fixed sheet reflection, then 𝜆 = ±1; there is no continuous\ninterface coupling.\n    On this domain the canonical real cut action is\n                                         2\n                                        ∑︁                1\n                            𝒜cut [Ψ] :=    ⟨𝜓𝑗 , 𝐷𝑗 𝜓𝑗 ⟩ + Ω𝐿 (𝛾Ψ, 𝛾Ψ)\n                                                          2\n                                         𝑗=1\n                                          2\n                                       1 ∑︁(︀                              )︀\n                                     =        ⟨𝜓𝑗 , 𝐷𝑗 𝜓𝑗 ⟩ + ⟨𝐷𝑗 𝜓𝑗 , 𝜓𝑗 ⟩ .                                  (50)\n                                       2\n                                               𝑗=1\n\nThe coefficient 1/2 is the unique real coefficient of the Green transgression for which the action\nis real for arbitrary cut traces. Its boundary variation vanishes precisely on the Lagrangian\ntransmission graph. Thus Green’s identity fixes both the transgression coefficient and the modulus\nof the relative sheet coupling. It does not distinguish the two central Pin signs and does not fix\nan overall multiplier of the entire action.",
+      "status": "CONDITIONAL TRANSMISSION THEOREM",
+      "issue": "Pin lift alone does not identify the two phase-line fibers; action variation vanishes on many isotropic domains.",
+      "corrected_statement": "Given unitary Clifford-compatible full-spin U, graph isotropy iff modulus one; Pin restriction gives two signs only after a Pin reduction is chosen.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:spin",
+      "domain_and_hypotheses": "Regular paired cut trace spaces, supplied unitary U including phase map, Clifford conormal compatibility.",
+      "external_theorems": [
+        "Regular-boundary Dirac Green formula only under specified traces/U; Pin convention supplied."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "transmission_unit_modulus_iff; real_transgression_coefficient",
+      "remaining_obligation": "Actual trace spaces, line identification, matching map and regular boundary Green theorem hypotheses."
+    },
+    {
+      "id": "8.24",
+      "kind": "Remark",
+      "physical_page": 35,
+      "printed_page": 35,
+      "original_statement": "Remark 8.24 (The remaining operator-level bridge). Proposition 8.20 derives a genuine op-\nerator twist, not an imposed anti-periodic boundary condition. It does not yet complete the\nnormalization-to-Green bridge. The line ℰ𝐹,𝜎 lives on the punctured source and records winding\nof 𝐹 , whereas ℒsgn,𝜎 lives on the image double stratum and records normalization-deck exchange.\nTheorem 8.22 now shows that their direct identification is not merely absent: the first-order phase\nlift is a nonsplit Z4 extension, and sheet exchange forces the two chiral traces to occur together.\nThe observation pullback metric fixes the first-order kernel normalization, while Clifford multi-\nplication fixes the norm of the resulting odd full-spin exchange. Theorem 8.23 now derives the\ncorresponding normalization-cut action and removes every continuous relative interface coeffi-\ncient. What remains is the central Pin sign and an overall multiplier of the complete action;\nGreen’s identity cannot fix either. Thus no absolute mass scale or clock follows at this stage.\n\n8.7    𝑆𝑈 (2) and Arithmetic Scope",
+      "status": "REPAIRED PHASE/PIN SCOPE",
+      "issue": "Pin spin maps do not identify separate flat phase-line fibers.",
+      "corrected_statement": "Four-phase torsor is local first-order data; conditional regular-cut isotropy requires a Clifford-compatible U and chosen phase-line map.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:spin",
+      "domain_and_hypotheses": "Pin spin maps do not identify separate flat phase-line fibers. Global singular-cut domains and full transmission data are open.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "transmission_unit_modulus_iff; real_transgression_coefficient",
+      "remaining_obligation": "Global singular-cut domains and full transmission data are open."
+    },
+    {
+      "id": "8.25",
+      "kind": "Proposition",
+      "physical_page": 35,
+      "printed_page": 35,
+      "original_statement": "Proposition 8.25 (Ambient-versus-Constrained Symmetry). Let 𝑌 ⊂ 𝑆 3 ≃ 𝑆𝑈 (2) be the\nnonempty constrained source subset whose projection gives (1). If 𝑌 is proper, then it is not\ninvariant under the full left 𝑆𝑈 (2) action.",
+      "status": "WRITTEN NO-GO",
+      "issue": "Nonempty proper subset is a hypothesis; source lift not constructed.",
+      "corrected_statement": "Transitive left-action invariant subset must be the whole group.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:limits",
+      "domain_and_hypotheses": "Nonempty proper subset of SU2 under transitive left action; a source lift is extra input.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No physical representation assignment."
+    },
+    {
+      "id": "8.26",
+      "kind": "Remark",
+      "physical_page": 35,
+      "printed_page": 35,
+      "original_statement": "Remark 8.26 (Noteworthy Representation-Theoretic Observation). The ambient Hopf fibration\nand the line bundle 𝒪(1) → CP1 do carry a canonical 𝑆𝑈 (2) doublet through Borel–Weil theory.\nIt does not follow that the proper constrained source inherits the full action, nor does the doublet\nfix a dimensional mass scale. The ambient resemblance is retained as a possible representation-\ntheoretic guide, not as a particle assignment.",
+      "status": "AMBIENT REPRESENTATION OBSERVATION",
+      "issue": "The constrained source lift and inherited action are unspecified.",
+      "corrected_statement": "Ambient Hopf/Borel-Weil resemblance supplies no source representation or mass scale; retained as a possible guide only.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:limits",
+      "domain_and_hypotheses": "The constrained source lift and inherited action are unspecified. No Borel-Weil theorem applied to an unconstructed constrained source.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No Borel-Weil theorem applied to an unconstructed constrained source."
+    },
+    {
+      "id": "8.27",
+      "kind": "Proposition",
+      "physical_page": 35,
+      "printed_page": 35,
+      "original_statement": "Proposition 8.27 (Real-Geometry Deligne/Weil No-Go). The uncomplexified real signal geom-\netry specifies neither a complex algebraic variety and compactification nor a finite-field model,\nFrobenius endomorphism, prime power 𝑞, or ℓ-adic sheaf. Consequently neither the reflection\n𝜎 ↔ 1 − 𝜎 nor the threshold 𝜎 = 1/2 determines a Deligne mixed Hodge structure or a Weil-\ncohomological weight.",
+      "status": "WRITTEN SCOPE LIMIT",
+      "issue": "Underlying real topology does not specify algebraic or arithmetic input.",
+      "corrected_statement": "Keep the missing variety/compactification/Frobenius data explicit.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:limits",
+      "domain_and_hypotheses": "Real topology alone, compared with a separately specified smooth algebraic pair.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "Not a no-go against independently supplied algebraic models."
+    },
+    {
+      "id": "8.28",
+      "kind": "Theorem",
+      "physical_page": 35,
+      "printed_page": 35,
+      "original_statement": "Theorem 8.28 (Deligne weights after explicit complexification). For the explicitly complexified\nresidual fiber 𝑈 = 𝐸 ∖ 𝐷 of Theorem 5.7, Deligne’s mixed Hodge structure on 𝐻 1 (𝑈 ; Q) has\n\n                       𝑊0 = 0,       𝑊1 = 𝐻 1 (𝐸; Q),      𝑊2 = 𝐻 1 (𝑈 ; Q),\n\nwith\n                                 dim Gr𝑊\n                                       1 = 2,        dim Gr𝑊\n                                                           2 = 1.\n\nThe weight-one part has Hodge types (1, 0) and (0, 1) and monodromy eigenvalues −𝑖, 𝑖; the\nweight-two boundary part has type (1, 1) and eigenvalue 1.\n",
+      "status": "WRITTEN / EXTERNAL THEOREM",
+      "issue": "Smooth E and two boundary points, chosen algebraic complexification.",
+      "corrected_statement": "Gysin exact sequence yields weights 1,2, dimensions 2,1 and computed monodromy action.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:residual",
+      "domain_and_hypotheses": "Explicit E minus two points over C, with Deligne MHS and fixed algebraic monodromy.",
+      "external_theorems": [
+        "Deligne Hodge II 3.2.5 and logarithmic residue/Gysin of explicit smooth pair."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "Deligne MHS and Gysin theorem remain explicit external dependencies."
+    },
+    {
+      "id": "8.29",
+      "kind": "Remark",
+      "physical_page": 36,
+      "printed_page": 36,
+      "original_statement": "Remark 8.29 (Reconstruction boundary). The monodromy matrix determines the rank-three\nlocal system on a punctured parameter disk. It does not by itself determine the specialization,\ncanonical, and variation maps needed for a full nearby/vanishing-cycle package. It is also distinct\nfrom the rank-one normalization defect 𝒬𝜈 ≃ 𝑗! ℒsgn .",
+      "status": "WRITTEN COHOMOLOGY SCOPE",
+      "issue": "Monodromy does not specify specialization/variation maps.",
+      "corrected_statement": "The chosen rank-three A3 local system and rank-one normalization defect remain distinct.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:sheaf",
+      "domain_and_hypotheses": "Monodromy does not specify specialization/variation maps. A full nearby/vanishing-cycle package requires separately defined maps.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "A full nearby/vanishing-cycle package requires separately defined maps."
+    },
+    {
+      "id": "8.30",
+      "kind": "Proposition",
+      "physical_page": 36,
+      "printed_page": 36,
+      "original_statement": "Proposition 8.30 (Weil-realization scope). The single curve 𝑈Q does not define a Weil coho-\nmology theory. Once such a realization theory with localization and Tate twists is specified, it\nmay evaluate the pair (𝐸, 𝐷), and its boundary contribution is the one-dimensional kernel of the\nsum map from the two points of 𝐷.",
+      "status": "CONDITIONAL / EXTERNAL THEORY",
+      "issue": "Weil theory traditionally on smooth projective varieties; open U needs localization extension.",
+      "corrected_statement": "Specified realization with localization and Tate twist gives boundary kernel dimension one.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:limits",
+      "domain_and_hypotheses": "An already supplied realization theory extended to open varieties with localization and Tate twist.",
+      "external_theorems": [
+        "Localization and Tate twist are assumptions of the separately supplied realization theory."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No new Weil theory inferred from a curve."
+    },
+    {
+      "id": "9.1",
+      "kind": "Proposition",
+      "physical_page": 36,
+      "printed_page": 36,
+      "original_statement": "Proposition 9.1 (Scale of the Proposed Geometric Ratio). Let the ambient three-sphere have\nradius 𝑅 and let 𝑟 = 𝜙−2 𝑅. Then\n\n                                            2𝜋 2 𝑅3\n                                     𝜂 :=           = 2𝜋𝜙4 𝑅.\n                                             𝜋𝑟2\nThus 𝜂 has units of length and cannot be a dimensionless mass hierarchy. The normalized quantity\n                                                  𝜂\n                                         𝜂̂︀ :=     = 2𝜋𝜙4\n                                                  𝑅\nis dimensionless, but the present geometry supplies no rule turning it into a particle mass or a\nmass ratio.\n",
+      "status": "WRITTEN DIMENSIONAL CHECK",
+      "issue": "R>0 and chosen r=c0 R.",
+      "corrected_statement": "Volume/area is a length; normalized ratio is dimensionless only after dividing by R.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:limits",
+      "domain_and_hypotheses": "Positive R with chosen r=c0 R; normalized ratio only after division by R.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No mass operator or scale selection."
+    },
+    {
+      "id": "9.2",
+      "kind": "Remark",
+      "physical_page": 37,
+      "printed_page": 37,
+      "original_statement": "Remark 9.2 (Noteworthy Mass-Hierarchy Observation). The pure number 2𝜋𝜙4 and its powers\ncan generate visible numerical hierarchies. This is worth retaining as a geometric pattern. A\nphysical prediction would additionally require an independently derived mass operator, a state-\nselection rule, and a normalization scale; none is inferred from the numerical resemblance.",
+      "status": "WRITTEN PHYSICAL SCOPE",
+      "issue": "The normalized pure number supplies neither states nor units.",
+      "corrected_statement": "Numerical hierarchy has no mass prediction without a mass operator, state rule and scale.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:limits",
+      "domain_and_hypotheses": "The normalized pure number supplies neither states nor units. No new physical result.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No new physical result."
+    },
+    {
+      "id": "9.3",
+      "kind": "Proposition",
+      "physical_page": 37,
+      "printed_page": 37,
+      "original_statement": "Proposition 9.3 (No Induced Non-Commutativity for the Power Coordinates). For the standard\nKähler form on C2 , the two power coordinates 𝑋 = |𝑧1 |2 and 𝑌 = |𝑧2 |2 satisfy\n\n                                             {𝑋, 𝑌 } = 0.\n\nConsequently the momentum projection used in this paper does not by itself induce a non-\ncommutative algebra generated by 𝑋 and 𝑌 .",
+      "status": "WRITTEN / EXACT CHECK",
+      "issue": "Canonical Kahler/Poisson normalization must be chosen.",
+      "corrected_statement": "Disjoint canonical coordinate pairs Poisson commute for any common conventional scale.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:limits",
+      "domain_and_hypotheses": "C2 with canonical Kahler/Poisson form and powers in disjoint canonical pairs.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No induced noncommutative observable algebra."
+    },
+    {
+      "id": "9.4",
+      "kind": "Remark",
+      "physical_page": 37,
+      "printed_page": 37,
+      "original_statement": "Remark 9.4 (Noteworthy Non-Commutative Direction). The three components of the full 𝑆𝑈 (2)\nmoment map instead obey the su(2) Poisson relations, so a deformation-quantization programme\ncould begin there. It would be a different observable algebra and would still need an independently\nfixed action and scale. The resemblance to synchronized signal phases is therefore a research\ndirection, not a result of the present (𝑋, 𝑌 ) projection.",
+      "status": "SEPARATE OBSERVABLE PROGRAM",
+      "issue": "Full SU(2) moment map differs from the commuting two powers.",
+      "corrected_statement": "The canonical powers commute; a noncommutative observable algebra needs separate selection and action.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:limits",
+      "domain_and_hypotheses": "Full SU(2) moment map differs from the commuting two powers. No deformation-quantization construction in this revision.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "Not formalized.",
+      "remaining_obligation": "No deformation-quantization construction in this revision."
+    },
+    {
+      "id": "9.5",
+      "kind": "Proposition",
+      "physical_page": 37,
+      "printed_page": 37,
+      "original_statement": "Proposition 9.5 (Vanishing Eta Invariant for Sign Holonomy). Let 𝐷𝑎 = −𝑖 𝑑/𝑑𝜃 on the circle\nwith boundary condition 𝜓(𝜃 + 2𝜋) = 𝑒2𝜋𝑖𝑎 𝜓(𝜃). Its spectrum is {𝑛 + 𝑎 : 𝑛 ∈ Z}. For the sign\nholonomy 𝑎 = 1/2 associated with a single-loop sign reversal,\n\n                         spec(𝐷1/2 ) = {𝑛 + 12 : 𝑛 ∈ Z},       𝜂(𝐷1/2 ) = 0.",
+      "status": "WRITTEN SPECTRAL PROOF",
+      "issue": "Circle operator domain H1 with specified quasi-periodic endpoint.",
+      "corrected_statement": "Half-integer eigenvalue pairing makes eta zero in its convergent half-plane, hence at zero by continuation.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:spin",
+      "domain_and_hypotheses": "Self-adjoint circle derivative, H1 anti-periodic boundary condition; eta series Re(s)>1.",
+      "external_theorems": [
+        "Standard eta continuation; convergent model series is directly paired to zero."
+      ],
+      "exact_replay": "Actual derivative/jet/metric/scalar formulas only: verification/verify_revision.py and unchanged historical scripts. No analytic/category claim inferred.",
+      "lean": "half_integer_pairing (pairing only)",
+      "remaining_obligation": "Analytic continuation and the self-adjoint circle domain are not Lean encoded."
+    },
+    {
+      "id": "9.6",
+      "kind": "Remark",
+      "physical_page": 37,
+      "printed_page": 37,
+      "original_statement": "Remark 9.6 (Noteworthy Spinorial Observation). The 4𝜋 restoration of Theorem 4.2 and the\nsign boundary condition above have the same elementary double-cover pattern as spinorial holon-\nomy. The canonical one-dimensional spectral model is nevertheless symmetric and produces no\nnet chirality. A non-zero eta invariant would require additional asymmetric boundary or operator\ndata and is not claimed.\n",
+      "status": "WRITTEN SPECTRAL SCOPE",
+      "issue": "An elementary sign cover alone does not produce chirality.",
+      "corrected_statement": "The specified half-integer circle spectrum is exactly paired and eta is zero.",
+      "written_proof": "revision/Bicomplex_Signal_Manifolds_v13_working.tex#sec:spin",
+      "domain_and_hypotheses": "An elementary sign cover alone does not produce chirality. Nonzero eta needs additional asymmetric operator or boundary data.",
+      "external_theorems": [
+        "Written proof or scoped observation; imported Mathlib dependencies listed in COVERAGE.md."
+      ],
+      "exact_replay": "No finite computation substitutes for this proof/category/domain statement.",
+      "lean": "half_integer_pairing only.",
+      "remaining_obligation": "Nonzero eta needs additional asymmetric operator or boundary data."
+    }
+  ],
+  "continuation": [
+    {
+      "original_claims": [
+        "3.1",
+        "8.25"
+      ],
+      "status": "Explicit supplied realization proved; historical power-only implication remains unsupported",
+      "result": "A continuous unit-power bicomplex lift and fixed phase-sensitive quadratic readout satisfy P Phi=S. Power-coordinate C1 boundary lifts and three fixed Hermitian pure-state observables are ruled out.",
+      "written_proofs": [
+        "revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex#thm:realization",
+        "revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex#prop:powerboundary",
+        "revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex#prop:hermitian"
+      ],
+      "evidence": "Written proofs; exact continuation replay; scoped quadrature/Bloch Lean identities. No historical recovery or canonical quantum-measurement claim."
+    },
+    {
+      "original_claims": [
+        "8.11",
+        "8.12",
+        "8.13"
+      ],
+      "status": "Actual graph-continuous two-point traces proved",
+      "result": "An explicit singular homeomorphism resolves the actual Whitney scalar metric to bounded uniformly elliptic coefficients. External scalar Holder regularity gives graph-bounded, surjective tau with dense kernel.",
+      "written_proofs": [
+        "revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex#lem:metric",
+        "revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex#cor:actualmetric",
+        "revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex#thm:trace"
+      ],
+      "evidence": "Written metric/form argument plus external De Giorgi-Nash theorem; exact/Lean standard metric bounds. Explicit logarithmic coefficients remain open."
+    },
+    {
+      "original_claims": [
+        "8.13",
+        "8.15",
+        "8.16"
+      ],
+      "status": "Corrected point restriction has actual (2,2)/U(2) and exhaustive resolvent domains",
+      "result": "A=HF restricted to ker tau has an actual boundary triple, rank-two resolvent formula, compact self-adjoint-extension resolvents and a two-dimensional Krein kernel. Old H0 still has infinite deficiency and kernel.",
+      "written_proofs": [
+        "revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex#cor:indices",
+        "revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex#thm:triple",
+        "revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex#cor:resolvent",
+        "revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex#cor:krein"
+      ],
+      "evidence": "Written Hilbert-space proofs, fixed-Dirichlet hypotheses and external positive-operator Krein theorem. Not Lean formalized; no asserted log/parity normalization."
+    },
+    {
+      "original_claims": [
+        "8.20",
+        "8.21",
+        "8.23"
+      ],
+      "status": "Actual curvature input proved; singular Dirac/Pin domains remain open",
+      "result": "Actual cross-cap curvature is locally Lp for 1<=p<3/2 with integral O(epsilon). This does not establish conformal/gauge estimates or singular-cut transmission.",
+      "written_proofs": [
+        "revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex#prop:curvature"
+      ],
+      "evidence": "Written actual-germ bound and independent exact standard curvature formula. Cone calculations retain model scope."
+    },
+    {
+      "original_claims": [
+        "8.12",
+        "8.13"
+      ],
+      "status": "Actual logarithmic Green coefficients proved for the corrected fixed-Dirichlet restriction",
+      "result": "An actual Euclidean Whitney arclength coordinate gives a-I=O(rho^(1/2)) and extrinsic radius ratio 1+O(rho^(1/2)). A planar logarithmic parametrix has L3 divergence/L2 scalar remainders; external scalar Holder regularity and a graph-domain testing argument identify the canonical resolvent Green vectors.",
+      "written_proofs": [
+        "revision/Whitney_Green_Domains_v0_03_working.tex#lem:arclength",
+        "revision/Whitney_Green_Domains_v0_03_working.tex#thm:log",
+        "revision/Whitney_Green_Domains_v0_03_working.tex#thm:boundary"
+      ],
+      "evidence": "Written proof plus external Simon Lecture 18 Theorems 2-3. Exact matrix identities only; no PDE Lean proof or full historical front/seam parametrix certification."
+    },
+    {
+      "original_claims": [
+        "8.13",
+        "8.14",
+        "8.15"
+      ],
+      "status": "Actual geometric boundary pairing, Markov uniqueness and reference-length uniqueness proved for A",
+      "result": "All Dom A* vectors have unique ell log(rho_e)+b+Holder remainder, with actual 2pi Green pairing. HF is the unique submarkovian extension of A and the only common-reference-length invariant self-adjoint plane. Actual source reflection gives equal diagonal entries of the real Green regular-part matrix.",
+      "written_proofs": [
+        "revision/Whitney_Green_Domains_v0_03_working.tex#thm:boundary",
+        "revision/Whitney_Green_Domains_v0_03_working.tex#cor:reflection",
+        "revision/Whitney_Green_Domains_v0_03_working.tex#cor:markov",
+        "revision/Whitney_Green_Domains_v0_03_working.tex#cor:scale"
+      ],
+      "evidence": "Written actual coefficient/domain proofs and classical operator theory. Old compact-core H0 remains infinite-deficiency and has multiple submarkovian extensions; no physical dilation law."
+    },
+    {
+      "original_claims": [
+        "8.18",
+        "8.19"
+      ],
+      "status": "Actual scalar limiting sheet parity proved; a new sheaf-to-operator bridge is not supplied",
+      "result": "Paired source points with identical image have equal extrinsic radii. Logarithmic terms cancel and their function-value difference is a Holder remainder, so limiting scalar coefficients are sheet-even.",
+      "written_proofs": [
+        "revision/Whitney_Green_Domains_v0_03_working.tex#cor:parity"
+      ],
+      "evidence": "Written asymptotic parity, not full Green-function deck invariance or a canonical derived-category/fiber identification."
+    },
+    {
+      "original_claims": [
+        "3.1",
+        "8.20",
+        "8.21",
+        "8.22",
+        "8.23",
+        "8.24",
+        "8.30"
+      ],
+      "status": "Originality and remaining model/Dirac/Pin/realization gaps audited",
+      "result": "The new realization powers (1-u,u) differ from ancestral (cos(t),1-cos(t)). The historical moment-map implication is not recovered. Actual singular Dirac graph domains and phase/Pin fiber transmission remain open. Boundary triples/Green/Markov frameworks are prior theory; model-specific candidate contributions have no established priority.",
+      "written_proofs": [
+        "revision/Whitney_Green_Domains_v0_03_working.tex#sec:comparison"
+      ],
+      "evidence": "Primary-reference and full historical comparison: proofs/ORIGINALITY_AND_GAPS.md. No whole-paper Lean or first-ever claim."
+    },
+    {
+      "original_claims": [
+        "3.1"
+      ],
+      "status": "Ancestral moment derivation decided: no analytic readout; smooth and half-source realizations constructed",
+      "result": "Under |z1|^2=cos(t), every state at t=+-pi/2 lies on the circle z1=0, whose image must contain two non-collinear edge segments. Hence no readout real-analytic along that circle (affine, polynomial, bicomplex-polynomial) realizes S on the closed or open-in-t source, and phase-invariant or mixed-state readouts fail outright. An explicit continuous state family with an explicit C-infinity readout does realize S; each half source admits a real-analytic but no affine readout.",
+      "written_proofs": [
+        "revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex#prop:gauge",
+        "revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex#lem:analytic",
+        "revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex#thm:rigidity",
+        "revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex#cor:excluded",
+        "revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex#thm:smooth",
+        "revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex#prop:half",
+        "revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex#rem:data"
+      ],
+      "evidence": "Written proofs; exact identities and a 64881-label finite replay of the smooth readout in verification/verify_continuation_0_04.py. A new negative theorem plus a non-canonical construction, not a recovery of the historical derivation; no Lean."
+    },
+    {
+      "original_claims": [
+        "8.6",
+        "8.7"
+      ],
+      "status": "Exceptional-pullback identity decided negatively; fold detected by the smoothness comparison map",
+      "result": "For every continuous map from a convex parameter domain to the plane, Psi^!Z is the extension by zero of the constant sheaf on the interior. The registered v7 draft shift Z[-1] on the fold locus therefore holds nowhere, and i^! gives [-1] on every embedded arc. At ordinary folds the comparison map required for cohomological smoothness has cokernel i_*Z_L. A constant sheaf on a connected space has endomorphism ring Z; the square-root cover of F gives an indecomposable rank-two carrier splitting only after inverting 2.",
+      "written_proofs": [
+        "revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex#thm:shriek",
+        "revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex#cor:shift",
+        "revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex#prop:detect",
+        "revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex#prop:carrier"
+      ],
+      "evidence": "Written proofs from cited Verdier-duality statements (Krause-Nikolaus-Putzstuck Prop. 4.6.9, Rem. 4.6.19; Scholze Def. 5.1) and the published Stokes v5 Theorem 2.4 fold classification. Winding/idempotent finite replay only; no Lean."
+    }
+  ],
+  "originality_audit": "proofs/ORIGINALITY_AND_GAPS.md",
+  "additional_prose_claims": [
+    "Abstract and conclusion: repeated results inherit each repaired status, especially Green/Dirac withdrawals.",
+    "Section 2.2: the stated two-variable fold form applies to plane-to-plane germs, not arbitrary Rn-to-Rm maps.",
+    "Section 3.1 and Definition 3.1: a momentum constraint alone does not define S, its lift or a projection.",
+    "Figure/Table claims are illustrative repetitions; original Table 1 proof labels are replaced by these audited statuses."
+  ]
+}

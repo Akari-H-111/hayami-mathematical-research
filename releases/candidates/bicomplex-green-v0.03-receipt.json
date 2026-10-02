@@ -1,0 +1,109 @@
+{
+  "acceptance_local_date": "2026-10-02",
+  "completed_utc": "2026-10-01T17:24:42.501101+00:00",
+  "checkpoint": "bicomplex-green-v0.03",
+  "status": "LOCAL SCALAR CONTINUATION VERIFIED / BOUND PRIOR FORMAL AUDITS / UNPUBLISHED",
+  "payload_files": 180,
+  "zip_members": 181,
+  "manifest_sha256": "e3f5eec98f5cca6b904454b0a25d496c43e3b9ae69c0bc3f2c8a9ee3b386a13e",
+  "zip": "releases/candidates/bicomplex-green-v0.03.zip",
+  "zip_sha256": "5c1bc369bf6fd32ca96b0ea44a1a247f44f38991efb2854bbb9b610b2bb5e1fb",
+  "zip_crc": "PASS",
+  "metadata_sha256": "efd75c515bf8e1e3bc1bc9c818d7fbca05883e74a61b29b9b1afb7318d89698b",
+  "proof_source_catalog_sha256": "079cf751a40ae37379275caead1dd139ff7a6dec3e7f80eac33ed43f2ded035e",
+  "pdfs": [
+    {
+      "kind": "manuscript",
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Signal_Manifolds_v13_working.tex",
+      "source_sha256": "d054c5ee1ad7800b41a4670b347efddbb7a019c286aa9c5ddbbfafa48825bc01",
+      "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Signal_Manifolds_v13_working.pdf",
+      "pdf_sha256": "55d417a80f27a741449a0247578114339f9075bd2f876d673f55ae58817ab218",
+      "pages": 17
+    },
+    {
+      "kind": "companion",
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Companion_v0_01_working.tex",
+      "source_sha256": "8ea40d542f93fddd4476c05dd852a5eec1061cda498049f912abf7b048755a3f",
+      "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Companion_v0_01_working.pdf",
+      "pdf_sha256": "9a659cf472afc6edcb2a5736f2075bb9bee467d56702bb53ac6667764966b3e0",
+      "pages": 3
+    },
+    {
+      "kind": "continuation",
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex",
+      "source_sha256": "0ee001e2c29eaf0f5bf680bbcec3116ff5bbc484d4d101a2e1d2d02c2ebaf626",
+      "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Realization_Point_Trace_v0_02_working.pdf",
+      "pdf_sha256": "7a76d875c5f100bcf5d42aab8a0644306a9666666742778f8903ca6481df944f",
+      "pages": 7
+    },
+    {
+      "kind": "green-continuation-0.03",
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Whitney_Green_Domains_v0_03_working.tex",
+      "source_sha256": "ceb8d2e56bf1be7f532c4efaaca93c0b20ba181323d3fd00b9084725c26f445a",
+      "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Whitney_Green_Domains_v0_03_working.pdf",
+      "pdf_sha256": "a9bbb74d62ab3340be0326b55b1a50607b2b229cf7257b9be5748a23e546daa8",
+      "pages": 6
+    }
+  ],
+  "total_pdf_pages": 33,
+  "newly_visually_inspected_pages": 6,
+  "formal_evidence": {
+    "mode": "Prior full audits plus exact current proof-input hash/inventory binding; no fresh Lean build",
+    "own_public_theorems": 33,
+    "separately_audited_dependencies": {
+      "RuledV5": 224,
+      "StokesV5": 258
+    },
+    "added_lean_theorems": 0,
+    "unchanged_proof_config_verifier_inputs": 66,
+    "prior_receipt": "prior-acceptance-receipt.json",
+    "prior_receipt_sha256": "6bb2e3ad752cff902db345811383b671c514a52f06c23070c42a7bb8a3341ba0",
+    "prior_full_audit_log_sha256": "248a3fbbad7ddc6dcabee3358ef40f3531a00d5127cbd9e9d8a26f4cdc94eb30",
+    "prior_catalog_sha256": "268e39bbf0c7c24d70933d3ec64cd82b5d027a4c95da7e3989278ed0fda358b9"
+  },
+  "mathematical_scope": "Written/external actual Euclidean Whitney arclength/tensor/radius estimates; logarithmic canonical resolvent Green vectors; all corrected A* geometric coefficients and pairing; Markov/reference-length uniqueness; global reflection and limiting scalar sheet parity. Exact replay verifies only stated algebra.",
+  "originality_scope": "Frameworks are prior theory; model-specific candidates, no first-ever priority established",
+  "open": [
+    "Historical moment model compatibility and canonicity",
+    "Actual singular Dirac graph/conformal/gauge/overlap estimates",
+    "Phase/Pin/Clifford fiber transmission",
+    "New sheaf/operator and arithmetic/physical bridges if intended",
+    "Remaining formalization and literature priority"
+  ],
+  "same_host": true,
+  "independent_host": false,
+  "whole_paper_lean_formalized": false,
+  "public_operations_authorized": false,
+  "repaired_attempts": {
+    "path": "releases/candidates/bicomplex-green-v0.03-acceptance/repaired-attempts.json",
+    "sha256": "ca8c30b67729ab69fd92ab5f16f525d4ff25139a9d3e6281e2461e7b60a5313e"
+  },
+  "original_finalization": "Complete original replay passed; one subsequent audit-prose correction credited existing v12 limits, with final manifest rechecked. Math/PDF/formal inputs unchanged; ZIP replay used the final payload.",
+  "original_candidate_replay": {
+    "status": "PASS",
+    "log": "releases/candidates/bicomplex-green-v0.03-acceptance/original-replay.log",
+    "log_sha256": "d0c9a9cb6c7d2159dd03276d3e4fe8af2a8f7064fd543f81e4d962e7d3a0a8a7"
+  },
+  "zip_extracted_replay": {
+    "status": "PASS",
+    "log": "releases/candidates/bicomplex-green-v0.03-acceptance/zip-extracted-replay.log",
+    "log_sha256": "b5fa03a7b531e54f83f7f1ba8bdb5b916bc13c24c6d7dcbeb7e573f4ca808e03"
+  },
+  "working_pdf_replay": {
+    "status": "PASS",
+    "log": "releases/candidates/bicomplex-green-v0.03-acceptance/working-pdf-replay.log",
+    "log_sha256": "f2639181f04b85de428bf2ef239339ef9fabab71e72bb6e7100f7b0e6cf330cd"
+  },
+  "previous_checkpoints": {
+    "bicomplex-v13-working-v0.01": {
+      "payload_manifest_sha256": "934432f7735da482cadbece0e0eef839f3b87aee708c8f03c64ae8687af811c5",
+      "zip_sha256": "0171caa0b4d244577c2df4e3e91cc4a101f4016742cdb0217f2831655ed4ac30",
+      "unchanged": true
+    },
+    "bicomplex-continuation-v0.02": {
+      "payload_manifest_sha256": "568cedafc5307f8896286b897d75818908a1275d4df063dac9f71d43f3fc186f",
+      "zip_sha256": "f02cd5915670c966e6ccc818a59cc1de96cda6bd00cd9d0b8c9421eda1f284f3",
+      "unchanged": true
+    }
+  }
+}

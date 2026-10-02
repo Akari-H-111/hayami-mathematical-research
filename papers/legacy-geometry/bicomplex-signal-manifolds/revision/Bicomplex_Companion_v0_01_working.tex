@@ -1,0 +1,171 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage{amsmath,amssymb,booktabs,longtable,array}
+\usepackage[colorlinks=true,linkcolor=teal,urlcolor=teal]{hyperref}
+\hypersetup{pdftitle={Bicomplex Signal Geometry: Proof Companion 0.01},
+ pdfauthor={Akari Hayami (Jian-Yu Huang)},pdfsubject={Local working checkpoint; partial formal coverage}}
+\newcommand{\C}{\mathbb C}\newcommand{\R}{\mathbb R}
+\title{Bicomplex Signal Geometry\\Proof Companion and Coverage}
+\author{Akari Hayami (Jian-Yu Huang)}
+\date{1 October 2026\\\small companion 0.01; local working checkpoint}
+\begin{document}\maketitle
+
+This companion accompanies the v13 working revision. It records what can be
+replayed and where the mathematical proof remains outside Lean. The historical
+authority is the unchanged 43-page final v12 PDF, SHA-256
+\begin{quote}\small
+\nolinkurl{4ebb8f0a7d6e88a6c5cd97f65d224b4e938867cabad54f057d3ceafb24167d5a}
+\end{quote}
+Its physical and printed page numbers agree; Section 7 is on pages 14--16.
+The claim map includes all 66 named blocks: 47 definitions/results and 19
+remarks. Original statements, actual domains, repairs, proof locations and
+remaining obligations are recorded separately.
+
+\section{The mathematical correction}
+The completed source has five rank-loss labels, including two endpoint
+corners omitted in v12. Actual derivative determinants establish the
+applicable smooth cross-cap recognition hypotheses. The polar observation
+map has genuine fold coordinates, independently of its incomplete Taylor
+remainder. Actual small-circle winding and exponential-cover lifting establish
+square-root sign change. The real link, weighted orbit and actual curvature
+exceptional cusp are distinct constructions.
+
+The revised Mellin result fixes the measure and inner-product convention and
+includes the endpoint term. On $L^2(dx)$ its formal adjoint parameter is
+$1-\sigma$; on $L^2(x^{2\beta-1}dx)$ it is $2\beta-\sigma$.
+The logarithmic unitary gives the actual half-line closure and adjoint
+domains $H^1_0$ and $H^1$, with deficiency indices $(1,0)$.
+The Gram entries are actual integrals. Every finite distinct frequency family
+is independent for every $T>0$; separation bounds give conditioning and
+log-determinant estimates.
+
+Capacity is proved by logarithmic cutoffs at all five labels. A different,
+weighted radial Hardy estimate controls $L^2$ mass near each singularity by
+$O(\varepsilon^2)$ times the form norm. Ordinary Rellich compactness on the
+regular complement then proves actual compact form embedding and a positive
+fixed-Dirichlet gap, including both endpoint corners.
+
+The old compact-core minimum leaves infinitely many outer-boundary deficiency
+and harmonic modes. A collar extension followed by the fixed-Dirichlet
+resolvent injects arbitrary smooth regular-boundary data into those spaces.
+Thus the old $(2,2)$ and exhaustive $U(2)$ classification fail as defined.
+The actual closed positive minimum still has a Krein extension and discrete
+reduced positive spectrum; its kernel is infinite-dimensional. The applicable
+abstract theorem gives the weak buckling correspondence on its actual domain.
+A finite point restriction is a different, conditional construction requiring
+graph-continuous surjective point traces.
+
+\newpage
+\section{Formal proof sources and exact replay}
+The Lean project uses Lean 4.33.1 and pinned Mathlib commit
+\begin{quote}\small
+\nolinkurl{0df444a360eaa60ab8c11dca51a86af692955474}
+\end{quote}
+It reuses unchanged RuledV5 and StokesV5 proof sources after matching the map,
+domain and orientation. Its 27 public named theorems are audited as an own
+inventory; the 224 Ruled and 258 Stokes inventories are checked separately.
+The verifier rejects holes, custom axioms, unsafe declarations and
+\texttt{native\_decide}; it permits only \texttt{propext},
+\texttt{Classical.choice} and \texttt{Quot.sound} in the kernel audit.
+
+\begin{longtable}{@{}p{.27\linewidth}p{.66\linewidth}@{}}
+\toprule Source & Coverage and its boundary\\\midrule\endhead
+\texttt{Geometry.lean} & Actual completed-source rank classification,
+endpoint derivative, genuine polar fold, actual dipole winding and corrected
+parity. Standard cross-cap fibers, lift injectivity, residual and metric
+identities are also encoded. Smooth cross-cap recognition, link topology and
+capacity integrals remain written/external.\\[4pt]
+\texttt{Monodromy.lean} & Continuous actual square-root lift through the
+exponential covering, lifted endpoint and sign change for winding $\pm1$.
+It applies directly to normalized actual small observation circles.
+Uniqueness of every continuous branch and double traversal remain written.\\[4pt]
+\texttt{Spectral.lean} & Actual complex Mellin interval integral with boundary
+term, zero-endpoint pairing, actual Gram entry integrals, modulus bound and
+finite-matrix eigenvalue enclosure. Functions have continuous given derivatives;
+$T>0$ and separated finite frequencies are retained. Hilbert domains,
+Vandermonde independence, Hermitian operator-norm translation and logdet
+proofs remain written.\\[4pt]
+\texttt{BoundaryAlgebra.lean} & Selected scalar identities for transmission,
+real transgression, parity obstruction, cusp factorization and eta pairing.
+These do not supply an unbounded Dirac trace operator, sheaf category,
+Green parametrix or analytic eta continuation.\\\bottomrule
+\end{longtable}
+
+The independent SymPy replay rebuilds actual $S$ and endpoint derivatives,
+cross-cap determinants, the polar remainder and fold identity, actual normal-
+plane jet invariants and cusp derivative criterion. It also checks the weighted
+formal-adjoint coefficient, standard $\Delta\log\rho$, a nonzero
+outer-boundary witness, the weight-zero cutoff commutator and a metric-shear
+counterexample. The unchanged three historical Bicomplex verifiers remain
+separate. Exact computation certifies these expressions, not the infinite-
+dimensional consequences.
+
+\section{The remaining analytic construction}
+The actual fixed-Dirichlet point restriction needs bounded graph traces
+$\tau:\operatorname{Dom}H_F\to\C^2$ and a dense kernel. A two-sided
+Green parametrix must prove continuous resolvent correction for the displayed
+local $L^p$ remainder, identify exhaustive maximal-domain coefficients and
+control overlap errors in specified graph spaces.
+
+For the Dirac problem, specify the spin/Pin convention, singular-cut domains,
+flat phase-line fiber identification and a Clifford-compatible unitary cut
+map. A spin Pin lift alone supplies no map of those separate phase fibers.
+The regular-bank scalar Green calculation is conditional on these data.
+Under dilation the normal cutoff commutator has weight zero; shrinking the
+patch alone gives no small Neumann-series remainder.
+
+The chosen complex $A_3$ completion has explicit compactification and divisor,
+so external Milnor, Gysin and mixed-Hodge theorems have stated input objects.
+Normalization support/recollement and Clifford/Pin results remain external.
+These results, compactness and operator-domain proofs are not formalized by
+the present inventory. The current checkpoint is partial coverage; its
+manifest or successful replay does not make it full-paper Lean coverage.
+
+\section{Replay and artifact provenance}
+From the repository root, use the registered interpreter, without Python
+\texttt{-O}:
+\begin{quote}\small\ttfamily
+local/cache/python/legacy-reconstruction-venv/bin/python -B \textbackslash\\
+verification/legacy-reconstruction/verify\_all.py
+\end{quote}
+Then run the new exact replay and formal verifier:
+\begin{quote}\small\ttfamily
+bicomplex\_dir=papers/legacy-geometry/bicomplex-signal-manifolds\\
+python -B "\$bicomplex\_dir/verification/verify\_revision.py"\\[3pt]
+python -B companions/lean/bicomplex-signal-manifolds/verify\_lean.py
+\end{quote}
+Use the same environment with SymPy for the exact script, and the pinned
+Lean toolchain for the formal verifier. Run each dependency's own
+\texttt{verify\_lean.py} separately. The claim-map builder re-extracts the
+hash-locked PDF and rejects missing or duplicate named entries.
+
+The standalone manuscript and this source are checked by the native LaTeX
+editor. Exported PDFs receive separate pagewise visual QA and SHA-256 records.
+The checkpoint receipt distinguishes native source compilation, exported
+PDF comparison, exact calculation and kernel audit. Original-location and
+ZIP-extracted replay take place on the same host with the registered tools;
+they are not an independent-host certificate. Historical PDFs, ancestor
+figures, sealed packages and their receipts are preserved.
+
+\appendix\section{Public named theorem inventory}
+All names below have the namespace \texttt{Bicomplex}. Precise types are in
+the source and the Markdown coverage table.
+\begin{flushleft}\small
+\nolinkurl{actual_source_rank_classification};
+\nolinkurl{actual_endpoint_rank}; \nolinkurl{actual_polar_fold};
+\nolinkurl{actual_dipole}; \nolinkurl{observation_field_even};
+\nolinkurl{normalized_polynomial_derivative};
+\nolinkurl{crosscap_lift_injective}; \nolinkurl{crosscap_actual_fibers};
+\nolinkurl{crosscap_metric_determinant}; \nolinkurl{crosscap_residual_positive};
+\nolinkurl{square_root_lift}; \nolinkurl{log_lift_endpoint};
+\nolinkurl{unit_winding_sign_change}; \nolinkurl{local_observation_root_sign};
+\nolinkurl{mellin_interval_green}; \nolinkurl{mellin_zero_boundary_pairing};
+\nolinkurl{formal_coefficient_symmetry}; \nolinkurl{gram_diagonal};
+\nolinkurl{gram_entry_integral}; \nolinkurl{gram_entry_bound};
+\nolinkurl{gram_eigenvalue_enclosure}; \nolinkurl{zero_boundary_core_witness};
+\nolinkurl{transmission_unit_modulus_iff}; \nolinkurl{real_transgression_coefficient};
+\nolinkurl{sign_intertwiner_zero}; \nolinkurl{cusp_return_square};
+\nolinkurl{half_integer_pairing}.
+\end{flushleft}
+\end{document}

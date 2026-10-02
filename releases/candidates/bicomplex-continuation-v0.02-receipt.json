@@ -1,0 +1,128 @@
+{
+  "task_date": "2026-10-01",
+  "acceptance_local_date": "2026-10-02",
+  "completed_utc": "2026-10-01T16:07:00.853772+00:00",
+  "checkpoint": "bicomplex-continuation-v0.02",
+  "status": "LOCAL CHECKPOINT VERIFIED / PARTIAL FORMAL COVERAGE / UNPUBLISHED",
+  "payload_files": 167,
+  "zip_members": 168,
+  "manifest_sha256": "568cedafc5307f8896286b897d75818908a1275d4df063dac9f71d43f3fc186f",
+  "zip": "releases/candidates/bicomplex-continuation-v0.02.zip",
+  "zip_sha256": "f02cd5915670c966e6ccc818a59cc1de96cda6bd00cd9d0b8c9421eda1f284f3",
+  "zip_crc": "PASS",
+  "metadata_sha256": "6a8932a9e4ba972ddbdb6a23184cb20071a5a23edf4b11813fb6de20e4ae34e6",
+  "proof_source_catalog_sha256": "268e39bbf0c7c24d70933d3ec64cd82b5d027a4c95da7e3989278ed0fda358b9",
+  "historical_v12_sha256": "4ebb8f0a7d6e88a6c5cd97f65d224b4e938867cabad54f057d3ceafb24167d5a",
+  "working_tree_replay": {
+    "status": "PASS",
+    "log": "releases/candidates/bicomplex-continuation-v0.02-acceptance/working-tree-replay.log",
+    "log_sha256": "90273b1e5d7cbed39fb925dedea7c19e0cc27f4590cb26284562e9204a3d544a",
+    "command": [
+      "/Users/akari_hayami_64/Documents/hayami-mathematical-research/local/cache/python/legacy-reconstruction-venv/bin/python",
+      "-B",
+      "papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_working.py"
+    ]
+  },
+  "original_candidate_replay": {
+    "status": "PASS",
+    "log": "releases/candidates/bicomplex-continuation-v0.02-acceptance/original-replay.log",
+    "log_sha256": "248a3fbbad7ddc6dcabee3358ef40f3531a00d5127cbd9e9d8a26f4cdc94eb30",
+    "directory": "releases/candidates/bicomplex-continuation-v0.02",
+    "command": [
+      "/Users/akari_hayami_64/Documents/hayami-mathematical-research/local/cache/python/legacy-reconstruction-venv/bin/python",
+      "-B",
+      "verify.py"
+    ]
+  },
+  "zip_extracted_replay": {
+    "status": "PASS",
+    "log": "releases/candidates/bicomplex-continuation-v0.02-acceptance/zip-extracted-replay.log",
+    "log_sha256": "248a3fbbad7ddc6dcabee3358ef40f3531a00d5127cbd9e9d8a26f4cdc94eb30",
+    "directory": "releases/candidates/bicomplex-continuation-v0.02-acceptance/extracted/bicomplex-continuation-v0.02",
+    "command": [
+      "/Users/akari_hayami_64/Documents/hayami-mathematical-research/local/cache/python/legacy-reconstruction-venv/bin/python",
+      "-B",
+      "verify.py"
+    ]
+  },
+  "pdfs": [
+    {
+      "kind": "manuscript",
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Signal_Manifolds_v13_working.tex",
+      "source_sha256": "d054c5ee1ad7800b41a4670b347efddbb7a019c286aa9c5ddbbfafa48825bc01",
+      "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Signal_Manifolds_v13_working.pdf",
+      "pdf_sha256": "55d417a80f27a741449a0247578114339f9075bd2f876d673f55ae58817ab218",
+      "pages": 17
+    },
+    {
+      "kind": "companion",
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Companion_v0_01_working.tex",
+      "source_sha256": "8ea40d542f93fddd4476c05dd852a5eec1061cda498049f912abf7b048755a3f",
+      "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Companion_v0_01_working.pdf",
+      "pdf_sha256": "9a659cf472afc6edcb2a5736f2075bb9bee467d56702bb53ac6667764966b3e0",
+      "pages": 3
+    },
+    {
+      "kind": "continuation",
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex",
+      "source_sha256": "0ee001e2c29eaf0f5bf680bbcec3116ff5bbc484d4d101a2e1d2d02c2ebaf626",
+      "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Realization_Point_Trace_v0_02_working.pdf",
+      "pdf_sha256": "7a76d875c5f100bcf5d42aab8a0644306a9666666742778f8903ca6481df944f",
+      "pages": 7
+    }
+  ],
+  "pdf_acceptance": "Three native-checked sources; all 27 pages visually inspected; isolated three-pass rebuild, complete text and all-page render equality in working/original/ZIP replays",
+  "formal_coverage": {
+    "own_public_theorems": 33,
+    "added_theorems": 6,
+    "separately_audited_dependencies": {
+      "RuledV5": 224,
+      "StokesV5": 258
+    },
+    "build_status_full_axiom_audit_proof_hole_scan": "PASS",
+    "allowed_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "whole_paper_lean_formalized": false,
+    "analytic_point_trace_and_operator_proofs": "Written plus external scalar regularity; not Lean formalized"
+  },
+  "claim_inventory": 66,
+  "continuation_overlay_entries": 4,
+  "cache_reuse": {
+    "same_host": true,
+    "independent_host_verification": false,
+    "pinned_dependency_packages": "Symlinked existing registered packages; all git HEADs checked against unchanged project lockfiles before replay",
+    "project_build_cache": "Copied source-identical live project builds to each replay location; current build/status/full axiom/proof-hole audits still executed separately",
+    "bundled_in_zip": false
+  },
+  "environment": {
+    "python": "3.9.6 (default, Aug 25 2026, 21:26:21) \n[Clang 21.0.0 (clang-2100.3.34.2)]",
+    "sympy": "1.14.0"
+  },
+  "remaining_obligations": [
+    "Explicit logarithmic coefficients and parity for actual scalar Green basis",
+    "Singular Dirac graph domains, conformal/gauge estimates, parametrix and overlap control",
+    "Singular-cut phase-line/Pin/Clifford transmission",
+    "Remaining Lean encodings and complete novelty comparison"
+  ],
+  "novelty_status": "Not established; Grieser coordinate method and abstract extension framework are prior work",
+  "previous_checkpoint": {
+    "identity": "bicomplex-v13-working-v0.01",
+    "receipt_sha256": "f1744be9db00aa7242afbbe47e3540b36e8451a15775c2dc16c768d61dd6e854",
+    "manifest_sha256": "934432f7735da482cadbece0e0eef839f3b87aee708c8f03c64ae8687af811c5",
+    "zip_sha256": "0171caa0b4d244577c2df4e3e91cc4a101f4016742cdb0217f2831655ed4ac30",
+    "payload_and_receipt_logs_unchanged": "PASS"
+  },
+  "repaired_attempts": {
+    "record": "releases/candidates/bicomplex-continuation-v0.02-acceptance/repaired-attempts.json",
+    "sha256": "42aaea28d4455047ba1ccec78f636c071d27377c5096461eb58f7fc3279c4f0d"
+  },
+  "public_actions": [],
+  "article_doi": null,
+  "research_note_doi": null,
+  "software_version_doi": null,
+  "software_concept_doi": null,
+  "author_confirmation_required_before_publication": true
+}

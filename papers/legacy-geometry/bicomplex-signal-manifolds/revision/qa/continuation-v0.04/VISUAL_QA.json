@@ -1,0 +1,36 @@
+{
+  "date": "2026-10-02",
+  "scope": "Continuation 0.04 standalone note; three-pass pdflatex export and all-page visual inspection",
+  "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex",
+  "source_sha256": "ab43fe9965a859147fbad4954eb5f1b093b06ffec8d1ee8ae571ac6c73c07112",
+  "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.pdf",
+  "pdf_sha256": "09c16798c90844ef6a07f9075cadf9696416146a88747d276350cb6308c7f3d9",
+  "pages": 7,
+  "pdftotext_sha256": "35f5879960297bda2a8b38c1278711a579e3788c828be9adca6513277a2ea2f0",
+  "render": {
+    "tool": "pdftoppm -r 80 -png",
+    "page_png_sha256": {
+      "1": "307395bb04ab4f3548fa3dbae61153ca2280cbf96049b355c3a10317f6bfc3f6",
+      "2": "385f24ee0cda13aceee6c6ad5de9bd6d1e13b66542d228b04e24324b9200b3a4",
+      "3": "82cff437dbcba6085fa8ab1436d402532a17eeda3d62c777e3eeadcf3330e849",
+      "4": "7729195c96a863ef176038db290154447e11f2909c1e3e1dca593e408dec73e6",
+      "5": "05c6b1385ef01186444d3096162d69be691042f4b480445575c27ed887d2a82e",
+      "6": "bb8d3472cb778992df64e7c00e5cc4f8448bd26ba32cc6fda0f17436b77495ba",
+      "7": "39d539f5d225f1cc7d8fc2576105d4879ad6cb72e11781ff14993c9f269337d6"
+    }
+  },
+  "builder": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_continuation_0_04_pdf.py",
+  "diagnostics": "PASS: byte-safe scan of the final log finds no Overfull, Underfull, LaTeX Warning, Warning: or undefined entries",
+  "visual_inspection": "PASS: all 7 final pages inspected; pages 1-6 render byte-identical to the inspected pre-bibliography-compaction build, page 7 inspected directly",
+  "native_editor_compilation": "not performed in this window; only the pdflatex export path was used",
+  "repaired_attempts": [
+    "First manual scan used grep on a log containing non-UTF8 bytes and silently missed three Overfull boxes; the exporter now decodes the log byte-safely. Fixed by footnotesize hash table, displayed duality formula and rephrased Proposition 3.4 statement.",
+    "Exporter's case-insensitive 'warning' marker matched the infwarerr package banner; replaced by precise TeX diagnostic markers.",
+    "Figure 1 placed P_+- at t ~ +-0.75 instead of t0 = arccos(phi^-2) ~ 1.18; corrected before acceptance.",
+    "Remark on v7 Remark 8.4 referred to a boundary loop through t=+-pi/2 where M=P/Q is undefined; restated for loops inside D_o.",
+    "Section 3 originally stated the pullback theorem on the closed rectangle; since Psi is undefined at t=+-pi/2 it was generalized to convex domains and applied on D_o.",
+    "An 8-page build left one reference alone on page 8; bibliography set in small type, 7 pages."
+  ],
+  "math_verifier": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_continuation_0_04.py",
+  "lean": "No Lean theorem added; own inventory remains 33"
+}

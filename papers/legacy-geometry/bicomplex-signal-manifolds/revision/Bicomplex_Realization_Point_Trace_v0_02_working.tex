@@ -1,0 +1,441 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,xcolor}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=teal,citecolor=teal,urlcolor=teal]{hyperref}
+\hypersetup{pdftitle={Bicomplex Signal Realization and Fixed-Boundary Point Extensions},pdfauthor={Akari Hayami (Jian-Yu Huang)},pdfsubject={Local research continuation 0.02}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\Dom}{\operatorname{Dom}}\newcommand{\dd}{\,d}
+\newcommand{\norm}[1]{\lVert#1\rVert}
+\DeclareMathOperator{\rank}{rank}
+\title{Bicomplex Signal Realization\\and Fixed-Boundary Point Extensions}
+\author{Akari Hayami (Jian-Yu Huang)}
+\date{1 October 2026\\\small Research continuation 0.02; local working draft}
+\begin{document}\maketitle
+\begin{abstract}
+We give an explicit unit-power bicomplex state family whose phase-sensitive
+quadratic readout reproduces the ruled signal map. The required phase coupling
+is stated as model data. We also prove that three fixed Hermitian quadratic
+observables on normalized two-component pure states cannot reproduce this
+whole map. For the actual induced Whitney metric, a singular coordinate change
+reduces the scalar Dirichlet form to a uniformly elliptic divergence-form
+problem with bounded density. Interior H\"older estimates then give continuous,
+graph-bounded values at both interior cross-caps. Consequently the corrected
+point restriction of the fixed Dirichlet operator has deficiency indices
+$(2,2)$, an actual resolvent boundary triple and a $U(2)$ extension family.
+Its Green vectors are defined by the actual resolvent; explicit logarithmic
+normalizations and singular Dirac transmission remain separate questions.
+\end{abstract}
+
+\section{An explicit signal realization}\label{sec:realization}
+We use the same completed source labels and map as the verified v13 draft:
+\[
+ S(t,u)=\bigl(c+2u(1-c),(1-u)s,uQ\bigr),\quad
+ c=\cos t,\ s=\sin t,\ Q=\sqrt{c(2-c)},
+\]
+where $-\pi/2\leq t\leq\pi/2$ and $0\leq u\leq1$.
+The bicomplex idempotent coordinates are $z=z_+e_++z_-e_-$;
+the chosen Hilbert power is $|z_+|^2+|z_-|^2$.
+Define the two unit phasors
+\[
+ \zeta_+(t)=e^{it/2},\qquad
+ \zeta_-(t)=\sqrt{1-c/2}+i\sqrt{c/2}.
+\]
+Thus $\zeta_+^2=c+is$ and $\zeta_-^2=1-c+iQ$.
+These phases encode the selected orthogonal-circle coupling. Power
+conservation alone does not select that coupling.
+
+\begin{theorem}[Quadrature realization]\label{thm:realization}
+The continuous state family and fixed real quadratic readout
+\begin{align*}
+ \Phi(t,u)&=\sqrt{1-u}\,\zeta_+(t)e_+
+                 +\sqrt u\,\zeta_-(t)e_-,\\
+ P(z)&=\bigl(\Re(z_+^2)+|z_-|^2+\Re(z_-^2),
+                   \Im(z_+^2),\Im(z_-^2)\bigr)
+\end{align*}
+satisfy $|\Phi_+|^2=1-u$, $|\Phi_-|^2=u$ and $P\circ\Phi=S$
+on the entire physical source. The lift is smooth where $0<u<1$ in
+the completed source charts.
+\end{theorem}
+\begin{proof}
+Both phasors have modulus one. Their squares give
+$P\Phi=((1-u)c+u(2-c),(1-u)s,uQ)$, which is $S$.
+The readout measures the real and imaginary quadratures of the component
+squares, together with one DC power term. It is specified on the ambient
+algebra before a source point is substituted.
+At the angular endpoints use $r=Q$, $C=1-\sqrt{1-r^2}$ and
+$t=\varepsilon\arccos C$. The imaginary component of $\zeta_-$ is
+$r/\sqrt{2(2-C)}$ for $r\geq0$ and has a smooth signed extension;
+its real component is $\sqrt{1-C/2}$. The first phasor is smooth in $C$.
+This verifies smoothness in the actual endpoint charts. Square-root power
+weights are smooth in the open ruling interval and continuous at its ends.
+\end{proof}
+
+The construction retains a common phase reference: multiplying both
+components by $e^{i\alpha}$ rotates their squares by $e^{2i\alpha}$.
+It is a classical phase-sensitive signal readout, rather than a claim about
+three quantum expectation values.
+
+\begin{proposition}[Power-coordinate boundary obstruction]\label{prop:powerboundary}
+No $C^1$ lift in the original coordinate $u$ can satisfy $|z_-(t,u)|^2=u$
+up to $u=0$. Similarly $|z_+(t,u)|^2=1-u$ prevents a $C^1$ lift at $u=1$.
+Writing $u=\sin^2v$ gives a smooth lift on $0\leq v\leq\pi/2$,
+but this substitution is not a boundary diffeomorphism of the original source.
+\end{proposition}
+\begin{proof}
+At $u=0$ the component is zero. If it were $C^1$, the one-sided derivative
+of its squared modulus would be
+$2\Re(\overline{z_-}\,\partial_u z_-)=0$, contradicting the derivative of $u$.
+The other endpoint is identical. In the power-angle coordinate the weights
+are $\cos v$ and $\sin v$; the derivative of $\sin^2v$ vanishes at both ends.
+\end{proof}
+
+\begin{proposition}[Three Hermitian observables do not realize this map]\label{prop:hermitian}
+There are no three fixed Hermitian $2\times2$ matrices $H_j$ and normalized
+pure-state family $z(t,u)\in\C^2$ such that
+$S_j(t,u)=z(t,u)^*H_jz(t,u)$ throughout the physical source.
+\end{proposition}
+\begin{proof}
+The Bloch vector of a normalized two-component pure state lies on the unit
+sphere. Expanding $H_j$ in the identity and Pauli matrices gives
+$P_H(z)=a+Mr(z)$ with a real $3\times3$ matrix $M$;
+see also the pure-state distinction in \cite{bloch}.
+If $\rank M\leq2$, its image is planar. But the four actual values
+$(1,0,0),(0,1,0),(0,-1,0),(1,0,1)$ of $S$ have affine determinant $2$.
+If $M$ is invertible, its image of the sphere is an ellipsoid surface,
+which contains no nonconstant straight segment. The actual ruling
+$S(0,u)=(1,0,u)$ is such a segment. Both cases are impossible.
+\end{proof}
+The proposition concerns normalized pure states and fixed Hermitian
+observables. It does not exclude mixed states, additional components, or
+the phase-sensitive readout already constructed.
+
+\section{Resolving the intrinsic scalar metric}\label{sec:resolved}
+For the standard cross-cap $F(x,y)=(x,xy,y^2)$ set $R=\sqrt{x^2+y^2}$.
+Its actual pullback metric and a new coordinate map are
+\[
+ g_0=dx^2+(y\,dx+x\,dy)^2+4y^2dy^2,
+ \qquad \Psi(x,y)=(X,V)=(x,yR).
+\]
+The coordinate change is singular at zero. It preserves the completed
+source point and its neighbourhood topology.
+
+\begin{lemma}[Uniform metric comparison]\label{lem:metric}
+The map $\Psi$ is a homeomorphism of $\R^2$ and a smooth diffeomorphism
+off zero. For $0<R\leq1/2$,
+\[
+ \frac1{16}\Psi^*(dX^2+dV^2)\ \leq\ g_0\ \leq\
+ 8\Psi^*(dX^2+dV^2).
+\]
+Also $X^2+V^2=|F(x,y)|^2$.
+\end{lemma}
+\begin{proof}
+For fixed $x$, the function $y\mapsto y\sqrt{x^2+y^2}$ is strictly
+increasing onto $\R$. Its inverse is continuous and obeys
+\[
+ y^2=\frac{\sqrt{X^4+4V^2}-X^2}{2},\qquad \operatorname{sgn}y=\operatorname{sgn}V.
+\]
+Off zero the Jacobian is $(x^2+2y^2)/R>0$. Continuity at zero follows
+from the inverse formula. The radius identity follows by expansion.
+For a tangent vector $(\xi,\eta)$ put $h=\xi^2+R^2\eta^2$ and
+$E=g_0((\xi,\eta),(\xi,\eta))$. The exact positive decompositions
+\begin{align*}
+ E-\tfrac12h&=\tfrac12(2y\xi+x\eta)^2
+       +(\tfrac12-y^2)\xi^2+\tfrac72y^2\eta^2,\\
+ 4h-E&=(y\xi-x\eta)^2+(3-2y^2)\xi^2+2x^2\eta^2
+\end{align*}
+give $h/2\leq E\leq4h$.
+Now $dV=a\,dx+b\,dy$, where $a=xy/R$, $b=(x^2+2y^2)/R$.
+Here $|a|\leq R/2\leq1/4$ and $1\leq b/R\leq2$.
+Consequently $\xi^2+(a\xi+b\eta)^2\leq8h$.
+Conversely $R\eta=(R/b)((a\xi+b\eta)-a\xi)$ gives
+$h\leq2(\xi^2+(a\xi+b\eta)^2)$. Combining these estimates proves
+the displayed comparison.
+\end{proof}
+
+Grieser already proved that Whitney-umbrella metrics become quasi-Euclidean
+under a singular coordinate change \cite[Section 1]{grieser}. We give the
+explicit comparison here to track its scalar PDE hypotheses; the coordinate
+method is not claimed as a new discovery.
+
+\begin{corollary}[Application to the actual ruled germs]\label{cor:actualmetric}
+Each of the actual interior germs $P_\pm$ admits a source homeomorphism,
+smooth off its singular label, in which its metric tensor $G$ and density
+$m=\sqrt{\det G}$ are bounded above and below by positive constants.
+The divergence matrix $a=mG^{-1}$ is bounded, measurable and uniformly elliptic.
+\end{corollary}
+\begin{proof}
+The verified adapted determinants in v13 show that each actual germ is a
+smooth cross-cap. Thus an actual source diffeomorphism $h$ and an ambient
+target diffeomorphism $L$ give $S=L\circ F\circ h$, after translations.
+Shrink the neighbourhood so the singular values of $DL$ lie between positive
+constants $\ell$ and $M$. Then $\ell^2g_0\leq F^*(L^*g_{\R^3})\leq M^2g_0$.
+Apply Lemma~\ref{lem:metric} to $\Psi\circ h$. Bounds on the eigenvalues of
+$G$ imply the asserted density and divergence-matrix bounds. This is
+metric comparison through an actual target map, not an assertion that $L$
+is an isometry or that it preserves sheet parity.
+\end{proof}
+
+\section{Actual graph-bounded point traces}\label{sec:trace}
+Let $\mathcal H=L^2(D_{\mathrm{reg}},\dd A_g)$ and let $q_D$ be the
+Friedrichs form of the actual scalar metric, with the regular outer Dirichlet
+boundary fixed. Its self-adjoint operator is $H_F$.
+The all-five-point capacity proof, compact form embedding and positive
+Dirichlet gap are the proved v13 inputs. Only the two interior labels are
+used for the point restriction below.
+
+\begin{theorem}[Actual point evaluation]\label{thm:trace}
+Every $f\in\Dom H_F$ has a unique continuous representative near $P_\pm$
+in the completed source. In the resolved coordinates it is locally H\"older
+continuous, and
+\[
+ \tau f=(f(P_+),f(P_-)),\qquad
+ \norm{\tau f}\leq C(\norm f_{\mathcal H}+\norm{H_Ff}_{\mathcal H}).
+\]
+The trace $\tau:\Dom H_F\to\C^2$ is surjective and its kernel is dense in
+$\mathcal H$.
+\end{theorem}
+\begin{proof}
+On a resolved coordinate disk the form norm is equivalent to $H^1$ and
+the Hilbert norm to ordinary $L^2$, by Corollary~\ref{cor:actualmetric}.
+A point has zero $H^1$ capacity in dimension two: cutoffs on a logarithmic
+annulus have energy tending to zero. Thus the local completed form space
+is $H^1$ on the whole disk. This also follows by localizing the original
+Friedrichs core and completing it in the equivalent norm.
+Writing $b=H_Ff$, its weak equation becomes
+\[
+ -\operatorname{div}(a\nabla f)=mb.
+\]
+It holds across zero. Indeed tests on the whole disk can be approximated
+in $H^1$ by tests avoiding zero, and both the form pairing and the $L^2$
+right-hand side are continuous in that norm. There is no unaccounted delta
+term in this equation for a Friedrichs-domain function.
+
+The coefficients are real symmetric, measurable and uniformly elliptic;
+$m$ is bounded; and $mb\in L^2$, with $2>\dim(D)/2=1$.
+The interior inhomogeneous De Giorgi--Nash estimate gives, on a smaller disk,
+\[
+ \norm f_{C^\alpha}\leq C\bigl(\norm f_{L^2}+\norm{mb}_{L^2}\bigr).
+\]
+This is the standard external scalar theorem, for example
+\cite[Theorem 8.24]{gt}; the homogeneous estimate and $L^p$, $p>n/2$,
+inhomogeneous version are also stated in \cite[Questions 52,58]{silvestre}.
+For a local formulation one can subtract the zero-boundary solution of the
+inhomogeneous equation on the disk and apply the homogeneous estimate to
+the remainder. Apply the theorem to real and imaginary parts separately.
+This yields a continuous value and the claimed graph estimate.
+Two continuous representatives equal almost everywhere must agree, since
+the resolved density is bounded below. The coordinate homeomorphism
+then supplies a unique value at the actual source label.
+
+Choose two disjoint source cutoffs equal to one near the respective point
+and zero near all outer boundaries and the other singularities. Capacity
+zero puts them in the form domain; their Laplacians are smooth and supported
+on regular annuli, so they are in $\Dom H_F$. Their traces are the two
+standard basis vectors, proving surjectivity. Finally the original punctured
+interior smooth compact core lies in $\ker\tau$ and is dense in $\mathcal H$.
+\end{proof}
+
+\begin{corollary}[The corrected two-point operator]\label{cor:indices}
+The actual operator
+\[
+ A=H_F|_{\ker\tau}
+\]
+is closed, densely defined, symmetric, strictly positive and has deficiency
+indices $(2,2)$. Its Friedrichs extension is $H_F$ and all its self-adjoint
+extensions are parametrized by $U(2)$.
+\end{corollary}
+\begin{proof}
+Graph continuity makes $\ker\tau$ graph closed. The remaining basic properties
+are inherited from $H_F$ and Theorem~\ref{thm:trace}. For nonreal $z$,
+$\tau(H_F-z)^{-1}$ is a bounded surjection to $\C^2$ with kernel
+$\operatorname{ran}(A-z)$. Hence this closed range has codimension two,
+so $\dim\ker(A^*-\bar z)=2$. Von Neumann's unitary classification applies.
+The punctured form core is contained in $\Dom A\subset\Dom H_F$;
+its form closure is exactly $q_D$. Therefore the Friedrichs extension is $H_F$.
+\end{proof}
+This construction is the fixed-boundary point restriction used in regular
+point-interaction theory, e.g.\ \cite{point}, with its graph-trace hypothesis
+now verified for the actual Whitney metric. The old graph closure of the
+interior compact core remains a different operator with infinitely many
+outer-boundary deficiency modes; its historical $(2,2)$ statement stays false.
+
+\section{Actual Green vectors and boundary pairing}\label{sec:green}
+The point traces allow an exhaustive domain description without guessing a
+logarithmic coefficient. Fix a real $\eta<0$ and set
+\[
+ R_z=(H_F-z)^{-1},\qquad G_z=[\tau R_{\bar z}]^*:\C^2\to\mathcal H.
+\]
+All adjoints use a conjugate-linear first inner product.
+
+\begin{theorem}[Resolvent boundary triple]\label{thm:triple}
+The actual adjoint domain decomposes as
+\[
+ \Dom A^*=\Dom H_F\dotplus G_\eta\C^2,
+ \qquad A^*(u+G_\eta a)=H_Fu+\eta G_\eta a.
+\]
+With $\Gamma_0(u+G_\eta a)=a$ and $\Gamma_1(u+G_\eta a)=\tau u$,
+\begin{align*}
+ \langle A^*f,g\rangle-\langle f,A^*g\rangle
+ =\langle\Gamma_1f,\Gamma_0g\rangle
+       -\langle\Gamma_0f,\Gamma_1g\rangle.
+\end{align*}
+The pair $(\Gamma_0,\Gamma_1)$ is surjective onto $\C^2\oplus\C^2$.
+Every self-adjoint extension is specified by
+\[
+ (U-I)\Gamma_1f+i(U+I)\Gamma_0f=0,\qquad U\in U(2).
+\]
+In this convention $U=I$ gives $H_F$.
+\end{theorem}
+\begin{proof}
+The bounded map $T_\eta=\tau R_\eta$ is onto; its adjoint is injective and
+has range $\operatorname{ran}(A-\eta)^\perp=\ker(A^*-\eta)$.
+For $f\in\Dom A^*$ put $u=R_\eta(A^*-\eta)f$. Then $f-u$ belongs to
+that kernel. The intersection with $\Dom H_F$ is zero since $\eta$ is in
+the resolvent set of $H_F$. This proves the unique decomposition and action.
+For $f=u+G_\eta a$, $g=v+G_\eta b$, the $u,v$ and $a,b$ terms cancel.
+The cross terms use
+\[
+ \langle(H_F-\eta)u,G_\eta b\rangle=\langle\tau u,b\rangle
+\]
+and its conjugate, giving the stated Green form. Given $(a,b)$, take $u$
+with $\tau u=b$ and set $f=u+G_\eta a$. The kernel of both traces is
+$\Dom A$. Self-adjoint restrictions correspond to maximal isotropic planes
+of this finite nondegenerate Green form. The Cayley transform gives exactly
+the displayed unitary equation, including planes that are not graphs of
+a Hermitian matrix.
+\end{proof}
+
+\begin{corollary}[Actual finite-rank resolvent formula]\label{cor:resolvent}
+Let $B=B^*$ and impose $\Gamma_1=B\Gamma_0$. With
+\[
+ M(z)=(z-\eta)\tau R_zG_\eta,
+\]
+the resolvent, wherever both sides are defined, is
+\[
+ (H_B-z)^{-1}=R_z+G_z(B-M(z))^{-1}G_{\bar z}^*.
+\]
+Thus the difference from the fixed Dirichlet resolvent has rank at most two.
+\end{corollary}
+\begin{proof}
+The resolvent identity gives $G_z=G_\eta+(z-\eta)R_zG_\eta$;
+in particular $\Gamma_0G_za=a$ and $\Gamma_1G_za=M(z)a$.
+A solution of $(A^*-z)f=h$ has the unique form $f=R_zh+G_za$.
+Its boundary condition becomes $(B-M(z))a=\tau R_zh=G_{\bar z}^*h$.
+Solving this finite system gives the formula.
+\end{proof}
+
+\begin{corollary}[Compact extensions and the actual Krein kernel]\label{cor:krein}
+Every self-adjoint extension of $A$ has compact resolvent. Its
+Krein--von Neumann extension $A_K$ has a two-dimensional kernel and satisfies
+\[
+ \Dom A_K=\Dom A\dotplus G_0\C^2,
+ \qquad \Gamma_1f=M(0)\Gamma_0f.
+\]
+\end{corollary}
+\begin{proof}
+For nonreal $z$, the difference of the resolvents of any extension and $H_F$
+has range in $\ker(A^*-z)=G_z\C^2$, since both solve the same adjoint
+equation. Hence this difference has rank at most two. The already proved
+compactness of $R_z$ gives compactness of every extension resolvent.
+Strict positivity and the positive-operator Krein theorem
+\cite[Theorem 2.1, equation (2.8)]{krein} give
+$\Dom A_K=\Dom A\dotplus\ker A^*$.
+Because $0$ belongs to the resolvent set of $H_F$, the same trace-resolvent
+argument at zero yields $\ker A^*=G_0\C^2$, of dimension two.
+Finally $\Gamma_1G_0=M(0)\Gamma_0G_0$ and both traces vanish on $\Dom A$,
+which identifies its boundary plane.
+\end{proof}
+This is the Krein extension of the corrected point restriction $A$.
+The old compact-core operator still has an infinite-dimensional Krein kernel.
+
+The vectors $G_ze_\pm$ are actual graph-dual point-source Green vectors.
+The theorem excludes additional defect directions for this specified operator
+$A$; it does not identify their coefficients with those of a particular
+$\log\rho$ ansatz. Changing the reference $\eta$ changes the regular
+boundary coordinate and Weyl normalization, not the actual extension family.
+An explicit local logarithmic expansion remains useful for geometric
+interpretation and quantitative couplings.
+
+\section{What this establishes for the Dirac problem}\label{sec:dirac}
+The scalar theorem does not require derivatives of the resolved coefficient
+matrix. A first-order spin operator does, through its connection, so its
+domain cannot be inferred from scalar uniform ellipticity.
+
+\begin{proposition}[Actual curvature integrability]\label{prop:curvature}
+At an actual smooth cross-cap germ, the Gaussian curvature belongs locally
+to $L^p(\dd A_g)$ for $1\leq p<3/2$. On the standard germ,
+\[
+ K=-\frac{4y^2}{(x^2+4y^2+4y^4)^2}.
+\]
+In a source disk of radius $\varepsilon$, the absolute curvature integral
+is at most $C\varepsilon$.
+\end{proposition}
+\begin{proof}
+For the actual map in smooth adapted source coordinates, all second
+derivatives are bounded. The coefficients of its second fundamental form
+are consequently bounded, because the unit normal has length one.
+Metric comparison with the standard germ gives $\det g\asymp R^2$ and
+$\dd A_g\leq C R\,dx\,dy$. The Gauss formula therefore gives
+$|K|\leq C/R^2$. Polar integration bounds the $p$th curvature integral by
+$C\int_0^\varepsilon R^{2-2p}\dd R$, finite precisely in the stated sufficient
+range. For $p=1$ this is $C\varepsilon$.
+For the standard map direct first- and second-fundamental-form calculation
+gives the displayed exact formula.
+\end{proof}
+
+This supplies an actual integrable spin-curvature input: the curvature of
+the two-dimensional spin connection is proportional to $K\dd A_g$,
+and tensoring by the flat observation sign line adds no local curvature.
+It does not by itself provide a bounded conformal factor, a controlled
+connection gauge, or the weighted graph-domain comparison needed at the
+singular cut. Those estimates, the phase-line fibre identification and a
+Clifford-compatible transmission map remain the next Dirac obligations.
+The one-channel-per-chirality exact-cone calculation retains its model scope.
+
+\section{Evidence and relation to the verified checkpoint}\label{sec:evidence}
+\begin{center}\small
+\begin{tabular}{p{.27\linewidth}p{.64\linewidth}}\toprule
+Result & Evidence and scope\\\midrule
+Signal realization & Explicit global continuous lift, interior/completed-chart smoothness and endpoint obstruction; quadratic identities replayed exactly.\\
+Metric comparison & Written homeomorphism and positive estimates; standard metric energies checked independently and in Lean. Grieser's earlier coordinate result is credited.\\
+Point traces & Actual metric comparison and form-domain argument, followed by the external scalar H\"older theorem; not Lean formalized.\\
+Extension domains & Written Hilbert-space proof for $A=H_F|_{\ker\tau}$, actual Green vectors and finite-rank formula; no claimed logarithmic parametrix.\\
+Dirac progress & Actual curvature bound and exact standard curvature formula; singular spin-domain and transmission classification remain open.\\\bottomrule
+\end{tabular}
+\end{center}
+This continuation adds results to the locally verified v13/companion 0.01
+checkpoint. Its historical PDF, sealed package, manifests and receipts are
+unchanged. Exact algebra and the listed Lean theorems do not certify the
+external PDE regularity theorem or the full operator-domain argument.
+The explicit signal family is new supplied model data, not recovered
+historical source. Novelty of the complete application requires further
+literature comparison; no physical capacity, particle or chirality prediction
+is established by these results.
+
+\begin{thebibliography}{9}
+\bibitem{grieser} D. Grieser, \emph{Quasiisometry of singular metrics},
+Houston J. Math. \textbf{28} (2002), 741--752.
+\bibitem{gt} D. Gilbarg and N. S. Trudinger,
+\emph{Elliptic Partial Differential Equations of Second Order},
+Springer, Classics in Mathematics (2001), Chapter 8, Theorem 8.24.
+\href{https://doi.org/10.1007/978-3-642-61798-0}{Publisher edition}.
+\bibitem{silvestre} L. Silvestre, \emph{Boot camp -- Problem set},
+29 September 2017, Sections 4.1 and 6, Questions 52 and 58.
+\url{https://math.uchicago.edu/~luis/preprints/bootcamp.pdf}.
+\bibitem{point} D. Noja and F. Raso Stoia,
+\emph{The Dirichlet Laplacian with a point interaction on unbounded
+Lipschitz domains}, arXiv:2607.04349v1 (2026), Proposition 2.1 and Theorem 2.2.
+\bibitem{krein} M. S. Ashbaugh, F. Gesztesy, M. Mitrea, R. Shterenberg
+and G. Teschl, \emph{The Krein--von Neumann extension and its connection
+to an abstract buckling problem}, arXiv:0907.1439v2 (2010), Section 2.
+\bibitem{bloch} K. Szyma\'nski and K. \.Zyczkowski,
+\emph{Geometric and algebraic origins of additive uncertainty relations},
+arXiv:1804.06191v1 (2018), Section II.
+\end{thebibliography}
+\end{document}

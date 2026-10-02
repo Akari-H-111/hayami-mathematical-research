@@ -1,0 +1,443 @@
+{
+  "date": "2026-10-02",
+  "dpi": 100,
+  "scope": "33 pages: unchanged v13 17, companion 0.01 3, continuation 0.02 7; new Green continuation 0.03 6. Previous page QA remains hash-bound.",
+  "documents": [
+    {
+      "kind": "manuscript",
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Signal_Manifolds_v13_working.tex",
+      "source_sha256": "d054c5ee1ad7800b41a4670b347efddbb7a019c286aa9c5ddbbfafa48825bc01",
+      "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Signal_Manifolds_v13_working.pdf",
+      "pdf_sha256": "55d417a80f27a741449a0247578114339f9075bd2f876d673f55ae58817ab218",
+      "pages": 17,
+      "page_checks": [
+        {
+          "page": 1,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-01.png",
+          "render_sha256": "519512eb3beb033d30e2e63cd8b28161f3584d7c573bece194b29c9e48afc8e2",
+          "visually_inspected": true,
+          "inspection": "Final changed render visually inspected",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 2,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-02.png",
+          "render_sha256": "977434e2c120b7bef353fce09f2951891f44242be3504d282bfec04f2ad33e1e",
+          "visually_inspected": true,
+          "inspection": "Final render inspected; byte-identical previously inspected render reused",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 3,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-03.png",
+          "render_sha256": "aba9a2b622c85dea3cbe99c6308c0b3b130745c1b5582a22cb3d9bb023438d30",
+          "visually_inspected": true,
+          "inspection": "Final render inspected; byte-identical previously inspected render reused",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 4,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-04.png",
+          "render_sha256": "300447bf83fcb21a49e2870842e3301a1184b27d02ce876805ea46071588235d",
+          "visually_inspected": true,
+          "inspection": "Final render inspected; byte-identical previously inspected render reused",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 5,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-05.png",
+          "render_sha256": "078dd848ee072141da82ed70ea97ee0553d887ebea0dd20f9455e1db2c73c2a3",
+          "visually_inspected": true,
+          "inspection": "Final render inspected; byte-identical previously inspected render reused",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 6,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-06.png",
+          "render_sha256": "fe5269d46662c7aacfb8f746834d50197d238e9e272ff3942549b82ce64e4eb4",
+          "visually_inspected": true,
+          "inspection": "Final render inspected; byte-identical previously inspected render reused",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 7,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-07.png",
+          "render_sha256": "778302f97ec4b7817a7f1d609844f6c2fbccf51e5970b4b9ebaf5fe831590a69",
+          "visually_inspected": true,
+          "inspection": "Final render inspected; byte-identical previously inspected render reused",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 8,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-08.png",
+          "render_sha256": "dfec939797453c560498ce3cb875e15c7a77321dbe30a843852dfac8c65896f7",
+          "visually_inspected": true,
+          "inspection": "Final render inspected; byte-identical previously inspected render reused",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 9,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-09.png",
+          "render_sha256": "2619e995b7bdd447bd2a701615e52f3953c51069812e5a77337544b98c6deb3d",
+          "visually_inspected": true,
+          "inspection": "Final render inspected; byte-identical previously inspected render reused",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 10,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-10.png",
+          "render_sha256": "a1f5c847d4f4c1d2a5ebf843b749f7d457c352d2e3f6683ccefe7de6b360bd79",
+          "visually_inspected": true,
+          "inspection": "Final render inspected; byte-identical previously inspected render reused",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 11,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-11.png",
+          "render_sha256": "a7cef1289a75cd33ee10d3b01c058fc7460dd4177226e5559f04d441c7cb85e0",
+          "visually_inspected": true,
+          "inspection": "Final changed render visually inspected",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 12,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-12.png",
+          "render_sha256": "d98154dcaa5c9e7c0eed8364851d65ca784ddf77a06b93249bd343dc287c7e78",
+          "visually_inspected": true,
+          "inspection": "Final changed render visually inspected",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 13,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-13.png",
+          "render_sha256": "29e3da561d13bdffd185b21d4428a5b2ca4f0c0096f60a0be4fce5fda06733bd",
+          "visually_inspected": true,
+          "inspection": "Final changed render visually inspected",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 14,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-14.png",
+          "render_sha256": "8582bf4180609d41c65393412077330c0e8c7ba7d59017966135e65cd315656d",
+          "visually_inspected": true,
+          "inspection": "Final changed render visually inspected",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 15,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-15.png",
+          "render_sha256": "f9004c5bfac5c18053b953bd28092f4cfee9492e20783b16cd31332a1c456978",
+          "visually_inspected": true,
+          "inspection": "Final changed render visually inspected",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 16,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-16.png",
+          "render_sha256": "226b4eea560291690835033b3c7793703d7985904ea555ed5e4710ba04c896e0",
+          "visually_inspected": true,
+          "inspection": "Final changed render visually inspected",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 17,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/manuscript/page-17.png",
+          "render_sha256": "c7c92a9325958e554c43e9fa65b45b65384266a4ad8e770cbd774fc65b2a9c15",
+          "visually_inspected": true,
+          "inspection": "Final changed render visually inspected",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "companion",
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Companion_v0_01_working.tex",
+      "source_sha256": "8ea40d542f93fddd4476c05dd852a5eec1061cda498049f912abf7b048755a3f",
+      "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Companion_v0_01_working.pdf",
+      "pdf_sha256": "9a659cf472afc6edcb2a5736f2075bb9bee467d56702bb53ac6667764966b3e0",
+      "pages": 3,
+      "page_checks": [
+        {
+          "page": 1,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/companion/page-1.png",
+          "render_sha256": "6ecae99d289cd04ddacdfeaa472ae2940e6da4edb348ed199b9ce612d42a255e",
+          "visually_inspected": true,
+          "inspection": "Final changed render visually inspected",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 2,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/companion/page-2.png",
+          "render_sha256": "a99b3138bee0a5eeab99cf1084a5c2bd0d2b872370d3b195d9f7ea18f3135e23",
+          "visually_inspected": true,
+          "inspection": "Final changed render visually inspected",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        },
+        {
+          "page": 3,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/companion/page-3.png",
+          "render_sha256": "19bda43f38ea2451766bbbef6fe8ccd3f5c66b0da5d658c871ae4ae81491279b",
+          "visually_inspected": true,
+          "inspection": "Final changed render visually inspected",
+          "checks": [
+            "text and equations legible",
+            "no clipping or overlap",
+            "headers/footers and references checked"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "continuation",
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex",
+      "source_sha256": "0ee001e2c29eaf0f5bf680bbcec3116ff5bbc484d4d101a2e1d2d02c2ebaf626",
+      "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Bicomplex_Realization_Point_Trace_v0_02_working.pdf",
+      "pdf_sha256": "7a76d875c5f100bcf5d42aab8a0644306a9666666742778f8903ca6481df944f",
+      "pages": 7,
+      "page_checks": [
+        {
+          "page": 1,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/continuation/page-1.png",
+          "render_sha256": "7dd655a4762b50d50eb55ac19b22d37e756814f95b9ae8295e1d62c89b1b86c1",
+          "visually_inspected": true,
+          "inspection": "Title, abstract, signal formulas and theorem 1.1 fit; split proof resumes on page 2.",
+          "checks": [
+            "No clipped equations or text",
+            "Readable symbols and table",
+            "Consistent page number and A4 margins"
+          ]
+        },
+        {
+          "page": 2,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/continuation/page-2.png",
+          "render_sha256": "3dc599849d4190f5b346d3022101d3c479179de235734c85763c7a37bcb47aa4",
+          "visually_inspected": true,
+          "inspection": "Boundary obstruction and Hermitian no-go are legible; resolved metric and inverse formula fit.",
+          "checks": [
+            "No clipped equations or text",
+            "Readable symbols and table",
+            "Consistent page number and A4 margins"
+          ]
+        },
+        {
+          "page": 3,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/continuation/page-3.png",
+          "render_sha256": "6d6a55b3660978ac95fe01105faa6025e477dcfbc90266318e11b7de8f941491",
+          "visually_inspected": true,
+          "inspection": "Positive metric identities, actual-germ comparison, trace theorem and weak equation fit.",
+          "checks": [
+            "No clipped equations or text",
+            "Readable symbols and table",
+            "Consistent page number and A4 margins"
+          ]
+        },
+        {
+          "page": 4,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/continuation/page-4.png",
+          "render_sha256": "278a29ac3fc284cc3b94b2a1c5f7f6dbdcac6cc22f25062376771b3d207bd1aa",
+          "visually_inspected": true,
+          "inspection": "External Holder hypotheses, trace surjectivity, corrected indices and boundary triple fit.",
+          "checks": [
+            "No clipped equations or text",
+            "Readable symbols and table",
+            "Consistent page number and A4 margins"
+          ]
+        },
+        {
+          "page": 5,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/continuation/page-5.png",
+          "render_sha256": "2a1404add3d7f3594e15159fbcc70df88c3a1cccf414b898ce7675f638a2a063",
+          "visually_inspected": true,
+          "inspection": "Green pairing, rank-two resolvent and corrected Krein citation fit; Dirac heading continues on page 6.",
+          "checks": [
+            "No clipped equations or text",
+            "Readable symbols and table",
+            "Consistent page number and A4 margins"
+          ]
+        },
+        {
+          "page": 6,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/continuation/page-6.png",
+          "render_sha256": "6fd9c70aecc3b35286f9af789524b930819f8dac461dbc5a7b6e7d7715c99f88",
+          "visually_inspected": true,
+          "inspection": "Curvature estimate, evidence table and scope statement are legible; reference continuation is on page 7.",
+          "checks": [
+            "No clipped equations or text",
+            "Readable symbols and table",
+            "Consistent page number and A4 margins"
+          ]
+        },
+        {
+          "page": 7,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/continuation/page-7.png",
+          "render_sha256": "9fd584614b09d15ac7a1456d53b243993cfa124c308c1b45160f78e6c0162aa9",
+          "visually_inspected": true,
+          "inspection": "Remaining references, author names, identifiers and page number fit; short bibliography continuation is clear.",
+          "checks": [
+            "No clipped equations or text",
+            "Readable symbols and table",
+            "Consistent page number and A4 margins"
+          ]
+        }
+      ]
+    },
+    {
+      "kind": "green-continuation-0.03",
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Whitney_Green_Domains_v0_03_working.tex",
+      "source_sha256": "ceb8d2e56bf1be7f532c4efaaca93c0b20ba181323d3fd00b9084725c26f445a",
+      "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/Whitney_Green_Domains_v0_03_working.pdf",
+      "pdf_sha256": "a9bbb74d62ab3340be0326b55b1a50607b2b229cf7257b9be5748a23e546daa8",
+      "pages": 6,
+      "page_checks": [
+        {
+          "page": 1,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/green-v0.03/page-1.png",
+          "render_sha256": "826bf6811771e8f55f957a18f5bb1bf2aa7613a04af76dd7f9341bfd6259171d",
+          "visually_inspected": true,
+          "inspection": "Full page rendered at 100 dpi and visually inspected on 2026-10-02",
+          "checks": [
+            "text/equations legible",
+            "no clipping/overlap",
+            "page breaks, footer and bibliography checked"
+          ]
+        },
+        {
+          "page": 2,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/green-v0.03/page-2.png",
+          "render_sha256": "d0f83f57b19933492b537649c370a1ec79c0a25701f863d30980d9a8a6ac97d1",
+          "visually_inspected": true,
+          "inspection": "Full page rendered at 100 dpi and visually inspected on 2026-10-02",
+          "checks": [
+            "text/equations legible",
+            "no clipping/overlap",
+            "page breaks, footer and bibliography checked"
+          ]
+        },
+        {
+          "page": 3,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/green-v0.03/page-3.png",
+          "render_sha256": "8044c9e27d57e9ed57a6632ec5e2e93ae9387b1e9ee05005ae53b5b4b18b5c06",
+          "visually_inspected": true,
+          "inspection": "Full page rendered at 100 dpi and visually inspected on 2026-10-02",
+          "checks": [
+            "text/equations legible",
+            "no clipping/overlap",
+            "page breaks, footer and bibliography checked"
+          ]
+        },
+        {
+          "page": 4,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/green-v0.03/page-4.png",
+          "render_sha256": "eb3847330a9e3a0d25af6a435031cfb2f8da853464f652c254c770b38d77365f",
+          "visually_inspected": true,
+          "inspection": "Full page rendered at 100 dpi and visually inspected on 2026-10-02",
+          "checks": [
+            "text/equations legible",
+            "no clipping/overlap",
+            "page breaks, footer and bibliography checked"
+          ]
+        },
+        {
+          "page": 5,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/green-v0.03/page-5.png",
+          "render_sha256": "1419f8d14550f960e391ea13e3ebe1d787070042502bddd7b96a122fb2e4048c",
+          "visually_inspected": true,
+          "inspection": "Full page rendered at 100 dpi and visually inspected on 2026-10-02",
+          "checks": [
+            "text/equations legible",
+            "no clipping/overlap",
+            "page breaks, footer and bibliography checked"
+          ]
+        },
+        {
+          "page": 6,
+          "render": "papers/legacy-geometry/bicomplex-signal-manifolds/revision/qa/green-v0.03/page-6.png",
+          "render_sha256": "15ac731d03d19d755c062ffa8032282a7da55f3433b14f022613533d2fd8c0ee",
+          "visually_inspected": true,
+          "inspection": "Full page rendered at 100 dpi and visually inspected on 2026-10-02",
+          "checks": [
+            "text/equations legible",
+            "no clipping/overlap",
+            "page breaks, footer and bibliography checked"
+          ]
+        }
+      ]
+    }
+  ]
+}

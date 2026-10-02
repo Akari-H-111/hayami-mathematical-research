@@ -15,3 +15,14 @@ Validation performed at intake:
 - Representative first, middle, and final pages were rendered and visually inspected.
 
 `verify_artifact_hashes.py` re-checks all three hashes. The original intake paths were the identically hashed files in `/Users/akari_hayami_64/Downloads/`.
+
+2026-10-02 historical-draft intake: the author-supplied Bicomplex draft v7 is
+registered as `historical_drafts/Geometric_Realization_of_Bicomplex_Signal_Manifolds_v7.pdf`
+(26 pages, SHA-256 `6cefa5258257f3a23e35b5dd5cbe123b7af0ed3319c3a614b1c8d54c94bd654f`;
+`qpdf --check` passed, zero embedded files, PDF dates 2026-07-11). It is a byte
+copy of the identically hashed file in `~/Downloads/`. It is **not** an authority:
+final v12 above remains the Bicomplex claim authority. It is not shown to be
+generated from the ancestor TeX, and equal numbering does not imply equal
+content. Its 39-block index and the blocks decided by continuation 0.04 are in
+`../bicomplex-signal-manifolds/claims/V7_DRAFT_INDEX.md`. The authority table is
+unchanged.
