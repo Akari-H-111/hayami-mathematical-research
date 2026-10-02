@@ -52,6 +52,13 @@ def main():
     bibs = set(re.findall(r"\\bibitem\{([^}]+)\}", tex))
     assert cites <= bibs, cites - bibs
     print(f"PASS paper 1: v12/v11 hashes; 66/66 v12 blocks categorized once ({dict((k, len(v)) for k, v in EXPECTED.items())} fixed); refs and citations resolve")
+    manifest = json.loads((PAPER / "successor/figures/FIGURES_MANIFEST.json").read_text())["figures"]
+    used = re.findall(r"\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}", tex)
+    assert len(used) >= 7
+    for name in used:
+        figure = PAPER / "successor/figures" / name
+        assert hashlib.sha256(figure.read_bytes()).hexdigest() == manifest[name], name
+    print(f"PASS paper 1: {len(used)} included figures exist and match FIGURES_MANIFEST.json")
     for script in ("verify_revision.py", "verify_continuation.py", "verify_continuation_0_04.py"):
         out = subprocess.run([sys.executable, "-B", str(PAPER / "verification" / script)],
                              text=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)

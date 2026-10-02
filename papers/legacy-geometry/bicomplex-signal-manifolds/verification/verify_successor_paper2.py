@@ -36,7 +36,17 @@ def standard_arclength():
     V = y / 2 * s.sqrt(x**2 + 4 * y**2) + x**2 / 4 * s.asinh(2 * y / x)
     assert s.simplify(s.diff(V, y) - s.sqrt(x**2 + 4 * y**2)) == 0  # |h_y| for h=(xy, y^2)
     assert s.limit(V, x, 0, "+") == y**2
-    print("PASS explicit standard cross-cap arclength coordinate V and V(0,y)=y|y|")
+    R = s.sqrt(x**2 + 4 * y**2)
+    Vx = s.diff(V, x)
+    assert s.simplify(Vx - x / 2 * s.asinh(2 * y / x)) == 0
+    n1, n2 = x / R, 2 * y / R
+    q1, q2 = y - Vx * n1, -Vx * n2  # q = h_x - V_x n with h_x = (y, 0)
+    assert s.simplify(q1 * n1 + q2 * n2 - x / 2 * (2 * y / R - s.asinh(2 * y / x))) == 0
+    a, b = s.symbols("a b", positive=True)
+    mono = s.diff(x * s.asinh(a / x), x)
+    assert s.simplify(mono - (s.asinh(a / x) - (a / x) / s.sqrt(1 + (a / x) ** 2))) == 0
+    assert s.simplify(s.diff(s.asinh(b) - b / s.sqrt(1 + b**2), b) - b**2 / (1 + b**2) ** s.Rational(3, 2)) == 0
+    print("PASS explicit standard cross-cap arclength coordinate V, V(0,y)=y|y|, V_x and q.n identities, monotonicity")
 
 
 def roman():
@@ -142,6 +152,18 @@ def ruled_reflection():
     print("PASS ruled surface reflection S(-t,u)=J S(t,u)")
 
 
+def figures(tex_path):
+    import hashlib
+    import json
+    manifest = json.loads((PAPER / "successor/figures/FIGURES_MANIFEST.json").read_text())["figures"]
+    used = re.findall(r"\\includegraphics(?:\[[^]]*\])?\{([^}]+)\}", tex_path.read_text())
+    assert used
+    for name in used:
+        path = PAPER / "successor/figures" / name
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == manifest[name], name
+    print(f"PASS {len(used)} included figures exist and match FIGURES_MANIFEST.json")
+
+
 def references():
     tex = TEX.read_text()
     labels = set(re.findall(r"\\label\{([^}]+)\}", tex))
@@ -160,6 +182,7 @@ def main():
     roman()
     roman_symmetry()
     ruled_reflection()
+    figures(TEX)
     references()
     for script in ("verify_revision.py", "verify_continuation.py"):
         out = subprocess.run([sys.executable, "-B", str(PAPER / "verification" / script)],

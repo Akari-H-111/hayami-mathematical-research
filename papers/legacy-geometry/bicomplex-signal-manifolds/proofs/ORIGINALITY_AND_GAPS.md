@@ -138,3 +138,9 @@ ResearchGate 元頁面與 PDF 摘要不是同一版本。本輪透過公開 web 
 | 9.1–9.6 | dimensional/Poisson/eta scope；physicalinterpretations不升格 |
 
 目前應以實際 Whitney scalar theorem 作可評審的分析主線，將 realization/no-go 作模型章，將 Dirac／Pin 作明確的未完成研究。下一個真正需要證明的原子任務是 actual twisted Dirac 的閉算子與 singular graph-domain estimates；重新堆疊標準框架或恢復已被反證的詞句都不會關閉缺口。
+
+## 2026-10-02 後繼論文 r2 的新增數學（新結果，非歷史追回）
+
+- **標準 cross-cap 的精確偏差速率。** 對 f=(x,xy,y²)，弧長座標中 q·n=(x/2)(2y/√(x²+4y²)−arsinh(2y/|x|))，|q|≤2|y|，所以 G−I=O(ρ log(1/ρ))，比一般 Whitney germ 的界 O(ρ^{1/2}) 更強。證明寫在論文二 Remark 3.3；`verify_successor_paper2.py` 以符號計算核對導數恆等式與單調性，`build_successor_figures.py` 給出數值佐證（斜率約 0.91 與 0.89）。一般 germ 是否有相同速率仍未決，已列為論文二的開放問題。
+- **H₀ 的 Krein／buckling 陳述。** 論文二 Proposition 8.1(3)：緊緻核閉包 H₀ 嚴格正，Friedrichs 擴張為 H_F，Krein 核等於 ker H₀*（無窮維），約化正譜離散並由 weak buckling 問題刻畫。這是 v13 working 既有證明的一般化寫法，抽象定理引自 Ashbaugh 等（已在 `REFERENCE_AUDIT.md` 核對）。
+- 以上都不改變 66 區塊的分類，也與歷史模型的恢復無關。

@@ -181,3 +181,14 @@ r1 的變更：
 - 調整引言語氣、壓縮附錄。
 
 仍為 9 頁；verifier、export、逐頁 QA 皆 PASS。逐項記錄見 `EDITORIAL_P2_R1.md`。兩篇都已完成 r1，等作者通讀後再決定公開範圍。
+
+## 12. 回饋落實與圖表：兩篇 r2（2026-10-02）
+
+作者轉交〈《Realization Limits》回饋〉，並指示改進由 Claude 判斷、論文需要足夠的圖表，因此暫不進入發佈流程。r2 的結果：
+
+- **論文一（20 頁，7 圖 2 表）。** 題名改為 *Realization Limits of the Bicomplex Signal Surface: Analytic Rigidity, Smooth Flexibility and Observation Monodromy*，"and Corrections" 移到引言。摘要與引言改為直接提問，主軸是解析剛性對光滑彈性。剛性機制圖（同一個態圓 C₀ 對兩條直線）放在 §3.2。原 §6 譜論與 §7 沿用範圍移為附錄 B、C，正文以 Organization 段給入口。精確性修正包括：D∘ 的連續性假設、"sharp distinction" 的措辭，以及更正表 8.10–8.17 改指論文二的具體編號或直接寫出恆等式。
+- **論文二（13 頁，4 圖 1 表）。** 加入 "complete" 假設；generic 的說法改為 "when present, are isolated cross-caps"；引言凸顯弧長座標引理。Setting 說明算子作用在來源 Σ 上。Theorem 6.1 證明展開為四步，含環帶估計。Proposition 8.1 新增 H₀ 的 Krein／buckling 陳述與證明。新增通道比較表，以及標準 germ 的精化 G−I=O(ρ log(1/ρ))（Remark 3.3）；後者是製圖時發現的新結果。
+- **圖。** 由 `verification/build_successor_figures.py` 產生，hash 記錄在 `figures/FIGURES_MANIFEST.json`，兩個 verifier 都會核對。
+- **驗證。** verifier、export 與逐頁 QA 全部 PASS，分別記錄在 `qa/` 與 `qa_paper2/`。逐項判斷見 `EDITORIAL_R2.md`。
+
+**狀態：** 兩篇 r2 等作者通讀，尚未公開。公開範圍與時程依 §4 與 §6 的既定方案：兩篇新稿、Zenodo DOI、GitHub 只放 source、新 RG 條目，加上舊頁的取代說明。每一步都要作者核准最終檔案後才執行。
