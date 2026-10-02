@@ -1,5 +1,26 @@
 # Bicomplex signal manifolds: current v13 working audit
 
+## Successor paper 1 (working draft): Realization Limits
+
+2026-10-02. The author decided to replace the ResearchGate record `408878000`
+rather than upload a same-title version. The replacement consists of two new
+papers plus a superseded-by notice on the old page. The plan and scope are in
+[successor/SCOPE_AND_PLAN.md](successor/SCOPE_AND_PLAN.md). Paper 1 is
+[successor/Realization_Limits_Bicomplex_Signal_Surface.tex](successor/Realization_Limits_Bicomplex_Signal_Surface.tex),
+a 15-page working draft with title A. It integrates the realization theory
+from 0.02 and 0.04, the monodromy carriers, the exceptional-pullback theorem,
+the residual geometry and spectral results from v13, and the scope limits. It
+cites published Ruled v5 and Stokes v5 for the atlas, dipole and fold results.
+Its appendix corrects all 66 v12 blocks, v11 Theorem 4.2 and the record's
+public description, which still shows a v7-era abstract.
+
+- Public v12 was confirmed byte-identical to the local authority. Public v11
+  was retrieved with the author's approval and registered as a non-authoritative
+  draft; see [claims/V11_COMPARISON.md](claims/V11_COMPARISON.md).
+- `verification/verify_successor_paper1.py` passed.
+- The export and all-page QA passed; see `successor/qa/VISUAL_QA.json`.
+- Not yet editorially reviewed, not approved by the author and not published.
+
 ## Active continuation 0.04: moment readouts and exceptional pullbacks
 
 2026-10-02. The [new seven-page note](revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex)

@@ -1,0 +1,943 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array,longtable,xcolor,tikz}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[colorlinks=true,linkcolor=teal,citecolor=teal,urlcolor=teal]{hyperref}
+\hypersetup{pdftitle={Realization Limits of the Bicomplex Signal Surface},pdfauthor={Akari Hayami (Jian-Yu Huang)},pdfsubject={Successor to Geometric Realization of Bicomplex Signal Manifolds (v11/v12)}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}\newcommand{\Z}{\mathbb Z}
+\newcommand{\Q}{\mathbb Q}\newcommand{\T}{\mathbb T}
+\newcommand{\dd}{\,d}\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\RHom}{\operatorname{RHom}}\newcommand{\End}{\operatorname{End}}
+\newcommand{\inte}{\operatorname{int}}\newcommand{\orr}{\mathrm{or}}
+\DeclareMathOperator{\sgn}{sgn}\DeclareMathOperator{\rank}{rank}
+\title{Realization Limits of the Bicomplex Signal Surface:\\
+Analytic Rigidity, Observation Monodromy and Corrections}
+\author{Akari Hayami (Jian-Yu Huang)}
+\date{October 2026\\\small Working draft of the corrected successor to
+\emph{Geometric Realization of Bicomplex Signal Manifolds} (v11/v12)}
+\begin{document}\maketitle
+\begin{abstract}
+Earlier versions of this work asserted that a moment map and a power
+constraint, followed by a ``geometric projection'' $\R^4\to\R^3$, produce an
+explicit ruled surface $S$. We prove that the historical moment assignment
+$(|z_1|^2,|z_2|^2)=(\cos t,1-\cos t)$ admits no readout that is
+real-analytic along the circle $\{z_1=0\}$, whatever family of states is
+used. This excludes affine projections, real polynomial maps and every
+polynomial in a bicomplex variable and its conjugates. Phase-invariant and
+mixed-state readouts fail without any regularity hypothesis. The obstruction
+is sharp in three ways. An explicit continuous state family with an explicit
+$C^\infty$ readout realizes $S$. Each half of the source admits a
+real-analytic readout but no affine one. A different power assignment admits
+a phase-sensitive quadratic readout.
+
+We then separate the carriers of the observation-field monodromy. The
+square-root cover gives a rank-two local system that is indecomposable over
+$\Z$ and splits only after inverting $2$. It differs from the Whitney fold
+involution and from the normalization defect, and the constant sheaf carries
+no $\pm1$ decomposition. For every continuous map from a convex parameter
+domain to the plane, the exceptional pullback of $\Z$ is the extension by
+zero from the interior. Folds are detected instead by failure of the
+comparison map that defines cohomological smoothness. Finally, we record the
+residual geometry and spectral facts that survive, with their exact scope.
+An appendix corrects all 66 named statements of the earlier version, one
+statement specific to its first public file, and the earlier public
+description, item by item.
+\end{abstract}
+\tableofcontents
+
+\section{Introduction}\label{sec:intro}
+The preprint \emph{Geometric Realization of Bicomplex Signal Manifolds} has
+two public files, v11 and v12 \cite{record}. It studied an explicit ruled map
+$S$, together with a signal-theoretic narrative: a power-conserving
+two-component state, a moment map, a projection to three-dimensional
+observations, and a family of spectral, sheaf-theoretic and arithmetic
+interpretations. A complete audit of the 66 named statements of v12, together
+with new proofs, shows that the geometry of $S$ is rich and largely correct.
+Several of the interpretive bridges, however, are either unsupported or
+false. This paper replaces that record. Its own new results concern the step
+the title of the earlier work promised and never supplied: \emph{which
+readouts of which state families realize $S$?}
+
+\paragraph{Main results.}
+\begin{enumerate}
+\item \emph{Analytic rigidity} (Theorem~\ref{thm:rigidity}). Under the
+historical assignment $|z_1|^2=\cos t$, every state over the two edges
+$t=\pm\pi/2$ lies on the circle $C_0=\{z_1=0\}$, and those edges map to a
+non-collinear ``V''. Consequently no readout that is real-analytic along $C_0$
+realizes $S$, for any state family, on the closed source or on the source
+open in $t$.
+\item \emph{Sharpness}. An explicit $C^\infty$ readout realizes $S$
+(Theorem~\ref{thm:smooth}). On one half of the source, real-analytic readouts
+exist but affine ones do not (Proposition~\ref{prop:half}). A different power
+assignment admits a phase-sensitive quadratic readout
+(Theorem~\ref{thm:realization}). Phase-invariant readouts and readouts of
+mixed states fail outright (Proposition~\ref{prop:gauge}). Remark~\ref{rem:data}
+gives an edge criterion that explains all of these.
+\item \emph{Carriers of the monodromy} (Proposition~\ref{prop:carrier}). The
+two-traversal restoration of $\sqrt F$ lives on a local system that is
+indecomposable over $\Z$. It is distinct from the fold involution and from
+the normalization defect.
+\item \emph{Exceptional pullbacks} (Theorem~\ref{thm:shriek} and
+Proposition~\ref{prop:detect}). $\Psi^!\Z$ depends only on the convex
+parameter domain, not on the map; the earlier fold formula
+$i^*\Psi^!\Z\simeq\Z[-1]$ holds at no point.
+\end{enumerate}
+Sections~\ref{sec:residual}--\ref{sec:limits} retain the correct residual
+geometry, spectral estimates and scope limits of v12, in sharpened form.
+Appendix~\ref{app:corrections} lists every correction.
+
+\paragraph{What ``bicomplex'' means here.} The bicomplex algebra is isomorphic,
+through its idempotents, to $\C\oplus\C$. Its three standard conjugations
+become componentwise conjugation and the exchange of the two components. No
+proof below uses bicomplex multiplication beyond this identification. That is
+itself one of the outcomes: readouts built from bicomplex multiplication and
+conjugations are real polynomial maps, so Corollary~\ref{cor:excluded}
+excludes them as well. We keep the name for continuity with the earlier
+record.
+
+\paragraph{Relation to other work.} The completed source atlas, the five rank
+singularities, the dipole indices and the fold classification of the planar
+observation map are proved for the same surface in the published papers
+\cite{ruled,stokes}. We cite them rather than re-prove them. The scalar
+Green, Markov and Krein theory of the Laplace--Beltrami operator, and the
+corrected two-point extension problem that replaces v12 Propositions
+8.13--8.16, belong to a separate companion paper \cite{companion}. Standard
+frameworks are credited where used. The new contributions are the model
+results named above. Their priority relative to the literature has not been
+systematically established.
+
+\paragraph{Evidence.} Every statement carries one of the following kinds of
+evidence: a written proof; a cited external theorem with its hypotheses
+checked; an exact computer-algebra identity; a finite numerical replay; or a
+Lean-checked statement. Appendix~\ref{app:evidence} states which applies to
+which result. No result rests on a historical ``proven'' label.
+
+\section{The surface, its source and the observation field}\label{sec:model}
+Throughout,
+\begin{equation}\label{eq:S}
+ S(t,u)=\bigl(c+2u(1-c),\,(1-u)s,\,uQ\bigr),\qquad
+ c=\cos t,\ s=\sin t,\ Q=\sqrt{c(2-c)},
+\end{equation}
+on the source $D=[-\pi/2,\pi/2]\times[0,1]$. Put
+$D_\circ=(-\pi/2,\pi/2)\times[0,1]$ and $D_+=[0,\pi/2]\times[0,1]$. The edges
+and the polar ruling map to
+\begin{equation}\label{eq:edges}
+ S(\pm\tfrac\pi2,u)=(2u,\pm(1-u),0),\qquad S(0,u)=(1,0,u).
+\end{equation}
+The two edge segments lie on distinct lines through the apex $(2,0,0)$. The
+ruling line $\{(1,0,z)\}$ is skew to both edge lines.
+
+\begin{proposition}[Completed source and five rank labels \cite{ruled}]\label{prop:atlas}
+Near $t=\epsilon\pi/2$, $\epsilon\in\{1,-1\}$, let $r=Q\geq0$ and
+$C(r)=1-\sqrt{1-r^2}$, and put
+$B_\epsilon(r,u)=(C+2u(1-C),\epsilon(1-u)\sqrt{1-C^2},ur)$. This extends
+smoothly to $|r|<1$ and agrees with $S$ on the physical overlap. The rank-loss
+labels of the completed source are exactly
+\[
+ P_0=(0,1),\quad P_\pm=(\pm t_0,u_0),\quad E_\pm=(\pm\pi/2,0),\qquad
+ c_0=\tfrac{3-\sqrt5}{2},\ t_0=\arccos c_0,\ u_0=\tfrac{1-c_0}{2}.
+\]
+Their smooth extensions are cross-caps. The adapted determinants are
+$\Delta(P_0)=1$, $\Delta(P_\pm)=-5\sqrt{\sqrt5-2}$ and $-\epsilon$ at $E_\pm$.
+The physical restrictions at $P_0$ and $E_\pm$ are a boundary half-germ and
+corner quarter-germs.
+\end{proposition}
+\begin{proof}[Sketch]
+$C(r)(2-C(r))=r^2$ gives $C(Q)=c$, and differentiation gives
+$(B_\epsilon)_r\times(B_\epsilon)_u=(\epsilon u,2u,0)$ at $r=0$. On $c>0$ the
+cross-product equations reduce to $c=1,u=1$, or to $u=(1-c)/2=c(2-c)/2$, that
+is $c^2-3c+1=0$. Since $S_{uu}=0$, the cross-cap determinant reduces to
+$\det(S_u,S_{ut},S_{tt})$, and the smooth recognition criterion
+\cite[Cor.~4.5]{hasegawa} applies. Full proofs and Lean-checked rank statements
+are in \cite{ruled}.
+\end{proof}
+Thus $c^2-3c+1$ selects only the two lateral labels. On
+$D_{\rm reg}=D\setminus\{P_0,P_\pm,E_\pm\}$, a connected orientable surface
+with corners, $H_1(D_{\rm reg};\Z)=\Z^2$.
+
+\paragraph{The observation field.} On the angular chart $|t|<\pi/2$ the normal
+$V=S_t\times S_u$ has components $V_z=N$ and $V_x=M$, where
+\begin{equation}\label{eq:F}
+ N=(1-c)(1-c-2u),\qquad
+ M=\frac{c^2(2-c)-u(1-c+c^2)}{Q},\qquad F=N+iM,\qquad \Psi=(N,M).
+\end{equation}
+Both components are even in $t$. Because $Q=0$ at $t=\pm\pi/2$, $M$ is
+unbounded there for $u>0$. The field $F$ and the map $\Psi$ are therefore
+defined on $D_\circ$, not on $D$. They also depend on the chart: a
+reparametrization of the source multiplies $V$ by its Jacobian.
+
+\section{Realizations of the surface by signal states}\label{sec:realization}
+Let $S^3=\{z\in\C^2:|z_1|^2+|z_2|^2=1\}$, and let $C_0=\{(0,w):|w|=1\}$ and
+$C_1=\{(w,0):|w|=1\}$. The moment map $z\mapsto(|z_1|^2,|z_2|^2)$ sends $S^3$
+onto the segment $X+Y=1$. By itself it defines neither a two-dimensional
+source, nor a lift of \eqref{eq:S}, nor a projection taking that lift to $S$.
+A realization therefore consists of two pieces of data.
+
+\begin{definition}\label{def:realization}
+Let $D'\subset D$. A \emph{state family} on $D'$ is any map $z:D'\to S^3$; no
+continuity is assumed. A \emph{readout} is a map $P:U\to\R^3$ defined on a set
+$U\subset\C^2$ containing $z(D')$. The pair \emph{realizes} $S$ if
+$P\circ z=S$ on $D'$. The family is \emph{moment-compatible} (with the
+historical assignment) if $|z_1(t,u)|^2=\cos t$. A readout is
+\emph{real-analytic along $C_0$} if $C_0\subset U$ and
+$\beta\mapsto P(0,e^{i\beta})$ is real-analytic.
+\end{definition}
+
+\subsection{A realization with varying powers}
+The following realization exists, but with powers that differ from the
+historical ones.
+\begin{theorem}[Quadrature realization]\label{thm:realization}
+Put $\zeta_+(t)=e^{it/2}$ and $\zeta_-(t)=\sqrt{1-c/2}+i\sqrt{c/2}$. The state
+family and the fixed real quadratic readout
+\[
+ \Phi(t,u)=\bigl(\sqrt{1-u}\,\zeta_+(t),\ \sqrt u\,\zeta_-(t)\bigr),\qquad
+ P(z)=\bigl(\Re z_1^2+|z_2|^2+\Re z_2^2,\ \Im z_1^2,\ \Im z_2^2\bigr)
+\]
+satisfy $|\Phi_1|^2=1-u$, $|\Phi_2|^2=u$ and $P\circ\Phi=S$ on all of $D$. The
+family is smooth for $0<u<1$ in the completed charts.
+\end{theorem}
+\begin{proof}
+$\zeta_+^2=c+is$ and $\zeta_-^2=1-c+iQ$, so
+$P\Phi=((1-u)c+u(2-c),(1-u)s,uQ)=S$. In the edge chart the imaginary part of
+$\zeta_-$ is $r/\sqrt{2(2-C)}$ and its real part is $\sqrt{1-C/2}$; both are
+smooth.
+\end{proof}
+The required phase coupling is model data; power conservation does not
+select it.
+
+\begin{proposition}[Two obstructions]\label{prop:twoobs}
+(1) No $C^1$ state family can have $|z_2|^2=u$ up to $u=0$, or $|z_1|^2=1-u$ up
+to $u=1$.
+(2) No three fixed Hermitian $2\times2$ matrices $H_j$ and normalized pure-state
+family satisfy $S_j=z^*H_jz$ on $D$.
+\end{proposition}
+\begin{proof}
+(1) At a zero of a $C^1$ component $w$, the derivative of $|w|^2$ is
+$2\Re(\overline w\,\partial w)=0$, while $\partial_u u=1$.
+(2) $z^*H_jz=a_j+(Mr(z))_j$, where $r(z)$ is the Bloch vector, a point of the
+unit sphere, and $M$ is a real $3\times3$ matrix. If $\rank M\leq2$ the image
+is planar, but the values $(1,0,0),(0,1,0),(0,-1,0),(1,0,1)$ of $S$ have
+affine determinant $2$. If $M$ is invertible the image is an ellipsoid, which
+contains no segment, but $S(0,u)=(1,0,u)$ is one. See also \cite{bloch}.
+\end{proof}
+
+\subsection{The historical assignment}
+Every state with $t=\pm\pi/2$ lies on $C_0$, and every state with $t=0$ lies
+on $C_1$.
+\begin{proposition}[Phase-invariant and mixed-state readouts]\label{prop:gauge}
+Suppose $D'$ contains two distinct points of one edge $\{\pm\pi/2\}\times[0,1]$.
+Then no readout with $P(e^{i\gamma}z)=P(z)$ realizes $S$ on $D'$ with a
+moment-compatible family. In particular no function of $zz^*$ does,
+including all Hermitian expectation values. If trace-one density matrices
+$\rho\geq0$ with $\rho_{11}=\cos t$ replace pure states, no function of $\rho$
+realizes $S$.
+\end{proposition}
+\begin{proof}
+$C_0$ is a single orbit of the global phase, so such a readout is constant on
+$C_0$, whereas $S$ takes distinct values at the two edge points. For density
+matrices, $\rho_{11}=0$ and positivity force $\rho_{12}=0$, so
+$\rho=\mathrm{diag}(0,1)$.
+\end{proof}
+
+\begin{lemma}[Analytic curves and lines]\label{lem:analytic}
+Let $p:J\to\R^3$ be real-analytic on an open interval or on the circle. For
+every line $\ell$, either $p(J)\subset\ell$ or $p(J)\cap\ell$ is countable. In
+particular $p(J)$ cannot contain uncountable subsets of two distinct lines.
+\end{lemma}
+\begin{proof}
+Choose $x_0\in\ell$ and unit normals $n_1,n_2$ to $\ell$. If
+$p(J)\not\subset\ell$, some $n_k\cdot(p-x_0)$ is a nonzero real-analytic
+function. Its zero set is discrete, hence countable, and contains
+$p^{-1}(\ell)$. Two distinct lines meet in at most one point.
+\end{proof}
+
+\begin{theorem}[Analytic rigidity]\label{thm:rigidity}
+Let a moment-compatible family $z$ and a readout $P$ realize $S$ on $D'$.
+\begin{enumerate}
+\item If $D'=D$, then $P$ is not real-analytic along $C_0$. More generally, $P$
+is not real-analytic on any connected open arc of $C_0$ that contains all edge
+states $z(\pm\pi/2,u)$.
+\item If $D'=D_\circ$, $C_0\subset U$ and $P|_{U\cap S^3}$ is continuous at each
+point of $C_0$, then $P$ is not real-analytic along $C_0$.
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(1) The image of $C_0$, or of the arc, contains both edge segments of
+\eqref{eq:edges}, which are uncountable subsets of distinct lines; this
+contradicts Lemma~\ref{lem:analytic}.
+(2) Fix $u$ and $\epsilon=\pm1$, and take $t_n\to\epsilon\pi/2$. A subsequence of
+$z(t_n,u)\in S^3$ converges to some $z^*$ with $z^*_1=0$, that is $z^*\in C_0$.
+Continuity gives $P(z^*)=\lim S(t_n,u)=S(\epsilon\pi/2,u)$, so both edge
+segments lie in $P(C_0)$.
+\end{proof}
+
+\begin{corollary}[Excluded projections]\label{cor:excluded}
+Under the historical assignment on $D$ or $D_\circ$, $S$ is not realized by
+any affine map $\R^4\to\R^3$, any real polynomial map, any polynomial in a
+bicomplex variable and its conjugates, or any map real-analytic on a
+neighbourhood of $C_0$. On $D$ this also excludes stereographic projection
+from a point of $C_0$ that avoids the edge states. In particular, the
+``Geometric Projection'' of v12 Definition~3.1 cannot be completed by any
+such map.
+\end{corollary}
+
+\subsection{Sharpness}
+\begin{theorem}[$C^\infty$ realization]\label{thm:smooth}
+Put $\theta=\pi/8$. Take smooth functions $\Lambda,\psi,\varrho,\kappa:[0,1]\to[0,1]$
+such that:
+\begin{itemize}
+\item $\Lambda=0$ on $[0,\frac14]$, $\Lambda=1$ on $[\frac34,1]$, and $\Lambda$ is
+strictly increasing in between;
+\item $\psi=0$ on $[0,\frac13]$ and $\psi=1$ on $[\frac23,1]$;
+\item $\varrho=0$ on $[0,\frac34]$ and $\varrho=1$ on $[\frac78,1]$;
+\item $\kappa=1$ on $[0,\frac18]$ and $\kappa=0$ on $[\frac14,1]$.
+\end{itemize}
+Let $\chi$ be a smooth $2\pi$-periodic function equal to $1$ on
+$[-\frac\pi8,\frac{3\pi}8]$ and to $-1$ on $[\frac{7\pi}8,\frac{11\pi}8]$, and
+let $\nu=0$ for $t\geq0$ and $\nu=1$ for $t<0$. Define
+\[
+ z(t,u)=\bigl(\sqrt c\,e^{i\theta\Lambda(c)u},\
+ \sqrt{1-c}\,e^{i(\nu\pi+\theta(1-\Lambda(c))(1+u))}\bigr).
+\]
+This is a moment-compatible family. It is continuous on $D$, smooth on
+$D_\circ$, and smooth up to $t=\pm\pi/2$ in the edge charts, since
+$\sqrt{C(r)}=r/\sqrt{1+\sqrt{1-r^2}}$. With $c=|z_1|^2$ and principal arguments,
+set
+\begin{gather*}
+ \mathcal U=\psi(c)\frac{\arg z_1}{\theta\Lambda(c)}
+ +(1-\psi(c))\Bigl(\frac{\arg z_2^2}{2\theta(1-\Lambda(c))}-1\Bigr),\\
+ \Sigma=\varrho(c)\,\Re z_2\sqrt{1+c}+(1-\varrho(c))\,|z_2|\chi(\arg z_2)\sqrt{1+c},\\
+ \mathcal Q=\kappa(c)\,\Re z_1\sqrt{2-c}+(1-\kappa(c))\sqrt{c(2-c)},
+\end{gather*}
+where each summand is read as zero where its cutoff vanishes. Then
+$P=(|z_1|^2+2\,\mathcal U|z_2|^2,\ (1-\mathcal U)\Sigma,\ \mathcal U\mathcal Q)$
+is smooth on an open neighbourhood of $z(D)$, and $P\circ z=S$ on $D$.
+Multiplying by a smooth bump equal to $1$ near $z(D)$ gives a $C^\infty$
+readout on $\C^2$.
+\end{theorem}
+\begin{proof}
+For $c\geq\frac34$, $\Lambda=1$ and $z_2=\sgn(t)\sqrt{1-\cos t}=\sqrt2\sin(t/2)$,
+which is smooth; at $t=\pm\pi/2$ only $\sqrt c\to0$ enters. On the image,
+$\arg z_1=\theta\Lambda u\in[0,\theta]$,
+$\arg z_2^2=2\theta(1-\Lambda)(1+u)\in[0,\pi/2]$, and
+$\arg z_2\in\nu\pi+[0,\pi/4]$. Hence both decoders equal $u$ wherever they are
+used. The first is used only for $c\geq\frac13$, where $\Lambda>0$ and
+$z_1\neq0$. The second is used only for $c\leq\frac23$, where $\Lambda<1$ and
+$|z_2|^2\geq\frac13$.
+
+Where $\varrho>0$, $z_2$ is real and $\Re z_2\sqrt{1+c}=\sgn(t)\sqrt{1-c^2}=s$.
+Where $\varrho<1$, $\chi(\arg z_2)=\sgn t$. Where $\kappa>0$, $z_1=\sqrt c$ and
+$\Re z_1\sqrt{2-c}=Q$. Each summand is smooth on the union of two open sets:
+one where its decoder is smooth, and one where its cutoff vanishes. The two
+definitions agree on the overlap, and the union contains the image.
+Substitution gives $P\circ z=S$; compactness of the image provides the bump.
+\end{proof}
+A finite replay on $801\times81$ labels reproduces $S$ to $1.4\times10^{-14}$.
+On $C_0$ the readout traces the two legs of the V on disjoint arcs, joined
+through the flat function $\chi$. That is exactly what
+Lemma~\ref{lem:analytic} forbids for analytic readouts.
+
+\begin{proposition}[One half of the source]\label{prop:half}
+(1) If $D'$ contains at least three points of the ruling $\{0\}\times[0,1]$
+and at least three points of one edge, then no affine readout realizes $S$ on
+$D'$ with a moment-compatible family. This applies in particular to $D_+$,
+which contains the single interior cross-cap $P_+$.
+(2) On $D_+$ there exist a real-analytic moment-compatible family and a readout
+that is real-analytic on a neighbourhood of its image and realizes $S$.
+\end{proposition}
+\begin{proof}
+(1) Write $P=b+L$. On $C_1$ the readout traces an ellipse centred at $b$,
+possibly degenerate, through three collinear points of the ruling line. A
+nondegenerate ellipse meets a line in at most two points, so the ellipse is a
+segment, and $b$ lies on the ruling line. Applying the same argument on $C_0$
+puts $b$ on the edge line. The two lines are skew.
+
+(2) Fix $0<\theta<\pi$ and put $z=e^{i\theta u}v(t)$, with
+$v=(\sqrt{\cos t},\sqrt2\sin(t/2))$. In the edge chart,
+$v=(r/\sqrt{1+\sqrt{1-r^2}},(1-r^2)^{1/4})$. Both expressions extend
+analytically across $t=0$ and $r=0$, and so does $S$ in the completed charts.
+Since $\partial_uz=i\theta z$ and $\partial_tz=e^{i\theta u}v'$ with
+$v'\neq0$ real, $z$ is an immersion. If $e^{i\theta u}v=e^{i\theta u'}v'$
+with $v,v'$ nonnegative, the phase quotient is positive, so $u=u'$ and
+$t=t'$. An immersion that is injective on a compact set embeds a
+neighbourhood of it. The nearest-point retraction onto a real-analytic embedded
+surface is real-analytic on a tube, by the analytic inverse function theorem
+for $(x,n)\mapsto x+n$ on the normal bundle. Composing the retraction, the
+inverse embedding and the extended $S$ gives the readout.
+\end{proof}
+
+\begin{figure}[t]\centering
+\begin{tikzpicture}[scale=1.05]
+\draw[thick] (0,0) rectangle (4,2);
+\draw[very thick,teal] (0,0)--(0,2); \draw[very thick,teal] (4,0)--(4,2);
+\draw[very thick,orange] (2,0)--(2,2);
+\node[below] at (0,0) {\small $-\frac\pi2$}; \node[below] at (2,0) {\small $0$};
+\node[below] at (4,0) {\small $\frac\pi2$}; \node[left] at (0,1) {\small $z_1=0$};
+\node[right] at (4,1) {\small $z_1=0$}; \node[above] at (2,2) {\small $z_2=0$};
+\fill (0.50,0.62) circle (1.4pt) node[below] {\small $P_-$};
+\fill (3.50,0.62) circle (1.4pt) node[below] {\small $P_+$};
+\begin{scope}[xshift=6.3cm,yshift=0.2cm]
+\draw[->,gray] (0,0)--(3.2,0) node[right]{\small $x$};
+\draw[->,gray] (0,-1.2)--(0,1.4) node[above]{\small $y$};
+\draw[very thick,teal] (0,1)--(2.6,0); \draw[very thick,teal] (0,-1)--(2.6,0);
+\fill (2.6,0) circle (1.4pt) node[below right] {\small $(2,0,0)$};
+\draw[very thick,orange] (1.3,0) circle (1.6pt);
+\node[align=left,anchor=west] at (0.2,-1.55) {\small edges: V in $z=0$;\ ruling: $(1,0,u)$};
+\end{scope}
+\end{tikzpicture}
+\caption{Under the historical powers, $z_1$ vanishes on both edges and $z_2$
+on the polar ruling. The edges map to a V in the plane $z=0$, which no
+analytic image of $C_0$ can contain. The ruling maps onto a segment over
+$(1,0)$, on a line skew to both legs.}\label{fig:edges}
+\end{figure}
+
+\begin{remark}[Edge criterion and the extra data a realization needs]\label{rem:data}
+Lemma~\ref{lem:analytic} yields a necessary criterion for any power assignment
+$w=|z_1|^2$. An analytic readout requires $S(w^{-1}(0))$ to lie in the image
+of an analytic loop, and a phase-invariant readout requires it to be a
+single point; the same holds for $1-w$. The assignment of
+Theorem~\ref{thm:realization} passes. Its vanishing edges $u=1$ and $u=0$ map
+to arcs of the circles $(x-1)^2+z^2=1$ and $x^2+y^2=1$, and its readout maps
+the two vanishing circles onto exactly these circles. The historical
+assignment fails because $w^{-1}(0)$ consists of both edges.
+
+A realization of the historical model therefore needs data the moment map does
+not supply. One option is a non-analytic switching readout, as in
+Theorem~\ref{thm:smooth}. Another is to keep only half of the source, which
+loses a cross-cap and the reflection pairing $S(t,1)=S(-t,1)$. A third is to
+change the powers. Approximation carries no content: by the Weierstrass
+theorem, polynomial readouts satisfy $\sup_D|P_\varepsilon\circ z-S|<\varepsilon$
+for every $\varepsilon>0$, yet none is exact. Whether a quadratic readout
+exists on $D_+$ is open.
+\end{remark}
+
+\section{Observation monodromy and its carriers}\label{sec:monodromy}
+\subsection{Interior dipole and square-root restoration}
+\begin{theorem}[Dipole and two-traversal restoration]\label{thm:dipole}
+The interior zeros of $F$ in $D_\circ$ are exactly $P_\pm$, and $F(0,1)=0$ at
+the boundary. With the $(t,u)$ orientation,
+$\det DF(P_\pm)=\mp5s_0(1-c_0)^2/Q_0$ and $\operatorname{Ind}(P_\pm)=\mp1$
+\cite{ruled}. Every continuous branch of $\sqrt F$ transported round a small
+positive loop about either point changes sign, and two traversals restore it.
+\end{theorem}
+\begin{proof}
+$N=0$ exactly on $c=1$ and on $u=(1-c)/2$. On the first, $M=1-u$; on the
+second, $M$ is a positive multiple of $-(c^2-3c+1)$. The determinant follows
+from $c_0^2=3c_0-1$, and a nondegenerate zero has small-circle winding equal
+to the sign of the determinant. Write $F(\gamma(s))=\exp L(s)$ with a
+continuous logarithm, so that $L(1)=L(0)+2\pi in$ with $n=\pm1$. Then
+$\chi=\exp(L/2)$ satisfies $\chi(1)=-\chi(0)$. Any other continuous root
+differs from $\chi$ by a constant sign.
+\end{proof}
+This is a count of traversals. It assigns no physical clock, and it does not
+identify the root cover with any spin structure. Earlier versions mixed this
+with two other involutions, which Proposition~\ref{prop:carrier} separates.
+The value $|\det DF(P_\pm)|\approx2.245$ is not $\sqrt5$. The number $\sqrt5$
+is $|P'(c_0)|$ for the monic $P(c)=c^2-3c+1$, and it changes when $P$ is
+rescaled. Both $N$ and $M$ are even in $t$, so the sign reversal of the
+Jacobian comes from the $t$-derivatives, not from parity of the components.
+
+\subsection{The polar fold}
+\begin{proposition}[Polar fold]\label{prop:polar}
+The smooth extension of $\Psi$ at $P_0=(0,1)$ is a Whitney fold of local
+degree zero. No interior winding index is assigned on the physical
+half-neighbourhood.
+\end{proposition}
+\begin{proof}
+Use the source coordinates $a=-M$ and $b=2\sin(t/2)\sqrt{u-(1-\cos t)/2}$,
+and the target coordinates $(N,M)\mapsto(-M,-N)$. The derivative matrix at
+$(0,1)$ is invertible, and the exact identity $-N=b^2$ gives the normal form
+$(a,b^2)$. Reflecting $b$ pairs preimages of opposite orientation.
+\end{proof}
+The remainder displayed in v12 omitted $M(t,1)=-t^4/2+O(t^6)$, but the exact
+charts above do not depend on it. The full interior critical locus of $\Psi$
+consists of the symmetry segment $t=0$, which is an ordinary fold for $u>0$,
+and a rational branch, which consists of ordinary folds away from $(0,0)$; at
+$(0,0)$ the ordinary-fold condition fails \cite[Thm.~2.4]{stokes}.
+
+\subsection{Three different sign structures}
+\begin{proposition}[Carriers]\label{prop:carrier}
+(1) For connected $X$, $\End_{D(X)}(\Z_X)=H^0(X;\Z)=\Z$. Every involution of
+$\Z_X$ is therefore $\pm\mathrm{id}$, $\Z_X$ admits no splitting into two
+nonzero summands, and its characteristic polynomial is $t-1$ or $t+1$. The
+same holds for the constant condensed sheaf on a compact connected space,
+whose global sections are the continuous maps to $\Z$.
+
+(2) Let $X=D_\circ\setminus\{P_+,P_-,(0,1)\}$ and let $\pi:\widetilde X\to X$ be
+the double cover $\{\chi^2=F\}$. Then $\pi_*\Z$ is a rank-two local system
+with deck involution $\tau$, indecomposable over $\Z$. After inverting $2$,
+$\pi_*\Z[\frac12]\simeq\Z[\frac12]\oplus\mathcal L[\frac12]$, where the sign
+system $\mathcal L$ has monodromy $-1$ around each of $P_\pm$.
+
+(3) A Whitney fold involution $(\xi,\eta)\mapsto(\xi,-\eta)$ fixes the fold arc
+pointwise, whereas $\tau$ is fixed-point free; neither induces the other.
+
+(4) For a standard cross-cap image $X'$ with topological normalization
+$\nu$, the rational normalization defect
+$\mathcal Q_\nu=\nu_*\Q_{\widetilde X'}/\Q_{X'}\simeq j_!\mathcal L_{\rm sgn}$
+lives on the image double ray and has zero stalk at the pinch. Every ordinary
+morphism from $\mathcal Q_\nu$ to a skyscraper at the pinch is zero.
+\end{proposition}
+\begin{proof}
+(1) Degree-zero endomorphisms of a sheaf in degree zero are the global
+sections of the sheaf $\mathcal{H}om(\Z,\Z)=\Z$. The only idempotents of $\Z$ are $0$ and $1$.
+(2) $D_\circ\setminus\{(0,1)\}$ is star-shaped about an interior point, so
+$\pi_1(X)$ is free on loops around $P_\pm$, on which $F$ winds $\mp1$. The
+monodromy of $\pi$ is therefore the surjection onto $C_2$, and the stalk is
+the regular module $\Z[C_2]=\Z[x]/(x^2-1)$, whose only idempotents are $0$
+and $1$. Over $\Z[\frac12]$ the projectors $(1\pm x)/2$ split it.
+(3) The fixed-point sets differ.
+(4) This is the stalk computation of v12 Proposition~8.6 \cite{stacks}: the
+diagonal stalk map is an isomorphism at one-preimage points and has an
+anti-invariant one-dimensional quotient at two-preimage points.
+\end{proof}
+Hence the ``rank-two $\pm1$ decomposition of the constant sheaf'' stated in
+the earlier public description has no carrier. The correct $-1$ sector is
+$\mathcal L$, which lives on the punctured source and records the winding of
+$F$. The normalization sign line lives instead on the image double stratum
+and records the exchange of sheets. The present data supply no canonical
+isomorphism between these two $\Z/2$-torsors. No map from a Mellin Hilbert
+space to either carrier has been constructed.
+
+\subsection{Exceptional pullbacks do not see folds}
+We use the six-functor formalism on finite-dimensional locally compact
+Hausdorff spaces with $D(X)=D(\mathrm{Sh}(X;\Z))$ \cite[Ex.~5.9]{scholze},
+$\omega_X=a_X^!\Z$ and $\mathbb D_X=\RHom(-,\omega_X)$. Three standard facts
+are needed:
+\begin{itemize}
+\item Verdier duality, $f^!\mathbb D_Y\simeq\mathbb D_Xf^*$
+\cite[Prop.~4.6.9]{knp}, \cite[Ch.~III]{ks};
+\item the stalk of $\omega_X$ at $x$ is the local homology
+$H_*(X,X\setminus x)$, and $\omega_X\simeq\orr_X[n]$ on an $n$-manifold
+\cite[Rem.~4.6.19, Cor.~4.6.20]{knp};
+\item open immersions satisfy $j^!=j^*$ and are cohomologically smooth
+\cite[Rem.~5.4]{scholze}.
+\end{itemize}
+A map $f$ is cohomologically smooth when the comparison
+$f^!\Z\otimes f^*(-)\to f^!(-)$ is an isomorphism, $f^!\Z$ is invertible, and
+both properties survive base change \cite[Def.~5.1]{scholze}.
+
+\begin{theorem}[$f^!\Z$ sees only dimension and boundary]\label{thm:shriek}
+(1) For any continuous $f:X\to Y$ between topological manifolds without
+boundary of dimensions $n$ and $m$, $f^!\Z_Y\simeq\orr_X\otimes f^*\orr_Y[n-m]$.
+
+(2) Let $D'\subset\R^2$ be locally closed and convex with nonempty interior,
+and let $j:\inte D'\to D'$ be the inclusion. For every continuous
+$\Psi:D'\to\R^2$, $\Psi^!\Z\simeq j_!\Z_{\inte D'}$.
+\end{theorem}
+\begin{proof}
+(1) Since $\omega_Y$ is invertible, $\Z_Y\simeq\mathbb D_Y\omega_Y$, so
+$f^!\Z_Y\simeq\mathbb D_Xf^*\omega_Y=\RHom(f^*\orr_Y[m],\orr_X[n])$.
+(2) At a non-interior point $x$, $D'\setminus x$ is star-shaped about an
+interior point, so the local homology vanishes. Hence
+$\omega_{D'}\simeq j_!\Z_{\inte D'}[2]$, and
+$\Psi^!\Z\simeq\mathbb D_{D'}(\Z_{D'}[2])=\omega_{D'}[-2]$.
+\end{proof}
+
+\begin{corollary}\label{cor:shift}
+For $\Psi$ of \eqref{eq:F} on $D_\circ$ and any inclusion $i:L\to D_\circ$, the
+complex $i^*\Psi^!\Z$ is $\Z$ in degree $0$ on $L\cap\inte D_\circ$ and $0$ on
+the sides $u=0,1$. In particular $i^*\Psi^!\Z\simeq\Z[-1]$ holds at no point,
+fold or otherwise. For an embedded open arc $L$ in the interior,
+$i^!\Psi^!\Z\simeq\orr_L[-1]$; this shift is the codimension of $L$, not a
+feature of folds.
+\end{corollary}
+
+\begin{proposition}[Where the fold is visible]\label{prop:detect}
+Let $x$ be an interior ordinary fold point of $\Psi$, and choose disc
+neighbourhoods $V\ni x$ and $W\ni\Psi(x)$ on which $f=\Psi|_V$ is homeomorphic
+to $(\xi,\eta)\mapsto(\xi,\eta^2)$. Let $L$ be the fold arc, let $W'\subset W$
+be the open side of the discriminant containing $f(V\setminus L)$, and put
+$G=j'_!\Z_{W'}$. Then $f^!\Z_W\simeq\Z_V$, $f^*G\simeq(\Z_{V\setminus L})_!$
+and $f^!G\simeq\Z_V$. The comparison map $f^!\Z_W\otimes f^*G\to f^!G$ is
+injective with cokernel $i_*\Z_L$. Thus the comparison condition of
+cohomological smoothness fails at every ordinary fold point, while
+invertibility of $f^!\Z$ holds.
+\end{proposition}
+\begin{proof}
+For the closed side $k:H\to W$, local homology vanishes on its edge, so
+$\mathbb D_W(\Z_H)=k_*\omega_H\simeq G[2]$. Since $f(V)\subset H$,
+$f^!G[2]\simeq\mathbb D_V(f^*\Z_H)=\Z_V[2]$. Off $L$, $f$ is locally an open
+immersion, so the comparison map is an isomorphism there. A morphism
+$(\Z_{V\setminus L})_!\to\Z_V$ is a locally constant function on $V\setminus L$,
+here with values $\pm1$. Its cokernel is $i_*\Z_L$.
+\end{proof}
+The fold is also visible in $f_*\Z_V$, whose stalk ranks are $2,1,0$ across
+the discriminant, and in the normalization defect on the surface side. A
+compact Hausdorff image defines a condensed set. That fact alone, however,
+supplies neither a canonical structure sheaf nor a singularity detector
+(v12 Remark~8.7).
+
+\section{Residual geometry}\label{sec:residual}
+\subsection{Sublevel law and resolution cost}
+For the standard models take Lebesgue measure and the residuals
+$K_f=x^2+y^4$ and $K_\times=x^2(1+y^2)+y^4$.
+\begin{theorem}[Sublevel law]\label{thm:sublevel}
+With $B=B(\frac14,\frac32)$ and $\varepsilon>0$,
+$V_f(\varepsilon)=B\varepsilon^{3/4}$ and
+$B\varepsilon^{3/4}(1+\sqrt\varepsilon)^{-1/2}\leq V_\times(\varepsilon)\leq B\varepsilon^{3/4}$.
+The exponent $3/4$ survives smooth changes of density and of coordinates; the
+coefficient does not.
+\end{theorem}
+\begin{proof}
+Slicing in $y$ gives $4\int_0^{\varepsilon^{1/4}}\sqrt{\varepsilon-y^4}\dd y$.
+Substituting $y=\varepsilon^{1/4}v$ and then $z=v^4$ yields $B\varepsilon^{3/4}$.
+For the cross-cap, the extra factor $(1+y^2)^{-1/2}$ lies between
+$(1+\sqrt\varepsilon)^{-1/2}$ and $1$.
+\end{proof}
+The geometric cost $-\log V(\varepsilon)=\frac34\log\varepsilon^{-1}-\log B+o(1)$
+is a resolution cost, not a channel capacity. Identical binary labels admit a
+constant stochastic channel of capacity $0$ and a noiseless one of capacity
+$\log2$. The residual supplies neither the kernel nor the resource
+constraint. The earlier conjecture $C=\sqrt5\ln S$ is withdrawn.
+
+\subsection{An explicitly chosen complex completion}
+\begin{theorem}[Chosen $A_3$ completion]\label{thm:a3}
+After its coefficients are extended to $\C$, the germ of $K_\times$ is
+right-equivalent to $X^2+Y^4$, with Milnor and Tjurina numbers $3$. The fiber
+$U=\{X^2+Y^4=1\}$ is a smooth genus-one curve $E$ with two points removed.
+$H^1(U)$ has dimension three and monodromy spectrum $\{-i,1,i\}$. The weight-graded
+pieces of its mixed Hodge structure have dimension two in weight one and one
+in weight two.
+\end{theorem}
+\begin{proof}
+The substitution $X=x\sqrt{1+y^2}$, $Y=y$ is a holomorphic coordinate change
+with invertible derivative. The weighted compactification
+$X^2+Y^4=Z^4\subset\mathbb P(2,1,1)$ is a double cover of $\mathbb P^1$
+branched at four points, hence of genus one. Its two ends at infinity are
+unramified. Weighted homogeneity identifies the global and local Milnor
+fibers \cite{milnor,dimca}. The monodromy $h(X,Y)=(-X,iY)$ acts by $-i$ and
+$i$ on $H^1(E)$ and fixes the boundary class. The Gysin sequence
+$0\to H^1(E)\to H^1(U)\to\widetilde H^0(\{\infty_\pm\})(-1)\to0$ gives the
+weights \cite{deligne,peters}.
+\end{proof}
+These weights belong to the chosen complexification. They are not inferred
+from the real surface or from a Mellin parameter. The monodromy alone does not
+determine the specialization and variation maps of a nearby-cycle package.
+
+\subsection{Three different projected curves}
+\begin{proposition}\label{prop:curves}
+(1) For each $r>0$, the real link $\{K_\times=r^2\}$ is a circle. Its
+cross-cap image has one transverse double point, so it is a figure-eight
+graph. The lift $(x,xy,y^2,y)$ is an embedding.
+(2) The weights of $X^2+Y^4$ are $(2,1)$. For $a,b>0$ with $a^2+b^4=1$, the
+orbit $\Gamma(s)=(ae^{2is},be^{is})$ is embedded, and its shadow
+$(b\sin s,a\sin2s)$ is a transverse figure-eight with frequency ratio $2:1$.
+The action $2\pi(4a^2+b^2)$ has infimum $2\pi$ over nondegenerate orbits; it
+is attained only in their closure, and $b^2=\frac18$ is a strict maximum.
+(3) For the actual lateral germs the Euclidean Whitney invariants satisfy
+$b_\pm^2+a_\pm c_\pm^2=0$. The exceptional principal-curvature trace has an
+ordinary cusp at the double return, not a node \cite[Prop.~2.1]{principal}.
+\end{proposition}
+\begin{proof}[Sketch]
+(1) The gradient of $K_\times$ vanishes only at $0$. Equal images force
+$x=x'$ and $y'=\pm y$, and the tangent images at $(0,\pm\sqrt r)$ are
+transverse.
+(2) The $Y$ coordinate fixes the phase. With $z=b^2$ the action divided by
+$2\pi$ is $1+(1-z)(4z+3)$.
+(3) The invariants are computed exactly from the actual second jet, and the
+pedal trace satisfies $\det(p'',p''')\neq0$ at its double return. The
+computation is in the exact replay of Appendix~\ref{app:evidence}.
+\end{proof}
+These three constructions yield distinct curves. No amplitude, clock or
+scattering rule transfers from one to another.
+
+\section{Spectral and arithmetic statements that survive}\label{sec:spectral}
+These results are standard. We record them because the earlier versions
+stated them with gaps in measure, domain or hypotheses.
+
+\paragraph{Mellin operators.} Let $T_\sigma f=-i(xf'+\sigma f)$. For $C^1$
+functions on $[a,b]\subset(0,\infty)$,
+$\int_a^b(\overline{T_\sigma f}g-\overline fT_{1-\sigma}g)\dd x=i[x\overline fg]_a^b$.
+In $L^2(dx)$ the formal adjoint is therefore $T_{1-\sigma}$, which equals
+$T_\sigma$ exactly at $\sigma=\frac12$. For the measure $x^{2\beta-1}\dd x$ the
+formal adjoint parameter is $2\beta-\sigma$ instead. Formal symmetry is not
+self-adjointness. The map $(Uf)(s)=e^{s/2}f(e^s)$ is unitary from
+$L^2([1,\infty),dx)$ onto $L^2([0,\infty),ds)$, and it carries the closure of
+$T_{1/2}$ on $C_c^\infty$ to $-i\partial_s$ on $H^1_0$, whose adjoint has
+domain $H^1$. The deficiency indices are $(1,0)$, so no self-adjoint extension
+exists. On the full multiplicative line the operator is self-adjoint
+\cite{reed}. The functions $x^{-\sigma-i\omega}$ satisfy
+$T_\sigma x^{-\sigma-i\omega}=-\omega x^{-\sigma-i\omega}$. They lie in
+$L^2([1,\infty))$ exactly when $\sigma>\frac12$, and even then they violate
+the minimal zero trace. Real formal eigenvalues imply no orthogonality.
+
+\paragraph{Finite Gram matrices.} For distinct real $\omega_1,\dots,\omega_M$,
+$T>0$ and $G_{jk}=T^{-1}\int_0^Te^{i(\omega_j-\omega_k)t}\dd t$, the phasors are
+linearly independent and $G$ is positive definite for \emph{every} $T>0$; a
+Vandermonde argument at an interior time proves this. With
+$\varepsilon=2(M-1)/(T\min|\omega_j-\omega_k|)<1$, the spectrum of $G$ lies in
+$[1-\varepsilon,1+\varepsilon]$, $\kappa_2(G)\leq(1+\varepsilon)/(1-\varepsilon)$
+and $M\log(1-\varepsilon)\leq\log\det G\leq0$. The earlier threshold
+$T>2(M-1)/\delta$ is thus sufficient for conditioning but not needed for
+independence. These estimates concern a fixed finite family.
+
+\paragraph{Hardy evaluation and Bohr--Haar.} On the coefficient Hilbert space
+of Dirichlet series, evaluation at $\Re s=\sigma$ is bounded exactly when
+$\sigma>\frac12$, with norm $\zeta(2\sigma)^{1/2}$ \cite{hardy}. The Gram limit
+$\lim T^{-1}\int_0^Tn^{it}m^{-it}\dd t=\delta_{nm}$ is character orthogonality
+on the product torus of prime exponents. A finite set of integers may generate
+a lattice of lower rank, as $\{2,4\}$ does, so no free group of rank $M$ is
+involved. The half-density threshold and the evaluation threshold are two
+separate results.
+
+\begin{proposition}[Log-scale and linear-scale windows]\label{prop:windows}
+Let $K(\delta,L)=L^{-1}\int_0^Le^{-i\delta\tau}\dd\tau$, so that
+$|K|=|\sin(\delta L/2)|/(|\delta|L/2)\leq2/(|\delta|L)$, and let $T>1$.
+\begin{enumerate}
+\item $\frac1{\log T}\int_1^Tx^{-i\delta}\frac{dx}x=K(\delta,\log T)$. The
+log-scale and linear-scale bounds are one bound, $2/(|\delta|\cdot\text{mass})$,
+evaluated at window masses $\log T$ and $T$; their ratio $T/\log T$ is the same
+for every real $\delta$.
+\item For the same characters on the same interval with Lebesgue measure,
+$\frac1{T-1}\int_1^Tx^{-i\delta}\dd x=\frac{T^{1-i\delta}-1}{(1-i\delta)(T-1)}$.
+Its modulus tends to $(1+\delta^2)^{-1/2}\neq0$, so these characters do not
+decorrelate at all.
+\item For $e^{-i\delta t}$ on $[1,T]$ with Haar measure the average is at
+most $2/(|\delta|\log T)$ in modulus.
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+Substitute $x=e^\tau$; integrate directly; integrate by parts once.
+\end{proof}
+No integrality enters any of these statements. Moreover $\mathbb N$ is not a
+subgroup of $(\R_{>0},\times)$; the subgroup it generates, $\Q_{>0}$, is
+dense. The ``arithmetic decorrelation gap'' of the earlier public description
+therefore has nothing to explain.
+
+\section{Scope limits}\label{sec:limits}
+The following limits were already stated correctly in v12. We retain them:
+\begin{itemize}
+\item A nonempty proper subset of $SU(2)$ is not invariant under the full left
+action. This applies to a constrained source lift once one is specified.
+\item The ratio $2\pi^2R^3/(\pi r^2)$ with $r=\phi^{-2}R$ equals $2\pi\phi^4R$.
+It carries a length scale and defines no mass operator.
+\item For the canonical Kähler form the two power coordinates Poisson-commute,
+whereas the full $SU(2)$ moment map is a different observable algebra.
+\item The circle operator $-i\partial_\theta$ with antiperiodic condition has
+spectrum $\Z+\frac12$, which is symmetric, so its eta invariant vanishes
+\cite{aps}.
+\item The real geometry specifies no complex algebraic pair, finite-field
+model or Frobenius. A Weil cohomology theory is extra input. Given such a
+theory with localization and Tate twists, the pair $(E,D)$ of
+Theorem~\ref{thm:a3} has a one-dimensional boundary term.
+\end{itemize}
+
+\section{What remains open}\label{sec:open}
+\begin{itemize}
+\item Whether a quadratic readout realizes $S$ on $D_+$ under the historical
+powers (Remark~\ref{rem:data}). Whether any principle selects a canonical
+non-analytic readout; Theorem~\ref{thm:smooth} suggests that none does
+without further input.
+\item A sign-twisted, form or spinor operator whose boundary data are compatible
+with the carriers of Proposition~\ref{prop:carrier}.
+\item The actual singular Dirac and Pin problem of v12 Sections~8.20--8.24:
+closed domains for the twisted Dirac operator on the actual Whitney metric,
+graph and overlap estimates, singular-cut trace spaces, and
+Clifford-compatible transmission maps. Exact-cone and regular-cut results
+remain model or conditional statements. The scalar theory needed as a first
+step is developed in \cite{companion}.
+\item Independent signal or physical models for capacity, mass, clocks and
+chirality. None follows from the geometry above.
+\end{itemize}
+
+\appendix
+\section{Corrections to the earlier record}\label{app:corrections}
+\subsection{The public description}
+The description field of the record \cite{record} still shows the abstract of
+an earlier draft, which differs from both public files. Its claims are
+corrected as follows:
+\begin{center}\small
+\begin{tabular}{>{\raggedright\arraybackslash}p{.40\linewidth}>{\raggedright\arraybackslash}p{.52\linewidth}}\toprule
+Claim in the description & Status here\\\midrule
+$S$ is derived from the moment map and the power constraint & False for analytic readouts (Theorem~\ref{thm:rigidity}); smooth realizations exist but are not canonical\\
+Immersion singularities occur at exactly two lateral points & Five rank labels (Proposition~\ref{prop:atlas})\\
+Quasi-separated condensed set; Weil-étale/Pontryagin connection & No such structure or bridge (\S\ref{sec:spectral}, Proposition~\ref{prop:carrier}(1), v12 7.7, 8.5, 8.7)\\
+$i^*\Psi^!\Z\simeq\Z[-1]$ on the fold locus & False at every point (Corollary~\ref{cor:shift})\\
+Monodromy as an endomorphism of the constant condensed sheaf & $\End(\Z)=\Z$; carrier is $\pi_*\Z$ (Proposition~\ref{prop:carrier})\\
+$T>2(M-1)/\delta$ gives independence & Independence holds for all $T>0$ (\S\ref{sec:spectral})\\
+$C=\sqrt5\ln S$ (conjectural) & Withdrawn; resolution law and capacity no-go (\S\ref{sec:residual})\\\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{v11 Theorem 4.2}
+v11 identified the sign reversal of $\sqrt F$ with an exchange of the sheets of
+a Whitney fold. v12 already withdrew that identification;
+Proposition~\ref{prop:carrier}(3) shows the two involutions are different. In
+all other blocks up to 8.20, v11 agrees with v12, apart from small wording
+refinements. v11 stated the spinorial parametrix only as a remark, more
+cautiously than v12.
+
+\subsection{All named statements of v12}
+Categories: \textbf{H}~holds, possibly with an explicit domain or hypothesis;
+\textbf{C}~corrected statement; \textbf{S}~strengthened; \textbf{R}~refuted as
+defined; \textbf{O}~unproved, now open; \textbf{M}~model-level or conditional
+only; \textbf{D}~definition gap, decided here. ``Companion'' refers to
+\cite{companion}.
+{\small
+\begin{longtable}{@{}l>{\raggedright\arraybackslash}p{.06\linewidth}>{\raggedright\arraybackslash}p{.72\linewidth}@{}}
+\toprule Block & Cat. & Note and location\\\midrule\endhead
+3.1 & D & No analytic readout under historical powers; smooth readout exists; other powers admit a quadratic readout (\S\ref{sec:realization})\\
+3.2 & C & Fix $L^2(dx)$ and the conjugate-linear first slot; the introduction used another measure (\S\ref{sec:spectral})\\
+3.3 & H & Geometric resolution cost, not a capacity (\S\ref{sec:residual})\\
+4.1 & C & $F$ is an angular-chart field on $D_\circ$; indices $\mp1$ hold (\S\ref{sec:model}, Thm~\ref{thm:dipole})\\
+4.2 & H & Two-traversal sign restoration, no clock (Thm~\ref{thm:dipole})\\
+4.3 & H & No spin identification is claimed\\
+4.4 & C & $N$ and $M$ are both even; the parity explanation is replaced (\S\ref{sec:monodromy})\\
+5.1 & H & $|P'(c_0)|=\sqrt5$ for the monic $P$ only\\
+5.2 & C & The lateral Jacobian modulus is not $\sqrt5$; its sign follows the orientation\\
+5.3 & H & Exact fold constant; two-sided cross-cap bounds (Thm~\ref{thm:sublevel})\\
+5.4 & H & Requires an external identification $S=\varepsilon^{-1}$\\
+5.5 & H & Capacity no-go\\
+5.6 & H & Explicit holomorphic coordinate change (Thm~\ref{thm:a3})\\
+5.7 & H & Genus one, two unramified ends, spectrum $\{-i,1,i\}$\\
+5.8 & H & Every $r>0$ for the standard model (Prop.~\ref{prop:curves})\\
+5.9 & H & The orbit leaves the fixed fiber except at fourth-root phases\\
+5.10 & C & The minimum is attained only in the closure; $b^2=\frac18$ is a maximum\\
+5.11 & H & Scope remark\\
+5.12 & H & Invariants rebuilt; ordinary cusp criterion\\
+5.13 & H & Geometric no-go\\
+6.1 & C & $c^2-3c+1$ selects only the lateral labels; five rank labels (Prop.~\ref{prop:atlas})\\
+6.2 & C & Five cross-cap germs, including two corner quarter-germs\\
+7.1 & C & The formal adjoint parameter depends on the measure; formal symmetry is not adjoint-domain equality\\
+7.2 & H & Indices $(1,0)$ with explicit $H^1_0$ and $H^1$ domains\\
+7.3 & C & For $\sigma>\frac12$ the functions are $L^2$ but violate the zero trace\\
+7.4 & H & Conventions made explicit\\
+7.5 & H & For a fixed finite family\\
+7.6 & S & Independence holds for every $T>0$; the threshold only controls conditioning\\
+7.7 & H & Bohr torus realization\\
+7.8 & H & Conditioning and log-determinant bounds\\
+8.1 & H & Full-line and half-line realizations are distinguished\\
+8.2 & H & Evaluation boundary $\sigma=\frac12$\\
+8.3 & H & The coincidence of two thresholds carries no weight interpretation\\
+8.4 & H & Character orthogonality\\
+8.5 & H & Lattices of lower rank are retained\\
+8.6 & H & Normalization defect (Prop.~\ref{prop:carrier}(4))\\
+8.7 & H & Strengthened by Thm~\ref{thm:shriek}\\
+8.8 & C & The displayed remainder omitted a term; the fold holds through exact charts (Prop.~\ref{prop:polar})\\
+8.9 & C & All five labels must be removed; $H_1=\Z^2$\\
+8.10 & H & Exact Galerkin pullback (Companion)\\
+8.11 & C & Zero capacity at all five labels; form closures, not graph closures (Companion)\\
+8.12 & O & Model identities hold; the actual uniform estimate is open (Companion)\\
+8.13 & R & The graph closure of the interior core has infinite outer-boundary deficiency; the corrected two-point operator is treated in the Companion\\
+8.14 & R & False for the old minimum; holds for the corrected operator (Companion)\\
+8.15 & R & The Krein kernel of the old minimum is infinite; compactness and gap hold (Companion)\\
+8.16 & H & Buckling equivalence for the actual operator, with hypotheses proved (Companion)\\
+8.17 & C & Operator scope corrected (Companion)\\
+8.18 & H & Support and parity obstruction (Prop.~\ref{prop:carrier})\\
+8.19 & H & Scope remark\\
+8.20 & M & Exact-cone model only (\S\ref{sec:open})\\
+8.21 & O & Actual front--seam parametrix unproved (\S\ref{sec:open})\\
+8.22 & M & First-order data hold; a Pin convention must be specified\\
+8.23 & M & Conditional on an unspecified Clifford-compatible transmission\\
+8.24 & H & Open-problem statement\\
+8.25 & H & Conditional on a specified proper lift (\S\ref{sec:limits})\\
+8.26 & H & Representation observation only\\
+8.27 & H & Real-geometry Deligne/Weil no-go\\
+8.28 & H & Weights of the chosen completion (Thm~\ref{thm:a3})\\
+8.29 & H & Monodromy does not fix the full nearby-cycle package\\
+8.30 & H & Conditional on a specified Weil realization\\
+9.1 & H & The ratio carries a length scale\\
+9.2 & H & No mass prediction\\
+9.3 & H & Power coordinates Poisson-commute\\
+9.4 & H & A separate observable programme\\
+9.5 & H & $\eta=0$ for the sign circle\\
+9.6 & H & No chirality from the sign cover\\\bottomrule
+\end{longtable}}
+
+\section{Evidence and reproducibility}\label{app:evidence}
+The historical authority is the public v12 file, which is byte-identical
+to the archived copy. The SHA-256 values of the two public files are
+\begin{center}\footnotesize
+\begin{tabular}{@{}ll@{}}
+v12 & \texttt{4ebb8f0a7d6e88a6c5cd97f65d224b4e938867cabad54f057d3ceafb24167d5a}\\
+v11 & \texttt{207a51feed62fe7f5a6dd7c9190258dd1b9c996c8b2735e799aff569bb017ec2}
+\end{tabular}
+\end{center}
+
+\paragraph{Exact and finite replay.} Independent scripts check the following:
+\begin{itemize}
+\item derivative determinants, the Euclidean jet invariants and the polar
+remainder;
+\item the quadrature identities and the Bloch identity;
+\item the edge and skew-line algebra;
+\item a replay of the $C^\infty$ readout on 64{,}881 labels;
+\item the analytic edge-chart identities on the half source;
+\item the Jacobian factorization, the windings $\mp1$ and the idempotents of
+$\Z[C_2]$;
+\item the window kernels.
+\end{itemize}
+None of these replays certifies an analytic, sheaf-theoretic or operator-domain
+statement.
+
+\paragraph{Lean.} A companion Lean project (Lean~4, Mathlib) contains 33 named
+theorems, audited for proof holes and custom axioms. They include the actual
+rank classification, the endpoint ranks, the polar fold, the small-circle
+indices, the evenness of the field, the monic derivative, the injectivity and
+fibres of the cross-cap lift, the square-root and logarithm lifting, the Mellin
+interval identity, the Gram entries and eigenvalue enclosure, the quadrature
+readout identities and the cusp factorization. This is partial coverage of
+selected statements, not a formalization of the paper.
+
+\paragraph{External theorems.} The paper relies on the following external
+results, each with its hypotheses verified for the actual maps:
+\begin{itemize}
+\item smooth cross-cap recognition \cite{hasegawa};
+\item Milnor fiber comparison and mixed Hodge theory \cite{milnor,dimca,deligne,peters};
+\item the Euclidean pedal formula \cite{principal};
+\item Verdier duality and six-functor smoothness \cite{knp,scholze,ks};
+\item Dirichlet--Hardy space facts \cite{hardy};
+\item self-adjointness by Fourier transform \cite{reed}.
+\end{itemize}
+
+{\small
+\begin{thebibliography}{99}
+\bibitem{record} A. Hayami (J.-Y. Huang), \emph{Geometric Realization of Bicomplex
+Signal Manifolds: Spectral Stability, Whitney Folds, and Monodromy of the
+Observation Field}, preprint, ResearchGate, 2026, files v11 and v12.
+\href{https://doi.org/10.13140/RG.2.2.17048.15361}{doi:10.13140/RG.2.2.17048.15361}.
+\bibitem{ruled} A. Hayami, \emph{The Orthogonal-Circle Ruled Surface: A Boundary
+Atlas, Five Rank Singularities, and Conditional Fold-Signal Recurrence}, 2026.
+\href{https://doi.org/10.5281/zenodo.23073642}{doi:10.5281/zenodo.23073642}.
+\bibitem{stokes} A. Hayami, \emph{Observation Discriminant and Spherical Fold Image
+of the Orthogonal-Circle Ruled Surface}, 2026.
+\href{https://doi.org/10.5281/zenodo.22728902}{doi:10.5281/zenodo.22728902}.
+\bibitem{companion} A. Hayami, \emph{Point Interactions at Whitney Cross-Caps:
+Logarithmic Green Domains on the Orthogonal-Circle Ruled Surface}, in preparation.
+\bibitem{hasegawa} M. Hasegawa et al., \emph{Intrinsic properties of surfaces
+with singularities}, \href{https://arxiv.org/abs/1409.0281}{arXiv:1409.0281}, \S4.
+\bibitem{bloch} K. Szyma\'nski and K. \.Zyczkowski, \emph{Geometric and algebraic
+origins of additive uncertainty relations}, arXiv:1804.06191, \S II.
+\bibitem{scholze} P. Scholze, \emph{Six-Functor Formalisms}, lecture notes,
+\href{https://arxiv.org/abs/2510.26269}{arXiv:2510.26269v2}, Def.~5.1, Rem.~5.4, Ex.~5.9.
+\bibitem{knp} A. Krause, T. Nikolaus and P. P\"utzst\"uck, \emph{Sheaves on
+Manifolds}, lecture notes, 2024, \S4.6.
+\bibitem{ks} M. Kashiwara and P. Schapira, \emph{Sheaves on Manifolds},
+Springer, 1990, Ch.~III.
+\bibitem{stacks} The Stacks Project Authors, Tag 009Z.
+\bibitem{milnor} J. Milnor, \emph{Singular Points of Complex Hypersurfaces},
+Princeton University Press, 1968.
+\bibitem{dimca} A. Dimca, \emph{Singularities and Topology of Hypersurfaces},
+Springer, 1992.
+\bibitem{deligne} P. Deligne, Th\'eorie de Hodge II, \emph{Publ. Math. IHES}
+40 (1971), 5--57.
+\bibitem{peters} C. Peters and J. Steenbrink, \emph{Mixed Hodge Structures},
+Springer, 2008.
+\bibitem{principal} L. F. Martins, K. Saji, S. P. dos Santos and R. Shimada,
+\emph{Geometry on principal curvature surfaces},
+\href{https://arxiv.org/abs/2607.21796}{arXiv:2607.21796}, Prop.~2.1.
+\bibitem{reed} M. Reed and B. Simon, \emph{Methods of Modern Mathematical
+Physics I}, Academic Press, 1972.
+\bibitem{hardy} H. Hedenmalm, P. Lindqvist and K. Seip, A Hilbert space of
+Dirichlet series and systems of dilated functions in $L^2(0,1)$,
+\emph{Duke Math. J.} 86 (1997), 1--37.
+\bibitem{aps} M. F. Atiyah, V. K. Patodi and I. M. Singer, Spectral asymmetry
+and Riemannian geometry I, \emph{Math. Proc. Cambridge Philos. Soc.} 77 (1975), 43--69.
+\end{thebibliography}}
+\end{document}

@@ -26,3 +26,19 @@ generated from the ancestor TeX, and equal numbering does not imply equal
 content. Its 39-block index and the blocks decided by continuation 0.04 are in
 `../bicomplex-signal-manifolds/claims/V7_DRAFT_INDEX.md`. The authority table is
 unchanged.
+
+2026-10-02 ResearchGate readback for Bicomplex record `408878000` (DOI
+`10.13140/RG.2.2.17048.15361`). With the author's approval, the two public files
+were retrieved through the signed-in browser's own viewer requests; no edit,
+upload or visibility control was used.
+- Public `…v12.pdf`: 2,011,242 bytes, SHA-256
+  `4ebb8f0a7d6e88a6c5cd97f65d224b4e938867cabad54f057d3ceafb24167d5a`. This
+  **confirms byte equality** of the public v12 with the immutable local authority.
+- Public `…v11.pdf`: 1,708,739 bytes, SHA-256
+  `207a51feed62fe7f5a6dd7c9190258dd1b9c996c8b2735e799aff569bb017ec2`. It is
+  registered as `historical_drafts/Geometric_Realization_of_Bicomplex_Signal_Manifolds_v11.pdf`:
+  37 pages, PDF dates 2026-08-02, `qpdf --check` passed, zero embedded files.
+  It is non-authoritative and predates v12. For its block correspondence with
+  v12 see `../bicomplex-signal-manifolds/claims/V11_COMPARISON.md`.
+- The record's public description is still the v7-era abstract. The current
+  authority and the immutable table above are unchanged.

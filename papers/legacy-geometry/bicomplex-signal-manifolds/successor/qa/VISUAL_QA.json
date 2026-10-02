@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-02",
+  "document": "Successor paper 1 working draft (title A, approved by author)",
+  "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Realization_Limits_Bicomplex_Signal_Surface.tex",
+  "source_sha256": "e4cb35eafa96bc072c577804e047386f7cc5c1340bbecf22e8ee0e51cb99ae84",
+  "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Realization_Limits_Bicomplex_Signal_Surface.pdf",
+  "pdf_sha256": "80acbd8d790ae9d085cae9e0fdbd0dc8ae327075ccc2481d4f5333782289898d",
+  "pages": 15,
+  "pdftotext_sha256": "eaa7d00b2df5fc29cddff42b7012a8d6cdc84053c7619060c347e9390611bb68",
+  "render": {
+    "tool": "pdftoppm -r 80 -png",
+    "page_png_sha256": {
+      "1": "d6a38c2c524ddbc773d1b00b07ac2d17accf920b6a450b45b8a5cd5fae8bd9ef",
+      "2": "ce808dc2631605a0d1df19d942271bce02ecc8aa9117b5e9675be7511905aaf2",
+      "3": "dd116d6da8ad4f8b20408634eae9a5621da1b7df658ea48a538327690c221196",
+      "4": "9a96766ddddeb8b7c7b80f0a6afb27c880b82d063f1e91afb07d8de9df6943bd",
+      "5": "a32c9fd4e4d99ed1bf70991bc83d6b8513d8c53825dbb2f2c3d10f8b029c3fac",
+      "6": "bd19b6a8798998f2abeeec51b63d2d1cd134ece2044727bfdffd3beabd323e3a",
+      "7": "ed1757dd964724afe376355f1ee4aafdeca39674fa3bb3841ee6f8c997fa252d",
+      "8": "b84eeb75f98923511a9f42034d7d3dbc202261c501ca0aad2b90f54e921f91c3",
+      "9": "42f1776c8d78f28893e430aa3c305efcdb72d0944d09686907c374685be7cbf7",
+      "10": "1be32db6bd3b5dfa0323a4bb52d55bec8172981748347b5b12f084dd3964c763",
+      "11": "1f226bca5e136587f17807796ffd49419b2cee01550080670ffab14c8fe280d8",
+      "12": "4e030e4a43ffd5e217ddda941dbf0100389aa5c10069791194bb0b11e138e4ee",
+      "13": "a5f118447d93ec67ec6d98a6b134c56798710eeba645c2dfa739ca290f6f1dae",
+      "14": "36c8535d4db1d6790834d160066121531aaa08c2d1901a0448c39f5f26c16740",
+      "15": "7b1aa048f7917fb7de9ba587ee733a2c6586a0100197e7beb6eeef5cd92d33a6"
+    }
+  },
+  "builder": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_paper1_pdf.py",
+  "verifier": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper1.py",
+  "diagnostics": "PASS: byte-safe scan, no Overfull/Underfull/LaTeX Warning/Warning:/undefined",
+  "visual_inspection": "PASS: all 15 pages inspected in the pre-fix build; after the A.1 wording fix only page 12 changed and was re-inspected; other 14 page renders byte-identical",
+  "category_counts": {
+    "H": 43,
+    "C": 13,
+    "S": 1,
+    "R": 3,
+    "O": 2,
+    "M": 3,
+    "D": 1
+  },
+  "repaired_attempts": [
+    "Three overfull boxes (displayed decoder line, Prop 4.3 proof, appendix hashes) fixed before acceptance.",
+    "Appendix A.1 first said the public description predates v11; corrected to 'an earlier draft, differing from both public files'."
+  ],
+  "status": "WORKING DRAFT / NOT EDITORIALLY REVIEWED / NOT APPROVED FOR PUBLICATION"
+}
