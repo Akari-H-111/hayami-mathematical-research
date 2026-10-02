@@ -230,3 +230,9 @@ r1 的變更：
 - 本機 `main`（5803d6a）未合併也未推送，工作區有其他窗口的未提交改動；需作者另行同步本機 `main`（`git fetch` 後再處理與 origin/main 的分歧）。
 - 倉庫層 `CITATION.cff` 的 preferred-citation 仍是 Stokes companion，這次不改。
 - 未決與 open：actual singular Dirac／Pin、歷史 moment-map 導出（只有新構造，沒有追回）、原創性優先權（論文二為 Colin de Verdière pseudo-Laplacian 的 cross-cap 推廣，座標法屬 Grieser 既有方法）。
+
+### 補充：ResearchGate 圖庫（2026-10-02，作者要求）
+
+兩個新條目都已補上圖庫，做法同 Ruled `415049397`：論文一 `415154912` 共 7 張（RG 原本自動抽取了圖 6、7 但圖說有 PDF 抽取錯字，已改成乾淨文字；圖 1–5 為新上傳），論文二 `415164048` 共 4 張。圖為 `successor/figures/` 原圖以 300 dpi 轉成 PNG，圖說逐張輸入。新舊頁登入回讀：圖序、圖說與圖片網址 slug 一致。紀錄：`releases/candidates/bicomplex-successor-v1-figures-publication.json`。過程中論文一第一批上傳的圖 5 因沒有圖說而被丟棄，已補傳。
+
+**未完成：** 舊頁 `408878000` 開頭說明的措辭潤飾與新條目描述的 Unicode 潤飾，被 ResearchGate 的「Edit limit reached」擋下，沒有繞過；待改文字見 `releases/candidates/bicomplex-successor-v1-researchgate-pending-edits.md`，現有說明內容正確、可以保留。

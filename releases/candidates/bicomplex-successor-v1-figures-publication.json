@@ -1,0 +1,86 @@
+{
+ "status": "PUBLISHED / SIGNED-IN PUBLIC-PAGE READBACK VERIFIED (figure galleries)",
+ "verified_at": "2026-10-02T13:44:51.818710Z",
+ "author_instruction": "2026-10-02 (chat): add figure galleries to both new ResearchGate entries like Ruled 415049397; check the old-page wording and the new descriptions.",
+ "method": "Original figure PDFs (successor/figures/, hashes in FIGURES_MANIFEST.json) rasterized by pdftoppm at 300 dpi to PNG; uploaded through More > Edit figures > Upload figures; captions entered one by one and cleaned of PDF-extraction artefacts. No paper PDF, DOI or Zenodo record was changed.",
+ "paper1": {
+  "researchgate_record": "415154912",
+  "url": "https://www.researchgate.net/publication/415154912",
+  "gallery_count": 7,
+  "figures": [
+   {
+    "file": "local/cache/bicomplex-successor-v1/researchgate-figures/paper1/figure-01.png",
+    "sha256": "8818ae3e6b3845d2c0e7b840e5dcba5aa9a878902f73a30a346362557b9e2b66",
+    "caption": "Figure 1. (a) The ruled surface S, coloured by t. The two edges t = ±π/2 (teal and purple) lie in the plane z = 0 and meet at the apex (2, 0, 0); the polar ruling t = 0 (orange) is the vertical segment over (1, 0). (b) The source D = [−π/2, π/2] × [0, 1] with the five rank labels of Proposition 2.1: the interior cross-caps P±, the boundary half-germ P0 and the corner quarter-germs E±."
+   },
+   {
+    "file": "local/cache/bicomplex-successor-v1/researchgate-figures/paper1/figure-02.png",
+    "sha256": "839ada4f285d7c24fa21a887e5303710eb2a1977e420381aa9597cfda864dc75",
+    "caption": "Figure 2. The mechanism behind Theorem 3.6. (a) Under the original powers, z1 vanishes on both edges and z2 on the polar ruling. (b) All edge states therefore lie on the circle C0; the arcs shown are those used by the smooth readout of Theorem 3.8. (c) The edges map to a V in the plane z = 0, which no analytic image of C0 can contain (Lemma 3.5). The ruling maps onto a segment over (1, 0), on a line skew to both legs."
+   },
+   {
+    "file": "local/cache/bicomplex-successor-v1/researchgate-figures/paper1/figure-03.png",
+    "sha256": "0b9570c44ce1fb76f4037d60936df26470588baaf5d50e4627f98e611c8a2ed7",
+    "caption": "Figure 3. The switching readout of Theorem 3.8. (a) The cutoffs, as functions of c = |z1|². Near the edges (c small) the ruling parameter u is stored in the phase of z2; near the polar ruling (c close to 1) it is stored in the phase of z1. (b), (c) The two phases over the source; each is monotone in u wherever its decoder is used."
+   },
+   {
+    "file": "local/cache/bicomplex-successor-v1/researchgate-figures/paper1/figure-04.png",
+    "sha256": "ef7423280bbf4e259972a1f18c9c946ae0e76516ef8bf109cc92d9e88442d87b",
+    "caption": "Figure 4. (a) The phase of the observation field F on D∘, shown for |t| ≤ 1.45, with the cyclic colour scale on the right; brightness increases with |F|. Every colour meets P±, the dipole of Theorem 4.1. (b) A continuous square root χ of F along the positively oriented dashed loop about P+, with arrows in the direction of travel: one traversal ends at −χ(0), two traversals restore χ(0)."
+   },
+   {
+    "file": "local/cache/bicomplex-successor-v1/researchgate-figures/paper1/figure-05.png",
+    "sha256": "b760b3ebc0dad40563e32bce27a781cd6907e19c38140b0385877f7a197a89c5",
+    "caption": "Figure 5. The planar observation map Ψ = (N, M). (a) The sign of det DΨ on |t| ≤ 1.3 and the critical locus: the symmetry segment t = 0 and the rational branch through (0, 0). (b) Since N and M are even in t, Ψ(t, u) = Ψ(−t, u), so it suffices to draw the image of 0 ≤ t ≤ 1.3. The shading counts preimages in this half. The solid curve is the image of the rational branch, the dashed segment that of t = 0, and both lateral cross-caps map to the origin. On |t| ≤ 1.3 every count doubles: for instance (N, M) = (−0.1, 0.2) has the four preimages (±0.9947, 0.3375) and (±0.3687, 0.7778)."
+   },
+   {
+    "file": "local/cache/bicomplex-successor-v1/researchgate-figures/paper1/figure-06.png",
+    "sha256": "6d1ad15914a2b252f723a0aa9ff70053a409b28ebc5aaca19cd34366f1ec44bc",
+    "caption": "Figure 6. The sublevel law of Theorem 5.1. (a) The sets {K× ≤ ε} shrink anisotropically, with width √ε and height ε^(1/4), so their area scales as ε^(1/2+1/4). (b) The cross-cap area, computed by quadrature, between the two bounds of the theorem."
+   },
+   {
+    "file": "local/cache/bicomplex-successor-v1/researchgate-figures/paper1/figure-07.png",
+    "sha256": "139f05ebce930fb1aa05b1dd0597edb4c3cfcba67f66e92d0db49544b401a9a9",
+    "caption": "Figure 7. The three curves of Proposition 5.3. (a) The image of the real link K× = r² (r = 1/2), projected to the (x, xy)-plane; the node is the double point (0, 0, r). (b) The shadow (ℑY, ℑX) of a weighted orbit (b = 0.8). (c) The pedal trace p = (p1, p2) of the exceptional principal curvature at the lateral cross-cap P+, computed from the exact invariants. The inset magnifies the ordinary cusp at the origin, where both branches share one tangent."
+   }
+  ],
+  "note": "ResearchGate had auto-extracted Figures 6 and 7 from the PDF with garbled captions (e.g. 'ε 1/4'); Figures 1-5 were uploaded and the captions of 6 and 7 replaced with the cleaned text. A first upload batch of five lost Figure 5 because it had no caption; it was uploaded again with its caption. The gallery lists Figures 1-7 in order; the image URL slugs match the captions."
+ },
+ "paper2": {
+  "researchgate_record": "415164048",
+  "url": "https://www.researchgate.net/publication/415164048",
+  "gallery_count": 4,
+  "figures": [
+   {
+    "file": "local/cache/bicomplex-successor-v1/researchgate-figures/paper2/figure-01.png",
+    "sha256": "c54a1bfd34bcedfe6a9f385b0920f590fe8654a5eb8a363ff342db5d24d3632d",
+    "caption": "Figure 1. (a) The standard cross-cap f(x, y) = (x, xy, y²) on the unit disc of the source. The two sheets cross along the double ray (red), which ends at the cross-cap (black). The orange curves are links ρe = r, each the image of a circle with one double point. (b) The arclength coordinate grid of Remark 3.3, pulled back to the original (x, y)-plane: level curves of V (teal, dashed where V < 0) and of X = x (grey). The orange curves are the preimages of the circles ρ = 0.1, 0.25, 0.5 of the (X, V)-plane, which is why they are not round. In the coordinates (X, V) the degenerate metric becomes asymptotically Euclidean."
+   },
+   {
+    "file": "local/cache/bicomplex-successor-v1/researchgate-figures/paper2/figure-02.png",
+    "sha256": "14e76d676c9f71c6a6edf6d892f936f7ea55fa347b53d296656281ff68470049",
+    "caption": "Figure 2. Deviation from Euclidean geometry at the standard cross-cap, sampled at 720 points of each circle ρ = r in arclength coordinates. Both the metric deviation ‖G − I‖ and the radius ratio ρe/ρ decay like ρ log(1/ρ), the bound of Remark 3.3, well inside the general bound ρ^(1/2) of Lemma 3.2. The fitted slopes are least-squares fits over the shaded interval 10⁻⁵ ≤ ρ ≤ 10⁻³. They are not new exponents: they match the local slope 1 − 1/log(1/ρ) of ρ log(1/ρ), which lies between 0.86 and 0.91 there."
+   },
+   {
+    "file": "local/cache/bicomplex-successor-v1/researchgate-figures/paper2/figure-03.png",
+    "sha256": "4a28f86587d569444f428f5c1d5049821f9d1ad25c47bbfd0b27c409bb3c7fd5",
+    "caption": "Figure 3. (a) Steiner’s Roman surface f[x : y : z] = (yz, zx, xy). Its three double segments (dark red) end at the six cross-caps ±½ e_k. (b) The pair structure of Theorem 9.2. The two ends of one double segment form an orthogonal pair (dashed, the matrix P⊥); all other pairs meet at 60° in the source and form the edges of an octahedron (solid, P∘)."
+   },
+   {
+    "file": "local/cache/bicomplex-successor-v1/researchgate-figures/paper2/figure-04.png",
+    "sha256": "8818ae3e6b3845d2c0e7b840e5dcba5aa9a878902f73a30a346362557b9e2b66",
+    "caption": "Figure 4. The ruled surface of Section 9.2 and its source. The interior cross-caps P± carry the two logarithmic channels; P0 is a boundary half-germ and E± are corner quarter-germs, all on the Dirichlet boundary."
+   }
+  ],
+  "note": "No auto-extracted figures existed (Figures (0)); four uploaded; slugs and captions match in order."
+ },
+ "pending_not_done": {
+  "reason": "ResearchGate answered 'Edit limit reached: You've reached the limit for the number of publication edits you can make right now. Please try again later.' on the old-page edit attempt; not bypassed.",
+  "items": [
+   "Old page 408878000: replace the opening 'SUPERSEDED.' paragraph by the gentler text in bicomplex-successor-v1-researchgate-pending-edits.md (the existing paragraph is accurate and stays until then).",
+   "New entries 415154912 and 415164048: optional Unicode polish of the descriptions (ℝ³, |z₁|², C^∞→C∞, Hölder, Verdière)."
+  ]
+ },
+ "scope": "Signed-in public-page readback in the built-in browser; ResearchGate serves resized JPEG thumbnails, so remote bytes are not claimed equal to the uploaded PNGs. No anonymous-gallery validation claimed.",
+ "unchanged": "Both Zenodo records, the PDFs, software 1.0, the GitHub release, and the old ResearchGate files v11/v12."
+}
