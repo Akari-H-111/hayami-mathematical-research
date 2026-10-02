@@ -1,5 +1,7 @@
 # Bicomplex v12 → v13: current module index
 
+**Status (2026-10-03).** Published successor papers: see [`../README.md`](../README.md) “Start here”. This module table describes the v12 → v13 / continuation state of 2026-10-02 (before continuation 0.04 and the successor papers); where it differs from paper 1, Appendix A.3, or from `README.md`, those win.
+
 2026-10-02. The complete statement inventory is `CLAIM_MAP.json`/`CLAIM_MAP.md`,
 locked to the immutable 43-page final v12. All physical pages equal printed pages.
 The working manuscript contains repairs and actual proofs; the 33-theorem
@@ -29,8 +31,9 @@ priority remain open. The old 66-row checkpoint routes retain their historical
 scope. No Lean proof inputs or theorem inventory were changed.
 
 No algebraic identity, finite diagram or theorem count establishes the missing
-actual unbounded-operator construction. Full publication is on hold pending
-concrete author approval and a scope consistent with these repairs.
+actual unbounded-operator construction. Full publication was on hold pending
+concrete author approval and a scope consistent with these repairs
+(historical: the successor papers were published on 2026-10-02).
 
 Preserved checkpoint 0.01 acceptance: working-tree baseline/exact/own-and-dependency audits and
 isolated PDF/full-text/all-20-page-render replay PASS. Frozen original/ZIP

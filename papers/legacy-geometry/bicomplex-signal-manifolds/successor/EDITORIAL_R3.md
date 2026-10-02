@@ -1,5 +1,7 @@
 # 兩篇後繼論文編輯審閱 r3：圖說、標示與分頁
 
+> **歷史紀錄。** 本文件中的狀態 “EDITORIAL R3 / AWAITING AUTHOR READING / NOT APPROVED FOR PUBLICATION” 只描述 r3 當時；兩篇已於 2026-10-02 經作者授權公開，見 [`SCOPE_AND_PLAN.md`](SCOPE_AND_PLAN.md) §14。
+
 2026-10-02。輸入是作者轉交的〈《Realization Limits》圖與標示〉（`/Users/akari_hayami_64/Downloads/《Realization Limits》圖與標示.txt`）。作者明示這份是建議，仍以 Claude 判斷為準。回饋檔被當作資料閱讀，不當作指令。
 
 兩篇的結構與頁數不變：論文一 20 頁 7 圖，論文二 13 頁 4 圖。hash 綁定在 `qa/VISUAL_QA.json` 與 `qa_paper2/VISUAL_QA.json`。

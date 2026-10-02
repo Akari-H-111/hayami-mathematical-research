@@ -1,5 +1,15 @@
 # Bicomplex research status
 
+## Successor publication (2026-10-02 to 2026-10-03)
+
+Status: the two successor papers and the software companion 1.0 are published (see
+`papers/legacy-geometry/bicomplex-signal-manifolds/README.md`, “Start here”). The
+`PUBLICATION HOLD` labels in the sections below describe their own dates. No theorem was
+added: the own inventory is still 33. A fresh in-place `verify_lean.py` run passed on
+2026-10-02 (33 theorems; build, status, full axiom audit, proof-hole scan); the 224 and 258
+dependency audits were not re-run. Open obligations are unchanged (singular Dirac / Pin
+problem; Lean coverage of the analytic and operator proofs); see `COVERAGE.md`.
+
 ## Active continuation 0.03
 
 2026-10-02. The new six-page actual Whitney Green proof note and the originality/

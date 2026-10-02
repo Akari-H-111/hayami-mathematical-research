@@ -1,14 +1,171 @@
-# Bicomplex signal manifolds: current v13 working audit
+# Bicomplex signal manifolds
 
-## Successor papers (Version 1, published 2026-10-02)
+## Start here (current as of 2026-10-03)
 
-Published: paper 1 doi:10.5281/zenodo.23103026 (ResearchGate 415154912), paper 2
-doi:10.5281/zenodo.23103056 (ResearchGate 415164048), software companion 1.0
-doi:10.5281/zenodo.23103299, GitHub release `bicomplex-successor-v1.0` (source-only). The old
-ResearchGate record `408878000` keeps its content and now begins with a superseded-by
-notice. Evidence: `releases/candidates/bicomplex-successor-v1-publication.json`; record in
-[successor/SCOPE_AND_PLAN.md](successor/SCOPE_AND_PLAN.md) §14. Lean covers 33 selected
-theorems only. The text below is the pre-publication description.
+**Status: published.** The 2026 ResearchGate preprint *Geometric Realization of
+Bicomplex Signal Manifolds* (record 408878000, files v11 and v12) has been
+corrected and succeeded by two preprints and a verification companion, all public
+since 2026-10-02. The old record is kept; its page now opens with a
+superseded-by note. To learn the current mathematics, read the two papers below;
+this README is the map. Suggested order for a new window:
+[`../../../RESEARCH_BOARD.md`](../../../RESEARCH_BOARD.md) → this section → paper 1
+→ paper 2 → [`successor/SCOPE_AND_PLAN.md`](successor/SCOPE_AND_PLAN.md) §14–15 →
+[`proofs/ORIGINALITY_AND_GAPS.md`](proofs/ORIGINALITY_AND_GAPS.md) (open obligations).
+
+### Published items
+
+| Role | Item | Source in this repository | Public identifiers |
+| --- | --- | --- | --- |
+| Paper 1 | *Realization Limits of the Bicomplex Signal Surface: Analytic Rigidity, Smooth Flexibility and Observation Monodromy*, v1 (20 pp., 7 figures, 2 tables) | [`successor/Realization_Limits_Bicomplex_Signal_Surface.tex`](successor/Realization_Limits_Bicomplex_Signal_Surface.tex), `.pdf` | Zenodo `10.5281/zenodo.23103026`; ResearchGate 415154912 |
+| Paper 2 | *Pseudo-Laplacians at Whitney Cross-Caps: Point Interactions on Surfaces Mapped into Three-Space*, v1 (13 pp., 4 figures, 1 table) | [`successor/Pseudo_Laplacians_Whitney_Cross_Caps.tex`](successor/Pseudo_Laplacians_Whitney_Cross_Caps.tex), `.pdf` | Zenodo `10.5281/zenodo.23103056`; ResearchGate 415164048 |
+| Software 1.0 | *Verification Companion for Realization Limits and Pseudo-Laplacians at Whitney Cross-Caps*: verifiers, figure generator with hash manifest, claim map, Lean project (33 theorems, partial coverage) | `releases/candidates/bicomplex-successor-v1/bicomplex-successor-v1.0-software-source.zip` | Zenodo `10.5281/zenodo.23103299`; GitHub release `bicomplex-successor-v1.0` (source-only, no paper PDFs; the tag dereferences to commit `aceb055`) |
+| Old record | ResearchGate 408878000 (v11/v12 files and original description kept) | — | `10.13140/RG.2.2.17048.15361` |
+
+Zenodo concept DOIs (all versions): `10.5281/zenodo.23103025`, `…23103055`, `…23103298`.
+All six DOIs resolve (checked 2026-10-03).
+
+Release files and records:
+
+- `releases/candidates/bicomplex-successor-v1/` — the published PDFs, the two article source zips, the software zip and `SHA256SUMS.txt`.
+- `releases/candidates/bicomplex-successor-v1-publication.json` — Zenodo, GitHub and ResearchGate readback, download SHA-256 values, DOI resolution and the authorization record.
+- `releases/candidates/bicomplex-successor-v1-figures-publication.json` — the ResearchGate figure galleries (7 + 4 figures).
+- `releases/candidates/bicomplex-successor-v1-acceptance/` — replay logs (in-place, extracted zip, Lean).
+- `releases/candidates/bicomplex-successor-v1-researchgate-pending-edits.md` — the one unfinished platform edit.
+- [`successor/SCOPE_AND_PLAN.md`](successor/SCOPE_AND_PLAN.md) §14–15 — narrative, failures, limits and the closeout.
+
+### How the versions relate
+
+| Material | What it is | Status | Where |
+| --- | --- | --- | --- |
+| Ancestor TeX `signal_manifolds_v2.tex` | 1,908-line early source; rebuilds to 26 pages | historical; not the final source and not v7 | `source_ancestor/` |
+| v7 draft | author-supplied 26-page PDF, SHA-256 `6cefa5258257f3a23e35b5dd5cbe123b7af0ed3319c3a614b1c8d54c94bd654f` | non-authoritative; **private, never distributed** (hash and 39-block index are public) | `claims/V7_DRAFT_INDEX.md` |
+| v11 | public ResearchGate file | non-authoritative; equals v12 on 3.1–8.20 except 4.2 | `../source-registry/historical_drafts/`, `claims/V11_COMPARISON.md` |
+| v12 | 43-page final PDF with 66 named blocks | the historical claim authority; immutable; SHA-256 `4ebb8f0a7d6e88a6c5cd97f65d224b4e938867cabad54f057d3ceafb24167d5a` | `../source-registry/final_pdfs/` |
+| v13 working + companion 0.01 | corrected re-derivation of v12 (17 + 3 pp.); 27 Lean theorems | sealed local checkpoint | `revision/`, `releases/candidates/bicomplex-v13-working-v0.01*` |
+| continuation 0.02 | explicit unit-power realization, actual scalar point traces, corrected restriction A (7 pp.); 33 Lean theorems | sealed | `revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex`, `releases/candidates/bicomplex-continuation-v0.02*` |
+| continuation 0.03 | actual Whitney Green domains, Markov and reference-length uniqueness (6 pp.) | sealed | `revision/Whitney_Green_Domains_v0_03_working.tex`, `releases/candidates/bicomplex-green-v0.03*` |
+| continuation 0.04 | moment-readout rigidity, C∞ construction, exceptional pullbacks, log/linear windows (7 pp.) | unsealed working note; folded into paper 1 | `revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex` |
+| **successor v1** | papers 1–2 and software 1.0 | **published; current** | `successor/`, `releases/candidates/bicomplex-successor-v1*` |
+
+Paper 1 draws on the v13 material (completed atlas, Mellin/Gram appendices,
+residual geometry), the 0.02 quadrature realization and all of 0.04; atlas, dipole
+and fold results are cited from the published Ruled v5 and Stokes v5 papers. Paper 2 absorbs the v13
+compactness results, 0.02 and 0.03, and generalizes them from the ruled surface to
+any compact surface mapped into ℝ³ with Whitney cross-caps. The sealed checkpoint
+receipts keep their original statuses ("unpublished", "publication hold"); those
+words describe their own date only. The v13/0.0x manuscripts are working notes kept in
+the repository; they were never published as papers.
+
+### Where the mathematics stands
+
+The 66 named blocks of v12, classified in paper 1, Appendix A.3. The table agrees
+with `claims/CLAIM_MAP.json` and is checked by `verification/verify_successor_paper1.py`.
+
+| Class | n | Blocks | Meaning |
+| --- | ---: | --- | --- |
+| H | 43 | 3.3 4.2 4.3 5.1 5.3–5.9 5.11–5.13 7.2 7.4 7.5 7.7 7.8 8.1–8.7 8.10 8.16 8.18 8.19 8.24–8.30 9.1–9.6 | holds, with the domain or hypothesis made explicit where needed |
+| C | 13 | 3.2 4.1 4.4 5.2 5.10 6.1 6.2 7.1 7.3 8.8 8.9 8.11 8.17 | statement corrected; the corrected form is proved |
+| S | 1 | 7.6 | strengthened: independence holds for every T>0; the old threshold only controls conditioning |
+| R | 3 | 8.13 8.14 8.15 | refuted as defined: the compact-core minimum H₀ has infinite deficiency, its Markov uniqueness fails, its Krein kernel is infinite-dimensional |
+| O | 2 | 8.12 8.21 | open: uniform front/seam estimate for the actual germ; actual Dirac parametrix |
+| M | 3 | 8.20 8.22 8.23 | model-level or conditional (exact cone, chosen Pin conventions, regular cut) |
+| D | 1 | 3.1 | definition missing; settled in paper 1 (no analytic readout exists; C∞ readouts exist and are not canonical) |
+
+Other refuted or withdrawn statements (v7 draft, v11, public description): `i*Ψ^!Z ≅ Z[−1]`
+on the fold locus; the ±1 sector decomposition of the constant sheaf; v11 4.2
+(sign reversal of √F equals exchange of the sheets of a fold); "exactly two immersion
+singularities" (there are five rank labels); `C = √5 ln S` (replaced by the 3/4
+resolution law plus a capacity no-go).
+
+New results in the papers (evidence codes are defined below):
+
+| Result | Where | Evidence |
+| --- | --- | --- |
+| Analytic rigidity: for the original assignment `|z₁|²=cos t` no readout real-analytic along `C₀={z₁=0}` realizes S; this excludes affine, polynomial and bicomplex-polynomial readouts; phase-invariant and mixed-state readouts fail with no regularity | paper 1: Lemma 3.5, Prop. 3.4, Thm 3.6, Cor. 3.7 | W, E |
+| Smooth flexibility: an explicit C∞ readout realizes S; each half of the source has a real-analytic readout but no affine one; other powers admit a quadratic readout | Thm 3.8, Lemma 3.9, Prop. 3.10, Thm 3.2 | W, N, L |
+| Interior dipole with two-traversal restoration of √F; polar fold of local degree zero | Thm 4.1, Prop. 4.2 | W, E, L |
+| Carriers of the monodromy: `End(ℤ)=ℤ`; `π_*ℤ` is indecomposable over ℤ and splits over ℤ[½]; distinct from the fold involution and from the normalization defect | Prop. 4.3 | W, E |
+| Exceptional pullback `Ψ^!ℤ` of a continuous planar map on a convex domain is the extension by zero; folds are seen by the comparison map of cohomological smoothness | Thm 4.4, Cor. 4.5, Prop. 4.6 | W, X |
+| Residual geometry: 3/4 sublevel law, explicit A₃ completion with Milnor and Hodge data, node/node/cusp trichotomy | Thm 5.1, 5.2, Prop. 5.3 | W, X, E, N |
+| Metric at a Whitney cross-cap is Euclidean up to `O(ρ^{1/2})` in an arclength coordinate (`O(ρ log(1/ρ))` for the standard germ) | paper 2: Lemma 3.2, Cor. 3.4, Rem. 3.3 | W, E, N |
+| Zero capacity, compactness and positive gap for the Friedrichs Laplacian | Prop. 4.1, Thm 4.2 | W, X |
+| Point traces; point-restricted Laplacian with deficiency indices (k,k), U(k) extensions, Krein resolvent formula, eigenvalue counting | Thm 5.1, 5.2, Cor. 5.3 | W, X |
+| Green vectors with leading term `−(1/2π) log d_g`; geometric boundary coordinates with the 2π pairing; Friedrichs is the unique Markov and the unique reference-length-invariant extension; sheet-even coefficients | Thm 6.1, 6.3, Cor. 7.1–7.3 | W, X |
+| The outer boundary must be fixed: the compact-core closure H₀ has infinite deficiency; Krein/buckling description | Prop. 8.1 | W, X |
+| Examples: Steiner's Roman surface (six cross-caps, Green matrix with at most three eigenvalues); the ruled surface S | Prop. 9.1, Thm 9.2, §9.2 | W, E |
+
+Evidence codes. **W** written proof in the papers or in the `revision/` notes, not
+machine-certified. **X** published external theorem used with its hypotheses
+checked (`proofs/REFERENCE_AUDIT.md`). **E** exact or symbolic computation by the
+verifiers; it checks the algebra the proofs rely on, not the analysis. **N**
+numerical or finite replay and figure panels; illustrations, not proofs. **L** Lean
+4 / Mathlib: 33 own theorems on selected statements
+(`../../../companions/lean/bicomplex-signal-manifolds/COVERAGE.md`); the PDE,
+operator, sheaf and topology arguments are not formalized and neither paper is Lean-formalized.
+**H** historical recovery: none claimed. The new constructions are not the missing
+derivation of the 2026 draft, and a matching dimension, rank or filename never
+identifies them with it.
+
+### Replay
+
+Two interpreters are registered. Never use Python `-O`: the verifiers rely on assertions.
+`PY_LEGACY` = `local/cache/python/legacy-reconstruction-venv/bin/python` (Python 3.9.6,
+sympy 1.14.0, mpmath 1.3.0; no numpy or matplotlib). `PY_TAGD` =
+`/Users/akari_hayami_64/TAGD_Master_Paper/.agent-venv/bin/python` (Python 3.14.6, numpy 2.5.2,
+matplotlib 3.11.1, sympy 1.14.0, mpmath 1.3.0). From the repository root; in the table `V/` stands for
+`papers/legacy-geometry/bicomplex-signal-manifolds/verification/`:
+
+| Purpose | Command | Interpreter | Last confirmed |
+| --- | --- | --- | --- |
+| Legacy baseline | `verification/legacy-reconstruction/verify_all.py` | `PY_LEGACY` | 2026-10-03 PASS |
+| Successor papers 1 and 2: consistency and exact replay (they also replay the earlier exact verifiers) | `V/verify_successor_paper1.py`, `V/verify_successor_paper2.py` | either | 2026-10-03 PASS on both |
+| Earlier verifiers one by one | `V/verify_revision.py` (v13), `V/verify_continuation.py` (0.02), `V/verify_continuation_0_04.py` (0.04), `V/verify_local_algebra.py`, `V/verify_spectral_algebra.py`, `V/verify_crosscap_models.py` | either | 2026-10-03 PASS on both |
+| Claim map (deterministic; rewrites `claims/CLAIM_MAP.*` byte-identically) | `V/build_claim_map.py` | `PY_LEGACY` | 2026-10-03, hashes unchanged |
+| Rebuild the two PDFs (three-pass pdflatex; fails on Overfull, Underfull, warnings, undefined references; overwrites `successor/*.pdf`, so renew `successor/qa/` and `successor/qa_paper2/` if the PDF changes) | `V/build_successor_paper1_pdf.py`, `V/build_successor_paper2_pdf.py` | any, with pdflatex | 2026-10-02 |
+| Regenerate the ten figures and `successor/figures/FIGURES_MANIFEST.json` | `V/build_successor_figures.py` | `PY_TAGD` only | 2026-10-02 (hashes reproduced in a clean extraction) |
+| Assemble the release files (deterministic zips; standard library only) | `V/build_successor_release.py` | any python3 | 2026-10-02, run with `PY_TAGD` |
+| Standalone replay | unzip the software zip, then `python -B verify.py` | either | 2026-10-02 PASS |
+| Lean (Lean 4.33.1; needs the sibling `ruled-surface-v5` and `stokes-caustic-v5` projects) | `companions/lean/bicomplex-signal-manifolds/verify_lean.py` | any python3 | 2026-10-02 fresh in-place PASS, 33 theorems |
+| Sealed checkpoints (v13 0.01, 0.02, 0.03) | from the candidate root `releases/candidates/<checkpoint>/`: `python -B verify.py` (`--lean` adds fresh complete Lean audits) | `PY_LEGACY` (the receipts record Python 3.9.6, sympy 1.14.0) | recorded in their receipts (2026-10-01/02); not re-run in the 2026-10-03 closeout |
+
+The 2026-10-02 and 2026-10-03 runs are the same machine; they are not independent-host evidence. The documentation closeout of
+2026-10-03 changed no proof, PDF, figure or sealed artifact.
+
+### What is genuinely open
+
+No priority order; none of these is a required next step.
+
+- **Singular Dirac and Pin problem.** A closed twisted Dirac operator on the actual Whitney surface: spin structure, flat sign line, Hilbert density, graph domains, singular-cut trace spaces, Clifford-compatible transmission. The exact-cone and regular-cut results are model cases (blocks 8.20–8.23); blocks 8.12 and 8.21 are the open parts.
+- **A sheaf-to-operator bridge.** The normalization defect and the sign carriers of paper 1 have no map to analytic boundary data. The scalar version has an odd/even obstruction. A bridge needs a new sign-twisted or spinorial target, and that is new research.
+- **Paper 1 questions.** Does a quadratic readout realize S on a half source under the original powers? Is there a natural principle that selects a non-analytic readout?
+- **Paper 2 questions.** Explicit regular parts `B_η`. Whether `ρ log(1/ρ)` is the rate for every Whitney germ and whether the Whitney invariants appear in the next term. A Weyl law and the heat-trace contribution of each cross-cap for `H_F`. Cuspidal edges and `S_k^±` singularities.
+- **A use of bicomplex multiplication.** The proved results are statements about two complex components (`BC ≅ ℂ⊕ℂ`); a theorem that truly needs the bicomplex structure is not known.
+- **Independent signal or physical models.** Capacity, mass, clock and chirality need models of their own; the coincidences `√5`, dimensions, `2π`, `4π` supply no bridge.
+- **Priority and novelty.** The literature comparison is incomplete (`proofs/ORIGINALITY_AND_GAPS.md`); the results are candidate contributions only.
+- **Formal coverage.** The analytic and operator proofs have no Lean certificate.
+
+**Closed negatives: not targets.** Existence of an analytic readout for the original assignment;
+`i*Ψ^!Z ≅ Z[−1]`; the ±1 sector decomposition of the constant sheaf; the (2,2) classification, Markov
+uniqueness and two-dimensional Krein kernel of the old compact-core H₀; "exactly two immersion
+singularities"; sheet exchange equals sign reversal; `C = √5 ln S`; the old independence threshold. Any
+revival needs new hypotheses, not a repair of the old statement. The historical moment-map derivation is
+not recovered and the C∞ readout is not canonical.
+
+### Boundaries and unfinished items
+
+- **Immutable:** the final v12 PDF, sealed ZIPs, receipts and manifests of v13 0.01, 0.02 and 0.03, and the published release files with their `SHA256SUMS.txt`.
+- **Private material:** the v7 PDF stays in the untracked `../source-registry/historical_drafts/`; it is never committed, zipped or uploaded. Every commit reachable from `origin/main`, the release assets and the three zips were checked for it on 2026-10-03.
+- **Git:** `publish/bicomplex-successor` is the public line and equals `origin/main`; commits are made with a temporary `GIT_INDEX_FILE`, `git commit-tree` and `git update-ref`, without touching `main`'s index or working tree. `research/bicomplex-continuation-0.04` is local only and contains v7: never push it. Local `main` has not been merged with `origin/main`; before syncing, the author must commit or stash the other windows' work (see `EXTERNAL_ACTIONS.md`).
+- **Platform tail:** the superseded-by paragraph on 408878000 works but its wording is blunt; a gentler text is saved in `releases/candidates/bicomplex-successor-v1-researchgate-pending-edits.md`. ResearchGate refused the edit with "Edit limit reached" on 2026-10-02 and 2026-10-03. The two new records' descriptions may also be polished with Unicode mathematics.
+- **Limits:** ResearchGate pages need a login, so no anonymous access is claimed. The software zip does not build Lean by itself. The repository-level `CITATION.cff` is unchanged.
+
+## Historical snapshots
+
+The sections below are kept as written. Their statements of "next step", "publication hold",
+"awaiting author reading" or "not published" described their own dates and are superseded
+by the section above.
+
+### Successor papers: pre-publication description (editorial r3, 2026-10-02)
 
 2026-10-02. The author decided to replace the ResearchGate record `408878000`
 rather than upload a same-title version. The replacement consists of two new
@@ -41,9 +198,9 @@ papers plus a superseded-by notice on the old page. The plan and scope are in
 - Public v12 is byte-identical to the local authority. Public v11 is
   registered as a non-authoritative draft; see
   [claims/V11_COMPARISON.md](claims/V11_COMPARISON.md).
-- Neither paper is approved by the author or published.
+- At the time of this description neither paper was approved by the author or published. Both were published on 2026-10-02 (see "Start here").
 
-## Active continuation 0.04: moment readouts and exceptional pullbacks
+### Continuation 0.04 (unsealed working note): moment readouts and exceptional pullbacks
 
 2026-10-02. The [new seven-page note](revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex)
 settles two historical questions with new proofs. It does not recover a lost
@@ -84,7 +241,7 @@ local/cache/python/legacy-reconstruction-venv/bin/python -B papers/legacy-geomet
 local/cache/python/legacy-reconstruction-venv/bin/python -B papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_continuation_0_04_pdf.py
 ```
 
-## Preserved continuation 0.03: originality and actual scalar Green domains
+### Preserved continuation 0.03: originality and actual scalar Green domains
 
 The [originality and gap audit](proofs/ORIGINALITY_AND_GAPS.md) compares the
 ancestor, all 66 authoritative v12 blocks and the current drafts. Standard
@@ -115,7 +272,7 @@ Replay this new checkpoint from the repository root with the registered Python:
 Append `--lean` to perform fresh complete audits; the default binds the prior
 33/224/258 audit evidence and replays current baseline/exact/claims/all PDFs.
 
-## Preserved continuation 0.02 checkpoint
+### Preserved continuation 0.02 checkpoint
 
 The [new research manuscript](revision/Bicomplex_Realization_Point_Trace_v0_02_working.tex)
 and its [seven-page PDF](revision/Bicomplex_Realization_Point_Trace_v0_02_working.pdf)
@@ -144,7 +301,7 @@ The [research board](../../../RESEARCH_BOARD.md) is the shared status entry.
 [NEXT_THREAD_PROMPT.md](NEXT_THREAD_PROMPT.md) was the complete instruction for
 this execution; its earlier handoff-only checkpoint is historical.
 
-## Preserved v13 results and current continuation
+### Preserved v13 results and current continuation
 
 The final-v12 source hash and a fresh full legacy baseline passed. Physical
 and printed pages agree; Section 7 is pages 14–16. The complete
@@ -177,10 +334,12 @@ predecessor charts/winding. Written and external results are not promoted to
 formal coverage. Full own/dependency audits and PDF/package acceptance are
 recorded in its status and checkpoint receipt after completion.
 
-## Files and replay
+### Files and replay
 
 | Location | Role |
 | --- | --- |
+| `successor/` | **Published papers 1 and 2**: TeX, PDFs, ten figures with `FIGURES_MANIFEST.json`, page QA (`qa/`, `qa_paper2/`), editorial records, `SCOPE_AND_PLAN.md` (plan, publication record §14, closeout §15) |
+| `verification/verify_successor_paper1.py`, `verify_successor_paper2.py`, `build_successor_*.py` | Successor consistency and exact replay, PDF builders, figure generator, release assembly |
 | `claims/CLAIM_MAP.json` / `.md` | Complete page-pinned original/correction/proof/formal/gap inventory |
 | `claims/MODULE_INDEX.md` / `LEDGER.md` | Current module/claim summaries |
 | `proofs/SPECTRAL_AUDIT.md` | Earlier spectral re-derivation, with corrected page convention |
@@ -234,7 +393,7 @@ rechecked. This is same-host replay with disclosed pinned package/build cache
 reuse. The 66-block audit and 27-theorem formal inventory retain their stated
 written/external/open limits. The checkpoint is about 8.1 MiB as a ZIP.
 
-## Source and publication boundary
+### Source and publication boundary (as of checkpoint 0.01, 2026-10-01)
 
 Historical final-v12 SHA-256:
 `4ebb8f0a7d6e88a6c5cd97f65d224b4e938867cabad54f057d3ceafb24167d5a`.
@@ -243,7 +402,7 @@ missing final source. The new standalone manuscript reconstructs and corrects
 later sections from the page-pinned final PDF. All historical PDFs, ancestor
 files and sealed releases/receipts remain unchanged.
 
-The current package is a local research checkpoint with partial formal
+The 2026-10-01 package was a local research checkpoint with partial formal
 coverage. Full Green/Dirac classification is not proved, no new DOI is assigned,
 and GitHub/Zenodo/ResearchGate publication requires the author's separate
 confirmation of a concrete verified scope. Ruled, Stokes, Papers I–III and

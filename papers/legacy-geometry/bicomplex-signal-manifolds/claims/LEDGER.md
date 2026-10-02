@@ -1,5 +1,7 @@
 # Bicomplex claim ledger: current v13 working audit
 
+**Status (2026-10-03).** The two successor papers are published (Zenodo `10.5281/zenodo.23103026` and `10.5281/zenodo.23103056`). Their classification of the 66 named v12 blocks (H 43, C 13, S 1, R 3, O 2, M 3, D 1) is paper 1, Appendix A.3, and is checked against `CLAIM_MAP.json` by `verification/verify_successor_paper1.py`. `CLAIM_MAP.json` and `CLAIM_MAP.md` are generated, byte-stable and not edited by hand. The sections below are the v13 / continuation 0.02–0.03 routes as written on their dates; "publication hold" and "open" labels in them are historical. Current map: [`../README.md`](../README.md).
+
 ## Active continuation 0.03
 
 2026-10-02. `proofs/ORIGINALITY_AND_GAPS.md` compares all historical/current

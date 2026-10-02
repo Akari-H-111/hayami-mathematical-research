@@ -1,5 +1,7 @@
 # Bicomplex 後繼論文：範圍清單與公開計畫
 
+> **狀態（2026-10-03）：已公開。** §0–§13 是發佈前的範圍計畫與編輯紀錄，屬歷史快照；其中「請作者確認」「尚未公開」「等作者通讀」「下一步」等語只描述當時，已被取代。發佈紀錄見 §14，收尾與交接見 §15，目前的入口與開放問題見 [`../README.md`](../README.md) 的 “Start here”。
+
 2026-10-02。作者已同意以下架構：寫兩篇新論文，並在舊 ResearchGate 頁面加上取代說明。本文件是論文一的範圍清單，**請作者確認後才開始整合正文**。它只規劃，不新增任何數學宣稱。
 
 ## 0. 公開紀錄現況（2026-10-02 唯讀回讀）
@@ -236,3 +238,51 @@ r1 的變更：
 兩個新條目都已補上圖庫，做法同 Ruled `415049397`：論文一 `415154912` 共 7 張（RG 原本自動抽取了圖 6、7 但圖說有 PDF 抽取錯字，已改成乾淨文字；圖 1–5 為新上傳），論文二 `415164048` 共 4 張。圖為 `successor/figures/` 原圖以 300 dpi 轉成 PNG，圖說逐張輸入。新舊頁登入回讀：圖序、圖說與圖片網址 slug 一致。紀錄：`releases/candidates/bicomplex-successor-v1-figures-publication.json`。過程中論文一第一批上傳的圖 5 因沒有圖說而被丟棄，已補傳。
 
 **未完成：** 舊頁 `408878000` 開頭說明的措辭潤飾與新條目描述的 Unicode 潤飾，被 ResearchGate 的「Edit limit reached」擋下，沒有繞過；待改文字見 `releases/candidates/bicomplex-successor-v1-researchgate-pending-edits.md`，現有說明內容正確、可以保留。
+
+## 15. 收尾與交接（2026-10-03）
+
+本節只整理文檔與 Git；沒有改變任何證明、PDF、圖、發布檔、QA 紀錄或封存檔案。目前的入口與開放問題在 [`../README.md`](../README.md) 的 “Start here”。
+
+### 15.1 最終狀態（以實際 source、公開回讀與下載 hash 為準；2026-10-03 重測）
+
+| 項目 | 狀態 | 證據 |
+| --- | --- | --- |
+| Zenodo 論文一 `10.5281/zenodo.23103026`（concept `…23103025`） | 已發布（`state=done`、`submitted=true`），v1，CC-BY-4.0 | 官方 API；PDF 與 source zip 的免登入下載 SHA-256 等於 `releases/candidates/bicomplex-successor-v1/SHA256SUMS.txt` |
+| Zenodo 論文二 `10.5281/zenodo.23103056`（concept `…23103055`） | 同上 | 同上 |
+| Zenodo 軟體 1.0 `10.5281/zenodo.23103299`（concept `…23103298`） | 已發布，Apache-2.0 加 CC-BY-4.0 | zip 與 SHA256SUMS 檔的下載 SHA-256 相符 |
+| 六個 DOI | doi.org 皆回 200，導向對應 Zenodo 記錄 | 2026-10-03 |
+| GitHub tag／release `bicomplex-successor-v1.0` | 已發布（非 draft、非 prerelease），目標 commit `aceb055`，source-only | 兩個 asset 的 digest 與免登入下載 SHA-256 等於本機 |
+| ResearchGate 新條目 `415154912`、`415164048` | 公開；標題、October 2026、Zenodo DOI、CC BY 4.0、單一作者回讀（2026-10-03）；圖庫 7＋4（2026-10-02 回讀）；官方登入下載的 PDF SHA-256 與 Zenodo 一致（2026-10-02） | 登入後公開頁；`bicomplex-successor-v1-publication.json`、`…-figures-publication.json` |
+| ResearchGate 舊頁 `408878000` | 標題、July 2026、DOI、v11、v12 與原描述保留；描述最前面是 superseded-by 段落（2026-10-03 回讀）。措辭潤飾**未完成** | 被 RG「Edit limit reached」擋下（2026-10-02、10-03）；文字在 `releases/candidates/bicomplex-successor-v1-researchgate-pending-edits.md` |
+| 私人草稿、已保留未發布的 DOI | 沒有。Zenodo 帳號另有兩個更早的未發布草稿（22668482：Inverse-Leibniz 論文的草稿，2026-09-09；22664115：無標題，2026-09-08），與本工作無關，未動 | 帳號的 `is_published:false` 列表 |
+
+操作失敗與處理：§14 已列 export 的 Overfull、Zenodo 網頁按鈕在背景分頁不刷新、首次 publish 缺 publisher、`urllib` 的 IncompleteRead；另有 RG 論文一圖 5 因無圖說被丟棄一次（已補傳）、RG 的 Edit limit（**未解決**），以及下文的一次檔案誤截斷。
+
+本節新發現的失誤：收尾腳本先以寫入模式開檔、再讀同一個檔案，清空了工作區的 `papers/legacy-geometry/source-registry/SOURCE_REGISTRY.md`（其中有其他窗口尚未提交的 Ruled 段落）。以 publish 分支的版本加上先前 `git diff` 顯示的 32 行 hunk 還原。現在 `git diff -U0 publish/bicomplex-successor -- 該檔` 只剩原來的 `@@ -18,0 +19,32 @@` 一個 hunk；第一段與封存 Ruled v0.03 payload 內的副本逐位元組相同，後兩段由當時顯示的 diff 逐字還原，沒有第二份來源可比對。Ruled 窗口若有尚未提交的相關修改，請用 `git diff` 核對這個檔案。教訓已記入 `LESSONS.md`。
+
+### 15.2 Git（收尾開始時的實況）
+
+- `main` 在 `5803d6a`（本機獨有、與 Bicomplex 無關的 SAMT 記錄 commit）；`origin/main` 與 `publish/bicomplex-successor` 同在 `5959e1e`；tag `bicomplex-successor-v1.0` 指向 `aceb055`；本機獨有的 `research/bicomplex-continuation-0.04` 在 `2997135`，含私有 v7 PDF，絕不 push。
+- `main` 與 `origin/main` 自 `fb9e1c1` 分岔（main 多 1 個、origin 多 11 個 commit）。`git merge-tree --write-tree main origin/main` 沒有衝突；阻礙在工作區，作法見 `../../../../EXTERNAL_ACTIONS.md` 的「本機 main 同步」。
+- 工作區共有 93 個 `git status --short` 項目，其中約 47 個與 Bicomplex 無關（`git status --short | grep -vi bicomplex | wc -l`；含共用文件中其他系列的段落，以及 Ruled、資訊拓樸、SAMT、SA-MGHP 等）。本次沒有 stage、commit、移動或刪除其中任何一項；共用文件只在 Bicomplex 區塊定點修改。`AGENTS.md` 已被別的窗口改寫，沒有碰。
+- 收尾 commit 用隔離流程（暫存 `GIT_INDEX_FILE`、`git commit-tree`、`git update-ref`）建在 `publish/bicomplex-successor` 上，範圍是 Bicomplex 檔案與共用文件的 Bicomplex 部分，並沿用作者已核准的範圍推送到 `origin/main`。沒有新的 tag 或 release。
+- **v7 檢查（不只看工作樹）：** v7 PDF 的 git blob（`30dec24d…`）不在 `origin/main`、所有遠端 tag、`publish/bicomplex-successor` 的任何可達物件中；遠端只有 `main` 與五個 tag；三個發布 zip 的所有成員 SHA-256 皆不等於 v7 的 `6cefa525…`。只有本機分支 `research/bicomplex-continuation-0.04` 含有它。
+
+### 15.3 本回檢查（2026-10-03）
+
+- legacy baseline（`verification/legacy-reconstruction/verify_all.py`）PASS。
+- 八個 Bicomplex verifier（revision、continuation、0.04、successor 1 與 2、local algebra、spectral algebra、crosscap models）在兩個 interpreter（`PY_LEGACY`、`PY_TAGD`）各自 PASS；`build_claim_map.py` 重建後 `CLAIM_MAP.json`／`.md` 的 SHA-256 不變。
+- 文檔檢查：新增與修改的行裡的連結與路徑在工作樹與 publish 樹都能解析（例外只有 `V/` 縮寫、git 分支名與刻意不公開的 v7 路徑）；三個 DOI 與兩個 RG 條目的對應一致；Start here 中沒有把「未公開」「publication hold」當作現況的語句（只有一句明示引用舊 receipt 標籤）。
+- 沒有重跑：Lean（最近一次是 2026-10-02 的 fresh 原位 PASS，不是本回）、PDF 重建與圖形重建（2026-10-02）、舊封存檢查點的 `verify.py`。這些檔案本回沒有變，因此沒有新的 PDF／QA／hash 綁定需要更新。
+
+### 15.4 本回的文檔變更
+
+Bicomplex 目錄：`README.md`（新增 “Start here”，舊內容標為歷史快照）、本檔（頂部狀態與本節）、`PUBLICATION_HANDOFF_PROMPT.md`、`../NEXT_THREAD_PROMPT.md`、`../HISTORICAL_CLAIMS_NEXT_THREAD_PROMPT.md`、`EDITORIAL_R2.md`、`EDITORIAL_R3.md`（歷史標示）、`claims/LEDGER.md`、`claims/MODULE_INDEX.md`、`proofs/ORIGINALITY_AND_GAPS.md`（狀態標示）；Lean：`COVERAGE.md`、`RESEARCH_STATUS.md`；共用：`RESEARCH_BOARD.md`、根 `README.md`、`ESTABLISHED_WORKS.md`、`EXTERNAL_ACTIONS.md`、`LEAN_ROADMAP.md`、`RESEARCH_DIRECTIONS.md`、`papers/legacy-geometry/source-registry/SOURCE_REGISTRY.md`、`LESSONS.md`。
+
+刻意沒動：`claims/CLAIM_MAP.json`／`.md`（生成物、hash 穩定）、`SPECTRAL_AUDIT.md`、`REFERENCE_AUDIT.md`、`V7_DRAFT_INDEX.md`、`V11_COMPARISON.md`、所有 PDF、圖、`qa*/VISUAL_QA.json`、receipts、sealed 封包與已發布檔案、`CITATION.cff`（倉庫層的 preferred-citation 仍是 Stokes companion）。
+
+### 15.5 仍待處理
+
+1. RG 舊頁 `408878000` 的 superseded-by 措辭潤飾（Edit limit 解除後；另可選：兩個新條目描述的 Unicode 數學符號）。
+2. 本機 `main` 與 origin/main 的同步（作者；先提交或暫存其他窗口的工作）。
+3. 沒有必須的數學任務。開放問題見 README 的 “What is genuinely open”；已反證的原命題不是目標。

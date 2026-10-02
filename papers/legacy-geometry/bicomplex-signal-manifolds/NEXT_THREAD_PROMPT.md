@@ -1,5 +1,7 @@
 # Bicomplex：下一 thread 執行 prompt
 
+> **歷史指令（2026-10-01），已執行完畢。** 它指導了 v13 working、continuation 0.02–0.04 與兩篇後繼論文的整條工作，結果已公開；其中的「下一步」「publication hold」不再適用。目前入口：[`README.md`](README.md) “Start here”。
+
 整理日期：2026-10-01（Asia/Taipei）。這是下一 thread 的任務指令；交接整理當輪未開始新證明、Lean 或修稿。
 
 ---

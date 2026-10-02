@@ -1,5 +1,7 @@
 # Bicomplex：歷史宣稱與開放問題交接 prompt
 
+> **歷史快照（2026-10-02，早於 continuation 0.04 與兩篇後繼論文的公開）。** 下方 v7 逐塊索引與 v12 對照仍可作參考資料；但「目前可自由探索的開放問題」已部分過時：歷史 moment assignment 的實現問題已由 0.04 判定（沿 C₀ real-analytic 的 readout 不存在；C^∞ readout 存在但不 canonical），v7 的 exceptional-pullback、±1 sector 與 log/linear window 宣稱也已判定（見 `claims/V7_DRAFT_INDEX.md`、論文一）。現行的開放問題與「已反證、不是待證目標」清單，以 [`README.md`](README.md) “Start here” 的 “What is genuinely open” 為準。v7 PDF 仍是私有材料，不得提交或上傳。
+
 整理日期：2026-10-02（Asia/Taipei）。本文件可整份貼入下一個窗口。
 
 ---

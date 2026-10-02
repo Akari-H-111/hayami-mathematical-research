@@ -1,5 +1,7 @@
 # Bicomplex v13 and continuations 0.02/0.03: partial formal coverage
 
+> **Status (2026-10-03).** Partial coverage of 33 selected statements; the successor papers cite it. A fresh in-place verification passed on 2026-10-02; see the last section, “Successor publication”.
+
 2026-10-01. Lean `leanprover/lean4:v4.33.1`; Mathlib commit
 `0df444a360eaa60ab8c11dca51a86af692955474`, inherited through unchanged
 RuledV5/StokesV5 path dependencies. 33 own public named theorems: build/status/full axiom audit/proof-hole scan PASS.
@@ -140,3 +142,20 @@ written proofs with cited external duality statements. Exact and finite checks
 are in `papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_continuation_0_04.py`.
 The winding inputs reuse `actual_dipole` only as stated scope. The own
 inventory remains 33.
+
+## Successor publication (2026-10-02 to 2026-10-03)
+
+The two published papers (Zenodo `10.5281/zenodo.23103026` and `10.5281/zenodo.23103056`)
+and the software companion 1.0 (`10.5281/zenodo.23103299`) cite this project as partial
+coverage of 33 selected statements; Appendix D of paper 1 lists them. Nothing in the proofs,
+`lakefile.toml`, `lake-manifest.json` or `lean-toolchain` changed. A **fresh in-place
+`verify_lean.py` run on 2026-10-02 passed**: 33 own public named theorems; build, status,
+full axiom audit and proof-hole scan, with only `propext`, `Classical.choice` and
+`Quot.sound` (logs: `releases/candidates/bicomplex-successor-v1-acceptance/lean-*.txt`).
+The 224 Ruled and 258 Stokes dependency audits were not re-run in that session.
+
+The software zip carries these sources without `.lake`, but it cannot build Lean on its
+own: `lakefile.toml` requires the sibling `../ruled-surface-v5`, which requires
+`../stokes-caustic-v5`, which requires Mathlib `v4.33.1`. Build inside a checkout of the repository. No PDE, operator, sheaf or
+topology argument of either paper is formalized, and neither paper is Lean-formalized. The
+tables above are unchanged; the published zip contains this file as it was before this section was added.

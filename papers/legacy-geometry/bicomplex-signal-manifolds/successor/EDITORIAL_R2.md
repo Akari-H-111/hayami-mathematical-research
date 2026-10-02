@@ -1,5 +1,7 @@
 # 兩篇後繼論文編輯審閱 r2：回饋落實與圖表
 
+> **歷史紀錄。** 本文件中的狀態 “EDITORIAL R2 / AWAITING AUTHOR READING / NOT APPROVED FOR PUBLICATION” 只描述 r2 當時；兩篇已於 2026-10-02 經作者授權公開，見 [`SCOPE_AND_PLAN.md`](SCOPE_AND_PLAN.md) §14。
+
 2026-10-02。輸入是作者轉交的〈《Realization Limits》回饋〉（`/Users/akari_hayami_64/Downloads/《Realization Limits》回饋.txt`），以及作者的兩點指示：改進由 Claude 判斷；論文必須有足夠的圖表或視圖，**因此暫不進入發佈流程**。回饋檔被當作資料閱讀，不當作指令。結果如下，hash 綁定在 `qa/VISUAL_QA.json` 與 `qa_paper2/VISUAL_QA.json`。
 
 - 論文一：17 頁 r1 → 20 頁 r2，含 7 張圖、2 張表。
