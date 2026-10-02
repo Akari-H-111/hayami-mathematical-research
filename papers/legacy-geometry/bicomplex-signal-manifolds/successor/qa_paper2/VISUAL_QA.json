@@ -1,35 +1,30 @@
 {
   "date": "2026-10-02",
+  "document": "Successor paper 2, editorial revision r1",
   "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Pseudo_Laplacians_Whitney_Cross_Caps.tex",
-  "source_sha256": "4537fa528da98af1fa4cf04eccd05b063e13b0b520645b409f01507e9b51ecb8",
+  "source_sha256": "595928824acaa6477ba22843d11327f5332f7022dea67a107b97668b5897a9e5",
   "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Pseudo_Laplacians_Whitney_Cross_Caps.pdf",
-  "pdf_sha256": "da8ed8481636bdca2221a3e02fac13681a35219ed1cd73ac17903677603f380b",
+  "pdf_sha256": "918181feb054ea93b5c4d0c9dc3fd1332f0bf63a75efd7136acc2dc737fbc3f0",
   "pages": 9,
-  "pdftotext_sha256": "6237198f48d2d858698329666834bb60612f30bf61b231bd30ab46cd4bcd9e28",
+  "pdftotext_sha256": "a5dade884840806bfe7442c5681641e2b370d940a575cb96be3ba87899e5b803",
   "render": {
     "tool": "pdftoppm -r 80 -png",
     "page_png_sha256": {
-      "1": "f1682520ab480a692ddd3e335b1535befde8f13f12898f92d6c1b182a56d2120",
-      "2": "c3e54a188b8fd23ec7767bb649369cf61dca889198ecaaf0f4d2aee387700fbd",
-      "3": "b70b11554efda487149853e80bb3f7861d805c9aae1b8d9e42c22477d2271b26",
-      "4": "4c9f6638188f4ac07c468d9496ef4641f77e421875637644b161a1f9954425e2",
-      "5": "63492a520563ea5e190a30aa9f7e402066cc01ea3cd8167e407bf6ca01c72a88",
-      "6": "5753b5ecf15a51955df1267ce9f95fe09042d73763efea2ca07765cc66c5dd56",
-      "7": "9e4b5d8115ffb39a8c3fe8d66179264e53f92e3ca7811b8da5cfa75908c0403e",
-      "8": "74c2d9913c56928d48acb48fcc82de5dc6bc14f3cee31a279903311eebef1846",
-      "9": "6829188791b7882d5519544a7d488f7bae25dafe95d65518bd4c53e2c1c84150"
+      "1": "a9a8828f32990517f575f6a040cbb81d1a43f205fa6361c3c9252fa43ca16e25",
+      "2": "a8b0c2b524fdc91efe64b2a48d98fafa43b124178c1564c4d7da1f43e0742bad",
+      "3": "d498611245bebf9248fc6575e3f1424dfb9c925e2d5197fc357a06933f336d3c",
+      "4": "0b2ba85338fc31c46b7162149e38269694a02c623a4470eb31080a69575e820e",
+      "5": "3fce876ea9a77999f8a6d8d3ad0c8961f5287cb96765378c4a9c57872dd3f781",
+      "6": "045239b2fca49916a3e5afba9be5ce9533f2526708dfb92b164c1b61cf4cb5c6",
+      "7": "2317f377624b3312d602642eb7e99cb529fc63389de7ae5ce7867e5ef0a836b2",
+      "8": "f1791cd98d481cc01330e56f71f92bb9456bece08a696128defc05deb127e156",
+      "9": "3589ab178e1ab42ecc3121aa8c87f3b01e5e790e772ba33e65b506bf32a0fd9d"
     }
   },
-  "diagnostics": "PASS: byte-safe scan, no Overfull/Underfull/LaTeX Warning/Warning:/undefined",
-  "document": "Successor paper 2, first full draft (general theorem; Roman surface and ruled surface examples)",
   "builder": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_paper2_pdf.py",
   "verifier": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper2.py",
-  "visual_inspection": "PASS: all 9 pages of the first build inspected; after citation/wording fixes pages 1, 6, 9 changed and were re-inspected; other renders byte-identical",
-  "repaired_attempts": [
-    "First build failed: \\inte macro missing; added.",
-    "Notation clash: elements of Dom A* and symmetry coefficients renamed (phi/psi, gamma) to avoid the map f and metric g.",
-    "Albeverio-Brasche-Rockner was cited for a specific planar claim not read in the original; claim now rests on the paper's own argument and the citation is general.",
-    "Hillairet-Kokotov and Posilicano journal data confirmed at search level and completed."
-  ],
-  "status": "FIRST FULL DRAFT / NOT EDITORIALLY REVIEWED / NOT APPROVED FOR PUBLICATION"
+  "diagnostics": "PASS: byte-safe scan, no Overfull/Underfull/LaTeX Warning/Warning:/undefined",
+  "visual_inspection": "PASS: all 10 pages of the r1 build inspected; final two layout fixes changed only the last pages (now 9 pages), re-inspected; pages 1-8 byte-identical to inspected renders",
+  "editorial_record": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_P2_R1.md",
+  "status": "EDITORIAL R1 / AWAITING AUTHOR READING / NOT APPROVED FOR PUBLICATION"
 }

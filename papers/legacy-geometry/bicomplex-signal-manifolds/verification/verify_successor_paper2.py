@@ -31,6 +31,14 @@ def adapted_metric():
     print("PASS adapted metric: |h_y|^2 <= det g <= (1+|h_x|^2)|h_y|^2")
 
 
+def standard_arclength():
+    x, y = s.symbols("x y", positive=True)
+    V = y / 2 * s.sqrt(x**2 + 4 * y**2) + x**2 / 4 * s.asinh(2 * y / x)
+    assert s.simplify(s.diff(V, y) - s.sqrt(x**2 + 4 * y**2)) == 0  # |h_y| for h=(xy, y^2)
+    assert s.limit(V, x, 0, "+") == y**2
+    print("PASS explicit standard cross-cap arclength coordinate V and V(0,y)=y|y|")
+
+
 def roman():
     x, y, z, sv, tv = s.symbols("x y z s t", real=True)
     f = lambda p: s.Matrix([p[1] * p[2], p[0] * p[2], p[0] * p[1]])
@@ -148,6 +156,7 @@ def references():
 def main():
     assert not sys.flags.optimize
     adapted_metric()
+    standard_arclength()
     roman()
     roman_symmetry()
     ruled_reflection()

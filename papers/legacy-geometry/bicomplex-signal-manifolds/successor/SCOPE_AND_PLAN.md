@@ -169,3 +169,15 @@ v11 已依作者核准取回並登錄，見 `../claims/V11_COMPARISON.md`。同�
 - **論文一同步。** 對應的 companion 書目改為新題名；只有第 17 頁改變，已重新檢視。
 
 **狀態：** 第一版，尚未做編輯審閱。下一步：論文二編輯審閱 r1；補 Albeverio 等經典文獻；考慮 Weyl law 等開放問題。
+
+## 11. 論文二編輯審閱 r1 完成（2026-10-02）
+
+r1 的變更：
+- 補 Lemma 3.1 的 kernel 說明；
+- 新增標準 cross-cap 的閉式 arclength 座標（已精確驗證）；
+- 補 Dom A* 分解的論證；
+- 新增 Corollary 5.3（|N_H−N_{H_F}|≤k）；
+- 新增 Remark 6.2（總角 2π 的說明）；
+- 調整引言語氣、壓縮附錄。
+
+仍為 9 頁；verifier、export、逐頁 QA 皆 PASS。逐項記錄見 `EDITORIAL_P2_R1.md`。兩篇都已完成 r1，等作者通讀後再決定公開範圍。

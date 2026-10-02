@@ -61,8 +61,8 @@ Generic smooth maps of a compact surface into $\R^3$ are not immersions.
 Whitney showed that their only singularities are isolated \emph{cross-caps}
 \cite{whitney44,gg}. At a cross-cap the differential has rank one, and the
 induced metric $g=f^*\delta$ degenerates. This paper asks what happens to
-point interactions at these points, and gives a complete answer: a cross-cap
-behaves exactly like a regular point of the surface.
+point interactions at these points. The answer turns out to be simple: for
+the scalar Laplacian, a cross-cap behaves like a regular point of the surface.
 
 \paragraph{Main results.} Let $f:\Sigma\to\R^3$ be a smooth map of a compact
 surface, immersive except at finitely many cross-caps; the precise setting is
@@ -161,8 +161,9 @@ $cR^2\leq\det g\leq CR^2$; in particular $dA_g\asymp R\dd x\dd y$.
 \end{lemma}
 \begin{proof}
 Rotate so that $f_\xi(0)$ points along the first axis. Use $x$, the first
-component of $f$, together with a coordinate $y$ along the kernel direction.
-Then $h_x(0)=0$ and $h_y(0)=0$. The vectors $v=h_{xy}(0)$ and $2w=h_{yy}(0)$
+component of $f$, together with any coordinate $y$ completing it to a chart.
+Since the image of $df(0)$ is the first axis, $\ker dx(0)=\ker df(0)$, so
+$\partial_y$ is a kernel vector at $0$. Then $h_x(0)=0$ and $h_y(0)=0$. The vectors $v=h_{xy}(0)$ and $2w=h_{yy}(0)$
 are independent by \eqref{eq:whitney}. In these coordinates
 $g=\bigl(\begin{smallmatrix}1+|h_x|^2&h_x\cdot h_y\\h_x\cdot h_y&|h_y|^2\end{smallmatrix}\bigr)$,
 whose entries are bounded and whose determinant lies between $|h_y|^2$ and
@@ -205,6 +206,18 @@ $\bigl|V-\operatorname{sgn}(y)|w|y^2\bigr|\leq C(|xy|+|y|R^2)$. Hence
 $\bigl||h|-|V|\bigr|\leq CR\rho$, and comparing the norms of $(x,|h|)$ and
 $(x,|V|)$ gives $|\rho_e-\rho|\leq CR\rho\leq C\rho^{3/2}$.
 \end{proof}
+
+\begin{remark}[The standard cross-cap]\label{rem:standard}
+For $f(x,y)=(x,xy,y^2)$ one has $h_y=(x,2y)$, and the arclength coordinate is
+explicit:
+\[
+ V(x,y)=\frac y2\sqrt{x^2+4y^2}+\frac{x^2}4\operatorname{arsinh}\frac{2y}{|x|},
+ \qquad V(0,y)=y|y|.
+\]
+Along the double ray $x=0$, $V$ is the signed arclength of the parabola
+$y\mapsto(0,0,y^2)$, so the two sheets meeting there are unfolded in opposite
+directions.
+\end{remark}
 
 \begin{corollary}[Intrinsic distance]\label{cor:distance}
 Let $d_g$ be the path distance of $g$ on the source. Near a cross-cap $p$,
@@ -253,8 +266,9 @@ resolvent. In case (D), $H_F\geq\lambda_D>0$. In case (N),
 $\ker H_F$ consists of the constants.
 \end{theorem}
 \begin{proof}
-Fix $p\in Z\cup Z_\partial$ and chart coordinates of Definition~\ref{def:setting},
-in which a neighbourhood of $p$ in $\Sigma$ is a sector. Let $\chi$ be a
+Fix $p\in Z\cup Z_\partial$ and chart coordinates in which a neighbourhood of
+$p$ in $\Sigma$ is a sector: the full disk for interior points, and the sector
+of Definition~\ref{def:setting} for boundary points. Let $\chi$ be a
 chart cutoff, equal to $1$ near $p$, and let $u\in\mathcal C$, so that $h=\chi u$
 vanishes near $p$. On each ray, integrating $(R|h|^2)'$ and applying
 Cauchy--Schwarz gives
@@ -323,7 +337,10 @@ $\Dom A\dotplus G_0\C^k$ and kernel of dimension $k$.
 Graph continuity makes $\ker\tau$ graph-closed. For nonreal $z$, the bounded
 surjection $\tau R_z:\cH\to\C^k$ has kernel $\operatorname{ran}(A-z)$, so
 $\dim\ker(A^*-\bar z)=k$. The form core $\mathcal C$ lies in $\Dom A$, so the
-Friedrichs extension of $A$ is $H_F$. The decomposition and the Green identity
+Friedrichs extension of $A$ is $H_F$. For $\varphi\in\Dom A^*$, the vector
+$u=R_\eta(A^*-\eta)\varphi$ lies in $\Dom H_F$, and $\varphi-u$ lies in
+$\ker(A^*-\eta)=\operatorname{ran}(A-\eta)^\perp=G_\eta\C^k$; the sum is direct
+because $\eta\in\rho(H_F)$. The Green identity
 \[
  \langle A^*\varphi,\psi\rangle-\langle \varphi,A^*\psi\rangle
  =\langle\Gamma_1\varphi,\Gamma_0\psi\rangle-\langle\Gamma_0\varphi,\Gamma_1\psi\rangle
@@ -333,6 +350,21 @@ the framework of \cite{pos}. Resolvent differences have range in
 $\ker(A^*-z)$, which has dimension $k$, and $R_z$ is compact. In case (D) $A$
 is strictly positive, and the Krein theorem \cite[Thm.~2.1]{krein} gives
 $\Dom A_K=\Dom A\dotplus\ker A^*$, with $\ker A^*=G_0\C^k$ since $0\in\rho(H_F)$.
+\end{proof}
+
+\begin{corollary}[Eigenvalue counting]\label{cor:counting}
+Every self-adjoint extension $H$ of $A$ is bounded below and has compact
+resolvent. Its eigenvalue counting function satisfies
+$|N_H(\lambda)-N_{H_F}(\lambda)|\leq k$ for all real $\lambda$.
+\end{corollary}
+\begin{proof}
+Extensions of a semibounded symmetric operator with finite deficiency indices
+are semibounded. Choose $\mu$ below both spectra. Then $(H-\mu)^{-1}$ and
+$(H_F-\mu)^{-1}$ are positive compact operators whose difference has rank at
+most $k$. By Weyl's interlacing inequalities, their eigenvalue counting
+functions above any threshold differ by at most $k$. The map
+$\lambda\mapsto(\lambda-\mu)^{-1}$ is decreasing on $(\mu,\infty)$, which
+transfers the bound to $N_H$ and $N_{H_F}$.
 \end{proof}
 
 \section{Logarithmic normalization}\label{sec:log}
@@ -377,6 +409,15 @@ the other poles. Corollary~\ref{cor:distance} and Lemma~\ref{lem:arclength}
 replace $\log\rho$ by $\log d_g$ or $\log\rho_e$, at the cost of reducing
 $\beta$ to at most $1/2$.
 \end{proof}
+
+\begin{remark}
+In the language of conical points \cite{hk}, a cross-cap has total angle
+$2\pi$: by Lemma~\ref{lem:arclength} the circle of radius $r$ about it has
+length $2\pi r(1+o(1))$. This is the borderline case with a single logarithmic
+channel. Its Whitney
+invariants do not affect the leading coefficient; they enter only through the
+regular matrix $B_\eta$, together with the global geometry.
+\end{remark}
 
 \begin{theorem}[Geometric boundary coordinates]\label{thm:boundary}
 Every $\varphi\in\Dom A^*$ has unique coefficients $\ell,b\in\C^k$ with
@@ -537,10 +578,10 @@ outer boundary must be fixed first.
 \begin{itemize}
 \item \emph{Explicit regular parts.} Compute or estimate $B_\eta$, for instance
 the three Roman-surface parameters, and relate them to global geometry.
-\item \emph{Spectral asymptotics.} The finite-rank structure transfers
-eigenvalue counting from $H_F$ to every extension. A Weyl law for $H_F$ at
-degenerate metrics, and heat-trace contributions of cross-caps, remain to be
-determined.
+\item \emph{Spectral asymptotics.} By Corollary~\ref{cor:counting}, a Weyl
+law for $H_F$ would hold for every extension. Establishing it for the
+degenerate metric, and finding the heat-trace contribution of each cross-cap,
+remain open.
 \item \emph{Dirac operators.} A spinor or twisted Dirac analogue at cross-caps
 needs closed domains, cut traces and transmission conditions. The
 square-root monodromy of the observation field of the ruled surface suggests
@@ -551,25 +592,18 @@ $S_k^\pm$ singularities may carry different channel structures.
 
 \appendix
 \section{Evidence}\label{app:evidence}
-The proofs above are written in full. External inputs:
-\begin{itemize}
-\item the cross-cap recognition criterion \cite{hasegawa} and Whitney's
-genericity theorem \cite{whitney44,gg};
-\item the scalar H\"older estimates \cite{gt,simon};
-\item the abstract extension and Krein theorems \cite{pos,krein}.
-\end{itemize}
-An exact replay checks:
-\begin{itemize}
-\item the adapted metric matrix and determinant identities;
-\item the Roman-surface singular set and Whitney determinants;
-\item the symmetry orbits on pairs of cross-caps;
-\item the eigenvalue pattern of $rI+\gamma_\perp P_\perp+\gamma_\circ P_\circ$;
-\item the symmetry identity of the ruled surface.
-\end{itemize}
-These checks confirm the algebra only, not the analysis. No Lean formalization
-of the analytic statements is claimed.
+The proofs above are written in full. The external inputs are the cross-cap
+recognition criterion \cite{hasegawa}, Whitney's genericity theorem
+\cite{whitney44,gg}, the scalar H\"older estimates \cite{gt,simon}, and the
+abstract extension and Krein theorems \cite{pos,krein}. An exact replay checks
+the algebra the proofs rely on: the adapted metric and determinant identities;
+the explicit arclength coordinate of Remark~\ref{rem:standard}; the singular
+set and Whitney determinants of the Roman surface; its symmetry orbits on pairs
+of cross-caps; the eigenvalue pattern of $rI+\gamma_\perp P_\perp+\gamma_\circ P_\circ$;
+and the reflection identity of the ruled surface. These checks do not certify
+the analysis, and no Lean formalization of the analytic statements is claimed.
 
-{\small
+{\footnotesize
 \begin{thebibliography}{99}
 \bibitem{cdv} Y. Colin de Verdi\`ere, Pseudo-laplaciens I, \emph{Ann. Inst.
 Fourier} 32 (1982), 275--286.
