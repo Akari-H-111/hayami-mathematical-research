@@ -1,5 +1,11 @@
 # Primary-reference and hypothesis audit
 
+## Successor paper 1 (r1): added citation
+
+| Source | Retrieval boundary | Application |
+| --- | --- | --- |
+| Krantz–Parks, *A Primer of Real Analytic Functions*, 2nd ed., Birkhäuser 2002 | Standard textbook; **not retrieved this round**; cited at book level only | Real-analytic inverse function theorem in Lemma 3.9 (analytic retraction). The lemma's other steps (injectivity near a compact set, analytic normal frames by Gram–Schmidt, tube injectivity) are proved in the text |
+
 ## Continuation 0.04: moment readouts, exceptional pullback, windows
 
 | Primary source | Checked content / retrieval boundary | Application |
