@@ -1,6 +1,14 @@
 # Bicomplex signal manifolds: current v13 working audit
 
-## Successor papers (editorial r3, awaiting author reading)
+## Successor papers (Version 1, published 2026-10-02)
+
+Published: paper 1 doi:10.5281/zenodo.23103026 (ResearchGate 415154912), paper 2
+doi:10.5281/zenodo.23103056 (ResearchGate 415164048), software companion 1.0
+doi:10.5281/zenodo.23103299, GitHub release `bicomplex-successor-v1.0` (source-only). The old
+ResearchGate record `408878000` keeps its content and now begins with a superseded-by
+notice. Evidence: `releases/candidates/bicomplex-successor-v1-publication.json`; record in
+[successor/SCOPE_AND_PLAN.md](successor/SCOPE_AND_PLAN.md) §14. Lean covers 33 selected
+theorems only. The text below is the pre-publication description.
 
 2026-10-02. The author decided to replace the ResearchGate record `408878000`
 rather than upload a same-title version. The replacement consists of two new

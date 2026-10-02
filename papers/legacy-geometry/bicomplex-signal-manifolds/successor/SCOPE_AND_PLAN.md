@@ -204,3 +204,29 @@ r1 的變更：
 - 色標、箭頭、軸名、cusp 放大圖、字級、目錄與浮動圖位置也都已修正。
 
 頁數不變（20 頁、13 頁）。verifier、export 與 QA 全部 PASS。狀態：等作者通讀，未公開。
+
+## 14. 公開發佈完成（2026-10-02）
+
+作者「全權授權，全部按照 Claude 推薦的來」。兩篇後繼論文與軟體 companion 已公開；權威紀錄是 `releases/candidates/bicomplex-successor-v1-publication.json`，驗收日誌在 `releases/candidates/bicomplex-successor-v1-acceptance/`。
+
+- **定稿。** 兩篇 `\date` 改為 "October 2026" 加 "Version 1"，論文一保留 "corrected successor" 一句。互相引用與軟體 companion 的 DOI 已填入，兩篇的 evidence 附錄都引用軟體 companion。PDF 重建後為 20 頁與 13 頁，三次匯出無 diagnostics，33 頁重新渲染並逐頁檢視，兩個 `VISUAL_QA.json` 的 source、pdf、pdftotext 與各頁 PNG hash 已更新。四個 verifier 全部 PASS。
+- **發佈檔。** `releases/candidates/bicomplex-successor-v1/`：兩篇 PDF、兩個 article source zip、軟體 source zip 與 SHA256SUMS，由 `verification/build_successor_release.py` 決定性產生。軟體 zip 解壓後 SHA256SUMS 全部吻合，`verify.py` 重播兩個 successor verifier（連同被它們重播的早期 verifier）PASS，並從解壓目錄重建兩篇 PDF（`pdftotext -layout` 與發佈 PDF 相同）與十張圖（hash 與 manifest 相同）。v7 PDF 不在任何發佈檔或 push 的 commit 中。為此 `verify_continuation_0_04.py` 改為：v7 檔案存在才核對其 hash，否則印出「未發佈」並繼續；其餘檢查不變。
+- **Lean。** 原位 fresh `verify_lean.py` PASS：33 個 own theorem，build、status、完整 axiom audit 與 proof-hole scan。這是對選定陳述的部分覆蓋，不是兩篇論文的形式化。Lean 專案依賴同倉庫的 `ruled-surface-v5` 與 `stokes-caustic-v5`，所以沒有只憑軟體 zip 重建。
+- **GitHub。** 只推送 `publish/bicomplex-successor` 到 `origin/main`（fb9e1c1→aceb055，fast-forward）；research 分支未推送。tag／release `bicomplex-successor-v1.0` 為 source-only，附軟體 zip 與 SHA256SUMS，不附論文 PDF；免登入下載 SHA-256 與本機一致。
+- **Zenodo。** 論文一 `10.5281/zenodo.23103026`（concept `…23103025`）、論文二 `10.5281/zenodo.23103056`（concept `…23103055`）、軟體 `10.5281/zenodo.23103299`（concept `…23103298`）。metadata 於 publish 前給作者確認。發佈後回讀官方 API、六個檔案的免登入下載 SHA-256（與本機一致）與 doi.org 解析（六個 DOI 皆 200）。
+- **ResearchGate。** 新條目 `415154912`（論文一）與 `415164048`（論文二）：Preprint、CC BY 4.0、單一作者 Jian-Yu Huang（移除自動抽取的重複別名）、填 Zenodo DOI、僅公開 PDF。條款同意於當下取得作者確認。官方登入下載的 PDF SHA-256 與 Zenodo 一致。舊頁 `408878000`：只在描述最前面加 superseded-by 段落（兩個新 DOI、兩個新條目與四項主要更正），標題、日期、DOI、v11／v12 與原描述不變。
+
+### 過程中的失敗與處理（如實記錄）
+
+- 重建論文一時，新增的 DOI 行造成一個 Overfull hbox，export 依規則失敗；改用可斷行的 DOI 排版後三次匯出通過。
+- Zenodo 新草稿的網頁按鈕在背景分頁中不刷新，resource type 與 DOI 按鈕沒有生效；改以已登入工作階段呼叫 Zenodo 官方 REST 介面建立草稿並保留軟體 DOI（結果等同按鈕）。上一窗口被拒的兩類操作（保留 DOI、git 歷史）此次在作者當下放行後執行。
+- 第一次 publish 被 Zenodo 驗證擋下（缺 publisher 欄位），補上 `Zenodo` 並修正 rights 欄位格式後三筆發佈成功。
+- 下載回讀時 Python `urllib` 遇到一次 IncompleteRead，改用 `curl` 重試後完成；並非檔案問題。
+
+### 範圍與限制
+
+- 同機同直譯器的回讀，不是獨立主機證據。
+- RG 條目需登入才能回讀，不宣稱匿名存取。
+- 本機 `main`（5803d6a）未合併也未推送，工作區有其他窗口的未提交改動；需作者另行同步本機 `main`（`git fetch` 後再處理與 origin/main 的分歧）。
+- 倉庫層 `CITATION.cff` 的 preferred-citation 仍是 Stokes companion，這次不改。
+- 未決與 open：actual singular Dirac／Pin、歷史 moment-map 導出（只有新構造，沒有追回）、原創性優先權（論文二為 Colin de Verdière pseudo-Laplacian 的 cross-cap 推廣，座標法屬 Grieser 既有方法）。

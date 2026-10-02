@@ -1,5 +1,8 @@
 # 接下來要對外做的處理
 
+- 2026-10-02 Bicomplex 兩篇後繼論文與軟體 companion 1.0：已公開。Zenodo 論文一 `10.5281/zenodo.23103026`、論文二 `10.5281/zenodo.23103056`、軟體 `10.5281/zenodo.23103299`（API／檔案免登入下載 SHA-256／doi.org 解析 PASS，含 concept DOI）。ResearchGate 新條目 `415154912`、`415164048`（CC BY 4.0、單一作者、填 Zenodo DOI、官方登入下載 SHA-256 與 Zenodo 一致）；舊頁 `408878000` 保留原內容，描述最前面新增 superseded-by（含兩個新 DOI 與四項主要更正）。GitHub tag／release `bicomplex-successor-v1.0`（source-only，commit aceb055）。條款同意與 Zenodo metadata 皆已於當下取得作者確認。尚待：本機 `main` 與 origin/main 的同步由作者處理；RG 條目的匿名存取不宣稱。證據：`releases/candidates/bicomplex-successor-v1-publication.json`。
+
+
 更新日期：2026-10-01
 
 ## 已完成

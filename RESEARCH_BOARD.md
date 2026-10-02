@@ -1,5 +1,8 @@
 # 共通研究留言板
 
+2026-10-02 Bicomplex 兩篇後繼論文已公開（作者全權授權，依 Claude 推薦方案）：論文一 Zenodo `10.5281/zenodo.23103026`／ResearchGate `415154912`，論文二 `10.5281/zenodo.23103056`／ResearchGate `415164048`，軟體 companion 1.0 `10.5281/zenodo.23103299`（Apache-2.0 程式碼、CC-BY-4.0 文字；Lean 僅 33 個 theorem 的部分覆蓋，不稱全文形式化）。GitHub：只推送 `publish/bicomplex-successor` 到 origin/main（fb9e1c1→aceb055），tag `bicomplex-successor-v1.0` 為 source-only release（軟體 zip＋SHA256SUMS，不附論文 PDF）；research 分支與私下提供的 v7 PDF 未推送。舊 RG `408878000` 保留原標題／日期／DOI／v11／v12 與原描述，只在描述最前面加 superseded-by。Zenodo API、免登入下載 SHA-256、doi.org 與 RG 新舊頁、官方下載 SHA-256 皆回讀 PASS。**本機 `main`（5803d6a）未合併也未推送，需作者另行同步。** Bicomplex 不再是 publication hold；actual singular Dirac／Pin 與歷史 moment-map 導出仍 open。紀錄：`releases/candidates/bicomplex-successor-v1-publication.json`、`papers/legacy-geometry/bicomplex-signal-manifolds/successor/SCOPE_AND_PLAN.md` §14。
+
+
 最後更新：2026-09-30 CST
 適用範圍：所有後續 Codex 窗口與本專案人工工作
 

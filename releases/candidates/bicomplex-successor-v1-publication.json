@@ -1,0 +1,288 @@
+{
+ "status": "PUBLISHED / GITHUB RELEASE + ZENODO API/DOWNLOAD/DOI PASS / RESEARCHGATE NEW+OLD PAGE+PDF DOWNLOAD PASS",
+ "checked_at": "2026-10-02T13:30:01.787561Z",
+ "author_publication_authorization": "2026-10-02: author granted full authority and asked to follow the Claude-recommended plan (handoff PUBLICATION_HANDOFF_PROMPT.md); at-action confirmations in chat: browser operations and git push allowed; Zenodo final metadata confirmed ('確認，全部發佈'); ResearchGate terms ('同意條款，繼續發布'); download of the two RG PDFs allowed.",
+ "git": {
+  "branch_pushed": "publish/bicomplex-successor -> origin/main",
+  "base_before_push": "fb9e1c15cc0c26f783e4954bea205613e135ee84",
+  "pushed_commit": "aceb0559cb62d24127782e01ae7a1e8ec2dd965a",
+  "research_branch_pushed": false,
+  "v7_draft_pdf_in_any_pushed_commit": false,
+  "local_main_untouched": "local main (5803d6a) is not merged or pushed; it must be synchronized by the author separately"
+ },
+ "github_release": {
+  "tag": "bicomplex-successor-v1.0",
+  "url": "https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/bicomplex-successor-v1.0",
+  "target_commit": "aceb0559cb62d24127782e01ae7a1e8ec2dd965a",
+  "published_at": "2026-10-02T13:05:35Z",
+  "pdf_assets": [],
+  "assets": [
+   {
+    "name": "bicomplex-successor-v1.0-software-SHA256SUMS.txt",
+    "bytes": 7024,
+    "sha256": "sha256:baf841d24f628ab1352ddd1134dec2cacb13edd960a0685109819e2f90256f6f"
+   },
+   {
+    "name": "bicomplex-successor-v1.0-software-source.zip",
+    "bytes": 4576044,
+    "sha256": "sha256:26253cbd4978adfb8f06a672f31fd557e7bd023599ae1375f6d544445c9c836d"
+   }
+  ],
+  "unauthenticated_download": "software zip PASS (sha256 equals local)"
+ },
+ "paper1": {
+  "record": 23103026,
+  "doi": "10.5281/zenodo.23103026",
+  "concept_doi": "10.5281/zenodo.23103025",
+  "url": "https://zenodo.org/records/23103026",
+  "version": "v1",
+  "type": "Preprint",
+  "title": "Realization Limits of the Bicomplex Signal Surface: Analytic Rigidity, Smooth Flexibility and Observation Monodromy",
+  "author": [
+   {
+    "name": "Hayami, Akari (Jian-Yu Huang)",
+    "affiliation": null
+   }
+  ],
+  "language": "eng",
+  "license": "CC-BY-4.0",
+  "related_identifiers": [
+   {
+    "identifier": "10.13140/RG.2.2.17048.15361",
+    "relation": "isNewVersionOf",
+    "resource_type": "publication-preprint",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23103056",
+    "relation": "references",
+    "resource_type": "publication-preprint",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23103299",
+    "relation": "isSupplementedBy",
+    "resource_type": "software",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23073642",
+    "relation": "references",
+    "resource_type": "publication-preprint",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.22728902",
+    "relation": "references",
+    "resource_type": "publication-preprint",
+    "scheme": "doi"
+   }
+  ],
+  "published_state": "done / submitted=true",
+  "created": "2026-10-02T13:16:44.717046+00:00",
+  "updated": "2026-10-02T13:16:45.060908+00:00",
+  "files": [
+   {
+    "file": "Realization_Limits_Bicomplex_Signal_Surface.pdf",
+    "bytes": 1061107,
+    "sha256": "9e7322abcbb05f2b268bb682b30958560e03783ab4f4c79bd31e0a12b99ca202",
+    "url": "https://zenodo.org/api/records/23103026/files/Realization_Limits_Bicomplex_Signal_Surface.pdf/content",
+    "md5": "md5:763317796b1c9b704161a748ed60d07b"
+   },
+   {
+    "file": "Realization_Limits_Bicomplex_Signal_Surface_source.zip",
+    "bytes": 605054,
+    "sha256": "4be011b9fdfd5bca2daf02b6f95a3577c4f890dfcac23796da8c395455763ebb",
+    "url": "https://zenodo.org/api/records/23103026/files/Realization_Limits_Bicomplex_Signal_Surface_source.zip/content",
+    "md5": "md5:1ef4edaffa90a53f8b538b7a938c3e32"
+   }
+  ]
+ },
+ "paper2": {
+  "record": 23103056,
+  "doi": "10.5281/zenodo.23103056",
+  "concept_doi": "10.5281/zenodo.23103055",
+  "url": "https://zenodo.org/records/23103056",
+  "version": "v1",
+  "type": "Preprint",
+  "title": "Pseudo-Laplacians at Whitney Cross-Caps: Point Interactions on Surfaces Mapped into Three-Space",
+  "author": [
+   {
+    "name": "Hayami, Akari (Jian-Yu Huang)",
+    "affiliation": null
+   }
+  ],
+  "language": "eng",
+  "license": "CC-BY-4.0",
+  "related_identifiers": [
+   {
+    "identifier": "10.5281/zenodo.23103026",
+    "relation": "references",
+    "resource_type": "publication-preprint",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23103299",
+    "relation": "isSupplementedBy",
+    "resource_type": "software",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23073642",
+    "relation": "references",
+    "resource_type": "publication-preprint",
+    "scheme": "doi"
+   }
+  ],
+  "published_state": "done / submitted=true",
+  "created": "2026-10-02T13:16:45.643798+00:00",
+  "updated": "2026-10-02T13:16:46.186083+00:00",
+  "files": [
+   {
+    "file": "Pseudo_Laplacians_Whitney_Cross_Caps.pdf",
+    "bytes": 939095,
+    "sha256": "f9a1bf053f7d3dc91312427a58a510fc1a6fa1e7220f9acccf004ecd298148ba",
+    "url": "https://zenodo.org/api/records/23103056/files/Pseudo_Laplacians_Whitney_Cross_Caps.pdf/content",
+    "md5": "md5:847009baaa2820a0513c4a6c9b0ef2a4"
+   },
+   {
+    "file": "Pseudo_Laplacians_Whitney_Cross_Caps_source.zip",
+    "bytes": 483961,
+    "sha256": "c8994e4fd22b477ead02ca49bfb76a4fe886d744ebedf06550fdb3bea3b97404",
+    "url": "https://zenodo.org/api/records/23103056/files/Pseudo_Laplacians_Whitney_Cross_Caps_source.zip/content",
+    "md5": "md5:513529d2d988d89cd62d6b15b69f3da7"
+   }
+  ]
+ },
+ "software": {
+  "record": 23103299,
+  "doi": "10.5281/zenodo.23103299",
+  "concept_doi": "10.5281/zenodo.23103298",
+  "url": "https://zenodo.org/records/23103299",
+  "version": "1.0",
+  "type": "Software",
+  "title": "Verification Companion for Realization Limits and Pseudo-Laplacians at Whitney Cross-Caps",
+  "author": [
+   {
+    "name": "Hayami, Akari (Jian-Yu Huang)",
+    "affiliation": null
+   }
+  ],
+  "language": "eng",
+  "license": "Apache-2.0 (code/build) and CC-BY-4.0 (original text/figures); legacy API exposes only the first license, description scopes both",
+  "related_identifiers": [
+   {
+    "identifier": "10.5281/zenodo.23103026",
+    "relation": "isSupplementTo",
+    "resource_type": "publication-preprint",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "10.5281/zenodo.23103056",
+    "relation": "isSupplementTo",
+    "resource_type": "publication-preprint",
+    "scheme": "doi"
+   },
+   {
+    "identifier": "https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/bicomplex-successor-v1.0",
+    "relation": "isSupplementTo",
+    "resource_type": "software",
+    "scheme": "url"
+   }
+  ],
+  "published_state": "done / submitted=true",
+  "created": "2026-10-02T13:16:43.859848+00:00",
+  "updated": "2026-10-02T13:16:44.081754+00:00",
+  "files": [
+   {
+    "file": "bicomplex-successor-v1.0-software-SHA256SUMS.txt",
+    "bytes": 7024,
+    "sha256": "baf841d24f628ab1352ddd1134dec2cacb13edd960a0685109819e2f90256f6f",
+    "url": "https://zenodo.org/api/records/23103299/files/bicomplex-successor-v1.0-software-SHA256SUMS.txt/content",
+    "md5": "md5:cf6194c4cb00313d749ae73d775633e5"
+   },
+   {
+    "file": "bicomplex-successor-v1.0-software-source.zip",
+    "bytes": 4576044,
+    "sha256": "26253cbd4978adfb8f06a672f31fd557e7bd023599ae1375f6d544445c9c836d",
+    "url": "https://zenodo.org/api/records/23103299/files/bicomplex-successor-v1.0-software-source.zip/content",
+    "md5": "md5:a4633e85e3581c1206b3b3b6c01bc28f"
+   }
+  ]
+ },
+ "doi_resolution": [
+  {
+   "doi": "10.5281/zenodo.23103026",
+   "status": 200,
+   "redirect": "https://zenodo.org/records/23103026"
+  },
+  {
+   "doi": "10.5281/zenodo.23103056",
+   "status": 200,
+   "redirect": "https://zenodo.org/records/23103056"
+  },
+  {
+   "doi": "10.5281/zenodo.23103299",
+   "status": 200,
+   "redirect": "https://zenodo.org/records/23103299"
+  },
+  {
+   "doi": "10.5281/zenodo.23103025",
+   "status": 200,
+   "redirect": "https://zenodo.org/records/23103026"
+  },
+  {
+   "doi": "10.5281/zenodo.23103055",
+   "status": 200,
+   "redirect": "https://zenodo.org/records/23103056"
+  },
+  {
+   "doi": "10.5281/zenodo.23103298",
+   "status": 200,
+   "redirect": "https://zenodo.org/records/23103299"
+  }
+ ],
+ "researchgate": {
+  "paper1": {
+   "record": "415154912",
+   "url": "https://www.researchgate.net/publication/415154912_Realization_Limits_of_the_Bicomplex_Signal_Surface_Analytic_Rigidity_Smooth_Flexibility_and_Observation_Monodromy",
+   "paper_doi": "10.5281/zenodo.23103026",
+   "license": "CC BY 4.0",
+   "type": "Preprint; not peer reviewed",
+   "author": "one Jian-Yu Huang profile (auto-extracted duplicate alias 'Akari Hayami' removed from the new author list only)",
+   "date": "2 October 2026",
+   "pdf_download": {
+    "method": "official browser More > Download, signed-in owner session",
+    "sha256": "9e7322abcbb05f2b268bb682b30958560e03783ab4f4c79bd31e0a12b99ca202",
+    "result": "PASS (equals Zenodo and local release PDF)"
+   }
+  },
+  "paper2": {
+   "record": "415164048",
+   "url": "https://www.researchgate.net/publication/415164048_Pseudo-Laplacians_at_Whitney_Cross-Caps_Point_Interactions_on_Surfaces_Mapped_into_Three-Space",
+   "paper_doi": "10.5281/zenodo.23103056",
+   "license": "CC BY 4.0",
+   "type": "Preprint; not peer reviewed",
+   "author": "one Jian-Yu Huang profile (duplicate alias removed from the new author list only)",
+   "date": "2 October 2026",
+   "pdf_download": {
+    "method": "official browser More > Download, signed-in owner session",
+    "sha256": "f9a1bf053f7d3dc91312427a58a510fc1a6fa1e7220f9acccf004ecd298148ba",
+    "result": "PASS (equals Zenodo and local release PDF)"
+   }
+  },
+  "terms_authorization": "2026-10-02 author at-action reply: 同意條款，繼續發布",
+  "old_record": {
+   "record": "408878000",
+   "url": "https://www.researchgate.net/publication/408878000",
+   "edit": "only a superseded-by paragraph was prepended to the description; title, July 2026 date, DOI 10.13140/RG.2.2.17048.15361, CC BY 4.0, both public files (v11, v12) and the original description are unchanged; both files still listed (Public Files 2)",
+   "readback": "signed-in public page"
+  }
+ },
+ "limits": [
+  "Not independent-host evidence: same machine and interpreter.",
+  "Lean: 33 own theorems, partial coverage of selected statements; not a formalization of either paper; the Lean project was not rebuilt from the software zip (it needs the sibling ruled-surface-v5 / stokes-caustic-v5 projects).",
+  "ResearchGate pages require a signed-in session; anonymous access is not claimed.",
+  "A private v7 draft is not distributed."
+ ]
+}
