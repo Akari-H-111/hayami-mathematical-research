@@ -1,44 +1,44 @@
 {
   "date": "2026-10-02",
-  "document": "Successor paper 2, editorial revision r2 (feedback applied; 4 figures, 1 table)",
+  "document": "Successor paper 2, editorial revision r3 (figure and label review applied; 4 figures, 1 table)",
   "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Pseudo_Laplacians_Whitney_Cross_Caps.tex",
-  "source_sha256": "389103b657e2c0fcb7148e41f59bd07bd26e8a281c4536eec5fb9dfb859215cd",
+  "source_sha256": "2a957f4b3973dafcdf1d0f9e2f31b3939a1f1a3788564a0e318d69d8d793e6a2",
   "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Pseudo_Laplacians_Whitney_Cross_Caps.pdf",
-  "pdf_sha256": "9aa1ba16ebfd6c6a4345054a453eda9e31023d080f74bb2c8b140f302ae1b092",
+  "pdf_sha256": "c7623a40f05dbf38368f40463d1de1c6758dc5e1e51f9e79bcf40e1294ef4282",
   "pages": 13,
-  "pdftotext_sha256": "fe9fdd978b9e387435de197a33288ba69b285d3227be9768269362b84dabd813",
+  "pdftotext_sha256": "e9099f47ad57a4eee2c0242584aca060125ffd1b18ddaf8244b9c1def93b4f0a",
   "render": {
     "tool": "pdftoppm -r 80 -png",
     "page_png_sha256": {
-      "1": "aef6ada5ad3d47a6ab3335aff88ea16c8533883e02ca0dd38c29dd7c639cab37",
-      "2": "7f8e568786e0c27fce2229e34718314541bd8316f587c3f7b508106415244a42",
+      "1": "2c4a88eb2250672f1d7ed1885a60d9a4daf2923b47fbf6d123d3b6755b418dab",
+      "2": "44183a0cf0537bda28dc7ed0131d7a6a07d48f4eac63c80bde88f870da8403d1",
       "3": "9270c6be4ea7822b43a0f3e760c9cbc4803d4e51e757edf7d105a7e80481333a",
-      "4": "c4396be3dcb925fb9e08ce544b80176694e40b2d5b69dcb28643d7a0ea88735b",
-      "5": "9bd6bda51f81e4287cf59cf3ff3f0f8c2db9f884170565c7925e990e74c124fd",
-      "6": "d8831fa649f9d27fb11711f7baf0fbaa8ef42c76092f5ea971fcce3151f44061",
-      "7": "8e12728a71ae2f165fc6f307459f5784f55226ac322db5050602a1f8587667ac",
-      "8": "91d946388d3bc0d3ceb8d9258542dcf6aa3466931891f44f980fd4035e1c451c",
-      "9": "415ea85072a8bad4ca4b718ca3b468afcbdf151e5af72f394777aae10c2277ca",
-      "10": "74c5ad42bae104e43ae9e37f78371b129b617ce614304979d0ad8f95422eeb20",
-      "11": "7a863447f2efb1d19e660dd602e73d696f8916d24352ff829c72ca34f4e7c6f7",
-      "12": "acbf35ed390c01cb785cd1399bc63335e57ad3cc1ae74210eb3daf912978b743",
-      "13": "d0bebab7e53c5e8e31f5bbbad0c1702627857a4e9970cb4b2d99bdb30ca07785"
+      "4": "23cf93f4a7dfdc26591bcc725acadffffec5d80d0de88c3fed17ebacbdb36293",
+      "5": "3ca2a9149d6d8a015286a13f63058eeb5b57d3ec46a39fb8f6dc30d58939a977",
+      "6": "a7a617aeef2b26b99b7e7dcf9a15f7c07476c391b461a7d17add201db662e0e8",
+      "7": "580676fc286d60b8b53a6a0a1afb3aa68539e90810eaa8d85c9ccb656818d4a9",
+      "8": "dea715c7e61a49c1561a4a21d5a9abc85a26839e7891c419a5378e6ccb80d31e",
+      "9": "79bd2dc8479df7c8e12a2c235915ffefb0fa10e2fd0bbd9036b2f520c307b139",
+      "10": "0d96b9c65c902f25a44628784adedb5ff1f375e5b72cdd849c858ebd426ba7de",
+      "11": "2fc045789452f6d22cf5a6124354fcacd5dfa6f205fb87ba13d341e1062138f8",
+      "12": "10b1055461b27b84f8a8da4b4d459455cfee4463b86e897dc2420a82a73ddaa1",
+      "13": "684ed5b52617a882eaaf9d774c189e05a63a70c11620867b51723d699f1b7782"
     }
   },
   "figures": {
     "generator": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_figures.py",
     "manifest": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/figures/FIGURES_MANIFEST.json",
     "included": {
-      "umbrella_coordinates.pdf": "40f368ff6fb2f56b6db64d5fa0f0f4ece252416133150c82332b4ce1071c26f0",
-      "asymptotically_euclidean.pdf": "c410f2b06f3ba574b4f01c52ceb9ed916576b936cd1e09744f7fb2df7abd783c",
+      "umbrella_coordinates.pdf": "8dc8c100c13835f9a4fc61d260515bea743ae4ea722360b53ff20149a99a26a4",
+      "asymptotically_euclidean.pdf": "c052fbeb1dfc8175d11f427c968642c1a9d659c119ad353484ec6e94bf92eec5",
       "roman_surface.pdf": "580bd9321cfcb455644f6af50f366c19e8b0291f8d89f917d1504c63b087a2c4",
-      "surface_overview.pdf": "c4dc4925489b00a2109b2aed66fe9e9e3204379a57a5668ecf8129f5a5c8dd98"
+      "surface_overview.pdf": "812b140694d09c1f560fc5dbea92cebb12c4ee01cf53e3d3a179159e642ebf63"
     }
   },
   "builder": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_paper2_pdf.py",
   "verifier": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper2.py",
   "diagnostics": "PASS: byte-safe scan, no Overfull/Underfull/LaTeX Warning/Warning:/undefined",
-  "visual_inspection": "PASS: all 13 r2 pages inspected; first-pass issues (3D label occlusion, crowded ticks, list layout, one caption wording) fixed and affected pages re-inspected after rebuild",
-  "editorial_record": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R2.md",
-  "status": "EDITORIAL R2 / AWAITING AUTHOR READING / NOT APPROVED FOR PUBLICATION"
+  "visual_inspection": "PASS: all 13 r3 pages inspected after the final rebuild; float placement (figures before their headings, split list, TOC overflow) and legend overlap fixed during the round",
+  "editorial_record": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R3.md",
+  "status": "EDITORIAL R3 / AWAITING AUTHOR READING / NOT APPROVED FOR PUBLICATION"
 }

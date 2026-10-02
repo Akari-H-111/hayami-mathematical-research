@@ -530,11 +530,12 @@ in $t$; the opposite signs of the two determinants come from the $t$-derivatives
 
 \begin{figure}[t]\centering
 \includegraphics[width=\linewidth]{observation_field.pdf}
-\caption{(a) The phase of the observation field $F$ on $D_\circ$ (shown for
-$|t|\leq1.45$; brightness increases with $|F|$). Every colour meets $P_\pm$, the
-dipole of Theorem~\ref{thm:dipole}. (b) A continuous square root $\chi$ of $F$
-along the dashed loop about $P_+$: one traversal ends at $-\chi(0)$, two
-traversals restore $\chi(0)$.}\label{fig:field}
+\caption{(a) The phase of the observation field $F$ on $D_\circ$, shown for
+$|t|\leq1.45$, with the cyclic colour scale on the right; brightness increases
+with $|F|$. Every colour meets $P_\pm$, the dipole of
+Theorem~\ref{thm:dipole}. (b) A continuous square root $\chi$ of $F$ along the
+positively oriented dashed loop about $P_+$, with arrows in the direction of
+travel: one traversal ends at $-\chi(0)$, two traversals restore $\chi(0)$.}\label{fig:field}
 \end{figure}
 
 \subsection{The polar fold}
@@ -557,11 +558,15 @@ ordinary-fold condition fails (Figure~\ref{fig:folds}).
 
 \begin{figure}[t]\centering
 \includegraphics[width=\linewidth]{observation_folds.pdf}
-\caption{The planar observation map $\Psi=(N,M)$, shown for $|t|\leq1.3$.
-(a) The sign of $\det D\Psi$ and the critical locus: the symmetry segment
-$t=0$ and the rational branch through $(0,0)$. (b) The image; overlapping
-sheets (darker) are the two-preimage side of each fold, and the critical
-values are drawn in black. Both lateral cross-caps map to the origin.}\label{fig:folds}
+\caption{The planar observation map $\Psi=(N,M)$. (a) The sign of
+$\det D\Psi$ on $|t|\leq1.3$ and the critical locus: the symmetry segment $t=0$
+and the rational branch through $(0,0)$. (b) Since $N$ and $M$ are even in $t$,
+$\Psi(t,u)=\Psi(-t,u)$, so it suffices to draw the image of $0\leq t\leq1.3$.
+The shading counts preimages in this half. The solid curve is the image of the
+rational branch, the dashed segment that of $t=0$, and both lateral cross-caps
+map to the origin. On $|t|\leq1.3$ every count doubles: for instance
+$(N,M)=(-0.1,0.2)$ has the four preimages $(\pm0.9947,0.3375)$ and
+$(\pm0.3687,0.7778)$.}\label{fig:folds}
 \end{figure}
 
 \subsection{Three sign structures}
@@ -741,7 +746,7 @@ channel of capacity $0$ and a noiseless one of capacity $\log2$. Accordingly
 the conjecture $C=\sqrt5\ln S$ from the earlier description is replaced by this
 resolution law.
 
-\begin{figure}[t]\centering
+\begin{figure}[htb]\centering
 \includegraphics[width=\linewidth]{sublevel_law.pdf}
 \caption{The sublevel law of Theorem~\ref{thm:sublevel}. (a) The sets
 $\{K_\times\leq\varepsilon\}$ shrink anisotropically, with width
@@ -778,6 +783,18 @@ nearby-cycle package would additionally need the specialization and variation
 maps, which the monodromy alone does not determine.
 
 \subsection{Three different projected curves}
+
+\begin{figure}[htb]\centering
+\includegraphics[width=\linewidth]{three_curves.pdf}
+\caption{The three curves of Proposition~\ref{prop:curves}. (a) The image of the
+real link $K_\times=r^2$ ($r=\frac12$), projected to the $(x,xy)$-plane; the
+node is the double point $(0,0,r)$. (b) The shadow $(\Im Y,\Im X)$ of a weighted
+orbit ($b=0.8$). (c) The pedal trace $p=(p_1,p_2)$ of the exceptional
+principal curvature at the lateral cross-cap $P_+$, computed from the exact
+invariants. The inset magnifies the ordinary cusp at the origin, where both
+branches share one tangent.}\label{fig:curves}
+\end{figure}
+
 \begin{proposition}\label{prop:curves}
 (1) For each $r>0$ the real link $\{K_\times=r^2\}$ is a circle whose cross-cap
 image has one transverse double point, a figure-eight graph. The lift
@@ -827,15 +844,6 @@ which is the ordinary-cusp criterion.
 \end{proof}
 The three constructions produce three different curves, a node, a node and a
 cusp, and each comes with its own data (Figure~\ref{fig:curves}).
-
-\begin{figure}[t]\centering
-\includegraphics[width=\linewidth]{three_curves.pdf}
-\caption{The three curves of Proposition~\ref{prop:curves}. (a) The image of the
-real link $K_\times=r^2$ ($r=\frac12$), projected to the $(x,xy)$-plane; the
-node is the double point $(0,0,r)$. (b) The shadow of a weighted orbit
-($b=0.8$). (c) The exceptional principal-curvature trace of the lateral
-cross-cap $P_+$, computed from the exact invariants: an ordinary cusp.}\label{fig:curves}
-\end{figure}
 
 \section{Open problems}\label{sec:open}
 \begin{itemize}

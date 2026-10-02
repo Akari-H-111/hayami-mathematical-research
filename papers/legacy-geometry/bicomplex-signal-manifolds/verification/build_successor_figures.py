@@ -79,10 +79,10 @@ def fig_surface():
         p = S(tt, u0)
         ax.scatter(*p, color=RED if lab in LATERAL else "k", s=22, zorder=10)
         d = shift[lab]
-        ax.text(p[0] + d[0], p[1] + d[1], p[2] + d[2], lab, zorder=11, fontsize=9.5)
+        ax.text(p[0] + d[0], p[1] + d[1], p[2] + d[2], lab, zorder=11, fontsize=11)
     ax.text(2.0, 0.05, -0.12, "apex", fontsize=7.5, zorder=11)
     ax.set_xlabel("$x$", labelpad=-4); ax.set_ylabel("$y$", labelpad=-4); ax.set_zlabel("$z$", labelpad=-6)
-    ax.tick_params(labelsize=6.5, pad=-1)
+    ax.tick_params(labelsize=7.5, pad=-1)
     sparse_ticks(ax)
     ax.view_init(elev=27, azim=-62)
     ax.set_box_aspect((2, 2, 1.1))
@@ -95,8 +95,8 @@ def fig_surface():
     ax2.plot([0, 0], [0, 1], color=ORANGE, lw=2.2)
     for lab, (x, y) in pts.items():
         ax2.plot(x, y, "o", color=RED if lab in LATERAL else "k", ms=6, clip_on=False, zorder=5)
-        off = {r"$P_0$": (6, 4), r"$E_+$": (-18, 6), r"$E_-$": (5, 6)}.get(lab, (6, 5))
-        ax2.annotate(lab, (x, y), textcoords="offset points", xytext=off, fontsize=9)
+        off = {r"$P_0$": (6, -14), r"$E_+$": (-20, 6), r"$E_-$": (5, 6)}.get(lab, (6, 5))
+        ax2.annotate(lab, (x, y), textcoords="offset points", xytext=off, fontsize=10)
     ax2.text(HALF - 0.08, 0.55, "edge\n" + r"$t=\frac{\pi}{2}$", ha="right", fontsize=7.5, color=TEAL)
     ax2.text(-HALF + 0.08, 0.55, "edge\n" + r"$t=-\frac{\pi}{2}$", ha="left", fontsize=7.5, color=PURPLE)
     ax2.text(0.05, 0.12, "polar\nruling", fontsize=7.5, color=ORANGE)
@@ -171,7 +171,7 @@ def fig_readout():
     ax.text(0.03, 0.5, "read $u$ from\nphase of $z_2$", fontsize=7)
     ax.text(0.69, 0.5, "read $u$ from\nphase of $z_1$", fontsize=7)
     ax.set_xlabel(r"$c=|z_1|^2=\cos t$"); ax.set_title("(a) cutoffs", fontsize=9)
-    ax.legend(loc="lower right", fontsize=7, frameon=False, ncol=2)
+    ax.legend(loc="lower right", fontsize=8.5, frameon=False, ncol=2, handlelength=1.2, columnspacing=0.8)
     t, u = np.meshgrid(np.linspace(-HALF, HALF, 401), np.linspace(0, 1, 201))
     L = smooth_step(np.cos(t), .25, .75)
     for ax, val, title in ((axs[1], th * L * u, r"(b) $\arg z_1=\theta\Lambda(c)\,u$"),
@@ -184,6 +184,11 @@ def fig_readout():
     return save(fig, "smooth_readout")
 
 
+def arrow_along(ax, xs, ys, i, color):
+    ax.annotate("", xy=(xs[i + 1], ys[i + 1]), xytext=(xs[i - 1], ys[i - 1]),
+                arrowprops=dict(arrowstyle="-|>", color=color, lw=1.2, mutation_scale=11))
+
+
 def fig_field():
     t, u = np.meshgrid(np.linspace(-1.45, 1.45, 701), np.linspace(0, 1, 351))
     N, M = NM(t, u)
@@ -191,19 +196,27 @@ def fig_field():
     hue = (np.angle(F) / (2 * np.pi)) % 1.0
     val = 0.35 + 0.65 * (np.abs(F) / (0.08 + np.abs(F))) ** 0.6
     rgb = hsv_to_rgb(np.stack([hue, 0.85 * np.ones_like(hue), val], axis=-1))
-    fig, axs = plt.subplots(1, 2, figsize=(7.2, 2.8), gridspec_kw={"width_ratios": [1.9, 1]})
+    fig, axs = plt.subplots(1, 2, figsize=(7.2, 2.9), gridspec_kw={"width_ratios": [1.9, 1]})
     ax = axs[0]
     ax.imshow(rgb, origin="lower", extent=(-1.45, 1.45, 0, 1), aspect="auto", rasterized=True)
     for sgn, lab, dx in ((1, r"$P_+$, index $-1$", -0.62), (-1, r"$P_-$, index $+1$", 0.12)):
         ax.plot(sgn * T0, U0, "o", color="white", ms=5, mec="k", mew=0.6)
-        ax.text(sgn * T0 + dx, U0 + 0.17, lab, color="white", fontsize=8)
+        ax.text(sgn * T0 + dx, U0 + 0.17, lab, color="white", fontsize=8.5)
     ax.plot(0, 1, "D", color="white", ms=4, mec="k", mew=0.6, clip_on=False)
-    ax.text(0.05, 0.9, r"$(0,1)$", color="white", fontsize=8)
+    ax.text(0.05, 0.9, r"$(0,1)$", color="white", fontsize=8.5)
     s = np.linspace(0, 2 * np.pi, 400)
     r = 0.13
-    ax.plot(T0 + r * np.cos(s), U0 + r * np.sin(s), color="white", lw=1.0, ls="--")
+    lx, ly = T0 + r * np.cos(s), U0 + r * np.sin(s)
+    ax.plot(lx, ly, color="white", lw=1.0, ls="--")
+    arrow_along(ax, lx, ly, 100, "white")  # positive orientation
     ax.set_xlabel("$t$"); ax.set_ylabel("$u$")
     ax.set_title(r"(a) phase of $F=N+iM$ (hue) on $D_\circ$", fontsize=9)
+    cyc = ListedColormap(hsv_to_rgb(np.stack(
+        [(np.linspace(-np.pi, np.pi, 256) / (2 * np.pi)) % 1.0, 0.85 * np.ones(256), np.ones(256)], -1)))
+    bar = fig.colorbar(matplotlib.cm.ScalarMappable(norm=matplotlib.colors.Normalize(-np.pi, np.pi), cmap=cyc),
+                       ax=ax, fraction=0.04, pad=0.02, ticks=[-np.pi, -np.pi / 2, 0, np.pi / 2, np.pi])
+    bar.ax.set_yticklabels([r"$-\pi$", r"$-\frac{\pi}{2}$", "0", r"$\frac{\pi}{2}$", r"$\pi$"], fontsize=8)
+    bar.set_label(r"$\arg F$ (cyclic)", fontsize=8.5)
     s2 = np.linspace(0, 4 * np.pi, 1600)
     FF = (lambda nm: nm[0] + 1j * nm[1])(NM(T0 + r * np.cos(s2), U0 + r * np.sin(s2)))
     chi = np.exp((np.log(np.abs(FF)) + 1j * np.unwrap(np.angle(FF))) / 2)
@@ -212,15 +225,39 @@ def fig_field():
     ax = axs[1]
     ax.plot(chi.real[:half], chi.imag[:half], color=TEAL, lw=1.4, label="first loop")
     ax.plot(chi.real[half:], chi.imag[half:], color=ORANGE, lw=1.4, ls="--", label="second loop")
+    for i in (300, 560):
+        arrow_along(ax, chi.real, chi.imag, i, TEAL)
+        arrow_along(ax, chi.real, chi.imag, half + i, ORANGE)
     ax.plot(chi.real[0], chi.imag[0], "o", color="k", ms=4)
     ax.plot(chi.real[half], chi.imag[half], "s", color=RED, ms=4)
-    ax.annotate(r"$\chi(0)$", (chi.real[0], chi.imag[0]), textcoords="offset points", xytext=(4, 4), fontsize=8)
-    ax.annotate(r"$-\chi(0)$", (chi.real[half], chi.imag[half]), textcoords="offset points", xytext=(4, -10), fontsize=8)
+    ax.annotate(r"$\chi(0)$", (chi.real[0], chi.imag[0]), textcoords="offset points", xytext=(4, 4), fontsize=8.5)
+    ax.annotate(r"$-\chi(0)$", (chi.real[half], chi.imag[half]), textcoords="offset points", xytext=(4, -10), fontsize=8.5)
     ax.set_aspect("equal"); ax.axhline(0, color=GREY, lw=0.4); ax.axvline(0, color=GREY, lw=0.4)
+    ax.set_xlabel(r"$\mathrm{Re}\,\chi$"); ax.set_ylabel(r"$\mathrm{Im}\,\chi$", labelpad=0)
     ax.set_title(r"(b) $\chi=\sqrt{F}$ along the dashed loop", fontsize=9)
-    ax.legend(fontsize=7, frameon=False, loc="lower left")
+    ax.legend(fontsize=7.5, frameon=False, loc="center")
     fig.tight_layout()
     return save(fig, "observation_field")
+
+
+def preimage_counts(Nh, Mh, gx, gy):
+    """Count, at each target grid point, the triangles of the source mesh whose images contain it."""
+    count = np.zeros((len(gy), len(gx)), dtype=int)
+    P = np.stack([Nh, Mh], -1)
+    for A, B, C in ((P[:-1, :-1], P[:-1, 1:], P[1:, 1:]), (P[:-1, :-1], P[1:, 1:], P[1:, :-1])):
+        for a, b, c in zip(A.reshape(-1, 2), B.reshape(-1, 2), C.reshape(-1, 2)):
+            det = (b[0] - a[0]) * (c[1] - a[1]) - (c[0] - a[0]) * (b[1] - a[1])
+            if abs(det) < 1e-14:
+                continue
+            i0, i1 = np.searchsorted(gx, min(a[0], b[0], c[0])), np.searchsorted(gx, max(a[0], b[0], c[0]))
+            j0, j1 = np.searchsorted(gy, min(a[1], b[1], c[1])), np.searchsorted(gy, max(a[1], b[1], c[1]))
+            if i0 == i1 or j0 == j1:
+                continue
+            X, Y = np.meshgrid(gx[i0:i1], gy[j0:j1])
+            l1 = ((b[0] - X) * (c[1] - Y) - (c[0] - X) * (b[1] - Y)) / det
+            l2 = ((c[0] - X) * (a[1] - Y) - (a[0] - X) * (c[1] - Y)) / det
+            count[j0:j1, i0:i1] += (l1 >= 0) & (l2 >= 0) & (1 - l1 - l2 >= 0)
+    return count
 
 
 def fig_folds():
@@ -231,7 +268,7 @@ def fig_folds():
     Nu, Nt = np.gradient(N, du, dt)
     Mu, Mt = np.gradient(M, du, dt)
     J = Nt * Mu - Nu * Mt
-    fig, axs = plt.subplots(1, 2, figsize=(7.2, 2.9), gridspec_kw={"width_ratios": [1.45, 1]})
+    fig, axs = plt.subplots(1, 2, figsize=(7.2, 3.0), gridspec_kw={"width_ratios": [1.45, 1]})
     cmap = ListedColormap(["#f4c27a", "#9fd3cf"])
     ax = axs[0]
     ax.pcolormesh(t, u, (J > 0).astype(float), cmap=cmap, shading="auto", rasterized=True)
@@ -239,19 +276,38 @@ def fig_folds():
     for sgn in (1, -1):
         ax.plot(sgn * T0, U0, "o", color=RED, ms=5)
     ax.plot(0, 1, "D", color="k", ms=4, clip_on=False)
-    ax.annotate(r"$P_0$: fold, degree $0$", (0, 1), textcoords="offset points", xytext=(8, -12), fontsize=8)
+    ax.annotate(r"$P_0$", (0, 1), textcoords="offset points", xytext=(5, -11), fontsize=8.5)
+    ax.legend(handles=[Patch(color="#9fd3cf", label=r"$\det D\Psi>0$"), Patch(color="#f4c27a", label=r"$\det D\Psi<0$")],
+              fontsize=7.5, loc="lower left", framealpha=0.9)
     ax.set_xlabel("$t$"); ax.set_ylabel("$u$")
-    ax.set_title(r"(a) sign of $\det D\Psi$ and critical locus on $D_\circ$", fontsize=9)
+    ax.set_title(r"(a) sign of $\det D\Psi$ and critical locus, $|t|\leq1.3$", fontsize=9)
+    # Psi is even in t, so the image of the half 0<=t<=1.3 already shows every image point.
+    th, uh = np.meshgrid(np.linspace(0, tl, 131), np.linspace(0, 1, 66))
+    Nh, Mh = NM(th, uh)
+    gx = np.linspace(-1.0, 0.6, 321) + 1.3e-4
+    gy = np.linspace(-1.0, 1.05, 411) + 1.7e-4
+    count = preimage_counts(Nh, Mh, gx, gy)
+    assert count.max() == 2, count.max()
+    probe = count[np.argmin(abs(gy - 0.2)), np.argmin(abs(gx + 0.1))]
+    assert probe == 2, probe  # (N,M)=(-0.1,0.2): two preimages in the half, four in |t|<=1.3
+    for tt, uu in ((0.994714, 0.337457), (0.368650, 0.777802)):
+        assert np.allclose(NM(tt, uu), (-0.1, 0.2), atol=1e-5)
     ax = axs[1]
-    ax.pcolormesh(N[::4, ::4], M[::4, ::4], (J[::4, ::4] > 0)[:-1, :-1].astype(float), cmap=cmap,
-                  alpha=0.45, shading="flat", rasterized=True, edgecolors="none")  # overlaps: two preimages
+    shade = np.ma.masked_equal(count, 0).astype(float)
+    ax.pcolormesh(gx, gy, shade, cmap=ListedColormap(["#d5e8e6", "#5aa9a3"]), vmin=0.5, vmax=2.5,
+                  shading="auto", rasterized=True)
     for seg in cs.allsegs[0]:
-        if len(seg) > 5:
-            ax.plot(*NM(seg[:, 0], seg[:, 1]), color="k", lw=1.0)
+        keep = seg[:, 0] > 0.02
+        if keep.sum() > 5:
+            ax.plot(*NM(seg[keep, 0], seg[keep, 1]), color="k", lw=1.0)
+    ax.plot([0, 0], [0, 1], color="k", lw=1.0, ls="--")
     ax.plot(0, 0, "o", color=RED, ms=5)
-    ax.annotate(r"$\Psi(P_\pm)=0$", (0, 0), textcoords="offset points", xytext=(6, -12), fontsize=8)
+    ax.annotate(r"$\Psi(P_\pm)$", (0, 0), textcoords="offset points", xytext=(5, -11), fontsize=8)
+    ax.legend(handles=[Patch(color="#d5e8e6", label="1 preimage"), Patch(color="#5aa9a3", label="2 preimages")],
+              fontsize=7.5, loc="lower right", frameon=False)
     ax.set_xticks([-0.5, 0, 0.5]); ax.set_xlabel("$N$"); ax.set_ylabel("$M$")
-    ax.set_title(r"(b) image $\Psi(D_\circ)$ and fold curves", fontsize=9)
+    ax.set_xlim(-1.0, 0.6); ax.set_ylim(-1.0, 1.05)
+    ax.set_title(r"(b) image of $0\leq t\leq1.3$, with multiplicity", fontsize=9)
     fig.tight_layout()
     return save(fig, "observation_folds")
 
@@ -290,7 +346,7 @@ def fig_sublevel():
 
 
 def fig_curves():
-    fig, axs = plt.subplots(1, 3, figsize=(7.2, 2.4), gridspec_kw={"width_ratios": [1.45, 1, 1]})
+    fig, axs = plt.subplots(1, 3, figsize=(7.2, 2.6), gridspec_kw={"width_ratios": [1.45, 1, 1]})
     r = 0.5
     y = np.linspace(-np.sqrt(r), np.sqrt(r), 600)
     x = np.sqrt(np.clip((r ** 2 - y ** 4) / (1 + y ** 2), 0, None))
@@ -306,18 +362,30 @@ def fig_curves():
     ax.plot(b * np.sin(s), a * np.sin(2 * s), color=ORANGE, lw=1.4)
     ax.plot(0, 0, "o", color=RED, ms=4)
     ax.set_title(r"(b) orbit shadow, $2\!:\!1$: a node", fontsize=8.5)
+    ax.set_xlabel(r"$\mathrm{Im}\,Y$"); ax.set_ylabel(r"$\mathrm{Im}\,X$", labelpad=0)
     ax.set_aspect("equal")
     s5 = np.sqrt(5)
     Nn = (-335 + 162 * s5) / 12; M2 = (-520 + 249 * s5) / 27; R = 20 * (140 + 11 * s5) / 11397
     A = -M2 / (2 * Nn ** 1.5); B = np.sqrt(M2 * R) / Nn; C = np.sqrt(2 * R) / Nn ** 0.25
     assert abs(B ** 2 + A * C ** 2) < 1e-12
     ts = -B / C
-    tau = np.linspace(ts - 0.6, ts + 0.6, 800)
+    tau = np.linspace(ts - 0.6, ts + 0.6, 4001)
     num = 2 * (C * tau ** 2 + 2 * B * tau - A * C) / (C ** 2 + 4 * tau ** 2)
+    px, py = num * (-C), num * 2 * tau
     ax = axs[2]
-    ax.plot(num * (-C), num * 2 * tau, color="k", lw=1.4)
+    ax.plot(px, py, color="k", lw=1.4)
     ax.plot(0, 0, "o", color=RED, ms=4)
+    ax.set_xlabel("$p_1$"); ax.set_ylabel("$p_2$", labelpad=0)
     ax.set_title("(c) curvature trace: a cusp", fontsize=8.5)
+    zoom = ax.inset_axes([0.38, 0.42, 0.56, 0.54])
+    near = np.abs(tau - ts) < 0.25
+    zoom.plot(px[near], py[near], color="k", lw=1.2)
+    zoom.plot(0, 0, "o", color=RED, ms=3)
+    span = max(np.ptp(px[near]), np.ptp(py[near])) * 0.6
+    cx, cy = px[near].mean(), py[near].mean()
+    zoom.set_xlim(cx - span, cx + span); zoom.set_ylim(cy - span, cy + span); zoom.set_aspect("equal")
+    zoom.set_xticks([]); zoom.set_yticks([])
+    ax.indicate_inset_zoom(zoom, edgecolor=GREY)
     fig.tight_layout()
     return save(fig, "three_curves")
 
@@ -361,7 +429,7 @@ def fig_umbrella():
     ax2.contour(xs, ys, rho, levels=[0.1, 0.25, 0.5], colors=ORANGE, linewidths=1.0, linestyles="--")
     ax2.plot([0, 0], [-1, 1], color=RED, lw=1.2)
     ax2.set_aspect("equal"); ax2.set_xlabel("$x$"); ax2.set_ylabel("$y$")
-    ax2.set_title(r"(b) levels of $V$ (teal), $X=x$ (grey), $\rho$ (dashed)", fontsize=8.5)
+    ax2.set_title(r"(b) the $(X,V)$ grid in the $(x,y)$-plane", fontsize=9)
     fig.tight_layout()
     return save(fig, "umbrella_coordinates")
 
@@ -390,16 +458,19 @@ def fig_euclidean():
         dev.append((np.abs(qq / 2) + np.sqrt((qq / 2) ** 2 + qn ** 2)).max())  # spectral norm of G-I
         rad.append(np.abs(np.sqrt(X ** 2 + (X * yv) ** 2 + yv ** 4) / r - 1).max())
     dev, rad = np.array(dev), np.array(rad)
-    slope_dev = np.polyfit(np.log(rs[:12]), np.log(dev[:12]), 1)[0]
-    slope_rad = np.polyfit(np.log(rs[:12]), np.log(rad[:12]), 1)[0]
+    fit = rs <= 1e-3 * (1 + 1e-9)  # fitting interval 1e-5 <= rho <= 1e-3
+    slope_dev = np.polyfit(np.log(rs[fit]), np.log(dev[fit]), 1)[0]
+    slope_rad = np.polyfit(np.log(rs[fit]), np.log(rad[fit]), 1)[0]
     assert np.all(dev <= 4 * rs * (1 + np.log(1 / rs)))  # consistent with the standard-germ remark
-    fig, ax = plt.subplots(figsize=(4.4, 2.9))
-    ax.loglog(rs, dev, "o-", color=TEAL, ms=3, lw=1.1, label=rf"$\max\|G-I\|$ (slope {slope_dev:.2f})")
-    ax.loglog(rs, rad, "s-", color=ORANGE, ms=3, lw=1.1, label=rf"$\max|\rho_e/\rho-1|$ (slope {slope_rad:.2f})")
+    fig, ax = plt.subplots(figsize=(4.1, 3.6))
+    ax.loglog(rs, dev, "o-", color=TEAL, ms=3, lw=1.1, label=rf"$\max\|G-I\|$ (fitted slope {slope_dev:.2f})")
+    ax.loglog(rs, rad, "s-", color=ORANGE, ms=3, lw=1.1, label=rf"$\max|\rho_e/\rho-1|$ (fitted slope {slope_rad:.2f})")
+    ax.axvspan(1e-5, 1e-3, color=GREY, alpha=0.08, lw=0)
     ax.loglog(rs, 0.8 * np.sqrt(rs), color=GREY, lw=0.8, ls="--", label=r"general bound $\rho^{1/2}$")
     ax.loglog(rs, rs * np.log(1 / rs), color=GREY, lw=0.8, ls=":", label=r"$\rho\log(1/\rho)$")
-    ax.set_xlabel(r"$\rho$"); ax.legend(fontsize=7, frameon=False)
-    ax.set_title("standard cross-cap in arclength coordinates", fontsize=8.5)
+    ax.set_xlabel(r"$\rho$")
+    ax.legend(fontsize=8.5, frameon=False, loc="upper center", bbox_to_anchor=(0.45, -0.25), ncol=1)
+    ax.set_title("standard cross-cap in arclength coordinates", fontsize=9)
     fig.tight_layout()
     return save(fig, "asymptotically_euclidean"), slope_dev, slope_rad
 

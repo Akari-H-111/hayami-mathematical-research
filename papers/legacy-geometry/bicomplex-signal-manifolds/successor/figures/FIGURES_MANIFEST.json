@@ -3,19 +3,19 @@
   "numpy": "2.5.2",
   "matplotlib": "3.11.1",
   "numerical_slopes_standard_germ": {
-    "G_minus_I": 0.908,
-    "radius_ratio": 0.89
+    "G_minus_I": 0.907,
+    "radius_ratio": 0.887
   },
   "figures": {
-    "surface_overview.pdf": "c4dc4925489b00a2109b2aed66fe9e9e3204379a57a5668ecf8129f5a5c8dd98",
+    "surface_overview.pdf": "812b140694d09c1f560fc5dbea92cebb12c4ee01cf53e3d3a179159e642ebf63",
     "edge_rigidity.pdf": "95c47c99e0c5dba1f44490168940f6707fefea6d01fd8eef982d631602c7f0ac",
-    "smooth_readout.pdf": "9db6780c23fc3a3ce7555488b25ebca648ac57e0a40fedf8b1ad2813b797584a",
-    "observation_field.pdf": "d08ae665e16731d7a0e7a0e63b360acb2593477204b2706b04077c190e1319b1",
-    "observation_folds.pdf": "971980ec5b02b738f147d3f3a041978cdbb451c28f6017e2b89ef5e5f09122e7",
+    "smooth_readout.pdf": "e5c6b82056f4930cc62b9359328095e7ad4d2d88657727c9974b4c773c0db0e6",
+    "observation_field.pdf": "5a7457ed4bdcdc0d20c4b4cfd351dcaa95721015e096134fc9adc690af8c9782",
+    "observation_folds.pdf": "23143b9fe324227fab4866da760a092fcf5db29f7dc45b5d09cbd8e160a858d1",
     "sublevel_law.pdf": "57ad39832450eeab8c8461d1eaba0d969fa1935d2a22ecc036e50a891bb5a8c0",
-    "three_curves.pdf": "b09e265aec68861a272221db54a6fd9c56b9f648bf678e1c4f9508f11070dc05",
-    "umbrella_coordinates.pdf": "40f368ff6fb2f56b6db64d5fa0f0f4ece252416133150c82332b4ce1071c26f0",
-    "asymptotically_euclidean.pdf": "c410f2b06f3ba574b4f01c52ceb9ed916576b936cd1e09744f7fb2df7abd783c",
+    "three_curves.pdf": "ecd5d6e7f47c726c6117187190220cb188a96961baedaf1ca97040b4bb2c83f9",
+    "umbrella_coordinates.pdf": "8dc8c100c13835f9a4fc61d260515bea743ae4ea722360b53ff20149a99a26a4",
+    "asymptotically_euclidean.pdf": "c052fbeb1dfc8175d11f427c968642c1a9d659c119ad353484ec6e94bf92eec5",
     "roman_surface.pdf": "580bd9321cfcb455644f6af50f366c19e8b0291f8d89f917d1504c63b087a2c4"
   }
 }

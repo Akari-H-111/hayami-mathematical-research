@@ -46,7 +46,10 @@ def standard_arclength():
     mono = s.diff(x * s.asinh(a / x), x)
     assert s.simplify(mono - (s.asinh(a / x) - (a / x) / s.sqrt(1 + (a / x) ** 2))) == 0
     assert s.simplify(s.diff(s.asinh(b) - b / s.sqrt(1 + b**2), b) - b**2 / (1 + b**2) ** s.Rational(3, 2)) == 0
-    print("PASS explicit standard cross-cap arclength coordinate V, V(0,y)=y|y|, V_x and q.n identities, monotonicity")
+    A = s.asinh(2 * y / x)
+    assert s.simplify(s.expand(V**2 - y**4 - x**2 * y**2)
+                      - (-s.Rational(3, 4) * x**2 * y**2 + x**2 * y * R * A / 4 + x**4 * A**2 / 16)) == 0
+    print("PASS explicit standard cross-cap arclength coordinate V, V(0,y)=y|y|, V_x, q.n and radius identities, monotonicity")
 
 
 def roman():

@@ -20,6 +20,7 @@
 Point Interactions on Surfaces Mapped into Three-Space}
 \author{Akari Hayami (Jian-Yu Huang)}
 \date{October 2026\\\small Working draft}
+\setcounter{tocdepth}{1}
 \begin{document}\maketitle
 \begin{abstract}
 On a complete smooth Riemannian surface, Colin de Verdière showed that the Laplacian
@@ -254,10 +255,17 @@ $q$ and $n$ as in the proof of Lemma~\ref{lem:arclength},
 \]
 Since $|x|\leq\rho$, $y^2\leq|V|\leq\rho$, and $x\mapsto x\operatorname{arsinh}(a/x)$
 is increasing on $(0,\infty)$ for $a>0$, we get
-$|q\cdot n|\leq\frac\rho2\bigl(1+\operatorname{arsinh}(2\rho^{-1/2})\bigr)$ and
-$|q|^2\leq4\rho$. Hence $G-I=O(\rho\log(1/\rho))$ for the standard germ.
-Figure~\ref{fig:euclidean} shows this rate numerically, for the metric and for
-the radius ratio.
+$|x|\operatorname{arsinh}(2|y|/|x|)\leq\rho\operatorname{arsinh}(2\rho^{-1/2})=O(\rho\log(1/\rho))$.
+Hence $|q\cdot n|=O(\rho\log(1/\rho))$ and $|q|^2\leq4\rho$, so
+$G-I=O(\rho\log(1/\rho))$ for the standard germ. The radii improve in the same
+way. Both radii are even in $y$, so take $y\geq0$. With
+$A=\operatorname{arsinh}(2y/|x|)$, a direct expansion gives
+\[
+ V^2-y^4-x^2y^2=-\tfrac34x^2y^2+\tfrac14x^2y\sqrt{x^2+4y^2}\,A+\tfrac1{16}x^4A^2 .
+\]
+Each term is $O(\rho^3\log(1/\rho))$, and $\rho_e^2-\rho^2=x^2y^2+y^4-V^2$, so
+$|\rho_e-\rho|\leq|\rho_e^2-\rho^2|/\rho$ gives $\rho_e/\rho=1+O(\rho\log(1/\rho))$.
+Figure~\ref{fig:euclidean} shows both rates numerically.
 \end{remark}
 
 \begin{figure}[t]\centering
@@ -265,19 +273,24 @@ the radius ratio.
 \caption{(a) The standard cross-cap $f(x,y)=(x,xy,y^2)$ on the unit disc of
 the source. The two sheets cross along the double ray (red), which ends at the
 cross-cap (black). The orange curves are links $\rho_e=r$, each the image of a
-circle with one double point. (b) The source in the arclength coordinates of
-Remark~\ref{rem:standard}: level curves of $V$ (teal, dashed where $V<0$), of
-$X=x$ (grey), and the circles $\rho=0.1,0.25,0.5$ (orange). In these
-coordinates the degenerate metric becomes asymptotically Euclidean.}\label{fig:umbrella}
+circle with one double point. (b) The arclength coordinate grid of
+Remark~\ref{rem:standard}, pulled back to the original $(x,y)$-plane: level
+curves of $V$ (teal, dashed where $V<0$) and of $X=x$ (grey). The orange curves
+are the preimages of the circles $\rho=0.1,0.25,0.5$ of the $(X,V)$-plane,
+which is why they are not round. In the coordinates $(X,V)$ the degenerate
+metric becomes asymptotically Euclidean.}\label{fig:umbrella}
 \end{figure}
 
 \begin{figure}[t]\centering
-\includegraphics[width=.62\linewidth]{asymptotically_euclidean.pdf}
+\includegraphics[width=.66\linewidth]{asymptotically_euclidean.pdf}
 \caption{Deviation from Euclidean geometry at the standard cross-cap, sampled
-at $720$ points of each circle $\rho=r$ in arclength coordinates. The metric
-deviation $\|G-I\|$ and the radius ratio $\rho_e/\rho$ both approach the
-Euclidean values at the rate $\rho\log(1/\rho)$, well inside the general
-bound $\rho^{1/2}$ of Lemma~\ref{lem:arclength}.}\label{fig:euclidean}
+at $720$ points of each circle $\rho=r$ in arclength coordinates. Both the
+metric deviation $\|G-I\|$ and the radius ratio $\rho_e/\rho$ decay like
+$\rho\log(1/\rho)$, the bound of Remark~\ref{rem:standard}, well inside the
+general bound $\rho^{1/2}$ of Lemma~\ref{lem:arclength}. The fitted slopes are
+least-squares fits over the shaded interval $10^{-5}\leq\rho\leq10^{-3}$. They
+are not new exponents: they match the local slope $1-1/\log(1/\rho)$ of
+$\rho\log(1/\rho)$, which lies between $0.86$ and $0.91$ there.}\label{fig:euclidean}
 \end{figure}
 
 \begin{corollary}[Intrinsic distance]\label{cor:distance}
@@ -708,6 +721,15 @@ sum zero, and $(-1,0)$ on matching-odd vectors.
 \end{proof}
 
 \subsection{A ruled surface with boundary cross-caps}\label{sec:ruled}
+
+\begin{figure}[t]\centering
+\includegraphics[width=\linewidth]{surface_overview.pdf}
+\caption{The ruled surface of Section~\ref{sec:ruled} and its source. The
+interior cross-caps $P_\pm$ carry the two logarithmic channels; $P_0$ is a
+boundary half-germ and $E_\pm$ are corner quarter-germs, all on the
+Dirichlet boundary.}\label{fig:ruled}
+\end{figure}
+
 The ruled map
 \[
  S(t,u)=\bigl(\cos t+2u(1-\cos t),\,(1-u)\sin t,\,u\sqrt{\cos t(2-\cos t)}\bigr)
@@ -727,14 +749,6 @@ extension has a two-dimensional kernel. An earlier preprint on this surface
 \cite{record} defined the two-point problem through the compact-core closure
 $H_0$ and claimed indices $(2,2)$; Proposition~\ref{prop:outer} shows why the
 outer boundary must be fixed first.
-
-\begin{figure}[t]\centering
-\includegraphics[width=\linewidth]{surface_overview.pdf}
-\caption{The ruled surface of Section~\ref{sec:ruled} and its source. The
-interior cross-caps $P_\pm$ carry the two logarithmic channels; $P_0$ is a
-boundary half-germ and $E_\pm$ are corner quarter-germs, all on the
-Dirichlet boundary.}\label{fig:ruled}
-\end{figure}
 
 \section{Open problems}\label{sec:open}
 \begin{itemize}
