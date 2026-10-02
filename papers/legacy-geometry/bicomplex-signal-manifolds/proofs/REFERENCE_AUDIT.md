@@ -1,5 +1,16 @@
 # Primary-reference and hypothesis audit
 
+## Paper 2 literature comparison, round 1 (2026-10-02)
+
+| Primary source | Retrieval and reading | Consequence |
+| --- | --- | --- |
+| Grieser, *Quasiisometry of singular metrics*, Houston J. Math. 28 (2002) 741–752 | Author-hosted scan from Oldenburg, SHA-256 `4a03d4b302c8050a1bb603cb53401047162cd211a3e4e137eca58baecd8bf45e`; **all 12 pages read** | **Closes the earlier retrieval limit** (publisher 403, Citeseer 404). §1 is exactly the 0.02 singular coordinate method (x=u√(u²+v²), y=v), giving weak quasi-isometry only. The paper contains no asymptotically Euclidean estimate and no Laplacian or PDE analysis, so the 0.03 arclength refinement (a−I=O(ρ^{1/2}), extrinsic-radius ratio) is not in Grieser |
+| Colin de Verdière, *Pseudo-laplaciens. I*, Ann. Inst. Fourier 32 (1982) 275–286 | Numdam PDF, SHA-256 `fecfe207273d52d82cb7a1c67df4deede52ef2cfb5ec8e3c766325f9ea1e30f5`; Theorem 1 and Lemmas 1–2 read | This is the smooth-surface prototype: deficiency 1 per point, log-plus-constant expansion, resolvent regular part F(λ). Paper 2 should be framed as its extension to Whitney cross-caps |
+| Hillairet–Kokotov, arXiv:1011.5034v2 | arXiv PDF, SHA-256 `0f023ebfc6e05cdf27a93b5e9ad9cb92e5e95e139ad94e0336f99cd736c0cc49`; §§1–3 expansions read | Conical points of angle θ≤2π carry only the log channel (eq. 3.1). The cross-cap matches the angle-2π case |
+| Kokotov–Lagota, Canad. J. Math. 72 (2020), arXiv:1902.03232 | arXiv PDF, SHA-256 `4cd8b1452a81567f4e8fe42f8ab3d46ad4271dff728492621b1703d09c178cf8`; abstract level only | Related Green and ker Δ* construction on polyhedral surfaces; not yet compared in detail |
+
+Not retrieved: Albeverio–Gesztesy–Høegh-Krohn–Holden; Albeverio–Brasche–Röckner 1989; Fukushima–Oshima–Takeda; Brüning–Geyler–Pankrashkin. The full comparison and positioning are in `successor/PAPER2_LITERATURE.md`.
+
 ## Successor paper 1 (r1): added citation
 
 | Source | Retrieval boundary | Application |

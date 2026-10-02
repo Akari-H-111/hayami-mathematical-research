@@ -135,3 +135,12 @@ v11 已依作者核准取回並登錄，見 `../claims/V11_COMPARISON.md`。同�
 - 全文改為正面敘事語氣。
 
 逐項判斷見 `EDITORIAL_R1.md`。17 頁，verifier、export 與逐頁 QA 皆 PASS。下一步：作者通讀，必要時做 r2，然後最終驗收。論文二的文獻比對可並行。
+
+## 9. 論文二文獻比對第一輪（2026-10-02）
+
+見 `PAPER2_LITERATURE.md`。主要結果：
+- Grieser 全文確認 0.02 的座標法屬前人，0.03 的 arclength 細化不在其中；
+- 定位為 Colin de Verdière pseudo-laplacian 的 cross-cap 推廣；
+- 建議把論文二擴大成「具 Whitney cross-cap 的緊緻浸入曲面」的一般定理，以 S 為主例。這需要先證明一般情形的全域緊緻性。
+
+仍待取得：Albeverio 等關於 2D point interaction 尺度與 Markov 性的經典文獻。

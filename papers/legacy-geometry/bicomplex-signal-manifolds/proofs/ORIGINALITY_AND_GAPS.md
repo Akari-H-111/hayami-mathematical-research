@@ -4,6 +4,12 @@
 
 目前版本比祖本更完整、比 v12 更可靠，卻沒有證明 v12 的所有原宣稱。能追回的 scalar Green 結論已改用明確固定外邊界的算子證明；原定義下已被反證的結論不能保留。原創性應落在具體模型與實際 Whitney 度量的假設驗證，不能以 bicomplex 名稱、標準框架或 Lean 定理數代替。
 
+## 2026-10-02 論文二文獻比對更新
+
+- **Grieser 2002 全文已取得並讀完**（作者公開的掃描檔），先前的取得限制解除。其 §1 正是 0.02 的奇異座標法，只給 quasi-isometry；0.03 的 arclength 漸近估計（a−I=O(ρ^{1/2}) 與外在半徑正規化）不在其中，維持「候選貢獻」。
+- **最接近的同型定理是 Colin de Verdière 1982 的 pseudo-laplacian。** 光滑曲面上每點 deficiency 1，展開為 log 加常數。Hillairet–Kokotov 的錐點理論則顯示，角 ≤2π 時只有對數通道。cross-cap 屬於角 2π 的情形。
+- 論文二的定位建議：把 Colin de Verdière 的圖像推廣到浸入曲面的 Whitney cross-cap。也可以考慮推廣到一般具有 cross-cap 的緊緻浸入曲面，但這需要新的全域緊緻性驗證。詳見 `successor/PAPER2_LITERATURE.md`。
+
 ## 2026-10-02 continuation 0.04 更新：祖本 moment assignment 與 v7 範疇／窗口橋
 
 新 7 頁 note `revision/Moment_Readouts_Exceptional_Pullbacks_v0_04_working.tex` 處理兩組問題。一是祖本、v7、v12 共有的 moment assignment（v7 p.2、v12 p.4 的 Definition 3.1）。二是作者這回附上的 v7 草稿（已登錄為非權威歷史稿，見 `claims/V7_DRAFT_INDEX.md`）中 Proposition 8.3、Remarks 8.4／8.16、Definition 8.9 至 Corollary 8.11，以及 Proposition 8.13／Remark 8.14。全部是新定理、反例或非 canonical 構造，**不是**追回歷史推導。
