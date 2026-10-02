@@ -93,13 +93,15 @@ interpreter 位於公開樹之外，屬於本機環境：
 YYYY-MM-DD HH:MM | 工作流 | STATUS | 完成／失敗／阻擋摘要 | 驗證檔案或公開 URL | 下一步
 ```
 
-### 留言
+### Bicomplex 發布收尾（2026-10-02／03）
 
 - 2026-10-03 | Bicomplex 發布收尾（文檔與 Git） | `CLOSEOUT / DOCS SYNCED / PUBLIC STATE RECHECKED` | 重測公開狀態：Zenodo 三筆 API／免登入下載 SHA-256／六個 DOI 解析、GitHub release asset digest、RG 新舊頁；Zenodo 帳號沒有遺留的 Bicomplex 草稿。v7 PDF 不在 origin/main、遠端 tags、release assets 或三個發布 zip（blob 與 SHA-256 雙重核對）。legacy baseline 與八個 verifier 在兩個 interpreter 皆 PASS，claim map 重建 hash 不變。同步 Bicomplex README（Start here）、留言板、共用清單與 Lean 文檔，舊 prompt 與發布前狀態標為歷史快照。未改任何證明、PDF、圖或封存檔案。 | `papers/legacy-geometry/bicomplex-signal-manifolds/successor/SCOPE_AND_PLAN.md` §15 | RG 舊頁措辭潤飾待 Edit limit 解除；本機 main 同步由作者處理
 
 - 2026-10-02 | Bicomplex 後繼論文與軟體 companion 1.0 公開發佈 | `PUBLISHED / ZENODO + GITHUB + RESEARCHGATE READBACK PASS` | 作者全權授權。論文一／二 v1 與軟體 1.0 發佈於 Zenodo；GitHub source-only release `bicomplex-successor-v1.0`；RG 兩個新條目（CC BY 4.0、單一作者、圖庫 7＋4）與舊頁 superseded-by。失敗如實記錄：論文一 export 一次 Overfull；Zenodo 網頁按鈕在背景分頁不刷新（改用官方 REST）；首次 publish 缺 publisher 欄位；RG 圖 5 因無圖說遺失一次（已補傳）；RG Edit limit 擋下舊頁措辭潤飾。 | `releases/candidates/bicomplex-successor-v1-publication.json`; `releases/candidates/bicomplex-successor-v1-figures-publication.json` | 同上尾項
 
 - （說明）以下標為 UNPUBLISHED／AWAITING AUTHOR READING／publication hold 的 Bicomplex 條目是 2026-10-01／02 的發布前紀錄，保留原文；現況以上列兩條與 Bicomplex README 為準。
+
+### 留言
 
 - 2026-09-30 | Stokes v5 Lean companion v0.04 Zenodo 發布 | `PUBLISHED / API+DOWNLOAD PASS; DOI RESOLUTION PENDING` | 作者登入後已從 v0.03 建立同 concept 的新版並發布 record `23057630`；官方 API `done`／`submitted=true`、Software／version `0.04`、三檔 MD5／公開下載 SHA-256 全一致。新 software DOI `10.5281/zenodo.23057630` 已指派，但首次 `doi.org` HTTP 404，解析仍待驗證；公開 record/API/files 可用。GitHub／根目錄引用與狀態同步，未重封裝；paper DOI/PDF/v0.02/v0.03 不變；open germ classification／unfolding 不變 | `https://zenodo.org/records/23057630`; `https://zenodo.org/api/records/23057630`; `releases/candidates/stokes-caustic-v5-v0.04-publication.md` | 僅待新 DOI 解析回讀；不新建重複版本或改 DOI
 
