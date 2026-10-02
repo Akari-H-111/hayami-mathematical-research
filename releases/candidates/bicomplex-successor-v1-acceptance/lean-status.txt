@@ -1,0 +1,27 @@
+Bicomplex.actual_source_rank_classification {p : ℝ × ℝ} (ht : p.1 ∈ Set.Icc (-(Real.pi / 2)) (Real.pi / 2)) :
+  ¬Function.Injective ⇑(RuledV5.atlasDifferential p) ↔ p ∈ RuledV5.singularParameters
+Bicomplex.actual_polar_fold : StokesV5.HasWhitneyNormalFormAt StokesV5.observationMap (0, 1)
+Bicomplex.local_observation_root_sign {p : ℝ × ℝ} {n : ℤ} (hindex : RuledV5.HasLocalObservationIndex p n)
+  (hn : n = 1 ∨ n = -1) :
+  ∃ δ,
+    0 < δ ∧
+      ∀ r ∈ Set.Ioo 0 δ,
+        ∃ γ,
+          (∀ (t : ↑unitInterval), ↑(γ t) = RuledV5.complexObservation (RuledV5.circleParameter p r ↑t)) ∧
+            (∀ (t : ↑unitInterval), (Bicomplex.squareRootLift (RuledV5.normalizedLoop γ) 0 ⋯) t ^ 2 = ↑(γ t) / ↑(γ 0)) ∧
+              (Bicomplex.squareRootLift (RuledV5.normalizedLoop γ) 0 ⋯) 1 =
+                -(Bicomplex.squareRootLift (RuledV5.normalizedLoop γ) 0 ⋯) 0
+Bicomplex.mellin_interval_green (σ a b : ℝ) (f g df dg : ℝ → ℂ) (hf : ∀ (x : ℝ), HasDerivAt f (df x) x)
+  (hg : ∀ (x : ℝ), HasDerivAt g (dg x) x) (hdf : Continuous df) (hdg : Continuous dg) :
+  ∫ (x : ℝ) in a..b,
+      (starRingEnd ℂ) (Bicomplex.mellin σ f df x) * g x - (starRingEnd ℂ) (f x) * Bicomplex.mellin (1 - σ) g dg x =
+    Complex.I * (↑b * (starRingEnd ℂ) (f b) * g b - ↑a * (starRingEnd ℂ) (f a) * g a)
+Bicomplex.gram_eigenvalue_enclosure.{u_1} {ι : Type u_1} [Fintype ι] [DecidableEq ι] (ω : ι → ℝ) {T δ : ℝ} (hT : 0 < T)
+  (hδ : 0 < δ) (hsep : ∀ (i j : ι), i ≠ j → δ ≤ |ω i - ω j|) {μ : ℂ}
+  (hμ : Module.End.HasEigenvalue (Matrix.toLin' fun i j => Bicomplex.phasorGram T (ω i) (ω j)) μ) :
+  ‖μ - 1‖ ≤ ↑(Fintype.card ι - 1) * (2 / (T * δ))
+Bicomplex.quadrature_actual_surface (t θ v : ℝ) (hc : Real.cos θ = 1 - Real.cos t)
+  (hs : Real.sin θ = StokesV5.qChart t) :
+  Bicomplex.quadratureReadout (Bicomplex.quadratureLift t θ v) = StokesV5.ruledSurface (t, Real.sin v ^ 2)
+Bicomplex.actual_crosscap_energy_lower (x y ξ η : ℝ) (hy : y ^ 2 ≤ 1 / 2) :
+  (ξ ^ 2 + (x ^ 2 + y ^ 2) * η ^ 2) / 2 ≤ Bicomplex.crosscapEnergy x y ξ η

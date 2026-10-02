@@ -1,44 +1,44 @@
 {
-  "date": "2026-10-02",
-  "document": "Successor paper 2, editorial revision r3 (figure and label review applied; 4 figures, 1 table)",
-  "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Pseudo_Laplacians_Whitney_Cross_Caps.tex",
-  "source_sha256": "2a957f4b3973dafcdf1d0f9e2f31b3939a1f1a3788564a0e318d69d8d793e6a2",
-  "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Pseudo_Laplacians_Whitney_Cross_Caps.pdf",
-  "pdf_sha256": "c7623a40f05dbf38368f40463d1de1c6758dc5e1e51f9e79bcf40e1294ef4282",
-  "pages": 13,
-  "pdftotext_sha256": "e9099f47ad57a4eee2c0242584aca060125ffd1b18ddaf8244b9c1def93b4f0a",
-  "render": {
-    "tool": "pdftoppm -r 80 -png",
-    "page_png_sha256": {
-      "1": "2c4a88eb2250672f1d7ed1885a60d9a4daf2923b47fbf6d123d3b6755b418dab",
-      "2": "44183a0cf0537bda28dc7ed0131d7a6a07d48f4eac63c80bde88f870da8403d1",
-      "3": "9270c6be4ea7822b43a0f3e760c9cbc4803d4e51e757edf7d105a7e80481333a",
-      "4": "23cf93f4a7dfdc26591bcc725acadffffec5d80d0de88c3fed17ebacbdb36293",
-      "5": "3ca2a9149d6d8a015286a13f63058eeb5b57d3ec46a39fb8f6dc30d58939a977",
-      "6": "a7a617aeef2b26b99b7e7dcf9a15f7c07476c391b461a7d17add201db662e0e8",
-      "7": "580676fc286d60b8b53a6a0a1afb3aa68539e90810eaa8d85c9ccb656818d4a9",
-      "8": "dea715c7e61a49c1561a4a21d5a9abc85a26839e7891c419a5378e6ccb80d31e",
-      "9": "79bd2dc8479df7c8e12a2c235915ffefb0fa10e2fd0bbd9036b2f520c307b139",
-      "10": "0d96b9c65c902f25a44628784adedb5ff1f375e5b72cdd849c858ebd426ba7de",
-      "11": "2fc045789452f6d22cf5a6124354fcacd5dfa6f205fb87ba13d341e1062138f8",
-      "12": "10b1055461b27b84f8a8da4b4d459455cfee4463b86e897dc2420a82a73ddaa1",
-      "13": "684ed5b52617a882eaaf9d774c189e05a63a70c11620867b51723d699f1b7782"
-    }
-  },
-  "figures": {
-    "generator": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_figures.py",
-    "manifest": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/figures/FIGURES_MANIFEST.json",
-    "included": {
-      "umbrella_coordinates.pdf": "8dc8c100c13835f9a4fc61d260515bea743ae4ea722360b53ff20149a99a26a4",
-      "asymptotically_euclidean.pdf": "c052fbeb1dfc8175d11f427c968642c1a9d659c119ad353484ec6e94bf92eec5",
-      "roman_surface.pdf": "580bd9321cfcb455644f6af50f366c19e8b0291f8d89f917d1504c63b087a2c4",
-      "surface_overview.pdf": "812b140694d09c1f560fc5dbea92cebb12c4ee01cf53e3d3a179159e642ebf63"
-    }
-  },
-  "builder": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_paper2_pdf.py",
-  "verifier": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper2.py",
-  "diagnostics": "PASS: byte-safe scan, no Overfull/Underfull/LaTeX Warning/Warning:/undefined",
-  "visual_inspection": "PASS: all 13 r3 pages inspected after the final rebuild; float placement (figures before their headings, split list, TOC overflow) and legend overlap fixed during the round",
-  "editorial_record": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R3.md",
-  "status": "EDITORIAL R3 / AWAITING AUTHOR READING / NOT APPROVED FOR PUBLICATION"
+ "date": "2026-10-02",
+ "document": "Successor paper 2, Version 1 release (editorial r3 text; dates, DOI cross-references and software-companion citation added) (figure and label review applied; 4 figures, 1 table)",
+ "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Pseudo_Laplacians_Whitney_Cross_Caps.tex",
+ "source_sha256": "b677c5070d8c08a269349aa4dec9c220f7b55f75c5735e83f3db818171c2871c",
+ "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Pseudo_Laplacians_Whitney_Cross_Caps.pdf",
+ "pdf_sha256": "f9a1bf053f7d3dc91312427a58a510fc1a6fa1e7220f9acccf004ecd298148ba",
+ "pages": 13,
+ "pdftotext_sha256": "478248aa79c164f454291ef037ca6d295ff69279fac58dd7fbf3481bfcc620d5",
+ "render": {
+  "tool": "pdftoppm -r 80 -png",
+  "page_png_sha256": {
+   "1": "f14917a294a63d69eecc0f1e43069e571d04cef5140cd36b2aea6b70426e4305",
+   "2": "44183a0cf0537bda28dc7ed0131d7a6a07d48f4eac63c80bde88f870da8403d1",
+   "3": "9270c6be4ea7822b43a0f3e760c9cbc4803d4e51e757edf7d105a7e80481333a",
+   "4": "23cf93f4a7dfdc26591bcc725acadffffec5d80d0de88c3fed17ebacbdb36293",
+   "5": "3ca2a9149d6d8a015286a13f63058eeb5b57d3ec46a39fb8f6dc30d58939a977",
+   "6": "a7a617aeef2b26b99b7e7dcf9a15f7c07476c391b461a7d17add201db662e0e8",
+   "7": "580676fc286d60b8b53a6a0a1afb3aa68539e90810eaa8d85c9ccb656818d4a9",
+   "8": "dea715c7e61a49c1561a4a21d5a9abc85a26839e7891c419a5378e6ccb80d31e",
+   "9": "79bd2dc8479df7c8e12a2c235915ffefb0fa10e2fd0bbd9036b2f520c307b139",
+   "10": "0d96b9c65c902f25a44628784adedb5ff1f375e5b72cdd849c858ebd426ba7de",
+   "11": "2fc045789452f6d22cf5a6124354fcacd5dfa6f205fb87ba13d341e1062138f8",
+   "12": "a692b24db83a5483c4db9795cde845a590ec3f8f5a62438154158d072935e646",
+   "13": "2b670314a5cf9c81e9fc93db9f4ced1fd227f4201d2562f411433398d2931681"
+  }
+ },
+ "figures": {
+  "generator": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_figures.py",
+  "manifest": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/figures/FIGURES_MANIFEST.json",
+  "included": {
+   "umbrella_coordinates.pdf": "8dc8c100c13835f9a4fc61d260515bea743ae4ea722360b53ff20149a99a26a4",
+   "asymptotically_euclidean.pdf": "c052fbeb1dfc8175d11f427c968642c1a9d659c119ad353484ec6e94bf92eec5",
+   "roman_surface.pdf": "580bd9321cfcb455644f6af50f366c19e8b0291f8d89f917d1504c63b087a2c4",
+   "surface_overview.pdf": "812b140694d09c1f560fc5dbea92cebb12c4ee01cf53e3d3a179159e642ebf63"
+  }
+ },
+ "builder": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_paper2_pdf.py",
+ "verifier": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper2.py",
+ "diagnostics": "PASS: byte-safe scan, no Overfull/Underfull/LaTeX Warning/Warning:/undefined",
+ "visual_inspection": "PASS: all 13 pages of the Version 1 release re-rendered (pdftoppm -r 80) and inspected after the final rebuild",
+ "editorial_record": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R3.md",
+ "status": "VERSION 1 RELEASE CANDIDATE / AUTHOR-AUTHORIZED PUBLICATION (2026-10-02)"
 }

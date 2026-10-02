@@ -1,0 +1,16 @@
+PASS paper 1: v12/v11 hashes; 66/66 v12 blocks categorized once ({'D': 1, 'R': 3, 'O': 2, 'M': 3, 'S': 1} fixed); refs and citations resolve
+PASS paper 1: 7 included figures exist and match FIGURES_MANIFEST.json
+PASS v13 working exact replay; operator-domain and parametrix conclusions are not inferred
+PASS continuation exact replay; Holder regularity, point traces and extension domains are not CAS-certified
+PASS continuation 0.04 exact/finite replay; analytic, sheaf and covering proofs are written/external
+PASS successor paper 1 consistency and exact replay; written proofs and external theorems are not machine-certified
+PASS adapted metric: |h_y|^2 <= det g <= (1+|h_x|^2)|h_y|^2
+PASS explicit standard cross-cap arclength coordinate V, V(0,y)=y|y|, V_x, q.n and radius identities, monotonicity
+PASS Roman surface: 12 singular points on S^2 (6 on RP^2), Whitney determinants +-2, immersion elsewhere
+PASS Roman symmetry: transitive on 6 cross-caps; pair orbits 6 (orthogonal) + 24 (60 deg); eigenvalues with multiplicities 1,2,3
+PASS ruled surface reflection S(-t,u)=J S(t,u)
+PASS 4 included figures exist and match FIGURES_MANIFEST.json
+PASS paper 2 cross-references and citations resolve
+PASS v13 working exact replay; operator-domain and parametrix conclusions are not inferred
+PASS continuation exact replay; Holder regularity, point traces and extension domains are not CAS-certified
+PASS successor paper 2 exact replay; written analytic proofs and external theorems are not machine-certified

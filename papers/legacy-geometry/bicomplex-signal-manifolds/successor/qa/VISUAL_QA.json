@@ -1,63 +1,63 @@
 {
-  "date": "2026-10-02",
-  "document": "Successor paper 1, editorial revision r3 (figure and label review applied; 7 figures, 2 tables)",
-  "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Realization_Limits_Bicomplex_Signal_Surface.tex",
-  "source_sha256": "e0062ecc8301bc9f2db26a28bbe32e3b325e93d9f97fe6daf229ef8b3d010bfd",
-  "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Realization_Limits_Bicomplex_Signal_Surface.pdf",
-  "pdf_sha256": "d4dc65022f9c68b4574b6b78afec82e48fd19dcebc2bf28565121bd818757056",
-  "pages": 20,
-  "pdftotext_sha256": "48782c08b72e6a7590e7d6a4c0134fe28dfd1f91742a81ece117953fb53b8ec8",
-  "render": {
-    "tool": "pdftoppm -r 80 -png",
-    "page_png_sha256": {
-      "1": "1c567ec2a06706cc6850991a3971ef4167f2b5ab01a32613d542084648b2c507",
-      "2": "ae4799accf89d947b16643349903ea3573a5c622b80711299e23144a847db081",
-      "3": "f4446959825ae8ed43bf9bdc0a895b3e9db42c4e15769aeca176d16fd3943cc4",
-      "4": "d843697d77296ddc840df9950cd8f74859766aefacaa8762a145ac52b4f34cb6",
-      "5": "29199cd5769a81142977eec537d1f42ccb611ce6dbe6a1ca646f35de748ec35b",
-      "6": "1ff0628b229e3b2ba977e8b0a5640c82ed45e489639552981e66b5e0722efcac",
-      "7": "837ec23ada470c59d2ec44753b44067f050d862fe98d761cae91dae96aeae60b",
-      "8": "3f11169037721729b1703111f74638a9a20092c96f00c75d6a36c9936ef8fd61",
-      "9": "2ef12458f040655e4b93efdd061cfc739fbb074b54449c65f21397530a784751",
-      "10": "b143980fc3e9845c7db943f7f939ef4c722777f3c0669a14d054eec7a533eed2",
-      "11": "d398316cda38811baef7e8bbdc616f2658d7c3cdb939970777afba86a87462da",
-      "12": "4cdf33d4db7934bb0dd0e1c843e435effffffc85d680bb897ab1efb12efc6d41",
-      "13": "e446462935b8dbe6f955f9420e89e7a1f61a3c1c9a70168f12ff05044714f795",
-      "14": "620f36b5b81effd8047a65c89f1cda6b9a95739fb17e95539afd9f8406a41637",
-      "15": "6d4f46d66f05e9ca2cfb5db0959f22a2ea6e9b900fbde953f708d3b14bbe7c33",
-      "16": "6e9d65c58115a818f0ee89831529a0be1449175595fe1d9025ff5e070ddb5f82",
-      "17": "b04d123978b8cdcac3378ffe75cb7ae35c57640b7d60c23797c06bc218a3d9e8",
-      "18": "692aeca361e28e732c549e8b1eb1e5b597fd47d9cd617b5688e1f15ba486f2a8",
-      "19": "0fafda2f772a31843e215abd894166f80134803e2903950c9d2881f6691e72e5",
-      "20": "70c55b5592b4eef5ebed7f10e8e267ef3c5da26e7afbfa5e5c031d7680e7a218"
-    }
-  },
-  "figures": {
-    "generator": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_figures.py",
-    "manifest": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/figures/FIGURES_MANIFEST.json",
-    "included": {
-      "surface_overview.pdf": "812b140694d09c1f560fc5dbea92cebb12c4ee01cf53e3d3a179159e642ebf63",
-      "edge_rigidity.pdf": "95c47c99e0c5dba1f44490168940f6707fefea6d01fd8eef982d631602c7f0ac",
-      "smooth_readout.pdf": "e5c6b82056f4930cc62b9359328095e7ad4d2d88657727c9974b4c773c0db0e6",
-      "observation_field.pdf": "5a7457ed4bdcdc0d20c4b4cfd351dcaa95721015e096134fc9adc690af8c9782",
-      "observation_folds.pdf": "23143b9fe324227fab4866da760a092fcf5db29f7dc45b5d09cbd8e160a858d1",
-      "sublevel_law.pdf": "57ad39832450eeab8c8461d1eaba0d969fa1935d2a22ecc036e50a891bb5a8c0",
-      "three_curves.pdf": "ecd5d6e7f47c726c6117187190220cb188a96961baedaf1ca97040b4bb2c83f9"
-    }
-  },
-  "builder": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_paper1_pdf.py",
-  "verifier": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper1.py",
-  "diagnostics": "PASS: byte-safe scan, no Overfull/Underfull/LaTeX Warning/Warning:/undefined",
-  "visual_inspection": "PASS: all 20 r3 pages inspected after the final rebuild; float placement (figures before their headings, split list, TOC overflow) and legend overlap fixed during the round",
-  "editorial_record": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R3.md",
-  "status": "EDITORIAL R3 / AWAITING AUTHOR READING / NOT APPROVED FOR PUBLICATION",
-  "category_counts": {
-    "H": 43,
-    "C": 13,
-    "S": 1,
-    "R": 3,
-    "O": 2,
-    "M": 3,
-    "D": 1
+ "date": "2026-10-02",
+ "document": "Successor paper 1, Version 1 release (editorial r3 text; dates, DOI cross-references and software-companion citation added) (figure and label review applied; 7 figures, 2 tables)",
+ "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Realization_Limits_Bicomplex_Signal_Surface.tex",
+ "source_sha256": "f8b49b477166b87ec9ee0f366544906b39dac32d907ea23c0e5bc3c7fb8add4e",
+ "pdf": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/Realization_Limits_Bicomplex_Signal_Surface.pdf",
+ "pdf_sha256": "9e7322abcbb05f2b268bb682b30958560e03783ab4f4c79bd31e0a12b99ca202",
+ "pages": 20,
+ "pdftotext_sha256": "b782b5afeb9e8b1c1a97dfda965660f7324a759b5160e3aa401ae19581fab8e1",
+ "render": {
+  "tool": "pdftoppm -r 80 -png",
+  "page_png_sha256": {
+   "1": "14d781c5cbcbdb0fac50bcd90bca98fd007186be866b3a71a2934ab71f54744a",
+   "2": "ae4799accf89d947b16643349903ea3573a5c622b80711299e23144a847db081",
+   "3": "f4446959825ae8ed43bf9bdc0a895b3e9db42c4e15769aeca176d16fd3943cc4",
+   "4": "93fc498ac26af4a97136c03596bf6d61f53651166827a44fbac72d3c9a3a24bc",
+   "5": "f2dfc409daf661bd501a139f6d937a548b0f9f35e05dac297f6d65a05425e365",
+   "6": "1ff0628b229e3b2ba977e8b0a5640c82ed45e489639552981e66b5e0722efcac",
+   "7": "837ec23ada470c59d2ec44753b44067f050d862fe98d761cae91dae96aeae60b",
+   "8": "0c01e1633468d80afe6d70dbf40ff376de1a0201770f02c09248321286559efb",
+   "9": "2ef12458f040655e4b93efdd061cfc739fbb074b54449c65f21397530a784751",
+   "10": "b143980fc3e9845c7db943f7f939ef4c722777f3c0669a14d054eec7a533eed2",
+   "11": "4f7e33dae050ceb24a715b4ac90619111672c07d2003e2f22a6ab775bf3b2bbb",
+   "12": "9d192b4b06857eb1a6e663eb16817a6639883287f2dc9d8449b8403f0f64d001",
+   "13": "e446462935b8dbe6f955f9420e89e7a1f61a3c1c9a70168f12ff05044714f795",
+   "14": "259749cb601e6c15195a6f7a090f65d35f726894ba17a7579314028e21b5c58c",
+   "15": "1528fcaf957579337a6be3d9b478eb6e8f5092982e1bb10bd3108a11a39dab15",
+   "16": "6e9d65c58115a818f0ee89831529a0be1449175595fe1d9025ff5e070ddb5f82",
+   "17": "54bb7e58847630a3775ef17ee1a6fe340da1cf0f9099fcbce1c2eb30227dee0d",
+   "18": "76589f080b025626f706335d7fde1cdff69675b41ea4d26148f2cc27d6578542",
+   "19": "36833ba2adacdc28d167972619ffb88dab81eba0788e392badffd311d47b634f",
+   "20": "4ce05452d9af408a7b716ec59b7696161f9ddd28b578832dc4aa73c1a25e378f"
   }
+ },
+ "figures": {
+  "generator": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_figures.py",
+  "manifest": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/figures/FIGURES_MANIFEST.json",
+  "included": {
+   "surface_overview.pdf": "812b140694d09c1f560fc5dbea92cebb12c4ee01cf53e3d3a179159e642ebf63",
+   "edge_rigidity.pdf": "95c47c99e0c5dba1f44490168940f6707fefea6d01fd8eef982d631602c7f0ac",
+   "smooth_readout.pdf": "e5c6b82056f4930cc62b9359328095e7ad4d2d88657727c9974b4c773c0db0e6",
+   "observation_field.pdf": "5a7457ed4bdcdc0d20c4b4cfd351dcaa95721015e096134fc9adc690af8c9782",
+   "observation_folds.pdf": "23143b9fe324227fab4866da760a092fcf5db29f7dc45b5d09cbd8e160a858d1",
+   "sublevel_law.pdf": "57ad39832450eeab8c8461d1eaba0d969fa1935d2a22ecc036e50a891bb5a8c0",
+   "three_curves.pdf": "ecd5d6e7f47c726c6117187190220cb188a96961baedaf1ca97040b4bb2c83f9"
+  }
+ },
+ "builder": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/build_successor_paper1_pdf.py",
+ "verifier": "papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper1.py",
+ "diagnostics": "PASS: byte-safe scan, no Overfull/Underfull/LaTeX Warning/Warning:/undefined",
+ "visual_inspection": "PASS: all 20 pages of the Version 1 release re-rendered (pdftoppm -r 80) and inspected after the final rebuild",
+ "editorial_record": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R3.md",
+ "status": "VERSION 1 RELEASE CANDIDATE / AUTHOR-AUTHORIZED PUBLICATION (2026-10-02)",
+ "category_counts": {
+  "H": 43,
+  "C": 13,
+  "S": 1,
+  "R": 3,
+  "O": 2,
+  "M": 3,
+  "D": 1
+ }
 }

@@ -27,9 +27,15 @@ def sha(path):
 
 def sources():
     assert sha(REGISTRY / "final_pdfs/Geometric_Realization_of_Bicomplex_Signal_Manifolds_v12.pdf") == V12
-    assert sha(REGISTRY / "historical_drafts/Geometric_Realization_of_Bicomplex_Signal_Manifolds_v7.pdf") == V7
+    v7 = REGISTRY / "historical_drafts/Geometric_Realization_of_Bicomplex_Signal_Manifolds_v7.pdf"
+    # The v7 draft was supplied privately and is not distributed; its SHA-256 is
+    # recorded in claims/V7_DRAFT_INDEX.md. It is checked whenever the file is present.
+    if v7.exists():
+        assert sha(v7) == V7
     assert sha(PAPER / "source_ancestor/signal_manifolds_v2.tex") == ANCESTOR
-    print("PASS source identities: v12 authority, registered v7 draft, ancestor TeX")
+    print("PASS source identities: v12 authority, "
+          + ("registered v7 draft" if v7.exists() else "v7 draft not distributed (hash in V7_DRAFT_INDEX.md)")
+          + ", ancestor TeX")
 
 
 def surface(t, u):
