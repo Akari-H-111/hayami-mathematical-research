@@ -1,6 +1,6 @@
 # 已確立的論文與研究記錄
 
-更新日期：2026-09-30
+更新日期：2026-10-03
 
 本表只記錄已存在於專案、可由正文或驗證材料定位的成果。「已確立」不等於「全文已由 Lean 證明」；正式狀態以各列的範圍說明為準。
 
@@ -20,9 +20,11 @@
 | --- | --- | --- | --- | --- |
 | *The Orthogonal Circle Ruled Surface*, v4 | `PDF-LOCKED`、部分 `CAS-PASSED`、需修正文 | 內部圖上的參數化、非可展性、觀察場與 fold 代數已部分重證；原文的全域邊界圖與 Theorem 5.3 不可直接保留為正確定理 | `papers/legacy-geometry/source-registry/final_pdfs/The_Orthogonal_Circle_Ruled_Surface_v4.pdf`; `papers/legacy-geometry/orthogonal-circle-ruled-surface/claims/LEDGER.md` | 修正版定理與邊界 atlas 完成前，不作「全文驗證完成」發布 |
 | *Observation Discriminant and Spherical Fold Image of the Orthogonal-Circle Ruled Surface*（Stokes caustic v5） | `PUBLISHED`；Lean companion v0.04 兩平台已公開／下載驗證 | `FULL_PAPER_COVERAGE.md` 所列已宣稱數學結果以 258 公開 Lean 定理涵蓋：actual ordinary `(x,y^2)` charts、physical locus/discriminant/radial、展開／Big-O、exceptional no-fold 與 ordinary four-jet、輔助 quintic／maximum、固定 Sturm 表與有理數值界；全文 germ classification／versal unfolding 仍為原文開放問題，不由 four-jet 關閉 | `papers/legacy-geometry/source-registry/final_pdfs/The_Stokes_Caustic_of_the_Orthogonal_Circle_Ruled_Surface_v5.pdf`; `companions/lean/stokes-caustic-v5/FULL_PAPER_COVERAGE.md`; Zenodo record `23057630` | 論文 DOI `10.5281/zenodo.22728902`；v0.04 software DOI `10.5281/zenodo.23057630`（`doi.org` 解析待回讀）；歷史 v0.03 `10.5281/zenodo.22735974` 保持 criterion-level；software concept `10.5281/zenodo.22726976`，不可互換 |
-| *Geometric Realization of Bicomplex Signal Manifolds*, v12 | `PDF-LOCKED`、模組化重建中 | 有限代數、`A3`、sublevel、Gram、Poisson、eta 等部分可分模組驗證；Green/Dirac/Pin/sheaf 與 operator-domain 內容仍需專門審核 | `papers/legacy-geometry/source-registry/final_pdfs/Geometric_Realization_of_Bicomplex_Signal_Manifolds_v12.pdf`; `papers/legacy-geometry/bicomplex-signal-manifolds/claims/MODULE_INDEX.md` | 不把有限 CAS 通過外推成無窮維分析或整篇證明 |
+| *Geometric Realization of Bicomplex Signal Manifolds*, v12 → 兩篇後繼論文 v1（Bicomplex） | v12 `PDF-LOCKED`；後繼論文 v1 與 software 1.0 `PUBLISHED`（2026-10-02，2026-10-03 重測）；v13／0.02／0.03 為 sealed 本地檢查點（歷史） | 論文一：解析剛性 vs 光滑彈性、observation monodromy 的載體與 exceptional pullback、residual geometry，並逐項更正 v12 全部 66 區塊、v11 4.2 與公開描述；論文二：Whitney cross-cap 上 pseudo-Laplacian 的一般定理（point traces、(k,k)／U(k) 擴張、Green 係數、Markov／reference-length 唯一性）。Lean 為 33 個 theorem 的部分覆蓋 | `papers/legacy-geometry/bicomplex-signal-manifolds/README.md`（“Start here”）; `…/successor/*.tex`; `companions/lean/bicomplex-signal-manifolds/COVERAGE.md`; `releases/candidates/bicomplex-successor-v1-publication.json` | 論文 DOI `10.5281/zenodo.23103026`／`10.5281/zenodo.23103056`；software DOI `10.5281/zenodo.23103299`；RG `415154912`／`415164048`；歷史 RG `408878000` 保留。Written／external／exact／Lean 分開，不稱整篇 Lean 化；歷史 moment-map 導出未追回；actual singular Dirac／Pin 仍 open |
 
 三份 final PDF 的頁數、SHA-256 與來源權限表在 `papers/legacy-geometry/source-registry/SOURCE_REGISTRY.md`。只有 v5 找到內容高度對齊的 TeX source candidate；v4 與 v12 的 TeX 仍是 ancestor，不是遺失 final source。
+
+2026-10-03 跨窗口承接：Bicomplex 後繼論文與 software 1.0 已公開，沒有必須的下一個任務；開放的數學問題與已反證、不是待證目標的原命題見 Bicomplex README 的 “Start here”。不能將部分 Lean 或外部 PDE／operator 證明稱為全文形式化。
 
 ## 已封存的研究記錄
 

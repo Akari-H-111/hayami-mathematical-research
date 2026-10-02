@@ -42,3 +42,15 @@ upload or visibility control was used.
   v12 see `../bicomplex-signal-manifolds/claims/V11_COMPARISON.md`.
 - The record's public description is still the v7-era abstract. The current
   authority and the immutable table above are unchanged.
+
+2026-10-03 Bicomplex update. The v7 PDF is **private and is not distributed**: it is an
+untracked local file; it is absent from every commit reachable from `origin/main`, from
+the GitHub release assets and from all Zenodo files. Only its SHA-256 and the 39-block
+index are public. The successor papers were published on 2026-10-02 (paper 1 Zenodo
+`10.5281/zenodo.23103026`, paper 2 `10.5281/zenodo.23103056`, software
+`10.5281/zenodo.23103299`; see
+[`../bicomplex-signal-manifolds/README.md`](../bicomplex-signal-manifolds/README.md)).
+Record `408878000` keeps its title, date, DOI, files v11 and v12 and its original
+description; the description now opens with a superseded-by paragraph, so the sentence
+above that the description "is still the v7-era abstract" describes the 2026-10-02
+readback before that edit. The authority table is unchanged.

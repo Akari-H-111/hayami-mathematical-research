@@ -1,6 +1,6 @@
 # Lean 完成與後續研究路線
 
-更新日期：2026-09-30
+更新日期：2026-10-03
 
 ## 目前基線
 
@@ -44,7 +44,7 @@ L1–L10 證明／封存／兩平台公開發布已完成；v0.04 software DOI �
 ## 第二優先：下一批 Lean 候選
 
 1. **Ruled surface v4 的修正版有限核心。** 只有在邊界 atlas／`Q>0` 範圍與 Theorem 5.3 的新增假設確定後才開始；Lean target 是修正後定理，不是把已知錯誤原文形式化。
-2. **Bicomplex v12 的有限模組。** 從多項式 identity、`A3` germ、有限 Gram matrix、Poisson/eta pairing 開始；Green/Dirac/Pin/sheaf 與 operator domains 先留在 specialist audit。
+2. **Bicomplex：33 個 own 定理的 partial coverage（兩篇後繼論文與 software 1.0 已於 2026-10-02 公開）。** 2026-10-02 fresh 原位 `verify_lean.py` PASS：33 個公開定理的 build、status、完整 axiom audit 與 proof-hole scan（只允許 `propext`、`Classical.choice`、`Quot.sound`；logs 在 `releases/candidates/bicomplex-successor-v1-acceptance/lean-*.txt`）；224 Ruled／258 Stokes 依賴本輪沒有重跑。證明輸入自 0.02 起未改。Written／external 的 PDE、operator、sheaf、topology 證明不在 Lean 內，兩篇論文都不稱 Lean 化；software zip 附 Lean 原始碼但不能單獨建置（需要同倉庫的 `ruled-surface-v5` 與 `stokes-caustic-v5`）。沒有必須的 Lean 任務；若要擴大形式化，以 `COVERAGE.md` 的 “Actual open obligations” 與 Bicomplex README 的證據表為依據。入口：`companions/lean/bicomplex-signal-manifolds/COVERAGE.md`。
 3. **Paper III 的有限維 marked spectral-floor core。** 先將 marking、state、landing、source maps 全部做成顯式輸入，再形式化 stable-core closure 與 finite spectral avoidance；不得把 marking 從型別或假設中消去。
 4. **Paper I 的固定有限模型。** 只挑最小、可重播的 exact-rational theorem；63 頁全文形式化不是近期里程碑。
 

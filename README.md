@@ -1,6 +1,7 @@
 # Hayami Mathematical Research
 
 This directory is the clean-room research archive for the inverse-Leibniz series and the three reconstructed legacy geometry papers.
+The Bicomplex successor papers (published 2026-10-02) are listed under Public releases; start any Bicomplex window at the [Bicomplex README](papers/legacy-geometry/bicomplex-signal-manifolds/README.md) (“Start here”).
 
 ## Start here in every research window
 
@@ -14,6 +15,19 @@ All Codex windows follow the short routing rules in [`AGENTS.md`](AGENTS.md). Th
 
 ## Public releases
 
+- Bicomplex successor papers and verification companion 1.0 (published 2026-10-02;
+  they correct and succeed the 2026 ResearchGate preprint 408878000, which is kept
+  unchanged): [*Realization Limits of the Bicomplex Signal Surface: Analytic Rigidity,
+  Smooth Flexibility and Observation Monodromy*](https://doi.org/10.5281/zenodo.23103026) ·
+  [*Pseudo-Laplacians at Whitney Cross-Caps: Point Interactions on Surfaces Mapped into
+  Three-Space*](https://doi.org/10.5281/zenodo.23103056) ·
+  [software DOI 10.5281/zenodo.23103299](https://doi.org/10.5281/zenodo.23103299) ·
+  [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/bicomplex-successor-v1.0)
+  (source-only, no paper PDFs). The Lean project covers 33 selected theorems only;
+  neither paper is Lean-formalized. Public pages, downloads and DOIs are verified in the
+  [publication record](releases/candidates/bicomplex-successor-v1-publication.json).
+  Start at the
+  [Bicomplex README](papers/legacy-geometry/bicomplex-signal-manifolds/README.md) (“Start here”).
 - Ruled surface v5 verification companion 0.03 (software and source only):
   [GitHub Release](https://github.com/Akari-H-111/hayami-mathematical-research/releases/tag/ruled-surface-v5-companion-v0.03) ·
   [sources and replay](releases/current/ruled-surface-v5-source-v0.03/README.md).
@@ -45,6 +59,8 @@ Ruled Surface*](https://doi.org/10.5281/zenodo.22728902); cite the Lean
 companion only when using its formalization or reproducibility package, using
 the version-specific software DOI above. The software concept DOI is not a
 paper DOI.
+For the Bicomplex work cite the two successor papers above; cite the software companion
+only when using its verifiers or Lean sources. The 2026 ResearchGate preprint is superseded.
 
 ## Public topology
 
@@ -67,6 +83,11 @@ python3 -m venv local/cache/python/legacy-reconstruction-venv
 local/cache/python/legacy-reconstruction-venv/bin/python -m pip install -r verification/legacy-reconstruction/requirements.txt
 local/cache/python/legacy-reconstruction-venv/bin/python -B verification/legacy-reconstruction/verify_all.py
 ```
+
+The Bicomplex successor papers replay with
+`papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper1.py`
+and `…/verify_successor_paper2.py` (registered legacy interpreter; never `-O`); the full
+command and interpreter table is in the Bicomplex README.
 
 The new Stokes v5 v0.04 companion's complete replay entrypoint is
 `releases/candidates/stokes-caustic-v5-v0.04/verify.py`.

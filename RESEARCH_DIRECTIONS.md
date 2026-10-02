@@ -1,6 +1,6 @@
 # 已確認的研究衍生方向
 
-更新日期：2026-09-13
+更新日期：2026-10-03
 
 本文件記錄已由現有成果與使用者決策確認的研究線。尚未證成的橋接只列為研究問題，不提前寫成一般定理。
 
@@ -41,16 +41,13 @@
 
 先為 `Q=0` 邊界建立合法 atlas 或把定理明確限制在 `Q>0` 內部；再把 Theorem 5.3 改成帶有 retracing/symmetry 與 phase-lock 條件的可證命題。修正稿完成前，不做整篇 Lean 搬運。
 
-### B3. Bicomplex v12 模組化研究
+### B3. Bicomplex（後繼論文 v1 已公開；以下是開放方向，沒有必須的下一步）
 
-依 `papers/legacy-geometry/bicomplex-signal-manifolds/claims/MODULE_INDEX.md` 分四層處理：
+2026-10-03：v12 的 66 個具名區塊已全部核對並分類（H 43、C 13、S 1、R 3、O 2、M 3、D 1；論文一 Appendix A.3），兩篇後繼論文與 software 1.0 於 2026-10-02 公開。DOI、證據類型與重播命令見 `papers/legacy-geometry/bicomplex-signal-manifolds/README.md` 的 “Start here”。舊的「依 `claims/MODULE_INDEX.md` 分四層處理」是發布前的模組化計畫，已由 66 區塊稽核與兩篇論文取代；v12 的原宣稱不再是待證目標。
 
-1. 有限多項式與局部奇點代數。
-2. Mellin/Gram 與積分分部的精確 domain。
-3. Green/Dirac/extension theory 的 operator-domain 審核。
-4. Pin、sheaf、mixed-Hodge 與物理解讀的定義及外部定理核對。
+已判定、不是待證：沿 C₀ real-analytic 的 readout 不存在（C^∞ 與半 source 的 analytic readout 存在，但不 canonical）；`i*Ψ^!Z ≅ Z[−1]`、constant sheaf 上的 ±1 sector、「sheet 交換等於 √F 變號」、原 compact-core H₀ 的 (2,2)／Markov 唯一性／二維 Krein kernel，皆已反證或撤回。歷史 moment-map 導出沒有追回，新構造不等於追回。
 
-每一層可獨立收尾；不得以第一層通過代替第三、四層。
+真正開放（無優先順序）：actual singular Dirac／Pin（閉算子、graph domains、奇異 cut traces、Clifford-compatible transmission）；sheaf 資料到 analytic operator 的新橋（需要新的 sign-twisted 或 spinorial 目標）；論文一的問題（原功率下半 source 上是否有 quadratic readout、選擇非解析 readout 的原則）；論文二的問題（B_η 的顯式 regular part、任意 Whitney germ 的 ρ log(1/ρ) 速率與下一項、H_F 的 Weyl law 與每個 cross-cap 的 heat-trace 貢獻、cuspidal edge 與 S_k^± 奇點）；真正需要 bicomplex 乘法的命題；獨立的 signal／物理模型（capacity、mass、clock、chirality）；原創性與優先權的完整文獻比較；分析與算子證明的 Lean 化。詳見 README 的 “What is genuinely open”。
 
 ## C. 收尾判準
 

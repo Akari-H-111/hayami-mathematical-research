@@ -1,12 +1,8 @@
 # 接下來要對外做的處理
 
-- 2026-10-02 Bicomplex 新 RG 條目圖庫：論文一 `415154912` 七張、論文二 `415164048` 四張，已補上並登入回讀（`releases/candidates/bicomplex-successor-v1-figures-publication.json`）。舊頁 `408878000` 開頭說明的措辭潤飾被 RG「Edit limit reached」擋下，待稍後重試（`…-researchgate-pending-edits.md`），不影響已公開的內容。
+- 2026-10-03 Bicomplex 後繼論文與軟體 companion 1.0：**已公開並重測**。Zenodo 論文一 `10.5281/zenodo.23103026`、論文二 `10.5281/zenodo.23103056`、軟體 `10.5281/zenodo.23103299`（concept DOI `…23103025`／`…23103055`／`…23103298`）；官方 API、六個檔案的免登入下載 SHA-256 與六個 DOI 的 doi.org 解析均 PASS（2026-10-02 發佈時與 2026-10-03 各一次）。GitHub tag／release `bicomplex-successor-v1.0`（source-only，tag 指向 `aceb055`；asset digest 與本機一致）。ResearchGate 新條目 `415154912`、`415164048`（CC BY 4.0、單一作者、填 Zenodo DOI、官方登入下載的 PDF SHA-256 一致、圖庫 7＋4 張）；舊頁 `408878000` 保留原內容，描述最前面有 superseded-by 段落。Zenodo 帳號沒有遺留的 Bicomplex 草稿或未發布 DOI。條款同意、Zenodo metadata 與 RG 下載都在當下取得作者確認。**尾項：** (1) 舊頁 `408878000` 的 superseded-by 措辭潤飾被 RG「Edit limit reached」擋下（2026-10-02、10-03），文字存於 `releases/candidates/bicomplex-successor-v1-researchgate-pending-edits.md`，現有段落內容正確可保留；(2) 本機 `main` 與 origin/main 分岔，見下方「本機 main 同步」。證據：`releases/candidates/bicomplex-successor-v1-publication.json`、`releases/candidates/bicomplex-successor-v1-figures-publication.json`。
 
-
-- 2026-10-02 Bicomplex 兩篇後繼論文與軟體 companion 1.0：已公開。Zenodo 論文一 `10.5281/zenodo.23103026`、論文二 `10.5281/zenodo.23103056`、軟體 `10.5281/zenodo.23103299`（API／檔案免登入下載 SHA-256／doi.org 解析 PASS，含 concept DOI）。ResearchGate 新條目 `415154912`、`415164048`（CC BY 4.0、單一作者、填 Zenodo DOI、官方登入下載 SHA-256 與 Zenodo 一致）；舊頁 `408878000` 保留原內容，描述最前面新增 superseded-by（含兩個新 DOI 與四項主要更正）。GitHub tag／release `bicomplex-successor-v1.0`（source-only，commit aceb055）。條款同意與 Zenodo metadata 皆已於當下取得作者確認。尚待：本機 `main` 與 origin/main 的同步由作者處理；RG 條目的匿名存取不宣稱。證據：`releases/candidates/bicomplex-successor-v1-publication.json`。
-
-
-更新日期：2026-10-01
+更新日期：2026-10-03
 
 ## 已完成
 
@@ -46,8 +42,10 @@
 | 2 | 對 Papers I–III 規劃 arXiv 提交 | 作者確認分類、endorsement 與最後 metadata | `releases/current/submission-v0.09-zenodo/paper_*_v0_09_arxiv_source.zip`; `metadata/` | 每篇公開 arXiv 頁面、PDF、作者與 DOI relation 回讀一致 |
 | 3 | 統一 GitHub/Zenodo/ResearchGate 的引用文字 | `COMPLETED / VERIFIED 2026-09-30` | `CITATION.cff`; 各 release README | 最新 software v0.04 為 `10.5281/zenodo.23057630`；paper `10.5281/zenodo.22728902`、歷史 software v0.03 `10.5281/zenodo.22735974`、concept `10.5281/zenodo.22726976` 不變。Zenodo 公開 description 含 Citation boundary；ResearchGate paper DOI 不變。 |
 | 4 | Ruled v5 PDF 發布前的讀者檢閱 | `GITHUB SOURCE PUBLISHED / PDF EDITORIAL REVIEW` | 224 own／258 依賴已驗證，完整本地 v0.03 候選不改；來源 release 已回讀 | 先完成語言／段落／版面／圖片引導檢閱及新 PDF QA/hash/replay，最終 artifacts 核准後才發 ResearchGate／Zenodo；舊 v4 不覆寫 |
-| 5 | 發布 v12 模組成果 | 每一模組通過其自身的數學審核 | v12 module index | 只發布已閉合模組；不宣稱整篇已重證 |
+| 5 | Bicomplex 後繼論文 v1＋software 1.0 公開 | `COMPLETED / VERIFIED 2026-10-02; RECHECKED 2026-10-03` | `releases/candidates/bicomplex-successor-v1-publication.json`; Zenodo `23103026`／`23103056`／`23103299`; GitHub `bicomplex-successor-v1.0`; ResearchGate `415154912`／`415164048`／`408878000` | Zenodo API／免登入下載 SHA-256／六個 DOI 解析、GitHub asset digest、RG 登入頁面回讀皆 PASS；舊頁原內容保留；Lean 僅 33 定理的部分覆蓋 |
 | 6 | 發布 Stokes v5 Lean companion v0.04 | `PUBLISHED / API+DOWNLOAD VERIFIED; DOI RESOLUTION PENDING` | `releases/candidates/stokes-caustic-v5-v0.04-publication.md`; `https://zenodo.org/records/23057630` | 原位／解壓 replay、兩平台公開 API／三檔 SHA-256 全 PASS。新 software DOI 已指派；只待 `doi.org` 解析回讀，不重發或更換 DOI。paper DOI 與舊版本不變。 |
+| 7 | Bicomplex 舊頁 `408878000` 的 superseded-by 措辭潤飾 | `PENDING / BLOCKED BY RESEARCHGATE EDIT LIMIT` | `releases/candidates/bicomplex-successor-v1-researchgate-pending-edits.md`（溫和版全文；另可選：兩個新條目描述改用 Unicode 數學符號） | 額度恢復後只替換描述第一段；回讀確認標題／日期／DOI／v11／v12 檔案／原描述不變；結果寫回 publication JSON 旁的紀錄 |
+| 8 | 本機 `main` 與 origin/main 同步 | `PENDING / AUTHOR` | 下方「本機 main 同步」 | 作者先把其他窗口的工作提交或暫存，再合併；`main` 未被本次收尾移動 |
 
 ## 外部狀態核對入口
 
@@ -67,3 +65,35 @@ gh release view stokes-v5-companion-v0.02 \
 ```
 
 ResearchGate 必須用登入後公開頁面回讀；API timeout、編輯表單暫存或本地 handoff 文件都不是完成證據。
+
+Bicomplex 後繼論文（2026-10-03 已用同樣方式重測）：
+
+```bash
+for id in 23103026 23103056 23103299; do
+  curl -fsSL https://zenodo.org/api/records/$id \
+    | jq '{id, doi, conceptdoi, version: .metadata.version, files: [.files[] | {key, size, checksum}]}'
+done
+gh release view bicomplex-successor-v1.0 \
+  --repo Akari-H-111/hayami-mathematical-research \
+  --json tagName,targetCommitish,publishedAt,isDraft,assets
+```
+
+ResearchGate 新條目 `415154912`、`415164048` 與舊頁 `408878000` 同樣只能登入後回讀（匿名存取不宣稱）。
+
+## 本機 main 同步（作者處理；本次未執行）
+
+狀態（2026-10-03）：本機 `main` 在 `5803d6a`，比共同祖先 `fb9e1c1` 多 1 個其他窗口的 commit；`origin/main` 在收尾 commit 之前多 11 個 commit（Bicomplex 後繼論文與發布紀錄，皆由隔離分支 `publish/bicomplex-successor` 推送，不含其他系列）。commit 層級沒有衝突：`git merge-tree --write-tree main origin/main` 於 2026-10-03 只回傳一個 tree。阻礙在工作區：其他窗口約 47 個未提交項目（`git status --short | grep -vi bicomplex | wc -l`），其中不少路徑在 origin/main 也存在（共用文件被修改、Bicomplex 檔案未追蹤），直接 `git merge` 會被拒。建議流程：
+
+1. 各窗口先把自己的工作做成 scoped commit（或 `git stash push -u`）。
+2. `git fetch origin`。
+3. 工作區中仍是未追蹤、且與 origin/main 逐位元組相同的檔案，可刪除後由合併取回；用下列指令列出（唯讀）：
+
+   ```bash
+   git ls-tree -r --name-only origin/main | while read -r f; do
+     [ -e "$f" ] && ! git ls-files --error-unmatch -- "$f" >/dev/null 2>&1 \
+       && cmp -s "$f" <(git show "origin/main:$f") && echo "$f"
+   done
+   ```
+
+4. `git merge origin/main`。共用文件（`RESEARCH_BOARD.md`、`README.md`、`ESTABLISHED_WORKS.md`、`EXTERNAL_ACTIONS.md`、`LEAN_ROADMAP.md`、`RESEARCH_DIRECTIONS.md`）若衝突，以本機版本為準（它同時含 Bicomplex 現況與其他系列的現況），只補入 origin 版本中本機版本尚缺的 Bicomplex 事實。
+5. 在作者決定其他系列的公開範圍之前不要 push `main`。公開 push 一律用像 `publish/bicomplex-successor` 這樣由 `git commit-tree` 建立、只含該系列檔案的隔離分支。私有 v7 PDF 只存在於本機未追蹤的 `papers/legacy-geometry/source-registry/historical_drafts/` 與本機分支 `research/bicomplex-continuation-0.04`，兩者都不得 push。
