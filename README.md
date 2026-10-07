@@ -13,6 +13,14 @@ The Bicomplex successor papers (published 2026-10-02) are listed under Public re
 
 All Codex windows follow the short routing rules in [`AGENTS.md`](AGENTS.md). The board is the operational source of truth; the four inventories change only when evidence or an approved direction changes.
 
+## Research checkpoint: 2026-10-07
+
+The [new research record](research/cross-workstream-renewal-20261007/README.md)
+and [environment / Git save note](research/cross-workstream-save-20261007/README.md)
+record the RH sign criterion, GIR fiber action and AHR joint-phase experiments.
+Complete algorithm and RH sources are preserved in the AHR private checkpoint;
+written proofs, finite diagnostics and incomplete performance gates remain distinct.
+
 ## Public releases
 
 - Bicomplex successor papers and verification companion 1.0 (published 2026-10-02;

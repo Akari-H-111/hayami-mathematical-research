@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "manifest_entries": [
+    5,
+    7,
+    37,
+    32,
+    25,
+    24,
+    62
+  ],
+  "source_files": 39,
+  "disjoint_confirmation_cases": 3136,
+  "development_source_bindings": "PASS",
+  "scope": "preservation and provenance checks; numerical replays have separate recorded logs"
+}

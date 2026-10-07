@@ -1,0 +1,184 @@
+{
+  "date": "2026-10-07 Asia/Taipei",
+  "status": "local research checkpoint verified",
+  "ahr_root": "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction",
+  "rh_root": "/Users/akari_hayami_64/RH-SPIRAL",
+  "manifests": [
+    {
+      "path": "/Users/akari_hayami_64/RH-SPIRAL/research/heat-sign-and-resolution-20261007/MANIFEST.sha256",
+      "sha256": "c8defbf021d852f84e5be991245233b5e8173319201887e55219c762c80abbe8",
+      "entries": 5,
+      "status": "new local snapshot"
+    },
+    {
+      "path": "/Users/akari_hayami_64/RH-SPIRAL/research/gir-fiber-action-20261007/MANIFEST.sha256",
+      "sha256": "61288d59ced29582b8dcc0901035e69ed692137b699851263c91a952b83cd78b",
+      "entries": 7,
+      "status": "new local snapshot"
+    },
+    {
+      "path": "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/joint_phase_support/MANIFEST.sha256",
+      "sha256": "34f09a5874ecbd11668baccff3b8fc34a06b6c06b52c11de54347e12d63d32c0",
+      "entries": 37,
+      "status": "new local snapshot"
+    },
+    {
+      "path": "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/MANIFEST.sha256",
+      "sha256": "d6211bf71b807cbfc8f31958e089c14dd0fef484882e27ea00afe52b13405f32",
+      "entries": 32,
+      "status": "pre-existing sealed archive preserved"
+    },
+    {
+      "path": "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/waveform_phase_tracking/v0_01/MANIFEST.sha256",
+      "sha256": "b8f1e50f95cf3024f45dda727b07b4e236aa6865ef48fcc4d8d88d7e6d6210c9",
+      "entries": 25,
+      "status": "pre-existing sealed archive preserved"
+    },
+    {
+      "path": "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/phase_support_geometry/v0_01/MANIFEST.sha256",
+      "sha256": "c832ea818bff64c6c21a64dd6ab06d5b662a582f79106b7a86ebadf57039e056",
+      "entries": 24,
+      "status": "pre-existing sealed archive preserved"
+    },
+    {
+      "path": "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/primitive_harmonic_reconstruction/v0_01/MANIFEST.sha256",
+      "sha256": "7d08e8cc9e14bf2ba0553dd76bd6dfb5ba55e7ebbae7045d133e14860c8b98dd",
+      "entries": 62,
+      "status": "pre-existing sealed archive preserved"
+    }
+  ],
+  "source_sha256": {
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/CONFIRMATION_PROTOCOL.md": "558d5c3ec7110119db6c8763cee88cd21246a8b01cc418174ec9433b1179b077",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/INSPIRATIONS.md": "619124dc64218b1de01db05d971b26fde9156d10840f9f502896d26ce68a8a2f",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/MATHEMATICS.md": "f8ff473f2a42420ddbb3e7ad7b29406434ceea9cdcf705ae2981e18da77a761c",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/PLAN.md": "c8cf80b3172a14936e18399f39f19c8c6a8663c67fcc0c9674767e95f5023381",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/alignment.py": "760ba298313c53f512a5cedeb17af669c0e8cea5d56f2403b737f12d015e2ad1",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/confirmation.py": "62c824da152bbbd83bf87fdefaa3f03afd8ac3e57ef83ead72d9c48a95e1944d",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/drift_cases.py": "0d3027c2b9ad9a7d3ca55c4c5d941b27f3e366d04261c628648bafdf892ff0ef",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/freeze.py": "b0be387ba1f695f49e4bb523ff5fcc71df33f54eae4360efbc31ee3dfaf6b5d8",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/lineage.py": "9f32858fdce9b2da9e1fa572b0a1d3e58800f50caa54ce7cb2771fcde498834c",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/stress.py": "2d11753cb4daa88dbb8a46d6c977c642ba7d77f0ae1cf3b1fac1743696dc7d39",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/study.py": "f47e6c96601c49259072567fc93dc40f01d7d69cee8e3cd1eff9f09838e94437",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/drift_alignment/v0_01/verify_math.py": "d4983f9d8d60b76f4fd8e928dace604394eef8f506526e0e2a0ede08ea71277f",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/phase_support_geometry/v0_01/bezout_phase.py": "630f8d8a2182dfdcad14d3541d9dbaa1dedccf2557ca045b4ddba7b44ad236ba",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/phase_support_geometry/v0_01/confirmation.py": "43e4aa5d5f39492d3db218c9274460ed9ee6557ad1f0c8aae05d8ff23343dc4a",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/phase_support_geometry/v0_01/context.py": "ee565ed1c95bf3d3286815621df174f34fbb1656ae32926cbf90b8cd145ace7d",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/phase_support_geometry/v0_01/phase_packets.py": "9461f9b10763ada58d37d01b95ea43e2373bce2a4bafbced8164c4d68f74378c",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/primitive_harmonic_reconstruction/v0_01/baseline.py": "ef37b8f199f83f6d659fd0063a2a7329eeffc47ee421b2e1c71c7d4ff889d67a",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/primitive_harmonic_reconstruction/v0_01/check_support_certificate.py": "bfda1a93b887935f2ec529e067775fd7bdc33d8fe75e9b538f7ff00e39b2d0fc",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/primitive_harmonic_reconstruction/v0_01/confirmation_data.py": "c672740d4c369fc6932a02ebe9b1c30eeb61251bb4d6d0d9bfd6bf404e6124a3",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/primitive_harmonic_reconstruction/v0_01/envelope.py": "79fa819a1960ff6b2b3bce9dc54187a122fd23b5b0a1da326c18d09bd6d3c382",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/primitive_harmonic_reconstruction/v0_01/envelope_controls.py": "abe332235d1fb021e9a849751e7b29a71fb1aa3c39279c2f3f44e00a99be5a64",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/primitive_harmonic_reconstruction/v0_01/pipeline.py": "0460462be53648241f904188984e8185f098e4d0c2341295a19c39bf99a9047c",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/primitive_harmonic_reconstruction/v0_01/relaxation.py": "079c211bbdc5904a3e6cf3c4e399cf4cc93f5cc89ed669c66d509e6d59208f90",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/primitive_harmonic_reconstruction/v0_01/support_certificate.py": "b810552ba3567f1ead0630fb04799514d404e45b3126d1206384d542b0a570ff",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/waveform_phase_tracking/v0_01/bridge.py": "094a06214266e1fe83a5590b32fb6530170c163f786ddc911cd9251dc328b6ff",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/waveform_phase_tracking/v0_01/ellipse_phase.py": "a6904c4c8e8d6c3cb0b410bf7a978de6279b110e02c81cca9b4b742de27eb216",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/waveform_phase_tracking/v0_01/tracking.py": "7c90984ba45774a334165a06e9196014192d5e5d3ae26423b606322cd558cf04",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/the-Self-Adjoint-Arithmetic-Mellin-Transform/post_s11_discovery/nonstationary_phase_v0_01/backprop_phase.py": "f0972d2d5bccb4ffc7fb171529a14afad6327f39fbbe88bf5820dc63098a08ac",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/the-Self-Adjoint-Arithmetic-Mellin-Transform/post_s11_discovery/nonstationary_phase_v0_01/develop.py": "230d559c77bc4909b9c9bdea3a2c60c0e6a14b958c8e51931e352149d8892dfe",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/the-Self-Adjoint-Arithmetic-Mellin-Transform/post_s11_discovery/nonstationary_phase_v0_01/develop_backprop.py": "79e9d003b2cf74c033f5ab768def9a4cdad1d4efd24fe10738f1e188d0a7d5e6",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/the-Self-Adjoint-Arithmetic-Mellin-Transform/post_s11_discovery/nonstationary_phase_v0_01/methods.py": "8230b2f03c72a8454bfee6bc8f5d9f7db55e87db65af401baa1981798ea8dc31",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/the-Self-Adjoint-Arithmetic-Mellin-Transform/post_s11_discovery/nonstationary_phase_v0_01/phase_continuation.py": "1c8697c9037f1151ef89863a77d76320ed3126b353804d330edffea820e33264",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/the-Self-Adjoint-Arithmetic-Mellin-Transform/post_s11_discovery/nonstationary_phase_v0_01/phase_transport.py": "dde5de66c3311156b2755c9200b9865378af71ba5568510be21c8ec97e9fd492",
+    "/Users/akari_hayami_64/RH-SPIRAL/research/heat-sign-and-resolution-20261007/verify.py": "54b08f0aed91abf9d5a735bbe02ddaf86fe559dd2bb22d61d71fdc7ce7cc4758",
+    "/Users/akari_hayami_64/RH-SPIRAL/papers/prime-dimensionality-reconstruction/scripts/verify_reconstruction.py": "28b9180d1d01b03e3724ee124f71fa59d5365848f781d77a2a2a8171843c42c8",
+    "/Users/akari_hayami_64/RH-SPIRAL/papers/prime-dimensionality-reconstruction/Prime_Dimensionality_Reconstructed.tex": "6cf19a3b7025c0fde5d313378893272a376dfbf470efb948c2cbb8dde8db8757",
+    "/Users/akari_hayami_64/RH-SPIRAL/research/gir-fiber-action-20261007/verify.py": "17dd32d71d515253eddfd621d11ff0d8ce5b908f40164d04a66f8b33b5aef37a",
+    "/Users/akari_hayami_64/Documents/hayami-mathematical-research/research/cross-workstream-renewal-20261007/verify_receipt.py": "77205b77451c02c1e5ea86d35c25a8289f80dad43769d0c94da7fffce5d28a13",
+    "/Users/akari_hayami_64/Documents/hayami-mathematical-research/research/cross-workstream-renewal-20261007/README.md": "8330085679e855bc47af52fc4a6ae27d41ec17ad82928bef1ce577a589d73f37"
+  },
+  "baselines": [
+    {
+      "command": "TAGD registered Python -B RH-SPIRAL/papers/prime-dimensionality-reconstruction/scripts/verify_reconstruction.py",
+      "status": "PASS at research start",
+      "exact_identities": 27,
+      "prime_sieve_limit": 10000000,
+      "numerical_cuts": 61,
+      "heat_samples": 25
+    },
+    {
+      "command": "AHR registered Python -B research/drift_alignment/v0_01/verify_replay.py --manifest research/drift_alignment/v0_01/MANIFEST.sha256",
+      "status": "PASS at research start",
+      "frozen_files": 33,
+      "cases": 1760,
+      "method_outputs_replayed": 192,
+      "mathematical_checks": 108
+    },
+    {
+      "command": "TAGD registered Python -B RH-SPIRAL/research/gir-covering-arithmetic-20261007/verify_covering.py",
+      "status": "PASS at research start",
+      "exact_finite_checks": 30
+    }
+  ],
+  "new_checks": [
+    {
+      "path": "/Users/akari_hayami_64/RH-SPIRAL/research/heat-sign-and-resolution-20261007/replay.log",
+      "status": "PASS",
+      "moment_samples": 147,
+      "high_precision_repeats": 3,
+      "scope": "exact algebra and finite diagnostics; not a kernel proof of written theorems"
+    },
+    {
+      "path": "/Users/akari_hayami_64/RH-SPIRAL/research/gir-fiber-action-20261007/replay.log",
+      "status": "PASS",
+      "exact_finite_checks": 114,
+      "linear_prime_heat_samples": 4,
+      "scope": "finite matrices and heat diagnostics; general domains/bracketing proved in prose"
+    },
+    {
+      "path": "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/joint_phase_support/v0_01/replay.log",
+      "status": "PASS",
+      "fresh_cases_reaggregated": 1664,
+      "paired_cases": 9,
+      "outputs": 36
+    },
+    {
+      "path": "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/joint_phase_support/v0_03/replay.log",
+      "status": "PASS",
+      "fresh_cases_reaggregated": 1472,
+      "paired_cases": 9,
+      "outputs": 45
+    },
+    {
+      "path": "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/joint_phase_support/root_mixture_check.json",
+      "status": "PASS",
+      "scope": "new density-ratio prototype; no waveform performance confirmation"
+    }
+  ],
+  "results_boundaries": {
+    "rh": "new written equivalence and unconditional high-moment oscillation proof; no RH proof, new Lean, or independent review",
+    "gir": "declared all-pairs unit action; finite heat theorem on fixed compact regular GIR cores; full punctured-locus uniform bound open",
+    "ahr": "confirmed split benefit; signed joint MSE gain with failed null confidence gate; projective primary negative; root mixture unconfirmed on waves"
+  },
+  "preserved_failures": [
+    {
+      "path": "/Users/akari_hayami_64/RH-SPIRAL/research/gir-fiber-action-20261007/run-failed-symbolic-comparison.log",
+      "cause": "SymPy structural equality; corrected by simplifying the difference"
+    },
+    {
+      "path": "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/joint_phase_support/root_mixture_failed_density.log",
+      "cause": "installed SciPy noncentral t pdf tail NaN; replaced by positive chi-integral density ratio"
+    },
+    {
+      "path": "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/research/joint_phase_support/v0_03/DEVELOPMENT_SOURCE_BINDING.json",
+      "cause": "output-only calibration metadata added after development; exact prior study bytes preserved and matched"
+    }
+  ],
+  "live_document_hashes_at_checkpoint": {
+    "/Users/akari_hayami_64/Documents/hayami-mathematical-research/RESEARCH_BOARD.md": "2c25702bfc9f8d17bb56c42f849b81f38552f44642d35db1c2cebe43da52cdd7",
+    "/Users/akari_hayami_64/Documents/adaptive-harmonic-reconstruction/RESEARCH_BOARD.md": "fc547643e70e98260259734bc17c9a49f6f5b74bb765c354af5ac0054dfcb53a"
+  },
+  "environment": {
+    "ahr_python": "/Users/akari_hayami_64/Documents/hayami-mathematical-research/the-Self-Adjoint-Arithmetic-Mellin-Transform/post_s11_discovery/.venv/bin/python",
+    "rh_gir_python": "/Users/akari_hayami_64/TAGD_Master_Paper/.agent-venv/bin/python",
+    "assertions": true,
+    "single_threaded_blas": true,
+    "packages_installed": false
+  },
+  "external_actions": {
+    "commits": false,
+    "pushes": false,
+    "publications": false
+  }
+}
