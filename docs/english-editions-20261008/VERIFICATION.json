@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "date": "2026-10-08",
+  "mapped_source_texts": 21,
+  "unique_additional_archive_texts": 8,
+  "pending": 0,
+  "historical_numeric_token_checks": 16,
+  "decoded_json_identity_checks": 0,
+  "python_structure_checks": 0,
+  "documented_editorial_exceptions": [],
+  "preservation_report": "PRESERVATION.json",
+  "translation_hash_check": "python3 -B docs/english-editions-20261008/verify.py",
+  "research_checks": {
+    "scientific_sources": "All initial tracked original scientific sources unchanged; only maintained English documentation and AGENTS guidance edited."
+  },
+  "whitespace_check": "git diff --check PASS",
+  "limits": [
+    "Inventory, hash, numeric and AST checks are not an independent semantic or mathematical certificate.",
+    "No new PDF compilation, raster OCR or live ResearchGate readback.",
+    "No remote mutation, Git commit or push."
+  ],
+  "precommit_whitespace_check": "The full staged check initially found inherited trailing whitespace and mixed indentation in 14 new AHR English editions, omitted by the earlier tracked-only diff check. English copies were normalized, Markdown hard breaks preserved, and manifests and bundles regenerated; sealed originals unchanged."
+}

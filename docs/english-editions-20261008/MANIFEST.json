@@ -1,0 +1,221 @@
+{
+  "schema": "english-editions/v1",
+  "date": "2026-10-08",
+  "complete": true,
+  "scope": "Text files identified by the saved language audit, plus nonduplicated historical ZIP members. Original sealed bytes and original manifests remain immutable.",
+  "historical_status": "Historical prompts, authorizations, retired models, and claims are translated as source data, not activated or revalidated.",
+  "entries": [
+    {
+      "source": "ESTABLISHED_WORKS.md",
+      "source_sha256": "c7021eda1750831ca9cb7e9a1f6f6f89e4b847fa5beab97c34111588381b09a9",
+      "english": "ESTABLISHED_WORKS.md",
+      "english_sha256": "41272579fadff64f4b140831389692915e2b26b3161ccc67855d294563e0de0b",
+      "treatment": "Maintained document translated in place; original bytes preserved in the excluded local source snapshot."
+    },
+    {
+      "source": "EXTERNAL_ACTIONS.md",
+      "source_sha256": "794ddd745785fa9dfe16ae7d0569c23e112ea2546facef889c12df7f6991efbe",
+      "english": "EXTERNAL_ACTIONS.md",
+      "english_sha256": "c842225cf9ca81ea4bc4661d8d218ee7e0d2d1d99b3a54940eb01c37ad3ed033",
+      "treatment": "Maintained document translated in place; original bytes preserved in the excluded local source snapshot."
+    },
+    {
+      "source": "LEAN_ROADMAP.md",
+      "source_sha256": "b8f7ad2a0ca8434b9e76eb459328f517712e03456be2e0b4dfa251892b6f77de",
+      "english": "LEAN_ROADMAP.md",
+      "english_sha256": "54c01e88f81763a5a0f9441ecf744e83684c0da82aecbe3a1aa02edf7ceddbc6",
+      "treatment": "Maintained document translated in place; original bytes preserved in the excluded local source snapshot."
+    },
+    {
+      "source": "RESEARCH_BOARD.md",
+      "source_sha256": "57047d070e3db99684a3fe397e5860307cd343cb660791921b9646e5e5b65f2e",
+      "english": "RESEARCH_BOARD.md",
+      "english_sha256": "7b6e3bb9f18220577c823bb4b99a1acd0941b6dcb9ebe730ca5424c8eecc196a",
+      "treatment": "Maintained document translated in place; original bytes preserved in the excluded local source snapshot."
+    },
+    {
+      "source": "RESEARCH_DIRECTIONS.md",
+      "source_sha256": "dc2948b04db1ca24883852b0b24b0ad05dc764c6272c0e5f592b7084aa52eac8",
+      "english": "RESEARCH_DIRECTIONS.md",
+      "english_sha256": "9c371908c853fdfd3e64170849e7c4687667ba31fad17f907f09333a9d4ca634",
+      "treatment": "Maintained document translated in place; original bytes preserved in the excluded local source snapshot."
+    },
+    {
+      "source": "papers/inverse-leibniz/development-notes/readme-paper-03-closeout-v0.01.md",
+      "source_sha256": "a8fb8ad80cd724383b827adcf78730e8d992004893190e453c60e930ebe524b1",
+      "english": "papers/inverse-leibniz/development-notes/readme-paper-03-closeout-v0.01.en.md",
+      "english_sha256": "c65d03c2fc4e5d3877a45c369125ad671a0845b0c492d92ba4c2fda6f56746a3",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/HISTORICAL_CLAIMS_NEXT_THREAD_PROMPT.md",
+      "source_sha256": "6240efeab1318e810170c88d72910d45507e28cc5f0bac4d519cd8dfba12ee02",
+      "english": "papers/legacy-geometry/bicomplex-signal-manifolds/HISTORICAL_CLAIMS_NEXT_THREAD_PROMPT.en.md",
+      "english_sha256": "bdb197e904039849132b6708a3d96e1785fd4b42340751832442585f8542b578",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/NEXT_THREAD_PROMPT.md",
+      "source_sha256": "87c51300986a547d01878fc59ccd4723817f456d129b7446ddd6b82eddcbab55",
+      "english": "papers/legacy-geometry/bicomplex-signal-manifolds/NEXT_THREAD_PROMPT.en.md",
+      "english_sha256": "87ac5b2f5939aca282cbfedf6e383b2b204ecf699a56769c40724b8c07e55c44",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/proofs/ORIGINALITY_AND_GAPS.md",
+      "source_sha256": "dc0389a43ff1121504ea20da57c015ae79eb1b2df2c6fbb161361f1ecd4fdb18",
+      "english": "papers/legacy-geometry/bicomplex-signal-manifolds/proofs/ORIGINALITY_AND_GAPS.en.md",
+      "english_sha256": "bc10e87dcfcf2919df213db508851b78d9be3296b2d95513bb3867ad68dc95a0",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_P2_R1.md",
+      "source_sha256": "d4d0212e98625139c7864d50f5da9afe99913972cfb5e59f37bcf88b2e0a4bed",
+      "english": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_P2_R1.en.md",
+      "english_sha256": "5521ec411dad41488664828e10ffebbbc699092e40ceb11096f10155e1bc9fc8",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R1.md",
+      "source_sha256": "9908a68512a8d66acbec13a8d37ce8f12a6d34692a8c79e8eae417815db7ef0b",
+      "english": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R1.en.md",
+      "english_sha256": "ab26ba35e77e00a7e41493d01d5a1d9a7cad16835c2a59ad03d4856974082c73",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R2.md",
+      "source_sha256": "fbb47adcf833e0e76d267d6a94c24eb6a58a12efcb5e2bcf23610e14a289bc2a",
+      "english": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R2.en.md",
+      "english_sha256": "e4b86dc7e9f910cc9a42cd3ccb99f2a46a11b553c2db7f4de8c84dd84276bca7",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R3.md",
+      "source_sha256": "11da753366d8e79eb28b56c058a522dc802c5384e61962dad225d4c92a41e159",
+      "english": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/EDITORIAL_R3.en.md",
+      "english_sha256": "56f81311bc06ad0750b7608602b745fd6a2fe63f8f729192dd91a4602499024f",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/PAPER2_LITERATURE.md",
+      "source_sha256": "aa659545658ed9fa5b843f3fff4193cd7b19d718573aa42c56d3b0cafd389174",
+      "english": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/PAPER2_LITERATURE.en.md",
+      "english_sha256": "fc4af20734355069b12659fbf024efccf53a1ffd138c07d2d06c985878900b69",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/PUBLICATION_HANDOFF_PROMPT.md",
+      "source_sha256": "0bc946a22ce6853c4e5f3e549279b0116188f903059de5524d8273f6cde24df5",
+      "english": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/PUBLICATION_HANDOFF_PROMPT.en.md",
+      "english_sha256": "af83419c7c7f6d1c81089f83929a1e66af60d6aeffeec59566ffe75006fbff77",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/SCOPE_AND_PLAN.md",
+      "source_sha256": "7683354bfa55dd904ccbd9ac4fc5df4815950aadd86e5b844c13ebfecbeab826",
+      "english": "papers/legacy-geometry/bicomplex-signal-manifolds/successor/SCOPE_AND_PLAN.en.md",
+      "english_sha256": "6dbcef329e56c726aca2b40d271b36b7683c6e85d13b7f16baf0d7afd7410ff9",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "papers/legacy-geometry/stokes-caustic/SOURCE_CANDIDATE.md",
+      "source_sha256": "b4555014fb5521c24d6e5bb6cf8f433aaeab5f2f7170a262bd85b064f127c23e",
+      "english": "papers/legacy-geometry/stokes-caustic/SOURCE_CANDIDATE.en.md",
+      "english_sha256": "753d14d73d45e33270e5ca7ec4c650d9f7a5ba4decfe60263e2236da95ff4192",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "releases/candidates/bicomplex-successor-v1-publication.json",
+      "source_sha256": "c6661ed6f1f84c562f4be35ff78a62984dc6ff63376f834744b4b484420f78c6",
+      "english": "releases/candidates/bicomplex-successor-v1-publication.en.json",
+      "english_sha256": "b7690d390f439b3ebddd54ac9e2bedc10f1121fee125335d5ee62dbf1cbb715b",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "releases/current/submission-v0.09/README.md",
+      "source_sha256": "e2817640dd646633950c2bc653ee47228b9c2353f6131f4b03467f78514542c7",
+      "english": "releases/current/submission-v0.09/README.en.md",
+      "english_sha256": "af3f28113aa2b07d6c2eb57e4d7737c7511ba9a09d6a51c8d2339d3f8da4c42f",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "research/researchgate_handoff_v1.md",
+      "source_sha256": "0b04b8806d4b64515e0ca25f9eebf4df5ba77ca60fce99bef0b422c61611f58d",
+      "english": "research/researchgate_handoff_v1.en.md",
+      "english_sha256": "f7bc70d55a21ccfc0f801ec3bd394b98e49473e3ecfe7e0247a71ce1ca43b9d6",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    },
+    {
+      "source": "verification/legacy-reconstruction/README.md",
+      "source_sha256": "aab6af5c85e4354356fb0a6460f5073793619b74e6c6d707822fe9acb2274200",
+      "english": "verification/legacy-reconstruction/README.en.md",
+      "english_sha256": "d41f19303949773102dcefc0e7e638ff570c1e9e0ad288636760da6d1057773a",
+      "treatment": "Full English edition; historical original remains byte-identical."
+    }
+  ],
+  "archive_member_editions": [
+    {
+      "archive_member": "three_papers_v0_08/evidence/legacy/RESEARCH_REPORT.md",
+      "original_sha256": "97032b8b46b4959a697b12d403e214a621b5e1b0e8f9300adfb082b131bfc1ce",
+      "english": "releases/english-editions/three-papers-v0.08/evidence/legacy/RESEARCH_REPORT.en.md",
+      "treatment": "Complete English translation; historical statements retained.",
+      "english_sha256": "c7f600f9f9b5529a1281553d15de9c4685eadd17993fe2638c5d64bd6478f6f7"
+    },
+    {
+      "archive_member": "three_papers_v0_08/evidence/legacy/TODO_STATUS.md",
+      "original_sha256": "1afa91dc68a6f4a53e31444af11f5984fdb90ec12938718a947015ecc1ef3c6c",
+      "english": "releases/english-editions/three-papers-v0.08/evidence/legacy/TODO_STATUS.en.md",
+      "treatment": "Complete English translation; historical statements retained.",
+      "english_sha256": "a8c0d7a36fef776b5d0116be835e629ae0346442283854bb5e71df40799f12a2"
+    },
+    {
+      "archive_member": "three_papers_v0_08/evidence/legacy/VERIFICATION_COVERAGE.md",
+      "original_sha256": "e8d22eeb0e3aea803abe0f0320be203c2420f554ac3dcd83b320f2af3dbb840a",
+      "english": "releases/english-editions/three-papers-v0.08/evidence/legacy/VERIFICATION_COVERAGE.en.md",
+      "treatment": "Complete English translation; historical statements retained.",
+      "english_sha256": "bffbe21014e09470a29234ded21dc1bc0f8622c012cd8150f217de56d58a8213"
+    },
+    {
+      "archive_member": "three_papers_v0_08/evidence/transfer_v05/RESEARCH_REPORT.md",
+      "original_sha256": "a70252cf5aa01a943daf0f8400e4377b7e7008d92f7cd1127356f5461ea6ddc6",
+      "english": "releases/english-editions/three-papers-v0.08/evidence/transfer_v05/RESEARCH_REPORT.en.md",
+      "treatment": "Complete English translation; historical statements retained.",
+      "english_sha256": "5d1e1dd4d732527cc087a2ae90cd58b6c1a13a8c95f164cc826c9559bb87f47c"
+    },
+    {
+      "archive_member": "three_papers_v0_08/CLOSEOUT_REPORT.md",
+      "original_sha256": "4dd22fc069f188cc8ff8cfc6f2bd3b9e1b30fab2b7548a892fa89aea13a54f6a",
+      "english": "releases/english-editions/three-papers-v0.08/CLOSEOUT_REPORT.en.md",
+      "treatment": "Complete English translation; historical statements retained.",
+      "english_sha256": "1efd0492c673a2dc67f9cf778ed7be96635627acd723f65da8136a45246d5124"
+    },
+    {
+      "archive_member": "three_papers_v0_08/evidence/feedback_v06/MATHEMATICAL_NOTE.md",
+      "original_sha256": "f124e3e495ed1bf43f657bd69b4dbe4cbc15e786cb9f38d9417824fc4fd70e37",
+      "english": "releases/english-editions/three-papers-v0.08/evidence/feedback_v06/MATHEMATICAL_NOTE.en.md",
+      "treatment": "Complete English translation; historical statements retained.",
+      "english_sha256": "6f2fc67b5645fd88735b84f3cd0c639b17538dc323aad895495d4ceb63715e4a"
+    },
+    {
+      "archive_member": "three_papers_v0_08/evidence/legacy/FIGURE_PLAN.md",
+      "original_sha256": "891b07c491bacaf1d03ba5f97ee650b44ffa046175e885aeebae085db710c99d",
+      "english": "releases/english-editions/three-papers-v0.08/evidence/legacy/FIGURE_PLAN.en.md",
+      "treatment": "Complete English translation; historical statements retained.",
+      "english_sha256": "8688d85d65c1b3f48ea20171d2aeb28dcae82694a5f9c2a93ff07d32788299ec"
+    },
+    {
+      "archive_member": "three_papers_v0_08/evidence/legacy/RESEARCH_REPORT_v0_03.md",
+      "original_sha256": "8a52f8142cbc69f5a74c28b2d59cbf9db4be12a4273f10c12d87291944ce676f",
+      "english": "releases/english-editions/three-papers-v0.08/evidence/legacy/RESEARCH_REPORT_v0_03.en.md",
+      "treatment": "Complete English translation; historical statements retained.",
+      "english_sha256": "761d817a3ed6cbdb18e0e2b832d8cd52f5804d7d16763420d6857c2bdb7666ff"
+    }
+  ],
+  "pending": [],
+  "not_rechecked": [
+    "ResearchGate current content",
+    "Raster text in images or PDFs",
+    "Remote historical Git objects"
+  ],
+  "external_actions_this_task": []
+}

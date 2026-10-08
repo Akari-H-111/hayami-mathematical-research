@@ -15,6 +15,7 @@ Maintain a reproducible archive of the inverse-Leibniz and legacy-geometry resea
 
 ## Stable boundaries
 
+- All externally published or shared content must use English, including content committed or pushed to private repositories, commit messages, pull requests, releases, and other publication materials.
 - Treat final PDFs, sealed archives, receipts, and SHA-256 manifests as immutable.
 - Never call a whole paper Lean-formalized when only listed modules or certificates are Lean-passed.
 - Never identify a new construction with missing historical data from matching dimensions, ranks, or filenames.

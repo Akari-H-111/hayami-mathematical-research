@@ -1,69 +1,69 @@
-# Lean 完成與後續研究路線
+# Completed Lean work and future research
 
-更新日期：2026-10-03
+Updated: 2026-10-03
 
-## 目前基線
+## Current baseline
 
-`companions/lean/stokes-caustic-v5/` 使用 Lean `4.33.1`、Mathlib `v4.33.1`，現有 modules 已編譯且無 `sorry`。已涵蓋：
+`companions/lean/stokes-caustic-v5/` uses Lean `4.33.1`, Mathlib `v4.33.1`; existing modules compile without `sorry`. Coverage includes:
 
-- exact polynomial definitions 與 identities；
+- Exact polynomial definitions and identities;
 - cleared-denominator Jacobian numerator reduction；
-- rational branch 與 endpoint identities；
-- `pB` 唯一根的固定實區間證書；
-- `R7`、`B`、`Q17` 的 exact sign barriers；
-- 正 `Q` chart 上的 real observation map、分母正性與 Fréchet differentiability。
-- explicit Fréchet derivative 與 exact Jacobian factorization；
-- ordinary symmetry/rational branches 的 rank-one kernel 與 transversality；
-- exceptional common point 的 transversality failure；
-- plane-to-plane Whitney-fold Jacobian criterion 及兩 ordinary branches 的證書。
-- 兩 ordinary branches 的實際 `C∞` source／target local charts 與雙側 smooth inverses，將 map 化為 `(x,y^2)`；
-- 整個物理臨界集合／區間、exceptional source tangents、discriminant cubic contact error；
-- 實際球面 radial image 的 unit length、mirror symmetry、共同端點、非零起點導數、嚴格第三座標單調性與唯一邊界最大值。
-- 全文 Taylor／Big-O remainder、exceptional no-fold obstruction／ordinary four-jet／rescaling、固定 Sturm variations、輔助曲線 quintic／最大值與精確有理數值界。
+- Rational branches and endpoint identities;
+- Fixed real-interval certificate for the unique root of `pB`;
+- Exact sign barriers for `R7`, `B`, `Q17`;
+- Real observation map, denominator positivity and Fréchet differentiability in the positive-`Q` chart;
+- Explicit Fréchet derivative and exact Jacobian factorization;
+- Rank-one kernels and transversality on ordinary symmetry/rational branches;
+- Failure of transversality at the exceptional common point;
+- Plane-to-plane Whitney-fold Jacobian criterion and certificates on both ordinary branches;
+- Actual `C∞` source / target local charts with two-sided smooth inverses reducing both ordinary branches to `(x,y^2)`;
+- Complete physical critical locus / intervals, exceptional source tangents and discriminant cubic-contact error;
+- Actual spherical radial-image unit length, mirror symmetry, common endpoint, nonzero initial derivative, strict third-coordinate monotonicity and unique boundary maximum;
+- Full manuscript Taylor / Big-O remainders, exceptional no-fold obstruction / ordinary four-jet / rescaling, fixed Sturm variations, auxiliary quintic / maximum and exact rational bounds.
 
-全文逐項覆蓋在 `companions/lean/stokes-caustic-v5/FULL_PAPER_COVERAGE.md`；258 個公開定理的 audit/build/status 與 proof-hole scan 由 `verify_lean.py` 重播。已發布 v0.02／v0.03 保持不可變；新成果另封裝 v0.04。全文所列 open germ classification／versal unfolding 仍為開放問題。
+Claimwise manuscript coverage is in `companions/lean/stokes-caustic-v5/FULL_PAPER_COVERAGE.md`; `verify_lean.py` replays audit/build/status and proof-hole scans for 258 public theorems. Published v0.02 / v0.03 remain immutable; new findings are packaged separately as v0.04. The manuscript's open germ classification / versal unfolding remain open.
 
-## 第一優先：完成 Stokes v5 的幾何橋
+## First priority: Stokes v5 geometry bridge
 
-| 里程碑 | 狀態 | 下一個可證命題 | 驗證／落點 |
+| Milestone | Status | Next provable proposition | Verification / location |
 | --- | --- | --- | --- |
-| L0. Observation map 與可微性 | `LEAN-PASSED` | 已完成 | `StokesV5/ObservationMap.lean`; `LEAN_STATUS.md` |
-| L1. Explicit derivative | `LEAN-PASSED` | 已完成 | `StokesV5/ObservationMap.lean` |
-| L2. Jacobian factorization | `LEAN-PASSED` | 已完成 | `StokesV5/ObservationMap.lean` |
-| L3. Ordinary-branch hypotheses | `LEAN-PASSED` | 已完成 | `StokesV5/ObservationMap.lean`; `StokesV5/FoldGeometry.lean` |
-| L4. Exceptional common point | `LEAN-PASSED` | 已證 `(0,0)` 不滿足 fold criterion | `StokesV5/ObservationMap.lean`; `StokesV5/WhitneyFold.lean` |
-| L5. Plane-to-plane fold criterion | `LEAN-PASSED / CRITERION LEVEL` | 已完成；更強座標結果見 L7 | `StokesV5/WhitneyFold.lean` |
-| L6. v0.03 release | `PUBLISHED / VERIFIED` | 保留原 criterion-level scope；不追溯加入後續定理 | Zenodo version DOI `10.5281/zenodo.22735974`; concept DOI `10.5281/zenodo.22726976`; `EXTERNAL_ACTIONS.md`; v0.02 未改寫 |
-| L7. Actual local normal forms | `LEAN-PASSED / WORKING SOURCE` | 已構造兩分支的 `(x,y^2)` source／target charts 與雙側局部 smooth inverses | `StokesV5/LocalNormalForm.lean`; `StokesV5/RationalCoordinates.lean`; `StokesV5/RationalNormalForm.lean` |
-| L8. Physical locus / discriminant / radial image | `LEAN-PASSED / WORKING SOURCE` | 已完成 theorem map 列出的主要幾何結論；後續發布為獨立作業 | `StokesV5/PhysicalLocus.lean`; `StokesV5/Discriminant.lean`; `StokesV5/RadialMonotonicity.lean`; `StokesV5/RadialGeometry.lean`; `COORDINATE_PROOFS.md` |
-| L9. Full asserted manuscript coverage | `LEAN-PASSED / WORKING SOURCE` | 逐項涵蓋定理、展開、four-jet、輔助 quintic、Sturm 表與數值界；不包含原文的開放研究問題 | `FULL_PAPER_COVERAGE.md`; `verify_lean.py` |
-| L10. v0.04 release | `PUBLISHED / API+DOWNLOAD VERIFIED` | GitHub／Zenodo 已公開；新 software DOI `10.5281/zenodo.23057630`、同 concept；公開三檔 SHA-256 一致；僅 `doi.org` 解析尚待回讀 | `releases/candidates/stokes-caustic-v5-v0.04-publication.md`; `EXTERNAL_ACTIONS.md` |
+| L0. Observation map and differentiability | `LEAN-PASSED` | Complete | `StokesV5/ObservationMap.lean`; `LEAN_STATUS.md` |
+| L1. Explicit derivative | `LEAN-PASSED` | Complete | `StokesV5/ObservationMap.lean` |
+| L2. Jacobian factorization | `LEAN-PASSED` | Complete | `StokesV5/ObservationMap.lean` |
+| L3. Ordinary-branch hypotheses | `LEAN-PASSED` | Complete | `StokesV5/ObservationMap.lean`; `StokesV5/FoldGeometry.lean` |
+| L4. Exceptional common point | `LEAN-PASSED` | `(0,0)` proved not to satisfy the fold criterion | `StokesV5/ObservationMap.lean`; `StokesV5/WhitneyFold.lean` |
+| L5. Plane-to-plane fold criterion | `LEAN-PASSED / CRITERION LEVEL` | Complete; stronger coordinate result in L7 | `StokesV5/WhitneyFold.lean` |
+| L6. v0.03 release | `PUBLISHED / VERIFIED` | Original criterion-level scope retained; later theorems not retroactively included | Zenodo version DOI `10.5281/zenodo.22735974`; concept DOI `10.5281/zenodo.22726976`; `EXTERNAL_ACTIONS.md`; v0.02 unchanged |
+| L7. Actual local normal forms | `LEAN-PASSED / WORKING SOURCE` | `(x,y^2)` source / target charts and two-sided local smooth inverses constructed on both branches | `StokesV5/LocalNormalForm.lean`; `StokesV5/RationalCoordinates.lean`; `StokesV5/RationalNormalForm.lean` |
+| L8. Physical locus / discriminant / radial image | `LEAN-PASSED / WORKING SOURCE` | Main geometry in the theorem map complete; subsequent publication separate | `StokesV5/PhysicalLocus.lean`; `StokesV5/Discriminant.lean`; `StokesV5/RadialMonotonicity.lean`; `StokesV5/RadialGeometry.lean`; `COORDINATE_PROOFS.md` |
+| L9. Full asserted manuscript coverage | `LEAN-PASSED / WORKING SOURCE` | Claimwise coverage of theorems, expansions, four-jets, auxiliary quintic, Sturm tables and numerical bounds; excludes original open research questions | `FULL_PAPER_COVERAGE.md`; `verify_lean.py` |
+| L10. v0.04 release | `PUBLISHED / API+DOWNLOAD VERIFIED` | GitHub / Zenodo public; new software DOI `10.5281/zenodo.23057630`, same concept; three public file SHA-256 values match; only `doi.org` resolution pending read-back | `releases/candidates/stokes-caustic-v5-v0.04-publication.md`; `EXTERNAL_ACTIONS.md` |
 
-L1–L10 證明／封存／兩平台公開發布已完成；v0.04 software DOI 為 `10.5281/zenodo.23057630`，v0.03 DOI `10.5281/zenodo.22735974` 與 concept DOI `10.5281/zenodo.22726976` 不變。完整重播與公開 API／下載讀回均通過；Zenodo 新版已公開，僅新 DOI 的 `doi.org` 解析尚待回讀，並非登入或發布 blocker。
+L1–L10 proofs / sealing / publication on both platforms are complete. v0.04 software DOI `10.5281/zenodo.23057630`; v0.03 DOI `10.5281/zenodo.22735974` and concept DOI `10.5281/zenodo.22726976` unchanged. Full replay and public API / download read-backs passed. The new Zenodo version is public; only new-DOI `doi.org` resolution awaits read-back, not a login or publication blocker.
 
-## 第二優先：下一批 Lean 候選
+## Second priority: next Lean candidates
 
-1. **Ruled surface v4 的修正版有限核心。** 只有在邊界 atlas／`Q>0` 範圍與 Theorem 5.3 的新增假設確定後才開始；Lean target 是修正後定理，不是把已知錯誤原文形式化。
-2. **Bicomplex：33 個 own 定理的 partial coverage（兩篇後繼論文與 software 1.0 已於 2026-10-02 公開）。** 2026-10-02 fresh 原位 `verify_lean.py` PASS：33 個公開定理的 build、status、完整 axiom audit 與 proof-hole scan（只允許 `propext`、`Classical.choice`、`Quot.sound`；logs 在 `releases/candidates/bicomplex-successor-v1-acceptance/lean-*.txt`）；224 Ruled／258 Stokes 依賴本輪沒有重跑。證明輸入自 0.02 起未改。Written／external 的 PDE、operator、sheaf、topology 證明不在 Lean 內，兩篇論文都不稱 Lean 化；software zip 附 Lean 原始碼但不能單獨建置（需要同倉庫的 `ruled-surface-v5` 與 `stokes-caustic-v5`）。沒有必須的 Lean 任務；若要擴大形式化，以 `COVERAGE.md` 的 “Actual open obligations” 與 Bicomplex README 的證據表為依據。入口：`companions/lean/bicomplex-signal-manifolds/COVERAGE.md`。
-3. **Paper III 的有限維 marked spectral-floor core。** 先將 marking、state、landing、source maps 全部做成顯式輸入，再形式化 stable-core closure 與 finite spectral avoidance；不得把 marking 從型別或假設中消去。
-4. **Paper I 的固定有限模型。** 只挑最小、可重播的 exact-rational theorem；63 頁全文形式化不是近期里程碑。
+1. **Corrected finite core of ruled surface v4.** Start after fixing the boundary atlas / `Q>0` scope and additional assumptions for Theorem 5.3. Formalize corrected theorems, not known errors in the original.
+2. **Bicomplex: partial coverage of 33 own theorems (two successor papers and software 1.0 public since 2026-10-02).** Fresh in-place `verify_lean.py` PASS on 2026-10-02: build, status, complete axiom audit and proof-hole scan for 33 public theorems (only `propext`, `Classical.choice`, `Quot.sound`; logs in `releases/candidates/bicomplex-successor-v1-acceptance/lean-*.txt`). The 224 Ruled / 258 Stokes dependencies were not rerun then. Proof inputs unchanged since 0.02. Written / external PDE, operator, sheaf and topology proofs are outside Lean; neither paper is called Lean-formalized. The software ZIP includes Lean sources but needs same-repository `ruled-surface-v5` and `stokes-caustic-v5` to build. No mandatory Lean task remains. Extend coverage using “Actual open obligations” in `COVERAGE.md` and the Bicomplex README evidence table. Entry: `companions/lean/bicomplex-signal-manifolds/COVERAGE.md`.
+3. **Finite-dimensional marked spectral-floor core of Paper III.** Make marking, state, landing and source maps explicit inputs; formalize stable-core closure and finite spectral avoidance without removing marking from types or hypotheses.
+4. **Fixed finite model of Paper I.** Select the smallest replayable exact-rational theorem; formalizing all 63 pages is not a near-term milestone.
 
-## filtered-complex／Diophantine 橋的 Lean 邊界
+## Lean boundary for the filtered-complex / Diophantine bridge
 
-這是獨立研究線。第一個 Lean artifact 應是來源類別、兩側 metric 與候選映射的精確定義，加上一個有限 toy model；在紙筆／symbolic 層證明雙 Lipschitz 主命題之前，不建立空泛的一般 theorem，也不讓它阻塞 Stokes v5 L1–L6。
+This is an independent research line. The first Lean artifact should define the source class, both metrics and candidate maps precisely, with a finite toy model. Before a written / symbolic bi-Lipschitz theorem, avoid an empty general theorem and do not block Stokes v5 L1–L6.
 
-## 每次 Lean 變更的通過條件
+## Gates for each Lean change
 
-從 `companions/lean/stokes-caustic-v5/` 執行：
+From `companions/lean/stokes-caustic-v5/`, run:
 
 ```bash
 python3 -B verify_lean.py
 ```
 
-完成一個里程碑後，同步更新：
+After completing a milestone, synchronize:
 
 - `companions/lean/stokes-caustic-v5/LEAN_STATUS.md`
 - `companions/lean/stokes-caustic-v5/RESEARCH_STATUS.md`
 - `companions/lean/stokes-caustic-v5/GEOMETRIC_CLOSURE_BOUNDARY.md`
-- `releases/current/stokes-caustic-v5/THEOREM_MAP.md`（作為 v0.02 基線；準備新 release 時複製到新版本後再更新，不改寫 v0.02）
-- 根目錄 `RESEARCH_BOARD.md`
+- `releases/current/stokes-caustic-v5/THEOREM_MAP.md` (v0.02 baseline; copy to a new version before updating for a new release, leaving v0.02 unchanged)
+- Root `RESEARCH_BOARD.md`

@@ -1,0 +1,28 @@
+{
+  "schema": "english-edition-preservation/v1",
+  "date": "2026-10-08",
+  "scope": "Initial Git snapshot and recursively decoded tracked ZIP/gzip text; no external readback or raster OCR.",
+  "unchanged_original_tracked_files": 1137,
+  "changed_maintained_documents": [
+    "AGENTS.md",
+    "ESTABLISHED_WORKS.md",
+    "EXTERNAL_ACTIONS.md",
+    "LEAN_ROADMAP.md",
+    "README.md",
+    "RESEARCH_BOARD.md",
+    "RESEARCH_DIRECTIONS.md"
+  ],
+  "missing_original_files": [],
+  "archive_scan": {
+    "stats": {
+      "zip_containers": 24,
+      "gzip_containers": 0,
+      "text_cjk_members": 16
+    },
+    "unmapped": [],
+    "errors": []
+  },
+  "original_scientific_results": "Unchanged. Original manifests, frozen payloads, archives and PDFs are preserved.",
+  "semantic_status": "Translations authored from complete source texts; automated checks cover inventory, bytes, language, numeric-token preservation for historical prose, and AST preservation for translated Python. They are not an independent semantic or mathematical certificate.",
+  "external_actions": []
+}

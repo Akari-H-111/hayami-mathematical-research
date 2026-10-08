@@ -1,5 +1,7 @@
 # Hayami Mathematical Research
 
+English reading index: [Complete English editions, including historical sources](docs/english-editions-20261008/README.md). Original sealed evidence remains unchanged.
+
 This directory is the clean-room research archive for the inverse-Leibniz series and the three reconstructed legacy geometry papers.
 The Bicomplex successor papers (published 2026-10-02) are listed under Public releases; start any Bicomplex window at the [Bicomplex README](papers/legacy-geometry/bicomplex-signal-manifolds/README.md) (“Start here”).
 
