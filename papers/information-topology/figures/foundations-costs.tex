@@ -1,0 +1,30 @@
+\begin{figure}[tbp]
+\centering
+\ViewHeading{(a) Support depends on the chosen basis}
+\begin{tikzpicture}
+\node[vbox,text width=5.5cm] (standard) at (-3.5,0)
+  {Basis $((1,0),(0,1))$\\$(1,1)=1(1,0)+1(0,1)$\\support size $2$};
+\node[vinput,text width=5.5cm] (changed) at (3.5,0)
+  {Basis $((1,1),(0,1))$\\$(1,1)=1(1,1)+0(0,1)$\\support size $1$};
+\end{tikzpicture}
+\ViewHeading{(b) Filling of one carried cycle in compatible bases}
+\begin{tikzpicture}[x=1.7cm,y=.7cm]
+\draw[->,viewgray] (-.3,0)--(5.6,0) node[right] {$t$};
+\draw[vieworange,very thick] (0,1)--(2.9,1);
+\node[vieworange,above] at (1.3,1) {excluded: cost $+\infty$};
+\draw[viewteal,very thick] (3,1)--(5,1);
+\node[viewteal,above] at (4.2,1) {fillable};
+\foreach \level/\name in {0/t_i,1/t_{i+1},2/t_{i+2},3/d(z),4/t_{j+1},5/t_{j+2}}
+  {\fill[viewgray] (\level,0) circle (2pt);\node[below] at (\level,0) {$\name$};}
+\draw[dashed,viewgray] (3,-.4)--(3,1.6);
+\node[font=\footnotesize,align=center] at (2.5,-1.4)
+ {Chosen start $t_i$ need not be a barcode birth.\\
+  Once finite, minimum support cannot increase along inclusions.};
+\end{tikzpicture}
+\caption{Two separate qualifications on support filling. Changing bases
+can change a finite support count. Monotonicity along a filtration uses
+compatible bases and inclusions; it does not apply automatically to
+arithmetic power maps or rescaled norms. Panel (b) is a schematic finite
+threshold, not an additional computed example.}
+\label{fig:foundations-costs}
+\end{figure}

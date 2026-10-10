@@ -1,0 +1,29 @@
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}
+\begin{scope}[xshift=-3.5cm]
+\draw[very thick,viewblue] (-1.4,0)--(1.4,0)--(0,1.9)--cycle;
+\foreach \point in {(-1.4,0),(1.4,0),(0,1.9)} \fill[viewblue] \point circle (2pt);
+\node at (0,-.45) {$K_a$: no face};
+\node[vieworange] at (0,.65) {$z=e_{01}+e_{12}+e_{02}$};
+\end{scope}
+\begin{scope}[xshift=3.5cm]
+\filldraw[fill=viewteal!15,draw=viewblue,very thick] (-1.4,0)--(1.4,0)--(0,1.9)--cycle;
+\foreach \point in {(-1.4,0),(1.4,0),(0,1.9)} \fill[viewblue] \point circle (2pt);
+\node at (0,.7) {$\sigma$};
+\node at (0,-.45) {$K_b$: $\partial_2\sigma=z$};
+\end{scope}
+\draw[varrow] (-1.4,.85)--(1.4,.85) node[midway,above,font=\footnotesize]{attach one face};
+\end{tikzpicture}
+\medskip
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+Over $\F_2$ & $Z_1$ & $B_1$ & $\dim H_1$ & Labels / entropy & $\Fill^{\rm supp}(z)$\\\midrule
+Before & $\langle z\rangle$ & $0$ & $1$ & $2$ / $1$ bit & $+\infty$\\
+After & $\langle z\rangle$ & $\langle z\rangle$ & $0$ & $1$ / $0$ bits & $1$\\\bottomrule
+\end{tabular}
+\caption{One nonzero quotient label dies when one face is attached.
+The same edge cycle is carried through the inclusion, and $d(z)=b$.
+Entropy here uses all quotient labels, including zero.}
+\label{fig:foundations-triangle}
+\end{figure}

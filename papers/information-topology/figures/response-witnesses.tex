@@ -1,0 +1,47 @@
+\begin{figure}[tbp]
+\centering
+\begin{minipage}[t]{.47\linewidth}
+\centering\ViewHeading{(a) Nilpotent mark: strict growth}
+\begin{tikzpicture}
+\node[vseed,label=below:$0$] (zero) at (0,0) {};
+\node[vseed,label=below:{$[e_1]$}] (first) at (2.8,0) {};
+\node[vpoint,label=above:{$[e_2]$}] (second) at (0,1.6) {};
+\node[vpoint,label=above:{$[e_1+e_2]$}] (sum) at (2.8,1.6) {};
+\draw[varrow] (first)--(second) node[midway,above right,font=\footnotesize] {$\overline G$};
+\draw[varrow] (second)--(zero);
+\draw[varrow] (sum)--(second);
+\node[align=center] at (1.4,-1.35)
+ {$N^{(0)}=\{0,[e_1]\}$\\$N^{(1)}=H=\F_2^2$};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{.47\linewidth}
+\centering\ViewHeading{(b) Zero mark: no growth}
+\begin{tikzpicture}
+\node[vseed,label=below:$0$] (zero) at (0,0) {};
+\node[vseed,label=below:{$[e_1]$}] (first) at (2.8,0) {};
+\node[circle,draw=viewgray,inner sep=2.5pt,label=above:{$[e_2]$}] (second) at (0,1.6) {};
+\node[circle,draw=viewgray,inner sep=2.5pt,label=above:{$[e_1+e_2]$}] (sum) at (2.8,1.6) {};
+\draw[varrow] (first)--(zero);
+\draw[varrow] (second)--(zero);
+\draw[varrow] (sum)--(zero);
+\node[align=center] at (1.4,-1.35)
+ {$N^{(m)}=\{0,[e_1]\}$ for all $m$\\$\dim\Nex=1$};
+\end{tikzpicture}
+\end{minipage}
+\ViewHeading{(c) A swap can descend to the identity}
+\begin{tikzpicture}
+\node[vbox,text width=4.8cm] (swap) at (-3.8,0)
+ {$\mathsf Z=\F_2^2$, $G(x,y)=(y,x)$\\$(1,0)\longleftrightarrow(0,1)$};
+\node[vresult,text width=5.3cm] (identity) at (3.8,0)
+ {$\mathsf B=\langle(1,1)\rangle$\\$[(1,0)]=[(0,1)]$,\quad $\overline G=\id$};
+\draw[varrow] (swap)--(identity) node[midway,above,font=\footnotesize] {quotient};
+\end{tikzpicture}
+\caption{Exact finite-field witnesses, drawn as finite points rather
+than continuous planes. Panels (a) and (b) use the same quotient of
+$\F_2^3$ by $\langle e_3\rangle$ and the same seed; only the mark changes.
+Orange points are the initial seed subspace, blue points are added by
+closure, and hollow points are outside the response. Zero is fixed in
+both panels (its self-loop is omitted). In (a), linear span adds
+$[e_1+e_2]$ as well as the new direction. Panel (c) already has $V=H$.}
+\label{fig:response-witnesses}
+\end{figure}

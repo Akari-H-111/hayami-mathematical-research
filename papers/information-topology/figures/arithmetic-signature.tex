@@ -1,0 +1,28 @@
+\begin{figure}[tbp]
+\centering
+\ViewHeading{(a) The first component already gives the signature metric}
+\begin{tikzpicture}
+\begin{axis}[viewaxis,width=12.5cm,height=4.6cm,xmin=.5,xmax=24.5,
+ xlabel={$q$},ylabel={$q^{-1}|v_q(x)-v_q(y)|$},ymin=0,ymax=1.7,legend pos=north east]
+\addplot[viewblue,ycomb,mark=*,mark size=1.4pt] table[x=q,y=component] {\ArithmeticSignatureData};
+\addlegendentry{$x=0.17,\ y=0.43$}
+\addplot[vieworange,dashed] table[x=q,y=first_component] {\ArithmeticSignatureData};
+\addlegendentry{$|v_1(x)-v_1(y)|$}
+\end{axis}
+\end{tikzpicture}
+\ViewHeading{(b) Scalar costs forget information retained by the signature}
+\begin{tikzpicture}
+\node[vbox] (positive) at (-4,0) {$x$};
+\node[vbox] (negative) at (-4,-1.2) {$-x$};
+\node[vinput,text width=4.7cm] (scalar) at (1,-.6) {same scalar profile\\$(b_q(x))_q=(b_q(-x))_q$};
+\draw[varrow] (positive)--(scalar);
+\draw[varrow] (negative)--(scalar);
+\node[align=center,font=\footnotesize,text width=3.4cm] at (5.1,-.6)
+ {If $x\neq-x$, then\\$U(x)\neq U(-x)$.};
+\end{tikzpicture}
+\caption{Panel (a) samples the general inequality proved in the text;
+the equality of the supremum with the first component holds at every
+scale, not just the 24 plotted ones. The scalar profile determines costs
+but is not an injective parameterization. The full marked signature is.}
+\label{fig:arithmetic-signature}
+\end{figure}

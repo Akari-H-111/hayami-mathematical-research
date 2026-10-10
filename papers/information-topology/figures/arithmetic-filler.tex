@@ -1,0 +1,41 @@
+\begin{figure}[tbp]
+\centering
+\ViewHeading{(a) Real slice of the model row $\partial=(1,0)$}
+\begin{tikzpicture}[scale=.9]
+\foreach \shift/\radius/\heading in {-4.8/.65/{below cost},0/1/{at cost},4.8/1.35/{above cost}} {
+ \begin{scope}[xshift=\shift cm]
+ \draw[->,viewgray!60] (-1.5,0)--(1.65,0);
+ \draw[->,viewgray!60] (0,-1.55)--(0,1.65);
+ \filldraw[draw=viewblue,fill=viewblue!5] (0,0) circle (\radius);
+ \draw[vieworange,thick] (1,-1.6)--(1,1.65);
+ \fill[viewgray] (0,0) circle (1.8pt);
+ \node[font=\footnotesize] at (0,2) {\heading};
+ \node[font=\footnotesize,rotate=90,above] at (1.08,.3) {$c_1=1$};
+ \end{scope}
+}
+\fill[viewteal] (1,0) circle (3pt);
+\draw[viewteal,line width=2pt] (5.8,-.907)--(5.8,.907);
+\node at (-4.8,-2.2) {$\mathcal F=\varnothing$};
+\node at (0,-2.2) {$\mathcal F=\{(1,0)\}$};
+\node at (4.8,-2.2) {nonempty intersection};
+\end{tikzpicture}
+\ViewHeading{(b) General complex row and weighted threshold}
+\[
+c_{\min}=\frac{\overline{v_q}}{b_q^2},\quad
+\|c_{\min}\|_2=\frac1{b_q},\quad
+\mathcal F_x(q,\lambda)=\varnothing
+\ \Longleftrightarrow\ \lambda<\frac q{b_q}\qquad(b_q>0).
+\]
+\begin{tikzpicture}
+\node[vbox] (source) at (-3.9,0) {$\mathcal F_x(kq,\lambda')$};
+\node[vresult] (target) at (3.9,0) {$\mathcal F_x(q,\lambda)$};
+\draw[varrow] (source)--(target) node[midway,above] {$T_{q,k}|_{\mathcal F}$}
+ node[midway,below,font=\footnotesize] {$\lambda'\leq\lambda$};
+\end{tikzpicture}
+\caption{A ball first meets the affine solution space at the minimum-norm
+filler. The top panels are real slices for row $(1,0)$, with ball radii
+$0.65,1,1.35$, not all complex dimensions. The closed feasible set is
+already nonempty at equality. At $b_q=0$ it is empty for every finite
+threshold. Feasible sets are sets of chains, not chain subcomplexes.}
+\label{fig:arithmetic-filler}
+\end{figure}

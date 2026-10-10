@@ -1,0 +1,39 @@
+\begin{figure}[tbp]
+\centering
+\begin{minipage}[t]{.46\linewidth}
+\centering\ViewHeading{(a) Wedge $R_2=S^1\vee S^1$}
+\begin{tikzpicture}
+\draw[viewblue,thick] (-.95,0) circle (.95);
+\draw[viewblue,thick] (.95,0) circle (.95);
+\node[vseed,label=below:$a$] at (0,0) {};
+\draw[varrow] (-1.9,0) arc[start angle=180,end angle=120,radius=.95];
+\draw[varrow] (1.9,0) arc[start angle=0,end angle=60,radius=.95];
+\node at (-.95,0) {$e_1$};\node at (.95,0) {$e_2$};
+\node[align=center] at (0,-1.9)
+ {$\C\xrightarrow{d^0}\C^2\longrightarrow0$\\Relative $Z^1=\C^2$};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{.50\linewidth}
+\centering\ViewHeading{(b) Product CW torus $K_2$}
+\begin{tikzpicture}
+\fill[viewteal!10] (-1,-1) rectangle (1,1);
+\draw[varrow] (-1,-1)--(1,-1) node[midway,below] {$e_1$};
+\draw[varrow] (-1,1)--(1,1) node[midway,above] {$e_1$};
+\draw[varrow] (-1,-1)--(-1,1) node[midway,left] {$e_2$};
+\draw[varrow] (1,-1)--(1,1) node[midway,right] {$e_2$};
+\foreach \point in {(-1,-1),(-1,1),(1,-1),(1,1)} \fill[vieworange] \point circle (2.5pt);
+\node at (0,0) {one $2$-cell};
+\node[align=center] at (0,-2)
+ {$\C\xrightarrow{d^0}\C^2\xrightarrow{d^1}\C$\\Relative $Z^1=\ker d^1$};
+\end{tikzpicture}
+\end{minipage}
+\[
+d^0(s)=((u-1)s,(v-1)s),\qquad d^1(a,b)=(1-v)a+(u-1)b.
+\]
+\caption{The same degree-zero coboundary does not give the same relative
+degree-one quotient. Opposite square edges are identified with the
+displayed orientations, and all corners represent one vertex. For a
+nontrivial character the torus kernel is one dimensional; the wedge has
+no degree-two equation.}
+\label{fig:arithmetic-wedge}
+\end{figure}

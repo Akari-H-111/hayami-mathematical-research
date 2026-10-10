@@ -1,0 +1,35 @@
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}
+\begin{groupplot}[viewaxis,
+ group style={group size=1 by 2,vertical sep=7mm},
+ width=11.8cm,height=3.1cm,scale only axis,
+ xmin=1,xmax=120,xtick={1,20,40,60,80,100,120},ymode=log]
+\nextgroupplot[
+ ylabel={$b_q(x)$},xticklabels=\empty,legend pos=south west,ymin=.005,ymax=8]
+\addplot[viewblue,mark=*,mark size=.7pt] table[x=q,y=boundary] {\ArithmeticProfileData};
+\addlegendentry{$b_q(x)$}
+\addplot[vieworange,dashed] table[x=q,y=boundary_threshold] {\ArithmeticProfileData};
+\addlegendentry{$Cq^{-\alpha}$}
+\addplot[only marks,mark=o,mark size=2.4pt,vieworange,forget plot]
+ table[x=q,y=boundary] {\ArithmeticHitData};
+\nextgroupplot[
+ xlabel={integer scale $q$},ylabel={$\Fill_{q,x}(1)$},legend pos=north west,
+ ymin=.12,ymax=80]
+\addplot[viewteal,mark=*,mark size=.7pt] table[x=q,y=cost] {\ArithmeticProfileData};
+\addlegendentry{$1/b_q(x)$}
+\addplot[vieworange,dashed] table[x=q,y=cost_threshold] {\ArithmeticProfileData};
+\addlegendentry{$C^{-1}q^\alpha$}
+\addplot[only marks,mark=o,mark size=2.4pt,vieworange,forget plot]
+ table[x=q,y=cost] {\ArithmeticHitData};
+\end{groupplot}
+\end{tikzpicture}
+\caption{A finite-scale illustration for $d=1$, $x=(\sqrt5-1)/2$,
+$\alpha=1.2$, $C=6$, and $1\leq q\leq120$. A point lies below the upper
+threshold exactly when its reciprocal lies above the lower threshold.
+Orange rings mark these same scales in both panels. Lines join integer
+samples only as visual guides. Data use double
+precision and contain no zero boundary norms; infinitely-often membership
+cannot be inferred from this finite plot.}
+\label{fig:arithmetic-profiles}
+\end{figure}

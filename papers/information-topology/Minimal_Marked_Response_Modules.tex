@@ -1,0 +1,401 @@
+\documentclass[11pt,a4paper]{article}
+\input{series_preamble.tex}
+\input{figures/series_visual_style.tex}
+\hypersetup{pdftitle={Minimal Marked Response Modules for Relative Obstruction Data}}
+
+\title{\textbf{Minimal Marked Response Modules}\\
+\large For Relative Obstruction Data}
+\author{Akari Hayami}
+\date{Reorganized algebraic companion --- 16 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Given a finite-dimensional quotient, an obstruction seed, and an ordered
+family of endomorphisms preserving the boundary subspace, we construct
+the smallest invariant subspace containing the seed image.  The
+construction is the elementary generated-submodule closure, with a unital
+algebra convention and a finite dimension bound stated explicitly.
+For a fixed number of marks it is a functor to modules over the free
+associative algebra.  Strict cochain transport is distinguished from
+independence of the seed representative modulo boundaries.
+
+Two finite-field examples separate a trivial descended action from
+genuine one-step growth and show why the marks cannot be omitted.  A
+calculation for the rank-one torus family explains a limitation of using
+this construction as an arithmetic companion: its nontrivial relative
+seed already spans a one-dimensional quotient.  Arithmetic maps between
+different scales do not automatically provide endomorphisms of a fixed
+quotient.  No character space, norm, recurrence spectrum, or geometric
+offset is constructed from an unmarked complex.
+\end{abstract}
+
+\section{The supplied datum}
+\label{sec:datum}
+
+Fix a field $\kk$ and a nonnegative integer $t$.  All vector spaces are
+finite dimensional.  The companion \emph{Foundations of Information
+Exclusion and Relative Obstruction} explains how a relative connecting
+class may supply a quotient seed.  The present note begins after that
+choice, and after the additional endomorphism marks have been specified.
+The elementary closure below is not presented as a new general theorem
+in representation theory; its role is to fix the exact finite response
+associated with the supplied data.
+
+\begin{definition}[Finite marked obstruction datum]\label{def:datum}
+A datum is
+\[
+ \mathfrak E=(\mathsf Z,\mathsf B,S,\widetilde\delta;G_1,\ldots,G_t),
+\]
+where $\mathsf B\subseteq\mathsf Z$ is a subspace, $S$ is a seed space,
+$\widetilde\delta:S\to\mathsf Z$ is linear, and each
+$G_j\in\End_\kk(\mathsf Z)$ satisfies $G_j(\mathsf B)\subseteq\mathsf B$.
+The marks are an \emph{indexed tuple}: their order and labels are retained
+and repetitions are permitted.  Define
+\[
+ \Hex(\mathfrak E)=\mathsf Z/\mathsf B,
+ \qquad \ob_{\mathfrak E}(s)=[\widetilde\delta(s)],
+ \qquad V_{\mathfrak E}=\im\ob_{\mathfrak E}.
+\]
+\end{definition}
+
+\subsection{A relative-cochain realization}
+
+\Cref{fig:response-datum} shows the seed map and the boundary-preserving
+square defining each descended mark.
+\input{figures/response-datum.tex}
+
+For a finite regular cellular pair $(K,A)$ with a finite-dimensional
+cellular sheaf $\mathcal F$, or a finite CW pair with a finite-rank local
+system $\mathcal F$, one may take
+\[
+ \mathsf Z=Z^1(K,A;\mathcal F),\qquad
+ \mathsf B=B^1(K,A;\mathcal F),\qquad S\subseteq H^0(A;\mathcal F).
+\]
+Choose a linear degree-zero lift $E$ of $S$ to $K$ and put
+$\widetilde\delta=d^0E$.  Then $\Hex=H^1(K,A;\mathcal F)$ and
+$\ob$ is the restriction of the connecting map.  Exactness gives
+\[
+ \ob(s)\ne0\iff s\text{ has no global extension}.
+\]
+The cochain short exact sequence and this realization are explained in
+the foundations companion; for local systems the background is the
+relative theory with local coefficients \cite[Section 3.H]{hatcher}.
+Boundary-preserving $G_j$ are not selected by that exact sequence.
+
+\begin{proposition}[Independence of the quotient seed]
+\label{prop:seed-choice}
+Fix $\mathsf Z,\mathsf B,S$ and the marks.  If
+$\widetilde\delta'-\widetilde\delta:S\to\mathsf Z$ takes values in
+$\mathsf B$, then the two quotient obstruction maps are equal.  Every
+construction below therefore gives the same response subspace.
+\end{proposition}
+
+\begin{proof}
+The quotient map $\mathsf Z\to\mathsf Z/\mathsf B$ annihilates the
+difference, so both seed images coincide.  The descended marks also
+coincide because they were held fixed.
+\end{proof}
+
+In the relative realization, replacing the lift $E$ by $E'$ changes
+$d^0E$ by a relative boundary, so satisfies the proposition.  This
+independence statement does not require the identity maps to form a
+strict morphism of the two displayed cochain data; strict morphisms below
+require equality before taking the quotient.
+
+\section{The unital algebra and finite closure}
+\label{sec:closure}
+
+Each mark descends to $\overline G_j\in\End_\kk(\Hex)$.  Let
+\[
+ \mathscr R_t=\kk\langle X_1,\ldots,X_t\rangle
+\]
+be the unital free associative algebra, with $\mathscr R_0=\kk$.
+Its representation on $\Hex$ sends $X_j$ to $\overline G_j$ and
+$1$ to $\id_{\Hex}$.  Define the effective algebra and response by
+\begin{equation}\label{eq:response}
+ \Aex(\mathfrak E)=\im(\mathscr R_t\to\End_\kk(\Hex)),
+ \qquad \Nex(\mathfrak E)=\Aex(\mathfrak E)V_{\mathfrak E}.
+\end{equation}
+The product denotes the linear span of all such actions.  In particular,
+the identity, equivalently the empty operator word, is included.  Thus
+$V_{\mathfrak E}\subseteq\Nex(\mathfrak E)$ even with no marks.  On a
+zero-dimensional quotient all actions, including the identity map, are
+the unique zero map.
+
+\begin{theorem}[Minimality, termination, and the dimension bound]
+\label{thm:closure}
+The response $\Nex(\mathfrak E)$ is the unique smallest subspace of
+$\Hex$ containing $V_{\mathfrak E}$ and invariant under all descended
+marks.  Define
+\begin{equation}\label{eq:iteration}
+ N^{(0)}=V_{\mathfrak E},\qquad
+ N^{(r+1)}=N^{(r)}+\sum_{j=1}^t\overline G_jN^{(r)}.
+\end{equation}
+The iteration reaches $\Nex$ after at most
+$\dim\Hex-\dim V_{\mathfrak E}$ strict dimension increases.  An equality
+$N^{(r+1)}=N^{(r)}$ certifies termination at that step.
+\end{theorem}
+
+\begin{proof}
+Induction identifies $N^{(r)}$ with the span of words of length at most
+$r$ applied to $V_{\mathfrak E}$.  Their union is the generated module
+in \cref{eq:response}.  Every invariant subspace containing the seed
+contains each such word, giving minimality and uniqueness.
+
+If equality occurs at one step, every $\overline G_jN^{(r)}$ already
+lies in $N^{(r)}$, so all later steps are equal.  Before equality, each
+step increases dimension by at least one.  Starting at
+$\dim V_{\mathfrak E}$ and remaining within $\Hex$ proves the bound.
+\end{proof}
+
+If the seed is zero, the response is zero without any iteration.  If
+$t=0$, the response is the seed image.  These cases are included in the
+unital convention rather than treated by an implicit exception.
+
+\subsection{A coordinate algorithm}
+
+Choose a quotient basis and write $M_j$ for the matrices of the descended
+marks.  If the columns of $Q_r$ form a basis for $N^{(r)}$, obtain $Q_{r+1}$
+by taking a column-space basis of
+\[
+ [\,Q_r\mid M_1Q_r\mid\cdots\mid M_tQ_r\,].
+\]
+Stop when the rank no longer increases.  The initial columns come from
+the seed map after quotienting by $\mathsf B$.  One need not enumerate
+the whole effective algebra.  The dimension bound is a bound on strict
+growth steps, not a bit-complexity estimate; field operations and exact
+rank computation still have their own costs.
+
+\Cref{fig:response-closure} depicts operator words and the exact
+column-space iteration, with the empty word and stopping criterion
+retained.
+\input{figures/response-closure.tex}
+
+\section{Strict maps and the functorial target}
+\label{sec:functor}
+
+\begin{definition}[Strict morphism]\label{def:strict}
+Between data with the same indexed number $t$ of marks, a strict morphism
+is a pair of linear maps
+\[
+ \Phi_{\mathsf Z}:\mathsf Z\to\mathsf Z',\qquad
+ \Phi_S:S\to S'
+\]
+satisfying
+\begin{align*}
+ \Phi_{\mathsf Z}(\mathsf B)&\subseteq\mathsf B',\\
+ \Phi_{\mathsf Z}\widetilde\delta&=\widetilde\delta'\Phi_S,\\
+ \Phi_{\mathsf Z}G_j&=G'_j\Phi_{\mathsf Z}\qquad(1\leq j\leq t).
+\end{align*}
+\end{definition}
+
+Identities and componentwise composition satisfy these conditions, so the
+data form a category $\mathbf{Excl}_t$.  Every strict map induces a
+quotient map $\overline\Phi:\Hex\to\Hex'$.
+
+\begin{theorem}[Functoriality over a fixed free algebra]
+\label{thm:functor}
+The assignments $\mathfrak E\mapsto\Hex(\mathfrak E)$ and
+$\mathfrak E\mapsto\Nex(\mathfrak E)$ define functors
+\[
+ \mathbf{Excl}_t\longrightarrow\mathscr R_t\text{-}\mathbf{Mod}_{\mathrm{fin}}.
+\]
+On response modules, the map is the restriction of $\overline\Phi$;
+in particular,
+\[
+ \overline\Phi(\Nex(\mathfrak E))\subseteq\Nex(\mathfrak E').
+\]
+If $V_{\mathfrak E'}\subseteq\overline\Phi(\Nex(\mathfrak E))$, this
+inclusion is an equality.  If in addition $\overline\Phi$ is injective
+on $\Nex(\mathfrak E)$, its restriction is an isomorphism of responses.
+\end{theorem}
+
+\begin{proof}
+Boundary preservation defines the quotient map.  The other conditions
+descend to
+\[
+ \overline\Phi\,\ob_{\mathfrak E}
+     =\ob_{\mathfrak E'}\Phi_S,\qquad
+ \overline\Phi\,\overline G_j=\overline G'_j\,\overline\Phi.
+\]
+Thus $\overline\Phi$ is $\mathscr R_t$-linear and sends the seed image,
+and every word applied to it, into the target response.  Identity and
+composition laws are inherited from quotient maps.
+
+The image of the source response is invariant under all target marks.
+If it contains the target seed, target minimality gives the reverse
+inclusion.  Injectivity on the response then gives the asserted
+isomorphism.
+\end{proof}
+
+\Cref{fig:response-strict} separates the strict-morphism conditions from
+the additional conditions for equality or isomorphism of responses.
+\input{figures/response-strict.tex}
+
+\begin{remark}[Effective algebras need not have induced algebra maps]
+\label{rem:effective}
+The common functorial target is modules over $\mathscr R_t$, not modules
+over one fixed effective algebra.  A strict map does not generally
+induce an algebra homomorphism $\Aex(\mathfrak E)\to\Aex(\mathfrak E')$
+sending every descended mark to its counterpart: operator relations may
+hold on the source and fail on the target.
+
+For example, over $\F_2$ with one mark, take a source quotient
+$\F_2$ with mark zero and a target quotient $\F_2^2$ with mark
+$\operatorname{diag}(0,1)$.  Give both data zero boundary subspaces,
+seed space $\F_2$, and seed maps $s\mapsto s$ and $s\mapsto(s,0)$.
+The inclusion $s\mapsto(s,0)$, together with the identity seed map, is
+strict.  But a generator-respecting algebra map would send the zero
+source mark to the nonzero target mark, which is impossible.  The
+$\mathscr R_1$-module map is nevertheless well defined.
+\end{remark}
+
+\Cref{fig:response-algebras} displays the preceding counterexample to an
+induced generator-respecting map of effective algebras.
+\input{figures/response-algebras.tex}
+
+\section{Finite witnesses and dependence on marks}
+\label{sec:examples}
+
+\begin{example}[A descended identity]\label{ex:identity}
+Over $\F_2$, set
+\[
+ \mathsf Z=\F_2^2,\quad\mathsf B=\langle(1,1)\rangle,\quad
+ S=\F_2,\quad\widetilde\delta(s)=(s,0),\quad G(x,y)=(y,x).
+\]
+The mark preserves $\mathsf B$.  The quotient is one dimensional, and
+$[(1,0)]=[(0,1)]\ne0$ because their difference is $(1,1)$.
+Thus $\overline G=\id$, the seed already spans the quotient, and
+\[
+ \Aex=\F_2\id,\qquad N^{(0)}=\Nex=\Hex.
+\]
+This example verifies descent and a nonzero quotient seed, but it does
+not exhibit response growth.
+\end{example}
+
+\begin{example}[Strict growth and a nontrivial boundary quotient]
+\label{ex:growth}
+Let $\mathsf Z=\F_2^3$ with its ordered coordinate basis,
+$\mathsf B=\langle(0,0,1)\rangle$, $S=\F_2$, and
+$\widetilde\delta(s)=(s,0,0)$.  Choose
+\[
+ G(x,y,z)=(0,x,0).
+\]
+The mark annihilates $\mathsf B$ and therefore descends.  In the quotient
+basis $[(1,0,0)],[(0,1,0)]$, it has matrix
+\[
+ \overline G=\begin{pmatrix}0&0\\1&0\end{pmatrix},\qquad
+ \overline G^2=0.
+\]
+The iteration gives
+\[
+ N^{(0)}=\langle[(1,0,0)]\rangle
+ \subsetneq N^{(1)}=\Hex=N^{(2)}.
+\]
+Moreover, $\Aex=\langle\id,\overline G\rangle$ is a two-dimensional
+algebra, isomorphic to $\F_2[X]/(X^2)$.  The single strict growth step
+attains the bound $\dim\Hex-\dim N^{(0)}=1$.
+\end{example}
+
+\begin{proposition}[The unmarked seed does not determine the response]
+\label{prop:marks-needed}
+Keeping $\mathsf Z,\mathsf B,S,\widetilde\delta$ fixed does not in
+general determine the dimension of the response.
+\end{proposition}
+
+\begin{proof}
+Use the underlying data of \cref{ex:growth}.  Its displayed mark gives
+a two-dimensional response.  Replacing that mark by the zero map leaves
+the unmarked quotient and seed unchanged, but every iterate equals the
+one-dimensional seed image.  The identity on the underlying spaces is
+not a strict morphism intertwining these different marks.
+\end{proof}
+
+\Cref{fig:response-witnesses} gives finite-point views of the examples,
+including the dependence of the response on the chosen mark.
+\input{figures/response-witnesses.tex}
+
+\section{What the arithmetic torus does and does not supply}
+\label{sec:torus}
+
+For the one-vertex torus $K_d$ and local system $\mathcal L_x$ in
+\emph{Arithmetic Local-System Filling Spectra}, write
+$v_j=e^{2\pi\mathrm i x_j}-1$ and $v=(v_1,\ldots,v_d)$.
+Relative to the marked product cells, the cochain differentials begin
+\[
+ d_x^0(s)=vs,\qquad
+ (d_x^1w)_{jk}=v_jw_k-v_kw_j\quad(j<k).
+\]
+For $d=1$ there are no degree-two coordinates.
+
+\begin{proposition}[The nontrivial torus seed already fills its quotient]
+\label{prop:torus}
+If $x\ne0$ in $\T^d$, then
+\[
+ H^1(K_d,\{a\};\mathcal L_x)=\langle[v]\rangle
+\]
+is one dimensional and the connecting seed of the vertex state $1$
+spans it.  Consequently every choice of admissible endomorphism marks
+on this relative datum has $\Nex=\Hex$, with no strict growth steps.
+At $x=0$ the relative quotient has dimension $d$, but the connecting
+seed is zero and its response is zero for every choice of marks.
+\end{proposition}
+
+\begin{proof}
+Relative degree-zero cochains vanish, so $B^1(K_d,\{a\};\mathcal L_x)=0$.
+For $v\ne0$, choose a coordinate $j$ with $v_j\ne0$.  The cocycle
+equations give $w_k=v_k w_j/v_j$ for every $k$, so
+$\ker d_x^1=\langle v\rangle$.  This also holds for $d=1$, when the
+one-dimensional degree-one space is spanned by the nonzero vector $v$.
+The connecting cochain is $v$, proving the seed assertion and hence the
+response assertion by \cref{thm:closure}.
+
+At $x=0$, both displayed differentials vanish, so relative $H^1=\C^d$
+while the connecting seed is zero.  The zero seed generates zero.
+\end{proof}
+
+The wedge used for the chain filling calculation and the full torus
+used for relative cohomology share their degree-zero coboundary, but not
+their higher-degree cochain groups.  In particular, the wedge has no
+degree-two cocycle equations, so its relative degree-one quotient must
+not be substituted into \cref{prop:torus} without changing the datum.
+
+The arithmetic maps $T_{q,k}$ are maps between chain complexes at different
+scales with different powered coefficients.  They are not, as given,
+endomorphisms of the fixed relative quotient used above.  To turn them
+into response marks one must specify appropriate quotient identifications
+or a new finite model and prove boundary preservation and intertwining.
+Trivial powered characters also change the torus relative dimension, so
+uniform identifications cannot simply be assumed.
+
+Thus a nontrivial response-growth example is not automatically provided
+by the one-vertex torus calculation.  Larger quotients and meaningful
+marks require additional input, such as the deliberately supplied data
+in \cref{ex:growth}.
+
+\Cref{fig:response-torus} summarizes the torus saturation calculation
+and the missing comparison between arithmetic scale maps and response
+endomorphisms.
+\input{figures/response-torus.tex}
+
+\section{Scope and verification}
+
+This note assigns a minimal response to a supplied marked finite datum.
+It does not choose the marks, make them canonical under unmarked homotopy,
+extract a finite model from an infinite family, or construct a parameter
+metric, Diophantine spectrum, or offset geometry.  Its functoriality is
+exactly the strict transport in \cref{def:strict}, while its invariance
+under changes of seed representative is the separate quotient statement
+in \cref{prop:seed-choice}.
+
+The shared verifier \path{scripts/verify_restructured_series.py}
+enumerates the finite-field examples, checks boundary preservation and
+the dimensions of their iterated quotients, and checks the displayed
+strict-map example.  The finite calculations illustrate the theorem;
+termination and functoriality follow from the written proofs.
+
+\bibliographystyle{plain}
+\bibliography{series_references}
+\end{document}

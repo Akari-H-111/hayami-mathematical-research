@@ -1,0 +1,34 @@
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}
+\node[vbox,text width=8cm] (vector) at (0,0)
+ {$v_q(x)=(e^{2\pi\mathrm i qx_j}-1)_j$,\qquad $b_q(x)=\|v_q(x)\|_2$};
+\node[vbox,text width=5.6cm] (chain) at (-3.55,-1.7)
+ {\textbf{Chain branch on the wedge}\\
+ $\partial_{q,x}:\C^d\to\C$, $c\mapsto\sum_jv_{q,j}c_j$\\
+ Algebraic dual coefficients $\mathcal L_{qx}^{\vee}$};
+\node[vbox,text width=5.6cm] (cochain) at (3.55,-1.7)
+ {\textbf{Cochain branch on the torus}\\
+ $d^0_{qx}:\C\to\C^d$, $s\mapsto v_q(x)s$\\Coefficients $\mathcal L_{qx}$};
+\draw[varrow] (vector)--(chain);
+\draw[varrow] (vector)--(cochain);
+\node[vresult,text width=5.6cm] (cost) at (-3.55,-3.55)
+ {Minimum norm of a filler of $1$\\$\Fill_{q,x}(1)=b_q(x)^{-1}$ if $b_q(x)>0$};
+\node[vresult,text width=5.6cm] (ob) at (3.55,-3.55)
+ {Relative connecting class\\$\delta_{qx}(1)=[v_q(x)]$};
+\draw[varrow] (chain)--(cost);
+\draw[varrow] (cochain)--(ob);
+\end{tikzpicture}
+\medskip
+\begin{tabular}{@{}cccl@{}}
+\toprule
+Character & $b_q$ & Chain cost & Vertex section\\\midrule
+$qx\neq0$ & $>0$ & finite & $\delta_{qx}(1)\neq0$: does not extend\\
+$qx=0$ & $0$ & $+\infty$ & $\delta_{qx}(1)=0$: extends\\\bottomrule
+\end{tabular}
+\caption{Common coefficients, different events. The chain boundary is
+the algebraic transpose of the wedge coboundary, not its Hermitian
+adjoint. Conjugation in the minimum-norm filler comes from Euclidean
+minimization. Non-fillability is not relative nonextension.}
+\label{fig:arithmetic-branches}
+\end{figure}

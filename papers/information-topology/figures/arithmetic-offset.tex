@@ -1,0 +1,36 @@
+\begin{figure}[tbp]
+\centering
+\ViewHeading{(a) Geometric inclusions and compatible projections}
+\begin{tikzpicture}
+\node[vbox] (small) at (-4.2,0) {$\mathcal M^r$};
+\node[vbox] (large) at (4.2,0) {$\mathcal M^R$};
+\node[vresult] (base) at (0,-1.6) {$\mathcal M$};
+\draw[varrow] (small)--(large) node[midway,above] {$j_{r,R}$};
+\draw[varrow] (small)--(base) node[midway,below left] {$p_r$};
+\draw[varrow] (large)--(base) node[midway,below right] {$p_R$};
+\node[font=\footnotesize] at (0,-2.35) {$p_Rj_{r,R}=p_r$,\qquad $\mathcal L_{x,r}=p_r^*\mathcal L_x$};
+\end{tikzpicture}
+\ViewHeading{(b) Cohomology goes in the reverse direction}
+\begin{tikzpicture}
+\node[vbox,text width=4.9cm] (smallco) at (-3.8,0)
+ {$H^1(\mathcal M^r,\{a\};\mathcal L_{x,r})$\\$\delta_{x,r}(1)$};
+\node[vbox,text width=4.9cm] (largeco) at (3.8,0)
+ {$H^1(\mathcal M^R,\{a\};\mathcal L_{x,R})$\\$\delta_{x,R}(1)$};
+\draw[varrow] (largeco)--(smallco) node[midway,above] {$j_{r,R}^*\cong$};
+\draw[viewteal,very thick] (-5.6,-1.7)--(5.6,-1.7);
+\fill[viewteal] (-5.6,-1.7) circle (2.3pt);
+\draw[viewteal,fill=white] (5.6,-1.7) circle (2.8pt);
+\node[below] at (-5.6,-1.7) {$0$};
+\node[below] at (5.6,-1.7) {$\lambda_-$};
+\node[above,font=\footnotesize] at (0,-1.7)
+ {fixed $x\neq0$: nonzero class throughout the guaranteed interval};
+\node[font=\footnotesize,align=center] at (0,-2.85)
+ {The open endpoint marks the limit of this projection argument,\\not a claimed death time for every obstruction.};
+\end{tikzpicture}
+\caption{Sub-reach transport holds for $0\leq r\leq R<\lambda_-$ and one
+fixed character. Here $\mathcal M=\mathcal M_{\boldsymbol\lambda}$ and
+$a=a_{\boldsymbol\lambda}$. Carrier points label local systems on the
+whole carrier; they are not positions of separate holes in a single
+system. Arithmetic powers are not the maps in this diagram.}
+\label{fig:arithmetic-offset}
+\end{figure}

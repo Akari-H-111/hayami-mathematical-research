@@ -1,0 +1,42 @@
+\begin{figure}[tbp]
+\centering
+\begin{minipage}[t]{.48\linewidth}
+\centering\ViewHeading{(a) Exact dimension formula for $d=2$}
+\begin{tikzpicture}
+\begin{axis}[viewaxis,width=7cm,height=5cm,xmin=0,xmax=4,ymin=0,ymax=2.25,
+ xlabel={$\alpha$},ylabel={$h(\alpha)$},xtick={.5,1,2,3,4},ytick={0,1,2}]
+\path[fill=viewgray!10] (axis cs:0,0) rectangle (axis cs:.5,2.25);
+\addplot[viewblue,domain=.501:4,samples=70] {3/(1+x)};
+\addplot[only marks,mark=o,viewblue] coordinates {(.5,2)};
+\draw[dashed,viewgray] (axis cs:.5,0)--(axis cs:.5,2.25);
+\node[font=\scriptsize,rotate=90] at (axis cs:.23,1.1) {outside stated theorem};
+\node[font=\footnotesize,viewblue] at (axis cs:2.4,1.8) {$h(\alpha)=3/(1+\alpha)$};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}
+\centering\ViewHeading{(b) Dense and null are compatible}
+\begin{tikzpicture}
+\node[vbox,text width=5.9cm] at (0,0)
+ {$Z=\iota_{\boldsymbol\lambda}(R_{\alpha,C}\setminus\{0\})$\\
+ $\overline Z=\mathcal M_{\boldsymbol\lambda}$,\quad $\mathcal H^d(Z)=0$};
+\node[vresult,text width=5.9cm] at (0,-1.5)
+ {Hausdorff dimension: $h=(d+1)/(1+\alpha)$\\Both box dimensions: $d$};
+\node[vinput,text width=5.9cm] at (0,-3.05)
+ {Codimension $\eta=d-h$ is not a width.\\Radii $\lambda_j$ and offset $r$ are separate inputs.};
+\end{tikzpicture}
+\end{minipage}
+\medskip
+\begin{tabular}{@{}llll@{}}
+\toprule
+Quantity & $b_q$ & $\Fill_{q,x}(1)$ & $\widehat{\Fill}_{q,x}(1)$\\\midrule
+Threshold & $<Cq^{-\alpha}$ & $>C^{-1}q^\alpha$ & $>C^{-1}q^{\alpha+1}$\\\bottomrule
+\end{tabular}
+\par\smallskip{\small Normalized component: $\|q^{-1}v_q\|_2<Cq^{-(\alpha+1)}$.}
+\caption{Dimension, density, and threshold normalization. The curve is
+the stated theorem's exact formula, not a fitted numerical estimate.
+Dense subsets and their closures have the same finite closed-ball
+covering numbers here, while their Hausdorff dimensions differ. No
+positive-thickness fractal region is implied.}
+\label{fig:arithmetic-dimensions}
+\end{figure}

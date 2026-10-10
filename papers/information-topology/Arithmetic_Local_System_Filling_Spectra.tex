@@ -1,0 +1,1084 @@
+\documentclass[11pt,a4paper]{article}
+\input{series_preamble.tex}
+\input{figures/series_visual_style.tex}
+\usepgfplotslibrary{groupplots}
+\input{figures/arithmetic_plot_tables.tex}
+\hypersetup{pdftitle={Arithmetic Local-System Filling Spectra}}
+
+\title{\textbf{Arithmetic Local-System Filling Spectra}\\
+\large Marked Chain Diagrams, Relative Nonextension,\\
+and Positive-Reach Carriers}
+\author{Akari Hayami}
+\date{Reorganized research manuscript --- 16 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We assemble an explicit marked local-system model in which minimum filling
+costs detect simultaneous Diophantine recurrence.  At scale $q$, the
+holonomy differences $v_q(x)=(e^{2\pi\mathrm i qx_j}-1)_{j=1}^d$ give
+both a chain boundary row and a relative connecting cocycle, with the
+chain/cochain coefficient convention stated explicitly.  Their roles are
+different: a nonzero row makes the marked chain fillable while making the
+marked vertex section nonextendable.  The minimum Euclidean filling cost
+is $1/\norm{v_q(x)}_2$, with value $+\infty$ when the row vanishes.
+
+For every $\alpha>1/d$ and $C>0$, the large-cost recurrence locus has
+Hausdorff dimension $(d+1)/(1+\alpha)$.  This is a transfer of the classical
+simultaneous approximation theorem, not a new Diophantine dimension
+formula.  Reverse-divisibility maps are nonexpansive after weighting the
+chain norm by $q$.  The normalized boundary signature has exactly the
+chord metric of the unit product torus: its first component already
+determines that metric.  Product-radius carriers have reach equal to their
+smallest radius, and their sub-reach offsets preserve the relative
+obstruction for each fixed character.  The selected recurrence locus is
+dense and null, with full box dimension.  None of these conclusions
+identifies arithmetic scale with offset radius or applies to an unmarked
+filtered complex without additional data.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\section{The common model and the main result}
+\label{sec:overview}
+
+The companion \emph{Foundations of Information Exclusion and Relative
+Obstruction} separates boundary writing, persistent homology, and extension
+of local sections.  The present paper supplies one explicit quantitative
+model, rather than a universal passage between those notions.  The
+companion \emph{Minimal Marked Response Modules for Relative Obstruction
+Data} begins only after a finite quotient, seed, and endomorphisms have
+been supplied; those endomorphisms are not outputs of this paper.
+
+The construction has two branches with common coefficients:
+\[
+\begin{array}{ccc}
+ & v_q(x)=(e^{2\pi\mathrm i qx_j}-1)_j & \\
+ \swarrow & & \searrow \\
+ \partial_{q,x}:\C^d\to\C && d^0_{qx}:\C\to\C^d \\
+ \text{minimum chain filling cost} && \text{relative connecting class}.
+\end{array}
+\]
+The arithmetic spectrum comes from the size of $v_q(x)$.  Geometric offset
+transport is a further construction for a fixed local system, not a
+consequence of the word ``filling''.
+
+Fix an integer $d\geq1$.  Let $\T^d=(\R/\Z)^d$, with metric
+\[
+ d_{\T}(x,y)=\left(\sum_{j=1}^d
+                  \dist(x_j-y_j,\Z)^2\right)^{1/2}.
+\]
+Distances in this expression are independent of the chosen real lifts.
+Write
+\begin{equation}\label{eq:basic-data}
+ z_{q,j}(x)=e^{2\pi\mathrm i qx_j},\qquad
+ v_q(x)=(z_{q,j}(x)-1)_{j=1}^d,\qquad
+ b_q(x)=\norm{v_q(x)}_2.
+\end{equation}
+For $\alpha>0$ and $C>0$, define the recurrence set
+\begin{equation}\label{eq:recurrence-locus}
+ R_{\alpha,C}
+ =\{x\in\T^d:b_q(x)<Cq^{-\alpha}
+                       \text{ for infinitely many }q\in\N\}.
+\end{equation}
+Here $\N=\{1,2,\ldots\}$; denominators need not be reduced.  Our dimension
+and nullity results concern $\alpha>1/d$.  The broader definition also
+allows the all-positive-exponent rational membership and density statement
+in \cref{prop:legacy-density}; it does not extend the dimension theorem.
+
+\begin{theorem}[Marked filling and geometric realization]
+\label{thm:main}
+For $d\geq1$, $\alpha>1/d$, and $C>0$, the following statements hold.
+\begin{enumerate}
+ \item There are finite marked two-term local-system chain complexes
+ \[
+  \mathcal C_x(q):\quad
+  \C^d\xrightarrow{\partial_{q,x}}\C,
+  \qquad \partial_{q,x}c=\sum_{j=1}^d(z_{q,j}(x)-1)c_j,
+ \]
+ whose marked zero-chain $1$ has minimum filling cost
+ \[
+  \Fill_{q,x}(1)=
+  \begin{cases}b_q(x)^{-1},&b_q(x)>0,\\+\infty,&b_q(x)=0.\end{cases}
+ \]
+ \item With degree-one norm $\norm{c}_q=q\norm{c}_2$, the complexes
+ form a nonexpansive reverse-divisibility diagram.  The feasible sets
+ $\mathcal F_x(q,\lambda)$ form a Set-valued functor, and
+ \[
+  x\in R_{\alpha,C}
+  \iff \mathcal F_x(q,C^{-1}q^{\alpha+1})=\varnothing
+                     \text{ for infinitely many }q.
+ \]
+ \item For $U(x)=(q^{-1}v_q(x))_{q\geq1}$,
+ \begin{align*}
+  \norm{U(x)-U(y)}_{\ell^\infty(\ell^2)}
+    &=\norm{v_1(x)-v_1(y)}_2,\\
+  4d_{\T}(x,y)&\leq\norm{U(x)-U(y)}_{\ell^\infty(\ell^2)}
+                  \leq2\pi d_{\T}(x,y).
+ \end{align*}
+ \item The recurrence locus and its signature image have dimension
+ \[
+  \dim_{\mathrm H}R_{\alpha,C}
+   =\dim_{\mathrm H}U(R_{\alpha,C})=\frac{d+1}{1+\alpha}.
+ \]
+ \item Let $E_{\alpha,C}=R_{\alpha,C}\setminus\{0\}$.  On every
+ product-radius carrier $\mathcal M_{\boldsymbol\lambda}$ defined in
+ \cref{sec:carriers}, its image is dense and $\mathcal H^d$-null, has
+ Hausdorff dimension $(d+1)/(1+\alpha)$, and has both box dimensions
+ equal to $d$.  For each $x\in E_{\alpha,C}$, the relative obstruction
+ of the original local system $\mathcal L_x$ persists through all
+ offsets $0\leq r<\min_j\lambda_j$.
+\end{enumerate}
+\end{theorem}
+
+The proofs appear in \cref{sec:local,sec:diagram,sec:signature,sec:dimension,sec:carriers}.
+The reciprocal formula and signature identity are elementary calculations;
+the dimension theorem uses the classical result specified in
+\cref{sec:dimension}.  The purpose of the synthesis is to make their common
+model and their distinct hypotheses explicit.
+
+\section{Local coefficients, filling, and relative nonextension}
+\label{sec:local}
+
+\subsection{Coefficient conventions}
+
+Let $K_d$ be the one-vertex product CW model of $\T^d$, with vertex $a$,
+and let $R_d=K_d^{(1)}=\bigvee_{j=1}^d S^1$.  Orient and order the loops,
+and identify the vertex fibre with $\C$, retaining its vector $1$.
+For $x\in\T^d$, let $\mathcal L_x$ be the rank-one local system with
+holonomy
+\[
+ \rho_x(n)=e^{2\pi\mathrm i\langle x,n\rangle},\qquad n\in\Z^d.
+\]
+We use the cellular cochain convention
+\begin{equation}\label{eq:coboundary}
+ d^0_{qx}(s)=v_q(x)s.
+\end{equation}
+Its restriction to $R_d$ has no cochains above degree one.  Define
+$\mathcal C_x(q)$ as the degreewise \emph{algebraic dual} of this wedge
+cochain complex.  Equivalently, it is the cellular chain complex with the
+dual coefficient system $\mathcal L_{qx}^{\vee}|_{R_d}$, under the
+corresponding cellular pairing.  Thus its boundary is the transpose row
+in \cref{thm:main}.  This convention distinguishes a local system from its
+dual and uses a bilinear evaluation pairing, not a Hermitian adjoint.
+Local-coefficient chains, cochains, and relative sequences are discussed in
+\cite[Section 3.H]{hatcher}.
+
+The degree-one chain norm is initially Euclidean and the degree-zero norm
+is absolute value.  The selected zero-chain $1$ is a cycle because there
+is no negative degree.  Put
+\begin{equation}\label{eq:filling-definition}
+ \Fill_{q,x}(1)=\inf\{\norm{c}_2:\partial_{q,x}c=1\},
+ \qquad \inf\varnothing=+\infty.
+\end{equation}
+
+\begin{proposition}[Exact filling cost]\label{prop:filling}
+The filling formula in \cref{thm:main} holds.  When $b_q(x)>0$, a
+minimum-norm filler is
+\[
+ c_j=\frac{\overline{z_{q,j}(x)-1}}{b_q(x)^2}.
+\]
+Consequently, for every $\alpha>0$ and $C>0$,
+\begin{equation}\label{eq:cost-threshold}
+ b_q(x)<Cq^{-\alpha}
+ \iff \Fill_{q,x}(1)>C^{-1}q^{\alpha}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+The displayed vector has boundary $1$ and norm $1/b_q(x)$.  Every filler
+satisfies $1=|\partial_{q,x}c|\leq b_q(x)\norm{c}_2$ by
+Cauchy--Schwarz, proving minimality.  If $b_q(x)=0$, the boundary is zero
+and no filler exists.  The threshold equivalence includes that case.
+\end{proof}
+
+\subsection{The other branch of the same coefficient vector}
+
+Let
+\[
+ \delta_y:H^0(\{a\};\mathcal L_y)\longrightarrow
+                    H^1(K_d,\{a\};\mathcal L_y)
+\]
+be the connecting homomorphism.  The relative degree-zero cochain space
+is zero.  Extending the vertex state $1$ as the absolute zero-cochain $1$
+represents $\delta_y(1)$ by $v_1(y)$; it is a cocycle because
+$d^1_y d^0_y=0$ and cannot be a relative boundary unless it vanishes.
+
+\begin{proposition}[Fillability and nonextension are different events]
+\label{prop:two-events}
+For every $x\in\T^d$ and $q\geq1$,
+\begin{align}
+ \delta_{qx}(1)\ne0
+  &\iff qx\ne0\iff b_q(x)>0\iff\Fill_{q,x}(1)<\infty,
+  \label{eq:nontrivial-case}\\
+ \delta_{qx}(1)=0
+  &\iff qx=0\iff b_q(x)=0\iff\Fill_{q,x}(1)=+\infty.
+  \label{eq:trivial-case}
+\end{align}
+In particular, the unpowered vertex state has a nonzero obstruction for
+every $x\ne0$, not just for the selected recurrence locus.
+\end{proposition}
+
+\begin{proof}
+The preceding relative-cochain calculation proves the first equivalence
+in each line.  Alternatively, $H^0(K_d;\mathcal L_y)=\ker d^0_y$
+vanishes for $y\ne0$, so exactness makes $\delta_y$ injective.  At $y=0$
+the vertex state extends constantly.  The remaining equivalences follow
+from \cref{eq:basic-data,prop:filling}.
+\end{proof}
+
+\Cref{fig:arithmetic-branches} places the two coefficient branches and
+their opposite solvability interpretations side by side.
+\input{figures/arithmetic-branches.tex}
+
+\begin{remark}[Three independent roles]\label{rem:three-scales}
+The parameter $x$ selects a local system; the integer $q$ replaces it by
+its tensor power $\mathcal L_{qx}$; the offset radius $r$ will change the
+geometric domain while pulling back a \emph{fixed} local system.  If
+$x\ne0$ is torsion, then $\delta_x(1)\ne0$, but $\delta_{qx}(1)=0$
+at multiples of its order.  Preservation along sub-reach offsets must not
+be described as preservation under every tensor power.
+\end{remark}
+
+\begin{example}[Two-dimensional cochains and a powered torsion point]
+\label{ex:two-dimensional}
+Set $d=2$, $u=e^{2\pi\mathrm i qx_1}$, and
+$v=e^{2\pi\mathrm i qx_2}$.  With the product-cell orientation, the full
+torus cochain complex is
+\[
+ \C\xrightarrow{d^0}\C^2\xrightarrow{d^1}\C,
+ \qquad
+ d^0(s)=((u-1)s,(v-1)s),\quad
+ d^1(a,b)=(1-v)a+(u-1)b.
+\]
+The identity $d^1d^0=0$ is
+$(1-v)(u-1)+(u-1)(v-1)=0$.  Relative to the vertex, the degree-zero
+space vanishes, so the connecting class of $1$ is represented by
+$(u-1,v-1)$ in $\ker d^1$, with no relative boundaries to divide out.
+When $(u,v)\ne(1,1)$, the nonzero row $d^1$ has one-dimensional kernel,
+and this vector spans it.  At $(u,v)=(1,1)$, the relative $H^1$ is
+two dimensional, but the connecting class is zero.
+
+In contrast, the wedge has no degree-two cochains.  Its algebraic dual
+has boundary $\partial(a,b)=(u-1)a+(v-1)b$, not the row $d^1$.
+This distinction is essential even though both calculations use the same
+holonomy differences.
+
+For an explicit specialization take $x=(1/2,0)$.  At $q=1$ the boundary
+is $(-2,0)$, the minimum filler is $(-1/2,0)$ with cost $1/2$, and
+$\delta_x(1)$ is nonzero.  At $q=2$ both holonomies are $1$, no filler
+of the marked zero-chain exists, and $\delta_{2x}(1)=0$.  The original
+class $\delta_x(1)$ has not changed: the second calculation uses a
+different, powered local system.
+\end{example}
+
+\Cref{fig:arithmetic-wedge,fig:arithmetic-torsion} separate the full-torus
+cochain calculation from the wedge and display the exact torsion example.
+\input{figures/arithmetic-wedge.tex}
+\input{figures/arithmetic-torsion.tex}
+
+\section{The nonexpansive arithmetic diagram}
+\label{sec:diagram}
+
+For $k\geq1$, put $S_k(z)=1+z+\cdots+z^{k-1}$.  Wrapping each oriented
+loop of $R_d$ around itself $k$ times gives a cellular map $f_k$ with
+$f_k^*\mathcal L_{qx}=\mathcal L_{kqx}$ under the marked fibre
+identifications.  The degree-one cochain pullback is diagonal with entries
+$S_k(z_{q,j})$; algebraic dualization reverses its direction.  Define
+\begin{equation}\label{eq:arithmetic-map}
+ T_{q,k}:\mathcal C_x(kq)_1\longrightarrow\mathcal C_x(q)_1,
+ \qquad (T_{q,k}c)_j=S_k(z_{q,j}(x))c_j.
+\end{equation}
+The degree-zero map is the identity.
+
+\begin{lemma}[Arithmetic identities]\label{lem:arithmetic}
+For all positive integers $q,k,\ell$,
+\[
+ \partial_{q,x}T_{q,k}=\partial_{kq,x},\qquad
+ T_{q,k}T_{kq,\ell}=T_{q,k\ell},\qquad
+ \norm{T_{q,k}}_{2\to2}\leq k.
+\]
+\end{lemma}
+
+\begin{proof}
+The first two identities follow coordinatewise from
+$z^k-1=(z-1)S_k(z)$ and $S_k(z)S_\ell(z^k)=S_{k\ell}(z)$.
+For $|z|=1$, the triangle inequality gives $|S_k(z)|\leq k$.
+\end{proof}
+
+Give the chain space at scale $q$ the norm $\norm{c}_q=q\norm{c}_2$.
+A marked normed chain complex here includes ordered bases, norms, and a
+distinguished zero-cycle.  Its morphisms are degreewise nonexpansive chain
+maps carrying that cycle to the distinguished cycle; they need not carry
+each basis vector to a basis vector.  The bases remain part of the
+coordinate data, not a claimed invariant of unmarked complexes.
+
+\begin{proposition}[Reverse-divisibility functor]\label{prop:diagram}
+The complexes $\mathcal C_x(q)$ and maps $(T_{q,k},\id)$ form a functor
+from $\N_{\mid}^{\mathrm{op}}$, with arrows $kq\to q$, to finite marked
+normed chain complexes.  Its maps are nonexpansive.
+\end{proposition}
+
+\begin{proof}
+The chain, composition, and identity laws follow from
+\cref{lem:arithmetic} and $S_1=1$.  The required norm estimate is
+\[
+ \norm{T_{q,k}c}_q\leq qk\norm{c}_2=\norm{c}_{kq}.
+\]
+The degree-zero identity preserves $1$ and its norm.
+\end{proof}
+
+\Cref{fig:arithmetic-diagram} records the arrow direction, chain square,
+and scale-dependent norms.
+\input{figures/arithmetic-diagram.tex}
+
+Define the weighted cost and bounded feasible sets by
+\begin{align}
+ \Fillw_{q,x}(1)&=\inf\{q\norm{c}_2:\partial_{q,x}c=1\}
+                   =q\Fill_{q,x}(1),\label{eq:weighted-cost}\\
+ \mathcal F_x(q,\lambda)&=\{c:\partial_{q,x}c=1,
+                                  q\norm{c}_2\leq\lambda\},
+                                  \qquad\lambda\geq0.
+ \label{eq:feasible}
+\end{align}
+Use the product preorder
+$\mathsf P=\N_{\mid}^{\mathrm{op}}\times\R_{\geq0}$, where
+$(kq,\lambda')\to(q,\lambda)$ when $\lambda'\leq\lambda$.
+
+\begin{proposition}[Feasible-set functor]\label{prop:feasible}
+Restriction of $T_{q,k}$ makes $\mathcal F_x$ a functor
+$\mathsf P\to\mathbf{Set}$.  Its values are empty or closed convex
+sets, and
+\[
+ \mathcal F_x(q,\lambda)=\varnothing\iff\Fillw_{q,x}(1)>\lambda.
+\]
+In particular, the feasible-set equivalence in \cref{thm:main} holds.
+\end{proposition}
+
+\begin{proof}
+If $c\in\mathcal F_x(kq,\lambda')$, the chain identity and
+nonexpansiveness give
+\[
+ \partial_{q,x}T_{q,k}c=1,\qquad
+ \norm{T_{q,k}c}_q\leq\lambda'\leq\lambda.
+\]
+Composition is inherited from the chain maps.  Closedness and convexity
+follow by intersecting an affine subspace with a closed norm ball.  A
+finite minimum is attained by \cref{prop:filling}, proving the strict
+inequality criterion, including equality at the threshold.  Substitute
+$\lambda=C^{-1}q^{\alpha+1}$ and use \cref{eq:weighted-cost}.
+\end{proof}
+
+The threshold geometry and induced feasible-set maps are illustrated in
+\cref{fig:arithmetic-filler}.
+\input{figures/arithmetic-filler.tex}
+
+This is a diagram over a preorder, in the broad setting of generalized
+persistence \cite{bubenik-desilva-scott}, not ordinary persistent homology
+of an inclusion filtration.  For $d>1$ the wedge power map is not a
+covering; the torus multiplication map is.  The feasible sets are not
+chain subcomplexes.  Moreover, $q\mapsto(q,C^{-1}q^{\alpha+1})$ does
+not define a chain in $\mathsf P$: for $k>1$ its threshold at $kq$ is
+larger, whereas the arrow to $q$ requires a nonincreasing threshold.
+
+\section{The signature metric is the product-torus chord metric}
+\label{sec:signature}
+
+Define
+\[
+ U(x)=(q^{-1}v_q(x))_{q\geq1}\in\ell^\infty(\N;\C^d),
+ \qquad
+ \iota_d(x)=(e^{2\pi\mathrm i x_1},\ldots,e^{2\pi\mathrm i x_d})
+                 \in\C^d\cong\R^{2d}.
+\]
+The signature is bounded because $b_q(x)\leq2\sqrt d$.
+
+\begin{lemma}[Chord comparison]\label{lem:chord}
+For $0\leq s\leq1/2$,
+\[
+ 4s\leq2\sin(\pi s)\leq2\pi s.
+\]
+Thus chord distance on the unit circle lies between four and $2\pi$
+times quotient distance on $\R/\Z$.
+\end{lemma}
+
+\begin{proof}
+The upper bound is $\sin t\leq t$.  Concavity of sine on $[0,\pi/2]$
+places its graph above the chord joining its endpoints.
+\end{proof}
+
+\begin{theorem}[Exact signature metric]\label{thm:signature}
+For all $x,y\in\T^d$,
+\begin{align}
+ \norm{U(x)-U(y)}_{\ell^\infty(\ell^2)}
+ &=\norm{v_1(x)-v_1(y)}_2
+   =\norm{\iota_d(x)-\iota_d(y)}_2,\label{eq:signature-isometry}\\
+ 4d_{\T}(x,y)&\leq\norm{U(x)-U(y)}_{\ell^\infty(\ell^2)}
+                 \leq2\pi d_{\T}(x,y).\label{eq:signature-bounds}
+\end{align}
+Consequently, $U$ is injective, its inverse on its image is
+$1/4$-Lipschitz, and evaluation at $q=1$ is an isometry from its image
+to the translated unit product torus.
+\end{theorem}
+
+\begin{proof}
+For $|z|=|w|=1$,
+\[
+ z^q-w^q=(z-w)\sum_{h=0}^{q-1}z^{q-1-h}w^h,
+ \qquad q^{-1}|z^q-w^q|\leq|z-w|.
+\]
+Apply this coordinatewise and take the Euclidean norm.  Every component
+of the signature difference is bounded by its $q=1$ component, which
+itself occurs in the supremum.  This proves the first equality.  The
+second follows because $v_1(x)=\iota_d(x)-(1,\ldots,1)$.
+Apply \cref{lem:chord} coordinatewise to obtain
+\cref{eq:signature-bounds}; the final assertions follow.
+\end{proof}
+
+The complex-valued marked signature and the scalar profile $(b_q(x))_q$
+must be distinguished.  The latter determines filling costs, but it need
+not determine $x$: for example $b_q(-x)=b_q(x)$ for every $q$.
+The signature metric is not a new independent metric extracted from
+infinitely many scales.  The arithmetic question lies in the recurrence
+of its components, while its metric is already determined at scale one.
+No metric on a quotient by arbitrary changes of marking is asserted.
+
+\Cref{fig:arithmetic-signature} illustrates the first-component metric
+identity and the loss of information in the scalar profile.
+\input{figures/arithmetic-signature.tex}
+
+\section{Recurrence exponents and Hausdorff dimension}
+\label{sec:dimension}
+
+For $\alpha,c>0$ and any lift $\widetilde x\in\R^d$ of $x$, put
+\[
+ \Delta_q(x)=\min_{p\in\Z^d}\norm{q\widetilde x-p}_\infty,
+ \qquad
+ W_{\alpha,c}=\{x:\Delta_q(x)<cq^{-\alpha}
+                                  \text{ infinitely often}\}.
+\]
+Both are independent of the lift.  The same integer $q$ is used in every
+coordinate.  In a fundamental domain, the latter inequality is
+$\norm{\widetilde x-p/q}_\infty<cq^{-(1+\alpha)}$.
+
+\begin{lemma}[Comparison with simultaneous approximation]
+\label{lem:recurrence}
+For every $x$ and $q$,
+\begin{equation}\label{eq:recurrence-comparison}
+ 4\Delta_q(x)\leq b_q(x)\leq2\pi\sqrt d\,\Delta_q(x).
+\end{equation}
+Consequently,
+\begin{equation}\label{eq:locus-sandwich}
+ W_{\alpha,C/(2\pi\sqrt d)}\subseteq R_{\alpha,C}
+                                      \subseteq W_{\alpha,C/4}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+Choose nearest integers coordinatewise, with discrepancies
+$s_j\in[0,1/2]$.  Then $\Delta_q=\norm{s}_\infty$ and
+\cref{lem:chord} gives $4\norm{s}_2\leq b_q\leq2\pi\norm{s}_2$.
+Use $\norm{s}_\infty\leq\norm{s}_2\leq\sqrt d\norm{s}_\infty$.
+\end{proof}
+
+We use the simultaneous Jarn\'ik--Besicovitch theorem in the following
+normalization:
+\begin{equation}\label{eq:classical-dimension}
+ \dim_{\mathrm H}W_{\alpha,1}=\frac{d+1}{1+\alpha},
+                       \qquad\alpha>\frac1d.
+\end{equation}
+For the systems-of-linear-forms formulation, this is the $n=1,m=d$
+specialization of Bovey--Dodson \cite{bovey-dodson}; the same normalization
+is displayed in \cite[Section 3.3, equation (11)]{beresnevich-velani}.
+Passing from a fundamental cube to the torus uses a finite cover by
+coordinate charts with isometric lifts, so does not change the dimension.
+
+\begin{lemma}[Positive constants do not change the dimension]
+\label{lem:constants}
+For $c>0$ and $\alpha>1/d$,
+$\dim_{\mathrm H}W_{\alpha,c}=(d+1)/(1+\alpha)$.
+\end{lemma}
+
+\begin{proof}
+For $0<\varepsilon<\alpha-1/d$, all sufficiently large $q$ satisfy
+$q^{-(\alpha+\varepsilon)}<cq^{-\alpha}<q^{-(\alpha-\varepsilon)}$.
+Therefore
+\[
+ W_{\alpha+\varepsilon,1}\subseteq W_{\alpha,c}
+                                  \subseteq W_{\alpha-\varepsilon,1}.
+\]
+Use \cref{eq:classical-dimension} and let $\varepsilon\downarrow0$.
+\end{proof}
+
+\begin{theorem}[Dimension transfer on the full stated range]
+\label{thm:dimension}
+For $\alpha>1/d$ and $C>0$,
+\[
+ \dim_{\mathrm H}R_{\alpha,C}
+ =\dim_{\mathrm H}U(R_{\alpha,C})=\frac{d+1}{1+\alpha}<d.
+\]
+Both sets have zero $d$-dimensional Hausdorff measure in their respective
+metrics.
+\end{theorem}
+
+\begin{proof}
+Both outer sets in \cref{eq:locus-sandwich} have the displayed dimension
+by \cref{lem:constants}; monotonicity gives the dimension of the middle
+set.  The signature map is bi-Lipschitz by \cref{thm:signature}, so
+preserves Hausdorff dimension.  The strict inequality implies nullity.
+\end{proof}
+
+The common-denominator geometry and the two-sided comparison of loci
+are summarized in \cref{fig:arithmetic-recurrence}.
+\input{figures/arithmetic-recurrence.tex}
+
+\begin{remark}[Exponent dictionary]\label{rem:exponents}
+Earlier toric notation used $\tau=\alpha$, whereas the earlier
+quantitative manuscript used $\tau=\alpha-1>0$.  The latter restriction
+only covered $\alpha>1$.  The present proof treats the larger range
+$\alpha>1/d$; this is a range extension, not merely a renaming.
+The consistent threshold dictionary is
+\[
+\begin{array}{c|c}
+ \text{quantity} & \text{condition at scale }q\\ \hline
+ b_q(x) & <Cq^{-\alpha}\\
+ \Fill_{q,x}(1) & >C^{-1}q^\alpha\\
+ \Fillw_{q,x}(1) & >C^{-1}q^{\alpha+1}\\
+ \norm{q^{-1}v_q(x)}_2 & <Cq^{-(\alpha+1)}.
+\end{array}
+\]
+The $\Delta_q$ condition is comparable with adjusted constants, not
+literally identical at the same constant.  Critical and subcritical
+exponents $\alpha\leq1/d$ are outside the stated dimension theorem.
+\Cref{sec:legacy} specifies the earlier constant-one locus without
+identifying it with the chord-norm locus at an unchanged tolerance.
+\end{remark}
+
+\subsection{What Boolean exact fillability loses}
+
+\Cref{fig:arithmetic-profiles} plots the reciprocal threshold equivalence
+at finitely many integer scales, without testing an infinitely-often
+condition.
+\input{figures/arithmetic-profiles.tex}
+
+Set $\epsilon_q(x)=1$ when $\Fill_{q,x}(1)<\infty$ and $0$ otherwise.
+Call $x$ torsion when $qx=0$ for some positive integer $q$.
+
+\begin{proposition}[Boolean no-go on the full exponent range]
+\label{prop:boolean}
+All non-torsion parameters have $(\epsilon_q(x))_q=(1,1,\ldots)$.
+For every $\alpha>1/d$ and $C>0$, membership in $R_{\alpha,C}$ is not
+determined by that sequence or by any function of it.
+\end{proposition}
+
+\begin{proof}
+The first assertion is \cref{eq:trivial-case}.  The torsion parameters
+form a countable set.  By \cref{thm:dimension}, $R_{\alpha,C}$ has
+strictly positive Hausdorff dimension, so contains a non-torsion point.
+It is also $\mathcal H^d$-null, whereas $\T^d$ has positive
+$\mathcal H^d$ measure.  Removing both it and the countable torsion set
+therefore leaves a non-torsion point outside it.  These two points have
+identical Boolean sequences and different recurrence membership.
+\end{proof}
+
+This argument uses the full-range dimension theorem, rather than a
+one-coordinate badly approximable example whose lower bound only excludes
+recurrence at exponents greater than one.  The original and powered
+relative-obstruction Boolean tests do not recover the recurrence rate
+either: the original test only removes $0$, and the powered tests are
+the same nontriviality tests as \cref{eq:nontrivial-case}.
+
+\begin{example}[Explicit parameters with identical Boolean data]
+\label{ex:explicit-arithmetic}
+Let $\ell=\sum_{n\geq1}10^{-n!}$ and $\gamma=(\sqrt5-1)/2$, and put
+\[
+ x_{\mathrm L}=(\ell,0,\ldots,0),\qquad
+ x_{\mathrm G}=(\gamma,0,\ldots,0)\quad\text{in }\T^d.
+\]
+Both are non-torsion, so every exact-fillability indicator is $1$.
+For every $C>0$, $x_{\mathrm L}\in R_{\alpha,C}$ for all $\alpha>0$,
+whereas $x_{\mathrm G}\notin R_{\alpha,C}$ whenever $\alpha>1$.
+The estimates and irrationality check are given in \cref{sec:explicit-estimates}.
+This constructive comparison illustrates \cref{prop:boolean} on the
+smaller range $\alpha>1$; it does not replace its proof for
+$1/d<\alpha\leq1$.
+\end{example}
+
+\Cref{fig:arithmetic-boolean} distinguishes the full-range Boolean no-go
+argument from its more restricted explicit arithmetic comparison.
+\input{figures/arithmetic-boolean.tex}
+
+\section{Positive-reach carriers and offset transport}
+\label{sec:carriers}
+
+Choose radii $\boldsymbol\lambda=(\lambda_1,\ldots,\lambda_d)>0$ and
+write $\lambda_- =\min_j\lambda_j$, $\lambda_+=\max_j\lambda_j$.
+Define
+\[
+ \iota_{\boldsymbol\lambda}(x)
+       =(\lambda_j e^{2\pi\mathrm i x_j})_{j=1}^d,
+ \quad \mathcal M_{\boldsymbol\lambda}=\iota_{\boldsymbol\lambda}(\T^d),
+ \quad a_{\boldsymbol\lambda}=\iota_{\boldsymbol\lambda}(0).
+\]
+The closed offset of radius $r$ is
+$\mathcal M_{\boldsymbol\lambda}^r
+ =\{y:\dist(y,\mathcal M_{\boldsymbol\lambda})\leq r\}$.
+Reach means the supremum of the radii on which every point at smaller
+distance has a unique nearest point \cite{federer}.  The general
+closed-positive-reach retraction is proved in the geometric appendix of
+\emph{Foundations of Information Exclusion and Relative Obstruction}.
+Here we additionally compute the exact reach and metric constants for
+the specified product carrier.
+
+\begin{proposition}[Exact reach and metric bounds]\label{prop:reach}
+The carrier has reach $\lambda_-$, and
+\[
+ 4\lambda_-d_{\T}(x,y)
+ \leq\norm{\iota_{\boldsymbol\lambda}(x)-\iota_{\boldsymbol\lambda}(y)}_2
+ \leq2\pi\lambda_+d_{\T}(x,y).
+\]
+For $0\leq r<\lambda_-$, radial nearest-point projection
+$p_r:\mathcal M_{\boldsymbol\lambda}^r\to\mathcal M_{\boldsymbol\lambda}$
+is a strong deformation retraction fixing $a_{\boldsymbol\lambda}$.
+\end{proposition}
+
+\begin{proof}
+For $y=(y_1,\ldots,y_d)\in\C^d$, independent minimization gives
+\begin{equation}\label{eq:distance}
+ \dist(y,\mathcal M_{\boldsymbol\lambda})^2
+                  =\sum_{j=1}^d(|y_j|-\lambda_j)^2.
+\end{equation}
+At distance less than $\lambda_-$ no $y_j$ vanishes, and the unique
+nearest point has coordinates $\lambda_j y_j/|y_j|$.  Conversely, set a
+block of smallest radius to zero and put every other block on its circle.
+The resulting point has distance $\lambda_-$ and a circle of nearest
+points.  This proves the exact reach.
+
+The homotopy
+\[
+ H_t(y)_j=\left((1-t)+\frac{t\lambda_j}{|y_j|}\right)y_j
+\]
+is defined throughout every sub-reach offset.  It fixes the carrier and
+multiplies each radial deviation in \cref{eq:distance} by $1-t$, so stays
+in that offset.  The metric bounds follow from \cref{lem:chord}, after
+squaring and summing with weights $\lambda_j^2$.
+\end{proof}
+
+The exact circle-block geometry and the witness for loss of uniqueness
+are shown in \cref{fig:arithmetic-carrier}.
+\input{figures/arithmetic-carrier.tex}
+
+Identify $\mathcal L_x$ with its local system on the carrier and set
+$\mathcal L_{x,r}=p_r^*\mathcal L_x$.  These are topological local
+systems on the offsets; no unprovided cellular discretization is needed.
+
+\begin{proposition}[Constant sub-reach relative system]
+\label{prop:offset}
+Fix $x\in\T^d$ and $0\leq r\leq R<\lambda_-$.  If
+$j_{r,R}:\mathcal M_{\boldsymbol\lambda}^r
+\hookrightarrow\mathcal M_{\boldsymbol\lambda}^R$ is inclusion, then
+\[
+ j_{r,R}^*:H^1(\mathcal M_{\boldsymbol\lambda}^R,
+                  \{a_{\boldsymbol\lambda}\};\mathcal L_{x,R})
+ \xrightarrow{\ \cong\ }
+ H^1(\mathcal M_{\boldsymbol\lambda}^r,
+                  \{a_{\boldsymbol\lambda}\};\mathcal L_{x,r})
+\]
+preserves the connecting class of $1$.  This class is nonzero exactly when
+$x\ne0$.  The system is naturally isomorphic to a constant contravariant
+system on $[0,\lambda_-)$.
+\end{proposition}
+
+\begin{proof}
+The radial projections satisfy $p_Rj_{r,R}=p_r$ and are homotopy
+equivalences of pairs fixing the marked vertex.  Their pullbacks are
+cohomology isomorphisms, and
+$j_{r,R}^*p_R^*=p_r^*$ identifies the restriction maps with identities
+on carrier cohomology.  Naturality of the relative sequence preserves
+the connecting classes.  Apply \cref{prop:two-events} at $q=1$.
+\end{proof}
+
+The proof stops at $r<\lambda_-$ because nearest points cease to be
+unique at the displayed medial-axis witness.  This is a boundary of the
+projection argument, not a claim that every obstruction dies precisely
+at $r=\lambda_-$.
+
+\subsection{Dense-null spectra and calibrated codimension}
+
+\Cref{fig:arithmetic-offset} displays the geometric and cohomological
+arrow directions for a fixed character, including the strict sub-reach
+bound on the argument.
+\input{figures/arithmetic-offset.tex}
+
+Let
+\[
+ E_{\alpha,C}=R_{\alpha,C}\setminus\{0\},\qquad
+ Z_{\alpha,C,\boldsymbol\lambda}
+     =\iota_{\boldsymbol\lambda}(E_{\alpha,C}).
+\]
+The locus has no $r$ subscript: its definition does not change with the
+offset radius.  Radius indexes transport of its associated classes.
+
+\begin{theorem}[Selected spectrum on the carrier]\label{thm:dense-null}
+For $\alpha>1/d$, the set $Z_{\alpha,C,\boldsymbol\lambda}$ is dense in
+$\mathcal M_{\boldsymbol\lambda}$, is $\mathcal H^d$-null, and satisfies
+\[
+ \dim_{\mathrm H}Z_{\alpha,C,\boldsymbol\lambda}
+          =\frac{d+1}{1+\alpha},\qquad
+ \underline{\dim}_{\mathrm B}Z_{\alpha,C,\boldsymbol\lambda}
+ =\overline{\dim}_{\mathrm B}Z_{\alpha,C,\boldsymbol\lambda}=d.
+\]
+Every selected parameter has the nonzero fixed-character obstruction of
+\cref{prop:offset} at every sub-reach offset.
+\end{theorem}
+
+\begin{proof}
+If $x$ is a rational character of order $q_0$, then
+$b_{kq_0}(x)=0$ for all $k\geq1$.  Thus every nonzero rational character
+belongs to $E_{\alpha,C}$, proving density.  Removing one point does not
+alter the positive Hausdorff dimension in \cref{thm:dimension}.
+The bi-Lipschitz bounds of \cref{prop:reach} transfer dimension and imply
+nullity on the carrier.
+
+For a bounded set $S$, let $N_s(S)$ be the least number of closed ambient
+Euclidean balls of radius $s$ covering it.  Every finite closed-ball cover
+of a dense subset of the compact carrier also covers its closure.  Hence
+$N_s(Z_{\alpha,C,\boldsymbol\lambda})=N_s(\mathcal M_{\boldsymbol\lambda})$.
+Grid covers and separated grids in the flat torus, transferred by
+\cref{prop:reach}, give $N_s(\mathcal M_{\boldsymbol\lambda})\asymp s^{-d}$.
+Both box dimensions therefore equal $d$.  The final claim is
+\cref{prop:offset}.
+\end{proof}
+
+\begin{corollary}[Any prescribed positive codimension below $d$]
+\label{cor:calibration}
+For $0<\eta<d$, set $\alpha_{d,\eta}=(1+\eta)/(d-\eta)$.  Then
+\[
+ \alpha_{d,\eta}-\frac1d=\frac{\eta(d+1)}{d(d-\eta)}>0,\qquad
+ \dim_{\mathrm H}Z_{\alpha_{d,\eta},C,\boldsymbol\lambda}=d-\eta.
+\]
+For $d=2$ and $\eta=1/(64\pi^2)$, this is
+$2-1/(64\pi^2)=1.998416856505588\ldots$.
+\end{corollary}
+
+\begin{proof}
+The first equality is direct algebra, and
+$1+\alpha_{d,\eta}=(d+1)/(d-\eta)$.  Apply \cref{thm:dense-null}.
+\end{proof}
+
+The value $\eta$ is an input chosen by calibration, not a derived
+universal constant.  It is a Hausdorff codimension, whereas $d-\eta$ is
+the dimension.  Neither selects the radii $\boldsymbol\lambda$ or an
+offset radius $r$.  The full nonextension parameter set is
+$\T^d\setminus\{0\}$; $E_{\alpha,C}$ is a recurrence-selected subset,
+not the entire locus of nonextension.  Carrier points label local systems
+on the whole carrier; they are not spatial locations of different holes
+inside one fixed local system.
+
+\Cref{fig:arithmetic-dimensions} contrasts Hausdorff dimension, box
+dimension, codimension, and the separate geometric radii.
+\input{figures/arithmetic-dimensions.tex}
+
+\section{Marked comparison and the limits of portability}
+\label{sec:comparison}
+
+Let $(K,a,\vartheta)$ be a connected finite CW complex with vertex $a$
+and a specified epimorphism $\vartheta:\pi_1(K,a)\twoheadrightarrow\Z^d$.
+Use a marked fibre $\C$ to define $\mathcal L_x^\vartheta$ by holonomy
+$\rho_x\circ\vartheta$.
+
+\begin{proposition}[Algebraic portability]\label{prop:portability}
+If $x\ne0$, then
+$H^0(K;\mathcal L_x^\vartheta)=0$ and
+$\delta_x^\vartheta(1)\ne0$ in
+$H^1(K,\{a\};\mathcal L_x^\vartheta)$.
+\end{proposition}
+
+\begin{proof}
+Surjectivity makes $\rho_x\circ\vartheta$ nontrivial.  A global section
+is a scalar fixed by every holonomy; one nonidentity scalar holonomy
+forces it to vanish.  Since the vertex has $H^0=\C$, exactness of the
+relative sequence makes its connecting homomorphism injective.
+\end{proof}
+
+\begin{corollary}[Rational tensor-power trivialization]
+\label{cor:rational-power}
+If $x\in\T^d$ satisfies $q_0x=0$ for an integer $q_0\geq1$, then
+\[
+ (\mathcal L_x^\vartheta)^{\otimes q_0}
+       \cong\mathcal L_{q_0x}^\vartheta
+       =\mathcal L_0^\vartheta,
+ \qquad \delta_{q_0x}^\vartheta(1)=0.
+\]
+The isomorphism uses the marked fibre identification
+$1^{\otimes q_0}\mapsto1$.  If $x\ne0$, the original class
+$\delta_x^\vartheta(1)$ is nevertheless nonzero.
+\end{corollary}
+
+\begin{proof}
+For every loop $g$, tensoring raises its scalar holonomy to the
+$q_0$th power:
+$\rho_x(\vartheta g)^{q_0}=\rho_{q_0x}(\vartheta g)=1$.
+Thus the powered vertex state extends as the constant section, and its
+connecting class vanishes.  The last assertion is \cref{prop:portability}.
+\end{proof}
+
+\begin{proposition}[Marked naturality]\label{prop:naturality}
+Suppose a based map $f:(K',a')\to(K,a)$ and
+$A\in\operatorname{GL}_d(\Z)$ satisfy
+$\vartheta'=A\vartheta f_*$.  Put $\sigma_A(x)=A^{-T}x$.  Then, with
+the marked fibre identifications,
+\[
+ f^*\mathcal L_x^\vartheta\cong
+       \mathcal L_{\sigma_A(x)}^{\vartheta'},\qquad
+ f^*\delta_x^\vartheta(1)=\delta_{\sigma_A(x)}^{\vartheta'}(1).
+\]
+A based homotopy equivalence of pairs induces an isomorphism on these
+relative cohomology groups.
+\end{proposition}
+
+\begin{proof}
+For $n\in\pi_1(K',a')$, the equality
+$\langle A^{-T}x,A\vartheta(f_*n)\rangle
+ =\langle x,\vartheta(f_*n)\rangle$ identifies the holonomy
+representations.  Naturality of the relative long exact sequence proves
+the connecting-class identity, and pair homotopy invariance proves the
+last statement.
+\end{proof}
+
+Membership in the marked constant-$c$ approximation set transforms by
+inclusions, not by an automatic equality:
+\[
+ \sigma_A(W_{\alpha,c})
+     \subseteq W_{\alpha,\norm{A^{-T}}_{\infty\to\infty}c}.
+\]
+Applying the inverse transformation gives the corresponding inverse
+bound.  The lattice is preserved, but the fixed norm and tolerance are
+not generally preserved.  Likewise, \cref{prop:naturality} does not assert
+that $\sigma_A$ is an isometry of boundary signatures or that the exact
+constant-$C$ locus $R_{\alpha,C}$ is invariant.
+
+Only the \emph{algebraic} extension obstruction ports to general $K$ in
+\cref{prop:portability}.  No product-torus embedding, Euclidean chain
+norm, single-row boundary formula, power-map diagram, or reach estimate
+is supplied by an epimorphism of fundamental groups alone.  Those are
+separate inputs or separate theorems.
+
+\section{Related frameworks and further questions}
+\label{sec:related}
+
+\paragraph{Preorders and periodic spaces.}
+Bubenik--de Silva--Scott \cite{bubenik-desilva-scott} formulate
+interleavings for functors over preorders.  This provides a categorical
+context for \cref{prop:feasible}, but we have not constructed an
+interleaving metric or proved stability for our feasible-set functors.
+Onus--Skraba \cite{onus-skraba} use bisheaves and persistent local systems
+to study cycles in finite translation quotients of periodic complexes
+and their lifting to the periodic space.  Our parameter $q$ instead
+samples powers of a character on a fixed wedge.  A comparison with their
+lifting problem would require additional maps and is not used in our
+dimension proof.
+
+\paragraph{Exact rank data and quantitative information.}
+For example, Budur--Wang \cite{budur-wang} study cohomology jump loci of
+rank-one local systems on smooth quasi-projective varieties.  Such loci
+record cohomology-dimension conditions; our Boolean test records just
+solvability of one marked boundary equation.  \Cref{prop:boolean}
+concerns this particular sequence of tests, not all possible jump-locus
+invariants or the structural theorems for algebraic varieties.
+
+\paragraph{Precision and coefficient-dependent filling.}
+Ghrist--Ding \cite{ghrist-ding} study network-sheaf cohomology filtered by
+algebraic precision over $p$-adic integers and more generally discrete
+valuation rings.  Our norm is Archimedean and our indexing combines
+reverse divisibility with a real cost threshold.  Relating these two
+settings would require a comparison of coefficient systems, filtrations,
+and quantitative outputs, not merely the occurrence of holonomy in both.
+Li--Manin \cite{li-manin} study homological filling functions of groups
+and exhibit dependence of their asymptotic behavior on the coefficient
+group.  Here the finite chain spaces, complex coefficients, selected
+zero-chain, and Euclidean norm are fixed at each scale.  We do not
+identify this reciprocal row norm with a group filling function.
+
+\paragraph{Three further questions.}
+The following are directions for additional work, not consequences of
+the present theorems:
+\begin{enumerate}
+ \item Which changes of marking can be quotiented out while retaining
+ a nondegenerate metric and controlled changes in the exact tolerance?
+ The inverse-transpose comparison of \cref{prop:naturality} supplies
+ algebraic transport, not an isometry of the chosen signatures.
+ \item Can a finite cellular-inclusion construction reproduce the
+ relevant filling profiles, with an explicit reindexing and quantitative
+ comparison to the reverse-divisibility diagram?  Its non-inclusion maps
+ and the threshold-direction constraint must be addressed.
+ \item For larger finite CW complexes, which hypotheses on twisted
+ boundary matrices and the marked cycle control minimum filling norms
+ through their singular values, and yield a tractable recurrence locus?
+ Neither a dimension formula nor an exact scalar-row reduction is assumed.
+\end{enumerate}
+
+\section{Scope and reproducibility}
+
+The construction proves a marked, normed, finite-at-each-scale arithmetic
+model.  It does not prove an invariant of arbitrary unmarked homotopy
+types, a general correspondence with inclusion filtrations, a physical
+channel law, or a mechanism selecting $1/(64\pi^2)$.  A change of
+coefficient convention is handled explicitly by dualization; a change of
+norm, basis, or arithmetic indexing requires a new comparison argument.
+
+The three forms of transport in the series remain distinct: arithmetic
+maps are chain maps between different scales, offset maps give
+contravariant relative-cohomology isomorphisms for fixed characters, and
+finite-response marks are endomorphisms of a supplied fixed quotient.
+No automatic conversion between them is used.
+
+The shared script \path{scripts/verify_restructured_series.py} checks exact
+polynomial identities, rational torsion cases, finite-field examples,
+and sampled numerical filling, signature, and carrier identities.  It
+also checks the two-dimensional powered-torsion example and finite exact
+instances of the constructive arithmetic estimates in the appendices.  Its
+finite checks do not certify an infinitely-often condition, a Hausdorff
+dimension formula, or a theorem for all parameters.  Those assertions
+rest on the proofs and the stated classical dimension theorem.
+
+The deterministic tables in \cref{fig:arithmetic-profiles,fig:arithmetic-signature}
+are included in \path{figures/arithmetic_plot_tables.tex}; a normal LaTeX
+build requires no external data files or Python execution. They can be
+regenerated or checked by \path{scripts/build_series_plot_data.py}.
+The figures use native TikZ and PGFPlots; their finite samples do not
+strengthen the scope of the theorems.
+
+\appendix
+\section{Normalization and the earlier constant-one locus}
+\label{sec:legacy}
+
+Keep the torus metric, common denominator, and unreduced-denominator
+convention of \cref{sec:overview,sec:dimension}.  The earlier cube-based
+set was
+\[
+ W_d^{\mathrm{cube}}(\tau)
+ =\left\{\xi\in[0,1]^d:
+ \norm{\xi-p/q}_\infty<q^{-(1+\tau)}
+ \text{ for infinitely many }(p,q)\in\Z^d\times\N\right\}.
+\]
+If $\pi:\R^d\to\T^d$ is the quotient map, then
+\begin{equation}\label{eq:legacy-locus}
+ \pi(W_d^{\mathrm{cube}}(\alpha))=W_{\alpha,1},\qquad
+ E^{\mathrm{sup}}_\alpha=W_{\alpha,1}\setminus\{0\}.
+\end{equation}
+Indeed, multiplying the cube inequality by $q$ gives exactly the
+definition of $\Delta_q$; conversely each torus parameter has a lift in
+the cube and the inequality is independent of that lift.  For each fixed
+$q$ only finitely many $p$ can satisfy the cube inequality, so infinitely
+many pairs mean infinitely many denominators.
+
+The removal of $0$ in \cref{eq:legacy-locus} occurs \emph{after} taking
+the quotient.  Removing only the cube point $(0,\ldots,0)$ is insufficient:
+every corner in $\{0,1\}^d$ represents the same trivial character.
+Equivalently, remove all those corners before taking the periodic image.
+
+The old Toric exponent was $\tau_{\mathrm{Toric}}=\alpha$, while the
+old Quantitative exponent was $\tau_{\mathrm{Quantitative}}=\alpha-1$.
+The old sup-norm recurrence test is exactly $\Delta_q<q^{-\alpha}$;
+the present chord-norm test is $b_q<Cq^{-\alpha}$.  The comparison is
+\cref{eq:locus-sandwich}, not equality at a common constant.  Equal
+Hausdorff dimensions therefore do not identify the selected sets.
+
+\begin{proposition}[Rational membership and density for all positive exponents]
+\label{prop:legacy-density}
+For every $\alpha,c,C>0$, both $W_{\alpha,c}$ and $R_{\alpha,C}$
+contain every rational character.  Removing $0$ leaves a dense subset
+of $\T^d$ in either case.
+\end{proposition}
+
+\begin{proof}
+For a rational character choose $q_0$ with $q_0x=0$.  Then
+$\Delta_{kq_0}(x)=b_{kq_0}(x)=0$ for every $k\geq1$, satisfying both
+strict inequalities with positive tolerances.  Nonzero rational
+characters are dense in the torus, which proves the final assertion.
+\end{proof}
+
+\begin{corollary}[The earlier sup-norm spectrum on the same carrier]
+\label{cor:legacy-carrier}
+Let $\alpha>1/d$ and $\boldsymbol\lambda>0$.  The set
+$Z^{\mathrm{sup}}_{\alpha,\boldsymbol\lambda}
+ =\iota_{\boldsymbol\lambda}(E^{\mathrm{sup}}_\alpha)$ is dense in
+$\mathcal M_{\boldsymbol\lambda}$, is $\mathcal H^d$-null, and has
+\[
+ \dim_{\mathrm H}Z^{\mathrm{sup}}_{\alpha,\boldsymbol\lambda}
+   =\frac{d+1}{1+\alpha},\qquad
+ \underline{\dim}_{\mathrm B}Z^{\mathrm{sup}}_{\alpha,\boldsymbol\lambda}
+ =\overline{\dim}_{\mathrm B}Z^{\mathrm{sup}}_{\alpha,\boldsymbol\lambda}=d.
+\]
+Every parameter in this set labels a nonzero fixed-character connecting
+class at every offset $0\leq r<\lambda_-$.
+\end{corollary}
+
+\begin{proof}
+\Cref{lem:constants} gives the positive dimension of $W_{\alpha,1}$;
+removing one point does not change it.  The bi-Lipschitz map of
+\cref{prop:reach} transfers that dimension, whose strict inequality with
+$d$ gives nullity.  Density follows from \cref{prop:legacy-density}.
+As in the proof of \cref{thm:dense-null}, a finite closed-ball cover of
+a dense subset covers the compact carrier, whose covering numbers are
+comparable to $s^{-d}$.  This gives both box dimensions.  Finally apply
+\cref{prop:offset} to each nonzero character.
+\end{proof}
+
+For $\alpha=(1+\eta)/(d-\eta)$, $0<\eta<d$, this restores the earlier
+constant-one spectrum of dimension $d-\eta$, including the stated
+two-dimensional calibration.  Either $E^{\mathrm{sup}}_\alpha$ or
+$R_{\alpha,C}\setminus\{0\}$ can serve as the precisely specified
+target of the conditional bridge in the foundations companion; a
+bi-Lipschitz source map and coefficient/seed identifications remain
+additional inputs.  The all-positive-exponent proposition above makes no
+endpoint nullity or endpoint Boolean no-go claim.
+
+\section{Estimates for the explicit arithmetic comparison}
+\label{sec:explicit-estimates}
+
+We prove the claims of \cref{ex:explicit-arithmetic} without appealing
+to a dimension theorem.  Put
+\[
+ \ell_n=\sum_{m=1}^n10^{-m!},\qquad q_n=10^{n!}.
+\]
+Then $q_n\ell_n\in\Z$.  Since the factorial exponents in the tail
+increase by at least one, comparison with a geometric series yields
+\[
+ 0<\ell-\ell_n<2\,10^{-(n+1)!},\qquad
+ \dist(q_n\ell,\Z)<2q_n^{-n}.
+\]
+The number $\ell$ is irrational: if $\ell=a/b$, its positive difference
+from $\ell_n$ would be at least $1/(bq_n)$, contradicting this tail
+bound for sufficiently large $n$.  Thus $x_{\mathrm L}$ is non-torsion.
+The upper chord bound gives
+$b_{q_n}(x_{\mathrm L})<4\pi q_n^{-n}$, which is less than
+$Cq_n^{-\alpha}$ for all sufficiently large $n$, for any fixed
+$\alpha,C>0$.
+
+For the other parameter, let $p$ be a nearest integer to $q\gamma$ and
+write $\gamma'=(-1-\sqrt5)/2$.  The integer $p^2+pq-q^2$ is nonzero
+because the roots of $t^2+t-1$ are irrational.  Therefore
+\[
+ \left|\frac pq-\gamma\right|
+ \left|\frac pq-\gamma'\right|
+ =\frac{|p^2+pq-q^2|}{q^2}\geq\frac1{q^2}.
+\]
+The second factor is at most $\sqrt5+1/(2q)<3$, so
+$\dist(q\gamma,\Z)>1/(3q)$.  The lower chord bound now gives
+\[
+ b_q(x_{\mathrm G})>\frac4{3q}.
+\]
+For $\alpha>1$ this is eventually greater than $Cq^{-\alpha}$;
+hence $x_{\mathrm G}\notin R_{\alpha,C}$.  Irrationality of $\gamma$
+makes its Boolean sequence identical to that of $x_{\mathrm L}$.
+This estimate does not exclude recurrence when $\alpha\leq1$ and is
+not used for that purpose.
+
+\clearpage
+\bibliographystyle{plain}
+\bibliography{series_references}
+\end{document}

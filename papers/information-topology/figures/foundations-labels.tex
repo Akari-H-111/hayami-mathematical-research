@@ -1,0 +1,37 @@
+\begin{figure}[tbp]
+\centering
+\begin{minipage}[t]{.46\linewidth}
+\centering\ViewHeading{(a) Subspaces and quotient classes}
+\begin{tikzpicture}[scale=.85]
+\draw[rounded corners,draw=viewgray,fill=viewgray!3] (-3,-1.8) rectangle (3,1.8);
+\node at (2.5,1.45) {$C_n$};
+\draw[draw=viewblue,fill=viewblue!6] (0,0) ellipse (2.35 and 1.25);
+\node at (1.85,.75) {$Z_n$};
+\draw[draw=viewteal,fill=viewteal!15] (-.9,0) ellipse (.7 and .9);
+\node at (-.9,0) {$B_n$};
+\draw[draw=vieworange,dashed,rounded corners] (.05,-.85) rectangle (1.25,.65);
+\node[vpoint,label=above:$z$] at (.4,.3) {};
+\node[vpoint,label=below:{$z+b$}] at (.8,-.45) {};
+\node[font=\footnotesize] at (0,-2.25) {$b\in B_n\quad\Longrightarrow\quad[z+b]=[z]$};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{.50\linewidth}
+\centering\ViewHeading{(b) An illustrative $H_n\cong\F_2^2$}
+\begin{tikzpicture}
+\node[vseed,label=below:$0$] at (0,0) {};
+\node[vpoint,label=below:$a$] at (1.4,0) {};
+\node[vpoint,label=below:$b$] at (2.8,0) {};
+\node[vpoint,label=below:{$a+b$}] at (4.2,0) {};
+\node[vbox,text width=5.6cm] at (2.1,-1.25)
+  {All four labels, uniform: $2$ bits};
+\node[vinput,text width=5.6cm] at (2.1,-2.3)
+  {Three nonzero labels, uniform: $\log_2 3$ bits};
+\end{tikzpicture}
+\end{minipage}
+\caption{The quotient identifies cycles differing by a boundary. The
+regions in (a) depict algebraic containment, not a topology on a finite
+field. Panel (b) is an illustrative two-dimensional quotient, separate
+from the one-dimensional triangle example. Entropy depends on the stated
+sample space and uniform distribution; it is not channel capacity.}
+\label{fig:foundations-labels}
+\end{figure}

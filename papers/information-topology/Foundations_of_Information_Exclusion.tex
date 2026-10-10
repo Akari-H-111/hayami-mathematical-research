@@ -1,0 +1,589 @@
+\documentclass[11pt,a4paper]{article}
+\input{series_preamble.tex}
+\input{figures/series_visual_style.tex}
+\hypersetup{pdftitle={Foundations of Information Exclusion and Relative Obstruction}}
+
+\title{\textbf{Foundations of Information Exclusion}\\
+\textbf{and Relative Obstruction}\\
+\large Finite Labels, Persistent Filling, and Local Extension}
+\author{Akari Hayami}
+\date{Reorganized foundations manuscript --- 16 September 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We give a limited algebraic meaning to information exclusion.  In a finite
+chain complex over $\F_Q$, a boundary-writing operation produces exactly
+the boundary subspace, and the quotient labels form homology.  A uniformly
+chosen homology label has $\beta_n\log_2 Q$ bits of entropy.  This counts
+all quotient labels, including zero; it is not a channel-capacity theorem.
+For a finite inclusion filtration, the same boundary equation defines a
+precise filling threshold.  A three-edge, one-face example exhibits the
+death of one nonzero label.  Separately, a local section fails to extend
+exactly when its relative connecting class is nonzero.
+
+These are standard algebraic mechanisms assembled with their hypotheses
+kept explicit.  We distinguish support costs from normed costs, fixed
+boundary spaces from parameterized operators, and qualitative obstruction
+tests from metric recurrence.  The companion \emph{Arithmetic Local-System
+Filling Spectra} constructs one finite-at-each-scale quantitative model
+linking reciprocal filling cost to Diophantine recurrence and realizing
+its parameter spectrum on positive-reach carriers.  That concrete result
+does not supply a canonical bridge for arbitrary filtered complexes.
+We state a conditional dimension-and-nonextension interface with explicit
+metric, coefficient, and seed inputs.  A geometric appendix proves the
+standard sub-reach retraction for general closed positive-reach sets,
+without asserting an automatic finite cellular model.
+\end{abstract}
+
+\tableofcontents
+\clearpage
+
+\section{What the three manuscripts establish}
+\label{sec:scope}
+
+The purpose of this foundations paper is to specify the objects before
+transferring conclusions between them.  A homology class, a relative
+extension obstruction, and a large norm required to solve a boundary
+equation are not interchangeable descriptions of one event.
+
+The series is organized by its logical requirements rather than the
+historical order in which the examples were developed:
+\begin{enumerate}
+ \item This paper establishes finite quotient-label counts, persistent
+ boundary filling, and the relative extension criterion.
+ \item \emph{Arithmetic Local-System Filling Spectra} supplies an
+ explicitly marked, normed arithmetic model and a geometric realization
+ of its selected parameter locus.
+ \item \emph{Minimal Marked Response Modules for Relative Obstruction
+ Data} closes a supplied finite seed under supplied endomorphisms.  It is
+ an algebraic companion, not a further automatic stage of the arithmetic
+ construction.
+\end{enumerate}
+
+The concrete bridge in the second paper is visible from the outset.  For
+$x\in\T^d$ it uses the row
+\[
+ v_q(x)=(e^{2\pi\mathrm i qx_j}-1)_{j=1}^d
+\]
+and obtains the exact minimum Euclidean filling cost
+$1/\norm{v_q(x)}_2$, interpreted as $+\infty$ at a zero row.  The
+recurrence selection $\norm{v_q(x)}_2<Cq^{-\alpha}$ infinitely often
+has dimension $(d+1)/(1+\alpha)$ for $\alpha>1/d$.  The coefficient
+convention, arithmetic maps, metric comparisons, and classical dimension
+input are all supplied in that paper.  None is extracted from the
+finite-field model below.
+
+We use $Q$ for the order of a finite field and reserve $q$ for arithmetic
+scale in the companion, avoiding two meanings of the same parameter.
+
+\Cref{fig:series-overview} separates the supplied inputs of the three
+papers; the cross-series dictionary in \cref{fig:series-dictionary}
+also distinguishes their outputs and indexing directions.
+\input{figures/series-overview.tex}
+
+\section{Boundary writing and finite quotient labels}
+\label{sec:labels}
+
+Fix a finite field $\F_Q$ and a finite-dimensional chain complex
+\[
+ \cdots\longrightarrow C_{n+1}\xrightarrow{\partial_{n+1}}C_n
+           \xrightarrow{\partial_n}C_{n-1}\longrightarrow\cdots,
+ \qquad\partial_n\partial_{n+1}=0.
+\]
+Set
+\[
+ Z_n=\ker\partial_n,\qquad B_n=\im\partial_{n+1},\qquad
+ H_n=Z_n/B_n,\qquad\beta_n=\dim_{\F_Q}H_n.
+\]
+
+\begin{definition}[Boundary-write model]\label{def:writing}
+An $n$-cycle is \emph{boundary-writable} when it belongs to $B_n$.
+Two cycles encode the same \emph{quotient label} when their difference
+belongs to $B_n$.  A nonzero quotient label is an \emph{exclusion label}
+for this specified writing operation.
+\end{definition}
+
+This defines a finite algebraic recording convention.  It does not assert
+that every physical writing process is a boundary map, or that a nonzero
+homology class is information that cannot be represented by any other
+operation.
+
+\begin{theorem}[Exact finite-label count]\label{thm:labels}
+There are $Q^{\beta_n}$ quotient labels and $Q^{\beta_n}-1$ nonzero
+exclusion labels.  If $L_n$ is uniform on all of $H_n$, then
+\[
+ \mathsf H(L_n)=\log_2|H_n|=\beta_n\log_2 Q.
+\]
+When $\beta_n>0$, a variable uniform only on the nonzero labels instead
+has entropy $\log_2(Q^{\beta_n}-1)$.
+\end{theorem}
+
+\begin{proof}
+A $\beta_n$-dimensional vector space over $\F_Q$ has
+$Q^{\beta_n}$ elements, exactly one of which is zero.  The entropy of a
+uniform variable on a finite set of size $m$ is $\log_2m$.
+\end{proof}
+
+For $\beta_n=0$ the nonzero-label set is empty, so there is no uniform
+probability distribution on it.  The uniform distribution on $H_n$ is
+still defined and has entropy zero.  Thus the label count and the choice
+of probability space must both be stated.
+
+\begin{remark}[Entropy is not capacity]
+The displayed entropy concerns a specified uniform experiment on a
+quotient set.  A channel capacity would additionally require a channel
+law and a class of admissible input distributions.  No operational coding
+rate, thermodynamic entropy, or erasure energy is asserted here.
+\end{remark}
+
+\subsection{Support filling cost}
+
+The quotient and its sampling convention are illustrated in
+\cref{fig:foundations-labels}.
+\input{figures/foundations-labels.tex}
+
+Choose a basis of $C_{n+1}$.  For $z\in Z_n$, define
+\begin{equation}\label{eq:support-cost}
+ \Fill^{\mathrm{supp}}(z)
+ =\min\{|\supp c|:c\in C_{n+1},\ \partial_{n+1}c=z\},
+ \qquad\min\varnothing=+\infty.
+\end{equation}
+
+\begin{proposition}[Exact boundary obstruction]\label{prop:boundary}
+For every $z\in Z_n$,
+\[
+ \Fill^{\mathrm{supp}}(z)=+\infty
+ \iff z\notin B_n
+ \iff[z]\ne0\text{ in }H_n.
+\]
+\end{proposition}
+
+\begin{proof}
+The feasible set is nonempty precisely when $z$ lies in the image of
+$\partial_{n+1}$.  A cycle has zero quotient class precisely when it lies
+in that image.  When feasible, the finite chain space supplies a minimum.
+\end{proof}
+
+The finite value of the cost is basis dependent.  For example, replacing
+the coordinate basis of $\F_2^2$ by $((1,1),(0,1))$ changes the support
+size of $(1,1)$ from two to one.  The finite/infinite distinction is
+basis independent because it only asks whether the boundary equation has
+a solution.  The Euclidean cost of the arithmetic companion is a
+different functional over a different coefficient field, not an
+unstated continuation of \cref{eq:support-cost}.
+
+\section{Finite filtrations and persistent filling thresholds}
+\label{sec:persistence}
+
+Let $K_{t_0}\subseteq\cdots\subseteq K_{t_m}$ be a finite filtration of
+finite simplicial complexes over $\F_Q$.  Use compatible oriented
+simplicial bases.  Choose $z\in Z_n(K_{t_i})$ and carry that same chain
+through subsequent inclusions.  The chosen starting level $t_i$ need not
+be the birth of a barcode interval or the earliest level containing a
+representative of its class.
+
+\begin{definition}[Filling threshold]\label{def:threshold}
+The threshold of this carried cycle is
+\[
+ d(z)=\min\{t_j:j\geq i,\ z\in B_n(K_{t_j})\},
+\]
+with $d(z)=+\infty$ when the set is empty.  Its exclusion interval is the
+set of available levels $t_j\geq t_i$ satisfying $t_j<d(z)$.
+\end{definition}
+
+\begin{proposition}[Threshold and persistent labels]
+\label{prop:persistence}
+For every $j\geq i$,
+\[
+ \Fill^{\mathrm{supp}}_{t_j}(z)=+\infty\iff t_j<d(z).
+\]
+Once finite, the support cost cannot increase along the filtration.
+Furthermore, a uniform variable on
+\[
+ P_n^{i,j}=\im\bigl(H_n(K_{t_i};\F_Q)\to H_n(K_{t_j};\F_Q)\bigr)
+\]
+has entropy $\dim_{\F_Q}P_n^{i,j}\cdot\log_2Q$.
+\end{proposition}
+
+\begin{proof}
+A filler at one level remains a filler at every later level because the
+chain maps are inclusions.  Thus fillability is monotone, and
+\cref{prop:boundary} gives the threshold equivalence.  Its old support
+size remains unchanged in the larger compatible basis, so the minimum
+cost cannot increase.  Apply \cref{thm:labels} to the vector space
+$P_n^{i,j}$ to obtain the entropy statement.
+\end{proof}
+
+This uses the familiar finite persistence setting
+\cite{zomorodian-carlsson}, but needs neither an interval-decomposition
+theorem nor a stability or sampling theorem.  It does not extend the same
+monotonicity to arithmetic power maps or to arbitrarily rescaled norms.
+
+\begin{example}[One label killed by one face]\label{ex:triangle}
+Over $\F_2$, let $K_a$ be a triangle with its three edges but no face.
+In the edge order $(e_{01},e_{12},e_{02})$,
+\[
+ \partial_1=
+ \begin{pmatrix}1&0&1\\1&1&0\\0&1&1\end{pmatrix},
+ \qquad z=e_{01}+e_{12}+e_{02}.
+\]
+The matrix has rank two, so $Z_1=\langle z\rangle$.  Since $B_1=0$,
+the quotient has two labels and exactly one nonzero exclusion label.
+The uniform quotient-label entropy is one bit, and
+$\Fill^{\mathrm{supp}}_a(z)=+\infty$.
+
+At $b>a$, attach a face $\sigma$ with $\partial_2\sigma=z$.
+Now $Z_1=B_1=\langle z\rangle$, the quotient is zero dimensional, and
+\[
+ \Fill^{\mathrm{supp}}_b(z)=1,\qquad d(z)=b,
+ \qquad\mathsf H(L_1)=0.
+\]
+The uniform distribution on the \emph{single nonzero} label before
+attachment would have entropy zero, not one bit; the one-bit statement
+uses both quotient labels.
+\end{example}
+
+\Cref{fig:foundations-triangle} records the exact finite example above;
+\cref{fig:foundations-costs} separates basis dependence from monotonicity
+for a carried cycle.
+\input{figures/foundations-triangle.tex}
+\input{figures/foundations-costs.tex}
+
+\section{Relative extension and its seed}
+\label{sec:relative}
+
+Let $(K,A)$ be a finite regular cellular pair with a finite-dimensional
+cellular sheaf $\mathcal F$ over a field $\kk$, or a finite CW pair with
+a finite-rank local system $\mathcal F$.  In either setting, use relative
+cellular cochains as the kernel of restriction.  The degreewise short exact
+sequence
+\[
+ 0\to C^\bullet(K,A;\mathcal F)\to C^\bullet(K;\mathcal F)
+       \to C^\bullet(A;\mathcal F)\to0
+\]
+gives the segment
+\begin{equation}\label{eq:relative-sequence}
+ H^0(K;\mathcal F)\xrightarrow{\mathrm{res}}H^0(A;\mathcal F)
+               \xrightarrow{\delta}H^1(K,A;\mathcal F).
+\end{equation}
+Here an admissible local section is an element of $H^0(A;\mathcal F)$,
+not an arbitrary assignment of values that may already violate the
+relations on $A$.  For a network sheaf with specified coding data, this
+criterion can describe extension of flows \cite{ghrist-hiraoka}; no
+network interpretation is presumed for an arbitrary sheaf.
+
+\begin{theorem}[Relative nonextension criterion]\label{thm:relative}
+For $s\in H^0(A;\mathcal F)$,
+\[
+ s\notin\im(\mathrm{res})\iff\delta(s)\ne0.
+\]
+\end{theorem}
+
+\begin{proof}
+Exactness of \cref{eq:relative-sequence} says
+$\ker\delta=\im(\mathrm{res})$.  Taking complements proves the claim.
+\end{proof}
+
+\subsection{A cochain presentation is a choice}
+
+Choose a seed subspace $S\subseteq H^0(A;\mathcal F)$ and a linear
+lifting $E:S\to C^0(K;\mathcal F)$ of its inclusion into
+$C^0(A;\mathcal F)$.  Such a lift exists because degree-zero restriction
+is surjective.  Since $s$ is a cocycle on $A$,
+\[
+ \widetilde\delta(s):=d^0E(s)\in Z^1(K,A;\mathcal F).
+\]
+The relative class $[\widetilde\delta(s)]$ is $\delta(s)$.
+If $E'$ is another lift, then $E'-E$ takes values in relative degree-zero
+cochains, and
+\[
+ d^0E'(s)-d^0E(s)\in B^1(K,A;\mathcal F).
+\]
+Thus the quotient seed is independent of the lift, although its displayed
+cochain representative need not be.
+
+This is the precise input supplied to the finite-response companion:
+$\mathsf Z=Z^1(K,A;\mathcal F)$,
+$\mathsf B=B^1(K,A;\mathcal F)$, $S$, and
+$\widetilde\delta:S\to\mathsf Z$.  Endomorphisms preserving
+$\mathsf B$ are additional marks; exactness does not select them.
+
+\subsection{Naturality requires transport of the data}
+
+Suppose a map of pairs with specified coefficient identifications induces
+a morphism of the cochain short exact sequences.  Write $F_A$ for its
+map on local sections and $F_{\mathrm{rel}}$ for its map on relative
+cohomology.  Naturality gives
+\[
+ F_{\mathrm{rel}}\delta=\delta'F_A.
+\]
+A nonzero obstruction is preserved as nonzero when
+$F_{\mathrm{rel}}$ is injective on that class; arbitrary maps can kill
+classes.  A compatible pair homotopy equivalence for local systems gives
+an isomorphism \cite[Section 3.H]{hatcher}.  A bare homotopy equivalence
+without coefficient and seed identifications is not such a comparison.
+
+\begin{example}[An additive cycle equation]\label{ex:additive}
+For prescribed increments $a_j\in\F_Q$ around an oriented cycle, the
+potential equations $u_{j+1}-u_j=a_j$ have a solution exactly when
+$\sum_j a_j=0$.  Necessity follows by summing; sufficiency follows by
+choosing $u_0$ and successively solving the equations.  This is an explicit
+global consistency obstruction.  Identifying it with a particular
+relative-sheaf seed would additionally require specifying that sheaf and
+its local data.
+\end{example}
+
+\Cref{fig:foundations-relative} summarizes relative exactness, the choice
+of lift, and the separate compatibility conditions for transport.
+\input{figures/foundations-relative.tex}
+
+\section{What does not follow from the qualitative tests}
+\label{sec:limits}
+
+\subsection{Fixed closed boundary spaces versus varying operators}
+
+\begin{proposition}[Fixed finite-dimensional boundary spaces are closed]
+\label{prop:closed}
+Let $D:V\to W$ be a linear map between finite-dimensional real or complex
+normed spaces.  If $z\notin\im D$, then
+$\dist(z,\im D)>0$, so no sequence of values $Dc$ converges to $z$.
+\end{proposition}
+
+\begin{proof}
+The image is a finite-dimensional subspace of $W$, hence closed.  Its
+complement is open, so a ball of positive radius about $z$ misses it.
+\end{proof}
+
+This does \emph{not} say that quantitative degeneration requires
+infinite-dimensional chain spaces.  For $D_t:\C\to\C$ given by
+$D_t(c)=tc$, the minimum norm solving $D_t(c)=1$ is $1/|t|$ when
+$t\ne0$ and $+\infty$ when $t=0$.  Every individual image is closed,
+yet the minimum norm diverges as the operator varies toward zero.
+The arithmetic companion similarly varies finite-dimensional boundary
+operators with $x$ and $q$.  Its infinite index family is not an
+infinite-dimensional completion of any one chain space.
+
+\subsection{A checklist for a proposed bridge}
+
+\Cref{fig:foundations-degeneration} contrasts the fixed-image obstruction
+with the varying-operator example.
+\input{figures/foundations-degeneration.tex}
+
+A transfer from a new geometric or filtered model to an arithmetic
+spectrum must specify, and where necessary prove, the following:
+\begin{enumerate}
+ \item its source objects, coefficient systems, selected cycles or local
+ sections, and the relevant comparison maps;
+ \item its quantitative cost, including norms or bases, and the metric
+ on the parameter or data space;
+ \item a character assignment and its marked coordinates, with the
+ approximation norm, constant, exponent, and infinitely-often condition;
+ \item the precise relationship between source costs or classes and
+ target data, including the direction of every implication;
+ \item any metric estimate used to transfer dimension and the theorem
+ giving the target dimension;
+ \item an independently specified embedding and reach hypothesis if
+ geometric offsets are claimed.
+\end{enumerate}
+These are admission requirements, not a theorem constructing the inputs.
+A bi-Lipschitz bijection transfers Hausdorff dimension, but merely naming
+one does not prove that it exists.
+
+In the arithmetic example, a nonzero holonomy row makes a marked chain
+fillable and a marked vertex section nonextendable.  At a trivial powered
+character those conclusions reverse.  Therefore an arrow from ``chain
+non-fillability'' to ``relative nonextension'' is not justified even by
+their occurrence in the same explicit family.
+
+\subsection{A formal conditional interface}
+
+The following interface packages supplied data.  It neither constructs a
+character assignment nor infers a norm from a qualitative obstruction.
+Give $\T^d=(\R/\Z)^d$ its flat quotient metric
+$d_{\T}(x,y)=(\sum_j\dist(x_j-y_j,\Z)^2)^{1/2}$.
+
+\begin{definition}[Admitted dimension-and-nonextension data]
+\label{def:admitted-bridge}
+Fix an integer $d\geq1$ and a nonempty subset
+$Y\subseteq\T^d\setminus\{0\}$ with the inherited metric.  An admitted
+datum consists of:
+\begin{enumerate}
+ \item a metric space $(E,d_E)$ and a specified bijection $\Phi:E\to Y$
+ with proved bounds
+ \[
+  a\,d_E(e,f)\leq d_{\T}(\Phi(e),\Phi(f))\leq b\,d_E(e,f)
+          \quad(e,f\in E),\qquad 0<a\leq b<\infty;
+ \]
+ \item a connected finite CW complex $K$, a vertex $a_K$, and an
+ epimorphism $\vartheta:\pi_1(K,a_K)\twoheadrightarrow\Z^d$;
+ \item for every $e\in E$, a rank-one complex local system $\mathcal F_e$
+ on $K$, a state $s_e\in H^0(\{a_K\};\mathcal F_e)$, and an isomorphism
+ \[
+  \psi_e:\mathcal F_e\xrightarrow{\ \cong\ }
+                  \mathcal L_{\Phi(e)}^\vartheta,
+  \qquad (\psi_e)_{a_K}(s_e)=1.
+ \]
+\end{enumerate}
+Here $\mathcal L_y^\vartheta$ has the marked fibre $\C$ and holonomy
+$g\mapsto\exp(2\pi\mathrm i\langle y,\vartheta(g)\rangle)$.
+The subset $Y$, including any approximation norm, exponent, and tolerance
+used to define it, is part of the data.  No continuity in $e$ of the
+coefficient identifications is assumed or needed for the conclusions below.
+\end{definition}
+
+\begin{proposition}[Conditional dimension and nonextension transport]
+\label{prop:admitted-bridge}
+For data in \cref{def:admitted-bridge},
+\[
+ \dim_{\mathrm H}(E,d_E)=\dim_{\mathrm H}(Y,d_{\T}),\qquad
+ \delta_e(s_e)\ne0\quad\text{in }H^1(K,\{a_K\};\mathcal F_e)
+                         \quad(e\in E).
+\]
+In particular, every selected state fails to extend globally.  If an
+independent theorem gives $\dim_{\mathrm H}Y=h$, then
+$\dim_{\mathrm H}E=h$.
+\end{proposition}
+
+\begin{proof}
+The upper metric bound makes $\Phi$ Lipschitz, so covers of $E$ push
+forward with diameters multiplied by at most $b$.  The lower bound makes
+$\Phi^{-1}$ Lipschitz with constant $a^{-1}$.  Applying the definition
+of Hausdorff measure in both directions gives equality of dimensions.
+
+Separately, let $y=\Phi(e)\ne0$.  Some coordinate of $y$ is nonzero
+modulo $\Z$, and surjectivity of $\vartheta$ supplies a loop with
+nonidentity scalar holonomy.  A global section of the rank-one system
+is fixed by every holonomy, so it must vanish.  The relative exact
+sequence therefore injects the marked vertex fibre $\C$ into
+$H^1(K,\{a_K\};\mathcal L_y^\vartheta)$, sending $1$ to a nonzero
+class.  Naturality with respect to $\psi_e$ identifies this class with
+$\delta_e(s_e)$.  Finally apply \cref{thm:relative}.
+\end{proof}
+
+The two conclusions use different inputs: metric estimates give dimension,
+whereas coefficient and state identifications give nonextension.  Neither
+proof gives a quantitative filling cost, an offset radius, or endomorphism
+marks.  If $Y$ is specified by a cube-based periodic locus, first take its
+image in $\T^d$ and then remove the trivial character.  Removing only one
+corner of $[0,1]^d$ before taking the quotient does not enforce $Y\cap\{0\}
+=\varnothing$.  The arithmetic companion's normalization appendix treats
+the earlier sup-norm locus and the chord-norm locus as distinct admissible
+targets, not as equal sets.
+
+\subsection{Dimension, codimension, and geometric radius}
+
+The two conclusions of the conditional interface use different inputs,
+as shown in \cref{fig:foundations-bridge}.
+\input{figures/foundations-bridge.tex}
+
+The general spectrum in the arithmetic companion has dimension
+$d-\eta$ after choosing $\alpha=(1+\eta)/(d-\eta)$, where
+$0<\eta<d$.  Its $d=2$, $\eta=1/(64\pi^2)$ example retains the earlier
+decimal $1.9984$ as a rounded Hausdorff dimension.  The codimension is
+$\eta$, not $d-\eta$.  Both are separate from the product radii and
+offset radius.
+
+No claim of a universal fractional manifold dimension, geometric buffer
+width, physical information law, or independently derived numerical
+constant is retained.  A second occurrence of the same scalar in another
+model would not establish a common mechanism without an explicit map and
+comparison theorem.  The detailed Diophantine and reach calculations now
+belong to the core companion rather than being repeated here.
+
+\section{Conclusion and finite verification}
+
+There are three precise conclusions: boundary writing produces exactly
+the boundary subspace; finite inclusion filtrations make that solvability
+test scale sensitive; and relative exactness detects failure of a local
+section to extend.  Only the first, with a supplied uniform distribution,
+gives the finite-label entropy stated here.
+
+The quantitative companion constructs one additional model in which
+normed filling costs and arithmetic recurrence admit a complete
+comparison.  It does not close the general bridge problem for arbitrary
+filtered complexes.  The response-module companion supplies a different
+finite operation once its quotient, seed, and marks are fixed.
+
+The script \path{scripts/verify_restructured_series.py} checks the
+triangle boundary relation and ranks over $\F_2$, the associated label
+counts, and the displayed finite-response examples.  These calculations
+are finite consistency checks, not substitutes for the proofs.
+
+\appendix
+\section{General geometric transport below reach}
+\label{sec:general-reach}
+
+Let $M\subseteq\R^m$ be nonempty and closed.  Its reach is the supremum
+of all $\rho>0$ such that every point at distance less than $\rho$ from
+$M$ has a unique nearest point.  Write
+$M^r=\{y:\dist(y,M)\leq r\}$.  The following standard consequence of
+positive reach is included with a proof to distinguish its generality
+from the product-torus calculation; see Federer \cite[Section 4]{federer}
+for the underlying geometric framework.
+
+\begin{lemma}[General sub-reach strong deformation retraction]
+\label{lem:general-reach}
+Suppose $\reach(M)>0$.  On
+$V=\{y:\dist(y,M)<\reach(M)\}$, nearest-point projection $p:V\to M$
+is continuous.  For every finite $0\leq r<\reach(M)$, its restriction
+$p_r:M^r\to M$ gives a strong deformation retraction through
+\[
+ H_r(y,t)=(1-t)y+t p(y),\qquad 0\leq t\leq1.
+\]
+For $0\leq r\leq R<\reach(M)$, with $R$ finite, inclusion
+$j_{r,R}:M^r\hookrightarrow M^R$ satisfies $p_Rj_{r,R}=p_r$.
+Every $A\subseteq M$ is fixed pointwise by these homotopies, so they
+are also homotopies of pairs relative to $A$.
+\end{lemma}
+
+\begin{proof}
+A nearest point exists for every $y\in\R^m$: a minimizing sequence in
+the nonempty closed set $M$ is bounded and has a convergent subsequence
+in $M$.  Uniqueness on $V$ follows from the reach hypothesis.
+To prove continuity, let $y_n\to y$ in $V$.  The points $p(y_n)$ are
+bounded, since
+\[
+ \norm{p(y_n)-y}\leq\dist(y_n,M)+\norm{y_n-y}.
+\]
+For every convergent subsequence with limit $z$, closedness puts $z$ in
+$M$, and continuity of distance gives
+$\norm{z-y}=\dist(y,M)$.  Uniqueness forces $z=p(y)$.  If the full
+sequence did not converge to $p(y)$, a bounded subsequence staying a
+positive distance away would have a convergent subsequence with another
+limit, a contradiction.
+
+Set $z=p(y)$ and $D=\norm{y-z}$.  For $w=(1-t)y+tz$ and any $u\in M$,
+\[
+ \norm{w-u}\geq\norm{y-u}-\norm{y-w}\geq D-tD=(1-t)D,
+ \qquad \norm{w-z}=(1-t)D.
+\]
+Hence $\dist(w,M)=(1-t)D\leq r$, and $p(w)=z$ by uniqueness.
+Continuity of $p$ makes $H_r$ continuous; it starts at the identity,
+ends at $p_r$, and fixes $M$ at every time.  The same nearest-point
+function defines every $p_r$, proving compatibility under inclusion and
+the assertion about subsets $A$.
+\end{proof}
+
+This lemma does not require $M$ to be a manifold, a product, or compact.
+If a local system and a marked state on $M$ are independently supplied,
+the compatible pullbacks along $p_r$ provide the setting for relative
+cohomology transport by pair homotopy invariance.  The lemma itself does
+not choose those coefficients or states.  Nor does it provide a specified
+finite cellularization, a compatible sampling filtration, a Diophantine
+parameterization, or a normed filling model.  Those additional structures
+must be stated separately; the arithmetic companion supplies them only
+for its explicit carrier construction.
+
+\section{Visual dictionary for the three manuscripts}
+\label{sec:visual-dictionary}
+
+\Cref{fig:series-dictionary} is a reference guide to the inputs and indices
+used in the three papers. Its rows describe different constructions;
+they do not assert comparison maps between them.
+\input{figures/series-dictionary.tex}
+
+\bibliographystyle{plain}
+\bibliography{series_references}
+\end{document}

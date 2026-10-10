@@ -1,0 +1,33 @@
+\begin{figure}[tbp]
+\centering
+\ViewHeading{(a) The full-torus seed leaves no room for strict growth}
+\begin{tabular}{@{}llll@{}}
+\toprule
+Parameter & Relative quotient $H$ & Seed $V$ & Every admissible set of marks\\\midrule
+$x\neq0$ & $\langle[v]\rangle$, dimension $1$ & $H$ & $\Nex=H$, no growth\\[3pt]
+$x=0$ & $\C^d$, dimension $d$ & $0$ & $\Nex=0$, no growth\\\bottomrule
+\end{tabular}
+\medskip
+\ViewHeading{(b) Different types of maps}
+\begin{tikzpicture}
+\node[vbox,text width=5.6cm] (scales) at (-3.55,0)
+ {\textbf{Arithmetic scale map}\\
+  $T_{q,k}:\mathcal C_x(kq)_1\to\mathcal C_x(q)_1$\\
+  Different scales and powered coefficients};
+\node[vresult,text width=5.6cm] (marks) at (3.55,0)
+ {\textbf{Response endomorphism}\\$\overline G_j:H\to H$\\One supplied fixed quotient};
+\node[vinput,text width=11.9cm] (extra) at (0,-2)
+ {Missing additional construction: quotient identifications or a new finite model,\\
+  with proved boundary preservation and intertwining};
+\draw[vconditional] (scales.south)--(extra.north west);
+\draw[vconditional] (extra.north east)--(marks.south);
+\node[font=\footnotesize,align=center] at (0,-3.35)
+ {Dashed arrows are requirements, not maps constructed by the papers.\\
+  Trivial powered characters can also change the relative dimension.};
+\end{tikzpicture}
+\caption{The arithmetic torus does not automatically provide a growing
+response module. Its full degree-one cocycle equations force the top
+table; substituting the wedge changes the datum. The lower comparison
+keeps cross-scale chain maps separate from fixed-quotient marks.}
+\label{fig:response-torus}
+\end{figure}

@@ -1,0 +1,28 @@
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}
+\node[vbox,text width=5.6cm] (inside) at (-3.55,0)
+ {Non-torsion $x_{\rm in}\in R_{\alpha,C}$\\exists since $\dim_{\rm H}R_{\alpha,C}>0$};
+\node[vbox,text width=5.6cm] (outside) at (3.55,0)
+ {Non-torsion $x_{\rm out}\notin R_{\alpha,C}$\\exists since $R_{\alpha,C}$ is null};
+\node[vinput,text width=8cm] (boolean) at (0,-1.8)
+ {Identical Boolean data: $(\epsilon_q)_q=(1,1,1,\ldots)$};
+\draw[varrow] (inside)--(boolean);
+\draw[varrow] (outside)--(boolean);
+\node[font=\footnotesize,align=center] at (0,-2.8)
+ {Different recurrence membership cannot be recovered from this sequence.\\
+ Existence argument: the full stated range $\alpha>1/d$.};
+\end{tikzpicture}
+\medskip
+\begin{tabular}{@{}lll@{}}
+\toprule
+Explicit comparison & Exact fillability & Recurrence conclusion\\\midrule
+$x_{\rm L}=(\sum_{n\geq1}10^{-n!},0,\ldots,0)$ & every scale & in $R_{\alpha,C}$ for all $\alpha>0$\\[3pt]
+$x_{\rm G}=((\sqrt5-1)/2,0,\ldots,0)$ & every scale & outside $R_{\alpha,C}$ for $\alpha>1$\\\bottomrule
+\end{tabular}
+\caption{Boolean solvability forgets the size of a filler. The top
+argument works throughout the theorem's range; the constructive pair
+below separates membership on the smaller range $\alpha>1$, for every
+$C>0$. No finite decimal truncation of the Liouville parameter is used.}
+\label{fig:arithmetic-boolean}
+\end{figure}

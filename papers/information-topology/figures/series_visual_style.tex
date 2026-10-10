@@ -1,0 +1,41 @@
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{caption}
+\usepackage[section]{placeins}
+\usetikzlibrary{arrows.meta,positioning,calc,fit,backgrounds}
+\pgfplotsset{compat=1.18}
+\definecolor{viewblue}{HTML}{245A81}
+\definecolor{viewteal}{HTML}{16766D}
+\definecolor{vieworange}{HTML}{AE591E}
+\definecolor{viewgray}{HTML}{53616C}
+\tikzset{
+  >=Latex,
+  every picture/.style={font=\small},
+  vbox/.style={draw=viewblue,rounded corners=2pt,fill=viewblue!5,
+    align=center,inner sep=7pt,line width=.7pt},
+  vinput/.style={vbox,draw=vieworange,fill=vieworange!6},
+  vresult/.style={vbox,draw=viewteal,fill=viewteal!6},
+  varrow/.style={->,line width=.8pt,draw=viewblue},
+  vconditional/.style={->,dashed,line width=.8pt,draw=vieworange},
+  vlabel/.style={font=\footnotesize,align=center,fill=white,inner sep=2pt},
+  vpoint/.style={circle,fill=viewblue,inner sep=2.5pt},
+  vseed/.style={circle,draw=vieworange,fill=vieworange!20,inner sep=3pt}
+}
+\pgfplotsset{viewaxis/.style={
+  axis lines=left,axis line style={viewgray},
+  tick label style={font=\scriptsize},label style={font=\small},
+  legend style={font=\scriptsize,draw=none,fill=white},
+  grid=major,grid style={viewgray!12},
+  every axis plot/.append style={line width=.85pt},
+  scaled ticks=false
+}}
+\captionsetup[figure]{font=small,labelfont=bf,labelsep=period}
+\renewcommand{\topfraction}{.9}
+\renewcommand{\bottomfraction}{.85}
+\renewcommand{\textfraction}{.08}
+\renewcommand{\floatpagefraction}{.75}
+\setcounter{topnumber}{3}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\newcommand{\ViewHeading}[1]{\par\smallskip{\small\bfseries #1}\par\smallskip}

@@ -1,0 +1,52 @@
+\begin{figure}[tbp]
+\centering
+\ViewHeading{(a) Extension is an exactness question}
+\begin{tikzpicture}
+\node[vbox] (global) at (-4.5,0) {$H^0(K;\mathcal F)$};
+\node[vbox] (local) at (0,0) {$H^0(A;\mathcal F)$};
+\node[vresult] (relative) at (4.5,0) {$H^1(K,A;\mathcal F)$};
+\draw[varrow] (global)--(local) node[midway,above] {$\mathrm{res}$};
+\draw[varrow] (local)--(relative) node[midway,above] {$\delta$};
+\node[align=center] at (0,-.9)
+ {$s$ extends $\Longleftrightarrow s\in\operatorname{im}(\mathrm{res})
+   =\ker\delta\Longleftrightarrow\delta(s)=0$};
+\end{tikzpicture}
+\medskip
+\begin{minipage}[t]{.47\linewidth}
+\centering\ViewHeading{(b) Lifts need not be cocycles}
+\begin{tikzpicture}
+\node[vbox] (seed) at (0,0) {$s\in S$};
+\node[vbox] (first) at (-1.55,-1.2) {$E(s)$};
+\node[vbox] (second) at (1.55,-1.2) {$E'(s)$};
+\node[vresult,text width=5.2cm] (quotient) at (0,-2.8)
+  {$[d^0E(s)]=[d^0E'(s)]=\delta(s)$};
+\draw[varrow] (seed)--(first);
+\draw[varrow] (seed)--(second);
+\draw[varrow] (first)--(quotient);
+\draw[varrow] (second)--(quotient);
+\node[font=\footnotesize] at (0,-3.6) {$d^0E'(s)-d^0E(s)\in B^1(K,A;\mathcal F)$};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{.50\linewidth}
+\centering\ViewHeading{(c) Transport requires compatibility}
+\begin{tikzpicture}
+\node (source) at (0,0) {$H^0(A;\mathcal F)$};
+\node (target) at (3.8,0) {$H^1(K,A;\mathcal F)$};
+\node (sourcenew) at (0,-1.7) {$H^0(A';\mathcal F')$};
+\node (targetnew) at (3.8,-1.7) {$H^1(K',A';\mathcal F')$};
+\draw[varrow] (source)--(target) node[midway,above] {$\delta$};
+\draw[varrow] (sourcenew)--(targetnew) node[midway,below] {$\delta'$};
+\draw[varrow] (source)--(sourcenew) node[midway,left] {$F_A$};
+\draw[varrow] (target)--(targetnew) node[midway,right] {$F_{\rm rel}$};
+\node[align=center,text width=6cm,font=\footnotesize] at (1.9,-3)
+ {A nonzero class stays nonzero only if the comparison does not kill it;
+  injectivity on that class suffices.};
+\end{tikzpicture}
+\end{minipage}
+\caption{Local sections must already satisfy the relations on $A$.
+A lift to a degree-zero cochain is not automatically a global section.
+Changing the lift changes the representative by a relative boundary;
+transport between different data separately requires a compatible
+cochain map and coefficient identifications.}
+\label{fig:foundations-relative}
+\end{figure}

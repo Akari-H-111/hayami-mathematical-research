@@ -1,0 +1,42 @@
+\begin{figure}[tbp]
+\centering
+\ViewHeading{(a) Words generate a linear subspace, not just an orbit set}
+\begin{tikzpicture}
+\node[vinput] (empty) at (0,0) {$V=1V$};
+\node[vbox] (first) at (-3,-1.2) {$\overline G_1 V$};
+\node[vbox] (second) at (3,-1.2) {$\overline G_2 V$};
+\node (firstfirst) at (-4.8,-2.4) {$\overline G_1\overline G_1 V$};
+\node (secondfirst) at (-1.6,-2.4) {$\overline G_2\overline G_1 V$};
+\node (firstsecond) at (1.6,-2.4) {$\overline G_1\overline G_2 V$};
+\node (secondsecond) at (4.8,-2.4) {$\overline G_2\overline G_2 V$};
+\draw[varrow] (empty)--(first);\draw[varrow] (empty)--(second);
+\draw[varrow] (first)--(firstfirst);\draw[varrow] (first)--(secondfirst);
+\draw[varrow] (second)--(firstsecond);\draw[varrow] (second)--(secondsecond);
+\node[font=\footnotesize] at (0,-3.15)
+ {Take the sum of all displayed subspaces at every level; words can be linearly dependent.};
+\end{tikzpicture}
+\ViewHeading{(b) Exact column-space iteration}
+\begin{tikzpicture}
+\node[vinput,text width=4cm] (initial) at (-4.1,0) {$Q_0$: a basis of the quotient seed};
+\node[vbox,text width=5.1cm] (step) at (2.8,0)
+ {$Q_{m+1}=\operatorname{colbasis}$\\$[Q_m\mid M_1Q_m\mid\cdots\mid M_tQ_m]$};
+\node[vinput,text width=5.1cm] (test) at (2.8,-1.65)
+ {$\operatorname{rank}Q_{m+1}=\operatorname{rank}Q_m$?};
+\node[vresult,text width=4cm] (end) at (-4.1,-1.65)
+ {Stop: columns span $\Nex$};
+\draw[varrow] (initial)--(step);
+\draw[varrow] (step)--(test);
+\draw[varrow] (test)--(end) node[midway,above,font=\footnotesize] {yes};
+\draw[varrow] (test.east)--++(.8,0)|- (step.east)
+ node[pos=.25,right,font=\footnotesize] {no: next $m$};
+\node[font=\footnotesize,align=center] at (0,-2.9)
+ {At most $\dim H-\dim V$ strict rank increases.\\
+  $V=0\Rightarrow\Nex=0$; no marks $\Rightarrow\Nex=V$.};
+\end{tikzpicture}
+\caption{Panel (a) illustrates two indexed marks with the empty word
+retained. It is a word diagram, not a claim of linear independence or
+commutativity. Panel (b) works for arbitrary $t$ without enumerating the
+effective algebra. The bound counts strict growth steps, not all field
+operations or the final equality check.}
+\label{fig:response-closure}
+\end{figure}

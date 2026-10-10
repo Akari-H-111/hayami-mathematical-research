@@ -1,0 +1,30 @@
+\begin{figure}[tbp]
+\centering
+\begin{minipage}[t]{.46\linewidth}
+\centering\ViewHeading{(a) One fixed operator}
+\begin{tikzpicture}
+\draw[viewblue,very thick] (-2.5,0)--(2.5,0) node[below left] {$\operatorname{im}D$};
+\node[vseed,label=above:$z$] (outside) at (.4,2) {};
+\draw[dashed,vieworange] (.4,2)--(.4,0);
+\draw[viewgray] (.4,.2)--(.6,.2)--(.6,0);
+\node[align=center,font=\footnotesize] at (0,-1.2)
+ {$z\notin\operatorname{im}D$\\$\operatorname{dist}(z,\operatorname{im}D)>0$};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{.50\linewidth}
+\centering\ViewHeading{(b) A varying finite-dimensional operator}
+\begin{tikzpicture}
+\begin{axis}[viewaxis,width=6.7cm,height=4.5cm,xmin=0,xmax=2,ymin=0,ymax=9,
+ xlabel={$t>0$},ylabel={minimum norm},xtick={0,1,2},ytick={1,4,8}]
+\addplot[vieworange,domain=.12:2,samples=90] {1/x};
+\node[font=\footnotesize,anchor=north east,align=right] at (rel axis cs:.95,.92)
+ {$D_t(c)=tc$\\$\min_{tc=1}|c|=1/t$};
+\end{axis}
+\end{tikzpicture}
+\end{minipage}
+\caption{Closedness of each fixed image does not prevent minimum filling
+norms from diverging as the operator varies. Panel (b) plots the exact
+formula on $t>0$; at $t=0$ the equation has no solution and the cost is
+$+\infty$. No infinite-dimensional completion is involved.}
+\label{fig:foundations-degeneration}
+\end{figure}

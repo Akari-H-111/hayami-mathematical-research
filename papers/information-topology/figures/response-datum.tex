@@ -1,0 +1,34 @@
+\begin{figure}[tbp]
+\centering
+\ViewHeading{(a) The supplied datum and its quotient seed}
+\begin{tikzpicture}
+\node[vinput] (seed) at (-4.8,0) {$S$};
+\node[vbox] (cycles) at (0,0) {$\mathsf Z$};
+\node[vresult] (quotient) at (4.8,0) {$H=\mathsf Z/\mathsf B$};
+\draw[varrow] (seed)--(cycles) node[midway,above] {$\widetilde\delta$};
+\draw[varrow] (cycles)--(quotient) node[midway,above] {$\pi$};
+\draw[varrow] (seed.south) to[bend right=22] node[midway,below] {$\ob=\pi\widetilde\delta$} (quotient.south);
+\node[font=\footnotesize] at (4.8,-1.55) {$V=\operatorname{im}\ob\subseteq H$};
+\end{tikzpicture}
+\ViewHeading{(b) Boundary preservation is what makes descent well defined}
+\begin{tikzpicture}
+\node[vbox] (upperleft) at (-3.3,0) {$\mathsf Z$};
+\node[vbox] (upperright) at (3.3,0) {$\mathsf Z$};
+\node[vresult] (lowerleft) at (-3.3,-1.7) {$H$};
+\node[vresult] (lowerright) at (3.3,-1.7) {$H$};
+\draw[varrow] (upperleft)--(upperright) node[midway,above] {$G_j$};
+\draw[varrow] (lowerleft)--(lowerright) node[midway,below] {$\overline G_j$};
+\draw[varrow] (upperleft)--(lowerleft) node[midway,left] {$\pi$};
+\draw[varrow] (upperright)--(lowerright) node[midway,right] {$\pi$};
+\node[vinput,text width=11cm] at (0,-3.2)
+ {$z'=z+b$, $b\in\mathsf B$\quad$\Longrightarrow$\quad
+  $G_jz'-G_jz=G_jb\in\mathsf B$\\
+  hence $[G_jz']=[G_jz]$};
+\end{tikzpicture}
+\caption{The response starts with a specified seed map and an indexed
+tuple of marks. In this figure $H=\Hex$. Relative exactness can supply
+the quotient seed, but does not select the endomorphisms. The square
+commutes precisely because the displayed marks preserve the boundary
+subspace.}
+\label{fig:response-datum}
+\end{figure}

@@ -1,0 +1,39 @@
+\begin{figure}[tbp]
+\centering
+\begin{minipage}[t]{.48\linewidth}
+\centering\ViewHeading{(a) One circle block and a sub-reach offset}
+\begin{tikzpicture}[scale=.95]
+\fill[viewblue!9,even odd rule] (0,0) circle (2) (0,0) circle (1);
+\draw[viewblue!45] (0,0) circle (2);
+\draw[viewblue!45] (0,0) circle (1);
+\draw[viewblue,very thick] (0,0) circle (1.5);
+\draw[viewgray,dashed] (0,0)--(1.5,0) node[midway,below] {$\lambda$};
+\node[vseed,label=above right:$y$] (point) at (50:1.85) {};
+\node[vpoint,label=below left:{$p(y)$}] (projection) at (50:1.5) {};
+\draw[varrow] (point)--(projection);
+\draw[<->,vieworange] (-2,0)--(-1.5,0) node[midway,above] {$r$};
+\node[font=\footnotesize,align=center] at (0,-2.6)
+ {$0\leq r<\lambda$; radial contraction\\fixes the circle pointwise};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}
+\centering\ViewHeading{(b) Failure of uniqueness at the center}
+\begin{tikzpicture}[scale=.95]
+\draw[viewblue,very thick] (0,0) circle (1.5);
+\foreach \angle in {0,45,...,315} \draw[dashed,vieworange] (0,0)--(\angle:1.5);
+\node[vseed,label=below:{$y_j=0$}] at (0,0) {};
+\node[font=\footnotesize,align=center] at (0,-2.6)
+ {Every point on this circle is nearest.\\Choose a block with radius $\lambda_-$.};
+\end{tikzpicture}
+\end{minipage}
+\[
+\operatorname{dist}(y,\mathcal M_{\boldsymbol\lambda})^2
+ =\sum_j(|y_j|-\lambda_j)^2,\qquad
+\operatorname{reach}(\mathcal M_{\boldsymbol\lambda})=\min_j\lambda_j.
+\]
+\caption{Exact circle-block geometry underlying the product carrier in
+$\R^{2d}$. In (a), $\lambda=1.5$ and $r=0.5$. For the witness in (b),
+all other blocks lie on their circles. For $d=2$ the carrier is a product
+in $\R^4$, not a standard doughnut embedded in $\R^3$.}
+\label{fig:arithmetic-carrier}
+\end{figure}

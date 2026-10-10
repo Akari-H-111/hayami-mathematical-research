@@ -1,0 +1,32 @@
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}
+\node[vinput,text width=5.6cm] (metric) at (-3.55,0)
+  {\textbf{Metric input}\\A specified bijection $\Phi:E\to Y$\\
+   $a\,d_E\leq d_{\T}\circ(\Phi,\Phi)\leq b\,d_E$};
+\node[vinput,text width=5.6cm] (coeff) at (3.55,0)
+  {\textbf{Coefficient and state input}\\
+   $\psi_e:\mathcal F_e\cong\mathcal L_{\Phi(e)}^\vartheta$\\
+   $(\psi_e)_{a_K}(s_e)=1$, $\Phi(e)\neq0$};
+\node[vbox,text width=5.6cm] (dimproof) at (-3.55,-1.95)
+  {Lipschitz cover comparisons\\in both directions};
+\node[vbox,text width=5.6cm] (obproof) at (3.55,-1.95)
+  {Surjective $\vartheta:\pi_1(K)\twoheadrightarrow\Z^d$\\
+   Nontrivial rank-one holonomy; exactness};
+\node[vresult,text width=5.6cm] (dim) at (-3.55,-3.6)
+  {$\dim_{\rm H}E=\dim_{\rm H}Y$};
+\node[vresult,text width=5.6cm] (ob) at (3.55,-3.6)
+  {$\delta_e(s_e)\neq0$};
+\draw[varrow] (metric)--(dimproof);
+\draw[varrow] (dimproof)--(dim);
+\draw[varrow] (coeff)--(obproof);
+\draw[varrow] (obproof)--(ob);
+\node[font=\footnotesize,align=center] at (0,-4.65)
+ {Independent conclusions from different supplied inputs.\\
+  Neither route constructs a filling norm, an offset radius, or response marks.};
+\end{tikzpicture}
+\caption{The conditional interface has two proof routes, not a deduction
+of dimension from nonextension or conversely. An independent theorem is
+still needed to evaluate $\dim_{\rm H}Y$.}
+\label{fig:foundations-bridge}
+\end{figure}

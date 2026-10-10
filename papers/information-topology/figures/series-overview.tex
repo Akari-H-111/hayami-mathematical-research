@@ -1,0 +1,39 @@
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}
+\node[vbox,text width=12.4cm] (found) at (0,0)
+  {\textbf{Foundations: qualitative algebra with specified data}};
+\node[vbox,text width=5.3cm] (labels) at (-3.55,-1.55)
+  {Finite-field chains and inclusions\\
+   $Z_n/B_n$, label counts, filling thresholds};
+\node[vbox,text width=5.3cm] (relative) at (3.55,-1.55)
+  {Relative cochains and local sections\\
+   $\delta(s)$, quotient and seed};
+\draw[varrow] (found.south -| labels.north) -- (labels);
+\draw[varrow] (found.south -| relative.north) -- (relative);
+\node[vinput,text width=5.3cm] (arinput) at (-3.55,-3.3)
+  {\textbf{Additional arithmetic model}\\
+   Characters, norms, power maps, metric, carrier};
+\node[vinput,text width=5.3cm] (marks) at (3.55,-3.3)
+  {\textbf{Additional response marks}\\
+   Indexed $G_j$ with $G_j(\mathsf B)\subseteq\mathsf B$};
+\node[vresult,text width=5.3cm] (arithmetic) at (-3.55,-5.15)
+  {\textbf{Arithmetic Filling Spectra}\\
+   Quantitative recurrence and geometric transport};
+\node[vresult,text width=5.3cm] (response) at (3.55,-5.15)
+  {\textbf{Minimal Response Modules}\\
+   $\Nex=\mathscr R_t\,\operatorname{im}\ob$};
+\draw[varrow] (arinput) -- (arithmetic);
+\draw[varrow] (marks) -- (response);
+\draw[varrow] (relative.east) -- ++(.65,0) |- (response.east)
+  node[pos=.5,vlabel,rotate=90] {quotient and seed};
+\node[align=center,font=\footnotesize,text width=12.5cm] at (0,-6.4)
+  {No automatic arrow from finite labels to arithmetic data,\\
+   or from arithmetic scale maps to fixed-quotient endomorphisms.};
+\end{tikzpicture}
+\caption{Logical inputs of the three manuscripts. Solid arrows indicate
+supplied constructions, not a universal pipeline. The arithmetic example
+and the response marks are additional inputs; neither is selected by
+relative exactness.}
+\label{fig:series-overview}
+\end{figure}

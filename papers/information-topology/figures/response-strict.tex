@@ -1,0 +1,46 @@
+\begin{figure}[tbp]
+\centering
+\begin{minipage}[t]{.48\linewidth}
+\centering\ViewHeading{(a) Strict equality of seed representatives}
+\begin{tikzpicture}
+\node (seed) at (0,0) {$S$};
+\node (cycles) at (3.7,0) {$\mathsf Z$};
+\node (seednew) at (0,-1.7) {$S'$};
+\node (cyclesnew) at (3.7,-1.7) {$\mathsf Z'$};
+\draw[varrow] (seed)--(cycles) node[midway,above] {$\widetilde\delta$};
+\draw[varrow] (seednew)--(cyclesnew) node[midway,below] {$\widetilde\delta'$};
+\draw[varrow] (seed)--(seednew) node[midway,left] {$\Phi_S$};
+\draw[varrow] (cycles)--(cyclesnew) node[midway,right] {$\Phi_{\mathsf Z}$};
+\end{tikzpicture}
+\end{minipage}\hfill
+\begin{minipage}[t]{.48\linewidth}
+\centering\ViewHeading{(b) Each indexed mark intertwines}
+\begin{tikzpicture}
+\node (left) at (0,0) {$\mathsf Z$};
+\node (right) at (3.7,0) {$\mathsf Z$};
+\node (leftnew) at (0,-1.7) {$\mathsf Z'$};
+\node (rightnew) at (3.7,-1.7) {$\mathsf Z'$};
+\draw[varrow] (left)--(right) node[midway,above] {$G_j$};
+\draw[varrow] (leftnew)--(rightnew) node[midway,below] {$G'_j$};
+\draw[varrow] (left)--(leftnew) node[midway,left] {$\Phi_{\mathsf Z}$};
+\draw[varrow] (right)--(rightnew) node[midway,right] {$\Phi_{\mathsf Z}$};
+\end{tikzpicture}
+\end{minipage}
+\medskip
+\ViewHeading{(c) Boundary preservation and the induced response map}
+\begin{tikzpicture}
+\node[vinput,text width=11.8cm] (boundary) at (0,0)
+ {$\Phi_{\mathsf Z}(\mathsf B)\subseteq\mathsf B'$ defines $\overline\Phi:H\to H'$};
+\node[vresult,text width=11.8cm] (response) at (0,-1.45)
+ {$\overline\Phi(\Nex)\subseteq\Nex'$ as $\mathscr R_t$-modules};
+\draw[varrow] (boundary)--(response);
+\node[font=\footnotesize,align=center,text width=12cm] at (0,-2.8)
+ {Equality if the image contains the target seed $V'$.\\
+  An isomorphism of responses if, in addition, $\overline\Phi|_{\Nex}$ is injective.};
+\end{tikzpicture}
+\caption{All three strict-morphism requirements are needed. Equality in
+(a) holds before quotienting and is stronger than changing a seed
+representative by a boundary. The number and labels of the marks remain
+fixed. Identities and composition descend to the response restrictions.}
+\label{fig:response-strict}
+\end{figure}

@@ -1,0 +1,23 @@
+\begin{figure}[tbp]
+\centering
+\begin{tikzpicture}
+\node[vbox] (free) at (0,0) {$\mathscr R_1=\F_2\langle X\rangle$};
+\node[vbox,text width=5.6cm] (source) at (-3.55,-1.8)
+ {Source $H=\F_2$\\$X\mapsto0$\\$\Aex=\F_2\id$};
+\node[vbox,text width=5.6cm] (target) at (3.55,-1.8)
+ {Target $H'=\F_2^2$\\$X\mapsto\operatorname{diag}(0,1)$\\$\Aex'=\langle\id,\operatorname{diag}(0,1)\rangle$};
+\draw[varrow] (free)--(source);
+\draw[varrow] (free)--(target);
+\node[vresult,text width=11.9cm] (module) at (0,-3.85)
+ {$\overline\Phi(s)=(s,0)$ is $\mathscr R_1$-linear and carries the seed to the seed};
+\node[vinput,text width=11.9cm] (failure) at (0,-5.25)
+ {No generator-respecting map $\Aex\to\Aex'$:\\
+  it would have to send $0$ to $\operatorname{diag}(0,1)\neq0$.};
+\end{tikzpicture}
+\caption{A common free algebra acts on both quotients, but their
+effective images impose different relations. Both boundary spaces are
+zero, the seed maps are $s\mapsto s$ and $s\mapsto(s,0)$, and the seed
+comparison is the identity. The strict module map exists even though the
+claimed generator-respecting algebra map does not.}
+\label{fig:response-algebras}
+\end{figure}
