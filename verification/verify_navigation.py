@@ -14,6 +14,7 @@ GUIDES = (
     'papers/information-topology/figures/README.md', 'papers/legacy-geometry/README.md',
     'papers/legacy-geometry/orthogonal-circle-ruled-surface/README.md',
     'papers/legacy-geometry/stokes-caustic/README.md',
+    'companions/lean/README.md',
 )
 SERIES = ROOT / 'papers/information-topology'
 MANUSCRIPTS = (

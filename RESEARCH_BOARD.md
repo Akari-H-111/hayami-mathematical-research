@@ -1,6 +1,6 @@
 # Research board
 
-Navigation updated: 2026-10-10 (Asia/Taipei).
+Navigation updated: 2026-10-13 (Asia/Taipei).
 
 This is the operational entrypoint for agents. For readers, start with the
 [ten-paper catalogue](README.md) and [series index](papers/README.md). Read the

@@ -34,6 +34,8 @@ are not additional papers in this count.
   [research board](RESEARCH_BOARD.md) and the selected series guide before editing.
 - **Reproducers:** use the [verification guide](verification/README.md).
   Computation, written proofs and Lean coverage have different scopes.
+- **Formalizers:** use the [Lean companion index](companions/lean/README.md).
+  A passing module or certificate does not formalize an entire paper.
 - **Citing this work:** use each paper's own DOI. See
   [established works and citation boundaries](ESTABLISHED_WORKS.md) and
   [CITATION.cff](CITATION.cff). Software and collection DOIs are separate records.

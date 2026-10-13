@@ -11,7 +11,7 @@
 | Run checks | [Verification guide](../verification/README.md) and the relevant coverage map |
 | Find publication and citation boundaries | [Established works](../ESTABLISHED_WORKS.md) |
 | Consult earlier planning/platform inventories | [Research directions](../RESEARCH_DIRECTIONS.md), [external actions](../EXTERNAL_ACTIONS.md), [Lean roadmap](../LEAN_ROADMAP.md); check the current board before following older tasks |
-| Inspect formalization | `companions/lean/`: each project has its own status and coverage map |
+| Inspect formalization | [Lean companion index](../companions/lean/README.md): each project has its own status and coverage boundary |
 | Inspect sealed reproducibility packages | `releases/current/` and `releases/candidates/`: interpret each receipt at its recorded date |
 | Inspect historical source authority | [Legacy source registry](../papers/legacy-geometry/source-registry/SOURCE_REGISTRY.md) |
 | Explore independent constructions | `research/`: read the local scope before importing conclusions into a paper |
@@ -23,7 +23,7 @@ sealed release directories; the family README points to them instead of copying
 or moving their immutable bytes. Geometry keeps its established paths to protect
 existing verification dependencies and published references.
 
-`companions/lean/` contains formalization sources, not substitutes for whole-paper
+[Lean companions](../companions/lean/README.md) contain formalization sources, not substitutes for whole-paper
 proofs. `verification/` contains exact and finite checks. `releases/` contains
 versioned packages and provenance; a directory under `candidates/` may have later
 been published, so use its publication record rather than its name alone.
