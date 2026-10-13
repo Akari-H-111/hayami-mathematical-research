@@ -24,6 +24,12 @@ local handoff; they are not a new live audit of publication platforms. The Ruled
 v5 paper/software identifiers are `10.5281/zenodo.23073642` and
 `10.5281/zenodo.23073654`. Paper and software DOIs remain distinct.
 
+On 2026-10-14, a preserved-evidence audit checked the Ruled publication receipt's
+16 cached evidence files, five saved Zenodo downloads and canonical v4 PDF;
+all SHA-256 bindings matched. See the
+[Ruled provenance guide](papers/legacy-geometry/orthogonal-circle-ruled-surface/PUBLIC_PROVENANCE.md).
+This is an integrity check of recorded evidence, not a fresh platform readback.
+
 ## Verification routes
 
 Use the [verification guide](verification/README.md) for exact commands and

@@ -10,6 +10,11 @@ The checked-in copies below are the immutable source manuscripts for this recons
 
 Validation performed at intake:
 
+Ruled v4/v5 publication identities, dated download verification and accepted
+artifact hashes are recorded in the
+[Ruled provenance guide](../orthogonal-circle-ruled-surface/PUBLIC_PROVENANCE.md).
+The historical PDF authority and ancestor-source classification remain unchanged.
+
 - `qpdf --check` passed for all three PDFs.
 - `pdfdetach -list` found zero embedded files in all three PDFs.
 - Representative first, middle, and final pages were rendered and visually inspected.

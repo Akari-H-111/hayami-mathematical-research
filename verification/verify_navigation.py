@@ -13,6 +13,8 @@ GUIDES = (
     'papers/inverse-leibniz/README.md', 'papers/information-topology/README.md',
     'papers/information-topology/figures/README.md', 'papers/legacy-geometry/README.md',
     'papers/legacy-geometry/orthogonal-circle-ruled-surface/README.md',
+    'papers/legacy-geometry/orthogonal-circle-ruled-surface/PUBLIC_PROVENANCE.md',
+    'papers/legacy-geometry/source-registry/SOURCE_REGISTRY.md',
     'papers/legacy-geometry/stokes-caustic/README.md',
     'companions/lean/README.md',
 )
