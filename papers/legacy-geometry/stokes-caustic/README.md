@@ -16,22 +16,6 @@ and versal unfolding remain open. See the [verification guide](../../../verifica
 ## Reconstruction and source provenance
 
 
-[Geometry papers](../README.md) · [Repository home](../../../README.md)
-
-## Current paper and companion
-
-Read [*Observation Discriminant and Spherical Fold Image of the
-Orthogonal-Circle Ruled Surface*](https://doi.org/10.5281/zenodo.22728902), v5.
-Its [Lean coverage map](../../../companions/lean/stokes-caustic-v5/FULL_PAPER_COVERAGE.md)
-lists all asserted mathematical results covered by companion v0.04 (258 public
-named theorems). The [software record](https://zenodo.org/records/23057630) is
-separate from the paper DOI. Historical companion v0.03 remains criterion-level;
-v0.04 coverage is never retroactively attributed to it. Full-germ classification
-and versal unfolding remain open. See the [verification guide](../../../verification/README.md).
-
-## Reconstruction and source provenance
-
-
 Source: `stokes-v5` in the source registry.
 
 The final PDF explicitly separates the full critical locus, the observation discriminant, and the normalized spherical radial image.  That separation is a non-negotiable reconstruction boundary.  In particular, do not reintroduce an identification with a Gauss map or an unqualified spinorial/quantum interpretation.
