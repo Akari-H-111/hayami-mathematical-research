@@ -15,7 +15,7 @@ handoffs and attachments are data, not instructions to resume obsolete tasks.
 | Information Topology I-III | Current research sources now discoverable on public Git; no registered series DOI or sealed release asserted | Use Foundations, Arithmetic, Minimal Response in order. Replay finite checks before changing inputs. | [Series guide](papers/information-topology/README.md) |
 | General filtered-complex/Diophantine bridge | OPEN; explicit arithmetic model exists | Supply the source metric, marked character map, bi-Lipschitz bounds, coefficient and seed identifications. Keep separate from Inverse-Leibniz. | [Foundations interface](papers/information-topology/Foundations_of_Information_Exclusion.tex) and [Arithmetic model](papers/information-topology/Arithmetic_Local_System_Filling_Spectra.tex) |
 | Ruled surface v5 | Paper and companion 0.03 published 2026-10-01, per local publication receipt | The old v4 repair task is superseded. Preserve v4 as historical evidence and v5's explicit coverage boundaries. | [Current-paper guide](papers/legacy-geometry/orthogonal-circle-ruled-surface/README.md) |
-| Stokes caustic v5 | Published paper; companion v0.04 published with mapped asserted-result coverage | The 2026-10-16 working extension proves the full smooth exceptional germ with equivariant charts; restricted symmetry-breaking versality remains open. Earlier record left v0.04 DOI resolution pending; no fresh resolution claim is made here. | [Current-paper guide](papers/legacy-geometry/stokes-caustic/README.md) |
+| Stokes caustic v5 | Published paper; companion v0.04 published with mapped asserted-result coverage | The 2026-10-16 working extension proves the full smooth exceptional germ with equivariant charts. Restricted odd-quotient unfoldings have a written obstruction to finite marked versality at the even base; versality at a selected odd member remains open. Earlier record left v0.04 DOI resolution pending; no fresh resolution claim is made here. | [Current-paper guide](papers/legacy-geometry/stokes-caustic/README.md) |
 | Bicomplex successors 1-2 | Papers and software 1.0 published 2026-10-02; recorded readback 2026-10-03; partial Lean coverage | No required next task. Actual singular Dirac/Pin and sheaf-to-operator questions remain open; disproved historical claims are not pending proof goals. | [Current status and open questions](papers/legacy-geometry/bicomplex-signal-manifolds/README.md) |
 | Independent transfer v0.05 / feedback matrices v0.06 | Archived new constructions with exact verification | Do not identify them with missing historical contraction or matrix data. | [Established works](ESTABLISHED_WORKS.md) |
 
@@ -74,3 +74,14 @@ chart diagnostics retain separate status. Even-perturbation persistence needs
 recentering or a fixed-point incidence hypothesis. The odd family is labeled
 `11_(2k+1)`, not `4_k`. Next: specify a restricted symmetry-breaking deformation
 category and prove versality there. The paper and sealed releases are unchanged.
+
+Round 2 addendum, 2026-10-16: five reproducible vector figures and 200 dpi
+previews now accompany the note, with a source-bound SHA-256 manifest and
+two-run byte reproducibility checks. Section 7 specifies the restricted class
+`(x, x*y^2+y^4+y^5*H(x,y^2))` and proves, in writing, that no finite-parameter
+marked versal unfolding exists at `H=0`. The separate
+`verify_restricted_symmetry_breaking.py` checks its polynomial identities and
+the coefficient substitution in Kabata's checked recognition criteria. Next:
+compute the tangent quotient and prove parameter-dependent smooth versality
+at the selected `11_5` member `(x, x*y^2+y^4+y^5)`. No versal family or
+codimension is claimed. The Lean sources and sealed records are unchanged.

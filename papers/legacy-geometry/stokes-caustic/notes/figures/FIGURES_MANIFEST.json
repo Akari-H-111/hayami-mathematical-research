@@ -1,0 +1,31 @@
+{
+  "schema": "stokes-exceptional-germ-figures-v1",
+  "registered_interpreter": "/Users/akari_hayami_64/TAGD_Master_Paper/.agent-venv/bin/python",
+  "runtime_executable": "/Users/akari_hayami_64/tagd-gir-research/.agent-venv/bin/python",
+  "python": "3.14.6",
+  "numpy": "2.5.2",
+  "matplotlib": "3.11.1",
+  "sympy": "1.14.0",
+  "preview_dpi": 200,
+  "pdf_metadata": {
+    "CreationDate": null,
+    "ModDate": null
+  },
+  "evidence_status": "sampled numerical illustrations and one exact-map schematic; not proof",
+  "inputs": {
+    "papers/legacy-geometry/stokes-caustic/verification/build_exceptional_germ_figures.py": "a92f7859ffaa453bbc6980e0539540a72143d5eb0534d9f9867813b5555a5db4",
+    "papers/legacy-geometry/stokes-caustic/verification/verify_exceptional_germ.py": "468fd69824ce075c40d766885be103848cec6b6b32aba0898a69fd777107f807"
+  },
+  "files": {
+    "exceptional_source.pdf": "a5615d71ad276cdf4d2307e2e81d5e31797b469186f357fb5561fc922d3a3186",
+    "exceptional_source.png": "64c931428c51a1e46393a9fc6a67e81e217f3f59a567db52fb49e6b5ccea8492",
+    "exceptional_quotient.pdf": "43d5f535e8c23f3e408e4f1cea3a08fe2e77003c2e10eccb8d4f301593fe932f",
+    "exceptional_quotient.png": "536750e79ffa5148feb7da714f1e538606e52c48fe816359a13779f8ce886398",
+    "exceptional_discriminants.pdf": "774f37f57a83170f2118387f962174e2d85282312a9f24e345c9841a228ee700",
+    "exceptional_discriminants.png": "30917814f3a3fecb0e2f4682736b5064cd1c58ad17248662f3bba5689135d482",
+    "exceptional_factorization.pdf": "1f9507b18bf541d52626d628e08ab31d651b7dfda77e0d19059c5111411bb65f",
+    "exceptional_factorization.png": "61cda426b129476a35881ca52bf3e5b2a47d522ab30b680213f0a9304c7e5a50",
+    "exceptional_perturbations.pdf": "a990f990ca8566c4e2bdd208effddf184b1b8d2e11c649ce453d23b57866fd18",
+    "exceptional_perturbations.png": "cd215ca3e376bcc86d0557511ecfd5035805ab1084f5144d8ac218c8c1240662"
+  }
+}

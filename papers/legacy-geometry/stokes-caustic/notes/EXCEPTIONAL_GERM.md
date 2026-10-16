@@ -1,7 +1,8 @@
 # The exceptional germ of the Stokes v5 observation map
 
 2026-10-16. Research extension beyond the published paper and sealed companion
-v0.04. The paper, PDFs, releases, receipts and manifests are unchanged.
+v0.04. The published paper, existing PDFs, sealed releases, receipts and
+existing manifests are unchanged. New figure assets have their own manifest.
 
 ## Result and evidence
 
@@ -31,8 +32,10 @@ by Kabata, the odd perturbations
 \((X,Xy^2+y^4+y^{2k+1})\), \(k\ge2\), have labels
 \(11_{2k+1}\), not \(4_k\). The latter labels concern
 \((x,y^3\mathbin{\pm}x^ky)\). A versal unfolding for the even base germ
-is not established here; it is not an unrestricted finite-parameter
-\(\mathcal A\)-versal problem of finite codimension.
+is not an unrestricted finite-parameter \(\mathcal A\)-versal problem of
+finite codimension. Section 7 defines a restricted odd-quotient category and
+proves that even its marked unfoldings admit no finite-parameter versal family
+at the even base. Versality at a chosen finite-codimension member remains open.
 
 The accompanying Lean module and replay results are recorded in the companion's
 2026-10-16 status entries. Analyticity, the general perturbation statement and
@@ -335,7 +338,7 @@ normalized by real weighted scalings; this does not say that arbitrary odd
 perturbations are determined by their first odd coefficient. Mixed terms
 enter the recognition conditions.
 
-**Open next problem.** Specify a restricted symmetry-breaking deformation
+**Initial next problem, refined in Section 7.** Specify a restricted symmetry-breaking deformation
 category, compute its tangent quotient, and construct and verify a versal
 family there, or do so for a chosen finite-codimension odd-perturbed member.
 There is also a direct **written infinitesimal obstruction** for the even
@@ -359,6 +362,189 @@ parameter derivatives cannot span it, so a finite-parameter family cannot be
 infinitesimally unrestricted A-versal at this base. This is a linear spanning
 obstruction, not a claimed unfolding theorem. No finite codimension or versal
 family for a Rieger member is calculated here.
+
+## 7. Restricted odd-quotient deformations, 2026-10-16
+
+**Category (definition).** Consider the smooth germs
+\[
+ f_H(x,y)=\bigl(x,xy^2+y^4+y^5H(x,y^2)\bigr),
+ \qquad H\in C^\infty((\mathbb R^2,0),\mathbb R).
+\]
+Here the only symmetry breaking is an odd term with a smooth coefficient on
+the quotient coordinates \((x,v)=(x,y^2)\). The even part and four-jet are
+fixed. A marked unfolding of the even base has a jointly smooth coefficient
+\(H(x,v,\lambda)\) with \(H(x,v,0)\equiv0\). Call a finite-parameter such
+unfolding **marked \(\mathscr C\)-versal** if every unfolding in this class
+is induced by a smooth parameter map taking zero to zero, together with
+jointly smooth source and target diffeomorphism families that are the
+identity on the special fiber. These diffeomorphisms need not preserve the
+displayed formula at intermediate steps. Allowing moving source and target
+sections only enlarges the available equivalences; the obstruction below
+holds with this allowance.
+
+**Written theorem (negative versality statement).** No finite-parameter
+marked \(\mathscr C\)-versal unfolding exists at \(H\equiv0\).
+
+**Proof.** Let a proposed unfolding have \(r\) parameters and derivative
+vectors \(v_1,\ldots,v_r\) at zero. For every smooth coefficient germ
+\(h(x,v)\), the one-parameter family with coefficient \(s h(x,v)\) belongs
+to the category. Differentiating a marked inducing equivalence at \(s=0\)
+would therefore require
+\[
+ (0,y^5h(x,y^2))\in T_e+\operatorname{span}_{\mathbb R}\{v_1,\ldots,v_r\}.
+\]
+This necessary inclusion follows directly from the chain rule, independently
+of any infinitesimal-versality sufficiency theorem. The source and target
+velocities give the two summands defining \(T_e\) in Section 6; parameter
+velocities give constant linear combinations of the \(v_i\).
+
+Define the linear odd trace on smooth vector germs by
+\[
+ \Lambda(a,b)(y)=\operatorname{Odd}_y
+ \bigl[b(-2y^2,y)-y^2a(-2y^2,y)\bigr],
+ \qquad \operatorname{Odd}_y g(y)=\frac{g(y)-g(-y)}2.
+\]
+Writing \(h_0=xy^2+y^4\), a source tangent vector has
+\(b-y^2a=(h_0)_y\xi_2\), which vanishes on \(x=-2y^2\).
+A target tangent vector has even trace because its argument there is
+\((-2y^2,-y^4)\). Thus \(\Lambda(T_e)=0\). But the allowed coefficient
+directions \(h(x,v)=v^j\), for every integer \(j\ge0\), give
+\[
+ \Lambda(0,y^{5+2j})=y^{5+2j}.
+\]
+These smooth germs are linearly independent: differentiating a finite linear
+relation at the distinct orders \(5+2j\) forces every coefficient to vanish.
+They cannot all lie in the span of the \(r\) germs \(\Lambda(v_i)\).
+This contradicts the necessary inclusion and proves the theorem. \(\square\)
+
+**External recognition, specialized exactly.** Kabata's Proposition 3.5(2)
+and Table 4, manuscript pp. 10–11 and 7, respectively, were rechecked in the
+[author manuscript](https://eprints.lib.hokudai.ac.jp/repo/huscap/all/68650/kabataTA-rev.pdf).
+For this class they give smooth \(\mathcal A\)-type \(11_5\) exactly when
+\(H(0,0)\ne0\), and type \(11_7\) exactly when
+\[
+ H(0,0)=0,\qquad I=H_v(0,0)-2H_x(0,0)\ne0.
+\]
+The checked input uses coefficients \(a_{05}\) and
+\(a_{07}-2a_{15}+4a_{23}\). Substitution in our formula gives
+\(a_{05}=H(0,0)\), \(a_{07}=H_v(0,0)\),
+\(a_{15}=H_x(0,0)\), and \(a_{23}=0\).
+In particular \(I=\left.\frac{d}{ds}H(-2s,s)\right|_{s=0}\): it detects
+variation of the odd coefficient along the critical parabola of the even
+base. Both \(H=v\) and \(H=x\) give type \(11_7\), although only the first
+has a pure \(y^7\) term. If both displayed quantities vanish, further
+recognition conditions are needed; no higher type is inferred here.
+
+For the constant coefficient \(H=a\ne0\), there is also an exact elementary
+equivalence to \(f_1\): substitute \((x/a^2,y/a)\) in the source and apply
+\((p,q)\mapsto(a^2p,a^4q)\) in the target. This works for either sign of
+\(a\). It supplies a pointwise normalization, not a family across \(a=0\).
+
+**Exact computation and finite diagnostic.** Run
+`python3 -B papers/legacy-geometry/stokes-caustic/verification/verify_restricted_symmetry_breaking.py`.
+It checks the recognition-coefficient substitution, tangent cancellation,
+the constant-amplitude scaling, and an identity coefficient matrix for twelve
+odd directions. The all-orders independence and nonexistence theorem above
+are written proofs, not conclusions from that finite matrix or Lean results.
+Figure 5 plots an allowed constant odd perturbation.
+
+**Precise remaining open problem.** At the selected member
+\(f_1=(x,xy^2+y^4+y^5)\), compute the full extended smooth
+\(\mathcal A\)-tangent quotient, exhibit explicit polynomial parameter
+directions spanning it, and prove parameter-dependent smooth versality for
+marked \(\mathcal A\)-unfoldings with moving sections. Determine minimality
+separately. Kabata's pointwise recognition and determinacy statements do not
+supply this parameter-dependent theorem. No original Rieger versal-unfolding
+formula or codimension is asserted without checking its full text.
+
+## Reproducible figures, 2026-10-16
+
+The following figures illustrate the written and Lean-checked results; they
+are not additional proof evidence. The generator imports the formulas from
+the exact verifier, samples the actual charts where indicated, and writes
+vector PDFs and same-name 200 dpi PNG previews. All labels and drawing elements
+are generated by Matplotlib. No published paper or release PDF is changed.
+
+![Actual source critical set and chart-coordinate level curves](figures/exceptional_source.png)
+
+**Figure 1. Actual source plane and equivariant chart.** The solid navy axis
+is \(t=0\); the orange curve is the actual rational critical branch
+\(u=U(\cos t)\). Teal contours are levels of the actual coordinate
+\(X(r(M(t,u)))\), and dashed purple contours are levels of the actual odd
+coordinate \(y\) in Section 3. The reflection exchanges \(t\) and \(-t\)
+while fixing \(u\); \(X\) is unchanged and \(y\) changes sign. The chart
+is evaluated numerically on a \(481\times381\) grid, using nine Newton
+steps for the scalar inverse \(r\), with residual, positivity, normal-form
+identity and reflection checks. Negative \(u\) shows the ambient extension.
+[Vector PDF](figures/exceptional_source.pdf).
+
+![Actual quotient critical curve, ramification line and kernel direction](figures/exceptional_quotient.png)
+
+**Figure 2. Ordinary fold before ramification.** The orange curve is the
+sampled exact formula \(u=U(c)\), on 801 values of \(c\). The navy line
+is \(c=1\); the dashed direction and arrow represent the exact kernel
+\(\operatorname{span}(1,1)\) at \((1,0)\). Equal coordinate scales preserve
+the displayed directions. The critical tangent \((1,-2)\) and the kernel
+are both transverse to the ramification line. Shading marks \(c>1\), where
+the analytic quotient map exists although real \(c=\cos t\) does not reach.
+[Vector PDF](figures/exceptional_quotient.pdf).
+
+![Actual and normal-form discriminants with matched orientation](figures/exceptional_discriminants.png)
+
+**Figure 3. Actual discriminant and normal-form discriminant.** Left: the
+actual target is displayed with \(M\) horizontal and \(N\) vertical, so
+\(F(0,0)=(N,M)=(0,1)\) is at the marked endpoint. Right: the horizontal
+coordinate is the actual target chart \(X(r(M))\), and \(Y=N\), with the
+same vertical scale. The orange left curve samples
+\((M(c,U(c)),N(c,U(c)))\) at \(c=\cos t\), \(0\le t\le0.23\);
+the right curve is \(Y=-X^2/4\) at the corresponding \(X(c)\) values.
+Their vertical values are checked numerically to agree. The navy line is
+the reflection-axis image; its dashed continuation corresponds to \(u<0\).
+Arrows on the orange arcs point toward increasing \(|t|\), and the marked
+points correspond under the target chart. Each orange arc is covered twice
+by the two source labels \(\pm t\), or \(\pm y\); coincident image curves
+are not artificially separated. The common tangent and the paired folds
+illustrate the non-finite-determinacy argument of Section 4.
+[Vector PDF](figures/exceptional_discriminants.pdf).
+
+![Commutative germ diagram for the factorization and actual charts](figures/exceptional_factorization.png)
+
+**Figure 4. Exact-map schematic.** The top row is the exact factorization
+\(F=G\circ\sigma\) with basepoints. The downward arrows are the actual
+two-sided local charts constructed in Section 3, and the bottom arrow is
+the full normal form \(f_\infty\). The diagram commutes as a germ. Boxes
+and arrows are a Matplotlib schematic, not sampled source or target data.
+[Vector PDF](figures/exceptional_factorization.pdf).
+
+![Even recentering in the source and an odd perturbation in the target](figures/exceptional_perturbations.png)
+
+**Figure 5. Even recentering and one specified odd perturbation.** Left:
+the source critical curves of
+\(f_\epsilon(x,y)=(x,(x+\epsilon)y^2+y^4)\) for
+\(\epsilon=0\) and \(0.04\). Their exceptional points are respectively
+\((0,0)\) and \((-\epsilon,0)\); the navy line is \(y=0\).
+Right: the critical-value curves of the specified polynomial
+\(f_1(x,y)=(x,xy^2+y^4+y^5)\). Substitution of
+\(x=-2y^2-\tfrac52 y^3\) gives
+\(Y=-y^4-\tfrac32 y^5\); the positive and negative \(y\) arms are drawn
+separately and compared with the gray discriminant of \(f_\infty\).
+These are sampled polynomial curves whose critical and image identities
+are checked exactly by the verifier. This illustration asserts no versality.
+[Vector PDF](figures/exceptional_perturbations.pdf).
+
+Build using the registered figure environment, without optimization:
+
+```sh
+/Users/akari_hayami_64/TAGD_Master_Paper/.agent-venv/bin/python -B papers/legacy-geometry/stokes-caustic/verification/build_exceptional_germ_figures.py
+python3 -B papers/legacy-geometry/stokes-caustic/verification/verify_exceptional_germ.py
+```
+
+The [figure manifest](figures/FIGURES_MANIFEST.json) binds every PDF and PNG,
+the generator and the imported formula source by SHA-256, and records the
+registered interpreter, actual runtime executable and library versions.
+The verifier rejects a missing, extra, stale or hash-mismatched figure/input.
+Byte reproducibility is tested in the registered environment; no cross-platform
+byte-identity claim follows from it.
 
 ## Lean-checked scope
 
@@ -455,3 +641,50 @@ fixed before the successful full replay; there is no outstanding failed
 verification. An early duplicate baseline invocation was an execution error;
 subsequent Lean builds and both final regressions were sequential. No commit,
 push, tag, git-configuration edit or protected publication-file change was made.
+
+## Round 2 verification record, 2026-10-16
+
+The registered figure command used Python 3.14.6, NumPy 2.5.2 and Matplotlib
+3.11.1. The manifest records both the registered interpreter path and its
+resolved runtime executable. Two independent final builds produced identical
+bytes for all ten assets and the manifest. All five PNG previews and all five
+PDF masters rendered through Poppler were visually inspected for labels,
+clipping, orientation and legibility. No raster image objects occur in the
+single-page PDF masters. New assets have no creation or modification dates.
+
+```text
+PASS figure numerics: local inverse residuals, positive chart factors, normal-form and reflection identities
+PASS 5 vector PDFs and 5 PNG previews at 200 dpi; SHA-256 manifest written
+PASS reproducibility: two independent builds have identical hashes for all 10 figure files and manifest
+PASS PDF/PNG structure: 5 single-page vector PDFs without raster images or dates; 5 previews at 200 dpi
+PASS PDF rendering: all 5 masters rendered with Poppler at 200 dpi
+```
+
+The updated exceptional-germ verifier ran with Python 3.9.6, SymPy 1.14.0 and
+mpmath 1.3.0:
+
+```text
+PASS figure manifest: 5 PDFs, 5 PNGs, generator and formula-source SHA-256 hashes
+PASS plotted perturbation critical-curve and critical-value polynomial identities
+PASS exact factorization/reduction/fold/remainder/boundary/bi-germ certificates
+PASS Taylor normal-form identity through degree 11 on 3 specified paths
+PASS numerical actual-chart spot checks (4 points, 60 digits; error < 1e-50)
+PASS exceptional germ: exact certificates, Taylor diagnostics, numerical charts
+```
+
+The new restricted-symmetry-breaking verifier ran with Python 3.9.6 and SymPy
+1.14.0:
+
+```text
+PASS restricted recognition coefficients: H(0,0), H_v(0,0)-2 H_x(0,0)
+PASS odd-trace obstruction: source and common-target tangent terms vanish
+PASS finite tangent witness matrix: rank 12; all-orders independence is written
+PASS nonzero constant odd amplitude: exact weighted rescaling to the y^5 representative
+PASS restricted symmetry breaking: exact certificates; no versality assertion
+```
+
+No Lean file changed in Round 2; the earlier 268/224/33 companion replays above
+remain historical results and were not rerun for figure and written-proof
+changes. The root navigation verifier and local Markdown destinations were
+checked again. No published source, pre-existing PDF, sealed record or git
+configuration was changed, and no commit was made.
