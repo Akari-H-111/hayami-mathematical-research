@@ -1,5 +1,21 @@
 import RuledV5
 
+#print axioms RuledV5.surface_double_signed_elimination
+#print axioms RuledV5.positive_double_sign
+#print axioms RuledV5.double_family_cosine
+#print axioms RuledV5.double_family_sum_product
+#print axioms RuledV5.double_family_physical
+#print axioms RuledV5.double_family_image
+#print axioms RuledV5.double_family_distinct
+#print axioms RuledV5.double_family_sufficient
+#print axioms RuledV5.double_family_mirror_sufficient
+#print axioms RuledV5.double_family_parameter_unique
+#print axioms RuledV5.double_family_roots
+#print axioms RuledV5.double_curve_normalization
+#print axioms RuledV5.positive_double_normalization
+#print axioms RuledV5.positive_double_family
+#print axioms RuledV5.negative_double_family
+
 #print axioms RuledV5.surface_mirror
 #print axioms RuledV5.seam_image_iff
 #print axioms RuledV5.mirror_half_separation

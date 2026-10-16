@@ -112,11 +112,13 @@ theorem double_elimination_certificate {a b A B C E : ℝ}
         _ = 0 := by ring
     linarith
 
-theorem surface_double_elimination {p p' : ℝ × ℝ}
+theorem surface_double_signed_elimination {p p' : ℝ × ℝ}
     (hp : closedLabels p) (hp' : closedLabels p')
     (h : ruledSurface p=ruledSurface p') :
-    doublePolynomial (Real.cos p.1) (Real.cos p'.1)=0 ∨
-      Real.cos p.1=Real.cos p'.1 := by
+    Real.cos p.1=Real.cos p'.1 ∨
+      (doublePolynomial (Real.cos p.1) (Real.cos p'.1)=0 ∧
+       doubleSign (1-Real.cos p.1) (1-Real.cos p'.1)+
+         2*Real.sin p.1*Real.sin p'.1*qChart p'.1*qChart p.1=0) := by
   let a := 1-Real.cos p.1
   let b := 1-Real.cos p'.1
   let A := Real.sin p.1
@@ -146,8 +148,46 @@ theorem surface_double_elimination {p p' : ℝ × ℝ}
   have hc : (a+b)*(A*C+B*E)-2*a*B*C-2*b*A*E=0 := by
     linear_combination (A*C-B*E)*hx' + 2*(a*C-b*E)*hy + 2*(a*B-b*A)*hz
   rcases double_elimination_certificate hA hB hC hE hc with hab | hd
-  · right; dsimp [a,b] at hab; linarith
-  · left; simpa [a,b] using hd.1
+  · left; dsimp [a,b] at hab; linarith
+  · right; simpa [a,b,A,B,C,E] using hd
+
+theorem surface_double_elimination {p p' : ℝ × ℝ}
+    (hp : closedLabels p) (hp' : closedLabels p')
+    (h : ruledSurface p=ruledSurface p') :
+    doublePolynomial (Real.cos p.1) (Real.cos p'.1)=0 ∨
+      Real.cos p.1=Real.cos p'.1 := by
+  rcases surface_double_signed_elimination hp hp' h with hc | hd
+  · exact Or.inr hc
+  · exact Or.inl hd.1
+
+/-- Actual unequal-cosine double pairs in the strict positive interior select the negative sign. -/
+theorem positive_double_sign {p p' : ℝ × ℝ}
+    (hp : closedLabels p) (hp' : closedLabels p')
+    (ht : p.1 ∈ Set.Ioo 0 (Real.pi/2)) (ht' : p'.1 ∈ Set.Ioo 0 (Real.pi/2))
+    (hc : Real.cos p.1 ≠ Real.cos p'.1) (h : ruledSurface p=ruledSurface p') :
+    doublePolynomial (Real.cos p.1) (Real.cos p'.1)=0 ∧
+      doubleSign (1-Real.cos p.1) (1-Real.cos p'.1) < 0 := by
+  rcases surface_double_signed_elimination hp hp' h with he | hd
+  · exact (hc he).elim
+  · refine ⟨hd.1, ?_⟩
+    have hs := Real.sin_pos_of_pos_of_lt_pi ht.1
+      (by linarith [ht.2,Real.pi_pos] : p.1 < Real.pi)
+    have hs' := Real.sin_pos_of_pos_of_lt_pi ht'.1
+      (by linarith [ht'.2,Real.pi_pos] : p'.1 < Real.pi)
+    have hcos := Real.cos_pos_of_mem_Ioo
+      (show p.1 ∈ Set.Ioo (-(Real.pi/2)) (Real.pi/2) by
+        exact ⟨by linarith [ht.1,Real.pi_pos],ht.2⟩)
+    have hcos' := Real.cos_pos_of_mem_Ioo
+      (show p'.1 ∈ Set.Ioo (-(Real.pi/2)) (Real.pi/2) by
+        exact ⟨by linarith [ht'.1,Real.pi_pos],ht'.2⟩)
+    have hq : 0 < qChart p.1 := by
+      unfold qChart qSq
+      exact Real.sqrt_pos.mpr (mul_pos hcos (by linarith [Real.cos_le_one p.1]))
+    have hq' : 0 < qChart p'.1 := by
+      unfold qChart qSq
+      exact Real.sqrt_pos.mpr (mul_pos hcos' (by linarith [Real.cos_le_one p'.1]))
+    have hh : 0 < 2*Real.sin p.1*Real.sin p'.1*qChart p'.1*qChart p.1 := by positivity
+    linarith [hd.2]
 
 end
 end RuledV5

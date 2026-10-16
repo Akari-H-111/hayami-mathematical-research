@@ -14,3 +14,4 @@ import RuledV5.Reparam
 import RuledV5.Degree
 import RuledV5.DegreeApplication
 import RuledV5.SelfIntersection
+import RuledV5.DoubleNormalization

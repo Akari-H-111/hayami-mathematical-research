@@ -1,5 +1,21 @@
 import RuledV5
 
+#check RuledV5.surface_double_signed_elimination
+#check RuledV5.positive_double_sign
+#check RuledV5.double_family_cosine
+#check RuledV5.double_family_sum_product
+#check RuledV5.double_family_physical
+#check RuledV5.double_family_image
+#check RuledV5.double_family_distinct
+#check RuledV5.double_family_sufficient
+#check RuledV5.double_family_mirror_sufficient
+#check RuledV5.double_family_parameter_unique
+#check RuledV5.double_family_roots
+#check RuledV5.double_curve_normalization
+#check RuledV5.positive_double_normalization
+#check RuledV5.positive_double_family
+#check RuledV5.negative_double_family
+
 #check RuledV5.surface_mirror
 #check RuledV5.seam_image_iff
 #check RuledV5.mirror_half_separation
