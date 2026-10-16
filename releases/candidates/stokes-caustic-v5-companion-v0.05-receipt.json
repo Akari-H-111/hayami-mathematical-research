@@ -1,0 +1,32 @@
+{
+  "package": "stokes-caustic-v5-companion-v0.05",
+  "date": "2026-10-17",
+  "source_commit": "8a6f9140fdc0731a071d7c4a2c1fbd67162e7ae3",
+  "archive": "stokes-caustic-v5-companion-v0.05.zip",
+  "archive_sha256": "c049d15ea1b3722d4495beec85b62d57281f1f7bf771bc6ac6c07facec0974f0",
+  "archive_bytes": 730168,
+  "zip_members": 61,
+  "manifest_sha256": "72532f4527f782c1a4377b187f38002a7d9a687741a03101a30c648051eeeed0",
+  "payload_files": 60,
+  "zip_crc": "PASS",
+  "local_replay": [
+    "PASS payload hashes",
+    "PASS 268 public named theorems; build/status/axioms/proof-hole scan [companions/lean/stokes-caustic-v5]",
+    "PASS exceptional germ: exact certificates, Taylor diagnostics, numerical charts [papers/legacy-geometry/stokes-caustic/verification/verify_exceptional_germ.py]",
+    "PASS restricted symmetry breaking: exact certificates; no versality assertion [papers/legacy-geometry/stokes-caustic/verification/verify_restricted_symmetry_breaking.py]",
+    "PASS complete package replay"
+  ],
+  "extracted_replay": [
+    "PASS payload hashes",
+    "PASS 268 public named theorems; build/status/axioms/proof-hole scan [companions/lean/stokes-caustic-v5]",
+    "PASS exceptional germ: exact certificates, Taylor diagnostics, numerical charts [papers/legacy-geometry/stokes-caustic/verification/verify_exceptional_germ.py]",
+    "PASS restricted symmetry breaking: exact certificates; no versality assertion [papers/legacy-geometry/stokes-caustic/verification/verify_restricted_symmetry_breaking.py]",
+    "PASS complete package replay"
+  ],
+  "replay_python": "3.14.6",
+  "cache_disclosure": "Lean .lake dependency/build caches were APFS-cloned from the source checkout on the same host for both replays; they are not packaged.",
+  "status": "LOCAL RELEASE CANDIDATE; publication is recorded separately",
+  "lean_public_named_theorems": {
+    "StokesV5": 268
+  }
+}

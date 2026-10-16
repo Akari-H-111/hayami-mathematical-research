@@ -1,0 +1,33 @@
+{
+  "package": "ruled-surface-v5-companion-v0.04",
+  "date": "2026-10-17",
+  "source_commit": "8a6f9140fdc0731a071d7c4a2c1fbd67162e7ae3",
+  "archive": "ruled-surface-v5-companion-v0.04.zip",
+  "archive_sha256": "7c738d9b1bdb9e2073dea6ffafee7b2b0d0909d7aa2e48a0c7240a13f1a6508d",
+  "archive_bytes": 186729,
+  "zip_members": 77,
+  "manifest_sha256": "1dbdf0c1458dbf908b7b5cfbe8eb1700387ee03fb3d9eaa292adfc34e1322113",
+  "payload_files": 76,
+  "zip_crc": "PASS",
+  "local_replay": [
+    "PASS payload hashes",
+    "PASS 268 public named theorems; build/status/axioms/proof-hole scan [companions/lean/stokes-caustic-v5]",
+    "PASS 246 public named theorems; build/status/full axiom audit/proof-hole scan [companions/lean/ruled-surface-v5]",
+    "PASS self-intersection: 48 exact identities and sign certificates [papers/legacy-geometry/orthogonal-circle-ruled-surface/verification/verify_self_intersection.py]",
+    "PASS complete package replay"
+  ],
+  "extracted_replay": [
+    "PASS payload hashes",
+    "PASS 268 public named theorems; build/status/axioms/proof-hole scan [companions/lean/stokes-caustic-v5]",
+    "PASS 246 public named theorems; build/status/full axiom audit/proof-hole scan [companions/lean/ruled-surface-v5]",
+    "PASS self-intersection: 48 exact identities and sign certificates [papers/legacy-geometry/orthogonal-circle-ruled-surface/verification/verify_self_intersection.py]",
+    "PASS complete package replay"
+  ],
+  "replay_python": "3.14.6",
+  "cache_disclosure": "Lean .lake dependency/build caches were APFS-cloned from the source checkout on the same host for both replays; they are not packaged.",
+  "status": "LOCAL RELEASE CANDIDATE; publication is recorded separately",
+  "lean_public_named_theorems": {
+    "RuledV5": 246,
+    "StokesV5 (dependency)": 268
+  }
+}

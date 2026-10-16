@@ -1,0 +1,38 @@
+{
+  "package": "bicomplex-successor-v1.1-software",
+  "date": "2026-10-17",
+  "source_commit": "8a6f9140fdc0731a071d7c4a2c1fbd67162e7ae3",
+  "archive": "bicomplex-successor-v1.1-software.zip",
+  "archive_sha256": "6add1c508e2e21ddba9f44c408110a4cfc2885b84d209596b3f7105fd5d4e760",
+  "archive_bytes": 4776228,
+  "zip_members": 130,
+  "manifest_sha256": "09ad5e2cdc0ccaf7d03e634b57fe1b112518c852934fac1d251d385707172612",
+  "payload_files": 129,
+  "zip_crc": "PASS",
+  "local_replay": [
+    "PASS payload hashes",
+    "PASS 268 public named theorems; build/status/axioms/proof-hole scan [companions/lean/stokes-caustic-v5]",
+    "PASS 246 public named theorems; build/status/full axiom audit/proof-hole scan [companions/lean/ruled-surface-v5]",
+    "PASS 105 public named theorems; build/status/full axiom audit/proof-hole scan [companions/lean/bicomplex-signal-manifolds]",
+    "PASS successor paper 1 consistency and exact replay; written proofs and external theorems are not machine-certified [papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper1.py]",
+    "PASS successor paper 2 exact replay; written analytic proofs and external theorems are not machine-certified [papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper2.py]",
+    "PASS complete package replay"
+  ],
+  "extracted_replay": [
+    "PASS payload hashes",
+    "PASS 268 public named theorems; build/status/axioms/proof-hole scan [companions/lean/stokes-caustic-v5]",
+    "PASS 246 public named theorems; build/status/full axiom audit/proof-hole scan [companions/lean/ruled-surface-v5]",
+    "PASS 105 public named theorems; build/status/full axiom audit/proof-hole scan [companions/lean/bicomplex-signal-manifolds]",
+    "PASS successor paper 1 consistency and exact replay; written proofs and external theorems are not machine-certified [papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper1.py]",
+    "PASS successor paper 2 exact replay; written analytic proofs and external theorems are not machine-certified [papers/legacy-geometry/bicomplex-signal-manifolds/verification/verify_successor_paper2.py]",
+    "PASS complete package replay"
+  ],
+  "replay_python": "3.14.6",
+  "cache_disclosure": "Lean .lake dependency/build caches were APFS-cloned from the source checkout on the same host for both replays; they are not packaged.",
+  "status": "LOCAL RELEASE CANDIDATE; publication is recorded separately",
+  "lean_public_named_theorems": {
+    "Bicomplex": 105,
+    "RuledV5 (dependency)": 246,
+    "StokesV5 (dependency)": 268
+  }
+}
