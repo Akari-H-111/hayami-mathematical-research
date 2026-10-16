@@ -7,6 +7,23 @@ formalization and historical evidence kept distinct. By Akari Hayami (Jian-Yu Hu
 [Information Topology / Information Exclusion (3)](papers/information-topology/README.md) ·
 [Geometry (4)](papers/legacy-geometry/README.md)
 
+## Latest: October 2026 formalization round
+
+Two open questions from the geometry papers are now settled, with Lean 4 proofs
+and new software releases. The papers themselves are unchanged.
+
+- **Stokes caustic:** the exceptional germ is a fold of a fold, smoothly
+  equivalent to (X, Xy² + y⁴) ([proof note](papers/legacy-geometry/stokes-caustic/notes/EXCEPTIONAL_GERM.md),
+  companion v0.05, [10.5281/zenodo.23422752](https://doi.org/10.5281/zenodo.23422752); 268 Lean theorems).
+- **Ruled surface:** the complete self-intersection is a seam plus two mirror
+  double arcs ([proof note](papers/legacy-geometry/orthogonal-circle-ruled-surface/notes/SELF_INTERSECTION.md),
+  companion v0.04, [10.5281/zenodo.23422777](https://doi.org/10.5281/zenodo.23422777); 246 Lean theorems).
+- **Bicomplex successors:** Lean coverage of the two papers grows from 33 to 105
+  selected statements (software 1.1, [10.5281/zenodo.23422785](https://doi.org/10.5281/zenodo.23422785)).
+
+Neither the papers nor the notes are Lean-formalized as a whole; each coverage
+file lists exactly what is machine-checked and what remains a written proof.
+
 ## Paper catalogue
 
 The seven published items below are preprints. The three Information Topology
