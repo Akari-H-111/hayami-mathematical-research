@@ -1,0 +1,186 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,longtable,microtype}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=blue]{hyperref}
+\hypersetup{pdftitle={Ruled Surface v5 Verification Companion v0.03},pdfauthor={Akari Hayami (Jian-Yu Huang)},pdfsubject={Claimwise full-paper coverage and reproducible verification},pdfkeywords={Lean 4, ruled surface, winding number, manifold with corners}}
+\title{Verification Companion for the Revised\\Orthogonal-Circle Ruled Surface v5}
+\author{Akari Hayami (Jian-Yu Huang)}
+\date{Local companion v0.03 --- 1 October 2026\\Not yet published}
+\begin{document}\maketitle
+\begin{abstract}
+This independent companion maps every asserted mathematical result of the
+corrected v5 article to actual Lean statements, their hypotheses, and exact
+replay. The 224 public named theorems of this project are audited separately
+from the 258 reused Stokes v5 dependency theorems. Lean and Mathlib are
+pinned to 4.33.1. Full coverage means claimwise coverage of the stated
+results; it does not mean that every prose sentence is encoded or that
+the separate open research questions have been solved. Historical v4,
+earlier candidates, and published Stokes artifacts remain unchanged.
+\end{abstract}
+
+\section{Actual objects and retained domains}
+The surface is the actual function
+\[
+ S(t,u)=(\cos t+2u(1-\cos t),(1-u)\sin t,
+ u\sqrt{\cos t(2-\cos t)}).
+\]
+The full physical labels satisfy $|t|\leq\pi/2$ and $0\leq u\leq1$.
+Angular derivative formulas use $Q^2=\cos t(2-\cos t)>0$.
+At each endpoint use the actual smooth map
+\[
+ c_r=1-\sqrt{1-r^2},\quad s_r=\varepsilon\sqrt{1-c_r^2},\quad
+ S_\varepsilon(r,u)=(c_r+2u(1-c_r),(1-u)s_r,ur),
+\]
+where $\varepsilon=\pm1$ and physically $0\leq r<1/2$.
+Smooth extensions use $|r|<1$; a negative extension parameter is not
+silently identified with the physical square root $Q$.
+
+A genuine global parameter is
+\[
+ c_g=(1-v^2)^2,\quad
+ s_g=v\sqrt{(2-v^2)(1+(1-v^2)^2)},\quad
+ q_g=(1-v^2)\sqrt{2-c_g},
+\]
+for $v\in[-1,1]$, with $t_g=2\arcsin(v\sqrt{1-v^2/2})$.
+The Lean product of two interval manifolds with boundary gives the actual
+manifold with corners $[-1,1]\times[0,1]$. The global map is smooth in
+that model, $t_g$ gives a homeomorphism to the original labels, and the
+actual angular and boundary transitions have smooth local inverses.
+Thus the $Q=0$ edges are retained. The five rank losses count source
+labels; they do not classify distinct image points.
+
+Curvature uses the Euclidean dot product, actual first and second
+Fr\'echet derivatives, the normalized cross product, and the ratio of
+the two fundamental-form determinants. It is not a definition by the
+desired rational formula. The second-order chain rule proves consistency
+on the actual atlas overlaps $(r,u)\mapsto(T(r),u)$ with $T'\ne0$.
+It does not assert a general arbitrary-coordinate curvature theorem.
+
+The observation is the actual complex field $F=N+iM$ on $Q>0$, where
+\[
+ N=(1-c)(1-c-2u),\qquad M=\frac{c^2(2-c)-u(1-c+c^2)}Q.
+\]
+It transforms as a source-area density and is not declared a global
+chart-independent scalar field. The physical interior used for local
+indices is $(-\pi/2,\pi/2)\times(0,1)$.
+
+\section{Genuine winding and the lateral dipole}
+For a closed nonzero complex loop, divide by its initial value and lift
+it through the complex exponential with initial logarithm zero. Winding
+is the imaginary endpoint divided by $2\pi$. The formal construction
+proves integer winding, initial-logarithm independence and free closed-loop
+homotopy invariance. It then proves that the image of a positive source
+circle under an invertible real-linear map has winding equal to its
+orientation sign, through a nonvanishing ellipse homotopy.
+
+For an actual nondegenerate zero, differentiability gives
+$F(p+h)=Lh+o(\lVert h\rVert)$. An inverse-operator bound makes the
+homotopy from the derivative circle to every sufficiently small actual
+observation circle nonzero. Radius bounds keep all those source circles
+inside the physical interior. Applying this theorem gives actual winding
+$-1$ and $+1$ at the positive and negative lateral zeros. Their local
+index is defined by this all-small-radius property and is proved unique;
+it is not defined as a determinant sign. The polar point $(0,1)$ has no
+interior index: every positive source circle crosses $u>1$.
+
+The classical planar-index convention is background. No unproved
+local-degree theorem or custom axiom fills this formalization. A separate
+general homological construction of Brouwer degree is not claimed.
+
+\section{Every corrected claim and its formal module}
+\texttt{COVERAGE.md} lists exact theorem names, historical PDF labels,
+article labels, domains, manuscript proofs, exact calculations and scope.
+The following table records the full mathematical claim inventory.
+\small
+\begin{longtable}{@{}p{.53\linewidth}p{.40\linewidth}@{}}
+\toprule Corrected article claim & Actual formal modules\\\midrule\endhead
+Paired-circle constraint; entire smooth boundary atlas; genuine global
+manifold and smooth map & Surface, Boundary, Atlas, Global\\
+Corner tangent limits and absence of a local invertible $C^1$ ambient
+flattening chart & Corner, Embedding\\
+Metric, mixed derivative, actual curvature, non-developability, overlap
+consistency and zero boundary curvature & Geometry, Curvature, Reparam\\
+Exact five physical rank-singular source labels & Surface, Boundary, Atlas\\
+Projection Jacobian and actual source-area transport; old field divergence
+and boundary field limit & ObservationGeometry, Transport\\
+Skeleton range, side signs, actual complex phases and complete zero set &
+Geometry, ObservationGeometry\\
+Nondegenerate lateral zeros and genuine indices $-1,+1$; separate polar
+zero without interior index & Degree, DegreeApplication, ObservationGeometry\\
+Full physical critical set, strict endpoint bound and cubic asymptote
+exclusion & ObservationGeometry; StokesV5 physical-locus modules\\
+Actual ordinary fold charts and two-sided smooth inverses; exceptional
+point not a fold & StokesV5 LocalNormalForm and FoldObstruction\\
+Complete skeleton--critical intersection, strict quintic root bounds,
+regularity of both rational intersections & ObservationGeometry\\
+Chosen-chart cosine response, positive half-period and uniform cubic
+error; actual Fourier integrals and doubled-harmonic dominance & Signal, Fourier\\
+Common open-neighborhood fiber equivalence and transverse counterexample &
+Signal; StokesV5 actual normal forms\\
+Nonzero rotation phase-lock equivalence, uniform-rotation condition,
+zero-signal case and independent nonreal counterexample & Signal\\
+\bottomrule
+\end{longtable}\normalsize
+
+The corner theorem uses arbitrarily small physical quadrants
+$0<r<\delta$, $0\leq u\leq\delta$, $0<\delta\leq1/2$.
+Ordinary fold charts are smooth on open extensions; a boundary fold does
+not imply two-sided physical preimages. Fourier coefficients are actual
+interval integrals on $[-\pi,\pi]$. Dominance requires
+$0<|\kappa|\leq1/2$ and the prescribed input in a fixed Whitney chart.
+Recurrence requires actual fiber equality; rotation additionally requires
+phase lock for a repeated nonzero observation. Arbitrary crossing alone
+has an injective-observation counterexample.
+
+\section{Reproducible verification and trust boundary}
+\texttt{verify\_lean.py} builds the entire project, checks the exhaustive
+status inventory, prints every public theorem's axioms, and rejects missing
+or duplicated audit entries. Only \texttt{propext}, \texttt{Classical.choice},
+and \texttt{Quot.sound} are allowed. The source scan rejects proof holes,
+custom axioms, unsafe proofs and native-decision shortcuts. Audited theorem
+dependencies include the definitions and private lemmas used in their
+proofs. The pinned Stokes project is separately audited and is not counted
+as new Ruled results.
+
+The independent exact verifier differentiates actual maps and replays
+circle identities, rank elimination, tangent limits, curvature, coordinate
+transport, polynomial signs and root isolation, and both recurrence failure
+mechanisms. SymPy is pinned to 1.14.0. Python optimization is forbidden
+because replay uses assertions. Finite figure samples only illustrate
+formula-derived curves; they do not prove geometric or Fourier claims.
+
+The portable candidate's \texttt{verify.py} checks every manifest entry,
+historical authority, distinct publication identities, both Lean inventories,
+exact calculations and source/native/PDF bindings. It rebuilds both PDFs in
+isolation with three passes and compares their full text and every accepted
+page rendering. In-place and extracted replays must both pass. Same-host
+reuse of pinned Mathlib packages and identical-source Stokes cache is
+disclosed in the receipt; it is not an independent-host reproduction.
+
+The native desktop compiler verifies each final standalone source. It
+returns diagnostics, so PDF export and all-page visual QA are separate
+checks. SHA-256 binds sources, exports, inspected pages and acceptance
+records. Earlier unsuccessful proof or layout attempts are retained as
+rejected evidence, never promoted to passes.
+
+\section{Publication identity and independent open questions}
+The historical v4 paper is ResearchGate record 408882406, DOI
+\begin{center}\small
+\href{https://doi.org/10.13140/RG.2.2.10337.26725}{10.13140/RG.2.2.10337.26725}.
+\end{center}
+Its final local PDF remains authoritative. The historical public-page
+readback does not verify remote PDF byte identity.
+The corrected v5 article, companion v0.03 software-version DOI and software
+concept DOI are distinct and remain unassigned until publication.
+ResearchGate and Zenodo are the author's selected platforms. Final public
+operations require confirmation of the concrete accepted artifacts. The
+old public v4 file remains recoverable; no Stokes DOI is reused.
+
+Further classification of the exceptional germ, global identifications of
+the regular image, and an invariant boundary observation convention are
+independent research questions, not missing proofs of claimed results.
+The whole closed image already has the proved corner obstruction to a
+$C^1$ embedded regularization. No positive whole-image embedding claim is
+left implicit. The corrected manuscript and this companion remain local
+until authorized publication and public API/download hash readback.
+\end{document}
