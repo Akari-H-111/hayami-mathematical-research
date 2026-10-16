@@ -59,6 +59,7 @@ open research questions. The closed image already has a negative C1 embedding
 obstruction, and paired u=1 labels are not quotiented. No positive whole-image
 embedding conjecture, arbitrary-trajectory oscillator law, general homological
 Brouwer-degree construction or arbitrary-coordinate curvature theorem is claimed.
+2026-10-16: the exceptional full germ is resolved separately by the new [Stokes working extension](../stokes-caustic-v5/FULL_PAPER_COVERAGE.md#beyond-the-published-paper-the-exceptional-germ), beyond the sealed Stokes v0.04 scope, with restricted symmetry-breaking versality still open.
 There is no remaining formalization gap in the mathematical claims listed above.
 
 The immutable v0.01 (51) and v0.02 (77) packages retain their genuinely partial

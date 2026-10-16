@@ -63,3 +63,37 @@ See `COORDINATE_PROOFS.md` for the construction and theorem map, and
 including displayed expansions and certificate data, to Lean declarations.
 Open questions, plot samples, historical attribution, bibliography and
 unasserted physical interpretations are explicitly excluded.
+
+## 2026-10-16: exceptional normal form, working source only
+
+`StokesV5.ExceptionalNormalForm` adds ten public named theorems, for 268 in the
+working inventory. `HasFoldOfFoldNormalFormAt` requires actual smooth source
+and target charts with two-sided smooth local inverses, centering conditions,
+and an eventual exact full-germ identity. The main theorem is
+`exceptional_hasFoldOfFoldNormalFormAt`; `exceptional_equivariant_charts`
+provides witnesses with the required reflection law, also proved globally
+for the explicit source in `exceptionalNormalSource_equivariant`.
+`quotient_hasWhitneyNormalFormAt` gives actual Whitney charts at `(1,0)` for
+the quotient map; `observationMap_factors` proves the exact factorization.
+The remaining five new public lemmas certify the exact quadratic remainder,
+its boundary difference, base coefficients, and smoothness of the remainder
+and lifted boundary factor. Every public theorem is listed in `Audit.lean`.
+
+The construction uses nonsingular rationalized square-root differences and
+the pinned smooth inverse function theorem; it introduces no parametric
+integral or manuscript axiom. Analyticity and general even-perturbation
+persistence are written results. Non-finite determinacy and classification
+labels use checked external sources and are not encoded as Lean axioms.
+See the [proof note](../../../papers/legacy-geometry/stokes-caustic/notes/EXCEPTIONAL_GERM.md).
+Versal symmetry breaking remains open in the precise sense stated there.
+The historical 258-theorem v0.04 and all earlier sealed scopes are unchanged.
+
+Verified replay, 2026-10-16:
+
+```text
+PASS 268 public named theorems; build/status/axioms/proof-hole scan
+```
+
+Only `propext`, `Classical.choice` and `Quot.sound` are permitted; the
+exhaustive verifier passed. The pre-extension baseline separately returned
+`PASS 258 public named theorems; build/status/axioms/proof-hole scan`.

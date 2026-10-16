@@ -261,3 +261,15 @@ import StokesV5
 #print axioms StokesV5.uFold_t_expansion
 #print axioms StokesV5.weighted_fst_bigO
 #print axioms StokesV5.weighted_snd_bigO
+
+-- 2026-10-16: full exceptional germ, beyond the sealed v0.04 scope.
+#print axioms StokesV5.observationMap_factors
+#print axioms StokesV5.exceptional_exact_fold_factor
+#print axioms StokesV5.exceptional_remainder_boundary_difference
+#print axioms StokesV5.exceptional_coefficients_at_one
+#print axioms StokesV5.exceptionalRemainder_contDiffAt
+#print axioms StokesV5.exceptionalRho_contDiffAt
+#print axioms StokesV5.exceptionalNormalSource_equivariant
+#print axioms StokesV5.exceptional_equivariant_charts
+#print axioms StokesV5.exceptional_hasFoldOfFoldNormalFormAt
+#print axioms StokesV5.quotient_hasWhitneyNormalFormAt

@@ -1,5 +1,9 @@
 import StokesV5
 
+#check StokesV5.exceptional_hasFoldOfFoldNormalFormAt
+#check StokesV5.exceptional_equivariant_charts
+#check StokesV5.exceptionalNormalSource_equivariant
+#check StokesV5.quotient_hasWhitneyNormalFormAt
 #check StokesV5.observationMap_hasExplicitFDerivAt
 #check StokesV5.observationJacobian_factorization
 #check StokesV5.symmetry_isPlaneWhitneyFoldCriterionAt
@@ -37,12 +41,22 @@ regular initial derivative, and strict third-coordinate monotonicity.
 It also formalizes the displayed Taylor/Big-O remainders, exceptional ordinary
 four-jet and rescaling, auxiliary-curve maximum and irreducible quintic,
 fixed Sturm variation data, and exact rational numerical enclosures.
-It does not formalize the open full exceptional-germ classification,
-a general Sturm theorem, or physical interpretations.
+The 2026-10-16 extension constructs actual smooth two-sided charts for the
+full exceptional germ and an equivariant source chart, and proves the quotient
+map has an ordinary Whitney normal form at (1,0). Analyticity, perturbation
+persistence, non-finite determinacy and the external classification labels are
+written/external results, not Lean theorems. Versal unfolding remains open;
+a general Sturm theorem and physical interpretations are not formalized.
 The published criterion-level v0.03 archive is unchanged.
 -/
 
 namespace StokesV5
+
+example : HasFoldOfFoldNormalFormAt observationMap (0, 0) :=
+  exceptional_hasFoldOfFoldNormalFormAt
+
+example : HasWhitneyNormalFormAt quotientObservationMap (1, 0) :=
+  quotient_hasWhitneyNormalFormAt
 
 example (c : ℚ) : pB c = nFold c - B c := pB_eq_nFold_sub_B c
 

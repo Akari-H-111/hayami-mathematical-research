@@ -68,3 +68,26 @@ GitHub and Zenodo with API/download hash readback. Zenodo record `23057630`
 has software DOI `10.5281/zenodo.23057630`; only its `doi.org` resolution
 remains unverified, not the publication or a mathematical proof.
 Do not overwrite v0.02, v0.03, their receipts/manifests, or the authoritative PDF.
+
+## 2026-10-16: full exceptional germ beyond the published scope
+
+The working `ExceptionalNormalForm` module now supplies smooth two-sided
+local charts for the full exceptional germ `(X, X*y^2 + y^4)`, including
+reflection equivariance for the same source witness. It also constructs an
+actual Whitney normal form for the unramified quotient map at `(1,0)`.
+The new ten public named theorems supplement the historical 258.
+
+See the [exceptional-germ proof note](../../../papers/legacy-geometry/stokes-caustic/notes/EXCEPTIONAL_GERM.md)
+for the analytic written proof, exact CAS certificates, numerical spot checks,
+and checked external determinacy/classification references. The germ is not
+finitely A-determined (written proof using Mather–Gaffney). Even perturbations
+preserve the class at a nearby recentered point; persistence at a fixed origin
+needs the quotient critical incidence hypothesis. The correct odd-perturbation
+labels are `11_(2k+1)`, not `4_k`.
+
+The next problem is a restricted symmetry-breaking deformation category and
+its versal family, or a versal family for a selected odd-perturbed member.
+No unrestricted finite-parameter versality theorem, analytic Lean chart
+theorem, general equivariant stability theorem or global classification is
+claimed. All sealed v0.02/v0.03/v0.04 records and the published source remain
+unchanged.

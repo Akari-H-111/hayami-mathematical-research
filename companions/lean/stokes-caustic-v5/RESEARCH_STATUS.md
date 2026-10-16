@@ -83,3 +83,22 @@ sealed assets. The assigned DOI's `doi.org` resolution is not yet verified
 (initial HTTP 404); the direct Zenodo record is available. No v0.03 DOI is reused.
 The authoritative PDF and v0.02/v0.03 stay unchanged. Current external state:
 `releases/candidates/stokes-caustic-v5-v0.04-publication.md`.
+
+## 2026-10-16: exceptional full-germ extension
+
+The working source resolves the smooth local germ problem with actual charts:
+`exceptional_hasFoldOfFoldNormalFormAt` proves the full normal form
+`(X, X*y^2 + y^4)`, `exceptional_equivariant_charts` ties equivariance to the
+same witnesses, and `quotient_hasWhitneyNormalFormAt` proves the intermediate
+ordinary fold. This is beyond the published paper and the sealed v0.04 scope.
+
+The [written proof and evidence boundaries](../../../papers/legacy-geometry/stokes-caustic/notes/EXCEPTIONAL_GERM.md)
+include analytic equivalence, non-finite A-determinacy via a checked external
+criterion, and even-perturbation persistence at a moved point. The proposed
+fixed-origin persistence assertion is false without an incidence hypothesis;
+the proposed Rieger `4_k` label is corrected to `11_(2k+1)` (`k >= 2`).
+
+Next: specify and study restricted symmetry-breaking unfoldings. Neither a
+finite-parameter unrestricted A-versal unfolding of the even base nor a
+general all-orders recognition theorem for arbitrary odd perturbations is
+asserted. The existing release and publication history above is unchanged.

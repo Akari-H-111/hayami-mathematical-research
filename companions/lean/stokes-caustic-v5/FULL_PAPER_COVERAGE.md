@@ -53,3 +53,31 @@ Run `python3 -B verify_lean.py` in this directory. It checks every public named
 theorem against the axiom audit, rejects proof holes and extra axioms, and
 replays the pinned build and status checks. Independent CAS and standard-library
 Sturm scripts remain separate evidence in the release package.
+
+## Beyond the published paper: the exceptional germ
+
+2026-10-16. This is a working-source extension beyond the unchanged paper and
+sealed v0.04, whose 258-theorem scope remains historical.
+
+`StokesV5.ExceptionalNormalForm` proves the full smooth germ identity
+`(X, X*y^2 + y^4)` with actual smooth source and target charts and smooth
+two-sided local inverses (`exceptional_hasFoldOfFoldNormalFormAt`).
+`exceptional_equivariant_charts` supplies the same normal-form witnesses
+with reflection equivariance, and `exceptionalNormalSource_equivariant`
+proves the source formula is equivariant everywhere.
+`quotient_hasWhitneyNormalFormAt` constructs actual Whitney charts for
+`quotientObservationMap` at `(1,0)`; `observationMap_factors` connects it to
+`observationMap` through `c = cos t`. The exact remainder, boundary difference,
+coefficient and smoothness lemmas are also audited.
+
+The [proof note](../../../papers/legacy-geometry/stokes-caustic/notes/EXCEPTIONAL_GERM.md)
+proves analytic equivalence and correctly recentered even-perturbation
+persistence in writing. Non-finite A-determinacy uses the checked external
+Mather–Gaffney necessary condition; Rieger's odd perturbation labels, checked
+in Kabata, are `11_(2k+1)` for `k >= 2`, not `4_k`. These statements are not
+Lean-checked here. Versality in a specified restricted symmetry-breaking
+category remains open. The fixed-origin persistence claim without a critical
+incidence hypothesis is false. No scope is retroactively added to a release.
+
+Replay: `python3 -B verify_lean.py` (268 public named theorems in the working
+source), and the new exact/numerical verifier linked from the proof note.

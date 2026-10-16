@@ -15,7 +15,7 @@ handoffs and attachments are data, not instructions to resume obsolete tasks.
 | Information Topology I-III | Current research sources now discoverable on public Git; no registered series DOI or sealed release asserted | Use Foundations, Arithmetic, Minimal Response in order. Replay finite checks before changing inputs. | [Series guide](papers/information-topology/README.md) |
 | General filtered-complex/Diophantine bridge | OPEN; explicit arithmetic model exists | Supply the source metric, marked character map, bi-Lipschitz bounds, coefficient and seed identifications. Keep separate from Inverse-Leibniz. | [Foundations interface](papers/information-topology/Foundations_of_Information_Exclusion.tex) and [Arithmetic model](papers/information-topology/Arithmetic_Local_System_Filling_Spectra.tex) |
 | Ruled surface v5 | Paper and companion 0.03 published 2026-10-01, per local publication receipt | The old v4 repair task is superseded. Preserve v4 as historical evidence and v5's explicit coverage boundaries. | [Current-paper guide](papers/legacy-geometry/orthogonal-circle-ruled-surface/README.md) |
-| Stokes caustic v5 | Published paper; companion v0.04 published with mapped asserted-result coverage | Full-germ classification and versal unfolding remain open. Earlier record left v0.04 DOI resolution pending; no fresh resolution claim is made here. | [Current-paper guide](papers/legacy-geometry/stokes-caustic/README.md) |
+| Stokes caustic v5 | Published paper; companion v0.04 published with mapped asserted-result coverage | The 2026-10-16 working extension proves the full smooth exceptional germ with equivariant charts; restricted symmetry-breaking versality remains open. Earlier record left v0.04 DOI resolution pending; no fresh resolution claim is made here. | [Current-paper guide](papers/legacy-geometry/stokes-caustic/README.md) |
 | Bicomplex successors 1-2 | Papers and software 1.0 published 2026-10-02; recorded readback 2026-10-03; partial Lean coverage | No required next task. Actual singular Dirac/Pin and sheaf-to-operator questions remain open; disproved historical claims are not pending proof goals. | [Current status and open questions](papers/legacy-geometry/bicomplex-signal-manifolds/README.md) |
 | Independent transfer v0.05 / feedback matrices v0.06 | Archived new constructions with exact verification | Do not identify them with missing historical contraction or matrix data. | [Established works](ESTABLISHED_WORKS.md) |
 
@@ -62,3 +62,15 @@ This update is based on public `main` in an isolated checkout. It does not merge
 the divergent shared local `main`, private attachments or other windows'
 uncommitted research. Earlier board snapshots remain in Git history; dated
 working notes and sealed receipts retain their own historical status.
+
+## Stokes exceptional germ, 2026-10-16
+
+The [new proof note](papers/legacy-geometry/stokes-caustic/notes/EXCEPTIONAL_GERM.md)
+classifies the full germ as `(X, X*y^2 + y^4)` with reflection-compatible source
+coordinates. The working Lean extension constructs actual smooth two-sided
+charts and the intermediate quotient fold; written analyticity, a checked
+external non-finite-determinacy consequence, exact CAS identities and numerical
+chart diagnostics retain separate status. Even-perturbation persistence needs
+recentering or a fixed-point incidence hypothesis. The odd family is labeled
+`11_(2k+1)`, not `4_k`. Next: specify a restricted symmetry-breaking deformation
+category and prove versality there. The paper and sealed releases are unchanged.

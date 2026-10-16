@@ -10,8 +10,8 @@ Its [Lean coverage map](../../../companions/lean/stokes-caustic-v5/FULL_PAPER_CO
 lists all asserted mathematical results covered by companion v0.04 (258 public
 named theorems). The [software record](https://zenodo.org/records/23057630) is
 separate from the paper DOI. Historical companion v0.03 remains criterion-level;
-v0.04 coverage is never retroactively attributed to it. Full-germ classification
-and versal unfolding remain open. See the [verification guide](../../../verification/README.md).
+v0.04 coverage is never retroactively attributed to it. The paper leaves full-germ classification
+and versal unfolding open; the dated working extension below has newer scope. See the [verification guide](../../../verification/README.md).
 
 ## Reconstruction and source provenance
 
@@ -26,8 +26,8 @@ Its [Lean coverage map](../../../companions/lean/stokes-caustic-v5/FULL_PAPER_CO
 lists all asserted mathematical results covered by companion v0.04 (258 public
 named theorems). The [software record](https://zenodo.org/records/23057630) is
 separate from the paper DOI. Historical companion v0.03 remains criterion-level;
-v0.04 coverage is never retroactively attributed to it. Full-germ classification
-and versal unfolding remain open. See the [verification guide](../../../verification/README.md).
+v0.04 coverage is never retroactively attributed to it. The paper leaves full-germ classification
+and versal unfolding open; the dated working extension below has newer scope. See the [verification guide](../../../verification/README.md).
 
 ## Reconstruction and source provenance
 
@@ -53,3 +53,13 @@ numerical bounds. The paper's open full-germ classification and unfolding,
 plot samples and physical interpretations are excluded. The exhaustive Lean
 audit is replayed by `verify_lean.py`. These results are packaged separately
 as v0.04, never retroactively included in criterion-level v0.03.
+
+## Working research extension, 2026-10-16
+
+The [exceptional-germ proof note](notes/EXCEPTIONAL_GERM.md) resolves the full
+local germ beyond the published paper and sealed v0.04: smooth equivariant
+charts are constructed in the working Lean companion, while analyticity,
+recentered even-perturbation persistence and the external non-finite-determinacy
+argument have their own written status. Restricted symmetry-breaking versality
+remains open. Run the [new exact verifier](verification/verify_exceptional_germ.py)
+and the companion's `python3 -B verify_lean.py`; see the dated coverage entry.

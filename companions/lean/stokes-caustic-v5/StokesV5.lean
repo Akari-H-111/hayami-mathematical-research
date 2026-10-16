@@ -23,3 +23,4 @@ import StokesV5.NumericalBounds
 import StokesV5.Skeleton
 import StokesV5.OrdinaryJet
 import StokesV5.FoldObstruction
+import StokesV5.ExceptionalNormalForm
