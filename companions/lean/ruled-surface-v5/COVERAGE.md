@@ -56,8 +56,9 @@ are finite displays, never mathematical certificates.
 An invariant boundary-observation convention remains an independent open
 research question. Two former open questions are now addressed beyond the
 published article (2026-10-16): global image fibers are classified by the
-written proof in the self-intersection section below (the complete
-classification is not yet Lean-formalized), and the exceptional full germ is
+written proof in the self-intersection section below (Lean proves the
+explicit-family sufficiency and the unique-parameter converse in each open
+angular half; the closed-rectangle assembly remains written), and the exceptional full germ is
 classified by the [Stokes working extension](../stokes-caustic-v5/FULL_PAPER_COVERAGE.md#beyond-the-published-paper-the-exceptional-germ),
 beyond the sealed Stokes v0.04 scope, with restricted symmetry-breaking
 versality still open. The closed image already has a negative C1 embedding
@@ -106,15 +107,52 @@ extraneous real branch introduced by squaring the eliminant.
 - `surface_double_elimination`: equal images anywhere in the closed physical
   rectangle imply `D(cos t,cos t')=0` or equal cosines.
 
-All seven are imported, status-checked and axiom-audited. The live inventory
-is 231 own public named theorems; the historical 224 count above is preserved.
+These seven Round 1 results are imported, status-checked and axiom-audited.
+The Round 1 live inventory was 231 own public named theorems; the historical
+224 count above is preserved.
 The independent exact replay is
 `python3 -B papers/legacy-geometry/orthogonal-circle-ruled-surface/verification/verify_self_intersection.py`
 from the repository root. `self_intersection_table.py` in the same directory
 emits a numerical CSV illustration; Matplotlib is unavailable and no plot
 library was added. The table is not evidence for the universal proof.
 
-Still open: full Lean formalization of the global classification and quotient
-homeomorphism, full local surface-germ equivalence to a Whitney umbrella,
-further exceptional-germ classification, and an invariant boundary-observation
-convention. No new release or publication is implied.
+### Round 2: actual family sufficiency and strict-half necessity
+
+2026-10-16. The live companion adds 15 public named theorems, bringing its
+inventory to 246. The previously sealed 224-theorem scope is unchanged.
+
+- `surface_double_signed_elimination` retains the actual sine/Q sign equality
+  in the universal necessary condition. `positive_double_sign` proves `D=0`
+  and `H<0` for actual unequal-cosine double pairs with both angles in
+  `(0,π/2)`.
+- `double_family_cosine`, `double_family_sum_product`,
+  `double_family_physical`, and `double_family_image` check the explicit
+  labels and their actual displayed image on `0≤v≤sqrt(5)-2`, including the
+  coalescent limit.
+- `double_family_distinct`, `double_family_sufficient`, and
+  `double_family_mirror_sufficient` prove distinct physical labels with the
+  displayed actual image in both halves for every `0≤v<sqrt(5)-2`. This
+  includes the boundary crossing at `v=0`.
+- `double_family_parameter_unique` and `double_family_roots` recover the
+  parameter and unordered roots from their sum and product.
+  `double_curve_normalization` proves that distinct `a,b∈(0,1)` satisfying
+  `D(1-a,1-b)=0` and `H<0` have the physical rational normalization.
+- `positive_double_normalization` recovers a unique parameter for the cosine
+  offsets of actual strict positive-half double pairs.
+  `positive_double_family` and `negative_double_family` prove that distinct
+  physical equal-image labels whose angles both lie in the same strict
+  angular half are exactly the explicit pair, in either order, for a unique
+  `v∈(0,sqrt(5)-2)`. Both statements retain the entire ruling interval
+  `0≤u≤1`; they recover ruling parameters as well as cosines.
+
+The new modules are `DoubleFamily.lean` and `DoubleNormalization.lean`.
+Every new public theorem is imported, status-checked and axiom-audited.
+No numerical or SymPy result is used as a Lean premise.
+
+Remaining written-only obligations: assembly of the full closed-rectangle
+classification, including all additional boundary exclusions and the symmetry
+segment; the global two-label fiber bound and cross-cap singleton fibers;
+smoothness of the source arcs; and the quotient homeomorphism. Full local
+surface-germ equivalence to a Whitney umbrella, further exceptional-germ
+classification and an invariant boundary-observation convention remain open.
+No new release or publication is implied.

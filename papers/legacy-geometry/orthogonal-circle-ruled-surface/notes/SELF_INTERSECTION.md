@@ -10,14 +10,19 @@ embedded arc through that label; the actual double-label locus omits it.
 Every fiber has at most two labels. The only two-label fibers are the seam
 pairs and the pairs on the two mirror arcs described explicitly below.
 
-**Verification boundary.** The complete classification, smooth-arc argument
-and quotient homeomorphism below are written proofs supported by exact
-symbolic certificates, not a complete Lean formalization. Lean checks the
-boundary examples in both halves, mirror symmetry and separation, the seam
-iff, and the universal necessary elimination condition. The table script is
-numerical illustration only. No full surface-germ equivalence to a Whitney
-umbrella, further exceptional-germ classification, or invariant boundary
-observation convention is asserted here.
+**Verification boundary.** Lean now proves sufficiency for the entire explicit
+family in both halves, including physical membership, distinctness before the
+limit, and equality to the displayed actual image. Membership and image
+equality also include the coalescent endpoint. Lean proves the unique-parameter
+converse for distinct physical labels whose angles both lie in the same strict
+angular half, `(0,π/2)` or `(-π/2,0)`; the ruling parameters still range over
+`[0,1]`. The universal signed elimination, seam iff, boundary examples and
+mirror separation are also checked. The full closed-rectangle assembly,
+exclusion of additional boundary fibers, global two-label bound and cross-cap
+singleton fibers, smoothness of the source arcs, and the quotient homeomorphism
+remain written proofs. The table script is numerical illustration only.
+Full surface-germ equivalence to a Whitney umbrella, further exceptional-germ
+classification, and an invariant boundary-observation convention remain open.
 
 ## 1. Precise classification and formulas
 
@@ -390,7 +395,8 @@ The second emits a CSV table to standard output using floating-point
 arithmetic. Matplotlib is unavailable in the registered runtime; no plot
 package is added. The table is an illustration and is not used in the proof.
 
-New public Lean results in `RuledV5/SelfIntersection.lean`:
+Public self-intersection Lean results, including the Round 2 additions in
+`RuledV5/DoubleFamily.lean` and `RuledV5/DoubleNormalization.lean`:
 
 | Theorem | Kernel-checked statement |
 | --- | --- |
@@ -401,11 +407,33 @@ New public Lean results in `RuledV5/SelfIntersection.lean`:
 | `exact_negative_boundary_double_point` | The two reflected angular labels have image `(4/5,-3/5,0)` |
 | `double_elimination_certificate` | Four squared-root identities and coplanarity imply equal parameters or `D=0` together with the retained sign equality |
 | `surface_double_elimination` | Equal actual surface images of any two labels in the closed rectangle imply `D(cos t,cos t')=0` or equal cosines |
+| `surface_double_signed_elimination` | Universal closed-label elimination with the actual sine/Q sign equality retained |
+| `positive_double_sign` | Actual unequal-cosine double pairs with both angles in `(0,π/2)` satisfy `D=0` and `H<0` |
+| `double_family_cosine` | For `0≤v≤sqrt(5)-2` and root sign `ε=±1`, the actual label cosine is `1-a_ε` |
+| `double_family_sum_product` | The two explicit roots have sum `x(v)` and product `y(v)`, including the limit |
+| `double_family_physical` | Both root labels belong to the closed physical rectangle for `0≤v≤sqrt(5)-2` |
+| `double_family_image` | Each root label has actual `ruledSurface` image equal to the displayed `I_+(v)`, including the limit |
+| `double_family_distinct` | The root labels are distinct for `0≤v<sqrt(5)-2` |
+| `double_family_sufficient` | Physical membership, distinctness and actual displayed image equality for the whole positive family |
+| `double_family_mirror_sufficient` | The reflected labels are physical and distinct and have the displayed reflected image |
+| `double_family_parameter_unique` | Equal sums and products determine the same nonnegative physical parameter, including the limit |
+| `double_family_roots` | Given the sum and product, the unordered cosine-offset roots are exactly the explicit square-root pair |
+| `double_curve_normalization` | For distinct `a,b∈(0,1)`, the equations `D(1-a,1-b)=0`, `H<0` recover `v∈(0,sqrt(5)-2)` with the stated sum and product |
+| `positive_double_normalization` | Every actual unequal-cosine double pair in the strict positive angular half has a unique such parameter for its cosine offsets |
+| `positive_double_family` | Every distinct physical equal-image pair with both angles in `(0,π/2)` is exactly the two explicit labels, in either order, for a unique `v∈(0,sqrt(5)-2)` |
+| `negative_double_family` | The same unique-parameter converse for both angles in `(-π/2,0)`, with reflected labels |
 
 Every new public theorem is listed in `Status.lean` and audited in
 `Audit.lean`; only `propext`, `Classical.choice`, `Quot.sound` are allowed.
 The elimination theorem covers endpoints directly rather than extending an
 interior division argument by numerical continuity.
+
+The conic reconstruction proves `r²=(3-k)(k-1)` before introducing
+`v=r/(k-1)`, recovers the rational sum and product, and uses the retained
+negative sign to select `v>0`. A nonzero two-ruling determinant recovers the
+actual ruling parameters from the first two image coordinates. Thus the two
+strict-half converse theorems identify actual labels and a unique parameter;
+they do not merely certify an eliminant or squared-coordinate proxy.
 
 No published-paper claim was found false. The supplied resultant,
 singularity data and rationality expectation are confirmed. The corrections
@@ -433,3 +461,29 @@ directories. The numerical table script emitted 17 rows and passed its
 coordinate-agreement assertions. `git diff --check` passed. No protected
 paper source, PDF, release, receipt, manifest or dependency-companion source
 was changed, and no commit or external publication was made.
+
+### Round 2 formalization replay
+
+The required `python3 -B verify_lean.py` commands were run sequentially in
+`companions/lean/ruled-surface-v5/` and then
+`companions/lean/bicomplex-signal-manifolds/`. The exact Python replay and
+navigation/source-integrity check were also run. Verbatim result lines:
+
+```text
+PASS 246 public named theorems; build/status/full axiom audit/proof-hole scan
+PASS 33 public named theorems; build/status/full axiom audit/proof-hole scan
+PASS self-intersection: 48 exact identities and sign certificates
+PASS: 13 reading guides, 116 local links, ten current papers, 35 source hashes and TeX inputs.
+```
+
+An additional inventory check confirmed that all 246 public theorem names
+occur exactly once in both Audit and Status. All 15 Round 2 theorems depend
+only on `propext`, `Classical.choice`, and `Quot.sound`. No numerical or CAS
+output is a Lean hypothesis. Single-file development checks and the full
+project checks were serialized. `git diff --check` passed.
+
+No mathematical discrepancy was found in the written classification.
+Development failures involved proof-script coercions, simplification and
+positivity steps and were corrected. Non-fatal tactic-style warnings remain.
+No dependency-companion source, protected publication artifact or Git
+configuration was edited; no commit or external publication was made.
