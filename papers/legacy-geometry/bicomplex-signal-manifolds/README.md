@@ -56,6 +56,25 @@ receipts keep their original statuses ("unpublished", "publication hold"); those
 words describe their own date only. The v13/0.0x manuscripts are working notes kept in
 the repository; they were never published as papers.
 
+### Working-tree Lean extension, 2026-10-16
+
+The local companion now has **partial coverage of 105 selected statements**;
+the full build/status/axiom/proof-hole verifier passed. The 72 additions concern
+the two successor papers:
+one-sided realization limits, actual-edge phase/density and analytic rigidity,
+window integrals, the Roman differential and normalized jets, finite symmetry
+and spectral blocks, boundary-plane shears and the scalar cutoff energy model.
+See the [complete theorem/hypothesis table](../../../companions/lean/bicomplex-signal-manifolds/COVERAGE.md)
+and [research status](../../../companions/lean/bicomplex-signal-manifolds/RESEARCH_STATUS.md).
+
+The published software 1.0 and paper 1 Appendix D retain their 33-statement
+checkpoint. The papers, PDFs and sealed records are unchanged. The extension
+records the necessary nonzero-frequency qualification in paper 1 `prop:windows`
+and distinguishes the Roman matrix's block dimensions from eigenspace
+multiplicities when eigenvalues coincide. The scalar model energy identity is
+not a zero-capacity theorem; operator/PDE and Whitney recognition arguments
+retain their written/external scope. Neither paper is Lean-formalized.
+
 ### Where the mathematics stands
 
 The 66 named blocks of v12, classified in paper 1, Appendix A.3. The table agrees
@@ -99,7 +118,8 @@ machine-certified. **X** published external theorem used with its hypotheses
 checked (`proofs/REFERENCE_AUDIT.md`). **E** exact or symbolic computation by the
 verifiers; it checks the algebra the proofs rely on, not the analysis. **N**
 numerical or finite replay and figure panels; illustrations, not proofs. **L** Lean
-4 / Mathlib: 33 own theorems on selected statements
+4 / Mathlib: the published checkpoint has 33 own theorems; the working-tree
+extension has 105 selected statements with the complete own audit passed
 (`../../../companions/lean/bicomplex-signal-manifolds/COVERAGE.md`); the PDE,
 operator, sheaf and topology arguments are not formalized and neither paper is Lean-formalized.
 **H** historical recovery: none claimed. The new constructions are not the missing
@@ -118,14 +138,14 @@ matplotlib 3.11.1, sympy 1.14.0, mpmath 1.3.0). From the repository root; in the
 | Purpose | Command | Interpreter | Last confirmed |
 | --- | --- | --- | --- |
 | Legacy baseline | `verification/legacy-reconstruction/verify_all.py` | `PY_LEGACY` | 2026-10-03 PASS |
-| Successor papers 1 and 2: consistency and exact replay (they also replay the earlier exact verifiers) | `V/verify_successor_paper1.py`, `V/verify_successor_paper2.py` | either | 2026-10-03 PASS on both |
+| Successor papers 1 and 2: consistency and exact replay (they also replay the earlier exact verifiers) | `V/verify_successor_paper1.py`, `V/verify_successor_paper2.py` | either | 2026-10-16 PASS with `python3 -B` |
 | Earlier verifiers one by one | `V/verify_revision.py` (v13), `V/verify_continuation.py` (0.02), `V/verify_continuation_0_04.py` (0.04), `V/verify_local_algebra.py`, `V/verify_spectral_algebra.py`, `V/verify_crosscap_models.py` | either | 2026-10-03 PASS on both |
 | Claim map (deterministic; rewrites `claims/CLAIM_MAP.*` byte-identically) | `V/build_claim_map.py` | `PY_LEGACY` | 2026-10-03, hashes unchanged |
 | Rebuild the two PDFs (three-pass pdflatex; fails on Overfull, Underfull, warnings, undefined references; overwrites `successor/*.pdf`, so renew `successor/qa/` and `successor/qa_paper2/` if the PDF changes) | `V/build_successor_paper1_pdf.py`, `V/build_successor_paper2_pdf.py` | any, with pdflatex | 2026-10-02 |
 | Regenerate the ten figures and `successor/figures/FIGURES_MANIFEST.json` | `V/build_successor_figures.py` | `PY_TAGD` only | 2026-10-02 (hashes reproduced in a clean extraction) |
 | Assemble the release files (deterministic zips; standard library only) | `V/build_successor_release.py` | any python3 | 2026-10-02, run with `PY_TAGD` |
 | Standalone replay | unzip the software zip, then `python -B verify.py` | either | 2026-10-02 PASS |
-| Lean (Lean 4.33.1; needs the sibling `ruled-surface-v5` and `stokes-caustic-v5` projects) | `companions/lean/bicomplex-signal-manifolds/verify_lean.py` | any python3 | 2026-10-02 fresh in-place PASS, 33 theorems |
+| Lean (Lean 4.33.1; needs the sibling `ruled-surface-v5` and `stokes-caustic-v5` projects) | `companions/lean/bicomplex-signal-manifolds/verify_lean.py` | any python3 | 2026-10-16 in-place PASS, 105 theorems; same-host pinned cache reuse |
 | Sealed checkpoints (v13 0.01, 0.02, 0.03) | from the candidate root `releases/candidates/<checkpoint>/`: `python -B verify.py` (`--lean` adds fresh complete Lean audits) | `PY_LEGACY` (the receipts record Python 3.9.6, sympy 1.14.0) | recorded in their receipts (2026-10-01/02); not re-run in the 2026-10-03 closeout |
 
 The 2026-10-02 and 2026-10-03 runs are the same machine; they are not independent-host evidence. The documentation closeout of
@@ -142,7 +162,7 @@ No priority order; none of these is a required next step.
 - **A use of bicomplex multiplication.** The proved results are statements about two complex components (`BC ≅ ℂ⊕ℂ`); a theorem that truly needs the bicomplex structure is not known.
 - **Independent signal or physical models.** Capacity, mass, clock and chirality need models of their own; the coincidences `√5`, dimensions, `2π`, `4π` supply no bridge.
 - **Priority and novelty.** The literature comparison is incomplete (`proofs/ORIGINALITY_AND_GAPS.md`); the results are candidate contributions only.
-- **Formal coverage.** The analytic and operator proofs have no Lean certificate.
+- **Formal coverage.** The remaining PDE/operator, sheaf/topology and Whitney recognition proofs have no Lean certificate; the selected analytic and algebraic statements are listed in the companion coverage table.
 
 **Closed negatives: not targets.** Existence of an analytic readout for the original assignment;
 `i*Ψ^!Z ≅ Z[−1]`; the ±1 sector decomposition of the constant sheaf; the (2,2) classification, Markov
@@ -326,8 +346,9 @@ fixed-Dirichlet point restriction, actual graph-bounded traces and exhaustive
 resolvent Green domains. Explicit logarithmic coefficients, Dirac parametrices,
 overlap estimates and singular-cut phase/Pin transmission remain open.
 
-The [own Lean project](../../../companions/lean/bicomplex-signal-manifolds/COVERAGE.md)
-has 33 public named theorems, including quadratures, metric energies, interval
+At the preserved continuation 0.02 checkpoint, the
+[own Lean project](../../../companions/lean/bicomplex-signal-manifolds/COVERAGE.md)
+had 33 public named theorems, including quadratures, metric energies, interval
 integrals, actual
 Gram integrals/eigenvalue bounds, exponential root lifting and genuine
 predecessor charts/winding. Written and external results are not promoted to

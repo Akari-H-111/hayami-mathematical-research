@@ -16,7 +16,7 @@ handoffs and attachments are data, not instructions to resume obsolete tasks.
 | General filtered-complex/Diophantine bridge | OPEN; explicit arithmetic model exists | Supply the source metric, marked character map, bi-Lipschitz bounds, coefficient and seed identifications. Keep separate from Inverse-Leibniz. | [Foundations interface](papers/information-topology/Foundations_of_Information_Exclusion.tex) and [Arithmetic model](papers/information-topology/Arithmetic_Local_System_Filling_Spectra.tex) |
 | Ruled surface v5 | Published paper/0.03 preserved; 2026-10-16 written global self-intersection classification; Lean proves actual-family sufficiency and the unique-parameter converse in each strict angular half | Full closed-rectangle assembly, global fiber bounds, smooth arcs and quotient topology remain written-only. Preserve the published scope and endpoint atlas. | [Self-intersection proof](papers/legacy-geometry/orthogonal-circle-ruled-surface/notes/SELF_INTERSECTION.md) and [live coverage](companions/lean/ruled-surface-v5/COVERAGE.md) |
 | Stokes caustic v5 | Published paper; companion v0.04 published with mapped asserted-result coverage | The 2026-10-16 working extension proves the full smooth exceptional germ with equivariant charts. Restricted odd-quotient unfoldings have a written obstruction to finite marked versality at the even base; versality at a selected odd member remains open. Earlier record left v0.04 DOI resolution pending; no fresh resolution claim is made here. | [Current-paper guide](papers/legacy-geometry/stokes-caustic/README.md) |
-| Bicomplex successors 1-2 | Papers and software 1.0 published 2026-10-02; recorded readback 2026-10-03; partial Lean coverage | No required next task. Actual singular Dirac/Pin and sheaf-to-operator questions remain open; disproved historical claims are not pending proof goals. | [Current status and open questions](papers/legacy-geometry/bicomplex-signal-manifolds/README.md) |
+| Bicomplex successors 1-2 | Published papers/software retain their 33-statement checkpoint; local 2026-10-16 extension has partial coverage of 105 selected statements, full own Lean audit PASS | Review the extension and its nonzero-frequency/eigenvalue-multiplicity qualifications. Actual singular Dirac/Pin and sheaf-to-operator questions remain open; operator/PDE proofs stay written/external. | [Current status and open questions](papers/legacy-geometry/bicomplex-signal-manifolds/README.md) |
 | Independent transfer v0.05 / feedback matrices v0.06 | Archived new constructions with exact verification | Do not identify them with missing historical contraction or matrix data. | [Established works](ESTABLISHED_WORKS.md) |
 
 Publication statuses above come from existing repository records and the author's
@@ -30,6 +30,13 @@ Use the [verification guide](verification/README.md) for exact commands and
 scope. Each series guide links its authoritative sources and coverage map.
 Never use Python `-O`. Finite checks cannot replace universal proofs, and named
 Lean theorem counts cannot be promoted beyond their claimwise coverage.
+
+On 2026-10-16 the Bicomplex companion's unchanged `verify_lean.py` passed for
+105 public named theorems (72 added), including build, status, full axiom audit
+and proof-hole scan. Both successor-paper consistency/exact/finite replays and
+repository navigation passed. This is same-host pinned cache reuse; separate
+dependency audits and independent-host replay were not repeated. Papers, PDFs,
+sealed records and sibling companion sources remain unchanged.
 
 The Information Topology relocation preserves all manuscript, figure and
 bibliography inputs byte-for-byte; only the plot checker accepts a harmless

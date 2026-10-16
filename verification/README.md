@@ -64,9 +64,13 @@ cp -R releases/current/ruled-surface-v5-source-v0.03/companions/lean/ruled-surfa
 python3 -B local/replay/lean/bicomplex-signal-manifolds/verify_lean.py
 ```
 
-This requires the pinned Lean/Lake toolchain; it is a setup route, not a claim
-of a fresh Lean build in the navigation update. Lean covers 33 selected named theorems;
-written and external operator/PDE proofs are not certified by the finite scripts.
+This requires the pinned Lean/Lake toolchain. The working-tree extension has
+partial coverage of 105 selected statements: `python3 -B verify_lean.py` passed
+the build/status/full axiom audit/proof-hole scan on 2026-10-16, reusing pinned
+same-host caches. The published checkpoint retains 33. Separate dependency
+audits and independent-host replay were not repeated. See the
+[theorem/hypothesis table](../companions/lean/bicomplex-signal-manifolds/COVERAGE.md).
+Written and external operator/PDE proofs are not certified by the finite scripts.
 
 ## Ruled and Stokes Lean companions
 

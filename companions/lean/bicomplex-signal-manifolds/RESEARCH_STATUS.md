@@ -1,5 +1,44 @@
 # Bicomplex research status
 
+## Selected written-result extension, 2026-10-16
+
+Working-tree scope: **partial coverage of 105 selected statements**, adding 72
+public named theorems to the preserved 33. Serial module builds and the full
+project verifier passed. `COVERAGE.md` lists every theorem,
+its hypotheses, paper label and remaining written/external obligations.
+
+Required command, from this project: `python3 -B verify_lean.py`.
+
+```text
+PASS 105 public named theorems; build/status/full axiom audit/proof-hole scan
+```
+
+The 33-theorem baseline, both successor-paper consistency/exact/finite replays,
+and repository navigation also passed. Every new public theorem is imported,
+status-checked and audited; only `propext`, `Classical.choice`, `Quot.sound`
+are permitted. This is same-host pinned cache reuse. Separate full dependency
+audits (224 Ruled / 258 Stokes) and independent-host replay were not repeated.
+
+Paper 1 additions cover one-sided endpoint obstructions, the actual affine
+sphere no-go, phase/density-matrix edge obstructions, analytic curves/lines and
+actual-edge rigidity, and the stated integral windows and modulus limit.
+The printed all-real-frequency decay claim needs delta nonzero; zero frequency
+is handled separately and has a formal counterexample to the printed bound.
+
+Paper 2 additions cover the actual Roman differential/tangent rank set and
+normalized-chart jets, the signed-coordinate finite action and invariant
+matrix spectral blocks, the actual Hermitian boundary-plane shear argument,
+and the logarithmic cutoff model energy integral/limit. Spectral block
+dimensions 1,2,3 remain valid when eigenvalues coincide; exact eigenspace
+multiplicities then merge. B_eta's analytic construction/invariance, operator
+extensions, Whitney recognition, smoothing and zero capacity stay written or
+external. Neither paper is Lean-formalized.
+
+The published software 1.0 and paper 1 Appendix D retain their 33-statement
+checkpoint. Papers, PDFs, releases, receipts, manifests, sibling companions and
+toolchain/configuration files are unchanged. No commit or external action is
+part of this work. The older sections below retain their historical status.
+
 ## Successor publication (2026-10-02 to 2026-10-03)
 
 Status: the two successor papers and the software companion 1.0 are published (see
