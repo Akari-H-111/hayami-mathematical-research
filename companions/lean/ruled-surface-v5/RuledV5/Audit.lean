@@ -1,5 +1,13 @@
 import RuledV5
 
+#print axioms RuledV5.surface_mirror
+#print axioms RuledV5.seam_image_iff
+#print axioms RuledV5.mirror_half_separation
+#print axioms RuledV5.exact_boundary_double_point
+#print axioms RuledV5.exact_negative_boundary_double_point
+#print axioms RuledV5.double_elimination_certificate
+#print axioms RuledV5.surface_double_elimination
+
 #print axioms RuledV5.actual_projection_jacobian
 #print axioms RuledV5.angular_boundary_left_inverse
 #print axioms RuledV5.angular_field_boundary_diverges

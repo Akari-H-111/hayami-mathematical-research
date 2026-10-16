@@ -13,3 +13,4 @@ import RuledV5.Global
 import RuledV5.Reparam
 import RuledV5.Degree
 import RuledV5.DegreeApplication
+import RuledV5.SelfIntersection
