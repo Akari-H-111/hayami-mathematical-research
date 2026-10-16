@@ -53,13 +53,18 @@ are finite displays, never mathematical certificates.
 
 ## Research questions outside the article's asserted results
 
-Further exceptional-germ classification, global identifications of the regular
-image, and an invariant boundary-observation convention remain independent
-open research questions. The closed image already has a negative C1 embedding
-obstruction, and paired u=1 labels are not quotiented. No positive whole-image
-embedding conjecture, arbitrary-trajectory oscillator law, general homological
-Brouwer-degree construction or arbitrary-coordinate curvature theorem is claimed.
-2026-10-16: the exceptional full germ is resolved separately by the new [Stokes working extension](../stokes-caustic-v5/FULL_PAPER_COVERAGE.md#beyond-the-published-paper-the-exceptional-germ), beyond the sealed Stokes v0.04 scope, with restricted symmetry-breaking versality still open.
+An invariant boundary-observation convention remains an independent open
+research question. Two former open questions are now addressed beyond the
+published article (2026-10-16): global image fibers are classified by the
+written proof in the self-intersection section below (the complete
+classification is not yet Lean-formalized), and the exceptional full germ is
+classified by the [Stokes working extension](../stokes-caustic-v5/FULL_PAPER_COVERAGE.md#beyond-the-published-paper-the-exceptional-germ),
+beyond the sealed Stokes v0.04 scope, with restricted symmetry-breaking
+versality still open. The closed image already has a negative C1 embedding
+obstruction, and the source atlas retains paired u=1 labels separately. No
+positive whole-image embedding conjecture, arbitrary-trajectory oscillator law,
+general homological Brouwer-degree construction or arbitrary-coordinate
+curvature theorem is claimed.
 There is no remaining formalization gap in the mathematical claims listed above.
 
 The immutable v0.01 (51) and v0.02 (77) packages retain their genuinely partial
@@ -67,3 +72,49 @@ coverage. They are not retrospectively relabeled full-paper packages. Historical
 baseline replay still reproduces old failed claims; passing that replay does
 not certify v4. Public scope is ResearchGate and Zenodo, with final confirmation
 of the concrete candidate required. No public release or new DOI is implied.
+
+## Beyond the published article: self-intersection
+
+2026-10-16. This is new research in the live companion, separate from the
+unchanged published article and immutable v0.01/v0.02/v0.03 packages.
+
+The [proof note](../../../papers/legacy-geometry/orthogonal-circle-ruled-surface/notes/SELF_INTERSECTION.md)
+classifies every fiber on the entire closed physical rectangle: the only
+distinct-label equalities are seam pairs and pairs on the two mirror double
+arcs. Each closed source arc runs from `(±π/2,2/5)` through `P±` to
+`(±arccos(4/5),0)`, is smooth in the completed endpoint atlas, and has the
+reflection involution of a folded interval. The cross-cap itself has a
+singleton fiber; the actual double-label locus omits it. There are no triple
+points or additional boundary identifications. The compact image is
+homeomorphic to the rectangle modulo precisely these identifications.
+
+These are **written proofs with exact symbolic support**, not a claim that
+the full classification or quotient topology is Lean-checked. The rational
+normalization uses `0≤v≤sqrt(5)-2`; a retained sign condition removes the
+extraneous real branch introduced by squaring the eliminant.
+
+`RuledV5/SelfIntersection.lean` adds seven public named results:
+
+- `surface_mirror`: actual mirror symmetry.
+- `seam_image_iff`: seam equality iff equal or opposite angular labels.
+- `mirror_half_separation`: separation of the two strict halves off the seam,
+  including endpoint angular labels.
+- `exact_boundary_double_point` and `exact_negative_boundary_double_point`:
+  the exact boundary crossings, with the positive completed-chart value.
+- `double_elimination_certificate`: a polynomial coplanarity certificate,
+  including the sign equality lost in squaring.
+- `surface_double_elimination`: equal images anywhere in the closed physical
+  rectangle imply `D(cos t,cos t')=0` or equal cosines.
+
+All seven are imported, status-checked and axiom-audited. The live inventory
+is 231 own public named theorems; the historical 224 count above is preserved.
+The independent exact replay is
+`python3 -B papers/legacy-geometry/orthogonal-circle-ruled-surface/verification/verify_self_intersection.py`
+from the repository root. `self_intersection_table.py` in the same directory
+emits a numerical CSV illustration; Matplotlib is unavailable and no plot
+library was added. The table is not evidence for the universal proof.
+
+Still open: full Lean formalization of the global classification and quotient
+homeomorphism, full local surface-germ equivalence to a Whitney umbrella,
+further exceptional-germ classification, and an invariant boundary-observation
+convention. No new release or publication is implied.

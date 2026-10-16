@@ -1,5 +1,13 @@
 import RuledV5
 
+#check RuledV5.surface_mirror
+#check RuledV5.seam_image_iff
+#check RuledV5.mirror_half_separation
+#check RuledV5.exact_boundary_double_point
+#check RuledV5.exact_negative_boundary_double_point
+#check RuledV5.double_elimination_certificate
+#check RuledV5.surface_double_elimination
+
 #check RuledV5.actual_projection_jacobian
 #check RuledV5.angular_boundary_left_inverse
 #check RuledV5.angular_field_boundary_diverges
