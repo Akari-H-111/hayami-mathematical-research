@@ -4,6 +4,9 @@ Run with python3 -B; never -O. CAS checks do not certify smooth inverse charts
 or the cited singularity-theory results. No files are regenerated.
 """
 import platform
+from pathlib import Path
+import hashlib
+import json
 
 import mpmath as mp
 import sympy as sp
@@ -29,6 +32,39 @@ ma = m(a).subs(q(a), qa)
 K = (P2(c, a)+2*ma*((1-c)*qr-ql)-n(a))/w(c)
 K1 = K.subs({c: 1, qc: 1}, simultaneous=True)
 L = (2-2*a-c-2*ma*qr-c*K1)/w(c)
+
+
+def figure_checks():
+    root = Path(__file__).resolve().parents[4]
+    figures = Path(__file__).resolve().parents[1] / "notes/figures"
+    manifest = json.loads((figures / "FIGURES_MANIFEST.json").read_text())
+    names = ("exceptional_source", "exceptional_quotient", "exceptional_discriminants",
+             "exceptional_factorization", "exceptional_perturbations")
+    expected = {f"{name}.{suffix}" for name in names for suffix in ("pdf", "png")}
+    assert set(manifest["files"]) == expected
+    assert {p.name for p in figures.iterdir() if p.suffix in (".pdf", ".png")} == expected
+    assert manifest["schema"] == "stokes-exceptional-germ-figures-v1"
+    assert manifest["registered_interpreter"] == "/Users/akari_hayami_64/TAGD_Master_Paper/.agent-venv/bin/python"
+    assert (manifest["python"], manifest["numpy"], manifest["matplotlib"], manifest["preview_dpi"]) == (
+        "3.14.6", "2.5.2", "3.11.1", 200)
+    expected_inputs = {str(Path(__file__).resolve().relative_to(root)),
+                       str(Path(__file__).with_name("build_exceptional_germ_figures.py").relative_to(root))}
+    assert set(manifest["inputs"]) == expected_inputs
+    for name, digest in manifest["inputs"].items():
+        assert hashlib.sha256((root / name).read_bytes()).hexdigest() == digest, name
+    for name, digest in manifest["files"].items():
+        data = (figures / name).read_bytes()
+        assert hashlib.sha256(data).hexdigest() == digest, name
+        assert data.startswith(b"%PDF-" if name.endswith(".pdf") else b"\x89PNG\r\n\x1a\n"), name
+    print("PASS figure manifest: 5 PDFs, 5 PNGs, generator and formula-source SHA-256 hashes")
+    eps, eta = sp.symbols("eps eta", real=True)
+    even = (x + eps)*y**2 + y**4
+    odd = x*y**2 + y**4 + eta*y**5
+    zero(sp.diff(even, y).subs(x, -eps-2*y**2))
+    critical_x = -2*y**2-sp.Rational(5, 2)*eta*y**3
+    zero(sp.diff(odd, y).subs(x, critical_x))
+    zero(odd.subs(x, critical_x)+y**4+sp.Rational(3, 2)*eta*y**5)
+    print("PASS plotted perturbation critical-curve and critical-value polynomial identities")
 
 
 def zero(expr):
@@ -166,6 +202,7 @@ def numerical_checks():
 
 if __name__ == "__main__":
     print("Python", platform.python_version(), "SymPy", sp.__version__, "mpmath", mp.__version__)
+    figure_checks()
     exact_checks()
     taylor_checks()
     numerical_checks()
