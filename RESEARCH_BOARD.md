@@ -24,6 +24,15 @@ local handoff; they are not a new live audit of publication platforms. The Ruled
 v5 paper/software identifiers are `10.5281/zenodo.23073642` and
 `10.5281/zenodo.23073654`. Paper and software DOIs remain distinct.
 
+## Software releases, 2026-10-17
+
+New companion versions are public on GitHub and Zenodo, with sealed-hash readback:
+Stokes v0.05 `10.5281/zenodo.23422752` (268 theorems; exceptional germ),
+Ruled v0.04 `10.5281/zenodo.23422777` (246; self-intersection) and Bicomplex
+software 1.1 `10.5281/zenodo.23422785` (105 selected statements). Each is a new
+version under its existing concept DOI; papers and earlier versions are unchanged.
+Record: `releases/candidates/formal-closure-20261017-publication.json`.
+
 ## Verification routes
 
 Use the [verification guide](verification/README.md) for exact commands and

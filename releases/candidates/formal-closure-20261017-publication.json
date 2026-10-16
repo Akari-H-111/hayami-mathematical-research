@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-17",
+  "source_commit": "52c8a6ecf74abdea0ce1064de6238de33602bc06",
+  "authorization": "2026-10-16: the author delegated the timing of commit, push and Zenodo submission to Claude for this formalization round; the author signed in to Zenodo in Chrome for this session.",
+  "releases": [
+    {
+      "package": "stokes-caustic-v5-companion-v0.05",
+      "github_tag": "stokes-v5-companion-v0.05",
+      "zenodo_record": 23422752,
+      "version_doi": "10.5281/zenodo.23422752",
+      "concept_doi": "10.5281/zenodo.22726976",
+      "previous_version_doi": "10.5281/zenodo.23057630",
+      "lean": {
+        "StokesV5": 268
+      }
+    },
+    {
+      "package": "ruled-surface-v5-companion-v0.04",
+      "github_tag": "ruled-surface-v5-companion-v0.04",
+      "zenodo_record": 23422777,
+      "version_doi": "10.5281/zenodo.23422777",
+      "concept_doi": "10.5281/zenodo.23073653",
+      "previous_version_doi": "10.5281/zenodo.23073654",
+      "lean": {
+        "RuledV5": 246,
+        "StokesV5 dependency": 268
+      }
+    },
+    {
+      "package": "bicomplex-successor-v1.1-software",
+      "github_tag": "bicomplex-successor-v1.1",
+      "zenodo_record": 23422785,
+      "version_doi": "10.5281/zenodo.23422785",
+      "concept_doi": "10.5281/zenodo.23103298",
+      "previous_version_doi": "10.5281/zenodo.23103299",
+      "lean": {
+        "Bicomplex": 105,
+        "RuledV5 dependency": 246,
+        "StokesV5 dependency": 268
+      }
+    }
+  ],
+  "readback": {
+    "github_unauthenticated_download_sha256": "PASS for all three ZIPs",
+    "zenodo_public_api": "PASS: published, version, publication_date 2026-10-17, concept DOI as listed",
+    "zenodo_unauthenticated_download_sha256": "PASS for all six files (ZIP and receipt per record)",
+    "zenodo_upload_md5": "PASS against local files before publishing",
+    "doi_org": "HTTP 302 to zenodo.org/doi/... for all three version DOIs"
+  },
+  "unchanged": "Published papers, earlier software versions, sealed packages, receipts and manifests."
+}

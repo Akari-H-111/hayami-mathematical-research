@@ -1,5 +1,7 @@
 # Bicomplex signal manifolds
 
+**2026-10-17:** software 1.1 ([10.5281/zenodo.23422785](https://doi.org/10.5281/zenodo.23422785)) extends the Lean companion to partial coverage of 105 selected statements and builds on its own.
+
 ## Start here (current as of 2026-10-03)
 
 **Status: published.** The 2026 ResearchGate preprint *Geometric Realization of

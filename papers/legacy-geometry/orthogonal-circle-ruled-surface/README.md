@@ -1,5 +1,7 @@
 # Orthogonal-Circle Ruled Surface
 
+**2026-10-17:** verification companion v0.04 ([10.5281/zenodo.23422777](https://doi.org/10.5281/zenodo.23422777)) adds the global self-intersection classification; see [the proof note](notes/SELF_INTERSECTION.md).
+
 [Geometry papers](../README.md) · [Repository home](../../../README.md)
 
 ## Current paper: v5

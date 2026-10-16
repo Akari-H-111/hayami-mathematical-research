@@ -1,5 +1,7 @@
 # Stokes Caustic: observation discriminant and spherical fold image
 
+**2026-10-17:** software companion v0.05 ([10.5281/zenodo.23422752](https://doi.org/10.5281/zenodo.23422752)) adds the full classification of the exceptional germ; see [the proof note](notes/EXCEPTIONAL_GERM.md).
+
 [Geometry papers](../README.md) · [Repository home](../../../README.md)
 
 ## Current paper and companion
