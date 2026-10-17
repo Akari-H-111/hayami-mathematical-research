@@ -74,3 +74,12 @@ Sealed releases stay at their existing paths. Final PDFs, archives, receipts and
 hash manifests are immutable. The Information Topology sources formerly imported
 locally under `Foundations_of_Information_Exclusion/` now have a series-level home
 at `papers/information-topology/`; relative TeX inputs are preserved.
+
+## License
+
+Mixed by file type; the approved policy and its decision record are in
+[LICENSE.md](LICENSE.md) and [LICENSE_POLICY.md](LICENSE_POLICY.md).
+
+- Lean and Python source, together with build and verification configuration: `Apache-2.0`.
+- Manuscripts, PDFs, original figures and project documentation: `CC BY 4.0`.
+- `archive/`, `releases/archive/`, third-party materials, and the sealed v0.01 Stokes companion: no new license grant.
