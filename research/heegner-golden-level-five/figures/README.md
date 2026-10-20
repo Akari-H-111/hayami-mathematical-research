@@ -39,7 +39,7 @@ are in `verification/DIRECTOR_REFERENCE.json` and `DIRECTOR_DATA_CHECK.json`.
 The latter confirms the constants, fixed gap, j coefficients, correction terms
 and residual ladder. The saved-array checker also passes.
 
-The companion [assembled paper](../paper-v0.1-20261019/README.md) integrates all
+The companion [assembled paper](../paper-v0.1/README.md) integrates all
 twelve plates with manuscript-specific numbering and proofs. Client model
 selection evidence is retained in that packet's `provenance/CLI_SELECTIONS.json`.
 PDFs and the atlas have been structurally checked with qpdf. Matplotlib figure

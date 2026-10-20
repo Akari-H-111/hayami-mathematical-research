@@ -3,7 +3,7 @@
 **Date:** 20 October 2026
 **Author:** Akari Hayami (Jian-Yu Huang)
 **Contact:** akari.h.1.9984@gmail.com
-**Status:** Verified local draft; local git archive only, not pushed.
+**Status:** Verified public research archive; public release branch.
 
 This note is the entry point for the Heegner level-5 fibre workstream. It
 supplements, and does not modify, the frozen completion records inside the
@@ -11,18 +11,18 @@ version packets.
 
 ## Current reading order
 
-1. `paper-v0.2-portrait-20261020/README.md` — the current 10-page portrait
+1. `paper/README.md` — the current 10-page portrait
    article, its 14-page landscape supplement, the source bundle, and the
    per-page verification records.
-2. `paper-v0.1-20261019/README.md` — the frozen 19-page article, twelve-plate
+2. `paper-v0.1/README.md` — the frozen 19-page article, twelve-plate
    suite, and fourteen-page atlas. This checkpoint is not revised.
-3. `figures-terra56-20261019/README.md` — shared native-vector plates, exported
+3. `figures/README.md` — shared native-vector plates, exported
    SVG/PNG files, saved data, replay scripts, and the atlas.
-4. `novelty-audit-20261019/README.md`, `hermite-geometry-20261019/README.md`,
-   and `paper-closure-20261019/README.md` — the literature audit, the
+4. `studies/novelty-audit-20261019/README.md`, `studies/hermite-geometry-20261019/README.md`,
+   and `studies/paper-closure-20261019/README.md` — the literature audit, the
    icosahedral-geometry continuation, and the HMR/RH paper-closure study.
-5. `cold-review-sol61-20261019/README.md` and
-   `cold-review-layout-sol61-deepseek-20261020/README.md` — the independent
+5. `studies/cold-review-sol61-20261019/README.md` and
+   `studies/cold-review-layout-20261020/README.md` — the independent
    editorial reviews and director syntheses. These are process records, not
    accepted manuscript text.
 
@@ -42,19 +42,26 @@ The v0.2 completion hashes are:
 
 ## Git state
 
-- The workstream is recorded on the local branch
-  `publish/heegner-golden-v0.2`, based on public `origin/main` at `cd41476`.
-- The branch contains a local archive commit with this workstream, the merged
-  Heegner entries in `RESEARCH_BOARD.md`, and this handover. It has **not** been
-  pushed, uploaded, or published.
+- The workstream lives at `research/heegner-golden-level-five/` and is released
+  through the public branch `publish/heegner-golden-v0.2`, based on
+  `origin/main` at `cd41476`.
+- The branch retains the original archive commit and the 20 October 2026
+  repository-facing reorganization. The public repository is the authority for
+  the current merge state.
 - `logs/` directories and third-party source scans are deliberately excluded
   from the commit. The ignored logs include the large Cox and Hermite scans;
   the commit keeps only the authored and generated research record.
 - The v0.2 packet's line `Local draft; no commit, upload, or publication`
   describes its state at completion and remains true for the sealed bytes. This
-  handover records the later local archive without rebinding the v0.2 hashes.
-- To publish later, review the branch diff first, then push the branch and open
-  a pull request. Do not push the shared, divergent `main` checkout directly.
+  handover records the later public archive without rebinding the v0.2 hashes.
+- The reorganization moved the current packet to `paper/`, the v0.1 checkpoint
+  to `paper-v0.1/`, the shared plates to `figures/`, and process records to
+  `studies/`. It did not rewrite any PDF, TeX source, ZIP, or verification JSON.
+- `paper/verification/PRESERVATION_CHECK.json` records absolute pre-rename
+  paths from the completion run. It remains a historical byte-hash record;
+  current relative paths are the ones in this handover and the README map.
+- Do not push the shared, divergent `main` checkout directly. Public changes
+  travel through the isolated `publish/` branch and a pull request.
 
 ## Verification
 

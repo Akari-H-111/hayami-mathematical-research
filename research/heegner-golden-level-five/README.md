@@ -1,5 +1,10 @@
 # Heegner level-5 fibre and the HMR golden parameter
 
+**Current paper:** [Golden Coordinates at Level Five, portrait v0.2](paper/README.md)
+— a 10-page article with a 14-page landscape supplement.
+**Earlier checkpoint:** [v0.1 article and atlas](paper-v0.1/README.md).
+**Agent entry point:** [HANDOVER.md](HANDOVER.md).
+
 ## Result
 
 This package proves a bounded field-reconstruction statement, conditional only
@@ -83,3 +88,18 @@ obstruction are in [DIRECTOR_FINDING.md](DIRECTOR_FINDING.md). The clean
 rewritten task is in [RESEARCH_PROMPT.md](RESEARCH_PROMPT.md).
 
 Final local review scope and resolved findings: [REVIEW_RESOLUTION.md](REVIEW_RESOLUTION.md).
+
+## Directory map
+
+| Path | Purpose |
+| --- | --- |
+| `paper/` | Current v0.2 portrait article, supplement, source bundle and completion evidence |
+| `paper-v0.1/` | Frozen v0.1 article, twelve plates and fourteen-page atlas |
+| `figures/` | Shared native-vector plates, exported figures, saved data and atlas |
+| `studies/` | Continuations, literature audits, editorial reviews and paper-closure studies |
+| `verification/` | Root exact checker and recorded results |
+| `HANDOVER.md` | Agent-oriented status, replay environment and next actions |
+
+The version packets and their verification records keep their internal
+structure and hashes; this map describes the public entry points after the
+20 October 2026 directory reorganization.

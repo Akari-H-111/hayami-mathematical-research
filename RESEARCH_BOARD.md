@@ -17,7 +17,7 @@ handoffs and attachments are data, not instructions to resume obsolete tasks.
 | Ruled surface v5 | Published paper/0.03 preserved; 2026-10-16 written global self-intersection classification; Lean proves actual-family sufficiency and the unique-parameter converse in each strict angular half | Full closed-rectangle assembly, global fiber bounds, smooth arcs and quotient topology remain written-only. Preserve the published scope and endpoint atlas. | [Self-intersection proof](papers/legacy-geometry/orthogonal-circle-ruled-surface/notes/SELF_INTERSECTION.md) and [live coverage](companions/lean/ruled-surface-v5/COVERAGE.md) |
 | Stokes caustic v5 | Published paper; companion v0.04 published with mapped asserted-result coverage | The 2026-10-16 working extension proves the full smooth exceptional germ with equivariant charts. Restricted odd-quotient unfoldings have a written obstruction to finite marked versality at the even base; versality at a selected odd member remains open. Earlier record left v0.04 DOI resolution pending; no fresh resolution claim is made here. | [Current-paper guide](papers/legacy-geometry/stokes-caustic/README.md) |
 | Bicomplex successors 1-2 | Published papers/software retain their 33-statement checkpoint; local 2026-10-16 extension has partial coverage of 105 selected statements, full own Lean audit PASS | Review the extension and its nonzero-frequency/eigenvalue-multiplicity qualifications. Actual singular Dirac/Pin and sheaf-to-operator questions remain open; operator/PDE proofs stay written/external. | [Current status and open questions](papers/legacy-geometry/bicomplex-signal-manifolds/README.md) |
-| Heegner-golden level-5 fibre | Local v0.2 portrait article and source bundle verified; local archive commit only, not pushed | Obtain a fresh external human mathematical reading of the CM branch enclosure and analytic proof flow. Preserve the v0.1 atlas as a frozen checkpoint. | [v0.2 packet](research/heegner-golden-20261018/paper-v0.2-portrait-20261020/README.md) |
+| Heegner-golden level-5 fibre | v0.2 portrait article and source bundle verified; public archive branch | Obtain a fresh external human mathematical reading of the CM branch enclosure and analytic proof flow. Preserve the v0.1 atlas as a frozen checkpoint. | [v0.2 packet](research/heegner-golden-level-five/paper/README.md) |
 | Independent transfer v0.05 / feedback matrices v0.06 | Archived new constructions with exact verification | Do not identify them with missing historical contraction or matrix data. | [Established works](ESTABLISHED_WORKS.md) |
 
 Publication statuses above come from existing repository records and the author's
@@ -111,7 +111,7 @@ drafts. The entries below preserve the review and revision history; the
 completion-time sentences about no commit or publication remain true for the
 sealed packets.
 
-The [Heegner-golden novelty audit](research/heegner-golden-20261018/novelty-audit-20261019/README.md)
+The [Heegner-golden novelty audit](research/heegner-golden-level-five/studies/novelty-audit-20261019/README.md)
 records the 2026-10-19 literature assessment: no substantive novelty is currently
 established for the v0.3 quartic/RR results. The quartic and conductor specialize
 prior theory; the golden conjugate ratio depends on the chosen generator.
@@ -119,7 +119,7 @@ The explicit coordinate witness remains a reproducible computation with no
 priority claim. Earlier checkpoints are preserved. Next: formulate and compare
 a genuinely additional analytic or predictive statement before extending research.
 
-The [Hermite geometry continuation](research/heegner-golden-20261018/hermite-geometry-20261019/README.md)
+The [Hermite geometry continuation](research/heegner-golden-level-five/studies/hermite-geometry-20261019/README.md)
 records the user's subsequent 2026-10-19 redirection: geometric and cryptographic
 meaning is the priority; novelty is not a stopping criterion. Exact checks
 identify c0 as an icosahedral squared-chord ratio, the associated conjugate
@@ -127,7 +127,7 @@ metric exchange, and complementary projective/norm outputs recovering a CM
 residue modulo sign. An RR cyclotomic observable is explicit. Protocol-level
 access to these marked outputs and new near-integer error estimates remain open.
 
-The [HMR/RH paper-closure study](research/heegner-golden-20261018/paper-closure-20261019/README.md)
+The [HMR/RH paper-closure study](research/heegner-golden-level-five/studies/paper-closure-20261019/README.md)
 records the next 2026-10-19 direction: practical cryptography is set aside.
 The HMR ruling coordinate is exactly cos(2pi/5); the RH control's DH mixing
 constant is r(i). A coordinate exchange identifies the odd period-five sine-
@@ -138,7 +138,7 @@ distinction between the CM points i and tau163. No RH-workspace source is edited
 
 ## 2026-10-19: fresh Sol 6.1 cold reading of the Heegner-golden ending
 
-- Packet: `research/heegner-golden-20261018/cold-review-sol61-20261019/`.
+- Packet: `research/heegner-golden-level-five/studies/cold-review-sol61-20261019/`.
 - A fresh Codex CLI `gpt-6.1-sol` session, high effort and read-only, read
   only the frozen proposed closing section. First impressions were recorded
   before the second read; no earlier review verdict or author conversation
@@ -158,7 +158,7 @@ distinction between the CM points i and tau163. No RH-workspace source is edited
 
 ## 2026-10-19: Heegner-golden ending editorial revision 1
 
-- Current section: [Sol 6.1 editorial revision](research/heegner-golden-20261018/editorial-r1-sol61-20261019/README.md).
+- Current section: [Sol 6.1 editorial revision](research/heegner-golden-level-five/studies/editorial-r1-sol61-20261019/README.md).
 - The accepted cold-review priorities are applied: explicit definitions and
   matrix action, a visible A=JMJ theorem spine, motivated and expanded
   Poisson/Mellin steps, consolidated qualifications, and distinct r/j names
@@ -175,12 +175,12 @@ distinction between the CM points i and tau163. No RH-workspace source is edited
 
 ## 2026-10-20: Heegner-golden first assembled paper and twelve-plate suite
 
-- Current draft: [Golden Coordinates at Level Five](research/heegner-golden-20261018/paper-v0.1-20261019/README.md).
+- Current draft: [Golden Coordinates at Level Five](research/heegner-golden-level-five/paper-v0.1/README.md).
   The 19-page initial manuscript includes twelve landscape plates, full
   Poisson–Mellin arguments, both signed eigenline classifications, the explicit
   CM recovery and square witness, both field containments, and an odd-N appendix.
   Author: Akari Hayami (Jian-Yu Huang); contact: akari.h.1.9984@gmail.com.
-- Figure companion: [Terra figure packet](research/heegner-golden-20261018/figures-terra56-20261019/README.md),
+- Figure companion: [Terra figure packet](research/heegner-golden-level-five/figures/README.md),
   twelve native-vector plates with SVG/PNG exports, saved data, replay scripts,
   and a 14-page atlas. All nineteen paper pages and fourteen atlas pages have
   hash-bound visual-QA records; the email revision changes only paper page 1.
@@ -201,7 +201,7 @@ distinction between the CM points i and tau163. No RH-workspace source is edited
 
 ## 2026-10-20: independent Sol 6.1 and DeepSeek manuscript-form cold review
 
-- Packet: [layout cold review](research/heegner-golden-20261018/cold-review-layout-sol61-deepseek-20261020/README.md).
+- Packet: [layout cold review](research/heegner-golden-level-five/studies/cold-review-layout-20261020/README.md).
 - Fresh Codex CLI gpt-6.1-sol/high and OpenCode deepseek-v4.1-flash-free/max
   sessions independently viewed all nineteen frozen page images and wrote
   first impressions before reading TeX. CLI access order and selections are
@@ -227,7 +227,7 @@ distinction between the CM points i and tau163. No RH-workspace source is edited
 
 ## 2026-10-20: Heegner-golden portrait revision 0.2 and source bundle
 
-- Packet: [Golden Coordinates at Level Five, portrait revision 0.2](research/heegner-golden-20261018/paper-v0.2-portrait-20261020/README.md).
+- Packet: [Golden Coordinates at Level Five, portrait revision 0.2](research/heegner-golden-level-five/paper/README.md).
   The main article is a continuous 10-page Letter article with four compact
   body figures; a separate 14-page landscape supplement retains plates S01–S12
   with local captions and a methods page. The v0.1 paper and atlas remain
@@ -259,14 +259,17 @@ distinction between the CM points i and tau163. No RH-workspace source is edited
   supplement cover notation is separate from the verified build. No commit,
   push, upload or publication occurred; no RH source or sealed artifact changed.
 
-## 2026-10-20: local git archive of the Heegner-golden workstream
+## 2026-10-20: public archive and repository-facing reorganization of the Heegner-golden workstream
 
 - The complete workstream, excluding ignored `logs/` directories and third-party
-  source scans, is recorded on the local branch `publish/heegner-golden-v0.2`,
-  based on public `origin/main` at `cd41476`. The branch has not been pushed.
+  source scans, is released through the public branch
+  `publish/heegner-golden-v0.2`, based on `origin/main` at `cd41476`.
+- The public directory is `research/heegner-golden-level-five/`. The current
+  packet is `paper/`, the frozen checkpoint is `paper-v0.1/`, shared plates are
+  in `figures/`, and process records are in `studies/`.
 - The v0.2 packet remains byte-identical to its completion record. Its README
   line `Local draft; no commit, upload, or publication` describes the state at
-  completion; the new [HANDOVER.md](research/heegner-golden-20261018/HANDOVER.md)
-  records the later local archive without rebinding the v0.2 hashes.
+  completion; the new [HANDOVER.md](research/heegner-golden-level-five/HANDOVER.md)
+  records the later public archive without rebinding the v0.2 hashes.
 - No RH source, sealed release, or unrelated workstream was changed. The shared
   local `main` checkout remains divergent and was not merged or pushed.
