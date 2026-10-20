@@ -1,0 +1,20 @@
+{
+  "sol61": {
+    "session_id": "01a158de-aaba-7010-a235-69b1ac25eb91",
+    "model": "gpt-6.1-sol",
+    "effort": "high",
+    "evidence": "CLI turn_context; client model selection, not backend attestation",
+    "completed": true
+  },
+  "deepseek": {
+    "session_id": "ses_ea72151f3ffeu4bq1qnsH55Dso",
+    "model": {
+      "id": "deepseek-v4.1-flash-free",
+      "providerID": "opencode",
+      "variant": "max"
+    },
+    "recorded_cost": 0,
+    "outcome": "succeeded",
+    "evidence": "OpenCode completed session export; client selection, not backend attestation"
+  }
+}

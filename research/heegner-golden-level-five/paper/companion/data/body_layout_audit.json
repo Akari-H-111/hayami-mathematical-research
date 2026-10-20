@@ -1,0 +1,38 @@
+[
+  {
+    "number": 1,
+    "canvas_inches": [
+      6.4,
+      1.95
+    ],
+    "minimum_base_text_points": 9.0,
+    "outside_canvas": []
+  },
+  {
+    "number": 2,
+    "canvas_inches": [
+      6.4,
+      3.3
+    ],
+    "minimum_base_text_points": 8.7,
+    "outside_canvas": []
+  },
+  {
+    "number": 3,
+    "canvas_inches": [
+      6.4,
+      2.65
+    ],
+    "minimum_base_text_points": 8.5,
+    "outside_canvas": []
+  },
+  {
+    "number": 4,
+    "canvas_inches": [
+      6.4,
+      3.25
+    ],
+    "minimum_base_text_points": 8.5,
+    "outside_canvas": []
+  }
+]

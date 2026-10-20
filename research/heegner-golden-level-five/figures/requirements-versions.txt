@@ -1,0 +1,16 @@
+# Recorded existing runtimes; this packet does not install dependencies.
+# Figure/numerics/checker interpreter
+Python 3.13.16
+numpy 2.5.4
+sympy 1.14.0
+mpmath 1.4.1
+matplotlib 3.11.2
+Pillow 12.3.0
+
+# Atlas/PDF interpreter
+Python 3.12.14
+reportlab 4.4.9
+pypdf 6.10.0
+Pillow 12.3.0
+qpdf 12.4.0
+pdftoppm/pdfinfo 26.08.0

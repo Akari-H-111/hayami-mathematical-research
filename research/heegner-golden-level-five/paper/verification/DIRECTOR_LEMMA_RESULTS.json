@@ -1,0 +1,78 @@
+{
+  "exact_status": "PASS: discriminant, norm, trigonometric and eigenline identities",
+  "functional_equation_diagnostics": [
+    {
+      "epsilon": 1,
+      "s": "(0.37 + 0.91j)",
+      "relative_error": "2.3193103e-92"
+    },
+    {
+      "epsilon": 1,
+      "s": "(1.25 + 2.5j)",
+      "relative_error": "1.2272734e-91"
+    },
+    {
+      "epsilon": -1,
+      "s": "(0.37 + 0.91j)",
+      "relative_error": "2.4461428e-91"
+    },
+    {
+      "epsilon": -1,
+      "s": "(1.25 + 2.5j)",
+      "relative_error": "3.4474423e-91"
+    }
+  ],
+  "finite_odd_N_diagnostics": [
+    {
+      "N": 3,
+      "dimension": 1,
+      "involution_error": "0.0"
+    },
+    {
+      "N": 5,
+      "dimension": 2,
+      "involution_error": "1.2272734e-91"
+    },
+    {
+      "N": 7,
+      "dimension": 3,
+      "involution_error": "2.4545467e-91"
+    },
+    {
+      "N": 9,
+      "dimension": 4,
+      "involution_error": "4.9090935e-91"
+    },
+    {
+      "N": 11,
+      "dimension": 5,
+      "involution_error": "7.3636402e-91"
+    },
+    {
+      "N": 13,
+      "dimension": 6,
+      "involution_error": "7.3636402e-91"
+    },
+    {
+      "N": 15,
+      "dimension": 7,
+      "involution_error": "9.8181869e-91"
+    },
+    {
+      "N": 17,
+      "dimension": 8,
+      "involution_error": "9.5764919e-91"
+    },
+    {
+      "N": 19,
+      "dimension": 9,
+      "involution_error": "8.2625996e-91"
+    },
+    {
+      "N": 21,
+      "dimension": 10,
+      "involution_error": "1.10912e-90"
+    }
+  ],
+  "scope": "Exact algebra plus finite numerical checks; the general odd-N theorem and Dirichlet-series injectivity require their written proofs."
+}

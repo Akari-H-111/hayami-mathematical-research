@@ -1,0 +1,288 @@
+{
+  "date": "2026-10-20",
+  "status": "PASS",
+  "main": {
+    "pdf": "output/pdf/golden_coordinates_level_five_v0_2.pdf",
+    "pdf_sha256": "b3200ffa4130b5046c8462a2a0f22d1ea30273120442953faf93a01b5f937718",
+    "source": "main.tex",
+    "source_sha256": "46d473aa9e32528617b3ddc8396987d0240e9717832e537481f43b5eba688fc7",
+    "pages": 10,
+    "page_size": "612 x 792 pts (letter)",
+    "rasterizer": "pdftoppm -r 150 -png",
+    "render_dpi": 150,
+    "renders": {
+      "page_01": {
+        "sha256": "39078440e4c2ed858b324b6e6256b0fccd0d0d72f2800a333313aa55b65e87bf",
+        "pixel_size": [
+          1275,
+          1650
+        ]
+      },
+      "page_02": {
+        "sha256": "d466379aca74921f1347812073ce56c82031f53d759e74112fef47dcfe579fe1",
+        "pixel_size": [
+          1275,
+          1650
+        ]
+      },
+      "page_03": {
+        "sha256": "b6ec823b218e71126f6d9a2e27d75e4ba9a8d06ebd1f6e1ee58eb39161ecd7be",
+        "pixel_size": [
+          1275,
+          1650
+        ]
+      },
+      "page_04": {
+        "sha256": "2e88ec39f729c0153017c5c407a946cbad9a011406cd9454970aafbe1361f4a1",
+        "pixel_size": [
+          1275,
+          1650
+        ]
+      },
+      "page_05": {
+        "sha256": "f4e18b5e422c4c9710ada8d569e93ce23ff95f0f3e8735f320a50f166e320a93",
+        "pixel_size": [
+          1275,
+          1650
+        ]
+      },
+      "page_06": {
+        "sha256": "4fbeaab3e0147bc47ce06b1c382863b5edcaeecb5a86bfa75907398bfab261ff",
+        "pixel_size": [
+          1275,
+          1650
+        ]
+      },
+      "page_07": {
+        "sha256": "05ffa9d6418f054de76a50e94d69fe10ee2e0c7655743ed327c2707e9b1d4c7b",
+        "pixel_size": [
+          1275,
+          1650
+        ]
+      },
+      "page_08": {
+        "sha256": "cc95f4bba2e81fddeabb411a2c5226db652c14597ed6c042c3aa67ee683346c1",
+        "pixel_size": [
+          1275,
+          1650
+        ]
+      },
+      "page_09": {
+        "sha256": "659e98df4fe04679ddade03cf9dce7657268e674d31ed2193707b71aae402a36",
+        "pixel_size": [
+          1275,
+          1650
+        ]
+      },
+      "page_10": {
+        "sha256": "02de2dc8551395414c9da13e3b647caa2489110f2c77cb517911fe50d4b33253",
+        "pixel_size": [
+          1275,
+          1650
+        ]
+      }
+    },
+    "inspected_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "critical_reinspection": "Pages 1, 5, 6, 9 and 10 were re-inspected after the final abstract, DH-constant, prior-art and placement edits; the remaining pages were inspected in the same build sequence.",
+    "checks": [
+      "No clipping, overlap, or unreadable formulas at final size.",
+      "Figures 1-4 each have a running-text reference and a caption; Figure 4 begins page 6 followed by Section 5.",
+      "Author line and visible email are correct; page numbers and theorem numbering are continuous.",
+      "The re-rendered PNGs are byte-identical to the saved QA renders."
+    ],
+    "final_size_label_check": {
+      "source_canvas_width_in": 6.4,
+      "inserted_width_in": 6.5,
+      "scale": 1.015625,
+      "figures": {
+        "1": {
+          "source_canvas_width_in": 6.4,
+          "source_height_in": 1.95,
+          "minimum_artist_text_pt": 9.0,
+          "final_scale": 1.015625,
+          "minimum_final_text_pt": 9.141,
+          "final_height_in": 1.98,
+          "outside_canvas": []
+        },
+        "2": {
+          "source_canvas_width_in": 6.4,
+          "source_height_in": 3.3,
+          "minimum_artist_text_pt": 8.7,
+          "final_scale": 1.015625,
+          "minimum_final_text_pt": 8.836,
+          "final_height_in": 3.352,
+          "outside_canvas": []
+        },
+        "3": {
+          "source_canvas_width_in": 6.4,
+          "source_height_in": 2.65,
+          "minimum_artist_text_pt": 8.5,
+          "final_scale": 1.015625,
+          "minimum_final_text_pt": 8.633,
+          "final_height_in": 2.691,
+          "outside_canvas": []
+        },
+        "4": {
+          "source_canvas_width_in": 6.4,
+          "source_height_in": 3.25,
+          "minimum_artist_text_pt": 8.5,
+          "final_scale": 1.015625,
+          "minimum_final_text_pt": 8.633,
+          "final_height_in": 3.301,
+          "outside_canvas": []
+        }
+      },
+      "note": "Measured from companion/data/body_layout_audit.json and body_metadata.json. All four body figures have final text at or above 8.63 pt; no artist bounds fall outside the canvas."
+    }
+  },
+  "supplement": {
+    "pdf": "output/pdf/golden_coordinates_level_five_v0_2_supplement.pdf",
+    "pdf_sha256": "e4bc0fbe12deeeed7a998be333f534fcf1de8218583170e622b75846d38fe32b",
+    "source": "build_companion.py",
+    "source_sha256": "bb6af014a39040f0f91fbc09334abdfc42baa03114b99c860a4635a2765411bc",
+    "pages": 14,
+    "page_size": "1152 x 792 pts (16 x 11 in landscape)",
+    "rasterizer": "pdftoppm -r 140 -png",
+    "render_dpi": 140,
+    "renders": {
+      "page_01": {
+        "sha256": "d88c1bdb3e84a8dd18508801afc5af9e60f0018598645fcbd722470c366e6123",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_02": {
+        "sha256": "70e5ce50d75e6b969eb05eb1f4b8dfb8071a2f7e80c9ce301185b8473a05a8d0",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_03": {
+        "sha256": "0d9d2f9c642414934a812863c569497aff4f2c05fa40cc3a38bc128aba890e95",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_04": {
+        "sha256": "8e3e5d43a5880b9790007e556f0c8ac6e187ebe75004b0bbee0812e5a3172361",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_05": {
+        "sha256": "92e1bdffd66ac5d95bbe5c03e44734c1d0e26faebf4271795050cb9a4e0f39db",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_06": {
+        "sha256": "e5f49c7ed6e87a8e67ff8393c25d196171e421885c3192a1447c50a7b4fe880e",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_07": {
+        "sha256": "c5b615957f6f11580960734838ab0fbfce26d9346292a081c5053c17622e8711",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_08": {
+        "sha256": "c554b36c8c0d6fb4e4e64cb8048909e3bc340ccf151ba6e5a3ba3179f7a7d5a2",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_09": {
+        "sha256": "0fa74ea3a8614379ce68ff9a58bea1825fd76302208e3c6d4eceb0a1c8148eb8",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_10": {
+        "sha256": "7eafda46f862491d94fc3bee4a393d2b89f323f32655bfb7175422710c27fbf4",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_11": {
+        "sha256": "66c192e113ca310accde68d016c506c6c7daadc3a166adc5d9c1642f3a46fd2b",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_12": {
+        "sha256": "bda9f76a552d7fe3bb34adad27ae18908efc10e60708f03c81a91cf94c5a42db",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_13": {
+        "sha256": "ee173db13e855141a0dbf75dc6c8e96e994c043c6aeb74e7417a59d551e6a2ff",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      },
+      "page_14": {
+        "sha256": "b6fcdbacb908b2f5f325391a56b48510dd3d786978e54673cb8776b9932c769a",
+        "pixel_size": [
+          2240,
+          1540
+        ]
+      }
+    },
+    "inspected_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "critical_reinspection": "Cover and methods page re-inspected; plates S01-S12 inspected for caption fit, label legibility, plate numbering, and absence of the old global footer.",
+    "checks": [
+      "Every plate page carries S01-S12, a local caption, and a page footer.",
+      "S08 and S09 state the positive vector a=(1,kappa,-kappa,-1,0).",
+      "No plate caption overflows its page; no stale in-art numeric title or palette footer remains.",
+      "The re-rendered PNGs are byte-identical to the saved QA renders."
+    ]
+  },
+  "render_reproducibility": {
+    "method": "Fresh pdftoppm renders at the same DPI were compared byte-for-byte with the saved QA renders.",
+    "main": "10/10 identical",
+    "supplement": "14/14 identical"
+  },
+  "scope": "Visual and page-level QA only. It does not certify the mathematical arguments, which are checked by the separate exact and numerical scripts."
+}

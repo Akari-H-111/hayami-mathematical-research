@@ -1,0 +1,34 @@
+{
+  "terra_paper_revision": {
+    "session_id": "01a153c2-f742-7b22-96d9-a347eaa2e6a8",
+    "model": "gpt-5.6-terra",
+    "effort": "high",
+    "completed": true,
+    "evidence": "CLI session turn_context and terminal event; client model selection, not independent backend attestation"
+  },
+  "deepseek_review": {
+    "session_id": "ses_eac48e0caffeoLa0fpz8iujL5I",
+    "model": {
+      "id": "deepseek-v4.1-flash-free",
+      "providerID": "opencode",
+      "variant": "max"
+    },
+    "recorded_cost": 0,
+    "outcome": "succeeded",
+    "evidence": "OpenCode session export; client selection and recorded cost, not an independent backend attestation"
+  },
+  "terra_figure_completion": {
+    "session_id": "01a153b7-238e-7802-aeec-0c93efaa1279",
+    "turn_context": {
+      "model": "gpt-5.6-terra",
+      "effort": "high",
+      "cwd": "/Users/akari_hayami_64/Documents/hayami-mathematical-research/research/heegner-golden-20261018/figures-terra56-20261019",
+      "sandbox_policy": {
+        "type": "workspace-write",
+        "network_access": false,
+        "exclude_tmpdir_env_var": false,
+        "exclude_slash_tmp": false
+      }
+    }
+  }
+}

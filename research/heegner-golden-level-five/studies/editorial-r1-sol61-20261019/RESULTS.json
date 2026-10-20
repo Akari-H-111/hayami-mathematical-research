@@ -1,0 +1,35 @@
+{
+  "exact_status": "PASS",
+  "surface_rank_elimination": "P(c)=c^2-3c+1",
+  "hmr_ruling_coordinate": "u0=cos(2*pi/5)",
+  "dh_rr_identity": "kappa_DH=r(i)",
+  "same_involution": "A_sine=J*M_RR*J",
+  "round_trip": "u0=kappa/(1-kappa^2); c0=(2*kappa/(1-kappa^2))^2",
+  "minimal_polynomial": "X^4+2X^3-6X^2-2X+1",
+  "numeric_status": "PASS diagnostics; no interval zero certificate",
+  "diagnostics": [
+    {
+      "digits": 80,
+      "rr_product_terms": 100,
+      "rr_error": "1.0542198e-81",
+      "completed_fe_relative_errors": [
+        "2.75022e-81",
+        "2.348405e-81"
+      ],
+      "root": "(0.80851718245663738555335196060684412785067026830501657287757530092 + 85.699348485377592171929267708941729037987829423407576673627567742j)",
+      "uncompleted_f_root_residual": "2.2782953e-80"
+    },
+    {
+      "digits": 120,
+      "rr_product_terms": 100,
+      "rr_error": "0.0",
+      "completed_fe_relative_errors": [
+        "1.3264696e-121",
+        "2.1566694e-121"
+      ],
+      "root": "(0.80851718245663738555335196060684412785067026830501657287757530092 + 85.699348485377592171929267708941729037987829423407576673627567742j)",
+      "uncompleted_f_root_residual": "5.4021464e-121"
+    }
+  ],
+  "scope": "scalar and matrix dictionary; no global surface/modular-curve equivalence or RH result"
+}

@@ -1,0 +1,33 @@
+{
+  "packet": "heegner-golden twelve-figure companion",
+  "vector_atlas": "output/pdf/heegner_golden_figure_atlas.pdf",
+  "color_roles": {"geometry":"gold","fourier_theta":"teal","modular":"violet","hermite_cm":"blue"},
+  "captions": {
+    "01":"Scalar coordinate to reflection, Fourier eigenline, and functional equation; CM roles stay distinct.",
+    "02":"Actual ruled patch with lateral rank-loss pair and positive-t local close-up.",
+    "03":"Cross-product norm, lateral line, and interior root c0 on the positive-sine branch.",
+    "04":"Separates the cos(72 degrees) projection from the golden segment ratio.",
+    "05":"M and JMJ reflect an off-axis sample and exchange their eigenlines.",
+    "06":"Positive inversion fixed point with independently evaluated reciprocal product curves.",
+    "07":"Actual normalized DFT input, output, and imaginary residual in residue order 1 through 5.",
+    "08":"Direct bilateral Gaussian sums evaluated at reciprocal arguments.",
+    "09":"Pipeline from Gaussian sum to paired completed-function values.",
+    "10":"Fixed-point and Hermite nome roles belong to different upper-half-plane arguments.",
+    "11":"Fixed high-precision gap with correctly powered j-series corrections.",
+    "12":"All marked icosahedral chord classes realize the squared ratio c0."
+  },
+  "figures": [
+    {"number":1,"title":"Connection map","role":"main","source":"canonical section 1-3","placement":"opening definitions","paths":{"pdf":"output/pdf/figure_01.pdf","svg":"output/svg/figure_01.svg","png":"output/png/figure_01.png"},"inputs":"c0,u0,M,J,A,kappa and the eigenline"},
+    {"number":2,"title":"Orthogonal-circle ruled surface","role":"main","source":"canonical section 1","placement":"after surface parametrization","paths":{"pdf":"output/pdf/figure_02.pdf","svg":"output/svg/figure_02.svg","png":"output/png/figure_02.png"},"inputs":"actual S(t,u), t=plus/minus arccos(c0), u0"},
+    {"number":3,"title":"Rank loss in (c,u)","role":"main","source":"canonical section 1","placement":"rank-loss elimination","paths":{"pdf":"output/pdf/figure_03.pdf","svg":"output/svg/figure_03.svg","png":"output/png/figure_03.png"},"inputs":"cross-product norm, u=(1-c)/2, P(c)"},
+    {"number":4,"title":"Pentagonal coordinate","role":"main","source":"canonical section 1","placement":"golden-coordinate identification","paths":{"pdf":"output/pdf/figure_04.pdf","svg":"output/svg/figure_04.svg","png":"output/png/figure_04.png"},"inputs":"unit vertices at 0,72,144,216,288 degrees"},
+    {"number":5,"title":"Coordinate exchange","role":"main","source":"canonical section 2","placement":"matrix identity","paths":{"pdf":"output/pdf/figure_05.pdf","svg":"output/svg/figure_05.svg","png":"output/png/figure_05.png"},"inputs":"M,J,A and an off-axis unit vector"},
+    {"number":6,"title":"Why r(i)=kappa","role":"main","source":"canonical section 2","placement":"fixed-point argument","paths":{"pdf":"output/pdf/figure_06.pdf","svg":"output/svg/figure_06.svg","png":"output/png/figure_06.png"},"inputs":"direct r(iy), independently evaluated r(i/y)"},
+    {"number":7,"title":"Odd Fourier eigenvector","role":"main","source":"canonical section 2","placement":"finite DFT calculation","paths":{"pdf":"output/pdf/figure_07.pdf","svg":"output/svg/figure_07.svg","png":"output/png/figure_07.png"},"inputs":"m,n=1,2,3,4,5 and actual normalized DFT"},
+    {"number":8,"title":"Theta self-duality","role":"main","source":"canonical section 3","placement":"theta transformation","paths":{"pdf":"output/pdf/figure_08.pdf","svg":"output/svg/figure_08.svg","png":"output/png/figure_08.png"},"inputs":"direct bilateral Gaussian sums at t and 1/t"},
+    {"number":9,"title":"Mellin completion","role":"main","source":"canonical section 3","placement":"functional-equation section","paths":{"pdf":"output/pdf/figure_09.pdf","svg":"output/svg/figure_09.svg","png":"output/png/figure_09.png"},"inputs":"period-five Hurwitz-zeta completion samples"},
+    {"number":10,"title":"Two CM arguments","role":"main","source":"canonical section 4","placement":"CM comparison","paths":{"pdf":"output/pdf/figure_10.pdf","svg":"output/svg/figure_10.svg","png":"output/png/figure_10.png"},"inputs":"i and tau_163 nomes and j-values"},
+    {"number":11,"title":"Hermite near-integer","role":"main","source":"canonical section 4","placement":"Hermite comparison","paths":{"pdf":"output/pdf/figure_11.pdf","svg":"output/svg/figure_11.svg","png":"output/png/figure_11.png"},"inputs":"180-digit R,N,gap and E4^3/Delta corrections"},
+    {"number":12,"title":"Icosahedral chord context","role":"context","source":"geometry context section 2","placement":"geometry companion","paths":{"pdf":"output/pdf/figure_12.pdf","svg":"output/svg/figure_12.svg","png":"output/png/figure_12.png"},"inputs":"normalized standard icosahedron and all 66 pair distances"}
+  ]
+}

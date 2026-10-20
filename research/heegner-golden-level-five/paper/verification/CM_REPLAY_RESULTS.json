@@ -1,0 +1,55 @@
+{
+  "exact": {
+    "universal_quotient": "P_j(t)=t^6*((u^2-228u+496)^3+j*(u+11)^5), u=t-t^-1",
+    "d163_factor": "P_163=A^2-5B^2 with gcd(A,B)=1",
+    "d163_Q_factor_degrees": [
+      12
+    ],
+    "d163_Qsqrt5_factor_degrees": [
+      6,
+      6
+    ],
+    "t_interval": [
+      "-1/200000000000000000",
+      "-1/1000000000000000000"
+    ],
+    "t_signs": "A(t)<0<B(t), hence A(t)/B(t)=-sqrt(5)",
+    "s_interval": [
+      "1/4000",
+      "1/2500"
+    ],
+    "s_signs": "a_s(s)<0 and b_s(s)<0, hence a_s(s)/b_s(s)=sqrt(5)",
+    "real_branch_factor_degrees": [
+      12,
+      24,
+      24
+    ],
+    "real_branch_H_factor_degrees_Qsqrt5": [
+      6,
+      6
+    ]
+  },
+  "diagnostics": [
+    {
+      "digits": 100,
+      "product_terms": 20,
+      "t": "-3.808980937007652410767910408916472215821460626401e-18",
+      "product_vs_continued_fraction_error": "6.1528587e-135",
+      "level5_polynomial_residual": "3.4047813e-130",
+      "phi_reconstruction_error": "7.2684729e-130",
+      "gamma_reconstruction_error": "7.2684729e-130",
+      "c0_reconstruction_error": "7.2684729e-130"
+    },
+    {
+      "digits": 200,
+      "product_terms": 20,
+      "t": "-3.808980937007652410767910408916472215821460626401e-18",
+      "product_vs_continued_fraction_error": "8.895664e-235",
+      "level5_polynomial_residual": "1.9428988e-230",
+      "phi_reconstruction_error": "4.147065e-230",
+      "gamma_reconstruction_error": "4.0190347e-230",
+      "c0_reconstruction_error": "4.0190347e-230"
+    }
+  ],
+  "scope": "Exact CM core and D=163 diagnostics only; no discriminant-control survey."
+}

@@ -1,0 +1,642 @@
+{
+  "status": "PASS",
+  "environment": {
+    "python": "3.14.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "exact": {
+    "universal_quotient": "P_j(t)=t^6*((u^2-228u+496)^3+j*(u+11)^5), u=t-t^-1",
+    "d163_factor": "P_163=A^2-5B^2 with gcd(A,B)=1",
+    "d163_Q_factor_degrees": [
+      12
+    ],
+    "d163_Qsqrt5_factor_degrees": [
+      6,
+      6
+    ],
+    "t_interval": [
+      "-1/200000000000000000",
+      "-1/1000000000000000000"
+    ],
+    "t_signs": "A(t)<0<B(t), hence A(t)/B(t)=-sqrt(5)",
+    "s_interval": [
+      "1/4000",
+      "1/2500"
+    ],
+    "s_signs": "a_s(s)<0 and b_s(s)<0, hence a_s(s)/b_s(s)=sqrt(5)",
+    "real_branch_factor_degrees": [
+      12,
+      24,
+      24
+    ],
+    "real_branch_H_factor_degrees_Qsqrt5": [
+      6,
+      6
+    ]
+  },
+  "class_number_one_controls": [
+    {
+      "control": "D=-3",
+      "kind": "maximal",
+      "j": "0",
+      "exact_Q_components": [
+        {
+          "degree_Q": 4,
+          "multiplicity": 3,
+          "degrees_Qsqrt5": [
+            2,
+            2
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 58,
+          "selected_degree_Q": 4,
+          "selected_degrees_Qsqrt5": [
+            2,
+            2
+          ],
+          "selected_residual": "1.3524871e-130",
+          "t": "-0.004428544446081185"
+        },
+        {
+          "digits": 200,
+          "product_terms": 100,
+          "selected_degree_Q": 4,
+          "selected_degrees_Qsqrt5": [
+            2,
+            2
+          ],
+          "selected_residual": "1.0305838e-230",
+          "t": "-0.004428544446081185"
+        }
+      ]
+    },
+    {
+      "control": "D=-4",
+      "kind": "maximal",
+      "j": "1728",
+      "exact_Q_components": [
+        {
+          "degree_Q": 2,
+          "multiplicity": 2,
+          "degrees_Qsqrt5": [
+            2
+          ]
+        },
+        {
+          "degree_Q": 4,
+          "multiplicity": 2,
+          "degrees_Qsqrt5": [
+            2,
+            2
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 50,
+          "selected_degree_Q": 4,
+          "selected_degrees_Qsqrt5": [
+            2,
+            2
+          ],
+          "selected_residual": "2.2541452e-131",
+          "t": "0.001850103342169619"
+        },
+        {
+          "digits": 200,
+          "product_terms": 87,
+          "selected_degree_Q": 4,
+          "selected_degrees_Qsqrt5": [
+            2,
+            2
+          ],
+          "selected_residual": "0.0",
+          "t": "0.001850103342169619"
+        }
+      ]
+    },
+    {
+      "control": "D=-7",
+      "kind": "maximal",
+      "j": "-3375",
+      "exact_Q_components": [
+        {
+          "degree_Q": 12,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            6,
+            6
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 39,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "1.3524871e-130",
+          "t": "-0.0002458854420986684"
+        },
+        {
+          "digits": 200,
+          "product_terms": 66,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "1.8035217e-230",
+          "t": "-0.0002458854420986684"
+        }
+      ]
+    },
+    {
+      "control": "D=-8",
+      "kind": "maximal",
+      "j": "8000",
+      "exact_Q_components": [
+        {
+          "degree_Q": 12,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            6,
+            6
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 36,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "2.4795597e-130",
+          "t": "0.0001382485301575376"
+        },
+        {
+          "digits": 200,
+          "product_terms": 62,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "2.5764595e-230",
+          "t": "0.0001382485301575376"
+        }
+      ]
+    },
+    {
+      "control": "D=-11",
+      "kind": "maximal",
+      "j": "-32768",
+      "exact_Q_components": [
+        {
+          "degree_Q": 4,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            4
+          ]
+        },
+        {
+          "degree_Q": 8,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            4,
+            4
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 31,
+          "selected_degree_Q": 8,
+          "selected_degrees_Qsqrt5": [
+            4,
+            4
+          ],
+          "selected_residual": "1.2397798e-130",
+          "t": "-2.984972748940189e-5"
+        },
+        {
+          "digits": 200,
+          "product_terms": 53,
+          "selected_degree_Q": 8,
+          "selected_degrees_Qsqrt5": [
+            4,
+            4
+          ],
+          "selected_residual": "4.6376271e-230",
+          "t": "-2.984972748940189e-5"
+        }
+      ]
+    },
+    {
+      "control": "D=-19",
+      "kind": "maximal",
+      "j": "-884736",
+      "exact_Q_components": [
+        {
+          "degree_Q": 4,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            4
+          ]
+        },
+        {
+          "degree_Q": 8,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            4,
+            4
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 24,
+          "selected_degree_Q": 8,
+          "selected_degrees_Qsqrt5": [
+            4,
+            4
+          ],
+          "selected_residual": "1.8033161e-130",
+          "t": "-1.129337644836293e-6"
+        },
+        {
+          "digits": 200,
+          "product_terms": 41,
+          "selected_degree_Q": 8,
+          "selected_degrees_Qsqrt5": [
+            4,
+            4
+          ],
+          "selected_residual": "1.6746987e-230",
+          "t": "-1.129337644836293e-6"
+        }
+      ]
+    },
+    {
+      "control": "D=-43",
+      "kind": "maximal",
+      "j": "-884736000",
+      "exact_Q_components": [
+        {
+          "degree_Q": 12,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            6,
+            6
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 20,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "5.6353629e-130",
+          "t": "-1.130279727199451e-9"
+        },
+        {
+          "digits": 200,
+          "product_terms": 28,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "1.8035217e-230",
+          "t": "-1.130279727199451e-9"
+        }
+      ]
+    },
+    {
+      "control": "D=-67",
+      "kind": "maximal",
+      "j": "-147197952000",
+      "exact_Q_components": [
+        {
+          "degree_Q": 12,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            6,
+            6
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 20,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "3.3812178e-131",
+          "t": "-6.793572746036234e-12"
+        },
+        {
+          "digits": 200,
+          "product_terms": 23,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "1.5458757e-230",
+          "t": "-6.793572746036234e-12"
+        }
+      ]
+    },
+    {
+      "control": "D=-163",
+      "kind": "maximal",
+      "j": "-262537412640768000",
+      "exact_Q_components": [
+        {
+          "degree_Q": 12,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            6,
+            6
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 20,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "1.3524871e-130",
+          "t": "-3.808980937007652e-18"
+        },
+        {
+          "digits": 200,
+          "product_terms": 20,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "4.5088041e-230",
+          "t": "-3.808980937007652e-18"
+        }
+      ]
+    },
+    {
+      "control": "D=-12",
+      "kind": "nonmaximal class-number-one order",
+      "j": "54000",
+      "exact_Q_components": [
+        {
+          "degree_Q": 12,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            6,
+            6
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 30,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "1.1270726e-130",
+          "t": "1.877677024910019e-5"
+        },
+        {
+          "digits": 200,
+          "product_terms": 51,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "2.0611676e-230",
+          "t": "1.877677024910019e-5"
+        }
+      ]
+    },
+    {
+      "control": "D=-16",
+      "kind": "nonmaximal class-number-one order",
+      "j": "287496",
+      "exact_Q_components": [
+        {
+          "degree_Q": 4,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            4
+          ]
+        },
+        {
+          "degree_Q": 8,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            4,
+            4
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 26,
+          "selected_degree_Q": 8,
+          "selected_degrees_Qsqrt5": [
+            4,
+            4
+          ],
+          "selected_residual": "1.5779016e-130",
+          "t": "3.487281549061617e-6"
+        },
+        {
+          "digits": 200,
+          "product_terms": 45,
+          "selected_degree_Q": 8,
+          "selected_degrees_Qsqrt5": [
+            4,
+            4
+          ],
+          "selected_residual": "3.6070433e-230",
+          "t": "3.487281549061617e-6"
+        }
+      ]
+    },
+    {
+      "control": "D=-27",
+      "kind": "nonmaximal class-number-one order",
+      "j": "-12288000",
+      "exact_Q_components": [
+        {
+          "degree_Q": 12,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            6,
+            6
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 21,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "4.5082903e-131",
+          "t": "-8.137531453013007e-8"
+        },
+        {
+          "digits": 200,
+          "product_terms": 35,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "3.6070433e-230",
+          "t": "-8.137531453013007e-8"
+        }
+      ]
+    },
+    {
+      "control": "D=-28",
+      "kind": "nonmaximal class-number-one order",
+      "j": "16581375",
+      "exact_Q_components": [
+        {
+          "degree_Q": 12,
+          "multiplicity": 1,
+          "degrees_Qsqrt5": [
+            6,
+            6
+          ]
+        }
+      ],
+      "analytic_component_match": "NUMERICAL q-product, stable at 100 and 200 digits",
+      "analytic_component_samples": [
+        {
+          "digits": 100,
+          "product_terms": 21,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "1.3524871e-130",
+          "t": "6.031131741364597e-8"
+        },
+        {
+          "digits": 200,
+          "product_terms": 34,
+          "selected_degree_Q": 12,
+          "selected_degrees_Qsqrt5": [
+            6,
+            6
+          ],
+          "selected_residual": "5.152919e-231",
+          "t": "6.031131741364597e-8"
+        }
+      ]
+    }
+  ],
+  "generic_rational_j_controls": [
+    {
+      "control": "rational j=1",
+      "exact_Q_factor_degrees": [
+        12
+      ],
+      "exact_Qsqrt5_factor_degrees": [
+        12
+      ],
+      "conclusion": "No Q(sqrt(5)) subfield in a root field of this irreducible fibre."
+    },
+    {
+      "control": "rational j=2",
+      "exact_Q_factor_degrees": [
+        12
+      ],
+      "exact_Qsqrt5_factor_degrees": [
+        12
+      ],
+      "conclusion": "No Q(sqrt(5)) subfield in a root field of this irreducible fibre."
+    }
+  ],
+  "numerical_diagnostics": [
+    {
+      "digits": 100,
+      "product_terms": 20,
+      "t": "-3.808980937007652410767910408916472215821460626401e-18",
+      "product_vs_continued_fraction_error": "6.1528587e-135",
+      "level5_polynomial_residual": "3.4047813e-130",
+      "phi_reconstruction_error": "7.2684729e-130",
+      "gamma_reconstruction_error": "7.2684729e-130",
+      "c0_reconstruction_error": "7.2684729e-130"
+    },
+    {
+      "digits": 200,
+      "product_terms": 20,
+      "t": "-3.808980937007652410767910408916472215821460626401e-18",
+      "product_vs_continued_fraction_error": "8.895664e-235",
+      "level5_polynomial_residual": "1.9428988e-230",
+      "phi_reconstruction_error": "4.147065e-230",
+      "gamma_reconstruction_error": "4.0190347e-230",
+      "c0_reconstruction_error": "4.0190347e-230"
+    }
+  ],
+  "local_exact_identities": {
+    "c0_equals_gamma_squared": "(3-sqrt(5))/2=((sqrt(5)-1)/2)^2",
+    "D_minus_15": "j=(-191025-85995*sqrt(5))/2=85995*c0-224505",
+    "D_minus_20": "j=632000+282880*sqrt(5)=1480640-565760*c0"
+  },
+  "limits": [
+    "Classical CM values and the level-5 equation are external inputs, not reproved here.",
+    "The 13 CM analytic-component matches are numerical at 100/200 digits; only the -163 branch is rationally isolated here.",
+    "No novelty, intrinsic geometric map, ray-class stabilizer theorem, or RH implication is certified."
+  ]
+}

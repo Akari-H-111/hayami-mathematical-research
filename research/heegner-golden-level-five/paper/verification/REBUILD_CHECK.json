@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-20",
+  "status": "PASS",
+  "bundle": "output/golden_coordinates_level_five_v0_2_source.zip",
+  "bundle_sha256": "4f752a6423f9174f61e2872218cf309f0bf8a08329d3a2b3b619697e28e83fbc",
+  "bundle_size_bytes": 8854961,
+  "bundle_files": 127,
+  "manifest": {
+    "entry": "BUNDLE_SHA256.json",
+    "entries": 107,
+    "missing": 0,
+    "bad_hashes": 0,
+    "status": "PASS"
+  },
+  "extraction": "/private/var/folders/34/y78yxtgj5db0fywg9b8nnvch0000gn/T/opencode/v02-rebuild3/paper-v0.2-portrait-20261020",
+  "main_compile": {
+    "commands": [
+      "pdflatex -interaction=nonstopmode -halt-on-error -file-line-error -jobname=golden_coordinates_level_five_v0_2 -output-directory=output/pdf main.tex",
+      "the same command a second time"
+    ],
+    "pages": 10,
+    "page_size": "612 x 792 pts (letter)",
+    "title": "Golden Coordinates at Level Five",
+    "author": "Akari Hayami (Jian-Yu Huang)",
+    "qpdf": "PASS",
+    "original_pdf_sha256": "b3200ffa4130b5046c8462a2a0f22d1ea30273120442953faf93a01b5f937718",
+    "rebuilt_pdf_sha256": "eabe409471e13913b6b9656178c9c2a8088812cac356d537f3adaf911bd4fa98",
+    "hash_note": "The PDF bytes differ only because the rebuilt file carries the new pdfTeX CreationDate (2026-10-20 21:51:11) in place of the original (21:03:56). The text layer is byte-identical and all ten 150-DPI page renders are byte-identical.",
+    "text_layer": "identical",
+    "renders_identical": "10/10",
+    "layout_check": "PASS"
+  },
+  "supplement_rebuild": {
+    "command": "python3 -B build_companion.py with the recorded ReportLab/pypdf runtime",
+    "pages": 14,
+    "page_size": "1152 x 792 pts (16 x 11 in landscape)",
+    "title": "Golden Coordinates at Level Five — visual companion 0.2",
+    "author": "Akari Hayami (Jian-Yu Huang)",
+    "qpdf": "PASS",
+    "original_pdf_sha256": "e4bc0fbe12deeeed7a998be333f534fcf1de8218583170e622b75846d38fe32b",
+    "rebuilt_pdf_sha256": "e4bc0fbe12deeeed7a998be333f534fcf1de8218583170e622b75846d38fe32b",
+    "text_layer": "identical",
+    "note": "The supplement rebuild is byte-identical because its creation metadata is fixed in build_companion.py."
+  },
+  "checkers_replayed_in_extraction": {
+    "verification/check_final_pdf.py": "PASS",
+    "companion/verification/check_figure_data.py": "PASS",
+    "companion/verification/check_body_data.py": "PASS",
+    "verification/check_dh_constant.py": "PASS"
+  },
+  "scope": "Fresh-extraction rebuild and page/text/render comparison only. It does not re-certify the mathematical theorems; those retain the written arguments and the separate exact/numerical checks."
+}

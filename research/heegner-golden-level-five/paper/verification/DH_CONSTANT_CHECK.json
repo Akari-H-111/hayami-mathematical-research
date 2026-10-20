@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-20",
+  "status": "PASS",
+  "precision_digits": 90,
+  "product_terms": 240,
+  "kappa": "0.284079043840412296028291832393126169091088088445737582759163",
+  "closed_form": "0.284079043840412296028291832393126169091088088445737582759163",
+  "identities": {
+    "r(i) = (sqrt(10-2sqrt5)-2)/(sqrt5-1)": "2.4545467e-91",
+    "r(i) = gamma/(1+sqrt(1+c0))": "6.1363668e-92",
+    "r(i) = 2cos(18deg)-2cos(36deg)": "1.2272734e-91",
+    "A(1,kappa)=(1,kappa)": "6.1363668e-92",
+    "tan(atan(gamma)/2)=kappa": "1.2272734e-91",
+    "a=(1,kappa,-kappa,-1,0) has a2*a3=-kappa^2": "0.0",
+    "mixed vector (1,0) misses the nearer scalar sign by": "0.52573111"
+  },
+  "scope": "Numerical verification of a closed-form constant and finite algebraic identities at 90 digits; the sequence interpretation and the analytic classification rest on the written text and cited literature."
+}

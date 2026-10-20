@@ -1,0 +1,5 @@
+{
+  "status": "PASS",
+  "exact_checks": "40 matrix powers, integral traces, Fibonacci errors and scaled identities",
+  "proof_scope": "all-n induction, recurrence and golden liminf norm proof in DIRECTOR_TRACE_BRIDGE.md; universal Hurwitz upper bound external"
+}

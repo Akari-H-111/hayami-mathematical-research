@@ -1,0 +1,84 @@
+{
+  "packet": "heegner-golden compact body figures",
+  "author": "Akari Hayami (Jian-Yu Huang)",
+  "date": "2026-10-20",
+  "canvas_width_inches": 6.4,
+  "background": "white",
+  "font_points": {
+    "ordinary_text": 9.5,
+    "tick_labels": 8.7,
+    "panel_titles": 10.5
+  },
+  "figures": [
+    {
+      "number": 1,
+      "height_inches": 1.95,
+      "paths": {
+        "pdf": "body/pdf/body_01.pdf",
+        "svg": "body/svg/body_01.svg",
+        "png": "body/png/body_01.png"
+      },
+      "data": "saved constants and explicit roadmap relations"
+    },
+    {
+      "number": 2,
+      "height_inches": 3.3,
+      "paths": {
+        "pdf": "body/pdf/body_02.pdf",
+        "svg": "body/svg/body_02.svg",
+        "png": "body/png/body_02.png"
+      },
+      "data": "saved reflected surface points; formula-sampled surface and cross norm",
+      "sampling": {
+        "surface_grid": [
+          32,
+          62
+        ],
+        "t_interval": [
+          -1.42,
+          1.42
+        ],
+        "u_interval": [
+          0,
+          1
+        ],
+        "norm_grid": [
+          190,
+          220
+        ],
+        "c_interval": [
+          0.03,
+          0.97
+        ],
+        "diagnostic_u_interval": [
+          0.02,
+          0.98
+        ],
+        "log_additive_floor": 1e-08,
+        "geometry_axis_units": "equal physical coordinate-unit scale"
+      }
+    },
+    {
+      "number": 3,
+      "height_inches": 2.65,
+      "paths": {
+        "pdf": "body/pdf/body_03.pdf",
+        "svg": "body/svg/body_03.svg",
+        "png": "body/png/body_03.png"
+      },
+      "data": "stored 180-digit Hermite correction and residual strings"
+    },
+    {
+      "number": 4,
+      "height_inches": 3.25,
+      "paths": {
+        "pdf": "body/pdf/body_04.pdf",
+        "svg": "body/svg/body_04.svg",
+        "png": "body/png/body_04.png"
+      },
+      "data": "saved reflection samples, matrices, kappa and DFT residue order"
+    }
+  ],
+  "minimum_ordinary_artist_font_points": 8.5,
+  "layout_check": "Artist bounds checked against the fixed canvas after drawing; mathematical scripts retain natural smaller glyphs."
+}

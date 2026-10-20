@@ -1,0 +1,11 @@
+{
+  "phi": true,
+  "c0": true,
+  "gamma": true,
+  "u0": true,
+  "kappa": true,
+  "gap": true,
+  "j_coefficients": true,
+  "correction_terms": true,
+  "residuals": true
+}

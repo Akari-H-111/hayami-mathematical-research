@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-20",
+  "status": "PASS",
+  "pdf": "output/pdf/golden_coordinates_level_five_v0_2.pdf",
+  "pdf_sha256": "b3200ffa4130b5046c8462a2a0f22d1ea30273120442953faf93a01b5f937718",
+  "source_sha256": "46d473aa9e32528617b3ddc8396987d0240e9717832e537481f43b5eba688fc7",
+  "pages": 10,
+  "page_size": "612 x 792 pts (letter)",
+  "title": "Golden Coordinates at Level Five",
+  "author": "Akari Hayami (Jian-Yu Huang)",
+  "figure_count": 4,
+  "body_figure_final_size": {
+    "1": {
+      "height_in": 1.95,
+      "final_height_in": 1.98,
+      "minimum_base_pt": 8.5,
+      "minimum_final_pt": 8.633
+    },
+    "2": {
+      "height_in": 3.3,
+      "final_height_in": 3.352,
+      "minimum_base_pt": 8.5,
+      "minimum_final_pt": 8.633
+    },
+    "3": {
+      "height_in": 2.65,
+      "final_height_in": 2.691,
+      "minimum_base_pt": 8.5,
+      "minimum_final_pt": 8.633
+    },
+    "4": {
+      "height_in": 3.25,
+      "final_height_in": 3.301,
+      "minimum_base_pt": 8.5,
+      "minimum_final_pt": 8.633
+    }
+  },
+  "checks": [
+    "Ten letter pages; title, author and email are present in metadata and text.",
+    "Theorems 3.1, 5.1, 5.2, Proposition 4.1 and Corollary A.1 are present.",
+    "Figures 1-4 each occur twice: one running-text reference and one caption.",
+    "Plates S01-S12 are named in the article text; no Figure 5-12 text remains.",
+    "No unresolved references, no ??, and no overfull/underfull box log entries.",
+    "Body figures use 6.4-inch source canvases with minimum artist text 8.5 pt; final scale is 6.5/6.4, giving at least 8.63 pt."
+  ],
+  "scope": "Layout and text-layer check only; mathematical claims are checked by the separate exact and numerical scripts."
+}

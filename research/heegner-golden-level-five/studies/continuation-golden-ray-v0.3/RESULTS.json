@@ -1,0 +1,82 @@
+{
+  "status": "PASS",
+  "source_sha256": {
+    "logs/sources/cais-conrad.pdf": "b35daca31a0b20a487723f87cc60c4ed91fa7f5e71b3fca85f455a4e4628de2c",
+    "logs/sources/cais-conrad.txt": "cf5157405db4c0da792e803cc266d836755194b41f36d9c8d15ff805ebcff03d",
+    "logs/sources/milne-cft.pdf": "50d79af78250a9f1117ad9d337e0b231704a533fc707966ed1bfa52e13d498f5",
+    "logs/sources/milne-cft.txt": "933791dff22cc727f98628fd7f1230e03e40c0eaf78d053570c284fa34b56f0e"
+  },
+  "exact_checks": [
+    "G is irreducible over Q and equals ALPHA^2-5 BETA^2.",
+    "gcd(BETA,G)=1 and the displayed rational degree-5 w has zero cleared remainder modulo G.",
+    "The selected quotient contains sqrt(5)=-ALPHA/BETA.",
+    "F_25=F_5[theta]/(theta^2-theta+1) has primitive gamma=1+theta.",
+    "The scalar subgroup has order 2 modulo {+/-1}; the cyclotomic norm kernel has order 3 and intersects it trivially.",
+    "The two cyclotomic radical squares and their phi ratio hold modulo Phi_5."
+  ],
+  "square_certificate": {
+    "denominator": "36379027361268900000000000",
+    "numerator_coefficients_descending": [
+      "10032184018936",
+      "-2633823635467525896114151113195",
+      "-115712687728690506769685317605640",
+      "-1906355528351506425904447779674640",
+      "-13958593196667408481064116830792320",
+      "-38327281745357972136346029647288064"
+    ],
+    "cleared_identity": "2*BETA*(U^2+4)=163*(5*BETA+ALPHA)*w(U)^2 mod G(U)",
+    "compact_Qsqrt5_numerator": "-16850735555920*S + U**2*(312119004989 - 139583862445*S) + U*(6858643496508 - 3067324783740*S) + 37679427598544",
+    "compact_Qsqrt5_denominator": 1574580000
+  },
+  "artin_subgroups": {
+    "ray_group": "F_25^*/{+/-1}=C_12",
+    "ring_class_scalar_subgroup_exponents": [
+      0,
+      6
+    ],
+    "cyclotomic_norm_kernel_exponents": [
+      0,
+      4,
+      8
+    ],
+    "intersection_exponents": [
+      0
+    ],
+    "generated_subgroup_exponents": [
+      0,
+      2,
+      4,
+      6,
+      8,
+      10
+    ]
+  },
+  "written_field_conclusions": [
+    "Cais-Conrad Eq. (4.8) and Cor. 5.7 give K(r(tau))=K_(5).",
+    "The Artin calculation gives K_(5)=H_5(zeta_5) and H_5 intersection K(zeta_5)=K(sqrt(5)).",
+    "The exact certificate gives Q(t)=Q(u)(sqrt(163*(1+c0)))=Q(u)(sqrt(163*(4-c0))).",
+    "Thus K(t)=K(r)=K_(5), with [Q(t):Q]=12 and [K_(5):K]=12."
+  ],
+  "embedded_cyclic_quartic": {
+    "generator": "delta=sqrt(163*(1+c0))",
+    "minimal_polynomial": "X^4-815*X^2+132845",
+    "galois_group": "C4",
+    "automorphism": "delta -> 3*delta-delta^3/163=phi*delta",
+    "integral_trace_gram_discriminant": "3321125",
+    "written_conductor_conclusion": 815
+  },
+  "numerical_branch_diagnostic": {
+    "precision_decimal_digits": 260,
+    "arg_r_over_pi": "0.2",
+    "t": "(-0.000000000000000003808980937007652410767910408916472215821460626400998879002938160821468 + 1.395822911463873290675148758819976487353661651496188206357231322507454e-278j)",
+    "u": "(262537412640768738.9999999999992501068780266187577502528090632004159781 + 9.620834069290956032251489477199306649984859958904574636125721872764095e-244j)",
+    "w_u": "(-17492372525651731.03318991136316053633698801768792434687633483062691604 + 1.260439295188145986592139379849239794080918731774145484484023690130355e-186j)",
+    "relative_square_residual": "1.22375013104e-201",
+    "relative_imaginary_part_of_t": "3.6645573568e-261"
+  },
+  "limits": [
+    "The high-precision product check diagnoses the analytic branch only; it is not a proof of an algebraic identity.",
+    "Class-field identifications and the quartic conductor use the explicitly cited external inputs in MATHEMATICS.md.",
+    "No HMR/RH bridge, novelty claim, or broad uniform polynomial formula is asserted."
+  ]
+}

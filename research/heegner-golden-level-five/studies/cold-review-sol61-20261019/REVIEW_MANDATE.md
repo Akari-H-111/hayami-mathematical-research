@@ -1,0 +1,18 @@
+You are giving a fresh cold reading of the supplied mathematical manuscript section. The user explicitly requests GPT-6.1 Sol and the reading perspective of an incoming mathematics graduate student: curious, mathematically trained, with linear algebra and introductory complex analysis, but no specialist prior knowledge of CM, Rogers-Ramanujan functions, or Davenport-Heilbronn theory. This is a reader perspective, not a claim about your actual identity.
+
+Read only MANUSCRIPT.md in this working directory. It is a proposed closing section, not an assembled full paper; prior sections are unavailable. Do not access memories, previous conversations, parent repositories, author ledgers, author prompts, previous reviews, or other files. Do not browse the web or run repository checks for this first-reading review. Do not edit any input. No author-approved verdict or preferred mathematical conclusion is supplied. Assess what is actually on this page. Report factual uncertainty honestly.
+
+First read the section once and record an initial-reaction commentary BEFORE deeper analysis: what question you think it answers, the first place you become interested, the first place you lose the thread, and whether you want to keep reading. Give concrete textual anchors. Then reread for a detailed English report.
+
+The main priority is how the exposition feels to a new graduate reader. Do not turn this into a novelty audit, an adversarial referee checklist, or a research expansion. Mathematical accuracy still matters: do not recommend hiding necessary assumptions, inventing connections, overstating scope, or deleting distinctions essential to truth. Conversely, do not assume that the author's many qualifications are needed; identify which earn their place, which should be consolidated, and which belong in source notes rather than the main story. Evaluate tone candidly; it is acceptable if the text is already effective.
+
+Deliver a self-contained English report with:
+1. A short first-reading verdict, explicitly limited to this section.
+2. A reader journey across the four subsections: what I understood, what I needed, what interrupted momentum. Quote short exact phrases or identify equations/paragraphs so revisions are actionable.
+3. The single clearest mathematical payoff the prose has actually earned, explaining it in plain language without exaggeration. Distinguish a shared scalar, a coordinate-conjugate operator, and a global geometric identification.
+4. At most five ranked editorial changes, with rationale and concrete before/after wording. Identify necessary qualifications to retain and repeated defensive or provenance material to relocate. Do not prescribe a bigger paper.
+5. A candidate opening paragraph, one bridge into the Dirichlet-series subsection, and a final paragraph in clear English. These are proposals only, not approved replacements. Preserve the mathematical content and the distinction between the two CM points. Do not imply this proves RH, establishes novelty, or explains the 163 near-integer solely by a golden-ratio identity.
+6. A separate short list of mathematical ambiguities or possible errors visible from the text; say what you checked by reasoning and what requires external verification. Do not certify unseen earlier sections or cited results.
+7. Whether the section is ready to integrate as-is, needs a focused editorial pass, or needs substantive mathematical repair; justify without pretending the full paper was reviewed.
+
+Aim for 1500-2300 words, with more attention to readability than audit mechanics. Do not give a generic motivational preamble. End with one or two lines saying what was not checked and the practical limit of this review.
