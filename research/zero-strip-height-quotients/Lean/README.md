@@ -28,7 +28,7 @@ multiplicity-preserving translation, and the bounded-cell/superlinear-count
 contradiction.  A `CellDivisor` structure records finite cell supports and
 periodicity; its `cellMass_succ` theorem proves equal masses in consecutive
 cells.  It does not construct the xi divisor, prove local finiteness, or prove
-Riemann--von Mangoldt.  Those remain named analytic inputs.
+Riemann–von Mangoldt.  Those remain named analytic inputs.
 
 API reconnaissance was performed in the pinned checkout before formalization.
 The supplementary model imports `Mathlib.Topology.Instances.AddCircle.Defs`,

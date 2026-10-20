@@ -95,6 +95,24 @@ python3 -B releases/candidates/stokes-caustic-v5-v0.04/verify.py
 Historical v0.02 remains in `releases/current/stokes-caustic-v5/`; historical
 v0.03 is criterion-level. Their sealed scopes never inherit v0.04 results.
 
+## Independent research Lean layers
+
+The two independent `research/` workstreams have local replay scripts. They
+require the prepared Mathlib checkout described in each `Lean/README.md`.
+
+```sh
+sh research/heegner-golden-level-five/Lean/replay.sh
+sh research/zero-strip-height-quotients/verification/replay.sh
+```
+
+The Heegner replay checks 13 named algebraic declarations. The zero-strip
+replay also runs 330 exact checks and compiles 33 named theorems in four
+modules. These are bounded layers, not whole-paper proofs. A passing replay
+does not certify the CM value, q-product enclosure, Sturm counts, xi divisor
+construction, or Riemann–von Mangoldt; the explicit boundaries are in
+[research/heegner-golden-level-five/FORMALIZATION.md](../research/heegner-golden-level-five/FORMALIZATION.md)
+and [research/zero-strip-height-quotients/FORMALIZATION.md](../research/zero-strip-height-quotients/FORMALIZATION.md).
+
 ## Inverse-Leibniz illustrated releases
 
 ```sh

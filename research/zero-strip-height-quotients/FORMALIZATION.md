@@ -36,7 +36,7 @@ The following remain outside Lean:
 
 - the xi function and its divisor;
 - local finiteness of the zero divisor;
-- Riemann--von Mangoldt and the superlinear count;
+- Riemann–von Mangoldt and the superlinear count;
 - the identification of the abstract count with the zeta zero count;
 - the quotient homeomorphisms and the manifold local-homology/orientability
   arguments;

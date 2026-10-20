@@ -61,7 +61,7 @@ inputs. A LEAN label applies only to the named algebraic model or theorem.
 The compiled declarations use only `propext`, `Classical.choice`, and
 `Quot.sound` (some use a subset). No completed declaration uses `sorryAx`
 or a custom axiom. These 33 named theorems do not amount to a Lean proof of
-Riemann-von Mangoldt, the divisor No-Go or the advanced quotient topology.
+Riemann–von Mangoldt, the divisor No-Go or the advanced quotient topology.
 
 ## Next bounded target
 

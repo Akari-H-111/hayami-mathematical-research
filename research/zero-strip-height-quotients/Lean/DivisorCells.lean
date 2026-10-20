@@ -17,7 +17,7 @@ argument:
   uniformly bounded cell masses.
 
 The module deliberately does not construct the xi divisor or prove
-Riemann--von Mangoldt.  A caller supplies the prefix-count comparison and the
+Riemann–von Mangoldt.  A caller supplies the prefix-count comparison and the
 superlinear growth hypothesis; those are the named analytic inputs of the
 written argument.
 -/
@@ -241,7 +241,7 @@ have uniformly bounded cell masses.
 
 `N n` is the count below the `n`-th cell boundary and `A n` is the mass of the
 `n`-th half-open cell.  The hypothesis `hN` is the half-open partition bound;
-`hgrowth` is the named superlinear analytic input (for xi, Riemann--von
+`hgrowth` is the named superlinear analytic input (for xi, Riemann–von
 Mangoldt supplies it). -/
 theorem no_bounded_cells_of_superlinear
     (N A : ℕ → ℕ) (K M : ℕ)
