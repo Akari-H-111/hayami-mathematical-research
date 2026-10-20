@@ -1,0 +1,13 @@
+{
+  "date": "2026-10-18",
+  "requested_model": "gpt-5.6-terra",
+  "research_session": "01a14d55-c240-7ef0-a107-205372ac0455",
+  "research_observed_model": "gpt-5.6-terra",
+  "cold_review_session": "01a14dee-802e-71c0-b9b2-304b97796aa6",
+  "cold_review_observed_models": [
+    "gpt-5.6-terra"
+  ],
+  "research_returncode": 0,
+  "review_returncode": 0,
+  "scope": "Local synthesis and obstruction manuscript; no publication or priority claim."
+}

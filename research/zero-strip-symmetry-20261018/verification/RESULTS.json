@@ -1,0 +1,60 @@
+{
+  "date": "2026-10-18",
+  "python": "3.9.6",
+  "lean_toolchain": "leanprover/lean4:v4.33.1",
+  "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+  "requested_and_observed_cli_model": "gpt-5.6-terra",
+  "local_replay": "PASS",
+  "named_theorem_count": 23,
+  "axiom_report_count": 23,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "lean_sources": {
+    "SupervisorStructures.lean": {
+      "sha256": "3a77a5bb51a1715dd3bf4cb03071bdc36baa6b03925cc418a54bb8dc1ee5ce5f",
+      "named_theorems": [
+        "cylinder_add_continuous",
+        "cylinder_neg_continuous",
+        "project_deck",
+        "project_add",
+        "glide_square",
+        "reflection_fixed_iff",
+        "constant_cell_count",
+        "superlinear_excludes_constant_cells"
+      ]
+    },
+    "ZeroStripCore.lean": {
+      "sha256": "510a2e1464878869276c220413244f2d95cf646488a0a7a7b03bb9a1517b76c3",
+      "named_theorems": [
+        "C_sq",
+        "F_sq",
+        "R_sq",
+        "C_comp_F",
+        "F_comp_C",
+        "ambient_maps_pairwise_distinct",
+        "det_C",
+        "det_F",
+        "det_R",
+        "not_setOf_addSubgroup_of_zero_not_mem"
+      ]
+    },
+    "ZetaCompatibility.lean": {
+      "sha256": "72fcc808d5bb080dc7f1b19a537319a285070292e8e7f4fad65738544ddd83aa",
+      "named_theorems": [
+        "stripZero_conjugate",
+        "stripZero_functional",
+        "stripZero_conjugate_iff",
+        "stripZero_functional_iff",
+        "stripZero_horizontal"
+      ]
+    }
+  },
+  "countermodel_checks": 330,
+  "documentation_local_links": "PASS",
+  "original_attachment_hashes": "PASS",
+  "clean_machine_replay": "NOT TESTED",
+  "analytic_no_go_lean_formalized": false
+}

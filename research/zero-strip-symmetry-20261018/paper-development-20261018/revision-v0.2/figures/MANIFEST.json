@@ -1,0 +1,18 @@
+{
+  "python": "3.14.6",
+  "numpy": "2.5.2",
+  "matplotlib": "3.11.1",
+  "classification": "Schematics and exact formula evaluations; no zeta measurements",
+  "sha256": {
+    "figure-01-quotient-seams.pdf": "970fd519ef85ccb98e5a517b95b22a1a6df1253f846633f80949a1784f99427b",
+    "figure-01-quotient-seams.png": "a0c555fc3ccf831c5ef619e5e1a780dc9ea28eebe6cab6aa1b7453ec956687dd",
+    "figure-01-quotient-seams.svg": "451fc1380ea63b7c536e2829245b852aa2cb3366ab1472b3c89464bc47c3d3bd",
+    "figure-02-sparse-divisor.pdf": "60a4ce2f3dd8e143b518cff0ba09da31bd071c41f0aa85fc1f5209355f8d91fa",
+    "figure-02-sparse-divisor.png": "4672a28584aabc63401f4bcf17b0f329634e7f5cbb98447aa53a8c4b364af6e5",
+    "figure-02-sparse-divisor.svg": "e4fb026e2df156cf8243e6f8715900f23103f4277c095a3fb60d68f17c2e192e",
+    "figure-03-certified-bounds.pdf": "2502e2f153d65e94d0c700de572235ba8f09623c34f945007e66b78717e10b91",
+    "figure-03-certified-bounds.png": "844642a03fb437f88a260c3b9434093bec8e84779b4f00e49223774db29a4942",
+    "figure-03-certified-bounds.svg": "b9c0cf777ec397064ad064c7fdb1930dc9bb2432cf72249bd0aaf31e65c86167",
+    "figure-data.json": "5e460f8d571b4e976c1d4bae85b1f556dea5fa08c68b5509558a0b517e4c6a0d"
+  }
+}

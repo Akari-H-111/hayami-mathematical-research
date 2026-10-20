@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-18",
+  "status": "Accepted local illustrated revision v0.2",
+  "novelty_verdict": "Audit complete within documented scope; independent new theorem and universal priority not confirmed",
+  "page_count": 11,
+  "figure_count": 3,
+  "exact_figure_rows": 683,
+  "regression_tests": 3,
+  "source_bundle_replay": "Extracted checks and byte-identical figure regeneration PASS in same prepared environment",
+  "preservation": {
+    "v0.1_files_checked": 56,
+    "tracked_repository_files_checked": 962,
+    "first_cycle_files_checked": 27,
+    "unchanged_attachments": 2,
+    "changed_or_missing": []
+  },
+  "visual_qa": "All 11 final pages covered: complete inspection before minor repairs plus byte-identical page comparisons and reinspection of changed pages 1, 2 and 8.",
+  "authored_sha256": {
+    ".gitignore": "ed35ecc3918e14c87c24bafd5e49633a8fe0ca1c70b2fb0f880e917884433007",
+    "ACCEPTANCE.md": "38889e5be510f8186c2c22fe5e5da9782c40076486099005b1435fe2103fb5fb",
+    "CLI_NOVELTY_MANDATE.md": "ec03a736d3025b19d45bcfbecf54d1b80e1e1184dff934a8efc1453d440a7dc9",
+    "COLD_REVIEW_V02.md": "892a70e232ba12e76c94ffd73203f4e4b11e866e2a4a9b3868e4724e33d23b8d",
+    "CONTRIBUTION_WORDING.md": "d8656e23b7be7cf95febae3597bd23fc9cb82bf1c2ad01c3f28acc2f1d1278f7",
+    "FIGURES.md": "d8535db3ce5678f5a5b6b8c607886fa8b511ad8d4ae6fb57e3ea561e5052944d",
+    "MANDATE.md": "eb37191afbca15d6479222f94a03aed4e2ec88eed4c09b0d4c18e2f6a51fea24",
+    "NOVELTY_AUDIT.md": "fbe474e1875be466e9962b80e863b15432263c318f9ec87a7e3dadd266ffe96b",
+    "NOVELTY_VERDICT.md": "724ceddaa256741ad135930d4230bd059b28d00e5e5f6d8f25340b283fe940b3",
+    "PROVENANCE.json": "53d687cc5602e9cad9fdd79422e13ba7c053d2884f871bfd9537db5c7ded5868",
+    "README.md": "badbb9344bede25c39c1d4d9746a628c479d033949644de3ee70670e1a16efbe",
+    "REPAIR_CHECK.md": "6734319e5079296be6cded80332b9a3dba26e7f131c79826e1af174c5c5774db",
+    "REPAIR_CHECK_MANDATE.md": "d4a8d7247fdf618f60651643121625cf022d7677bec91ec6214dbba3f022daef",
+    "REVIEW_RESOLUTION.md": "045ca7fbc9121df821f6a54f940875eb255c15ba2ee75a60a2d94ff781dc345d",
+    "REVIEW_V02_MANDATE.md": "bf2c87aa7f06abd64390603e356a8906d7b945c794e8f4cd30f37071a80d92eb",
+    "SEARCH_LOG.md": "8b32ee08bdf694da53a05f485147355e3fc4872086326e5c94865f997ff93fc0",
+    "SUPERVISOR_LEADS.md": "c9e6b579e8f8ab5b52685825f83a4bf15e664c63313df65863108556aaabc287",
+    "figures/MANIFEST.json": "5d158b39066d1786d64f32608ed9e263df10a61ced95450775493fcfcad3a4b1",
+    "figures/figure-01-quotient-seams.pdf": "970fd519ef85ccb98e5a517b95b22a1a6df1253f846633f80949a1784f99427b",
+    "figures/figure-01-quotient-seams.png": "a0c555fc3ccf831c5ef619e5e1a780dc9ea28eebe6cab6aa1b7453ec956687dd",
+    "figures/figure-01-quotient-seams.svg": "451fc1380ea63b7c536e2829245b852aa2cb3366ab1472b3c89464bc47c3d3bd",
+    "figures/figure-02-sparse-divisor.pdf": "60a4ce2f3dd8e143b518cff0ba09da31bd071c41f0aa85fc1f5209355f8d91fa",
+    "figures/figure-02-sparse-divisor.png": "4672a28584aabc63401f4bcf17b0f329634e7f5cbb98447aa53a8c4b364af6e5",
+    "figures/figure-02-sparse-divisor.svg": "e4fb026e2df156cf8243e6f8715900f23103f4277c095a3fb60d68f17c2e192e",
+    "figures/figure-03-certified-bounds.pdf": "2502e2f153d65e94d0c700de572235ba8f09623c34f945007e66b78717e10b91",
+    "figures/figure-03-certified-bounds.png": "844642a03fb437f88a260c3b9434093bec8e84779b4f00e49223774db29a4942",
+    "figures/figure-03-certified-bounds.svg": "b9c0cf777ec397064ad064c7fdb1930dc9bb2432cf72249bd0aaf31e65c86167",
+    "figures/figure-data.json": "5e460f8d571b4e976c1d4bae85b1f556dea5fa08c68b5509558a0b517e4c6a0d",
+    "manuscript/images/figure-01-quotient-seams.pdf": "970fd519ef85ccb98e5a517b95b22a1a6df1253f846633f80949a1784f99427b",
+    "manuscript/images/figure-02-sparse-divisor.pdf": "60a4ce2f3dd8e143b518cff0ba09da31bd071c41f0aa85fc1f5209355f8d91fa",
+    "manuscript/images/figure-03-certified-bounds.pdf": "2502e2f153d65e94d0c700de572235ba8f09623c34f945007e66b78717e10b91",
+    "manuscript/main.tex": "d3c4dd13a8de971d84f42fbb4c78070d67d38f679f209a51819ebb76fd04593d",
+    "output/height-quotients-v0.2-figures.zip": "1facbb3ad9d160bf467a3640555ee35abefcc563568cd9cb68458dfb04ba6163",
+    "output/pdf/height-quotients-v0.2.pdf": "6dceeb629e65577520182462acc943f69f4e6ee4ff6fb0e6fee853c49f42705d",
+    "verification/build_figures.py": "81ca70b2ad965abeee1d797066e5a48cf1597e2d6c316298d7e80c0c4e99ae42",
+    "verification/test_figure_checks.py": "57b4f94a24b1ff18debb74a64138b6b1f77c95a4374e895c4300da6c27a9ac00",
+    "verification/verify_figures.py": "e671e926c97d24562d19b09cf2cb186da46255edd0eb378fea48976c69a48b38"
+  },
+  "local_evidence_sha256": {
+    "logs/pdf-qa.json": "6ac9b2e6d2501ebda76c266af71d7829bfa776218c0d52bb59568d06165ad577",
+    "logs/pdf-structure.log": "99d860ded8ca80160c329399a4f671097f561f28eb5a9d40af700438d187cb6e",
+    "logs/pdf-info.log": "741cc9512477bec87afab63a9d0c199ee735ec9fc4215cfd5461704cbe9d01fd",
+    "logs/pdf-fonts.log": "7e43afd2cf57687e1611795dd1092eeb2e4444ebecf26cacea20764dbed9bab8",
+    "logs/figure-pdf-qa.json": "e6181d2b11c1c02aacce890b4539cfb0568f62cf812bc081844c93c0038e2907",
+    "logs/figure-check-delivered.log": "d5b5746ce88fcee17e6162bad2a4f58fb44e60eba0ef8705a736085b9aac33b2",
+    "logs/figure-regression-delivered.log": "34ff82c9bce649d67e370e561160edc2f3775cac5ecd696672dbfe5e853e07e8",
+    "logs/extracted-bundle-replay.json": "cfc620223a46e2e9f1df4592c296c3c0a7b35fb4ad26a12867b3631d63a78493",
+    "logs/preservation-final.json": "82615c4b91ac42e240df362631c092310ecf6b47136762919ad9fdc60455bcfc",
+    "logs/navigation-final.log": "cd3f9f1340f2a61101f401a3bd49eb89cb5fcf4df1fb8b3e545c6be0aac1c72e",
+    "logs/tex-accepted.log": "fbb1d81e6e1c63337b7924e7f5223ee9fbfbc8332b81ad71be5020fb73b50429",
+    "logs/accepted-render-diff.json": "098c7afe617b274d31038c244e90ea0bf4067f20a52276a84979c54e0a1eaa77",
+    "logs/final-render-diff.json": "2efa6f22afe29e70c3ac8882a680dbe11845504a752fccbf546de470db4e7526",
+    "logs/novelty-dispatch.json": "64763536f8eba93e3b16875cff975dc715149dd9dc59b309fec98c411c7fa6dc",
+    "logs/novelty-result.json": "936d5307a1627063665e70876766655caaa44dc06eb6d82857b405ed9b8bdb2d",
+    "logs/novelty-actual-model.json": "fbaa3cfaf490faf7f0f55399affeb552bc581540b6981fdfd78f75294665e615",
+    "logs/review-dispatch.json": "345ee79384c048523aa7eada3471890610e1ed0101108164420a64eeb308b131",
+    "logs/review-result.json": "d280ea657456a57d267d84caa60637dd9f5d86ad1231937ef1deb7155f688d2c",
+    "logs/review-actual-model.json": "64143fb4e0f3124c2aef367f26f83160fd97b0da69ac8e9fb43aef17d306ecfb",
+    "logs/repair-dispatch.json": "a9c84ad9ffea89f1d3d43d379ff7c1958bddfa45e2a54c487e4e8509ade10fdc",
+    "logs/repair-result.json": "94a70c7df331c2615974e2caee1d7d9f326996f01bd9560b7106aae06aa0a4ca",
+    "logs/repair-actual-model.json": "2d2a9eef18e8090047656154e69fa000c94399b6f64c125d9f1fbd900e53c0bd",
+    "logs/KMP-retrieval.json": "d8a8caf6c8f6fd79ab2ff5e7a00bd4dbeed2d818a171f21df76f6b6c839b3fd9"
+  },
+  "provenance": {
+    "date": "2026-10-18",
+    "requested_model": "gpt-5.6-terra",
+    "successful_runs": {
+      "novelty": {
+        "session_id": "01a14dfb-e656-7b00-91e2-c7bb225f18c8",
+        "observed_models": [
+          "gpt-5.6-terra"
+        ],
+        "returncode": 0
+      },
+      "review": {
+        "session_id": "01a14e05-9f5a-7880-b98f-ec185bc2bcb8",
+        "observed_models": [
+          "gpt-5.6-terra"
+        ],
+        "returncode": 0
+      },
+      "repair": {
+        "session_id": "01a14e0b-8cee-7da1-acba-a4f8ed003ee7",
+        "observed_models": [
+          "gpt-5.6-terra"
+        ],
+        "returncode": 0
+      }
+    },
+    "failed_review": "Initial refusal preserved; excluded from acceptance.",
+    "scope": "Local novelty audit and reproducible illustrated revision; no external publication."
+  },
+  "limits": [
+    "No exhaustive priority certification",
+    "No external human peer review",
+    "No clean-machine dependency installation",
+    "No new Lean scope",
+    "No RH proof or counterexample",
+    "No publication, commit or push"
+  ]
+}
