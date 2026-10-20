@@ -1,0 +1,415 @@
+% Suggested insertions for the initial paper.
+% Requires: amsmath, amssymb, amsthm.
+% Labels and theorem numbering should be adapted to the paper.
+
+\section*{Insertion A: the pentagonal field}
+
+\begin{lemma}[Pentagonal field]\label{lem:pentagonal-field}
+Let \(\varphi=(1+\sqrt5)/2\) and \(c_0=(3-\sqrt5)/2\). Then
+\[
+p(c)=c^2-3c+1=(c-\varphi^2)(c-\varphi^{-2}),
+\qquad \operatorname{disc}(p)=5,
+\]
+and \(c_0=\varphi^{-2}\) is the unique root of \(p\) in \((0,1)\). Moreover
+\[
+\mathbb Q(\sqrt5)=\mathbb Q(\zeta_5)^+
+=\mathbb Q\!\left(2\cos\frac{2\pi}{5}\right).
+\]
+\end{lemma}
+
+\begin{proof}
+The sum and product of \(\varphi^2\) and \(\varphi^{-2}\) are
+\[
+\varphi^2+\varphi^{-2}=3,\qquad \varphi^2\varphi^{-2}=1,
+\]
+so the displayed factorization and \(\operatorname{disc}(p)=3^2-4=5\) follow. The roots are \((3\pm\sqrt5)/2\), and the one in \((0,1)\) is \((3-\sqrt5)/2=\varphi^{-2}\).
+
+For the field statement, complex conjugation is the unique element of order \(2\) in
+\(\operatorname{Gal}(\mathbb Q(\zeta_5)/\mathbb Q)\cong(\mathbb Z/5)^\times\), so its fixed field is the unique quadratic subfield. Since
+\[
+\zeta_5+\zeta_5^{-1}=2\cos\frac{2\pi}{5}=\varphi^{-1}
+\]
+and \(\varphi^{-1}\) has minimal polynomial \(x^2+x-1\), this fixed field is \(\mathbb Q(\sqrt5)\).
+\end{proof}
+
+\begin{remark}[Shared field, not a global equivalence]\label{rem:shared-field}
+Lemma~\ref{lem:pentagonal-field} shows that the rank-loss parameter \(c_0\) and the real subfield of the level-\(5\) cyclotomic field lie in the same quadratic field. This is a common scalar container, not a map between the ruled surface and a modular curve. In the introduction, write ``the same field occurs in two constructions'' rather than ``the two constructions are equivalent.'' The later \(\tau_{163}\) reconstruction is a genuine scalar inclusion \(\mathbb Q(\sqrt5)\subseteq\mathbb Q(t)\); it is still not a geometric or operator-theoretic identification.
+\end{remark}
+
+\section*{Insertion B: half-angle and the reflection axis}
+
+\begin{lemma}[Half-angle normal form]\label{lem:half-angle}
+Let
+\[
+\gamma=\varphi^{-1},\qquad c_0=\gamma^2,\qquad d=\sqrt{1+c_0},
+\qquad \kappa=\frac{\gamma}{1+d}.
+\]
+Then \(0<\kappa<1\). Put \(\theta=\arctan\kappa\). Then \(0<\theta<\pi/4\) and
+\[
+\kappa=\tan\theta,\qquad
+\gamma=\tan(2\theta)=\frac{2\kappa}{1-\kappa^2},
+\qquad
+u_0=\frac{\gamma}{2}=\frac12\tan(2\theta)=\frac{\kappa}{1-\kappa^2}.
+\]
+Moreover
+\[
+\kappa=2\cos\frac{\pi}{10}-2\cos\frac{\pi}{5}
+=\sqrt{\frac{5+\sqrt5}{2}}-\varphi.
+\]
+\end{lemma}
+
+\begin{proof}
+Since \(0<\gamma<1\), we have \(d>1\) and \(0<\kappa<1\). The double-angle formula gives
+\[
+\tan(2\theta)=\frac{2\tan\theta}{1-\tan^2\theta}
+=\frac{2\kappa}{1-\kappa^2}.
+\]
+The identity \(\gamma=2\kappa/(1-\kappa^2)\) is equivalent to \(\gamma\kappa^2+2\kappa-\gamma=0\), which follows from \(\kappa=\gamma/(1+d)\) and \(d^2=1+\gamma^2\):
+\[
+\gamma\kappa^2+2\kappa-\gamma
+=\frac{\gamma^3}{(1+d)^2}+\frac{2\gamma}{1+d}-\gamma
+=\frac{\gamma\bigl(\gamma^2+2(1+d)-(1+d)^2\bigr)}{(1+d)^2}=0.
+\]
+The branch \(0<\kappa<1\) is exactly \(0<2\theta<\pi/2\). For the radical form, \(2\cos(\pi/10)=\sqrt{(5+\sqrt5)/2}\) and \(2\cos(\pi/5)=\varphi\).
+\end{proof}
+
+\begin{lemma}[\(A\) is a reflection with axis \(\theta\)]\label{lem:reflection}
+Let
+\[
+J=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+\qquad
+M=\frac1d\begin{pmatrix}-1&\gamma\\ \gamma&1\end{pmatrix},
+\qquad
+A=JMJ=\frac1d\begin{pmatrix}1&\gamma\\ \gamma&-1\end{pmatrix}.
+\]
+Then \(A^2=I\), \(\operatorname{tr}A=0\), \(\det A=-1\), and
+\[
+A=
+\begin{pmatrix}
+\cos 2\theta&\sin 2\theta\\
+\sin 2\theta&-\cos 2\theta
+\end{pmatrix}.
+\]
+Thus \(A\) is the orthogonal reflection in the line
+\[
+L_+=\mathbb R(1,\kappa),
+\]
+and its \(-1\) eigenline is
+\[
+L_-=\mathbb R(1,-1/\kappa).
+\]
+The slopes of the two eigenlines are the roots of
+\[
+\gamma\lambda^2+2\lambda-\gamma=0,
+\]
+namely \(\kappa=(d-1)/\gamma=\gamma/(d+1)\) and \(-1/\kappa=-(d+1)/\gamma\). The matrix \(M\) is the reflection in the line at angle \(\pi/2-\theta\); conjugation by \(J\) sends that axis to the axis of \(A\) at angle \(\theta\).
+\end{lemma}
+
+\begin{proof}
+The identity \(M^2=I\) follows from \(\gamma^2=c_0\) and \(1+\gamma^2=d^2\). Direct multiplication gives \(JMJ=A\), and \(A^2=I\). Since \(\tan(2\theta)=\gamma\),
+\[
+\cos(2\theta)=\frac1{\sqrt{1+\gamma^2}}=\frac1d,
+\qquad
+\sin(2\theta)=\frac{\gamma}{\sqrt{1+\gamma^2}}=\frac{\gamma}{d},
+\]
+which is the displayed reflection form. A vector \((1,\lambda)\) is an eigenvector precisely when
+\[
+\frac{1+\gamma\lambda}{d}=\mu,
+\qquad
+\frac{\gamma-\lambda}{d}=\mu\lambda
+\]
+for some \(\mu\); eliminating \(\mu\) gives \(\gamma\lambda^2+2\lambda-\gamma=0\). The roots are \(\kappa\) and \(-1/\kappa\). Substitution gives \(A(1,\kappa)^T=(1,\kappa)^T\) and \(A(1,-1/\kappa)^T=-(1,-1/\kappa)^T\). Finally, \(M\) has \(+1\) eigenline \((1,1/\kappa)\), whose angle is \(\arctan(1/\kappa)=\pi/2-\theta\).
+\end{proof}
+
+\section*{Insertion C: the norm quartic}
+
+\begin{lemma}[Norm identity]\label{lem:norm-quartic}
+Let \(X\) be an indeterminate and \(\varphi=(1+\sqrt5)/2\). Then
+\begin{align*}
+N_{\mathbb Q(\sqrt5)(X)/\mathbb Q(X)}(X^2+2\varphi X-1)
+&=(X^2+2\varphi X-1)(X^2-2\varphi^{-1}X-1)\\
+&=X^4+2X^3-6X^2-2X+1.
+\end{align*}
+At \(X=\kappa\), the first factor vanishes. The quartic is irreducible over \(\mathbb Q\), and over \(\mathbb Q(\sqrt5)\) it factors into the two displayed quadratics. It is the minimal polynomial of \(\kappa\).
+\end{lemma}
+
+\begin{proof}
+Using \(\varphi-\varphi^{-1}=1\) and \(\varphi\varphi^{-1}=1\),
+\[
+\begin{aligned}
+&(X^2+2\varphi X-1)(X^2-2\varphi^{-1}X-1)\\
+&=(X^2-1)^2+2(\varphi-\varphi^{-1})X(X^2-1)-4X^2\\
+&=X^4-2X^2+1+2X^3-2X-4X^2\\
+&=X^4+2X^3-6X^2-2X+1.
+\end{aligned}
+\]
+The first factor vanishes at \(X=\kappa\) by Lemma~\ref{lem:half-angle}. The quartic has no rational root. A monic integer quadratic factorization would have the form \((X^2+aX+b)(X^2+cX+d)\) with \(bd=1\), so \(b=d=1\) or \(b=d=-1\). In the first case the \(X^3\)- and \(X\)-coefficients force \(a+c=2\) and \(a+c=-2\); in the second they force \(a+c=2\) and \(ac=-4\), whose roots are not integers. Hence the quartic is irreducible over \(\mathbb Q\), and it is the minimal polynomial of \(\kappa\). The displayed factorization is its factorization into irreducible quadratics over \(\mathbb Q(\sqrt5)\).
+\end{proof}
+
+\begin{remark}[Elementary norm, not a new theorem]\label{rem:norm-elementary}
+The identity in Lemma~\ref{lem:norm-quartic} is an elementary norm computation in \(\mathbb Q(\sqrt5)[X]\). Since \(\kappa\notin\mathbb Q(\sqrt5)\), the phrase ``norm from \(\mathbb Q(\sqrt5)\) of \(\kappa^2+2\varphi\kappa-1\)'' should be read with \(X\) an indeterminate; it is not the norm of a number in \(\mathbb Q(\sqrt5)\). No class-field content or new arithmetic theorem is claimed.
+\end{remark}
+
+\section*{Insertion D: Fourier involution and the functional equation}
+
+\begin{definition}[Odd five-periodic space]\label{def:V5}
+Let \(V\) be the real vector space of sequences \(a=(a_n)_{n\in\mathbb Z}\) such that
+\[
+a_{n+5}=a_n,\qquad a_{-n}=-a_n.
+\]
+Identify \(a\) with \((x,y)=(a_1,a_2)\), so that
+\[
+a=(x,y,-y,-x,0).
+\]
+Define the normalized positive-exponential DFT and the involution
+\[
+(Fa)_m=\frac1{\sqrt5}\sum_{n=1}^5 a_n e^{2\pi i mn/5},
+\qquad
+T=-iF.
+\]
+\end{definition}
+
+\begin{lemma}[Fourier involution]\label{lem:fourier-involution}
+On \(V\), \(F^2=P\) with \((Pa)_m=a_{-m}\). Since \(P=-I\) on \(V\),
+\[
+T^2=I.
+\]
+The operator \(T\) is real and symmetric, and in the \((x,y)\) coordinates its matrix is
+\[
+A=\frac2{\sqrt5}
+\begin{pmatrix}
+\sin(2\pi/5)&\sin(\pi/5)\\
+\sin(\pi/5)&-\sin(2\pi/5)
+\end{pmatrix}
+=\frac1d\begin{pmatrix}1&\gamma\\ \gamma&-1\end{pmatrix}.
+\]
+Its \(+1\) eigenline is \(\mathbb R(1,\kappa)\) and its \(-1\) eigenline is \(\mathbb R(1,-1/\kappa)\). In full sequence notation these are
+\[
+(1,\kappa,-\kappa,-1,0)
+\quad\text{and}\quad
+(1,-1/\kappa,1/\kappa,-1,0).
+\]
+\end{lemma}
+
+\begin{proof}
+The DFT identity \(F^2=P\) follows from orthogonality of the five roots of unity:
+\[
+(F^2a)_m=\frac15\sum_{n,k=1}^5a_ke^{2\pi in(k+m)/5}=a_{-m}.
+\]
+On \(V\), \(a_{-m}=-a_m\), so \(P=-I\) and \(T^2=(-i)^2F^2=-P=I\).
+
+For real \(a\in V\), pair the terms \(n\) and \(-n\) in the DFT: the cosine contributions cancel, so \(Fa_m\) is pure imaginary. Hence \(Ta\) is real. A direct computation from \(a=(x,y,-y,-x,0)\) gives
+\[
+(Fa)_1=\frac{2i}{\sqrt5}\left(x\sin\frac{2\pi}{5}+y\sin\frac{\pi}{5}\right),
+\qquad
+(Fa)_2=\frac{2i}{\sqrt5}\left(x\sin\frac{\pi}{5}-y\sin\frac{2\pi}{5}\right).
+\]
+Multiplying by \(-i\) gives \(A\). The identities
+\[
+\frac{2\sin(2\pi/5)}{\sqrt5}=\frac1d,
+\qquad
+\frac{2\sin(\pi/5)}{\sqrt5}=\frac{\gamma}{d}
+\]
+give the second form of \(A\). Lemma~\ref{lem:reflection} identifies the eigenlines.
+\end{proof}
+
+\begin{lemma}[Theta transformation and completion]\label{lem:theta}
+For \(a\in V\), define
+\[
+\Theta_a(t)=\sum_{n\in\mathbb Z}n a_n e^{-\pi n^2t/5}\quad(t>0),
+\qquad
+\Lambda_a(s)=\frac12\int_0^\infty\Theta_a(t)t^{(s+1)/2}\frac{dt}{t}.
+\]
+Then
+\[
+\Theta_a(t)=t^{-3/2}\Theta_{Ta}(1/t),
+\qquad
+\Lambda_a(s)=\Lambda_{Ta}(1-s).
+\]
+For \(\operatorname{Re}s>1\),
+\[
+\Lambda_a(s)=\left(\frac5\pi\right)^{(s+1)/2}
+\Gamma\!\left(\frac{s+1}{2}\right)F_a(s),
+\qquad
+F_a(s)=\sum_{n\ge1}\frac{a_n}{n^s}.
+\]
+In particular, \(\Lambda_a\) is entire.
+\end{lemma}
+
+\begin{proof}
+Let \(f_t(x)=xe^{-\pi tx^2/5}\), and use the Fourier convention
+\[
+\widehat f_t(\xi)=\int_{\mathbb R}f_t(x)e^{-2\pi ix\xi}\,dx.
+\]
+Then
+\[
+\widehat f_t(\xi)
+=-i\left(\frac5t\right)^{3/2}\xi e^{-5\pi\xi^2/t}.
+\]
+Poisson summation on each residue class modulo \(5\) gives
+\[
+\sum_{\ell\in\mathbb Z}f_t(j+5\ell)
+=\frac15\sum_{k\in\mathbb Z}e^{2\pi ikj/5}\widehat f_t(k/5).
+\]
+Multiplying by \(a_j\), summing over \(j=1,\dots,5\), and using \((Fa)_k=i(Ta)_k\),
+\[
+\begin{aligned}
+\Theta_a(t)
+&=\frac1{\sqrt5}\sum_{k\in\mathbb Z}(Fa)_k\widehat f_t(k/5)\\
+&=\frac1{\sqrt5}\sum_{k\in\mathbb Z}i(Ta)_k
+\left[-i\left(\frac5t\right)^{3/2}\frac{k}{5}e^{-\pi k^2/(5t)}\right]\\
+&=t^{-3/2}\Theta_{Ta}(1/t).
+\end{aligned}
+\]
+For \(\operatorname{Re}s>1\), pair \(n\) and \(-n\) in \(\Theta_a\), integrate termwise, and use the gamma integral:
+\[
+\Lambda_a(s)
+=\sum_{n\ge1}n a_n\int_0^\infty e^{-\pi n^2t/5}t^{(s+1)/2}\frac{dt}{t}
+=\left(\frac5\pi\right)^{(s+1)/2}\Gamma\!\left(\frac{s+1}{2}\right)F_a(s).
+\]
+Substituting the theta transformation and then \(v=1/t\),
+\[
+\Lambda_a(s)
+=\frac12\int_0^\infty\Theta_{Ta}(1/t)t^{(s-2)/2}\frac{dt}{t}
+=\Lambda_{Ta}(1-s).
+\]
+The Gaussian decay at infinity, together with the transformation, gives Gaussian decay at zero, so the Mellin integral converges for every \(s\) and defines an entire function.
+\end{proof}
+
+\begin{theorem}[Functional-equation classification]\label{thm:fe-classification}
+For \(a\in V\) and \(\varepsilon\in\{+1,-1\}\), the following are equivalent:
+\[
+\Lambda_a(s)=\varepsilon\Lambda_a(1-s)\ \text{for all }s\in\mathbb C
+\quad\Longleftrightarrow\quad
+Ta=\varepsilon a.
+\]
+Moreover
+\[
+V=V_+\oplus V_-,
+\qquad
+V_+=\mathbb R(1,\kappa),
+\qquad
+V_-=\mathbb R(1,-1/\kappa).
+\]
+For \(a=\alpha(1,\kappa)+\beta(1,-1/\kappa)\), the equation with \(\varepsilon=+1\) holds if and only if \(\beta=0\), and the equation with \(\varepsilon=-1\) holds if and only if \(\alpha=0\). The zero vector satisfies both signs; every nonzero \(a\in V\) satisfies exactly one.
+\end{theorem}
+
+\begin{proof}
+If \(Ta=\varepsilon a\), Lemma~\ref{lem:theta} gives
+\[
+\Lambda_a(s)=\Lambda_{Ta}(1-s)=\varepsilon\Lambda_a(1-s).
+\]
+Conversely, suppose \(\Lambda_a(s)=\varepsilon\Lambda_a(1-s)\) for all \(s\). Lemma~\ref{lem:theta} gives
+\[
+\Lambda_{Ta}(1-s)=\varepsilon\Lambda_a(1-s)
+\quad\text{for all }s.
+\]
+Replacing \(1-s\) by \(w\),
+\[
+\Lambda_{Ta}(w)=\varepsilon\Lambda_a(w)
+\quad\text{for all }w.
+\]
+It remains to prove that \(a\mapsto\Lambda_a\) is injective on \(V\). If \(\Lambda_a\equiv0\), then on \(\operatorname{Re}s>1\),
+\[
+0=\Lambda_a(s)=\left(\frac5\pi\right)^{(s+1)/2}
+\Gamma\!\left(\frac{s+1}{2}\right)F_a(s),
+\]
+and the gamma factor is nonzero, so \(F_a\equiv0\). If \(a\neq0\), let \(n_0\ge1\) be the least index with \(a_{n_0}\neq0\). For real \(\sigma>1\),
+\[
+n_0^\sigma F_a(\sigma)
+=a_{n_0}+\sum_{n>n_0}a_n\left(\frac{n_0}{n}\right)^\sigma.
+\]
+Since \(a_n\) is bounded and periodic, the tail tends to \(0\) as \(\sigma\to+\infty\) (for instance by dominated convergence with the summable majorant \((n_0/n)^{\sigma_0}\) for some \(\sigma_0>1\)), so the left side tends to \(a_{n_0}\), a contradiction. Hence \(a=0\). Thus \(\Lambda_{Ta}=\varepsilon\Lambda_a\) implies \(Ta=\varepsilon a\).
+
+The decomposition \(V=V_+\oplus V_-\) follows from \(T^2=I\) and the eigenline computation in Lemma~\ref{lem:reflection}. For \(a=\alpha(1,\kappa)+\beta(1,-1/\kappa)\),
+\[
+Ta=\alpha(1,\kappa)-\beta(1,-1/\kappa),
+\]
+and the two displayed equivalences follow. The zero vector is the intersection \(V_+\cap V_-\); every nonzero vector has a unique sign.
+\end{proof}
+
+\begin{remark}[Signs and normalization]\label{rem:signs}
+The following conventions are part of the theorem.
+\begin{enumerate}
+\item The DFT uses the positive exponent \(e^{2\pi imn/5}\) and \(T=-iF\). With the negative exponent, \(F^{-1}=-F\) on \(V\), so \(T=+iF\); this swaps the \(+1\) and \(-1\) eigenlines.
+\item The normalization \(1/\sqrt5\) is essential. The unnormalized DFT gives \(T^2=5I\) on \(V\), not an involution.
+\item The factor \(n\) in \(\Theta_a\) and the exponent \(/5\) are matched to \(F_a(s)\). Changing them changes the completion and the location of the functional equation. Oddness gives \(a_0=a_5=0\), so no zero-index term appears.
+\end{enumerate}
+\end{remark}
+
+\begin{remark}[Scope]\label{rem:fe-scope}
+Theorem~\ref{thm:fe-classification} classifies only the real odd \(5\)-periodic coefficient space with the specific completion above. It does not classify all Dirichlet series, does not assert an Euler product, and does not imply the Riemann hypothesis. The Davenport--Heilbronn sequence is the \(+1\) example; it is nonmultiplicative, and classical Davenport--Heilbronn theory has zeros off \(\operatorname{Re}s=1/2\). Functional-equation symmetry alone therefore does not fix zero locations.
+\end{remark}
+
+\appendix
+\section*{Appendix: the odd-\(N\) Fourier/Mellin extension}
+\addcontentsline{toc}{section}{Appendix: the odd-\(N\) Fourier/Mellin extension}
+
+\begin{theorem}[Odd-\(N\) extension]\label{thm:odd-N}
+Let \(N\ge3\) be odd. Let
+\[
+V_N=\{a:\mathbb Z\to\mathbb R\mid a_{n+N}=a_n,\ a_{-n}=-a_n\},
+\]
+and define
+\[
+(F_Na)_m=\frac1{\sqrt N}\sum_{n=1}^N a_ne^{2\pi imn/N},
+\qquad
+T_N=-iF_N.
+\]
+Then \(T_N^2=I\) on \(V_N\), \(T_N\) is real, and in the coordinates
+\(a_1,\dots,a_{(N-1)/2}\) it is represented by the symmetric sine-Fourier matrix
+\[
+(S_N)_{mn}=\frac2{\sqrt N}\sin\frac{2\pi mn}{N},
+\qquad
+1\le m,n\le\frac{N-1}{2},
+\]
+which satisfies \(S_N^2=I\). For
+\[
+\Theta_a^N(t)=\sum_{n\in\mathbb Z}na_ne^{-\pi n^2t/N},
+\qquad
+\Lambda_a^N(s)=\frac12\int_0^\infty\Theta_a^N(t)t^{(s+1)/2}\frac{dt}{t},
+\]
+one has
+\[
+\Theta_a^N(t)=t^{-3/2}\Theta_{T_Na}^N(1/t),
+\qquad
+\Lambda_a^N(s)=\Lambda_{T_Na}^N(1-s).
+\]
+Consequently, for \(\varepsilon\in\{+1,-1\}\),
+\[
+\Lambda_a^N(s)=\varepsilon\Lambda_a^N(1-s)\ \text{for all }s
+\quad\Longleftrightarrow\quad
+T_Na=\varepsilon a.
+\]
+\end{theorem}
+
+\begin{proof}
+The DFT identity \(F_N^2=P\), with \((Pa)_m=a_{-m}\), holds for every \(N\). On \(V_N\), oddness gives \(P=-I\), hence \(T_N^2=I\). For real \(a\in V_N\), pairing \(n\) and \(-n\) makes \(F_Na\) pure imaginary, so \(T_Na\) is real. In the coordinates \(a_1,\dots,a_{(N-1)/2}\),
+\[
+(T_Na)_m=\frac2{\sqrt N}\sum_{n=1}^{(N-1)/2}a_n\sin\frac{2\pi mn}{N},
+\]
+which is \(S_N\). Thus \(S_N^2=I\).
+
+The theta transformation is the same computation with \(N\) in place of \(5\). For \(f_t(x)=xe^{-\pi tx^2/N}\),
+\[
+\widehat f_t(\xi)=-i\left(\frac Nt\right)^{3/2}\xi e^{-N\pi\xi^2/t},
+\]
+and Poisson summation on each residue class modulo \(N\) gives
+\[
+\Theta_a^N(t)
+=\frac1{\sqrt N}\sum_{k\in\mathbb Z}(F_Na)_k\widehat f_t(k/N)
+=t^{-3/2}\Theta_{T_Na}^N(1/t).
+\]
+The Mellin computation is identical:
+\[
+\Lambda_a^N(s)=\left(\frac N\pi\right)^{(s+1)/2}
+\Gamma\!\left(\frac{s+1}{2}\right)F_a(s)
+\quad(\operatorname{Re}s>1),
+\]
+and substitution gives \(\Lambda_a^N(s)=\Lambda_{T_Na}^N(1-s)\). The injectivity argument of Theorem~\ref{thm:fe-classification} applies verbatim, so the functional equation is equivalent to \(T_Na=\varepsilon a\).
+\end{proof}
+
+\begin{remark}[Scope of the appendix]\label{rem:odd-N-scope}
+The theorem is a Fourier/Mellin extension only. The dimensions of the \(\pm1\) eigenspaces of \(S_N\) depend on \(N\); they are not in general one. For example, \(N=3\) has only the \(+1\) eigenspace, \(N=5\) has dimensions \(1+1\), and \(N=7\) has dimensions \(2+1\). There is no canonical \(+1\) line for general \(N\), no canonical \(\kappa_N\), and no \(N\)-dependent ruled-surface family, rank-loss polynomial, or CM reconstruction analogous to the pentagonal \(N=5\) case. The \(N=5\) case is special because \(V_5\) is two-dimensional and the Rogers--Ramanujan/CM coordinate selects the \(+1\) line.
+\end{remark}
+

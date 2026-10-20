@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-20",
+  "status": "PASS",
+  "pdf": "output/pdf/heegner_golden_figure_atlas.pdf",
+  "pdf_sha256": "dea9c7277962cdfb8a696c1147e0fe675c36975a938e9803a94d2ca36fa30b46",
+  "pages": 14,
+  "plates": 12,
+  "inspected_pages": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14
+  ],
+  "renders": {
+    "page_01": "80b8dc987e162b3ac26ae01f8fab86ded22303770bdb06d8191d77d938bf4d83",
+    "page_02": "8a5ba1efb2da326aa2891c1ea0fc04dd1e88208653c1c8871e6d3d3928f93981",
+    "page_03": "c22173d5a8c7fbffe621cf33940015719433119245819abc14b211eb8ba19ecd",
+    "page_04": "eca499bebacb0cd74b31f4e01fc8b96f94c2be1032f1375ceff22c2c230a6da6",
+    "page_05": "0c774d0f9590e47ffad61af20bce455670788f6e9fc640d33e7a660269d377a5",
+    "page_06": "7d84bd0a754a3baea5a5f68139e4be705b3b274e1f22623c5fe880c1a4ccd5ab",
+    "page_07": "d68881e5e1cd0941ba7cc2ee50dafc4612af04fb4d6f91aa1f1ee0cf502f89ad",
+    "page_08": "517542bb3256c17a859d3957a995caf4baf329d7b9d687a245545b680dae2563",
+    "page_09": "054fe27531a5bb62ed3ebc1ed7e4ccdff2b67e1d137fb832eac174c338369550",
+    "page_10": "b9ce54f3f8a1b2cafbee9acdc3de0e38dcb1834c8b21d06db4822e6651f151b9",
+    "page_11": "dd2f535b08ff5927af5148d9765e14dcb7d509c8a2fde4078ae2edd969d3e211",
+    "page_12": "fa3cb8aac85a2a478f85436dd90a00526aa1567ac6e0f07e82ef622de4ae1ae1",
+    "page_13": "a6c877ee1c0cab01243fd980390b6d3fef3da4160acb457122e6b7ca75c52beb",
+    "page_14": "0b02c7900ac252db9ab91d8b9b51dd3ae31911f27da0f008426a4d5668013ce1"
+  },
+  "checks": [
+    "All rendered pages inspected for clipping, overlap, formula legibility, captions, numbering, and reading flow.",
+    "Plot data and written analytic arguments have separate verification records; visual inspection does not certify mathematics.",
+    "Actual surface mesh bounds, pentagon projection, paired reflection vectors, independent RR and theta evaluations, DFT residue order, fixed gap and correction powers checked.",
+    "Native-vector PDF merging and qpdf structural check passed."
+  ]
+}

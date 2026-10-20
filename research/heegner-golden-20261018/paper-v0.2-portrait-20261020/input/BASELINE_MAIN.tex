@@ -1,0 +1,387 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,graphicx,pdflscape,hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue,pdftitle={Golden Coordinates at Level Five},pdfauthor={Akari Hayami (Jian-Yu Huang)}}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{proposition}[theorem]{Proposition}\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\Q}{\mathbb Q}\newcommand{\R}{\mathbb R}\newcommand{\ii}{\mathrm i}\newcommand{\e}{\mathrm e}\newcommand{\Fcal}{\mathcal F}\newcommand{\Tcal}{\mathcal T}
+\newcommand{\Plate}[3]{\clearpage\begin{landscape}\begin{figure}[p]\centering\includegraphics[width=.94\linewidth,height=.86\textheight,keepaspectratio]{figures/figure_#1.pdf}\caption{#2}\label{#3}\end{figure}\end{landscape}\clearpage}
+\title{Golden Coordinates at Level Five: Ruled-Surface Rank Loss, CM Values, and Fourier Self-Duality}
+\author{Akari Hayami (Jian-Yu Huang)\\{\small\href{mailto:akari.h.1.9984@gmail.com}{\nolinkurl{akari.h.1.9984@gmail.com}}}}\date{20 October 2026\\Local assembled draft}
+\begin{document}\maketitle
+\begin{abstract}
+The rank-loss polynomial of an orthogonal-circle ruled surface is $c^2-3c+1$,
+with interior root $c_0=(3-\sqrt5)/2$.  We ask for actual maps linking this
+golden coordinate to level-five modular and Fourier phenomena.  A certified
+Klein-equation factorization at $\tau_{163}=(1+\ii\sqrt{163})/2$ recovers
+$\sqrt5$ from $v=r(\tau_{163})^5$.  Duke's inversion at the distinct point
+$i$ becomes the normalized sine-Fourier reflection $A=JMJ$, and Poisson--Mellin
+analysis carries its positive eigenline to a functional equation and classifies
+the two signed functional equations within the odd five-periodic coefficient
+space.  Exact
+finite certificates are kept distinct from the analytic proofs.
+\end{abstract}
+
+\section{Question and surface coordinate}\label{sec:surface}
+Hermite's 1859 discussion leads, in modern notation, to the remarkably small
+gap between $\e^{\pi\sqrt{163}}$ and an integer \cite[pp.~47--48]{Hermite}.  For
+$\tau_{163}=(1+\ii\sqrt{163})/2$ and
+$q=\e^{2\pi\ii\tau_{163}}=-\e^{-\pi\sqrt{163}}$, the classical
+$j$-expansion $q^{-1}+744+196884q+\cdots$ and
+$j(\tau_{163})=-640320^3$ explain its small gap \cite{Duke}.
+Meanwhile $P(c)=c^2-3c+1$ has discriminant $5$, so its roots lie in
+$\Q(\sqrt5)=\Q(\zeta_5+\zeta_5^{-1})$.
+Indeed $\zeta_5+\zeta_5^{-1}=2\cos(2\pi/5)=(\sqrt5-1)/2$ has minimal
+polynomial $X^2+X-1$, identifying the real quadratic cyclotomic subfield.  Which calculations connect these
+facts?
+
+Put $\phi=(1+\sqrt5)/2$, $\gamma=\phi^{-1}$, $c_0=\phi^{-2}=\gamma^2$.
+The local surface source \cite{HMR} uses the surface angle $t$ and ruling
+coordinate $u$:
+\begin{equation}\label{surface}
+ S(t,u)=(c+2u(1-c),(1-u)\sin t,u\sqrt{c(2-c)}),\qquad c=\cos t.
+\end{equation}
+The paired endpoints are $C_1(t)=(c,\sin t,0)$ and
+$C_2(t)=(2-c,0,\sqrt{c(2-c)})$: unit circles in perpendicular planes,
+with centers $(0,0,0)$ and $(1,0,0)$.  Thus
+$S(t,u)=(1-u)C_1(t)+uC_2(t)$ for $0\le u\le1$.
+For fixed $t$, varying $u$ traces a ruling segment.  Rank loss means that
+its two parameter-direction tangent vectors become linearly dependent.  In $0<c<1$, the third component of
+$S_t\times S_u$ is $(1-c)(1-c-2u)$, hence rank loss forces $u=(1-c)/2$.
+The remaining components are
+\[
+-\frac{(1+c)P(c)}{2\sqrt{c(2-c)}},\qquad
+-\frac{\sin t\,P(c)}{\sqrt{c(2-c)}}.
+\]
+Thus
+\begin{equation}\label{golden}
+c_0=\frac{3-\sqrt5}{2},\qquad\gamma=1-c_0=\phi^{-1},\qquad
+u_0=\gamma/2=\cos(2\pi/5).
+\end{equation}
+Figures~\ref{map}--\ref{icofig} display the connection map, the ruled patch and its rank-loss locus, and the pentagonal and icosahedral realizations.
+\Plate{01}{Connection map: surface coordinate, reflection, coordinate exchange, Fourier eigenline, and completed functional equation.}{map}
+\Plate{02}{Orthogonal-circle ruled surface \eqref{surface}: a global reflected lateral pair at $t=\pm\arccos c_0$ and a local positive-$t$ close-up at the rank-loss ruling $u_0$.}{surfacefig}
+\Plate{03}{Rank loss in $(c,u)$: the positive-sine branch, $u=(1-c)/2$, the remaining polynomial $P(c)$, and its root $c_0$.}{rank}
+\Plate{04}{Unit-pentagon coordinate: $u_0=\cos72^\circ$ is kept distinct from $c_0$, the squared side-to-diagonal ratio.}{pentagon}
+
+\Plate{12}{Unit-radius icosahedron chords. The vertices are
+$\{(0,\pm1,\pm\phi),(\pm1,\pm\phi,0),(\pm\phi,0,\pm1)\}/\sqrt{1+\phi^2}$.
+Their distinct dot products are $1/\sqrt5,-1/\sqrt5,-1$, with pair counts
+$30,30,6$. Thus the squared short/long ratio is
+$(2-2/\sqrt5)/(2+2/\sqrt5)=c_0$.}{icofig}
+
+\section{CM field recovery}\label{sec:cm}
+For $\Im\tau>0$ define
+\begin{equation}\label{rr}
+r(\tau)=q^{1/5}\prod_{n\ge1}\frac{(1-q^{5n-4})(1-q^{5n-1})}{(1-q^{5n-3})(1-q^{5n-2})},
+\quad q=\e^{2\pi\ii\tau},\quad q^{1/5}=\e^{2\pi\ii\tau/5}.
+\end{equation}
+Set $v=r(\tau_{163})^5$.  The classical CM value above and Klein's
+level-five relation (as recorded by Duke \cite[Eq.~(2.5)]{Duke}) give
+\begin{equation}\label{klein}
+P_j(v)=(v^4-228v^3+494v^2+228v+1)^3+jv(v^2+11v-1)^5=0.
+\end{equation}
+\begin{theorem}\label{recovery}
+For $v=r(\tau_{163})^5$, $\sqrt5\in\Q(v)$ and
+\[
+\begin{aligned}
+\sqrt5&=-\frac{A_{163}(v)}{B_{163}(v)},&
+\phi&=\frac{B_{163}-A_{163}}{2B_{163}},\\
+\gamma&=-\frac{A_{163}+B_{163}}{2B_{163}},&
+c_0&=\frac{3B_{163}+A_{163}}{2B_{163}}.
+\end{aligned}
+\]
+where the last three expressions are evaluated at $v$.
+\end{theorem}
+\begin{proof}
+Appendix~\ref{certificate} gives the exact identity
+$P_{-640320^3}(X)=A_{163}(X)^2-5B_{163}(X)^2$ with coprime integer
+polynomials.  If $B_{163}(v)=0$, then $A_{163}(v)=0$, contrary to Bezout.
+Thus $(A_{163}(v)/B_{163}(v))^2=5$.  The rational interval certificate gives
+$A_{163}(v)<0<B_{163}(v)$, selecting $-\sqrt5$; the formulas follow.
+\end{proof}
+Figure~\ref{cmfig} compares the two CM arguments, nomes, and $j$-values;
+Figure~\ref{near} magnifies the near-integer gap and its series corrections.
+\Plate{10}{Two CM arguments, their nomes, and their $j$-values.  The point $i$ is the inversion fixed point; the tiny negative nome at $\tau_{163}$ is the arithmetic branch in Theorem~\ref{recovery}.}{cmfig}
+\Plate{11}{Hermite near-integer profile: the fixed gap and successive $j$-series corrections, separate from the exact field certificate.}{near}
+
+\section{The common involution}\label{sec:involution}
+Duke's inversion law is
+\[
+r(-1/\tau)=\frac{\gamma-r(\tau)}{1+\gamma r(\tau)} \cite[Proposition~2]{Duke}.
+\]
+In homogeneous coordinates put
+\[
+M=\frac{1}{\sqrt{1+c_0}}\begin{pmatrix}-1&\gamma\\\gamma&1\end{pmatrix},
+\qquad J=\begin{pmatrix}0&1\\1&0\end{pmatrix}.
+\]
+Taking the ratio of $M(z,1)^T$ gives the displayed law, and direct
+multiplication, using $\gamma^2=c_0$, proves $M^2=I$.
+
+Let $V_5$ be the real space of odd five-periodic sequences.  In residues
+$1,2,3,4,5$ (with $5=0$), it consists of $(x,y,-y,-x,0)$.  Define
+\[
+(\Fcal a)_m=\frac{1}{\sqrt5}\sum_{n=1}^5a_n\e^{2\pi\ii mn/5},\qquad
+\Tcal=-\ii\Fcal.
+\]
+Pairing $n$ and $5-n$ gives
+\begin{equation}\label{A}
+A=\frac{2}{\sqrt5}\begin{pmatrix}\sin(2\pi/5)&\sin(\pi/5)\\
+\sin(\pi/5)&-\sin(2\pi/5)\end{pmatrix}=JMJ.
+\end{equation}
+Indeed $2\sin(2\pi/5)/\sqrt5=1/\sqrt{1+c_0}$ and
+$2\sin(\pi/5)/\sqrt5=\gamma/\sqrt{1+c_0}$, by squared pentagon
+identities.  Thus $A^2=I$.
+
+\begin{proposition}\label{kappa}
+With $\kappa=r(i)$,
+\[
+\kappa=\frac{\gamma}{1+\sqrt{1+c_0}},\qquad A(1,\kappa)^T=(1,\kappa)^T.
+\]
+For $\theta=\frac12\arctan\gamma$,
+\[
+\kappa=\tan\theta,\quad\cos2\theta=\frac{1}{\sqrt{1+c_0}},\quad
+\sin2\theta=\frac{\gamma}{\sqrt{1+c_0}},
+\]
+and, separately, $\kappa=2\cos18^\circ-2\cos36^\circ$.  Finally
+$u_0=\kappa/(1-\kappa^2)$ and
+$c_0=(2\kappa/(1-\kappa^2))^2$.
+\end{proposition}
+\begin{proof}
+The inversion law fixes $r(i)$; positivity of every product factor in
+\eqref{rr} at $i$ selects the positive root of
+$\gamma X^2+2X-\gamma=0$.  It gives the stated $\kappa$ and
+$M(\kappa,1)^T=(\kappa,1)^T$, so $J$ transfers it explicitly to the
+$+1$ eigenvector of $A$.  Since $\tan2\theta=\gamma$ and
+$0<2\theta<\pi/2$, right-triangle and half-angle formulas prove the
+three half-angle identities.  This axis angle is not $18^\circ$.
+Separately $2\cos36^\circ=\phi$, $2\cos18^\circ=\sqrt{2+\phi}$;
+squaring positive sides shows their difference has the same positive
+quadratic root.  The last formulas are the tangent double-angle identity.
+\end{proof}
+\Plate{05}{Coordinate exchange for $M$ and $A=JMJ$, using an off-axis vector and keeping their slope conventions separate.}{exchange}
+\Plate{06}{Rogers--Ramanujan inversion at the positive fixed point: independent direct product curves $r(\ii y)$ and $r(\ii/y)$ meet at $r(i)=\kappa$.}{rrfig}
+\Plate{07}{Odd five-periodic Fourier eigenvector in residue order $1,2,3,4,5$; the plotted input and output are the actual normalized DFT vectors.}{dft}
+
+Also
+\[
+X^4+2X^3-6X^2-2X+1=(X^2+2\phi X-1)(X^2-2\phi^{-1}X-1),
+\]
+the polynomial norm
+$N_{\Q(\sqrt5)(X)/\Q(X)}(X^2+2\phi X-1)$.
+Conjugation sends $\phi$ to $-\phi^{-1}$; multiplication using
+$\phi-\phi^{-1}=1$ and $\phi\phi^{-1}=1$ proves the identity.
+The fixed-point equation gives $\kappa^2+2\phi\kappa-1=0$,
+so the first factor vanishes at $X=\kappa$.
+
+\section{Poisson--Mellin bridge and classification}\label{sec:theta}
+The Gaussian bridge turns finite Fourier symmetry into analytic symmetry.
+To retain $t$ as a surface angle, use $x>0$ here:
+\[
+F_a(s)=\sum_{n\ge1}a_n n^{-s}\quad(\Re s>1),\qquad
+\Theta_a(x)=\sum_{n\in\mathbb Z}na_n\e^{-\pi n^2x/5}.
+\]
+\begin{theorem}\label{poisson}
+For $a\in V_5$, $a'=\Tcal a$,
+\[
+\Lambda_a(s)=\frac{1}{2}\int_0^\infty\Theta_a(x)x^{(s+1)/2}\frac{dx}{x}
+=\left(\frac{5}{\pi}\right)^{(s+1)/2}\Gamma((s+1)/2)F_a(s)
+\]
+defines an entire function by its integral; the displayed Dirichlet-series
+expression holds for $\Re s>1$.  Moreover $\Lambda_a(s)=\Lambda_{a'}(1-s)$.
+\end{theorem}
+\begin{proof}
+With $\widehat f(\xi)=\int_\R f(y)\e^{-2\pi\ii y\xi}dy$,
+put $f_x(y)=y\e^{-\pi xy^2/5}$.  Its transform is
+\[\widehat f_x(\xi)=-\ii(5/x)^{3/2}\xi\e^{-5\pi\xi^2/x}.\]
+Residue-class Poisson summation \cite[\S1.8(iv)]{DLMF} is
+\[
+\sum_{\ell\in\mathbb Z}f_x(j+5\ell)=\frac{1}{5}\sum_{k\in\mathbb Z}
+\e^{2\pi\ii kj/5}\widehat f_x(k/5).
+\]
+After multiplying by $a_j$ and summing,
+\begin{align*}
+\Theta_a(x)&=\frac{1}{\sqrt5}\sum_k(\Fcal a)_k\widehat f_x(k/5)\\
+&=\frac{1}{\sqrt5}\sum_k\ii a'_k[-\ii(5/x)^{3/2}(k/5)
+\e^{-\pi k^2/(5x)}]=x^{-3/2}\Theta_{a'}(1/x).
+\end{align*}
+This shows the $1/5$, $1/\sqrt5$, $\ii(-\ii)$ cancellation, and
+$x^{-3/2}$.  Bounded periodicity gives exponential decay at infinity;
+the transformation gives $Cx^{-3/2}\e^{-c/x}$ at zero.  These envelopes,
+also after multiplication by $|\log x|^r$, prove local uniform convergence
+of the integral and all $s$ derivatives.  For $\Re s>1$, odd pairing and
+termwise gamma integration give the displayed completion.  Substitution of
+the theta transformation changes $x^{(s+1)/2}$ to $x^{(s-2)/2}$, and
+$y=1/x$ gives $y^{(2-s)/2}dy/y$, proving the functional equation.
+\end{proof}
+\Plate{08}{Compensated theta self-duality: the profile $x^{3/4}\Theta_a(x)$ is evaluated independently at reciprocal arguments and is even as a function of $\log x$ (the plot labels its positive scale by $t$), as predicted by Theorem~\ref{poisson}.}{thetafig}
+\Plate{09}{Mellin completion: the Gaussian sum, theta function, Mellin integral, and paired completed-series profile associated with Theorem~\ref{poisson}.}{mellin}
+
+\begin{theorem}\label{classification}
+For nonzero $a\in V_5$ and $\epsilon\in\{+1,-1\}$,
+$\Lambda_a(s)=\epsilon\Lambda_a(1-s)$ for all $s$ iff $\Tcal a=\epsilon a$.
+The positive line is $\R(1,\kappa,-\kappa,-1,0)$, fixed by $a_1=1$;
+the negative line is $\R(1,-1/\kappa,1/\kappa,-1,0)$, and its completed
+value at $1/2$ is zero.
+\end{theorem}
+\begin{proof}
+Root-of-unity orthogonality gives $\Fcal^2a=a_{-n}=-a$, hence $\Tcal^2=I$.
+Solving the two eigenline equations of \eqref{A} gives the stated lines.
+One implication follows from Theorem~\ref{poisson}.  Conversely let
+$b=\Tcal a-\epsilon a$.  The assumed equation and that theorem make
+$F_b$ vanish in a right half-plane.  If $m$ is its first nonzero coefficient,
+then for real $\sigma\to\infty$,
+\[
+0=m^\sigma F_b(\sigma)=b_m+\sum_{n>m}b_n(m/n)^\sigma.
+\]
+The bounded tail tends to zero because
+\[
+\left|\sum_{n>m}b_n(m/n)^\sigma\right|
+\le C m^\sigma\int_m^\infty x^{-\sigma}dx
+=\frac{Cm}{\sigma-1}.
+\]
+Thus $b_m=0$, a contradiction.
+Central vanishing is immediate for $\epsilon=-1$.
+\end{proof}
+For a general vector, put $a_\pm=(a\pm\Tcal a)/2$.  Its completion
+is the sum of a symmetric and an antisymmetric part.  If both components
+are nonzero, neither scalar-sign equation holds.  For example, the coordinate vector $(1,0)$
+is an eigenvector of neither sign.  The normalized $+1$ line is selected by
+$a_1=1$ and gives the Davenport--Heilbronn sequence.
+
+Here $a_6=1$ but $a_2a_3=-\kappa^2$, so the normalized $+1$ sequence is
+nonmultiplicative.  The off-critical-line zero result is classical and
+externally attributed \cite{Balanzario}; this is only a classification inside
+$V_5$.
+
+\section{Conclusion}
+The surface calculation supplies the golden coordinate, the CM certificate
+recovers it from the actual $\tau_{163}$ value, and $A=JMJ$ supplies the
+analytic payoff at $i$.  The recovered golden scalar determines a reflection,
+whose positive eigendirection determines the analytic symmetry.  The explicit
+maps connect the geometric ratio, arithmetic field and functional equation
+through transformations that can each be checked.  A precise remaining question is whether an
+$N$-dependent ruled-surface family can be constructed to carry the odd-$N$
+Fourier mechanism below.
+
+\appendix
+\section{Exact certificate and square witness}\label{certificate}
+Put $U=v-v^{-1}$ and
+\begin{align*}
+\alpha(U)&=U^3-a_1U^2+(3-a_2)U-(2a_1+a_3),\\
+\beta(U)&=-b_1U^2-b_2U-(2b_1+b_3).
+\end{align*}
+The integer coefficients are
+\[
+\begin{array}{ll}
+a_1=131268706320384342,&b_1=58705150130167150,\\
+a_2=2896632145572621515,&b_2=1295413276662289800,\\
+a_3=15717124384666951860,&b_3=7028911706986972100.
+\end{array}
+\]
+The reconstruction polynomials are
+\begin{align*}
+A_{163}(X)&=X^6-a_1X^5-a_2X^4-a_3X^3+a_2X^2-a_1X-1,\\
+B_{163}(X)&=-b_1X^5-b_2X^4-b_3X^3+b_2X^2-b_1X.
+\end{align*}
+Exact expansion gives $P_{-640320^3}=A_{163}^2-5B_{163}^2$ and
+$\gcd(A_{163},B_{163})=1$, equivalently
+$P_{-640320^3}(v)=v^6(\alpha(U)^2-5\beta(U)^2)$.
+
+Define $G(q)$ as the positive product in \eqref{rr}, so $v=qG(q)^5$.
+For $q=-\e^{-\pi\sqrt{163}}$ every factor is positive and the phase is
+$r(\tau_{163})=\e^{\pi\ii/5}(-v)^{1/5}$.  The rational estimates
+\[
+3.14<\pi<22/7,\quad12.76<\sqrt{163}<12.77,\quad
+\e^{40}>23\cdot10^{16},\quad\e^{41}<7\cdot10^{17},
+\]
+\[
+|\log G(q)|\le \frac{|q|}{(1-|q|)^2}
+\]
+give $40<\pi\sqrt{163}<41$, $5|\log G(q)|<1/1000$, and
+\[
+-5\cdot10^{-18}<v<-10^{-18}.
+\]
+Exact interval Horner arithmetic gives $A_{163}(v)<0<B_{163}(v)$; a Sturm
+count gives one root.  The named checker
+\path{verification/baseline_cm.py} replays these finite facts and
+\path{CM_REPLAY_RESULTS.json} records separate 100/200-digit diagnostics;
+neither is an analytic proof.
+
+With $S=\sqrt5$, define
+\begin{align*}
+w(U)=\frac{1}{1574580000}[&(312119004989-139583862445S)U^2\\
+&+(6858643496508-3067324783740S)U\\
+&+37679427598544-16850735555920S].
+\end{align*}
+Exact reduction by $\alpha(U)+S\beta(U)$ and $S^2-5$ proves
+\[
+U^2+4=163(1+c_0)w(U)^2.
+\]
+On the selected branch $U>1$, the leading and linear coefficients are
+negative and $w(1)<0$, hence $w'(U)<0$ and $w(U)<0$.
+\begin{corollary}\label{equality}
+For $\delta=\sqrt{163(1+c_0)}>0$, $\Q(v)=\Q(U)(\delta)$.
+\end{corollary}
+\begin{proof}
+The coefficient formulas also give
+$A_{163}(v)=v^3\alpha(U)$ and $B_{163}(v)=v^3\beta(U)$.
+Hence $S=-\alpha(U)/\beta(U)\in\Q(U)$ and $w(U)\in\Q(U)$.
+Since $U\in\Q(v)$, both also belong to $\Q(v)$.  Since
+$2v-U=v+v^{-1}<0$ and $w(U)<0$,
+$\delta=(2v-U)/w(U)\in\Q(v)$.  Conversely
+$v=(U+\delta w(U))/2\in\Q(U)(\delta)$.
+\end{proof}
+
+The exact remainder and the sign comparisons are replayed by
+\path{verification/baseline_square_certificate.py}.
+The selected radical has a direct pentagonal interpretation:
+\[
+\delta=2\sqrt{163}\sin(\pi/5),\qquad
+\phi\delta=2\sqrt{163}\sin(2\pi/5).
+\]
+Indeed $1+c_0=(5-\sqrt5)/2=4\sin^2(\pi/5)$ and
+$2\cos(\pi/5)=\phi$.  The two lengths are the side and diagonal
+of a regular pentagon of circumradius $\sqrt{163}$; their squared ratio
+is $c_0$.  Eliminating $S$ from $\delta^2=163(5-S)/2$ gives
+$\delta^4-815\delta^2+132845=0$, a different polynomial from the
+norm quartic for $\kappa$.
+
+\section{Odd-\texorpdfstring{$N$}{N} extension}\label{oddN}
+For odd $N>1$, let $V_N$ be real odd $N$-periodic sequences and define
+\[
+(\Fcal_Na)_m=N^{-1/2}\sum_{n=1}^Na_n\e^{2\pi\ii mn/N},\qquad
+\Tcal_N=-\ii\Fcal_N.
+\]
+Its real sine matrix is
+\[
+\frac2{\sqrt N}\bigl(\sin(2\pi mn/N)\bigr)_{1\le m,n\le(N-1)/2}.
+\]
+Orthogonality gives $\Fcal_N^2a=a_{-n}=-a$, so $\Tcal_N^2=I$; no unique
+positive line is claimed.  With
+\[
+\Theta_{a,N}(x)=\sum_{n\in\mathbb Z}na_n\e^{-\pi n^2x/N},
+\]\[
+\Lambda_{a,N}(s)=\frac{1}{2}\int_0^\infty\Theta_{a,N}(x)x^{(s+1)/2}\frac{dx}{x},
+\]
+the preceding residue-class proof, replacing $5$ by $N$, gives
+\[
+\Theta_{a,N}(x)=x^{-3/2}\Theta_{\Tcal_Na,N}(1/x),
+\]\[
+\Lambda_{a,N}(s)=\left(\frac{N}{\pi}\right)^{(s+1)/2}
+\Gamma((s+1)/2)F_a(s)=\Lambda_{\Tcal_Na,N}(1-s).
+\]
+The series expression initially holds for $\Re s>1$. The integral is entire;
+the same endpoint bounds and local-uniform differentiation argument apply.
+This is a finite-Fourier theorem, distinct from an unconstructed
+$N$-dependent surface.
+
+\begin{thebibliography}{9}
+\bibitem{Balanzario} E. P. Balanzario and J. Sanchez-Ortiz, \emph{Zeros of the Davenport--Heilbronn counterexample}, Mathematics of Computation \textbf{76} (2007), 2045--2049. doi:10.1090/S0025-5718-07-01999-0.
+\bibitem{DLMF} NIST Digital Library of Mathematical Functions, \S1.8(iv), \url{https://dlmf.nist.gov/1.8#iv}.
+\bibitem{Duke} W. Duke, \emph{Continued Fractions and Modular Functions}, Bulletin of the American Mathematical Society (N.S.) \textbf{42}(2) (2005), 137--162. doi:10.1090/S0273-0979-05-01047-5.
+\bibitem{Hermite} C. Hermite, \emph{Sur la theorie des equations modulaires et la resolution de l'equation du cinquieme degre}, Paris: Mallet-Bachelier, 1859, pp.~47--48. \url{https://gdz.sub.uni-goettingen.de/download/pdf/PPN598770909/PPN598770909.pdf}.
+\bibitem{HMR} A. Hayami, \emph{The Orthogonal-Circle Ruled Surface: A Boundary Atlas, Five Rank Singularities, and Conditional Fold-Signal Recurrence}, version 5, local manuscript, named surface definition and rank-singularity theorem.
+\end{thebibliography}
+\end{document}

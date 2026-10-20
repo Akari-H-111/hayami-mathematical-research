@@ -1,0 +1,796 @@
+
+--- PDF PAGE 1 ---
+Golden Coordinates at Level Five: Ruled-Surface Rank Loss, CM
+Values, and Fourier Self-Duality
+Akari Hayami (Jian-Yu Huang)
+akari.h.1.9984@gmail.com
+20 October 2026
+Local assembled draft
+Abstract
+The rank-loss polynomial of an orthogonal-circle ruled surface isc2−3c+1, with interior root
+c0 = (3−
+√
+5)/2. We ask for actual maps linking this golden coordinate to level-five modular and
+Fourier phenomena. A certified Klein-equation factorization atτ163 = (1+i
+√
+163)/2recovers
+√
+5
+fromv=r(τ 163)5. Duke’s inversion at the distinct pointibecomes the normalized sine-Fourier
+reflectionA=JMJ, and Poisson–Mellin analysis carries its positive eigenline to a functional
+equationandclassifiesthetwosignedfunctionalequationswithintheoddfive-periodiccoefficient
+space. Exact finite certificates are kept distinct from the analytic proofs.
+1 Question and surface coordinate
+Hermite’s 1859 discussion leads, in modern notation, to the remarkably small gap betweeneπ
+√
+163
+and an integer [4, pp. 47–48]. Forτ163 = (1 + i
+√
+163)/2andq= e 2πiτ163 =−e−π
+√
+163, the classical
+j-expansionq−1+ 744 + 196884q+···andj(τ163) =−6403203 explain its small gap [3]. Meanwhile
+P(c) =c 2−3c+ 1has discriminant5, so its roots lie inQ(
+√
+5) =Q(ζ5 +ζ−1
+5 ). Indeedζ5 +ζ−1
+5 =
+2 cos(2π/5) = (
+√
+5−1)/2has minimal polynomialX 2 +X−1, identifying the real quadratic
+cyclotomic subfield. Which calculations connect these facts?
+Putϕ= (1 +
+√
+5)/2,γ=ϕ−1,c 0 =ϕ−2=γ2. The local surface source [5] uses the surface
+angletand ruling coordinateu:
+S(t,u) = (c+ 2u(1−c),(1−u) sint,u
+√
+c(2−c)), c= cost.(1)
+The paired endpoints areC 1(t) = (c,sint,0)andC 2(t) = (2−c,0,
+√
+c(2−c)): unit circles in
+perpendicular planes, with centers(0,0,0)and(1,0,0). ThusS(t,u) = (1−u)C 1(t) +uC 2(t)for
+0≤u≤1. For fixedt, varyingutraces a ruling segment. Rank loss means that its two parameter-
+direction tangent vectors become linearly dependent. In0<c<1, the third component ofSt×Su
+is(1−c)(1−c−2u), hence rank loss forcesu= (1−c)/2. The remaining components are
+−(1 +c)P(c)
+2
+√
+c(2−c),− sintP(c)√
+c(2−c).
+Thus
+c0 = 3−
+√
+5
+2 , γ= 1−c 0 =ϕ−1, u 0 =γ/2 = cos(2π/5).(2)
+Figures 1–5 display the connection map, the ruled patch and its rank-loss locus, and the pentagonal
+and icosahedral realizations.
+1
+
+--- PDF PAGE 2 ---
+Surface coordinate
+c0 = ϕ−2
+u0 = (1 − c0)/2 = cos(2π/5)
+Plane reflection
+M = (1 + c0)−1/2[[−1, γ], [γ, 1]]
+γ = 1 − c0
+Coordinate exchange
+A = JMJ
+J(x, y) = (y, x)
+Fourier eigenline
+a = (1, κ, − κ, − 1, 0)
+−iFa = a
+Functional equation
+Θ(t) = t−3/2Θ(1/t)
+Λ(s) = Λ(1 − s)
+form M exchange by J
+take +1 eigenline
+Poisson + Mellin
+Distinct CM branch: i is fixed by S : τ ↦ − 1/τ and selects κ = r(i).
+τ163 = (1 + i√ 163)/2 instead supplies j(τ163) = −6403203 and a tiny negative nome.
+Figure 01. One scalar coordinate, an explicit involution, and its Fourier consequence
+Golden geometry = gold   |   Fourier / theta = teal   |   modular map = violet   |   CM / Hermite = blue
+Figure 1: Connection map: surface coordinate, reflection, coordinate exchange, Fourier eigenline, and completed functional equation.
+2
+
+--- PDF PAGE 3 ---
+0.25 0.50 0.75
+1.00
+1.25
+1.50
+1.75
+x
+-1.00
+-0.75
+-0.50
+-0.25
+0.00
+0.25
+0.50
+0.75
+1.00
+y
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+z
+Coral markers: the lateral pair
+Actual ruled patch S(t, u)
+0.4 0.5 0.6
+0.7
+0.8
+0.9
+1.0
+x 0.3
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1.0
+y
+-0.1
+0.0
+0.1
+0.2
+0.3
+0.4
+0.5
+0.6
+z
+p + = S(arccos c0, u0)
+Local patch at the positive-t lateral point
+Figure 02. The orthogonal-circle ruled surface and its two lateral rank-loss points
+Golden geometry = gold   |   Fourier / theta = teal   |   modular map = violet   |   CM / Hermite = blue
+Figure 2: Orthogonal-circle ruled surface (1): a global reflected lateral pair att=±arccosc0 and a local positive-tclose-up at the
+rank-loss rulingu 0.
+3
+
+--- PDF PAGE 4 ---
+0.2 0.4 0.6 0.8
+c = cos t (positive-sine branch)
+0.2
+0.4
+0.6
+0.8u
+log10 ‖St × Su‖
+u = (1 − c)/2
+(c0, u0)
+0.2 0.4 0.6 0.8
+c
+-1.00
+-0.75
+-0.50
+-0.25
+0.00
+0.25
+0.50
+0.75
+1.00
+P(c)
+The interior root is c0.
+P(c) = c2 − 3c + 1
+-3.6
+-3.0
+-2.4
+-1.8
+-1.2
+-0.6
+0.0
+0.6
+log norm
+Figure 03. Rank loss on the positive-sine branch: the lateral condition and its root
+Golden geometry = gold   |   Fourier / theta = teal   |   modular map = violet   |   CM / Hermite = blue
+Figure 3: Rank loss in(c,u): the positive-sine branch,u= (1−c)/2, the remaining polynomialP(c), and its rootc0.
+4
+
+--- PDF PAGE 5 ---
+72∘
+cos 72∘ = u0
+side
+diagonal
+Unit pentagon: vertices 0, 72, 144, ... degrees
+actual length ratio
+side / diagonal = ϕ−1 = γ
+squared ratio = ϕ−2 = c0
+On this unit circle, the horizontal
+projection has value u0 = cos 72∘ .
+Figure 04. The pentagonal coordinate: angle, projection, and the golden squared ratio
+Golden geometry = gold   |   Fourier / theta = teal   |   modular map = violet   |   CM / Hermite = blue
+Figure 4: Unit-pentagon coordinate:u 0 = cos 72◦is kept distinct fromc0, the squared side-to-diagonal ratio.
+5
+
+--- PDF PAGE 6 ---
+-0.75-0.50-0.25
+0.00
+0.25
+0.50
+0.75
+x
+-0.75
+-0.50
+-0.25
+0.00
+0.25
+0.50
+0.75
+y
+-0.75
+-0.50
+-0.25
+0.00
+0.25
+0.50
+0.75
+z
+Unit-radius marked icosahedron
+All 66 unordered pairs
+30 short chords
+30 long chords
+6 antipodal pairs
+(short)2
+(long)2 =
+2 − 2/√ 5
+2 + 2/√ 5
+= c0 = ϕ−2
+Figure 12. Context: the marked icosahedral chord ratio realizes c0
+Golden geometry = gold   |   Fourier / theta = teal   |   modular map = violet   |   CM / Hermite = blue
+Figure 5: Unit-radius icosahedron chords. The vertices are{(0,±1,±ϕ),(±1,±ϕ,0),(±ϕ,0,±1)}/
+√
+1 +ϕ2. Their distinct dot products
+are1/
+√
+5,−1/
+√
+5,−1, with pair counts30,30,6. Thus the squared short/long ratio is(2−2/
+√
+5)/(2 + 2/
+√
+5) =c 0.
+6
+
+--- PDF PAGE 7 ---
+2 CM field recovery
+Forℑτ >0define
+r(τ) =q1/5 ∏
+n≥1
+(1−q5n−4)(1−q5n−1)
+(1−q5n−3)(1−q5n−2), q= e 2πiτ, q 1/5 = e2πiτ/5.(3)
+Setv=r(τ163)5. The classical CM value above and Klein’s level-five relation (as recorded by Duke
+[3, Eq. (2.5)]) give
+Pj(v) = (v4−228v3 + 494v2 + 228v+ 1) 3 +jv(v 2 + 11v−1)5 = 0.(4)
+Theorem 2.1.Forv=r(τ 163)5,
+√
+5∈Q(v)and
+√
+5 =−A163(v)
+B163(v), ϕ= B163−A163
+2B163
+,
+γ=−A163 +B 163
+2B163
+, c 0 = 3B163 +A 163
+2B163
+.
+where the last three expressions are evaluated atv.
+Proof.Appendix A gives the exact identityP −6403203(X) =A 163(X) 2−5B163(X) 2 with co-
+prime integer polynomials. IfB 163(v) = 0, thenA 163(v) = 0, contrary to Bezout. Thus
+(A163(v)/B163(v))2 = 5. The rational interval certificate givesA 163(v)<0< B 163(v), selecting
+−
+√
+5; the formulas follow.
+Figure 6 compares the two CM arguments, nomes, andj-values; Figure 7 magnifies the near-
+integer gap and its series corrections.
+7
+
+--- PDF PAGE 8 ---
+-0.6 -0.4 -0.2 0.0 0.2 0.4 0.6
+ℜτ
+0
+1
+2
+3
+4
+5
+6
+7ℑτ
+i: fixed by S
+τ163
+T wo distinct upper-half-plane arguments
+standard domain for j
+i
+q = e−2π
+j(i) = 1728
+fixed point selects r(i) = κ
+τ163 = (1 + i√ 163)/2
+q = −e−π√ 163 ,  j = −6403203
+integral j-value and tiny negative nome
+Figure 10. Two CM arguments, two roles: inversion fixed point versus Hermite’s small nome
+Golden geometry = gold   |   Fourier / theta = teal   |   modular map = violet   |   CM / Hermite = blue
+Figure 6: Two CM arguments, their nomes, and theirj-values. The pointiis the inversion fixed point; the tiny negative nome atτ163 is
+the arithmetic branch in Theorem 2.1.
+8
+
+--- PDF PAGE 9 ---
+R = eπ√ 163 262537412640768743.99999999999925007
+N = 6403203 + 744 =  262537412640768744
+N − R =  0.000000000000749927402801814311120646143662663009137292463
+1 2 3 4 5 6
+number of displayed j-series corrections
+10−113
+10−100
+10−87
+10−74
+10−61
+10−48
+10−35
+10−22
+10−9
+magnitude (log scale)
+Coefficients were derived as the exact q-series E4^3/Delta; R is one fixed number.
+N − R = 196884/R − 21493760/R2 + 864299970/R3 + ⋯
+absolute residual after correction
+successive series term
+Figure 11. Hermite’s near-integer: fixed high-precision gap and the j-series correction ladder
+Golden geometry = gold   |   Fourier / theta = teal   |   modular map = violet   |   CM / Hermite = blue
+Figure 7: Hermite near-integer profile: the fixed gap and successivej-series corrections, separate from the exact field certificate.
+9
+
+--- PDF PAGE 10 ---
+3 The common involution
+Duke’s inversion law is
+r(−1/τ) =γ−r(τ)
+1 +γr(τ)[3,Proposition2].
+In homogeneous coordinates put
+M= 1√1 +c 0
+(
+−1γ
+γ1
+)
+, J=
+(
+0 1
+1 0
+)
+.
+Taking the ratio ofM(z,1) T gives the displayed law, and direct multiplication, usingγ2 =c 0,
+provesM 2 =I.
+LetV 5 be the real space of odd five-periodic sequences. In residues1,2,3,4,5(with5 = 0), it
+consists of(x,y,−y,−x,0). Define
+(Fa)m = 1√
+5
+5∑
+n=1
+ane2πimn/5,T=−iF.
+Pairingnand5−ngives
+A= 2√
+5
+(
+sin(2π/5) sin(π/5)
+sin(π/5)−sin(2π/5)
+)
+=JMJ.(5)
+Indeed2 sin(2π/5)/
+√
+5 = 1/√1 +c 0 and2 sin(π/5)/
+√
+5 =γ/√1 +c 0, by squared pentagon identi-
+ties. ThusA 2 =I.
+Proposition 3.1.Withκ=r(i),
+κ= γ
+1 +√1 +c 0
+, A(1,κ) T = (1,κ)T.
+Forθ= 1
+2 arctanγ,
+κ= tanθ,cos 2θ= 1√1 +c 0
+,sin 2θ= γ√1 +c 0
+,
+and, separately,κ= 2 cos 18◦−2 cos 36◦. Finallyu 0 =κ/(1−κ2)andc 0 = (2κ/(1−κ2))2.
+Proof.The inversion law fixesr(i); positivity of every product factor in (3) atiselects the positive
+root ofγX2 + 2X−γ= 0. It gives the statedκandM(κ,1)T = (κ,1)T, soJtransfers it explicitly
+to the+1eigenvector ofA. Sincetan 2θ=γand0<2θ < π/2, right-triangle and half-angle
+formulas prove the three half-angle identities. This axis angle is not18◦. Separately2 cos 36◦=ϕ,
+2 cos 18◦=√2 +ϕ; squaring positive sides shows their difference has the same positive quadratic
+root. The last formulas are the tangent double-angle identity.
+10
+
+--- PDF PAGE 11 ---
+-1.0 -0.5 0.0 0.5 1.0
+x
+-1.0
+-0.5
+0.0
+0.5
+1.0
+y
+v
+Mv (κ, 1)
+projective slope z = x/y
+M reflection
+unit circle
++1 eigenline
+-1 eigenline
+v
+Mv
+-1.0 -0.5 0.0 0.5 1.0
+x
+-1.0
+-0.5
+0.0
+0.5
+1.0
+y
+Jv
+A(Jv)
+(1, κ)
+mixing coordinate y/x
+A = JMJ reflection
+unit circle
++1 eigenline
+-1 eigenline
+Jv
+A(Jv)
+Coordinate exchange: J(x, y) = (y, x)
+Figure 05. Coordinate exchange carries one explicit reflection and eigenline to the other
+Golden geometry = gold   |   Fourier / theta = teal   |   modular map = violet   |   CM / Hermite = blue
+Figure 8: Coordinate exchange forMandA=JMJ, using an off-axis vector and keeping their slope conventions separate.
+11
+
+--- PDF PAGE 12 ---
+-0.8 -0.6 -0.4 -0.2 0.0 0.2 0.4 0.6 0.8
+z
+-0.8
+-0.6
+-0.4
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+R(z)
+positive fixed point κ
+R(z) = (γ − z)/(1 + γz)
+R(z)
+z
+0.6 0.8 1.0 1.2 1.4 1.6 1.8 2.0
+y
+0.1
+0.2
+0.3
+0.4
+0.5product value
+At y = 1, −1/i = i selects r(i) = κ > 0.
+Direct inversion-paired product evaluations
+direct product r(iy)
+independent r(i/y)
+Figure 06. Why the inversion fixed point gives the positive value r(i) = κ
+Golden geometry = gold   |   Fourier / theta = teal   |   modular map = violet   |   CM / Hermite = blue
+Figure 9: Rogers–Ramanujan inversion at the positive fixed point: independent direct product curvesr(iy)andr(i/y)meet atr(i) =κ.
+12
+
+--- PDF PAGE 13 ---
+1 2 3 4 5 (=0)
+residue m modulo 5
+-1.00
+-0.75
+-0.50
+-0.25
+0.00
+0.25
+0.50
+0.75
+1.00
+coefficient
+a = (1, κ, − κ, − 1, 0)
+Actual DFT input and output in the same order
+imaginary residual
+input a
+−ia (real)
+Odd five-periodic coordinates
+(a1, a2, a3, a4, a0) = (x, y, − y, − x, 0)
+1
+x
+2
+y
+3
+−y
+4
+−x
+5=0
+0
+Positive-exponential normalized DFT; multiplication by −i makes the odd
+subspace real.
+Figure 07. The odd five-periodic Fourier eigenvector, residue by residue
+Golden geometry = gold   |   Fourier / theta = teal   |   modular map = violet   |   CM / Hermite = blue
+Figure 10: Odd five-periodic Fourier eigenvector in residue order1,2,3,4,5; the plotted input and output are the actual normalized DFT
+vectors.
+13
+
+--- PDF PAGE 14 ---
+Also
+X 4 + 2X3−6X2−2X+ 1 = (X2 + 2ϕX−1)(X2−2ϕ−1X−1),
+the polynomial normNQ(
+√
+5)(X)/Q(X) (X 2 + 2ϕX−1). Conjugation sendsϕto−ϕ−1; multiplication
+usingϕ−ϕ−1= 1andϕϕ−1= 1proves the identity. The fixed-point equation givesκ2+2ϕκ−1 = 0,
+so the first factor vanishes atX=κ.
+4 Poisson–Mellin bridge and classification
+The Gaussian bridge turns finite Fourier symmetry into analytic symmetry. To retaintas a surface
+angle, usex>0here:
+Fa(s) =
+∑
+n≥1
+ann−s(ℜs>1),Θ a(x) =
+∑
+n∈Z
+nane−πn2x/5.
+Theorem 4.1.Fora∈V 5,a′=Ta,
+Λa(s) = 1
+2
+∫ ∞
+0
+Θa(x)x(s+1)/2dx
+x =
+(5
+π
+)(s+1)/2
+Γ((s+ 1)/2)Fa(s)
+defines an entire function by its integral; the displayed Dirichlet-series expression holds forℜs>1.
+MoreoverΛ a(s) = Λa′(1−s).
+Proof.With ˆf(ξ) =
+∫
+Rf(y)e−2πiyξdy, putfx(y) =ye−πxy2/5. Its transform is
+ˆfx(ξ) =−i(5/x)3/2ξe−5πξ2/x.
+Residue-class Poisson summation [2, §1.8(iv)] is
+∑
+ℓ∈Z
+fx(j+ 5ℓ) =1
+5
+∑
+k∈Z
+e2πikj/5ˆfx(k/5).
+After multiplying byaj and summing,
+Θa(x) = 1√
+5
+∑
+k
+(Fa)k ˆfx(k/5)
+= 1√
+5
+∑
+k
+ia′
+k[−i(5/x)3/2(k/5)e−πk2/(5x)] =x−3/2Θa′(1/x).
+This shows the1/5,1/
+√
+5,i(−i)cancellation, andx−3/2. Bounded periodicity gives exponential
+decay at infinity; the transformation givesCx−3/2e−c/xat zero. These envelopes, also after mul-
+tiplication by|logx|r, prove local uniform convergence of the integral and allsderivatives. For
+ℜs>1, odd pairing and termwise gamma integration give the displayed completion. Substitution
+of the theta transformation changesx(s+1)/2 tox (s−2)/2, andy= 1/xgivesy (2−s)/2dy/y, proving
+the functional equation.
+14
+
+--- PDF PAGE 15 ---
+-2 -1 0 1 2
+log t
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2compensated theta
+Numerical self-duality from both sides
+evaluated t3/4Θ(t)
+independent (1/t)3/4Θ(1/t)
+Gaussian + periodic coefficients
+Θa(t) = ∑
+n ∈ Z
+nane−πn2t/5
+Θa(t) = t−3/2Θa(1/t)
+Both positive and negative n were summed
+independently for every plotted t.
+Figure 08. Theta self-duality: a directly evaluated compensated symmetric profile
+Golden geometry = gold   |   Fourier / theta = teal   |   modular map = violet   |   CM / Hermite = blue
+Figure 11: Compensated theta self-duality: the profilex3/4Θa(x)is evaluated independently at reciprocal arguments and is even as a
+function oflogx(the plot labels its positive scale byt), as predicted by Theorem 4.1.
+15
+
+--- PDF PAGE 16 ---
+Gaussian
+periodic sum
+theta
+transformation
+Mellin
+integral
+completed
+series
+Λ(s) = (5/π)(s + 1)/2Γ((s + 1)/2) 5−s
+4
+∑
+j = 1
+ajζ(s, j/5)
+For the Fourier eigenvector:  Λ(s) = Λ(1 − s)
+-0.25 0.00 0.25 0.50 0.75 1.00 1.25
+σ
+-0.2
+0.0
+0.2
+0.4
+0.6
+0.8
+1.0
+1.2
+1.4
+numerical value
+Real part is even; imaginary part is odd about σ = 1/2.
+Paired functional-equation profile
+ℜΛ(σ + 1.15i)
+ℑΛ(σ + 1.15i)
+Figure 09. From Gaussian sum to Mellin completion: a numerical functional-equation view
+Golden geometry = gold   |   Fourier / theta = teal   |   modular map = violet   |   CM / Hermite = blue
+Figure 12: Mellin completion: the Gaussian sum, theta function, Mellin integral, and paired completed-series profile associated with
+Theorem 4.1.
+16
+
+--- PDF PAGE 17 ---
+Theorem 4.2.For nonzeroa∈V 5 andϵ∈{+1,−1},Λa(s) =ϵΛa(1−s)for allsiffTa=ϵa.
+The positive line isR(1,κ,−κ,−1,0), fixed bya1 = 1; the negative line isR(1,−1/κ,1/κ,−1,0),
+and its completed value at1/2is zero.
+Proof.Root-of-unity orthogonality givesF 2a=a −n=−a, henceT2 =I. Solving the two eigenline
+equations of (5) gives the stated lines. One implication follows from Theorem 4.1. Conversely let
+b=Ta−ϵa. The assumed equation and that theorem makeFb vanish in a right half-plane. Ifm
+is its first nonzero coefficient, then for realσ→∞,
+0 =m σFb(σ) =bm +
+∑
+n>m
+bn(m/n)σ.
+The bounded tail tends to zero because
+⏐⏐⏐⏐⏐
+∑
+n>m
+bn(m/n)σ
+⏐⏐⏐⏐⏐≤Cmσ
+∫ ∞
+m
+x−σdx= Cm
+σ−1.
+Thusb m = 0, a contradiction. Central vanishing is immediate forϵ=−1.
+For a general vector, puta±= (a±Ta)/2. Its completion is the sum of a symmetric and
+an antisymmetric part. If both components are nonzero, neither scalar-sign equation holds. For
+example, the coordinate vector(1,0)is an eigenvector of neither sign. The normalized+1line is
+selected bya 1 = 1and gives the Davenport–Heilbronn sequence.
+Herea 6 = 1buta 2a3 =−κ2, so the normalized+1sequence is nonmultiplicative. The off-
+critical-line zero result is classical and externally attributed [1]; this is only a classification inside
+V5.
+5 Conclusion
+Thesurfacecalculationsuppliesthegoldencoordinate, theCMcertificaterecoversitfromtheactual
+τ163 value, andA=JMJsupplies the analytic payoff ati. The recovered golden scalar determines
+a reflection, whose positive eigendirection determines the analytic symmetry. The explicit maps
+connect the geometric ratio, arithmetic field and functional equation through transformations that
+can each be checked. A precise remaining question is whether anN-dependent ruled-surface family
+can be constructed to carry the odd-NFourier mechanism below.
+A Exact certificate and square witness
+PutU=v−v−1and
+α(U) =U3−a1U 2 + (3−a2)U−(2a1 +a 3),
+β(U) =−b1U 2−b2U−(2b1 +b 3).
+The integer coefficients are
+a1 = 131268706320384342, b 1 = 58705150130167150,
+a2 = 2896632145572621515, b 2 = 1295413276662289800,
+a3 = 15717124384666951860, b 3 = 7028911706986972100.
+17
+
+--- PDF PAGE 18 ---
+The reconstruction polynomials are
+A163(X) =X 6−a1X 5−a2X 4−a3X 3 +a 2X 2−a1X−1,
+B163(X) =−b1X 5−b2X 4−b3X 3 +b 2X 2−b1X.
+Exact expansion givesP −6403203 =A 2
+163 −5B2
+163 andgcd(A 163,B 163) = 1, equivalently
+P−6403203(v) =v 6(α(U)2−5β(U)2).
+DefineG(q)as the positive product in (3), sov=qG(q) 5. Forq=−e−π
+√
+163 every factor is
+positive and the phase isr(τ163) = eπi/5(−v)1/5. The rational estimates
+3.14<π <22/7,12.76<
+√
+163<12.77,e 40>23·1016,e 41<7·1017,
+|logG(q)|≤|q|
+(1−|q|)2
+give40<π
+√
+163<41,5|logG(q)|<1/1000, and
+−5·10−18<v <−10−18.
+Exact interval Horner arithmetic givesA163(v)<0<B 163(v); a Sturm count gives one root. The
+named checkerverification/baseline_cm.pyreplays these finite facts andCM_REPLAY_RESULTS.
+jsonrecords separate 100/200-digit diagnostics; neither is an analytic proof.
+WithS=
+√
+5, define
+w(U) = 1
+1574580000[(312119004989−139583862445S)U2
++ (6858643496508−3067324783740S)U
++ 37679427598544−16850735555920S].
+Exact reduction byα(U) +Sβ(U)andS2−5proves
+U 2 + 4 = 163(1 +c 0)w(U) 2.
+On the selected branchU >1, the leading and linear coefficients are negative andw(1)<0, hence
+w′(U)<0andw(U)<0.
+Corollary A.1.Forδ=
+√
+163(1 +c 0)>0,Q(v) =Q(U)(δ).
+Proof.The coefficient formulas also giveA 163(v) =v 3α(U)andB 163(v) =v 3β(U). HenceS=
+−α(U)/β(U)∈Q(U)andw(U)∈Q(U). SinceU∈Q(v), both also belong toQ(v). Since
+2v−U=v+v−1<0andw(U)<0,δ= (2v−U)/w(U)∈Q(v). Converselyv= (U+δw(U))/2∈
+Q(U)(δ).
+The exact remainder and the sign comparisons are replayed byverification/baseline_
+square_certificate.py. The selected radical has a direct pentagonal interpretation:
+δ= 2
+√
+163 sin(π/5), ϕδ= 2
+√
+163 sin(2π/5).
+Indeed1 +c 0 = (5−
+√
+5)/2 = 4 sin2(π/5)and2 cos(π/5) =ϕ. The two lengths are the side and
+diagonal of a regular pentagon of circumradius
+√
+163; their squared ratio isc0. EliminatingSfrom
+δ2 = 163(5−S)/2givesδ4−815δ2 + 132845 = 0, a different polynomial from the norm quartic for
+κ.
+18
+
+--- PDF PAGE 19 ---
+B Odd-Nextension
+For oddN >1, letV N be real oddN-periodic sequences and define
+(FNa)m =N−1/2
+N∑
+n=1
+ane2πimn/N,T N =−iFN.
+Its real sine matrix is 2√
+N
+(
+sin(2πmn/N)
+)
+1≤m,n≤(N−1)/2.
+Orthogonality givesF 2
+Na=a −n=−a, soT2
+N =I; no unique positive line is claimed. With
+Θa,N(x) =
+∑
+n∈Z
+nane−πn2x/N,
+Λa,N(s) = 1
+2
+∫ ∞
+0
+Θa,N(x)x(s+1)/2dx
+x ,
+the preceding residue-class proof, replacing5byN, gives
+Θa,N(x) =x−3/2ΘTNa,N(1/x),
+Λa,N(s) =
+(N
+π
+)(s+1)/2
+Γ((s+ 1)/2)Fa(s) = ΛTNa,N(1−s).
+The series expression initially holds forℜs >1. The integral is entire; the same endpoint bounds
+and local-uniform differentiation argument apply. This is a finite-Fourier theorem, distinct from an
+unconstructedN-dependent surface.
+References
+[1] E.P.BalanzarioandJ.Sanchez-Ortiz,Zeros of the Davenport–Heilbronn counterexample, Math-
+ematics of Computation76(2007), 2045–2049. doi:10.1090/S0025-5718-07-01999-0.
+[2] NIST Digital Library of Mathematical Functions, §1.8(iv),https://dlmf.nist.gov/1.8#iv.
+[3] W. Duke,Continued Fractions and Modular Functions, Bulletin of the American Mathematical
+Society (N.S.)42(2) (2005), 137–162. doi:10.1090/S0273-0979-05-01047-5.
+[4] C. Hermite,Sur la theorie des equations modulaires et la resolution de l’equation du cin-
+quieme degre, Paris: Mallet-Bachelier, 1859, pp. 47–48.https://gdz.sub.uni-goettingen.
+de/download/pdf/PPN598770909/PPN598770909.pdf.
+[5] A. Hayami,The Orthogonal-Circle Ruled Surface: A Boundary Atlas, Five Rank Singularities,
+and Conditional Fold-Signal Recurrence, version 5, local manuscript, named surface definition
+and rank-singularity theorem.
+19

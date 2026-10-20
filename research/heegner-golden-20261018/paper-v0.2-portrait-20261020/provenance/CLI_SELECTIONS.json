@@ -1,0 +1,27 @@
+{
+  "terra_figure_revision": {
+    "thread_id": "01a158fd-eaf6-7651-a995-3d61cf04f6d3",
+    "model": "gpt-5.6-terra",
+    "effort": "high",
+    "completed": true,
+    "scope": "Companion plate revision and four compact body figures under companion/TERRA_FIGURE_MANDATE.md",
+    "evidence": "logs/terra-figure-events.jsonl start/completion events and companion/TERRA_FINAL_MESSAGE.md; client selection, not independent backend attestation"
+  },
+  "deepseek_layout_review": {
+    "session_id": "ses_eac48e0caffeoLa0fpz8iujL5I",
+    "model": {
+      "id": "deepseek-v4.1-flash-free",
+      "providerID": "opencode",
+      "variant": "max"
+    },
+    "recorded_cost": 0,
+    "outcome": "succeeded",
+    "scope": "Independent cold review of the 19-page v0.1 page images and source; no v0.2 assembly",
+    "evidence": "OpenCode session export recorded with the v0.1 review; client selection and recorded cost, not independent backend attestation"
+  },
+  "director_assembly": {
+    "scope": "Portrait article, supplement assembly, figure placement, prior-art and Davenport-Heilbronn text, final QA",
+    "model_selection_record": "none separate; performed in the director session",
+    "note": "All worker and checker output was reviewed before integration; no model output is treated as mathematical certification."
+  }
+}

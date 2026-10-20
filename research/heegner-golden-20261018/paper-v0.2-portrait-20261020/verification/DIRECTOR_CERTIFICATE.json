@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "coefficient_ring": "Q[S,U]/(S^2-5, alpha+S beta)",
+  "identity": "u^2+4 = 163*(1+c0)*w(u)^2",
+  "cleared_residual": "0",
+  "branch_w_sign_for_u_gt_1": "negative",
+  "selected_t": "-2/(u-sqrt(163*(1+c0))*w(u))",
+  "squareclass_equivalence": "(4-c0)/(1+c0)=phi^2",
+  "leading_unit": "(Lucas(55)-sqrt(5)*Fibonacci(55))/2=-phi^-55",
+  "modular_inversion_matrix_square": "(1+c0)*I",
+  "cyclotomic_radical": "(zeta5^2-zeta5^-2)^2=-(1+c0)"
+}

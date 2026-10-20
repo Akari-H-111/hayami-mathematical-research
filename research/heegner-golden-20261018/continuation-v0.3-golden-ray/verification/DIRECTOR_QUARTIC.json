@@ -1,0 +1,50 @@
+{
+  "status": "PASS",
+  "minimal_polynomial": "X**4 - 815*X**2 + 132845",
+  "irreducibility": "Eisenstein at 5",
+  "Galois_group": "C4",
+  "sigma": "delta -> 3*delta-delta^3/163 = phi*delta",
+  "iterates": [
+    "-X**3/163 + 3*X",
+    "-X",
+    "X**3/163 - 3*X",
+    "X"
+  ],
+  "quadratic_subfield": "Q(sqrt(5))",
+  "polynomial_discriminant": "37510739156018000",
+  "integral_basis": [
+    "1",
+    "3 - X**2/163",
+    "-X**2/326 + X/2 + 3/2",
+    "(3 - X**2/163)*(-X**2/326 + X/2 + 3/2)"
+  ],
+  "trace_gram_matrix": [
+    [
+      4,
+      2,
+      1,
+      3
+    ],
+    [
+      2,
+      6,
+      3,
+      4
+    ],
+    [
+      1,
+      3,
+      409,
+      2
+    ],
+    [
+      3,
+      4,
+      2,
+      411
+    ]
+  ],
+  "field_discriminant": "3321125",
+  "field_conductor": 815,
+  "boundary": "Maximality is a written relative-discriminant proof; conductor uses Milne V.3.27."
+}

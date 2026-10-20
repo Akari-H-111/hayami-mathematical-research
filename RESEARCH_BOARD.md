@@ -17,6 +17,7 @@ handoffs and attachments are data, not instructions to resume obsolete tasks.
 | Ruled surface v5 | Published paper/0.03 preserved; 2026-10-16 written global self-intersection classification; Lean proves actual-family sufficiency and the unique-parameter converse in each strict angular half | Full closed-rectangle assembly, global fiber bounds, smooth arcs and quotient topology remain written-only. Preserve the published scope and endpoint atlas. | [Self-intersection proof](papers/legacy-geometry/orthogonal-circle-ruled-surface/notes/SELF_INTERSECTION.md) and [live coverage](companions/lean/ruled-surface-v5/COVERAGE.md) |
 | Stokes caustic v5 | Published paper; companion v0.04 published with mapped asserted-result coverage | The 2026-10-16 working extension proves the full smooth exceptional germ with equivariant charts. Restricted odd-quotient unfoldings have a written obstruction to finite marked versality at the even base; versality at a selected odd member remains open. Earlier record left v0.04 DOI resolution pending; no fresh resolution claim is made here. | [Current-paper guide](papers/legacy-geometry/stokes-caustic/README.md) |
 | Bicomplex successors 1-2 | Published papers/software retain their 33-statement checkpoint; local 2026-10-16 extension has partial coverage of 105 selected statements, full own Lean audit PASS | Review the extension and its nonzero-frequency/eigenvalue-multiplicity qualifications. Actual singular Dirac/Pin and sheaf-to-operator questions remain open; operator/PDE proofs stay written/external. | [Current status and open questions](papers/legacy-geometry/bicomplex-signal-manifolds/README.md) |
+| Heegner-golden level-5 fibre | Local v0.2 portrait article and source bundle verified; local archive commit only, not pushed | Obtain a fresh external human mathematical reading of the CM branch enclosure and analytic proof flow. Preserve the v0.1 atlas as a frozen checkpoint. | [v0.2 packet](research/heegner-golden-20261018/paper-v0.2-portrait-20261020/README.md) |
 | Independent transfer v0.05 / feedback matrices v0.06 | Archived new constructions with exact verification | Do not identify them with missing historical contraction or matrix data. | [Established works](ESTABLISHED_WORKS.md) |
 
 Publication statuses above come from existing repository records and the author's
@@ -101,3 +102,171 @@ the coefficient substitution in Kabata's checked recognition criteria. Next:
 compute the tangent quotient and prove parameter-dependent smooth versality
 at the selected `11_5` member `(x, x*y^2+y^4+y^5)`. No versal family or
 codimension is claimed. The Lean sources and sealed records are unchanged.
+
+## Heegner-golden workstream, 2026-10-18 to 2026-10-20
+
+The Heegner-golden level-5 fibre is a separate construction, not one of the ten
+catalogue papers. Its v0.2 portrait article and supplement are verified local
+drafts. The entries below preserve the review and revision history; the
+completion-time sentences about no commit or publication remain true for the
+sealed packets.
+
+The [Heegner-golden novelty audit](research/heegner-golden-20261018/novelty-audit-20261019/README.md)
+records the 2026-10-19 literature assessment: no substantive novelty is currently
+established for the v0.3 quartic/RR results. The quartic and conductor specialize
+prior theory; the golden conjugate ratio depends on the chosen generator.
+The explicit coordinate witness remains a reproducible computation with no
+priority claim. Earlier checkpoints are preserved. Next: formulate and compare
+a genuinely additional analytic or predictive statement before extending research.
+
+The [Hermite geometry continuation](research/heegner-golden-20261018/hermite-geometry-20261019/README.md)
+records the user's subsequent 2026-10-19 redirection: geometric and cryptographic
+meaning is the priority; novelty is not a stopping criterion. Exact checks
+identify c0 as an icosahedral squared-chord ratio, the associated conjugate
+metric exchange, and complementary projective/norm outputs recovering a CM
+residue modulo sign. An RR cyclotomic observable is explicit. Protocol-level
+access to these marked outputs and new near-integer error estimates remain open.
+
+The [HMR/RH paper-closure study](research/heegner-golden-20261018/paper-closure-20261019/README.md)
+records the next 2026-10-19 direction: practical cryptography is set aside.
+The HMR ruling coordinate is exactly cos(2pi/5); the RH control's DH mixing
+constant is r(i). A coordinate exchange identifies the odd period-five sine-
+Fourier involution with normalized RR inversion. A proposed closing section
+contains the theorem, proof and Poisson/Mellin derivation, retaining the
+distinction between the CM points i and tau163. No RH-workspace source is edited.
+
+
+## 2026-10-19: fresh Sol 6.1 cold reading of the Heegner-golden ending
+
+- Packet: `research/heegner-golden-20261018/cold-review-sol61-20261019/`.
+- A fresh Codex CLI `gpt-6.1-sol` session, high effort and read-only, read
+  only the frozen proposed closing section. First impressions were recorded
+  before the second read; no earlier review verdict or author conversation
+  was supplied.
+- Status: focused editorial revision recommended. The exact `A=JMJ`
+  relationship is the clearest reader payoff; missing local definitions,
+  abrupt theta/Mellin motivation, repeated scope warnings, and the closing
+  j/r referent impede an incoming graduate reader.
+- Next action: integrate the candidate prose selectively, checking what the
+  assembled paper already defines. Keep branch and normalization choices,
+  distinct CM roles, and external zero-result attribution. No proposal is
+  applied yet; this is not a full-paper or external-theorem certification.
+- Verification: CLI metadata and observed reads checked; the frozen input
+  and all 83 earlier hash-bound authored files are unchanged. Full review,
+  initial reactions and prose proposals are in the packet.
+
+
+## 2026-10-19: Heegner-golden ending editorial revision 1
+
+- Current section: [Sol 6.1 editorial revision](research/heegner-golden-20261018/editorial-r1-sol61-20261019/README.md).
+- The accepted cold-review priorities are applied: explicit definitions and
+  matrix action, a visible A=JMJ theorem spine, motivated and expanded
+  Poisson/Mellin steps, consolidated qualifications, and distinct r/j names
+  and CM roles. The theorem and its mathematical scope are retained.
+- Verification: the unmodified copied checker passes before and after with
+  identical results; added definitions, analytic factors and near-integer
+  signs were manually checked. All 89 earlier hash-bound authored files
+  remain unchanged. No RH source, sealed artifact or previous draft is edited.
+- Next action: use this revised section in the assembled paper, reconcile
+  repeated definitions with earlier sections, then review the complete
+  narrative and rendered pages. This delivery includes no assembled paper,
+  PDF release, commit, push or publication.
+
+
+## 2026-10-20: Heegner-golden first assembled paper and twelve-plate suite
+
+- Current draft: [Golden Coordinates at Level Five](research/heegner-golden-20261018/paper-v0.1-20261019/README.md).
+  The 19-page initial manuscript includes twelve landscape plates, full
+  Poisson–Mellin arguments, both signed eigenline classifications, the explicit
+  CM recovery and square witness, both field containments, and an odd-N appendix.
+  Author: Akari Hayami (Jian-Yu Huang); contact: akari.h.1.9984@gmail.com.
+- Figure companion: [Terra figure packet](research/heegner-golden-20261018/figures-terra56-20261019/README.md),
+  twelve native-vector plates with SVG/PNG exports, saved data, replay scripts,
+  and a 14-page atlas. All nineteen paper pages and fourteen atlas pages have
+  hash-bound visual-QA records; the email revision changes only paper page 1.
+- Delegation: fresh Codex CLI gpt-5.6-terra/high completed figures and paper
+  revision; OpenCode deepseek-v4.1-flash-free/max completed independent advice
+  review (recorded cost 0). The director corrected helper branch/classification
+  errors before integration; raw proposals are not accepted manuscript text.
+- Verification: exact CM and square certificates pass; 100/200-digit branch
+  diagnostics, exact norm/trigonometric/eigenline checks, signed FE samples,
+  odd-N diagnostics and plotted-data checks pass. The independent 180-digit
+  near-integer ladder agrees. Final TeX has no overfull boxes or unresolved
+  references; qpdf checks pass. All 99 older bound authored files are unchanged.
+- Next: a fresh external mathematical reading of the complete first draft,
+  focused on CM branch enclosure and analytic reading flow. Classical CM,
+  modular inversion, Poisson and off-line-zero inputs retain their citations.
+  This is a local draft, with no commit, push, upload or publication.
+
+
+## 2026-10-20: independent Sol 6.1 and DeepSeek manuscript-form cold review
+
+- Packet: [layout cold review](research/heegner-golden-20261018/cold-review-layout-sol61-deepseek-20261020/README.md).
+- Fresh Codex CLI gpt-6.1-sol/high and OpenCode deepseek-v4.1-flash-free/max
+  sessions independently viewed all nineteen frozen page images and wrote
+  first impressions before reading TeX. CLI access order and selections are
+  checked; both sessions completed, and DeepSeek recorded cost 0.
+- Outcome: both recommend substantial editorial restructuring. The twelve
+  landscape figure sheets, eight orientation changes, interrupted argument,
+  small final-size labels and weak result hierarchy make the current draft
+  read as an atlas interleaved with a paper. Sol proposes three compact body
+  groups; DeepSeek proposes five. These are editorial proposals, not journal rules.
+- The director synthesis corrects reviewer inaccuracies about citations,
+  figure references, theorem/proof breaks, necessary rank-loss conditions,
+  reproducibility access and font measurements. Its proposed four-group trial
+  preserves the CM/Hermite-to-c0 priority, full atlas and exact appendix.
+- Verification: both viewed all 19 pages; first-read/source order audited;
+  all 191 prior bound source/output/checkpoint files and 23 frozen review inputs
+  are unchanged. The review packet binds 41 files. The current paper PDF SHA-256
+  remains 48eb2d4d67dfb9476de8989e6f659f86b4db9b355d747d7ac9ab3e345aa50ccb.
+- Next: implement a distinct portrait editorial revision with figures rebuilt
+  at final reading size, complete local references/captions, and renewed
+  page-by-page QA/hashes. No paper or atlas was revised during this review;
+  no commit, push or publication occurred. External human mathematical review
+  remains separate and pending.
+
+## 2026-10-20: Heegner-golden portrait revision 0.2 and source bundle
+
+- Packet: [Golden Coordinates at Level Five, portrait revision 0.2](research/heegner-golden-20261018/paper-v0.2-portrait-20261020/README.md).
+  The main article is a continuous 10-page Letter article with four compact
+  body figures; a separate 14-page landscape supplement retains plates S01–S12
+  with local captions and a methods page. The v0.1 paper and atlas remain
+  unchanged checkpoints.
+- Content: the CM/Hermite-to-`c0` recovery remains the primary strand. The
+  article retains Theorem 3.1, Corollary A.1 and both appendices; the Fourier
+  classification is per eigenline, with the mixed-vector `(x,y)=(1,0)` example.
+  The normalized positive sequence is identified with Davenport–Heilbronn at
+  `kappa=(sqrt(10-2sqrt5)-2)/(sqrt5-1)=r(i)`. The conductor-815 cyclic quartic
+  field is attributed to Spearman–Williams; no novelty or priority claim is made.
+- Layout: body figures were recomposed at 6.4-in source width and inserted at
+  6.5 in, so minimum 8.5-pt artist text appears at 8.63 pt. Figure 3 closes
+  Section 3; Figure 4 closes Section 4 and begins page 6, followed by Section 5.
+  Every body figure is referenced and interpreted; no gallery precedes the first
+  theorem and no stale Figure 5–12 text remains in the PDF text layer.
+- Hashes: article PDF `b3200ffa4130b5046c8462a2a0f22d1ea30273120442953faf93a01b5f937718`;
+  source `46d473aa9e32528617b3ddc8396987d0240e9717832e537481f43b5eba688fc7`;
+  supplement PDF `e4bc0fbe12deeeed7a998be333f534fcf1de8218583170e622b75846d38fe32b`;
+  source zip `4f752a6423f9174f61e2872218cf309f0bf8a08329d3a2b3b619697e28e83fbc`.
+- Verification: exact CM replay, square certificate, lemma/trigonometric/
+  eigenline checks, 90-digit DH constant check, both figure-data checkers,
+  layout/text-layer checker and qpdf all pass. The 233 earlier authored files
+  match the preservation baseline. The source zip was extracted, its 107-entry
+  manifest verified, the article compiled twice, and the supplement rebuilt:
+  10 and 14 pages, identical text layers, and 10/10 article page renders
+  identical. The rebuilt article PDF differs only in pdfTeX creation metadata.
+- Next: obtain a fresh external human mathematical reading focused on the CM
+  branch enclosure and the analytic proof flow. Optional cosmetic polish of the
+  supplement cover notation is separate from the verified build. No commit,
+  push, upload or publication occurred; no RH source or sealed artifact changed.
+
+## 2026-10-20: local git archive of the Heegner-golden workstream
+
+- The complete workstream, excluding ignored `logs/` directories and third-party
+  source scans, is recorded on the local branch `publish/heegner-golden-v0.2`,
+  based on public `origin/main` at `cd41476`. The branch has not been pushed.
+- The v0.2 packet remains byte-identical to its completion record. Its README
+  line `Local draft; no commit, upload, or publication` describes the state at
+  completion; the new [HANDOVER.md](research/heegner-golden-20261018/HANDOVER.md)
+  records the later local archive without rebinding the v0.2 hashes.
+- No RH source, sealed release, or unrelated workstream was changed. The shared
+  local `main` checkout remains divergent and was not merged or pushed.

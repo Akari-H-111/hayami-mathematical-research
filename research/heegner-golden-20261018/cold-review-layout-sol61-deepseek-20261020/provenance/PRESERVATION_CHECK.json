@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-20",
+  "status": "PASS",
+  "unchanged_original_bound_files": 191,
+  "unchanged_frozen_review_inputs": 23,
+  "pdf_sha256": "48eb2d4d67dfb9476de8989e6f659f86b4db9b355d747d7ac9ab3e345aa50ccb",
+  "all_19_images_match_original_visual_QA": true,
+  "input_sha256": {
+    "paper.pdf": "48eb2d4d67dfb9476de8989e6f659f86b4db9b355d747d7ac9ab3e345aa50ccb",
+    "main.tex": "e67edf84df7a1a2287ffeb84c3da786180e87a1c5ef420e09ae2be1e4337b6aa",
+    "PAPER_TEXT.txt": "c2fbab4e80e7ce0c3b10d8ebf29d1b91d143a6135c6b4bb4c72499d1c1f35eff",
+    "PAGE_INVENTORY.csv": "e6113802984c939b39a22a71da7b1b5b9fbc8f7334bb8176c771727099d5b91b",
+    "pages/page-15.png": "3e8080bb30a7ee251f7a432484231386f86187094133158c5b151b49b9d3b0b4",
+    "pages/page-01.png": "93bc8277b0804f904e27110d793c30ca93949263db22d1947dc8368af5184246",
+    "pages/page-14.png": "ae9d5f29780d284a6298fb119df4f7fe42e550ecb243de6f11b3b3add23db887",
+    "pages/page-02.png": "0d6640df5cdeff448f085dcc57b74e2c729e9888b6b82ccd469b8d57ef1aa915",
+    "pages/page-16.png": "b3c02c41085ff53604efb0859002a13a71fc7b847b1c8b630efb68cc0e439f4a",
+    "pages/page-17.png": "a81946cc3fc63aeb40afad038c56405fde2694e29ebcae0cf7046beff8cdcbf7",
+    "pages/page-03.png": "41c71207afcaa74c77479f81ea2501eaf285883c889885c73b26f51b7ed6ca3b",
+    "pages/page-07.png": "82adc516be7ae316b282ff0eef0ea3901a010c408ee352fed1777f16fa6f0554",
+    "pages/page-13.png": "b4bb052420213bf97b9f7188b49b0e8e9e60a959159393b11d2ffc06581d0a39",
+    "pages/page-12.png": "9e2b00b0cb2ee94b7a40bd4fafb55d5264ca1fd29a366bd12f3ded192c3b9bd9",
+    "pages/page-06.png": "ad03eaee1e90f2b22431faa6f2f92e429044eede32e9025745ae83771df98a63",
+    "pages/page-10.png": "4ea0306040ddb8eb34977de9011a63579a403a10a7b1233f93341957d6561c0b",
+    "pages/page-04.png": "03fc1be08ffde1b185b045aedc08fbc19b26fcfce505a3d558652c1add30f8bd",
+    "pages/page-05.png": "c4ac576940da4fdb9cd1e9b241ce82108f7c7076ed6deeab8bec0ee7b8e6965f",
+    "pages/page-11.png": "208e2f135ebf6a177fae955e716022c7edb8e4efcc12df471c6797817351dcc8",
+    "pages/page-08.png": "0329d5922d665fe53fdf2810ffc1fdf3718a05d2c28ae06d551d3366bbc6ec4f",
+    "pages/page-09.png": "6d200b40bef9e4758937935b88fe6d97e4bb5847a602041205b6bab134afccbc",
+    "pages/page-19.png": "d04e7b316afa225c768611d22b4dac29d27f18d20e35070f263d1383fdc983fe",
+    "pages/page-18.png": "eb0c1c0f7643f9c9094b2643399a943ba27505b3285628e272ee252ddced757f"
+  },
+  "original_manifest_roots": [
+    "paper-v0.1-20261019",
+    "figures-terra56-20261019",
+    "99 earlier bound authored checkpoints"
+  ]
+}

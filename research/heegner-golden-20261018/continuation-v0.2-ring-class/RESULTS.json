@@ -1,0 +1,103 @@
+{
+  "status": "PASS",
+  "source_sha256": {
+    "logs/sources/duke-bams4.pdf": "fcf69ec30dae5fb372818aef3152b7adf326f244dda52844df5fa5048d38cbe5",
+    "logs/sources/bruinier-funke-imamoglu.pdf": "e04d45790cc82bc1dfc5ea4dc601140694fd2c550701e20c591e79fddebdc805",
+    "logs/sources/bengoechea-imamoglu.pdf": "7daece19c2e6fd4c9614c03cb98061ce41bf55bf3361f000cabdfe28a827c376",
+    "logs/sources/maier.pdf": "ca51653bb995355b0191fb0acc04a72f742e08ca67873f7e84a036bacf81ead5",
+    "logs/sources/cox.pdf": "f7ad9babf95257295d21114774c48b38967c1f604eecdbeb04749252ab829c34",
+    "logs/sources/luo-rudnick-sarnak.pdf": "4226b4c9d9af5a7f1ce08e28cd693eef48dc2edf51a41cd489286985ae698410"
+  },
+  "external_dependencies": [
+    "Duke Eq. (7.7): eta/Rogers-Ramanujan identity",
+    "Maier Table 2 and Table 7: X0(5) normalization and j maps",
+    "Cox Theorem 7.24 and Theorem 11.1: class number and CM",
+    "BFI Theorem 1.2: separate director theta-lift application; source pinned, theorem external"
+  ],
+  "exact_checks": [
+    "G irreducible over Q and the j(tau) eta-coordinate identity modulo G",
+    "exact resultant H for j(5 tau), irreducible over Q, and H(R(u))=0 modulo G",
+    "G factors as two irreducible cubics over Q(sqrt(5))",
+    "cubic discriminant is -163 times the displayed Q(sqrt(5))-square",
+    "complete reduced primitive-form enumerations for -163 and -4075"
+  ],
+  "ring_class": {
+    "K_discriminant": -163,
+    "conductor": 5,
+    "order_discriminant": -4075,
+    "kronecker_D_over_5": -1,
+    "class_number_formula_value": 6,
+    "class_group": "cyclic C6 (abelian group of order 6)",
+    "reduced_forms_D_minus163": [
+      [
+        1,
+        1,
+        41
+      ]
+    ],
+    "reduced_forms_D_minus4075": [
+      [
+        1,
+        1,
+        1019
+      ],
+      [
+        25,
+        -15,
+        43
+      ],
+      [
+        25,
+        -5,
+        41
+      ],
+      [
+        25,
+        5,
+        41
+      ],
+      [
+        25,
+        15,
+        43
+      ],
+      [
+        25,
+        25,
+        47
+      ]
+    ]
+  },
+  "resultant_minimal_polynomial_coefficients": [
+    "1",
+    "1247257156019637304856107520018074552566824585862995272173368815794085495792299621089280",
+    "-4639796612478190683980432654525770873723843904020069491990531249067242924053663574455746560",
+    "5676192994124845302961495367285934992661012738565045163590318545337507001358527681694321868800",
+    "-2530123180606721645060899046691076382780085382180063288738379701466385821402803681978244451532800",
+    "307678260252363847142518557058020616760886195569701698589818485393365264653517720247611686912000000",
+    "327449218015598326103658292188693405775089450022293408267511192500873413185838399911936381646297628672000"
+  ],
+  "field_conclusions": {
+    "Q(u)": "Q(j(5*tau))",
+    "K(u)": "H_5, conditional on the first main theorem of CM",
+    "quadratic_genus_layer_over_K": "K(sqrt(5))",
+    "splitting_field_over_Qsqrt5": "H_5 with group S3"
+  },
+  "numerical_diagnostics": [
+    {
+      "digits": 120,
+      "six_form_weighted_H_residual": "1.576958533e-120",
+      "r_to_j5_relative_error": "1.500629367e-119"
+    },
+    {
+      "digits": 180,
+      "six_form_weighted_H_residual": "1.350009784e-179",
+      "r_to_j5_relative_error": "3.110290791e-179"
+    }
+  ],
+  "limits": [
+    "Numerical diagnostics are not used to prove coefficients or field identities.",
+    "The biquadratic resolvent also contains Q(sqrt(-815)); the CM order marks K.",
+    "No canonical HMR map, novelty claim, or RH consequence is established."
+  ]
+}

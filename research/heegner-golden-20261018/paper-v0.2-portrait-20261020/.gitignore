@@ -1,0 +1,7 @@
+logs/
+*.aux
+*.log
+*.out
+*.toc
+__pycache__/
+companion/.mplconfig/

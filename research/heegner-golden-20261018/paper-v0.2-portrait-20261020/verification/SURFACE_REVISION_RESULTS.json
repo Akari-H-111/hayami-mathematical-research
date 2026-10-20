@@ -1,0 +1,11 @@
+{
+  "status": "PASS",
+  "local_rank_loss": "For 0<c<1, rank(dS)<2 iff u=(1-c)/2 and P(c)=0; Su has nonzero third component.",
+  "cross_product_on_necessary_locus": [
+    "(-c**3/2 + c**2 + c - 1/2)/sqrt(c*(2 - c))",
+    "s*(-c**2 + 3*c - 1)/sqrt(c*(2 - c))",
+    "0"
+  ],
+  "CM_coefficient_renaming": "All six p_i,d_i values agree with the prior exact certificate.",
+  "scope": "Exact local algebra and coefficient preservation; no boundary/global surface classification or external CM theorem is certified here."
+}
