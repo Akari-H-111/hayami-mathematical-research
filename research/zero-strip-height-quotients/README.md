@@ -35,7 +35,9 @@ strip*, but it is not a periodic quotient of the marked zero divisor.
 | [SUPERVISOR_COUNTERMODEL.md](SUPERVISOR_COUNTERMODEL.md) | Why these symmetries/counts/topologies cannot imply RH |
 | [Lean/ZeroStripCore.lean](Lean/ZeroStripCore.lean) | Kernel-checked ambient symmetries, determinants, subgroup obstruction |
 | [Lean/SupervisorStructures.lean](Lean/SupervisorStructures.lean) | Separate supplementary AddCircle/deck and generic-growth lemmas; preserved as supplied |
+| [Lean/DivisorCells.lean](Lean/DivisorCells.lean) | Half-open cells, cell translation, finite cell-mass preservation and the bounded-cell obstruction |
 | [Lean/ZetaCompatibility.lean](Lean/ZetaCompatibility.lean) | Actual zeta zero-support symmetries in the open strip, without RH |
+| [FORMALIZATION.md](FORMALIZATION.md) | Formalization map and explicit analytic boundary |
 | [verification/check_exact.py](verification/check_exact.py) | Exact rational finite-model diagnostic |
 | [verification/supervisor_countermodel.py](verification/supervisor_countermodel.py) | Exact finite polynomial diagnostic for the auxiliary countermodel |
 | [verification/test_assertion_guard.py](verification/test_assertion_guard.py) | Regression test that both verifiers refuse assertion-stripped execution |
@@ -76,8 +78,9 @@ that a particular smooth multiplication happened to fail.
 | Path | Purpose |
 | --- | --- |
 | `paper/` | Paper development: v0.1 base, v0.2 illustrated revision, v0.3 current reader, acceptance records and paper-level replay |
-| `Lean/` | Named Lean theorems for the algebraic and topological-group models, plus actual zeta zero-support symmetries |
+| `Lean/` | Named Lean theorems for the algebraic, cell-partition and topological-group models, plus actual zeta zero-support symmetries |
 | `verification/` | Root exact checks, countermodel diagnostic and replay script |
+| `FORMALIZATION.md` | Formalization map and explicit analytic boundary |
 | `HANDOVER.md` | Agent-oriented reading order, verification state, environment and next actions |
 
 The first-cycle research notes remain at this directory's top level. The

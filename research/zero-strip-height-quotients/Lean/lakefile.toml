@@ -1,6 +1,6 @@
 name = "zeroStrip"
 version = "0.1.0"
-defaultTargets = ["ZeroStripCore", "SupervisorStructures", "ZetaCompatibility"]
+defaultTargets = ["ZeroStripCore", "SupervisorStructures", "DivisorCells", "ZetaCompatibility"]
 
 [[require]]
 name = "mathlib"
@@ -12,6 +12,9 @@ name = "ZeroStripCore"
 
 [[lean_lib]]
 name = "SupervisorStructures"
+
+[[lean_lib]]
+name = "DivisorCells"
 
 [[lean_lib]]
 name = "ZetaCompatibility"

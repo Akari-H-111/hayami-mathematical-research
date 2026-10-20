@@ -30,3 +30,22 @@ in this package; **REFUTED** has an explicit countercontrol.
 | D3 | Positive self-adjoint multiplication is impossible on a nonzero finite-dimensional unital Q-representation, extended to R. | PROVED HERE from D1/D2 | The irreducible minimal polynomial has nonreal roots. A one-dimensional real scalar through one embedding is not excluded. | Other constructions remain open. |
 | D4 | c0 and phi have identical absolute chord-response sequences. | PROVED HERE, elementary | c0=2-phi gives complex-conjugate characters for every integer q. | Retain a separate cubic / discriminant mark. |
 | D5 | The residual cubic has discriminant -163 times an F-square, F=Q(sqrt(5)); its Galois group over F is S3. | PROVED HERE from exact identities and the classical cubic criterion | `CUBIC_RESOLVENT.md`; independent fresh Terra recomputation in `logs/resolvent-review.md`. The square class also has representative -815. | Identify the conductor-5 ring class field and preserve the original CM mark. |
+
+## Lean formalization layer
+
+Added 20 October 2026.  This table records kernel-checked declarations without
+changing the historical labels above.
+
+| Claim | Lean declaration | Scope |
+| --- | --- | --- |
+| C2, universal sextic quotient | `HeegnerGolden.level5_quotient` | arbitrary field, `t ≠ 0` |
+| C3, `P_163=A^2-5B^2` | `HeegnerGolden.P163Eval_eq` | pointwise identity in any field |
+| C4 branch implication | `HeegnerGolden.sqrt5_eq_neg_A_div_B` | conditional on `B(t)≠0` and `A(t)<0<B(t)` |
+| Three branch formulas | `HeegnerGolden.phi_formula`, `gamma_formula`, `c0_formula` | same conditional boundary |
+| Elementary golden identities | `HeegnerGolden.phi_sq`, `c0_eq_two_sub_phi`, `c0_eq_phi_inv_sq` | no extra hypotheses |
+| Common involution `M^2=1`, `(JMJ)^2=1` | `HeegnerGolden.M_sq`, `J_sq`, `A_sq` | conditional on `gamma^2=c0` and `1+c0>0`; not the sine-matrix identification |
+| Equation (11) | `HeegnerGolden.H_identity` | real polynomial identity |
+
+The CM value, Klein equation, q-product enclosure, Sturm counts, coprimality
+certificate, factorization controls and cubic resolvent remain outside Lean.
+See `FORMALIZATION.md` for the full boundary.

@@ -37,10 +37,12 @@ Labels: **PROVED** means a complete written proof from cited classical inputs;
 |---|---|---|
 | `Lean/ZeroStripCore.lean` | A2, A4, A15 algebraic core | `propext`, `Classical.choice`, `Quot.sound` for the map/matrix facts; the subgroup lemma uses only `propext` (reported by `#print axioms`); no `sorry`, `admit`, or user axiom |
 | `Lean/SupervisorStructures.lean` | A6 generic square; A9 group model; abstract constant-cell/growth lemma | same three kernel/library axioms, printed by the file; no `sorry`, `admit`, or user axiom |
+| `Lean/DivisorCells.lean` | A5 combinatorial core: half-open cells, disjointness, translation, finite cell-mass preservation, bounded-cell/superlinear contradiction | same three kernel/library axioms, printed by the file; no `sorry`, `admit`, or user axiom |
 | `Lean/ZetaCompatibility.lean` | A20 actual zeta support, including strip hypotheses | same three kernel/library axioms, printed for all five named declarations |
 
-None of the three sources formalizes `xi`, the Riemann--von Mangoldt theorem, isolation of
+None of the four sources formalizes `xi`, the Riemann--von Mangoldt theorem, isolation of
 analytic zeros, manifold local homology, orientability of Lie groups, or a deck
-quotient homeomorphism.  Consequently A5's analytic no-go is a checkable
-written theorem connected to its named analytic inputs, rather than a false
-claim of full Lean verification.
+quotient homeomorphism.  The `CellDivisor` structure takes finite cell supports
+and multiplicity preservation as fields; it does not construct them from xi.
+Consequently A5's analytic no-go is a checkable written theorem connected to
+its named analytic inputs, rather than a false claim of full Lean verification.

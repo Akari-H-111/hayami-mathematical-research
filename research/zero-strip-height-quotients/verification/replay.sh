@@ -16,6 +16,7 @@ python3 -B "$task_root/verification/test_assertion_guard.py"
   cd "$lean_root"
   lake env lean "$task_root/Lean/ZeroStripCore.lean"
   lake env lean "$task_root/Lean/SupervisorStructures.lean"
+  lake env lean "$task_root/Lean/DivisorCells.lean"
   lake env lean "$task_root/Lean/ZetaCompatibility.lean"
 )
 printf '%s\n' 'replay: PASS'

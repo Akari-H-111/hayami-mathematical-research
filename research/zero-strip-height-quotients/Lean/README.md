@@ -6,6 +6,9 @@ Tested against the read-only Mathlib checkout supplied by the task:
 export HMR_ROOT=/path/to/hayami-mathematical-research
 cd /Users/akari_hayami_64/Documents/prime-spherical-fold
 lake env lean "$HMR_ROOT/research/zero-strip-height-quotients/Lean/ZeroStripCore.lean"
+lake env lean "$HMR_ROOT/research/zero-strip-height-quotients/Lean/SupervisorStructures.lean"
+lake env lean "$HMR_ROOT/research/zero-strip-height-quotients/Lean/DivisorCells.lean"
+lake env lean "$HMR_ROOT/research/zero-strip-height-quotients/Lean/ZetaCompatibility.lean"
 ```
 
 This is the tested local reuse path.  It uses the already-built package cache;
@@ -17,6 +20,15 @@ does not do so, in order not to install or update dependencies.
 
 `ZeroStripCore.lean` has no `sorry`, `admit`, or custom axioms.  Its imported
 Mathlib axioms are reported by the replay script.
+
+`DivisorCells.lean` is the 20 October 2026 addition.  It formalizes the
+half-open height cells, disjointness of distinct cells, the exact translation
+of one cell onto the next, finite-cell mass preservation under a
+multiplicity-preserving translation, and the bounded-cell/superlinear-count
+contradiction.  A `CellDivisor` structure records finite cell supports and
+periodicity; its `cellMass_succ` theorem proves equal masses in consecutive
+cells.  It does not construct the xi divisor, prove local finiteness, or prove
+Riemann--von Mangoldt.  Those remain named analytic inputs.
 
 API reconnaissance was performed in the pinned checkout before formalization.
 The supplementary model imports `Mathlib.Topology.Instances.AddCircle.Defs`,
