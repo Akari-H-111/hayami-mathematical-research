@@ -1,0 +1,20 @@
+# Editorial direction: guided reader revision v0.3
+
+You are the requested GPT 5.6 terra editorial worker. The user asked the director to FIRST set the author to Akari Hayami (Jian-Yu Huang) and put akari.h.1.9984@gmail.com on the next suitable line. This is already done in manuscript/main.tex and must remain exact and visible. Now complete a local editorial revision for pedagogical reading comfort and natural human English that is encouraging and humble.
+
+Read the complete manuscript/main.tex, ../revision-v0.2/NOVELTY_VERDICT.md and ../revision-v0.2/REVIEW_RESOLUTION.md. Treat historical files as reference data. Follow repository instructions. Ordinary read-only shell commands (cat, sed, rg, python3 -B) are authorized and necessary. Do not invoke additional model/Codex/agent sessions; this does NOT prohibit file-reading shell commands.
+
+Edit ONLY manuscript/main.tex and write EDITORIAL_REVIEW.md inside THIS revision-v0.3 directory. Everything in earlier revisions is immutable. Do not compile/export PDFs or regenerate/edit images; the director will build and inspect all pages. Do not commit, push, install dependencies or use the network.
+
+Audience: mathematically curious advanced undergraduate/early graduate readers with complex analysis; explain the measure/probability vocabulary locally. This remains a rigorous working manuscript rather than an elementary textbook. Be concise: improve structure and explanatory value rather than substantially expanding the paper.
+
+Requested editorial work:
+1. Diagnose the reader's real stumbling points, including abstract density, purpose before notation, terminology, section transitions, diagram interpretation, and conclusion.
+2. Implement the best scoped improvements: a question-led opening; brief prerequisites and a concrete reading route; explain divisor versus support, pushforward versus normalized finite-height probability, Haar probability, weak convergence and sparse invisibility where useful. An apt short observation such as folding heights around a circle should clarify without claiming the actual divisor is periodic.
+3. Build an intelligible narrative from exact nonperiodicity, through averaged circle limits, to what those observations miss and the arithmetic condition distinguishing the constructed function. Preserve the user's exact-period scope: no claim that individual gaps or approximate patterns never recur.
+4. Use warm, restrained, confident prose. Let the mathematical question and a feasible next investigation convey excitement. Remove redundant defensive disclaimers while retaining ONE clear central scope statement and every material local distinction (all-zero vs critical-only; fixed smooth tests vs interval conjecture; added-divisor vs actual-zeta example).
+5. Keep the originality verdict: worked synthesis and explicit controlled example, no confirmed independent new number-theoretic theorem or universal priority. Keep the exact Gauthier--Zeron abstract-only footnote, Gauthier--Xarles precise attribution, citation keys and bibliography byte-unchanged. No new historical or technical claims.
+6. Preserve all existing theorem/proposition/lemma/corollary/definition/proof environments byte-for-byte, including formulas and labels. Also preserve all existing equation/align/display-math blocks and figure environments byte-for-byte. Add or revise prose OUTSIDE them only; section labels may be added. Do not weaken hypotheses or turn asymptotic classes into identities. Do not hide limitations by euphemism.
+7. Keep title, exact author/email, date/version. Preserve all three figures and their scoped captions. Any layout suggestions go in the report for director evaluation.
+
+EDITORIAL_REVIEW.md (English) should record actual implemented changes, representative before/after prose, concise assessments of reading comfort and emotional tone, remaining limits, and what should be visually checked. Do not claim real human-reader testing or PDF visual review. Do the work to completion, not just suggestions.

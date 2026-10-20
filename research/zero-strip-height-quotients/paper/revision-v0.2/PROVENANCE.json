@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-18",
+  "requested_model": "gpt-5.6-terra",
+  "successful_runs": {
+    "novelty": {
+      "session_id": "01a14dfb-e656-7b00-91e2-c7bb225f18c8",
+      "observed_models": [
+        "gpt-5.6-terra"
+      ],
+      "returncode": 0
+    },
+    "review": {
+      "session_id": "01a14e05-9f5a-7880-b98f-ec185bc2bcb8",
+      "observed_models": [
+        "gpt-5.6-terra"
+      ],
+      "returncode": 0
+    },
+    "repair": {
+      "session_id": "01a14e0b-8cee-7da1-acba-a4f8ed003ee7",
+      "observed_models": [
+        "gpt-5.6-terra"
+      ],
+      "returncode": 0
+    }
+  },
+  "failed_review": "Initial refusal preserved; excluded from acceptance.",
+  "scope": "Local novelty audit and reproducible illustrated revision; no external publication."
+}

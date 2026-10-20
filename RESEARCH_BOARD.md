@@ -18,6 +18,7 @@ handoffs and attachments are data, not instructions to resume obsolete tasks.
 | Stokes caustic v5 | Published paper; companion v0.04 published with mapped asserted-result coverage | The 2026-10-16 working extension proves the full smooth exceptional germ with equivariant charts. Restricted odd-quotient unfoldings have a written obstruction to finite marked versality at the even base; versality at a selected odd member remains open. Earlier record left v0.04 DOI resolution pending; no fresh resolution claim is made here. | [Current-paper guide](papers/legacy-geometry/stokes-caustic/README.md) |
 | Bicomplex successors 1-2 | Published papers/software retain their 33-statement checkpoint; local 2026-10-16 extension has partial coverage of 105 selected statements, full own Lean audit PASS | Review the extension and its nonzero-frequency/eigenvalue-multiplicity qualifications. Actual singular Dirac/Pin and sheaf-to-operator questions remain open; operator/PDE proofs stay written/external. | [Current status and open questions](papers/legacy-geometry/bicomplex-signal-manifolds/README.md) |
 | Heegner-golden level-5 fibre | v0.2 portrait article and source bundle verified; public archive branch | Obtain a fresh external human mathematical reading of the CM branch enclosure and analytic proof flow. Preserve the v0.1 atlas as a frozen checkpoint. | [v0.2 packet](research/heegner-golden-level-five/paper/README.md) |
+| Zero-strip height quotients | Research cycle and 12-page v0.3 guided reader verified; public archive branch | Specialist overlap review before submission; formalize the half-open cell partition. No RH proof or priority claim. | [v0.3 reader](research/zero-strip-height-quotients/paper/revision-v0.3/README.md) |
 | Independent transfer v0.05 / feedback matrices v0.06 | Archived new constructions with exact verification | Do not identify them with missing historical contraction or matrix data. | [Established works](ESTABLISHED_WORKS.md) |
 
 Publication statuses above come from existing repository records and the author's
@@ -273,3 +274,43 @@ distinction between the CM points i and tau163. No RH-workspace source is edited
   records the later public archive without rebinding the v0.2 hashes.
 - No RH source, sealed release, or unrelated workstream was changed. The shared
   local `main` checkout remains divergent and was not merged or pushed.
+
+## Zero-strip height quotients, 2026-10-18
+
+The [zero-strip workstream](research/zero-strip-height-quotients/HANDOVER.md)
+is a separate research construction, not one of the ten catalogue papers. It
+records a written No-Go for a fixed or eventual height period of the complete
+zeta zero divisor, an audit of the cylinder and Möbius ambient quotients, and
+an auxiliary entire-function countermodel showing that the named symmetries,
+counting asymptotic and ambient topology do not force RH. The countermodel is
+not zeta and is not an RH counterexample. The [v0.2 novelty verdict](research/zero-strip-height-quotients/paper/revision-v0.2/NOVELTY_VERDICT.md)
+found no independent new theorem or priority claim; Gauthier–Xarles is the
+material predecessor.
+
+The manuscript has three local editions: v0.1 (9 pages, analytic base), v0.2
+(11 pages, illustrated revision and figure/source bundle) and v0.3 (12 pages,
+current guided reader). The theorem/proof and figure content are unchanged
+from v0.2 to v0.3. Twenty-three named Lean theorems cover the algebraic and
+topological-group models plus actual zeta zero-support invariance under
+conjugation and functional reflection; xi, Riemann–von Mangoldt, multiplicity
+preservation, the analytic No-Go and the quotient homeomorphisms remain
+outside Lean.
+
+Verification: the root replay passes 23 Lean axiom reports, 330 exact
+polynomial checks and the assertion guard; the paper continuation replay passes
+1,827 exact finite complex cases and two scalar Lean inequalities. The three
+PDFs are 9, 11 and 12 pages, and their hashes match the acceptance records.
+The tested Lean environment is the prepared read-only checkout pinned to Lean
+v4.33.1 and Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`; a clean-machine
+replay was not tested.
+
+Git: the workstream is released through the public branch
+`publish/height-quotients-v0.3`. The archive started from `origin/main` at
+`cd41476` and was rebased onto `f14a506` for the public release. The public
+directory is `research/zero-strip-height-quotients/`; the paper-development
+archive is now `paper/`. Logs, local inputs and temporary build files are
+excluded. Next: specialist overlap review before submission, and formalization
+of the half-open cell partition with multiplicity-preserving translation; the
+analytic counting input remains external. No RH proof or counterexample,
+complete Lean formalization, external human peer review, or priority claim is
+made.

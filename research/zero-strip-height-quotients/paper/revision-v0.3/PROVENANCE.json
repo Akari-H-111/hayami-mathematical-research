@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-18",
+  "requested_model": "gpt-5.6-terra",
+  "successful_runs": {
+    "editorial": {
+      "session_id": "01a14e15-87a3-7f61-b7a1-3fbf37e9724f",
+      "observed_models": [
+        "gpt-5.6-terra"
+      ],
+      "returncode": 0
+    },
+    "cold-review": {
+      "session_id": "01a14e1f-2c9c-7113-95b6-b5f0910c1be9",
+      "observed_models": [
+        "gpt-5.6-terra"
+      ],
+      "returncode": 0
+    }
+  },
+  "scope": "Local editorial revision and fresh source review; separate director scope and all-page PDF inspection.",
+  "limitations": [
+    "No human learner testing",
+    "No new independent analytic peer review",
+    "No external publication"
+  ]
+}

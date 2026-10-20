@@ -1,0 +1,89 @@
+{
+  "status": "accepted local thematic manuscript v0.1",
+  "date": "2026-10-18",
+  "acceptance_scope": "Research-to-working-paper objective; not journal acceptance or exhaustive novelty certification",
+  "page_count": 9,
+  "visual_qa": "All final pages 1-9 inspected at 110 dpi; no clipping, overlap, missing glyphs or broken references observed.",
+  "finite_complex_cases": 1827,
+  "new_lean_scalar_theorems": 2,
+  "pins": {
+    "lean": "leanprover/lean4:v4.33.1",
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474"
+  },
+  "preservation": {
+    "repository_tracked": {
+      "files_checked": 962,
+      "changed_or_missing": []
+    },
+    "prior_workstream": {
+      "files_checked": 27,
+      "changed_or_missing": []
+    }
+  },
+  "provenance": {
+    "date": "2026-10-18",
+    "requested_model": "gpt-5.6-terra",
+    "research_session": "01a14d55-c240-7ef0-a107-205372ac0455",
+    "research_observed_model": "gpt-5.6-terra",
+    "cold_review_session": "01a14dee-802e-71c0-b9b2-304b97796aa6",
+    "cold_review_observed_models": [
+      "gpt-5.6-terra"
+    ],
+    "research_returncode": 0,
+    "review_returncode": 0,
+    "scope": "Local synthesis and obstruction manuscript; no publication or priority claim."
+  },
+  "authored_sha256": {
+    ".gitignore": "c00ac00f8ab4abe9e81f8aec0a546673c077ff2b8a281007559b4f29cc74613b",
+    "ACCEPTANCE.md": "37dc3b0fa4f1de200308c92f4aeba8b05e162df5d6875b4ce086022f6ab61609",
+    "CLAIMS.md": "2c23a4407ff89ee6d238f2a8d4350e1fec30184a6f1806fedd2d1b789cff8ecf",
+    "COLD_REVIEW.md": "6a4a309adc42b7a2f7ab7e58b5db5d91cf1a7855a3909922cb0a7adff8093ac1",
+    "DELIVERY_STATUS.md": "31a66212d7a4a60a10f4dfe53113f6e91198be7d6a06c0dfc396eb7d7f2807ee",
+    "DIRECTOR_DERIVATIONS.md": "02c7f3f68c9412a1c23194d44336a71148ffbb8f4007ec56715bdd23bf686e2c",
+    "LITERATURE_POSITION.md": "4abd988388eabe5ed7e26efbf70d8e012cbe7f7227eba524b68d3cc94cb28cc8",
+    "Lean/EmpiricalStability.lean": "1de153369dfa0c494eca02a0388464553d8c51fc111b1c2dc913cec6c3456e02",
+    "MANUSCRIPT_DRAFT.md": "abcf70557c975e3b5d4d3a5f17f214ae2b735be23b70b430d803001512c78b4e",
+    "ORIGINALITY_AND_SCOPE.md": "d878b3e9fc85b20137407aafc89cf6e0c05b680c7a5508fdcb6fc7fef2b0554a",
+    "PROGRESS.md": "c6a3df68771c4ebcdf95fb1b36c9571b000dbe9f53bc81a81a5a04d4c247c2d8",
+    "PROVENANCE.json": "aa7a1adb3b7298450c59e435ba40c10a2a7d418900be731bd2640ed66f32e6dd",
+    "README.md": "7c26beab26798e20dadf5210229d814924c2d8994b9139b124d6797836002f0b",
+    "REPRODUCIBILITY.md": "29f9580331fa02e635931d661dc48be9173a376acb54ac71725795f08830621f",
+    "RESEARCH_CORE.md": "c1e64884bd4c9278fc834843d516480d5cb37bdfa1018a6885bb661b424947f7",
+    "RESEARCH_MANDATE.md": "04f9ed486bb50b97b8e159156e23676338a7f59c533a00979b21b3f16dad3d48",
+    "REVIEW_MANDATE.md": "0bca278114c946c7ae757fd80ee115690a6cb9a6de2dc04cbd72de67cb0dd248",
+    "REVIEW_RESOLUTION.md": "8d675db2c6a115084a0fb39ff7236a79f46702e59b5e4ecfd6c16ae1383debbc",
+    "SOURCE_AUDIT.md": "20ec4ddccf74a0901db8c28fefb967334b41f406dbeab008349b1d82d1b60883",
+    "manuscript/main.tex": "3b0f15a1f5cfbaf481d93d5f447cef3bd75f6ba89ce90b30a8a7d3bc6d87abb3",
+    "output/pdf/height-quotients-v0.1.pdf": "e1c0c18c2e3dddc5932d5cd5989c1238ade57b7a62b2343cf9f82bf87a55f87e",
+    "verification/replay_continuation.sh": "57f7ba69ba307a0801365de314b6da50354c28159ebfb35b8a359648223b6e52",
+    "verification/test_assertion_guard.py": "b86433fe7d3428be1117d5017faf111bd5d13494c7783c87f7c7fa08b45f63e9",
+    "verification/verify_canonical_product.py": "c0d75592b6e12c216d372767f81c240cca7c274454ac9ce9f251eaa3c137bc23",
+    "verification/verify_complex_factors.py": "8cb490e9117500db2c2d31fcb0f91b39335d1d6a30acda3ca21905a3e4ced96e"
+  },
+  "local_evidence_sha256": {
+    "logs/final-replay.log": "2f5d0c9f5039972b2342298c75ac77b3f60aca2cc7dc8201e90a4a38c3004611",
+    "logs/copy-replay.json": "6e047dd37f97c08ea85e5c1ff9db6d050936d993a117fb7a6a75f77bd61f348b",
+    "logs/copy-replay.log": "ed61767b82b62482c402e46339cfce8bf923f84203854abef5bdae1fc4a014cc",
+    "logs/preservation-final.json": "dbf96bb40fd7fecd23a8f847bf43cdde122d85d086886179223a103d40b03b82",
+    "logs/pdf-qa.json": "f66a0906bc08f4f09079d78fb2bded7b1832d4ca0439194d3d300ef770f50c25",
+    "logs/pdf-info.log": "ba79ef5d0a9cad308e1b33a2a525855721a40ff4ef9ba17da71cda9ebef1a506",
+    "logs/pdf-fonts.log": "9f28298abbdc357399a2caf82a21a91160a67c398fb9c753d546507590e02eff",
+    "logs/pdf-structure.log": "e504ddd48a35f219a8dbb32adb558f40a9eb1dd9cdf44f7569fcb1e3f65016b7",
+    "logs/navigation-final.log": "cd3f9f1340f2a61101f401a3bd49eb89cb5fcf4df1fb8b3e545c6be0aac1c72e",
+    "logs/tectonic-final.log": "fd9d5287cfcd1b906c7a86105a9ba55ee3193787fa37a3f7faed7c0da75e5bdb",
+    "logs/research-dispatch.json": "a8dcfdbcd3c8a868f8b292605ebd7d42afd635f87700493c095186f606734b85",
+    "logs/research-actual-model.json": "56762a7d25e623868a3e3baea7e5126d3f0b54b11e4b86c50a96e622b8dd2354",
+    "logs/research-result.json": "794d884d3da9656fc15ce678fd4922276da71e8da546706c5acf4132a04aca08",
+    "logs/review-dispatch.json": "a910ac5659a9966423dcccc044006ebdbb85d410e48670ece0e522a657d479ae",
+    "logs/review-actual-model.json": "1e3bea03e9844f445aee99ec80062787b9488f75e8cb83db4e7a7f04f9fadda0",
+    "logs/review-result.json": "b7ca83ee99dff2b2fc77e3989c3353cf5da958e1c5d885d998140256ecfdf80f"
+  },
+  "limitations": [
+    "No RH proof or counterexample",
+    "No whole-paper Lean formalization",
+    "No external human peer review",
+    "No exhaustive priority or journal-suitability certification",
+    "Clean-machine dependency installation not tested",
+    "No publication, commit or push"
+  ]
+}

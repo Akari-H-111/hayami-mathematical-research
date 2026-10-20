@@ -1,0 +1,105 @@
+{
+  "date": "2026-10-18",
+  "status": "Accepted local guided reader revision v0.3",
+  "author": "Akari Hayami (Jian-Yu Huang)",
+  "email": "akari.h.1.9984@gmail.com",
+  "page_count": 12,
+  "figure_count": 3,
+  "authored_sha256": {
+    ".gitignore": "ed35ecc3918e14c87c24bafd5e49633a8fe0ca1c70b2fb0f880e917884433007",
+    "ACCEPTANCE.md": "28292c900b6d48c41e793ef7eb23749544062a674fd9d7f184fb33f2f909c41f",
+    "COLD_REVIEW.md": "435455e3d30079920e59ab857026ef4a9ff0439a6db745dbbf5641fca5600bef",
+    "COLD_REVIEW_MANDATE.md": "20907ac9ed4232057b7d370828a1bfc49274ac39759d2e32580ddaba67c537d7",
+    "EDITORIAL_MANDATE.md": "9f018e462b02ad1f3db846070df1a1f5c6e2d9528664ea6c9ae0885677c6acd0",
+    "EDITORIAL_REVIEW.md": "308de974b31bc0b15adb464094f8400428057b65add749fc890d1ce1239294be",
+    "PROVENANCE.json": "71f59df17ab1cb20d2aac14d2f288faeb847a751d559bcbf8fcd70a9b0f193ea",
+    "README.md": "29b620777477f38d429fdf0976d76ae2aefbfd7c88ac83fa1c583db7ae274f7d",
+    "REVIEW_RESOLUTION.md": "2ba2abe1854edc3d07de07c0106282d19299e2b748efbf976b7f46d54c08379f",
+    "manuscript/images/figure-01-quotient-seams.pdf": "970fd519ef85ccb98e5a517b95b22a1a6df1253f846633f80949a1784f99427b",
+    "manuscript/images/figure-02-sparse-divisor.pdf": "60a4ce2f3dd8e143b518cff0ba09da31bd071c41f0aa85fc1f5209355f8d91fa",
+    "manuscript/images/figure-03-certified-bounds.pdf": "2502e2f153d65e94d0c700de572235ba8f09623c34f945007e66b78717e10b91",
+    "manuscript/main.tex": "6610661f09f38793f1b5df7c310dd6631b0d2f0dd8c0ae5d66c9270b63fa5023",
+    "output/pdf/height-quotients-v0.3.pdf": "12dfa51d7e11fc6a6c82bf27cf6bd6eca9c47dc344b9a38bc70c0c4e210411ec"
+  },
+  "local_evidence_sha256": {
+    "logs/author-corrected-baseline.tex": "738f0dcc891c1783fda85699220ca8b86895264b4df57a0dde504670a238d78f",
+    "logs/baseline-v0.2.json": "617192a3dcc3e242ada616a26b29ff44779a57bb7196996f9569a9e6bead3ecb",
+    "logs/cold-review-actual-model.json": "331d1066193e8411f62c3d31116ad3f763cfbf98e3708485771ef2d8d31b84fd",
+    "logs/cold-review-dispatch.json": "e87e66483f0a25173a924a9d158ad851eb0a92eba8531c80c1a843ec2216918f",
+    "logs/cold-review-events.jsonl": "5a906305f51922a6a685312a9930170f6a5d8562058a3ffe7061d20bca064ccc",
+    "logs/cold-review-result.json": "1e3f6691f455051e8adb15d961e4bf3c7a17e83dd88b2afdd13315cc288250bb",
+    "logs/cold-review-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "logs/editorial-actual-model.json": "c6a3a9939e5546497f808b6961ec3b3ed01cc01bb321cda613fcbdb3d8904155",
+    "logs/editorial-dispatch.json": "05076dc9c464ef4b2eb412ecd9d824aed55765b37afcd9b1f6a1ba4927322d24",
+    "logs/editorial-events.jsonl": "08d7ce73639795f48f33be37707258d3dd9cbd4dc7fbfc7bc5ef0ca811c44c97",
+    "logs/editorial-final.md": "9e897b0eb2781ef2317532870ff41ae582c00478e6edab06d4902de96d4337ae",
+    "logs/editorial-first-pass.tex": "60b2f9f7ec3014b3589f0cf3d3c3b38714a73ab2c840981e34b26b76e41c9790",
+    "logs/editorial-result.json": "1e3f6691f455051e8adb15d961e4bf3c7a17e83dd88b2afdd13315cc288250bb",
+    "logs/editorial-stderr.log": "1f4dd2a7cc3827374b7568984b9b6a4efb9ed12e874993472f105c19951392f5",
+    "logs/layout-render-diff.json": "c8b80ba9f197c9b920c3a34ed73edad5ee41a988d69e440a0cd50ff03d195491",
+    "logs/navigation-final.log": "cd3f9f1340f2a61101f401a3bd49eb89cb5fcf4df1fb8b3e545c6be0aac1c72e",
+    "logs/pdf-fonts.log": "935cc7a468427a9268e5c1d4b6a21b712b1b61a8e726a77ff0d6745f1a732674",
+    "logs/pdf-qa.json": "26126b4ab9e461c3cef121e5aca47fbf23fc2bcbdd8c1bfcf7d706e83c5debfe",
+    "logs/pdf-structure.log": "0dadd04fd52ab578e3b3dfd3eb72263a8382bd549c322db109295090d3c384d1",
+    "logs/preservation-before-editorial.json": "f9b678125504f1252026ebe2184cef2219ef60baea6cfa923e90429e72fa5b91",
+    "logs/preservation-final.json": "51f30ca6cf22a49f61ad24acc5b186641af802483e6e314b4183669261defefc",
+    "logs/protected-baseline.json": "3ed685443c7c0d7292824ca63bfd6e9929af01a66866dafe871c2f91eaebcfd0",
+    "logs/protected-content-first-pass.json": "ba708f0f8ccc28d6911b7cea82f0d97d1f47d88bfbb65657cb8f0131d2fb8c3d",
+    "logs/scope-check.json": "13276df604d34efe5730333a4aedc38fe3c6f3022dd7c370ff686c455d054a56",
+    "logs/tex-draft.log": "839e0f32ccbe1b6b599cbb49ba180f42617ac01f9c9d733ee911befb59c24a54",
+    "logs/tex-layout.log": "5e1284f39b9af81592fc62f0c72caf1ba35f764276213fb2ff357e22e0f94a6e"
+  },
+  "preservation": {
+    "repository_tracked": {
+      "files": 962,
+      "changed_or_missing": []
+    },
+    "first_cycle": {
+      "files": 27,
+      "changed_or_missing": []
+    },
+    "v0.1": {
+      "files": 56,
+      "changed_or_missing": []
+    },
+    "v0.2": {
+      "files": 107,
+      "changed_or_missing": []
+    }
+  },
+  "provenance": {
+    "date": "2026-10-18",
+    "requested_model": "gpt-5.6-terra",
+    "successful_runs": {
+      "editorial": {
+        "session_id": "01a14e15-87a3-7f61-b7a1-3fbf37e9724f",
+        "observed_models": [
+          "gpt-5.6-terra"
+        ],
+        "returncode": 0
+      },
+      "cold-review": {
+        "session_id": "01a14e1f-2c9c-7113-95b6-b5f0910c1be9",
+        "observed_models": [
+          "gpt-5.6-terra"
+        ],
+        "returncode": 0
+      }
+    },
+    "scope": "Local editorial revision and fresh source review; separate director scope and all-page PDF inspection.",
+    "limitations": [
+      "No human learner testing",
+      "No new independent analytic peer review",
+      "No external publication"
+    ]
+  },
+  "editorial_verdict": "No blocking issue in fresh source review; measured and inviting tone for advanced guided-note audience.",
+  "visual_qa": "All twelve final pages covered; no clipping/overlap/missing glyphs observed.",
+  "novelty_status": "Worked synthesis and explicit controlled example; no new independent theorem or priority certified.",
+  "limits": [
+    "No human learner testing",
+    "No new analytic peer review",
+    "No expanded Lean coverage",
+    "No publication, commit or push"
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-18",
+  "scope": "Local first research cycle; no publication, commit or push",
+  "research_cli_model": "gpt-5.6-terra",
+  "review_cli_model": "gpt-5.6-terra",
+  "research_cli_exit": 0,
+  "review_cli_exit": 0,
+  "raw_cold_verdict": "Conditional acceptance; no defect overturning main theorem",
+  "actionable_findings_resolved_by": "Supervisor; four findings",
+  "post_fix_cold_review": "NOT RUN",
+  "lean_source_hashes_unchanged_from_successful_replay": true,
+  "named_lean_theorems": 23,
+  "script_sha256": {
+    "supervisor_countermodel.py": "17dcc120a7bfcd1ced980d9a62a58cc3f9365afc64bb1d50fbcb2a3885e0866f",
+    "test_assertion_guard.py": "762a4617b730a99dbc8816fe0d9824b119897a85dbe64bbb9fb7fd6ce6b4e9d4",
+    "check_exact.py": "51620b32e0c52165d9e5800b1bc87f0d61b1c06151208fb57c0fbe4772f836ab"
+  },
+  "post_fix_python_B_checks": "PASS: deck checks, 330 polynomial checks, four assertion-removal guard subcases",
+  "ledger_unique_ids": "PASS",
+  "local_document_links": "PASS",
+  "tracked_baseline_files_unchanged": 962,
+  "navigation_check": "PASS: 13 reading guides, 103 links, ten current papers, 35 source hashes and TeX inputs",
+  "clean_machine_replay": "NOT TESTED",
+  "analytic_no_go_lean_formalized": false
+}
