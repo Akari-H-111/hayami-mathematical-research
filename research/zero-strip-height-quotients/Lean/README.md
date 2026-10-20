@@ -3,8 +3,9 @@
 Tested against the read-only Mathlib checkout supplied by the task:
 
 ```sh
+export HMR_ROOT=/path/to/hayami-mathematical-research
 cd /Users/akari_hayami_64/Documents/prime-spherical-fold
-lake env lean /Users/akari_hayami_64/Documents/hayami-mathematical-research/research/zero-strip-symmetry-20261018/Lean/ZeroStripCore.lean
+lake env lean "$HMR_ROOT/research/zero-strip-height-quotients/Lean/ZeroStripCore.lean"
 ```
 
 This is the tested local reuse path.  It uses the already-built package cache;

@@ -1,7 +1,13 @@
 # Centered zero strip: periodicity obstruction and quotient audit
 
-**Status:** first bounded research cycle, 2026-10-18.  This directory is an
-independent local workstream.  It proves a classical no-go theorem for a
+**Current paper:** [Height Quotients: guided reader v0.3](paper/revision-v0.3/README.md)
+— a 12-page illustrated research note.
+**Paper editions:** [current-edition pointer](paper/CURRENT.md) · [v0.2 illustrated revision](paper/revision-v0.2/README.md)
+· [v0.1 analytic base](paper/README.md).
+**Agent entry point:** [HANDOVER.md](HANDOVER.md).
+
+**Status of this page:** first bounded research cycle, 2026-10-18.  This directory is an
+independent research workstream.  It records a classical no-go consequence for a
 periodic *multiplicity divisor* of all nontrivial zeta zeros, audits the two
 height quotients, and formalizes the elementary algebraic/topological-group
 models that do not require an analytic zeta development in Mathlib.
@@ -64,3 +70,16 @@ Radon counting measure.  The only compatible topological group among the four
 listed ambient quotient types is the full ordinary cylinder, modeled by
 `R × AddCircle T`; the stated negative results are topological, not a claim
 that a particular smooth multiplication happened to fail.
+
+## Directory map
+
+| Path | Purpose |
+| --- | --- |
+| `paper/` | Paper development: v0.1 base, v0.2 illustrated revision, v0.3 current reader, acceptance records and paper-level replay |
+| `Lean/` | Named Lean theorems for the algebraic and topological-group models, plus actual zeta zero-support symmetries |
+| `verification/` | Root exact checks, countermodel diagnostic and replay script |
+| `HANDOVER.md` | Agent-oriented reading order, verification state, environment and next actions |
+
+The first-cycle research notes remain at this directory's top level. The
+paper-development archive moved from `paper-development-20261018/` to `paper/`
+on 20 October 2026; its internal paths and sealed bytes are unchanged.

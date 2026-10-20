@@ -14,5 +14,8 @@ Reading order:
    completion audit.
 
 `README.md` and `DELIVERY_STATUS.md` in this directory are v0.1 completion
-records and remain unchanged. See [`../HANDOVER.md`](../HANDOVER.md) for the
-research scope, verification, environment and git state.
+records and remain unchanged. This directory was named
+`paper-development-20261018/` before the 20 October 2026 public reorganization;
+its internal paths and sealed bytes are unchanged. See
+[`../HANDOVER.md`](../HANDOVER.md) for the research scope, verification,
+environment and git state.

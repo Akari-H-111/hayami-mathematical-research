@@ -3,24 +3,24 @@
 **Date:** 20 October 2026
 **Author:** Akari Hayami (Jian-Yu Huang)
 **Contact:** akari.h.1.9984@gmail.com
-**Status:** Verified local research archive; local commit only, not pushed.
+**Status:** Verified public research archive; public release branch.
 
-This is an independent local workstream, not one of the ten catalogue papers.
-It began on 18 October 2026 with a bounded study of periodic models for the
-Riemann zero divisor and developed into a thematic manuscript with three
+This is an independent research workstream, not one of the ten catalogue
+papers. It began on 18 October 2026 with a bounded study of periodic models for
+the Riemann zero divisor and developed into a thematic manuscript with three
 revisions. This note is the current entry point; it supplements the frozen
 completion records and does not rewrite them.
 
 ## Reading order
 
-1. `paper-development-20261018/CURRENT.md` — one-page pointer to the current
+1. `paper/CURRENT.md` — one-page pointer to the current
    paper edition.
-2. `paper-development-20261018/revision-v0.3/README.md` — the current 12-page
+2. `paper/revision-v0.3/README.md` — the current 12-page
    guided reader, its TeX source, figures, editorial review and acceptance
    record.
-3. `paper-development-20261018/revision-v0.2/README.md` — the 11-page
+3. `paper/revision-v0.2/README.md` — the 11-page
    illustrated revision, the novelty audit, and the figure/source bundle.
-4. `paper-development-20261018/README.md` — the 9-page v0.1 analytic base and
+4. `paper/README.md` — the 9-page v0.1 analytic base and
    its claim/source/reproduction records. This is a historical completion
    record for v0.1, not the current edition.
 5. `MATHEMATICS.md`, `RESULTS.md`, `CLAIM_LEDGER.md`, `SOURCES.md`,
@@ -31,7 +31,7 @@ completion records and does not rewrite them.
 7. `Lean/README.md` — the 23 named Lean theorems, their exact scope and the
    tested read-only Mathlib path.
 8. `verification/replay.sh` and
-   `paper-development-20261018/REPRODUCIBILITY.md` — the replay commands and
+   `paper/REPRODUCIBILITY.md` — the replay commands and
    their limitations.
 
 ## Paper editions
@@ -80,7 +80,7 @@ claim are made. The v0.2 novelty verdict remains in force.
 - `sh verification/replay.sh` — **PASS**. The 23 named theorems report only
   `propext`, `Classical.choice` and `Quot.sound`; 330 exact polynomial checks
   and the assertion-guard regression pass.
-- `sh paper-development-20261018/verification/replay_continuation.sh` —
+- `sh paper/verification/replay_continuation.sh` —
   **PASS**. 1,827 exact finite complex cases, two scalar Lean inequalities with
   `warningAsError`, and the assertion guard pass.
 - The final PDFs are 9, 11 and 12 pages; `pdfinfo`, the acceptance hashes and
@@ -97,19 +97,26 @@ claim are made. The v0.2 novelty verdict remains in force.
 
 ## Git and environment state
 
-- The workstream is recorded on the local branch
-  `publish/height-quotients-v0.3`, based on public `origin/main` at `cd41476`.
-- The branch contains a local archive commit with this workstream, its new
-  handover/current-edition notes, and the matching entries in
-  `RESEARCH_BOARD.md`. It has **not** been pushed, uploaded, or published.
+- The workstream lives at `research/zero-strip-height-quotients/` and is
+  released through the public branch `publish/height-quotients-v0.3`. The
+  archive started from `origin/main` at `cd41476` and was rebased onto
+  `f14a506` for the public release.
+- The branch retains the original archive commit and the 20 October 2026
+  repository-facing reorganization. The public repository is the authority for
+  the current merge state.
 - `logs/`, `local-inputs/`, `tmp/`, `.lake/` and `__pycache__/` are excluded by
   the workstream and revision `.gitignore` files. The original user-supplied
   attachments remain outside the archive; their hashes are preserved in
   `SOURCE_INPUTS.json`.
 - The v0.1, v0.2 and v0.3 PDFs, sources, figures and acceptance records are
   byte-identical to their completion records. No sealed artifact was edited.
-- To publish later, review the branch diff first, then push the branch and open
-  a pull request. The repository is public, so a push is a public release.
+- The paper-development archive moved from `paper-development-20261018/` to
+  `paper/`; its internal relative paths and sealed bytes are unchanged.
+- Some historical review files retain absolute pre-reorganization paths. They
+  are records of the review session, not current navigation; the README map and
+  this handover give the current paths.
+- The public repository is the release surface. No separate upload, DOI, or
+  external publication is implied by this branch.
 
 ## Next actions
 
