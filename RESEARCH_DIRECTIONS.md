@@ -1,63 +1,113 @@
-# 已確認的研究衍生方向
+# Confirmed research directions
 
-更新日期：2026-10-03
+Updated: 2026-10-03
 
-本文件記錄已由現有成果與使用者決策確認的研究線。尚未證成的橋接只列為研究問題，不提前寫成一般定理。
+This file records research lines confirmed by existing results and user
+decisions. Bridges that are not yet proved are listed only as research
+questions; they are not promoted to general theorems in advance.
 
-## A. Inverse-Leibniz 系列
+## A. Inverse-Leibniz series
 
-### A1. filtered-complex 到 character-torus Diophantine locus
+### A1. Filtered complexes to the character-torus Diophantine locus
 
-此方向已確定另立研究線，不併入 Papers I–III 的現行主定理。
+This direction is now a separate research line and is not merged into the
+current main theorems of Papers I–III.
 
-目標是：先選定一類具明確 marking、norm 與 filling/nonextension invariant 的 filtered complexes，再構造一個具體映射到指定 character torus，證明其在明示常數下雙 Lipschitz，最後識別像集與一個精確的 Diophantine locus。
+The goal is: first choose a class of filtered complexes with explicit marking,
+norm, and filling/nonextension invariants; then construct a concrete map to a
+specified character torus; prove it is bi-Lipschitz with explicit constants;
+finally identify the image with a precise Diophantine locus.
 
-研究閘門依序為：
+Research gates, in order:
 
-1. 固定來源類別、等價關係、metric 與 filling/nonextension 資料。
-2. 固定 character torus、距離、座標與 Diophantine locus。
-3. 給出可計算的正向與反向映射。
-4. 證 injectivity/surjectivity 或精確描述其像。
-5. 證兩側 Lipschitz 常數，並用有限模型測試 sharpness。
-6. 只有 1–5 完成後，才討論與 Papers I–III 的定理級整合。
+1. Fix the source category, equivalence relation, metric, and
+   filling/nonextension data.
+2. Fix the character torus, distance, coordinates, and Diophantine locus.
+3. Give computable forward and inverse maps.
+4. Prove injectivity/surjectivity or describe the image exactly.
+5. Prove the two Lipschitz constants and test sharpness with finite models.
+6. Only after 1–5 are complete, discuss theorem-level integration with Papers
+   I–III.
 
-在此之前，不得把「filtered complex → marked spectral data → Diophantine locus」三層寫成一條一般定理，也不得把重新命名的重疊現象當成橋接證明。
+Before then, do not write the three layers "filtered complex → marked spectral
+data → Diophantine locus" as one general theorem, and do not treat a renamed
+overlap as a bridge proof.
 
-### A2. 固定 contraction 之外的穩定性
+### A2. Stability beyond a fixed contraction
 
-以 v0.05/v0.06 為有限模型，研究哪些高階消失、非消失與 feedback-rank 資料在何種比較態射、marking 或 contraction 類別下保持。優先尋找反例與最小必要假設，不先宣稱 unmarked invariance。
+Using v0.05/v0.06 as finite models, study which higher-order vanishing,
+nonvanishing, and feedback-rank data persist under which comparison morphisms,
+markings, or contraction classes. Look first for counterexamples and minimal
+necessary hypotheses; do not claim unmarked invariance in advance.
 
-### A3. Paper III 的可算法化推廣
+### A3. Algorithmic generalization of Paper III
 
-把 stable-core closure、local/global landing descent、future-output quotient 與 spectral-floor 計算整理成有限維演算法；先證終止性與輸出不依賴表示的條件，再考慮更一般的 filtered/graded 輸入。
+Organize stable-core closure, local/global landing descent, the future-output
+quotient, and spectral-floor computation into a finite-dimensional algorithm;
+first prove termination and representation-independence of the output, then
+consider more general filtered/graded inputs.
 
-## B. Legacy geometry 系列
+## B. Legacy geometry series
 
-### B1. Stokes v5 的完整 Whitney-fold 形式化
+### B1. Complete Whitney-fold formalization of Stokes v5
 
-這是目前最高優先的內部數學線。先完成 explicit Fréchet derivative 與 Jacobian factorization，再證 ordinary branches 的 rank-one、kernel transversality、共同起點的 exceptional status，最後形式化 plane-to-plane fold criterion 或等價 local normal form。詳見 `LEAN_ROADMAP.md`。
+This is currently the highest-priority internal mathematics line. First complete
+the explicit Fréchet derivative and Jacobian factorization, then prove the
+rank-one and kernel transversality of the ordinary branches and the exceptional
+status of the common starting point, and finally formalize the plane-to-plane
+fold criterion or an equivalent local normal form. See `LEAN_ROADMAP.md`.
 
-### B2. Ruled surface v4 修正版
+### B2. Corrected Ruled surface v4
 
-先為 `Q=0` 邊界建立合法 atlas 或把定理明確限制在 `Q>0` 內部；再把 Theorem 5.3 改成帶有 retracing/symmetry 與 phase-lock 條件的可證命題。修正稿完成前，不做整篇 Lean 搬運。
+First build a legitimate atlas for the `Q=0` boundary or restrict the theorem
+explicitly to the interior `Q>0`; then restate Theorem 5.3 as a provable
+proposition with retracing/symmetry and phase-lock hypotheses. Do not carry out a
+whole-paper Lean migration before the corrected draft is complete.
 
-### B3. Bicomplex（後繼論文 v1 已公開；以下是開放方向，沒有必須的下一步）
+### B3. Bicomplex (successor papers v1 published; the following are open directions, with no mandatory next step)
 
-2026-10-03：v12 的 66 個具名區塊已全部核對並分類（H 43、C 13、S 1、R 3、O 2、M 3、D 1；論文一 Appendix A.3），兩篇後繼論文與 software 1.0 於 2026-10-02 公開。DOI、證據類型與重播命令見 `papers/legacy-geometry/bicomplex-signal-manifolds/README.md` 的 “Start here”。舊的「依 `claims/MODULE_INDEX.md` 分四層處理」是發布前的模組化計畫，已由 66 區塊稽核與兩篇論文取代；v12 的原宣稱不再是待證目標。
+2026-10-03: all 66 named blocks in v12 have been checked and classified
+(H 43, C 13, S 1, R 3, O 2, M 3, D 1; Paper I Appendix A.3); both successor
+papers and software 1.0 were published on 2026-10-02. For DOIs, evidence types,
+and replay commands, see "Start here" in
+`papers/legacy-geometry/bicomplex-signal-manifolds/README.md`. The old
+"process in four layers according to `claims/MODULE_INDEX.md`" was a
+pre-publication modularization plan; it has been superseded by the 66-block
+audit and the two papers; the original v12 claims are no longer proof targets.
 
-已判定、不是待證：沿 C₀ real-analytic 的 readout 不存在（C^∞ 與半 source 的 analytic readout 存在，但不 canonical）；`i*Ψ^!Z ≅ Z[−1]`、constant sheaf 上的 ±1 sector、「sheet 交換等於 √F 變號」、原 compact-core H₀ 的 (2,2)／Markov 唯一性／二維 Krein kernel，皆已反證或撤回。歷史 moment-map 導出沒有追回，新構造不等於追回。
+Already decided, not open: a readout along C₀ real-analytic does not exist
+(C^∞ and half-source analytic readouts exist but are not canonical);
+`i*Ψ^!Z ≅ Z[−1]`, the ±1 sector on the constant sheaf, "sheet exchange equals
+sign change of √F", and the original compact-core H₀ (2,2)/Markov
+uniqueness/two-dimensional Krein kernel have all been refuted or withdrawn. The
+historical moment-map derivation has not been recovered; the new construction is
+not a recovery.
 
-真正開放（無優先順序）：actual singular Dirac／Pin（閉算子、graph domains、奇異 cut traces、Clifford-compatible transmission）；sheaf 資料到 analytic operator 的新橋（需要新的 sign-twisted 或 spinorial 目標）；論文一的問題（原功率下半 source 上是否有 quadratic readout、選擇非解析 readout 的原則）；論文二的問題（B_η 的顯式 regular part、任意 Whitney germ 的 ρ log(1/ρ) 速率與下一項、H_F 的 Weyl law 與每個 cross-cap 的 heat-trace 貢獻、cuspidal edge 與 S_k^± 奇點）；真正需要 bicomplex 乘法的命題；獨立的 signal／物理模型（capacity、mass、clock、chirality）；原創性與優先權的完整文獻比較；分析與算子證明的 Lean 化。詳見 README 的 “What is genuinely open”。
+Genuinely open (no priority order): actual singular Dirac/Pin (closed operators,
+graph domains, singular cut traces, Clifford-compatible transmission); a new
+bridge from sheaf data to analytic operators (requiring a new sign-twisted or
+spinorial target); Paper I questions (whether there is a quadratic readout on
+the original-power half source; the principle for choosing a non-analytic
+readout); Paper II questions (explicit regular part of B_η, the ρ log(1/ρ) rate
+and next term for arbitrary Whitney germs, the Weyl law for H_F and the
+heat-trace contribution of each cross-cap, cuspidal edge, and S_k^±
+singularities); propositions that genuinely require bicomplex multiplication;
+independent signal/physical models (capacity, mass, clock, chirality); a
+complete literature comparison for originality and priority; Lean formalization
+of analytic and operator proofs. See "What is genuinely open" in the README.
 
-## C. 收尾判準
+## C. Closeout criteria
 
-一條研究線只有在下列條件同時滿足時才標成 `READY TO CLOSE`：
+A research line is marked `READY TO CLOSE` only when all of the following hold:
 
-- 定理敘述、假設與負面範圍完整；
-- 對應的 symbolic/CAS/Lean/有限模型入口實際通過；
-- 正文、圖、驗證器與 release manifest 可相互定位；
-- PDF 重新編譯後已重新綁定視覺 QA 與 SHA-256；
-- 對外聲明精確區分 manuscript proof、CAS certificate、Lean theorem 與 invoked external theorem；
-- 沒有仍會改變主結論的已知 blocker。
+- theorem statements, hypotheses, and negative scope are complete;
+- the corresponding symbolic/CAS/Lean/finite-model entry points actually pass;
+- the main text, figures, verifiers, and release manifest can locate each other;
+- after recompiling the PDF, visual QA and SHA-256 have been rebound;
+- external claims distinguish manuscript proof, CAS certificate, Lean theorem,
+  and invoked external theorem precisely;
+- no known blocker remains that would change the main conclusion.
 
-若剩餘問題已成為獨立研究問題，而現稿的聲明與證據已閉合，應讓現稿收尾並另立研究線，不無限延長同一篇論文。
+If the remaining questions have become independent research questions and the
+current draft's claims and evidence are closed, close the current draft and start
+a separate research line; do not extend the same paper indefinitely.
