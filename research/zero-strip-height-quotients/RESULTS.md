@@ -52,21 +52,26 @@ inputs. A LEAN label applies only to the named algebraic model or theorem.
   matrix determinants and a generic subgroup obstruction.
 - `SupervisorStructures.lean`: 8 named theorems plus 2 instance checks about
   the cylinder model, glide, reflection and constant-cell/growth contradiction.
+- `DivisorCells.lean`: 11 named theorems about half-open cells, disjointness,
+  translation, finite cell-mass preservation and the bounded-cell/superlinear
+  contradiction.  A `CellDivisor` structure records finite cell supports and
+  multiplicity preservation.
 - `ZetaCompatibility.lean`: 5 named theorems for the actual zeta zero support.
 
 The compiled declarations use only `propext`, `Classical.choice`, and
 `Quot.sound` (some use a subset). No completed declaration uses `sorryAx`
-or a custom axiom. These 23 named theorems do not amount to a Lean proof of
-Riemann-von Mangoldt, the divisor No-Go or the advanced quotient topology.
+or a custom axiom. These 34 named theorems do not amount to a Lean proof of
+Riemann–von Mangoldt, the divisor No-Go or the advanced quotient topology.
 
 ## Next bounded target
 
-Formalize the half-open cell partition and multiplicity-preserving translation
-for a locally finite divisor, then connect them to the existing generic
-growth contradiction. Keep the analytic zero-count growth as a named external
-input until it is proved in Lean. The independent topology target is a
-faithful ambient Klein action and its restricted-action kernel, with the
-finite reflection quotient retaining orbit sizes and multiplicities.
+The half-open cell partition, multiplicity-preserving translation and
+bounded-cell/superlinear contradiction now have a Lean model.  The next target
+is to connect that model to an actual locally finite divisor constructed from
+xi, and then to the analytic zero-count growth.  Both remain named external
+inputs.  The independent topology target is a faithful ambient Klein action and
+its restricted-action kernel, with the finite reflection quotient retaining
+orbit sizes and multiplicities.
 
 RH remains open. Support-only periodicity is not decided by this package.
 Portable dependency configuration is provided, but clean-machine fetching

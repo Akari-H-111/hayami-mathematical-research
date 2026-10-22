@@ -3,7 +3,8 @@
 **Date:** 20 October 2026
 **Author:** Akari Hayami (Jian-Yu Huang)
 **Contact:** akari.h.1.9984@gmail.com
-**Status:** Verified public research archive; public release branch.
+**Status:** Verified public research archive at `origin/main`.  This branch adds
+a new bounded Lean algebraic layer (20 October 2026), pending review and merge.
 
 This note is the entry point for the Heegner level-5 fibre workstream. It
 supplements, and does not modify, the frozen completion records inside the
@@ -18,10 +19,12 @@ version packets.
    suite, and fourteen-page atlas. This checkpoint is not revised.
 3. `figures/README.md` — shared native-vector plates, exported
    SVG/PNG files, saved data, replay scripts, and the atlas.
-4. `studies/novelty-audit-20261019/README.md`, `studies/hermite-geometry-20261019/README.md`,
+4. `FORMALIZATION.md` and `Lean/README.md` — the bounded Lean algebraic core,
+   its exact declarations, and the non-formalized analytic boundary.
+5. `studies/novelty-audit-20261019/README.md`, `studies/hermite-geometry-20261019/README.md`,
    and `studies/paper-closure-20261019/README.md` — the literature audit, the
    icosahedral-geometry continuation, and the HMR/RH paper-closure study.
-5. `studies/cold-review-sol61-20261019/README.md` and
+6. `studies/cold-review-sol61-20261019/README.md` and
    `studies/cold-review-layout-20261020/README.md` — the independent
    editorial reviews and director syntheses. These are process records, not
    accepted manuscript text.
@@ -74,13 +77,28 @@ supplement rebuilt: 10 and 14 pages, identical text layers, and 10/10 article
 page renders identical. The rebuilt article differs only in pdfTeX creation
 metadata. The 233 earlier authored files match their preservation baseline.
 
-No RH result, Lean formalization, or novelty-priority claim is made. The
-HMR/RH bridge remains secondary, and the conductor-815 quartic field retains its
-Spearman–Williams attribution.
+The new `Lean/GoldenCore.lean` layer was compiled on 20 October 2026 against
+the same read-only Mathlib pin used by the zero-strip workstream. It checks the
+universal sextic quotient, the `P_163=A^2-5B^2` evaluation identity, the
+conditional branch sign, the three golden formulas, the elementary
+`phi`/`c0` identities, the abstract `M/J` involution `(JMJ)^2=1`, and
+`4H=a_s^2-5b_s^2`. It does not formalize the CM
+value, Klein equation, q-product enclosure, Sturm counts, coprimality
+certificate, factorization controls, or cubic resolvent. No declaration uses
+`sorry`, `admit`, or a custom axiom.
 
-## Next action
+No RH result, complete Lean formalization of the paper, or novelty-priority
+claim is made. The HMR/RH bridge remains secondary, and the conductor-815
+quartic field retains its Spearman–Williams attribution.
 
-Obtain a fresh external human mathematical reading focused on the CM branch
-enclosure and the analytic proof flow. Optional cosmetic polish of the
-supplement cover notation is separate from the verified build. No v0.1 or v0.2
-artifact needs to be rebuilt for this handover.
+## Next actions
+
+1. Obtain a fresh external human mathematical reading focused on the CM branch
+   enclosure and the analytic proof flow.
+2. If a larger formalization is wanted, formalize the rational q-product
+   enclosure, the Sturm/root-isolation step, and the coprimality certificate so
+   that the hypotheses of `sqrt5_eq_neg_A_div_B` can be discharged in Lean.
+   The current module deliberately stops at those hypotheses.
+3. Optional cosmetic polish of the supplement cover notation is separate from
+   the verified build. No v0.1 or v0.2 artifact needs to be rebuilt for this
+   handover.

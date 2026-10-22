@@ -3,7 +3,8 @@
 **Date:** 20 October 2026
 **Author:** Akari Hayami (Jian-Yu Huang)
 **Contact:** akari.h.1.9984@gmail.com
-**Status:** Verified public research archive; public release branch.
+**Status:** Verified public research archive at `origin/main`.  This branch adds
+the `DivisorCells` Lean layer and the 34-theorem count, pending merge.
 
 This is an independent research workstream, not one of the ten catalogue
 papers. It began on 18 October 2026 with a bounded study of periodic models for
@@ -28,8 +29,8 @@ completion records and does not rewrite them.
    proofs, claim labels, sources, adversarial review and repairs.
 6. `SUPERVISOR_NO_GO.md` and `SUPERVISOR_COUNTERMODEL.md` — the eventual-period
    strengthening and the auxiliary entire-function countermodel.
-7. `Lean/README.md` — the 23 named Lean theorems, their exact scope and the
-   tested read-only Mathlib path.
+7. `FORMALIZATION.md` and `Lean/README.md` — the 34 named Lean theorems in four
+   modules, the new cell-partition layer, and the tested read-only Mathlib path.
 8. `verification/replay.sh` and
    `paper/REPRODUCIBILITY.md` — the replay commands and
    their limitations.
@@ -62,10 +63,12 @@ All three PDF hashes match their acceptance records.
   every zero onto the critical line. Multiplying xi by an explicit real even
   polynomial adds an off-line quartet while preserving those inputs. This is
   not zeta and not a counterexample to RH.
-- **Lean coverage:** 23 named theorems in three modules, including actual zeta
-  zero-support invariance under conjugation, functional reflection and their
-  composition. The analytic No-Go, multiplicity preservation, xi itself,
-  Riemann–von Mangoldt and the quotient homeomorphisms remain outside Lean.
+- **Lean coverage:** 34 named theorems in four modules, including the half-open
+  cell ladder, multiplicity-preserving cell translation, the bounded-cell
+  growth contradiction, and actual zeta zero-support invariance under
+  conjugation and functional reflection. The analytic No-Go, the construction
+  of the xi divisor, Riemann–von Mangoldt and the quotient homeomorphisms
+  remain outside Lean.
 - **Paper contribution:** a quantitative central-circle probability limit,
   exclusion of full and eventual support periods, a simple-critical-line
   residue bound, and an infinite sparse off-critical perturbation preserving
@@ -77,7 +80,7 @@ claim are made. The v0.2 novelty verdict remains in force.
 
 ## Verification replayed on 20 October 2026
 
-- `sh verification/replay.sh` — **PASS**. The 23 named theorems report only
+- `sh verification/replay.sh` — **PASS**. The 34 named theorems report only
   `propext`, `Classical.choice` and `Quot.sound`; 330 exact polynomial checks
   and the assertion-guard regression pass.
 - `sh paper/verification/replay_continuation.sh` —
@@ -89,9 +92,9 @@ claim are made. The v0.2 novelty verdict remains in force.
   `/Users/akari_hayami_64/Documents/prime-spherical-fold`, pinned to Lean
   `v4.33.1` and Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`.
   `Lean/lakefile.toml` supplies an untested portable pin for a clean machine.
-- The root `verification/replay.sh` hardcodes the tested local Lean path. On a
-  different prepared host, use the paper continuation script with
-  `ZERO_STRIP_LEAN_ROOT`, or run the standard-library Python checks directly.
+- The root `verification/replay.sh` defaults to the tested local Lean path and
+  accepts `ZERO_STRIP_LEAN_ROOT` on another prepared host with the same pin.
+  The paper continuation script uses the same variable.
 - A clean-machine dependency installation was not tested. Model-assisted
   review and director inspection are not external human peer review.
 
@@ -123,10 +126,12 @@ claim are made. The v0.2 novelty verdict remains in force.
 1. Obtain a specialist overlap review before any submission. The v0.2 audit
    found no independent new theorem or worldwide priority, and identified
    Gauthier–Xarles as the material predecessor.
-2. Formalize the half-open cell partition and multiplicity-preserving
-   translation for a locally finite divisor, then connect them to the existing
-   generic growth contradiction. Keep the analytic zero-count growth as a named
-   external input until it is proved in Lean.
+2. The half-open cell partition, multiplicity-preserving translation and
+   bounded-cell/superlinear contradiction now have a Lean model in
+   `Lean/DivisorCells.lean`.  The next formalization target is to construct the
+   actual locally finite xi divisor and connect its count to
+   Riemann–von Mangoldt.  Keep the analytic zero-count growth as a named
+   external input until then.
 3. Optional: run a second post-fix cold review. The existing cold review was
    completed before the four repairs; the repairs are recorded in
    `REVIEW_RESOLUTION.md`.

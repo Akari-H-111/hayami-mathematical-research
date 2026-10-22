@@ -24,6 +24,26 @@ and new software releases. The papers themselves are unchanged.
 Neither the papers nor the notes are Lean-formalized as a whole; each coverage
 file lists exactly what is machine-checked and what remains a written proof.
 
+## Independent research formalization
+
+Two independent workstreams under `research/` now carry bounded Lean layers.
+They are separate from the ten-paper catalogue, and neither is a whole-paper
+formalization.
+
+- **Heegner level-five golden fibre:** the algebraic core of the CM
+  reconstruction is kernel-checked: the universal sextic quotient, the
+  `P_163 = A^2 - 5B^2` evaluation identity, the conditional branch sign, the
+  three golden formulas, and the abstract `M/J` involution. See the
+  [formalization map](research/heegner-golden-level-five/FORMALIZATION.md).
+- **Zero-strip height quotients:** 34 named Lean theorems in four modules now
+  include the half-open cell ladder, multiplicity-preserving cell translation,
+  and the bounded-cell/superlinear-count contradiction. See the
+  [formalization map](research/zero-strip-height-quotients/FORMALIZATION.md).
+
+The CM value, Klein equation, q-product enclosure, Sturm counts, coprimality
+certificate, xi divisor, and Riemann–von Mangoldt remain outside Lean. No RH
+proof or priority claim is made.
+
 ## Paper catalogue
 
 The seven published items below are preprints. The three Information Topology
@@ -67,7 +87,7 @@ papers/
 companions/lean/        Formalization sources and explicit coverage maps
 verification/           Shared checks and replay instructions
 releases/               Versioned packages, receipts and publication evidence
-research/               Independent constructions and exploratory work
+research/               Independent constructions, exploratory work and bounded Lean layers
 ```
 
 Sealed releases stay at their existing paths. Final PDFs, archives, receipts and

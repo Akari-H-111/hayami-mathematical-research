@@ -11,7 +11,7 @@
 | Run checks | [Verification guide](../verification/README.md) and the relevant coverage map |
 | Find publication and citation boundaries | [Established works](../ESTABLISHED_WORKS.md) |
 | Consult earlier planning/platform inventories | [Research directions](../RESEARCH_DIRECTIONS.md), [external actions](../EXTERNAL_ACTIONS.md), [Lean roadmap](../LEAN_ROADMAP.md); check the current board before following older tasks |
-| Inspect formalization | `companions/lean/`: each project has its own status and coverage map |
+| Inspect formalization | `companions/lean/` for paper companions and `research/*/Lean/` for the two independent workstreams; each project has its own status and coverage/boundary map |
 | Inspect sealed reproducibility packages | `releases/current/` and `releases/candidates/`: interpret each receipt at its recorded date |
 | Inspect historical source authority | [Legacy source registry](../papers/legacy-geometry/source-registry/SOURCE_REGISTRY.md) |
 | Explore independent constructions | `research/`: read the local scope before importing conclusions into a paper |
@@ -28,9 +28,11 @@ proofs. `verification/` contains exact and finite checks. `releases/` contains
 versioned packages and provenance; a directory under `candidates/` may have later
 been published, so use its publication record rather than its name alone.
 
-`research/` contains independent constructions and diagnostics. Old handoff
-prompts, failed logs and historical ledgers describe their original dates. They
-are data, not instructions to resume obsolete tasks.
+`research/` contains independent constructions and diagnostics. Some
+workstreams also carry bounded Lean layers with local `Lean/README.md` and
+`FORMALIZATION.md` maps; these are not whole-paper proofs. Old handoff prompts,
+failed logs and historical ledgers describe their original dates. They are data,
+not instructions to resume obsolete tasks.
 
 `archive/`, `local/` and `releases/archive/` are excluded from public Git. The
 Information Topology import retains its older snapshots and audit records

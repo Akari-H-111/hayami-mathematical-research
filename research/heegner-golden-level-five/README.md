@@ -63,16 +63,19 @@ The checker refuses assertion-stripped execution, writes
 
 | Item | Status |
 | --- | --- |
-| Universal (t-t^{-1}) sextic quotient | PROVED HERE |
-| (-163) golden-field reconstruction and branch sign | PROVED HERE, conditional on classical CM/modular inputs |
+| Universal (t-t^{-1}) sextic quotient | PROVED HERE; Lean algebraic core |
+| (-163) golden-field reconstruction and branch sign | PROVED HERE, conditional on classical CM/modular inputs; Lean branch implication conditional on its sign hypotheses |
 | Thirteen CM-order component factorizations | EXACT CHECK; analytic component matching is NUMERICAL at 100/200 digits |
 | HMR Boolean-signature obstruction | PROVED HERE as a corollary of the current HMR definition/proposition |
 | Ray-class stabilizer explanation | OPEN in this package |
+| CM input, q-product enclosure, Sturm counts, coprimality certificate | NOT FORMALIZED in Lean; see [FORMALIZATION.md](FORMALIZATION.md) |
 | Novelty, intrinsic geometric map, or RH consequence | NOT CLAIMED |
 
 Read [MATHEMATICS.md](MATHEMATICS.md) for proofs,
 [SURVEY.md](SURVEY.md) for source coverage, [CLAIM_LEDGER.md](CLAIM_LEDGER.md)
 for status boundaries, and [FINAL_REPORT.md](FINAL_REPORT.md) for the handoff.
+The new bounded Lean layer is indexed in [FORMALIZATION.md](FORMALIZATION.md)
+and [Lean/README.md](Lean/README.md).
 
 ## Deeper director result
 
@@ -97,7 +100,9 @@ Final local review scope and resolved findings: [REVIEW_RESOLUTION.md](REVIEW_RE
 | `paper-v0.1/` | Frozen v0.1 article, twelve plates and fourteen-page atlas |
 | `figures/` | Shared native-vector plates, exported figures, saved data and atlas |
 | `studies/` | Continuations, literature audits, editorial reviews and paper-closure studies |
+| `Lean/` | Kernel-checked algebraic core of the level-five reconstruction |
 | `verification/` | Root exact checker and recorded results |
+| `FORMALIZATION.md` | Formalization map and explicit non-formalized boundary |
 | `HANDOVER.md` | Agent-oriented status, replay environment and next actions |
 
 The version packets and their verification records keep their internal
