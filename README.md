@@ -7,6 +7,11 @@ formalization and historical evidence kept distinct. By Akari Hayami (Jian-Yu Hu
 [Information Topology / Information Exclusion (3)](papers/information-topology/README.md) ·
 [Geometry (4)](papers/legacy-geometry/README.md)
 
+**Independent studies (outside the ten-paper count):**
+[Heegner level-five golden fibre](research/heegner-golden-level-five/README.md) ·
+[Zero-strip height quotients](research/zero-strip-height-quotients/README.md) ·
+[index](research/README.md)
+
 ## Latest: October 2026 formalization round
 
 Two open questions from the geometry papers are now settled, with Lean 4 proofs
@@ -24,25 +29,23 @@ and new software releases. The papers themselves are unchanged.
 Neither the papers nor the notes are Lean-formalized as a whole; each coverage
 file lists exactly what is machine-checked and what remains a written proof.
 
-## Independent research formalization
+## Independent studies
 
-Two independent workstreams under `research/` now carry bounded Lean layers.
-They are separate from the ten-paper catalogue, and neither is a whole-paper
-formalization.
+Two further research notes live under `research/`. They are **not** part of the
+ten-paper catalogue below: neither has a DOI, a sealed release or a recorded
+external reading, and each is a single study whose earlier versions are kept as
+checkpoints, not a numbered series. Both are public research archives; their
+Lean layers cover named modules only, not the whole note.
 
-- **Heegner level-five golden fibre:** the algebraic core of the CM
-  reconstruction is kernel-checked: the universal sextic quotient, the
-  `P_163 = A^2 - 5B^2` evaluation identity, the conditional branch sign, the
-  three golden formulas, and the abstract `M/J` involution. See the
-  [formalization map](research/heegner-golden-level-five/FORMALIZATION.md).
-- **Zero-strip height quotients:** 34 named Lean theorems in four modules now
-  include the half-open cell ladder, multiplicity-preserving cell translation,
-  and the bounded-cell/superlinear-count contradiction. See the
-  [formalization map](research/zero-strip-height-quotients/FORMALIZATION.md).
+| Study | What it shows | Read | Evidence and status |
+| --- | --- | --- | --- |
+| Heegner level-five fibre and the HMR golden parameter: *Golden Coordinates at Level Five* (v0.2) | For τ₁₆₃ = (1+i√163)/2 and t = r(τ₁₆₃)⁵, the number √5 lies in ℚ(t). Hence φ and the constant c₀ = φ⁻² of the orthogonal-circle ruled surface are reconstructed exactly from a level-five CM value. Conditional on the classical CM value and Klein's level-five equation. | [Article, 10 pp.](research/heegner-golden-level-five/paper/output/pdf/golden_coordinates_level_five_v0_2.pdf) · [Supplement, 14 pp.](research/heegner-golden-level-five/paper/output/pdf/golden_coordinates_level_five_v0_2_supplement.pdf) · [Study guide](research/heegner-golden-level-five/README.md) | Written proofs conditional on classical inputs, plus exact checks; matching the thirteen CM-order components to the analytic branches is numerical at 100 and 200 digits. Lean covers the algebraic core only: 13 named theorems ([map](research/heegner-golden-level-five/FORMALIZATION.md)). The [literature audit](research/heegner-golden-level-five/studies/novelty-audit-20261019/README.md) establishes no substantive novelty for the later continuation; no novelty, priority or RH claim. Next gate: external human reading. |
+| Zero-strip height quotients: *Height Quotients* (guided reader v0.3) | No fixed positive vertical period can preserve the full multiplicity divisor of the nontrivial zeta zeros. Cylinder and Möbius height quotients exist for the ambient strip, not as periodic quotients of the zero divisor. A worked synthesis of a classical consequence. | [Reader, 12 pp.](research/zero-strip-height-quotients/paper/revision-v0.3/output/pdf/height-quotients-v0.3.pdf) · [Study guide](research/zero-strip-height-quotients/README.md) | Written proof with named classical inputs plus exact finite checks. Lean: 34 named theorems in four modules, none constructing the xi divisor or Riemann–von Mangoldt ([map](research/zero-strip-height-quotients/FORMALIZATION.md)). The [novelty verdict](research/zero-strip-height-quotients/paper/revision-v0.2/NOVELTY_VERDICT.md) classifies it as a worked synthesis; no RH proof or priority claim. Next gate: specialist overlap review. |
 
 The CM value, Klein equation, q-product enclosure, Sturm counts, coprimality
-certificate, xi divisor, and Riemann–von Mangoldt remain outside Lean. No RH
-proof or priority claim is made.
+certificate, xi divisor, and Riemann–von Mangoldt remain outside Lean. See the
+[research index](research/README.md) for all independent constructions and how to
+read their process records.
 
 ## Paper catalogue
 
@@ -87,7 +90,7 @@ papers/
 companions/lean/        Formalization sources and explicit coverage maps
 verification/           Shared checks and replay instructions
 releases/               Versioned packages, receipts and publication evidence
-research/               Independent constructions, exploratory work and bounded Lean layers
+research/               Independent studies and constructions, with bounded Lean layers (index: research/README.md)
 ```
 
 Sealed releases stay at their existing paths. Final PDFs, archives, receipts and

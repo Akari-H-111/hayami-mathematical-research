@@ -22,6 +22,9 @@ collection DOIs are not interchangeable with paper DOIs. See
 
 ## Historical and independent evidence
 
+The [research index](research/README.md) lists every independent study and
+construction. None of the entries below is part of the ten-paper catalogue.
+
 - [Independent transfer v0.05](research/independent_transfer_v0_05/RESEARCH_LOG.md):
   a new degree-two splitting and fixed projection with exact-rational replay;
   arities 4-22 vanish in that completion and frozen arity 23 is nonzero. This is
@@ -29,6 +32,28 @@ collection DOIs are not interchangeable with paper DOIs. See
 - [Feedback matrices v0.06](research/feedback_matrices_v0_06/RESEARCH_LOG.md):
   exact entry, right-hand-side, solution, inverse and determinant checks for a
   new reproducible feedback system; the historical `34 x 560` entries remain missing.
+- [Heegner level-five golden fibre](research/heegner-golden-level-five/README.md):
+  *Golden Coordinates at Level Five*, v0.2 portrait article (10 pages) and
+  14-page supplement; the v0.1 atlas is a frozen checkpoint. A public research
+  archive with no DOI, Zenodo record or sealed release, and no recorded external
+  reading. Written proofs depend on the classical CM value and Klein's level-five
+  equation; exact checks replay, and the thirteen-order component matching is
+  numerical at 100 and 200 digits. `LEAN-PASSED` covers the algebraic core only
+  (13 named theorems; see the [formalization map](research/heegner-golden-level-five/FORMALIZATION.md)).
+  The [literature audit](research/heegner-golden-level-five/studies/novelty-audit-20261019/README.md)
+  establishes no substantive novelty for the later continuation. No novelty,
+  priority or RH claim; do not cite it as a published paper.
+- [Zero-strip height quotients](research/zero-strip-height-quotients/README.md):
+  *Height Quotients*, guided reader v0.3 (12 pages); v0.1 and v0.2 are preserved
+  checkpoints. A public research archive with no DOI, Zenodo record or sealed
+  release. The classical no-go for a periodic zeta zero divisor and the height
+  quotient audit rest on named inputs (local finiteness of the xi divisor,
+  Riemann–von Mangoldt). `LEAN-PASSED` covers 34 named theorems in four modules
+  and constructs neither the xi divisor nor its count (see the
+  [formalization map](research/zero-strip-height-quotients/FORMALIZATION.md)).
+  The [novelty verdict](research/zero-strip-height-quotients/paper/revision-v0.2/NOVELTY_VERDICT.md)
+  classifies it as a worked synthesis. No RH proof or priority claim; specialist
+  overlap review is pending, and it should not be cited as a published paper.
 - [Legacy reconstruction](verification/legacy-reconstruction/README.md):
   historical final-PDF hashes, authority classification, claim ledgers and finite
   CAS baseline. Ruled v4 and Bicomplex v12 source ancestors are not recovered
