@@ -1,6 +1,6 @@
 # Recovered source-candidate audit
 
-Candidate: `../../過往論文（可能是草稿）/The_Stokes_Caustic_of_the_Orthogonal_Circle_Ruled_Surface_v5.tex`
+Candidate: `source_candidate/The_Stokes_Caustic_of_the_Orthogonal_Circle_Ruled_Surface_v5.tex`
 
 Evidence:
 

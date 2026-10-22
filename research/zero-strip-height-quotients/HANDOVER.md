@@ -1,10 +1,10 @@
 # Zero-strip height quotients: workstream handover
 
-**Date:** 20 October 2026
+**Date:** 22 October 2026
 **Author:** Akari Hayami (Jian-Yu Huang)
 **Contact:** akari.h.1.9984@gmail.com
-**Status:** Verified public research archive at `origin/main`.  This branch adds
-the `DivisorCells` Lean layer and the 34-theorem count, pending merge.
+**Status:** Verified public research archive at `origin/main`.  The `DivisorCells`
+Lean layer and the 34-theorem count were merged on 22 October 2026.
 
 This is an independent research workstream, not one of the ten catalogue
 papers. It began on 18 October 2026 with a bounded study of periodic models for
@@ -78,11 +78,20 @@ All three PDF hashes match their acceptance records.
 No RH proof or counterexample, no complete Lean formalization, and no priority
 claim are made. The v0.2 novelty verdict remains in force.
 
-## Verification replayed on 20 October 2026
+## Verification
 
-- `sh verification/replay.sh` — **PASS**. The 34 named theorems report only
-  `propext`, `Classical.choice` and `Quot.sound`; 330 exact polynomial checks
-  and the assertion-guard regression pass.
+The 20 October results remain valid; the merge completes the 34-theorem count
+and adds the missing `translate_injective` axiom report.  The zero-strip replay
+(330 exact checks, 34/34 named theorems) and the navigation check were rerun on
+22 October 2026 and PASS.
+
+### Baseline replay (20 October 2026)
+
+- `sh verification/replay.sh` — **PASS**. The then-current replay printed 33
+  axiom reports; the merged branch adds the missing `translate_injective`
+  report. Every report allows only `propext`, `Classical.choice` and
+  `Quot.sound`; 330 exact polynomial checks and the assertion-guard regression
+  pass.
 - `sh paper/verification/replay_continuation.sh` —
   **PASS**. 1,827 exact finite complex cases, two scalar Lean inequalities with
   `warningAsError`, and the assertion guard pass.

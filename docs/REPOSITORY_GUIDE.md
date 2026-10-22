@@ -34,6 +34,11 @@ workstreams also carry bounded Lean layers with local `Lean/README.md` and
 failed logs and historical ledgers describe their original dates. They are data,
 not instructions to resume obsolete tasks.
 
+Historical records, including the Bicomplex review and planning files, may
+retain their original source language. They are preserved as evidence, not as
+current guidance. Current reader-facing guides and all new public content are
+English.
+
 `archive/`, `local/` and `releases/archive/` are excluded from public Git. The
 Information Topology import retains its older snapshots and audit records
 locally under `papers/information-topology/`, excluded by that directory's

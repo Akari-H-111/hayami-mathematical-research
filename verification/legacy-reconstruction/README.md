@@ -1,6 +1,6 @@
 # Legacy-paper clean-room reconstruction
 
-This directory rebuilds three legacy papers from their final PDFs.  It is deliberately **not** a cleanup of the historical TeX in `過往論文（可能是草稿）/`: that TeX may contain superseded statements or calculations.
+This directory rebuilds three legacy papers from their final PDFs.  It is deliberately **not** a cleanup of the historical TeX described in `../../papers/legacy-geometry/source-registry/RECOVERED_SOURCE_PROVENANCE.md`: that TeX may contain superseded statements or calculations.
 
 ## Authority order
 
