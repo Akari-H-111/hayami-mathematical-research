@@ -267,6 +267,7 @@ end ZeroStripCells
 #print axioms ZeroStripCells.translate_mem_cell_succ
 #print axioms ZeroStripCells.cell_disjoint
 #print axioms ZeroStripCells.translate_image_cell
+#print axioms ZeroStripCells.translate_injective
 #print axioms ZeroStripCells.massOn_translate
 #print axioms ZeroStripCells.CellDivisor.support_succ
 #print axioms ZeroStripCells.CellDivisor.cellMass_succ

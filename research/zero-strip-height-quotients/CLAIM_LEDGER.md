@@ -40,7 +40,7 @@ Labels: **PROVED** means a complete written proof from cited classical inputs;
 | `Lean/DivisorCells.lean` | A5 combinatorial core: half-open cells, disjointness, translation, finite cell-mass preservation, bounded-cell/superlinear contradiction | same three kernel/library axioms, printed by the file; no `sorry`, `admit`, or user axiom |
 | `Lean/ZetaCompatibility.lean` | A20 actual zeta support, including strip hypotheses | same three kernel/library axioms, printed for all five named declarations |
 
-None of the four sources formalizes `xi`, the Riemann--von Mangoldt theorem, isolation of
+None of the four sources formalizes `xi`, the Riemann–von Mangoldt theorem, isolation of
 analytic zeros, manifold local homology, orientability of Lie groups, or a deck
 quotient homeomorphism.  The `CellDivisor` structure takes finite cell supports
 and multiplicity preservation as fields; it does not construct them from xi.

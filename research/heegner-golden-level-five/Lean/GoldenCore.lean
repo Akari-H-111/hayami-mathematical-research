@@ -17,17 +17,19 @@ level-five workstream:
 * the universal sextic quotient `P_j(t) = t^6 G_j(t - t^{-1})`;
 * the `-163` decomposition `P_163 = A^2 - 5 B^2`;
 * the conditional branch implication
-  `P_163(t)=0`, `A(t)<0<B(t)` imply `sqrt 5 = -A(t)/B(t)`;
+  `P_163(t)=0`, `B(t)≠0`, `A(t)<0<B(t)` imply
+  `sqrt 5 = -A(t)/B(t)`;
 * the resulting golden-ratio formulas;
 * the real-branch identity `4H = a_s^2 - 5 b_s^2`.
 
 The identities are stated pointwise in an arbitrary field.  This is equivalent
 to the corresponding polynomial identities and avoids depending on a
 polynomial-ring build in the pinned read-only Mathlib checkout.  The classical
-CM input, Klein's level-five equation, the rational enclosure of the analytic
-branch, Sturm root counts, and the coprimality certificate are kept as explicit
-hypotheses or as separately checked exact computations.  No claim of a complete
-formalization of the paper is made.
+CM value and Klein's level-five equation remain outside this module.  The
+theorem takes the root equation, the nonvanishing condition, and the certified
+signs as explicit hypotheses; the rational enclosure, Sturm root counts, and
+coprimality certificate that discharge them are separately checked exact
+computations.  No claim of a complete formalization of the paper is made.
 -/
 
 namespace HeegnerGolden

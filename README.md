@@ -35,7 +35,7 @@ formalization.
   `P_163 = A^2 - 5B^2` evaluation identity, the conditional branch sign, the
   three golden formulas, and the abstract `M/J` involution. See the
   [formalization map](research/heegner-golden-level-five/FORMALIZATION.md).
-- **Zero-strip height quotients:** 33 named Lean theorems in four modules now
+- **Zero-strip height quotients:** 34 named Lean theorems in four modules now
   include the half-open cell ladder, multiplicity-preserving cell translation,
   and the bounded-cell/superlinear-count contradiction. See the
   [formalization map](research/zero-strip-height-quotients/FORMALIZATION.md).

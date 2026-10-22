@@ -4,7 +4,7 @@
 **Author:** Akari Hayami (Jian-Yu Huang)
 **Contact:** akari.h.1.9984@gmail.com
 **Status:** Verified public research archive at `origin/main`.  This branch adds
-the `DivisorCells` Lean layer and the 33-theorem count, pending review and merge.
+the `DivisorCells` Lean layer and the 34-theorem count, pending merge.
 
 This is an independent research workstream, not one of the ten catalogue
 papers. It began on 18 October 2026 with a bounded study of periodic models for
@@ -29,7 +29,7 @@ completion records and does not rewrite them.
    proofs, claim labels, sources, adversarial review and repairs.
 6. `SUPERVISOR_NO_GO.md` and `SUPERVISOR_COUNTERMODEL.md` — the eventual-period
    strengthening and the auxiliary entire-function countermodel.
-7. `FORMALIZATION.md` and `Lean/README.md` — the 33 named Lean theorems in four
+7. `FORMALIZATION.md` and `Lean/README.md` — the 34 named Lean theorems in four
    modules, the new cell-partition layer, and the tested read-only Mathlib path.
 8. `verification/replay.sh` and
    `paper/REPRODUCIBILITY.md` — the replay commands and
@@ -63,7 +63,7 @@ All three PDF hashes match their acceptance records.
   every zero onto the critical line. Multiplying xi by an explicit real even
   polynomial adds an off-line quartet while preserving those inputs. This is
   not zeta and not a counterexample to RH.
-- **Lean coverage:** 33 named theorems in four modules, including the half-open
+- **Lean coverage:** 34 named theorems in four modules, including the half-open
   cell ladder, multiplicity-preserving cell translation, the bounded-cell
   growth contradiction, and actual zeta zero-support invariance under
   conjugation and functional reflection. The analytic No-Go, the construction
@@ -80,7 +80,7 @@ claim are made. The v0.2 novelty verdict remains in force.
 
 ## Verification replayed on 20 October 2026
 
-- `sh verification/replay.sh` — **PASS**. The 33 named theorems report only
+- `sh verification/replay.sh` — **PASS**. The 34 named theorems report only
   `propext`, `Classical.choice` and `Quot.sound`; 330 exact polynomial checks
   and the assertion-guard regression pass.
 - `sh paper/verification/replay_continuation.sh` —
@@ -92,9 +92,9 @@ claim are made. The v0.2 novelty verdict remains in force.
   `/Users/akari_hayami_64/Documents/prime-spherical-fold`, pinned to Lean
   `v4.33.1` and Mathlib `0df444a360eaa60ab8c11dca51a86af692955474`.
   `Lean/lakefile.toml` supplies an untested portable pin for a clean machine.
-- The root `verification/replay.sh` hardcodes the tested local Lean path. On a
-  different prepared host, use the paper continuation script with
-  `ZERO_STRIP_LEAN_ROOT`, or run the standard-library Python checks directly.
+- The root `verification/replay.sh` defaults to the tested local Lean path and
+  accepts `ZERO_STRIP_LEAN_ROOT` on another prepared host with the same pin.
+  The paper continuation script uses the same variable.
 - A clean-machine dependency installation was not tested. Model-assisted
   review and director inspection are not external human peer review.
 

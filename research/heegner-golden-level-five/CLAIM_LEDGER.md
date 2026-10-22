@@ -40,8 +40,8 @@ changing the historical labels above.
 | --- | --- | --- |
 | C2, universal sextic quotient | `HeegnerGolden.level5_quotient` | arbitrary field, `t ≠ 0` |
 | C3, `P_163=A^2-5B^2` | `HeegnerGolden.P163Eval_eq` | pointwise identity in any field |
-| C4 branch implication | `HeegnerGolden.sqrt5_eq_neg_A_div_B` | conditional on `B(t)≠0` and `A(t)<0<B(t)` |
-| Three branch formulas | `HeegnerGolden.phi_formula`, `gamma_formula`, `c0_formula` | same conditional boundary |
+| C4 branch implication | `HeegnerGolden.sqrt5_eq_neg_A_div_B` | conditional on `P_163(t)=0`, `B(t)≠0` and `A(t)<0<B(t)` |
+| Three branch formulas | `HeegnerGolden.phi_formula`, `gamma_formula`, `c0_formula` | conditional on `B(t)≠0` and the branch identity `sqrt 5=-A(t)/B(t)` |
 | Elementary golden identities | `HeegnerGolden.phi_sq`, `c0_eq_two_sub_phi`, `c0_eq_phi_inv_sq` | no extra hypotheses |
 | Common involution `M^2=1`, `(JMJ)^2=1` | `HeegnerGolden.M_sq`, `J_sq`, `A_sq` | conditional on `gamma^2=c0` and `1+c0>0`; not the sine-matrix identification |
 | Equation (11) | `HeegnerGolden.H_identity` | real polynomial identity |

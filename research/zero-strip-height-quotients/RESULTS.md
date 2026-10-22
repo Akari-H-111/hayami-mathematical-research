@@ -52,7 +52,7 @@ inputs. A LEAN label applies only to the named algebraic model or theorem.
   matrix determinants and a generic subgroup obstruction.
 - `SupervisorStructures.lean`: 8 named theorems plus 2 instance checks about
   the cylinder model, glide, reflection and constant-cell/growth contradiction.
-- `DivisorCells.lean`: 10 named theorems about half-open cells, disjointness,
+- `DivisorCells.lean`: 11 named theorems about half-open cells, disjointness,
   translation, finite cell-mass preservation and the bounded-cell/superlinear
   contradiction.  A `CellDivisor` structure records finite cell supports and
   multiplicity preservation.
@@ -60,7 +60,7 @@ inputs. A LEAN label applies only to the named algebraic model or theorem.
 
 The compiled declarations use only `propext`, `Classical.choice`, and
 `Quot.sound` (some use a subset). No completed declaration uses `sorryAx`
-or a custom axiom. These 33 named theorems do not amount to a Lean proof of
+or a custom axiom. These 34 named theorems do not amount to a Lean proof of
 Riemann–von Mangoldt, the divisor No-Go or the advanced quotient topology.
 
 ## Next bounded target

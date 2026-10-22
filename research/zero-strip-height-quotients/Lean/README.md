@@ -12,7 +12,9 @@ lake env lean "$HMR_ROOT/research/zero-strip-height-quotients/Lean/ZetaCompatibi
 ```
 
 This is the tested local reuse path.  It uses the already-built package cache;
-it is not a clean-machine build.  `Lean/lakefile.toml` and
+it is not a clean-machine build.  The `verification/replay.sh` wrapper defaults
+to the tested checkout and accepts `ZERO_STRIP_LEAN_ROOT` for another prepared
+checkout with the same pin.  `Lean/lakefile.toml` and
 `Lean/lean-toolchain` provide an untested portable pin to Lean 4.33.1 and
 Mathlib commit `0df444a360eaa60ab8c11dca51a86af692955474`.  A clean-machine
 replay would need to fetch that pin before running `lake env lean`; this cycle

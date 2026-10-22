@@ -3,7 +3,7 @@
 **Date:** 20 October 2026.  **Scope:** new bounded Lean layer; sealed paper
 bytes are unchanged.
 
-The workstream now has 33 named Lean theorems in four modules.  The new module
+The workstream now has 34 named Lean theorems in four modules.  The new module
 [`Lean/DivisorCells.lean`](Lean/DivisorCells.lean) formalizes the half-open cell
 bookkeeping that the written no-go proof uses.
 
@@ -13,13 +13,14 @@ bookkeeping that the written no-go proof uses.
 | --- | ---: | --- |
 | `Lean/ZeroStripCore.lean` | 10 | ambient coordinate maps, matrix determinants, subgroup obstruction |
 | `Lean/SupervisorStructures.lean` | 8 | AddCircle cylinder model, glide square, reflection, constant-cell growth lemma |
-| `Lean/DivisorCells.lean` | 10 | half-open cells, disjointness, translation, finite cell-mass preservation, bounded-cell/superlinear contradiction |
+| `Lean/DivisorCells.lean` | 11 | half-open cells, disjointness, translation, finite cell-mass preservation, bounded-cell/superlinear contradiction |
 | `Lean/ZetaCompatibility.lean` | 5 | actual zeta zero-support invariance under conjugation and functional reflection |
 
 The new `DivisorCells` layer proves:
 
 - `translate_mem_cell_succ` and `translate_image_cell`: translation by `T`
   sends `[h+nT,h+(n+1)T)` exactly onto the next half-open cell;
+- `translate_injective`: translation by `T` is injective;
 - `cell_disjoint`: distinct cells in the same ladder are disjoint;
 - `massOn_translate`: a multiplicity-preserving translation preserves the mass
   of every finite cell;

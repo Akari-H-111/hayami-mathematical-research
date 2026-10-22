@@ -105,8 +105,8 @@ sh research/heegner-golden-level-five/Lean/replay.sh
 sh research/zero-strip-height-quotients/verification/replay.sh
 ```
 
-The Heegner replay checks 13 named algebraic declarations. The zero-strip
-replay also runs 330 exact checks and compiles 33 named theorems in four
+The Heegner replay checks 13 named theorems (13 axiom reports). The zero-strip
+replay also runs 330 exact checks and compiles 34 named theorems in four
 modules. These are bounded layers, not whole-paper proofs. A passing replay
 does not certify the CM value, q-product enclosure, Sturm counts, xi divisor
 construction, or Riemann–von Mangoldt; the explicit boundaries are in

@@ -15,7 +15,9 @@ lake env lean "$HMR_ROOT/research/heegner-golden-level-five/Lean/GoldenCore.lean
 ```
 
 Alternatively, from the workstream root, run `sh Lean/replay.sh`; the wrapper
-checks the toolchain and Mathlib commit before compiling.
+checks the toolchain and Mathlib commit before compiling. It defaults to the
+tested checkout and accepts `HEEGNER_LEAN_ROOT` for another prepared checkout
+with the same pin.
 
 `lakefile.toml` and `lean-toolchain` record the same portable pin.  A
 clean-machine `lake update`/`lake exe cache get`/`lake build` was not tested in
@@ -53,10 +55,11 @@ The following remain outside this Lean layer and are not silently upgraded:
 - the trigonometric identification of the abstract matrix `A=JMJ` with the
   displayed sine matrix.
 
-In particular, the Lean theorem `sqrt5_eq_neg_A_div_B` takes `B(t) ≠ 0` and the
-certified sign inequalities as hypotheses.  The Python checker still supplies
-the rational enclosure and the coprimality certificate.  This is an algebraic
-core, not a complete Lean formalization of the paper.
+In particular, the Lean theorem `sqrt5_eq_neg_A_div_B` takes `P_163(t)=0`,
+`B(t) ≠ 0` and the certified sign inequalities as hypotheses.  The Python
+checker still supplies the rational enclosure, the Sturm count and the
+coprimality certificate.  This is an algebraic core, not a complete Lean
+formalization of the paper.
 
 The declarations report only the standard kernel/library axioms
 `propext`, `Classical.choice` and `Quot.sound`; no declaration uses `sorry`,
