@@ -4,30 +4,13 @@
 
 [Geometry papers](../README.md) · [Repository home](../../../README.md)
 
-## Current paper: v5
-
-Read [*The Orthogonal-Circle Ruled Surface: A Boundary Atlas, Five Rank
-Singularities, and Conditional Fold-Signal Recurrence*](https://zenodo.org/records/23073642).
-The v5 paper and verification companion 0.03 were published on 2026-10-01,
-according to the author's local publication receipt; this supersedes the v4
-repair task described in the older reconstruction notes below.
-
-Paper DOI: `10.5281/zenodo.23073642`. The companion has
-[software version DOI 10.5281/zenodo.23073654](https://zenodo.org/records/23073654)
-and concept DOI `10.5281/zenodo.23073653`; neither is the paper DOI.
-The accepted article is available through the paper record above. The unchanged
-repository [source package](../../../releases/current/ruled-surface-v5-source-v0.03/README.md)
-predates the accepted editorial PDF and remains the software/source reference.
-
-The [Lean coverage map](../../../releases/current/ruled-surface-v5-source-v0.03/companions/lean/ruled-surface-v5/COVERAGE.md)
-lists 224 own public named theorems, with 258 separately audited dependencies.
-Coverage concerns asserted mathematical results; open research questions are
-not resolved by that count. See the [verification guide](../../../verification/README.md).
-
-## Historical reconstruction: v4
-
-
-[Geometry papers](../README.md) · [Repository home](../../../README.md)
+**Related independent study:** the
+[Heegner level-five fibre](../../../research/heegner-golden-level-five/README.md)
+reconstructs the golden constant c₀ = (3−√5)/2 = φ⁻², the root of c² − 3c + 1
+that the ruled-surface sources use in the rank-singularity classification, from
+a level-five CM value, conditional on classical CM inputs. It is a separate
+research archive with no DOI and no external reading recorded, and it is not
+part of this paper or its Lean coverage.
 
 ## Current paper: v5
 

@@ -14,7 +14,7 @@
 | Inspect formalization | `companions/lean/` for paper companions and `research/*/Lean/` for the two independent workstreams; each project has its own status and coverage/boundary map |
 | Inspect sealed reproducibility packages | `releases/current/` and `releases/candidates/`: interpret each receipt at its recorded date |
 | Inspect historical source authority | [Legacy source registry](../papers/legacy-geometry/source-registry/SOURCE_REGISTRY.md) |
-| Explore independent constructions | `research/`: read the local scope before importing conclusions into a paper |
+| Explore independent studies and constructions | [Research index](../research/README.md): the Heegner level-five and zero-strip notes (outside the ten-paper count) and two exact-replay constructions. Read each folder's own scope and status before importing conclusions into a paper |
 
 ## Directory conventions
 

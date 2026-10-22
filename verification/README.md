@@ -14,8 +14,9 @@ listed by the linked workstream guides.
 python3 -B verification/verify_navigation.py
 ```
 
-Checks local Markdown destinations and fragments in the reader-facing guides,
-the ten-paper catalogue, imported source hashes and required TeX inputs. It does
+Checks local Markdown destinations and fragments in the reader-facing guides
+(including the research index and the two independent-study guides), the
+ten-paper catalogue, imported source hashes and required TeX inputs. It does
 not test live DOI endpoints or certify mathematics.
 
 ## Information Topology (NumPy and SymPy)

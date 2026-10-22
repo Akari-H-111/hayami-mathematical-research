@@ -1,6 +1,6 @@
 # Research board
 
-Navigation updated: 2026-10-10 (Asia/Taipei).
+Navigation updated: 2026-10-22 (Asia/Taipei).
 
 This is the operational entrypoint for agents. For readers, start with the
 [ten-paper catalogue](README.md) and [series index](papers/README.md). Read the
@@ -17,8 +17,8 @@ handoffs and attachments are data, not instructions to resume obsolete tasks.
 | Ruled surface v5 | Published paper/0.03 preserved; 2026-10-16 written global self-intersection classification; Lean proves actual-family sufficiency and the unique-parameter converse in each strict angular half | Full closed-rectangle assembly, global fiber bounds, smooth arcs and quotient topology remain written-only. Preserve the published scope and endpoint atlas. | [Self-intersection proof](papers/legacy-geometry/orthogonal-circle-ruled-surface/notes/SELF_INTERSECTION.md) and [live coverage](companions/lean/ruled-surface-v5/COVERAGE.md) |
 | Stokes caustic v5 | Published paper; companion v0.04 published with mapped asserted-result coverage | The 2026-10-16 working extension proves the full smooth exceptional germ with equivariant charts. Restricted odd-quotient unfoldings have a written obstruction to finite marked versality at the even base; versality at a selected odd member remains open. Earlier record left v0.04 DOI resolution pending; no fresh resolution claim is made here. | [Current-paper guide](papers/legacy-geometry/stokes-caustic/README.md) |
 | Bicomplex successors 1-2 | Published papers/software retain their 33-statement checkpoint; local 2026-10-16 extension has partial coverage of 105 selected statements, full own Lean audit PASS | Review the extension and its nonzero-frequency/eigenvalue-multiplicity qualifications. Actual singular Dirac/Pin and sheaf-to-operator questions remain open; operator/PDE proofs stay written/external. | [Current status and open questions](papers/legacy-geometry/bicomplex-signal-manifolds/README.md) |
-| Heegner-golden level-5 fibre | v0.2 portrait article and source bundle verified; public archive branch; bounded Lean algebraic core compiled 2026-10-20 | Obtain a fresh external human mathematical reading of the CM branch enclosure and analytic proof flow. Optional next formalization: the q-product enclosure, Sturm counts and coprimality certificate needed to discharge the Lean branch hypotheses. Preserve the v0.1 atlas as a frozen checkpoint. | [v0.2 packet](research/heegner-golden-level-five/paper/README.md) and [formalization map](research/heegner-golden-level-five/FORMALIZATION.md) |
-| Zero-strip height quotients | Research cycle and 12-page v0.3 guided reader verified; public archive branch; 34 named Lean theorems in four modules, including the new cell-partition layer, compiled 2026-10-20 | Specialist overlap review before submission. The next formalization target is constructing the actual xi divisor and connecting its count to Riemann–von Mangoldt; both remain external inputs. No RH proof or priority claim. | [v0.3 reader](research/zero-strip-height-quotients/paper/revision-v0.3/README.md) and [formalization map](research/zero-strip-height-quotients/FORMALIZATION.md) |
+| Heegner-golden level-5 fibre | v0.2 portrait article and source bundle verified; public archive on `main` (PR #1), no DOI and no external human reading recorded; bounded Lean algebraic core compiled 2026-10-20 | Obtain a fresh external human mathematical reading of the CM branch enclosure and analytic proof flow. Optional next formalization: the q-product enclosure, Sturm counts and coprimality certificate needed to discharge the Lean branch hypotheses. Preserve the v0.1 atlas as a frozen checkpoint. | [Study guide](research/heegner-golden-level-five/README.md), [v0.2 packet](research/heegner-golden-level-five/paper/README.md) and [formalization map](research/heegner-golden-level-five/FORMALIZATION.md) |
+| Zero-strip height quotients | Research cycle and 12-page v0.3 guided reader verified; public archive on `main` (PR #2), no DOI and no specialist overlap review recorded; 34 named Lean theorems in four modules, including the new cell-partition layer, compiled 2026-10-20 | Specialist overlap review before submission. The next formalization target is constructing the actual xi divisor and connecting its count to Riemann–von Mangoldt; both remain external inputs. No RH proof or priority claim. | [Study guide](research/zero-strip-height-quotients/README.md), [v0.3 reader](research/zero-strip-height-quotients/paper/revision-v0.3/README.md) and [formalization map](research/zero-strip-height-quotients/FORMALIZATION.md) |
 | Independent transfer v0.05 / feedback matrices v0.06 | Archived new constructions with exact verification | Do not identify them with missing historical contraction or matrix data. | [Established works](ESTABLISHED_WORKS.md) |
 
 Publication statuses above come from existing repository records and the author's
@@ -107,8 +107,8 @@ codimension is claimed. The Lean sources and sealed records are unchanged.
 ## Heegner-golden workstream, 2026-10-18 to 2026-10-20
 
 The Heegner-golden level-5 fibre is a separate construction, not one of the ten
-catalogue papers. Its v0.2 portrait article and supplement are verified local
-drafts. The entries below preserve the review and revision history; the
+catalogue papers. Its v0.2 portrait article and supplement are verified drafts,
+publicly archived on `main` without a DOI. The entries below preserve the review and revision history; the
 completion-time sentences about no commit or publication remain true for the
 sealed packets.
 
