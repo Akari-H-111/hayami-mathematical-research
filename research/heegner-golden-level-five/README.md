@@ -6,16 +6,20 @@
 **Agent entry point:** [HANDOVER.md](HANDOVER.md).
 **Navigation:** [Repository home](../../README.md) · [Research index](../README.md).
 
-**Status.** A public research archive on GitHub. It is outside the repository's
-ten-paper catalogue: no DOI, Zenodo record or sealed release exists, and no
-external human reading is recorded. The sentence "Local draft; no commit,
-upload, or publication" in the v0.2 packet records its state at completion and
-describes its sealed bytes; it is not the current repository state. Lean covers
-the algebraic core only ([FORMALIZATION.md](FORMALIZATION.md)). The
+**Archive status.** A public research archive on GitHub. It is outside the
+repository's ten-paper catalogue: no DOI, Zenodo record or `releases/` package
+exists, and no external human reading is recorded. The sentence "Local draft; no
+commit, upload, or publication" in the v0.2 packet records its state at
+completion and describes its sealed bytes; it is not the current repository
+state. Several packets under `studies/` carry similar completion-time lines (for
+example "Nothing has been committed or published" in the literature audit) and
+replay commands that name the author's local interpreter; read them as dated
+records and use the replay command below. Lean covers the algebraic core only
+([FORMALIZATION.md](FORMALIZATION.md)). The
 [literature audit](studies/novelty-audit-20261019/README.md) establishes no
 substantive novelty for the later continuation, so no novelty, priority or RH
-claim is made. Next gate: a fresh external reading of the CM branch enclosure and
-the analytic proof flow.
+claim is made. Next gate: a fresh external human reading of the CM branch
+enclosure and the analytic proof flow.
 
 ## Result
 

@@ -7,9 +7,9 @@
 **Agent entry point:** [HANDOVER.md](HANDOVER.md).
 **Navigation:** [Repository home](../../README.md) · [Research index](../README.md).
 
-**Status.** A public research archive on GitHub. It is outside the repository's
-ten-paper catalogue: no DOI, Zenodo record or sealed release exists, and no
-specialist overlap review is recorded. The [research board](../../RESEARCH_BOARD.md)
+**Archive status.** A public research archive on GitHub. It is outside the
+repository's ten-paper catalogue: no DOI, Zenodo record or `releases/` package
+exists, and no specialist overlap review is recorded. The [research board](../../RESEARCH_BOARD.md)
 lists that review as the next gate before any submission, and the
 [novelty verdict](paper/revision-v0.2/NOVELTY_VERDICT.md) fixes the attribution
 language. The v0.3 line "No publication, commit or push is included" records the

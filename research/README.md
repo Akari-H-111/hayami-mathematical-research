@@ -4,8 +4,8 @@
 
 This directory holds independent studies and constructions kept apart from the
 [ten-paper catalogue](../README.md). A folder's presence here means neither
-publication nor review: no entry below has a DOI or a sealed release, and where a
-Lean layer exists it covers named modules only. Read a folder's own README before
+publication nor review: no entry below has a DOI, Zenodo record or `releases/`
+package of its own, and where a Lean layer exists it covers named modules only. Read a folder's own README before
 reusing any conclusion elsewhere.
 
 ## Contents

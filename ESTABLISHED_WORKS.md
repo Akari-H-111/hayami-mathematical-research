@@ -1,6 +1,6 @@
 # Established works and citation boundaries
 
-Reader navigation updated: 2026-10-10. See the [ten-paper catalogue](README.md)
+Reader navigation updated: 2026-10-22. See the [ten-paper catalogue](README.md)
 for titles and direct reading links, and the [research board](RESEARCH_BOARD.md)
 for current work. These inventories record evidence scopes; they are not a new
 whole-paper mathematical or live-platform audit.
@@ -22,8 +22,10 @@ collection DOIs are not interchangeable with paper DOIs. See
 
 ## Historical and independent evidence
 
-The [research index](research/README.md) lists every independent study and
-construction. None of the entries below is part of the ten-paper catalogue.
+The [research index](research/README.md) lists the independent studies and
+constructions under `research/`. The first four entries below are independent of
+the ten-paper catalogue; the last two document legacy reconstruction and version
+history for papers that are in it.
 
 - [Independent transfer v0.05](research/independent_transfer_v0_05/RESEARCH_LOG.md):
   a new degree-two splitting and fixed projection with exact-rational replay;
@@ -35,18 +37,19 @@ construction. None of the entries below is part of the ten-paper catalogue.
 - [Heegner level-five golden fibre](research/heegner-golden-level-five/README.md):
   *Golden Coordinates at Level Five*, v0.2 portrait article (10 pages) and
   14-page supplement; the v0.1 atlas is a frozen checkpoint. A public research
-  archive with no DOI, Zenodo record or sealed release, and no recorded external
-  reading. Written proofs depend on the classical CM value and Klein's level-five
-  equation; exact checks replay, and the thirteen-order component matching is
-  numerical at 100 and 200 digits. `LEAN-PASSED` covers the algebraic core only
+  archive with no DOI, Zenodo record or `releases/` package, and no recorded
+  external human reading. Written proofs depend on the classical CM value and
+  Klein's level-five equation; exact checks replay, and matching the thirteen
+  CM-order components to the analytic branches is numerical at 100 and 200
+  digits. `LEAN-PASSED` covers the algebraic core only
   (13 named theorems; see the [formalization map](research/heegner-golden-level-five/FORMALIZATION.md)).
   The [literature audit](research/heegner-golden-level-five/studies/novelty-audit-20261019/README.md)
   establishes no substantive novelty for the later continuation. No novelty,
   priority or RH claim; do not cite it as a published paper.
 - [Zero-strip height quotients](research/zero-strip-height-quotients/README.md):
   *Height Quotients*, guided reader v0.3 (12 pages); v0.1 and v0.2 are preserved
-  checkpoints. A public research archive with no DOI, Zenodo record or sealed
-  release. The classical no-go for a periodic zeta zero divisor and the height
+  checkpoints. A public research archive with no DOI, Zenodo record or
+  `releases/` package, and no recorded external human reading. The classical no-go for a periodic zeta zero divisor and the height
   quotient audit rest on named inputs (local finiteness of the xi divisor,
   Riemann–von Mangoldt). `LEAN-PASSED` covers 34 named theorems in four modules
   and constructs neither the xi divisor nor its count (see the

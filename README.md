@@ -32,20 +32,37 @@ file lists exactly what is machine-checked and what remains a written proof.
 ## Independent studies
 
 Two further research notes live under `research/`. They are **not** part of the
-ten-paper catalogue below: neither has a DOI, a sealed release or a recorded
-external reading, and each is a single study whose earlier versions are kept as
-checkpoints, not a numbered series. Both are public research archives; their
-Lean layers cover named modules only, not the whole note.
+ten-paper catalogue below: neither has a DOI, a Zenodo record, a `releases/`
+package or a recorded external human reading. Each is a single study whose earlier
+versions are kept as checkpoints, not a numbered series. Both are public research
+archives, and their Lean layers cover named modules only, not the whole note.
 
-| Study | What it shows | Read | Evidence and status |
-| --- | --- | --- | --- |
-| Heegner level-five fibre and the HMR golden parameter: *Golden Coordinates at Level Five* (v0.2) | For τ₁₆₃ = (1+i√163)/2 and t = r(τ₁₆₃)⁵, the number √5 lies in ℚ(t). Hence φ and the constant c₀ = φ⁻² of the orthogonal-circle ruled surface are reconstructed exactly from a level-five CM value. Conditional on the classical CM value and Klein's level-five equation. | [Article, 10 pp.](research/heegner-golden-level-five/paper/output/pdf/golden_coordinates_level_five_v0_2.pdf) · [Supplement, 14 pp.](research/heegner-golden-level-five/paper/output/pdf/golden_coordinates_level_five_v0_2_supplement.pdf) · [Study guide](research/heegner-golden-level-five/README.md) | Written proofs conditional on classical inputs, plus exact checks; matching the thirteen CM-order components to the analytic branches is numerical at 100 and 200 digits. Lean covers the algebraic core only: 13 named theorems ([map](research/heegner-golden-level-five/FORMALIZATION.md)). The [literature audit](research/heegner-golden-level-five/studies/novelty-audit-20261019/README.md) establishes no substantive novelty for the later continuation; no novelty, priority or RH claim. Next gate: external human reading. |
-| Zero-strip height quotients: *Height Quotients* (guided reader v0.3) | No fixed positive vertical period can preserve the full multiplicity divisor of the nontrivial zeta zeros. Cylinder and Möbius height quotients exist for the ambient strip, not as periodic quotients of the zero divisor. A worked synthesis of a classical consequence. | [Reader, 12 pp.](research/zero-strip-height-quotients/paper/revision-v0.3/output/pdf/height-quotients-v0.3.pdf) · [Study guide](research/zero-strip-height-quotients/README.md) | Written proof with named classical inputs plus exact finite checks. Lean: 34 named theorems in four modules, none constructing the xi divisor or Riemann–von Mangoldt ([map](research/zero-strip-height-quotients/FORMALIZATION.md)). The [novelty verdict](research/zero-strip-height-quotients/paper/revision-v0.2/NOVELTY_VERDICT.md) classifies it as a worked synthesis; no RH proof or priority claim. Next gate: specialist overlap review. |
+| Study | What it shows | Read |
+| --- | --- | --- |
+| Heegner level-five fibre and the golden parameter of the ruled surface: *Golden Coordinates at Level Five* (v0.2) | For τ₁₆₃ = (1+i√163)/2 and t = r(τ₁₆₃)⁵, the number √5 lies in ℚ(t). Hence φ and the constant c₀ = φ⁻² of the orthogonal-circle ruled surface are reconstructed exactly from a level-five CM value, conditional on the classical CM value and Klein's level-five equation. | [Article, 10 pp.](research/heegner-golden-level-five/paper/output/pdf/golden_coordinates_level_five_v0_2.pdf) · [Supplement, 14 pp.](research/heegner-golden-level-five/paper/output/pdf/golden_coordinates_level_five_v0_2_supplement.pdf) · [Study guide](research/heegner-golden-level-five/README.md) |
+| Zero-strip height quotients: *Height Quotients* (guided reader v0.3) | No fixed positive vertical period can preserve the full multiplicity divisor of the nontrivial zeta zeros. Cylinder and Möbius height quotients exist for the ambient strip, not as periodic quotients of the zero divisor. A worked synthesis of a classical consequence. | [Reader, 12 pp.](research/zero-strip-height-quotients/paper/revision-v0.3/output/pdf/height-quotients-v0.3.pdf) · [Study guide](research/zero-strip-height-quotients/README.md) |
 
-The CM value, Klein equation, q-product enclosure, Sturm counts, coprimality
-certificate, xi divisor, and Riemann–von Mangoldt remain outside Lean. See the
-[research index](research/README.md) for all independent constructions and how to
-read their process records.
+**Evidence and status**
+
+- **Heegner level-five fibre:** written proofs conditional on classical inputs,
+  plus exact checks; matching the thirteen CM-order components to the analytic
+  branches is numerical at 100 and 200 digits. Lean covers the algebraic core
+  only: 13 named theorems ([map](research/heegner-golden-level-five/FORMALIZATION.md)).
+  The CM value, Klein equation, q-product enclosure, Sturm counts and coprimality
+  certificate remain outside Lean. The
+  [literature audit](research/heegner-golden-level-five/studies/novelty-audit-20261019/README.md)
+  establishes no substantive novelty for the later continuation; no novelty,
+  priority or RH claim. Next gate: external human reading.
+- **Zero-strip height quotients:** a written proof with named classical inputs,
+  plus exact finite checks. Lean: 34 named theorems in four modules
+  ([map](research/zero-strip-height-quotients/FORMALIZATION.md)); the xi divisor
+  and Riemann–von Mangoldt remain outside Lean. The
+  [novelty verdict](research/zero-strip-height-quotients/paper/revision-v0.2/NOVELTY_VERDICT.md)
+  classifies it as a worked synthesis; no RH proof or priority claim. Next gate:
+  specialist overlap review.
+
+See the [research index](research/README.md) for all independent constructions and
+how to read their process records.
 
 ## Paper catalogue
 
