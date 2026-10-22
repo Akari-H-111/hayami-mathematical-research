@@ -10,7 +10,10 @@ ROOT = Path(__file__).resolve().parents[1]
 GUIDES = (
     'README.md', 'AGENTS.md', 'RESEARCH_BOARD.md', 'ESTABLISHED_WORKS.md',
     'docs/REPOSITORY_GUIDE.md', 'verification/README.md', 'papers/README.md',
+    'research/README.md',
+    'research/heegner-golden-level-five/README.md',
     'research/heegner-golden-level-five/FORMALIZATION.md',
+    'research/zero-strip-height-quotients/README.md',
     'research/zero-strip-height-quotients/FORMALIZATION.md',
     'papers/inverse-leibniz/README.md', 'papers/information-topology/README.md',
     'papers/information-topology/figures/README.md', 'papers/legacy-geometry/README.md',

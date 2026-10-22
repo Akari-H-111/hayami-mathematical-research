@@ -4,6 +4,14 @@
 
 [Geometry papers](../README.md) · [Repository home](../../../README.md)
 
+**Related independent study:** the
+[Heegner level-five fibre](../../../research/heegner-golden-level-five/README.md)
+reconstructs the golden constant c₀ = (3−√5)/2 = φ⁻², the root of c² − 3c + 1
+that the ruled-surface sources use in the rank-singularity classification, from
+a level-five CM value, conditional on classical CM inputs. It is a separate
+research archive with no DOI and no external reading recorded, and it is not
+part of this paper or its Lean coverage.
+
 ## Current paper: v5
 
 Read [*The Orthogonal-Circle Ruled Surface: A Boundary Atlas, Five Rank
