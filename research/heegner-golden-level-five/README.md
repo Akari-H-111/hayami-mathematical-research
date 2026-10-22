@@ -4,6 +4,22 @@
 — a 10-page article with a 14-page landscape supplement.
 **Earlier checkpoint:** [v0.1 article and atlas](paper-v0.1/README.md).
 **Agent entry point:** [HANDOVER.md](HANDOVER.md).
+**Navigation:** [Repository home](../../README.md) · [Research index](../README.md).
+
+**Archive status.** A public research archive on GitHub. It is outside the
+repository's ten-paper catalogue: no DOI, Zenodo record or `releases/` package
+exists, and no external human reading is recorded. The sentence "Local draft; no
+commit, upload, or publication" in the v0.2 packet records its state at
+completion and describes its sealed bytes; it is not the current repository
+state. Several packets under `studies/` carry similar completion-time lines (for
+example "Nothing has been committed or published" in the literature audit) and
+replay commands that name the author's local interpreter; read them as dated
+records and use the replay command below. Lean covers the algebraic core only
+([FORMALIZATION.md](FORMALIZATION.md)). The
+[literature audit](studies/novelty-audit-20261019/README.md) establishes no
+substantive novelty for the later continuation, so no novelty, priority or RH
+claim is made. Next gate: a fresh external human reading of the CM branch
+enclosure and the analytic proof flow.
 
 ## Result
 
@@ -11,60 +27,67 @@ This package proves a bounded field-reconstruction statement, conditional only
 on the classical CM value and Klein level-5 equation recorded in
 [SOURCES.md](SOURCES.md).  For
 
-\[
- \tau_{163}=\frac{1+i\sqrt{163}}2,\qquad
- t=r(\tau_{163})^5,
-\]
+$$
+\tau_{163}=\frac{1+i\sqrt{163}}{2},\qquad
+t=r(\tau_{163})^5,
+$$
 
-there are coprime (A,B\in\mathbb Z[t]) with
+there are coprime $A,B\in\mathbb Z[t]$ with
 
-\[
- P_{163}(t)=A(t)^2-5B(t)^2=0.
-\]
+$$
+P_{163}(t)=A(t)^2-5B(t)^2=0.
+$$
 
-The analytic (q)-product branch is rationally isolated and has
-(A(t)/B(t)=-\sqrt5).  Hence
+The analytic $q$-product branch is rationally isolated and has
+$A(t)/B(t)=-\sqrt5$.  Hence
 
-\[
- \phi=\frac{B(t)-A(t)}{2B(t)},\qquad
- \gamma=\phi^{-1}=-\frac{A(t)+B(t)}{2B(t)},\qquad
- c_0=\phi^{-2}=\frac{3B(t)+A(t)}{2B(t)}.
-\]
+$$
+\phi=\frac{B(t)-A(t)}{2B(t)},\qquad
+\gamma=\phi^{-1}=-\frac{A(t)+B(t)}{2B(t)},\qquad
+c_0=\phi^{-2}=\frac{3B(t)+A(t)}{2B(t)}.
+$$
 
-Thus (\mathbb Q(\sqrt5)\subset\mathbb Q(t)), and the exact (c_0)
+Thus $\mathbb Q(\sqrt5)\subset\mathbb Q(t)$, and the exact $c_0$
 used by the current HMR ruled-surface source is reconstructed from the
-specified (-163) level-5 CM value.  This is a field-membership result, not a
+specified $-163$ level-5 CM value.  This is a field-membership result, not a
 decimal fit.
 
-The universal mechanism is also identified: for every (j), the degree-12
-icosahedral fibre is (t^6) times a sextic in (u=t-t^{-1}).  It is therefore
-important that (j=1,2) remain irreducible over $\mathbb Q(\sqrt5)$: the
+The universal mechanism is also identified: for every $j$, the degree-12
+icosahedral fibre is $t^6$ times a sextic in $u=t-t^{-1}$.  It is therefore
+important that $j=1,2$ remain irreducible over $\mathbb Q(\sqrt5)$: the
 golden subfield is not a universal consequence of that sextic rewriting.
 
 ## Replay
 
-Run from this directory with the registered runtime:
+The exact checker needs Python 3 with SymPy and mpmath. Run from this directory:
 
 ```sh
-/Users/akari_hayami_64/RH_Research_Workspace/.venv/bin/python -B verification/check.py
+python3 -B verification/check.py
 ```
 
-The checker refuses assertion-stripped execution, writes
-`verification/RESULTS.json`, and verifies:
+Never use `-O`: the checker refuses assertion-stripped execution. It rewrites
+`verification/RESULTS.json`; on another interpreter only the recorded Python
+version changes (a 2026-10-22 run on Python 3.9.6 with SymPy 1.14.0 and mpmath
+1.3.0 passed, against the committed record from Python 3.14.6). It verifies:
 
 - exact quotient, factorization, coprimality, and field-reconstruction algebra;
-- rational isolation and sign selection for the (-163) (t)- and real
-  (s)-branches;
+- rational isolation and sign selection for the $-163$ $t$- and real
+  $s$-branches;
 - all nine maximal and four nonmaximal class-number-one-order controls;
-- exact (j=1,2) countercontrols; and
+- exact $j=1,2$ countercontrols; and
 - direct product versus continued-fraction evaluations at 100 and 200 digits.
+
+The Lean layer is replayed separately with `sh Lean/replay.sh`. It needs a
+prepared Lean `v4.33.1` checkout with the pinned Mathlib commit named in
+[Lean/README.md](Lean/README.md); set `HEEGNER_LEAN_ROOT` to that checkout. A
+clean-machine build has not been tested.
 
 ## Claim boundary
 
 | Item | Status |
 | --- | --- |
-| Universal (t-t^{-1}) sextic quotient | PROVED HERE; Lean algebraic core |
-| (-163) golden-field reconstruction and branch sign | PROVED HERE, conditional on classical CM/modular inputs; Lean branch implication conditional on its sign hypotheses |
+| Universal $t-t^{-1}$ sextic quotient | PROVED HERE; Lean algebraic core |
+| $-163$ golden-field reconstruction and branch sign | PROVED HERE, conditional on classical CM/modular inputs; Lean branch implication conditional on its sign hypotheses |
 | Thirteen CM-order component factorizations | EXACT CHECK; analytic component matching is NUMERICAL at 100/200 digits |
 | HMR Boolean-signature obstruction | PROVED HERE as a corollary of the current HMR definition/proposition |
 | Ray-class stabilizer explanation | OPEN in this package |

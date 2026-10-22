@@ -5,6 +5,18 @@
 **Paper editions:** [current-edition pointer](paper/CURRENT.md) · [v0.2 illustrated revision](paper/revision-v0.2/README.md)
 · [v0.1 analytic base](paper/README.md).
 **Agent entry point:** [HANDOVER.md](HANDOVER.md).
+**Navigation:** [Repository home](../../README.md) · [Research index](../README.md).
+
+**Archive status.** A public research archive on GitHub. It is outside the
+repository's ten-paper catalogue: no DOI, Zenodo record or `releases/` package
+exists, and no specialist overlap review is recorded. The [research board](../../RESEARCH_BOARD.md)
+lists that review as the next gate before any submission, and the
+[novelty verdict](paper/revision-v0.2/NOVELTY_VERDICT.md) fixes the attribution
+language. The v0.3 line "No publication, commit or push is included" records the
+packet's state at completion and describes its sealed bytes; it is not the current
+repository state. The note is a worked synthesis of a classical consequence, with
+no RH proof and no priority claim. Lean covers bounded modules only
+([FORMALIZATION.md](FORMALIZATION.md)).
 
 **Status of this page:** first bounded research cycle, 2026-10-18.  This directory is an
 independent research workstream.  It records a classical no-go consequence for a
@@ -29,7 +41,7 @@ strip*, but it is not a periodic quotient of the marked zero divisor.
 | [CLAIM_LEDGER.md](CLAIM_LEDGER.md) | Every requested question and its evidence label |
 | [SOURCES.md](SOURCES.md) | Source URLs, locations, hypotheses, and retrieval limits |
 | [REVIEW.md](REVIEW.md) | Adversarial review and resolutions |
-| [COLD_REVIEW.md](COLD_REVIEW.md) | Verbatim fresh-session terra cold review; read with its disposition |
+| [COLD_REVIEW.md](COLD_REVIEW.md) | Verbatim fresh-session model-assisted cold review (reviewer codename "terra"); read with its disposition |
 | [REVIEW_RESOLUTION.md](REVIEW_RESOLUTION.md) | Four repaired findings and correction of the review's model self-description |
 | [SUPERVISOR_NO_GO.md](SUPERVISOR_NO_GO.md) | Bounded strengthening to eventual divisor periodicity |
 | [SUPERVISOR_COUNTERMODEL.md](SUPERVISOR_COUNTERMODEL.md) | Why these symmetries/counts/topologies cannot imply RH |
@@ -43,14 +55,22 @@ strip*, but it is not a periodic quotient of the marked zero divisor.
 | [verification/test_assertion_guard.py](verification/test_assertion_guard.py) | Regression test that both verifiers refuse assertion-stripped execution |
 | [verification/replay.sh](verification/replay.sh) | Commands for the tested checks |
 
-Run from this directory:
+Run from this directory. The exact checks need only Python 3 and its standard
+library (never use `-O`; the verifiers refuse assertion-stripped execution):
 
 ```sh
 python3 -B verification/check_exact.py
-sh verification/replay.sh
+python3 -B verification/supervisor_countermodel.py
+python3 -B verification/test_assertion_guard.py
 ```
 
-The Lean replay uses the read-only project named in [Lean/README.md](Lean/README.md).
+A 2026-10-22 run of these three on Python 3.9.6 passed. The combined wrapper
+`sh verification/replay.sh` also compiles the Lean modules, so it needs a prepared
+Lean `v4.33.1` checkout with the pinned Mathlib commit named in
+[Lean/README.md](Lean/README.md); set `ZERO_STRIP_LEAN_ROOT` to that checkout. A
+clean-machine build has not been tested.
+
+The Lean replay uses that read-only project.
 It neither changes that project nor installs dependencies.  See the claim
 ledger before relying on any statement: Lean has **not** formalized xi,
 Riemann--von Mangoldt, a quotient homeomorphism, or the advanced manifold
